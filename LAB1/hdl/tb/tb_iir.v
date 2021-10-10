@@ -34,13 +34,13 @@ module tb_iir ();
   iir_filter UUT(
                .clock (CLK_i ),
                .rst_n (RST_n_i ),
-               .din (din_i ),
+               .din (DIN_i ),
                .a1 (a1_i),
                .a2 (a2_i),
                .b0 (b0_i),
                .b1 (b1_i),
                .b2 (b2_i),
-               .vin (vin_i),
+               .vin (VIN_i),
                .dout (DOUT_i),
                .vout  ( VOUT_i)
              );

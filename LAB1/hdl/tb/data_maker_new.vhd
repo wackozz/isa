@@ -37,7 +37,7 @@ begin -- beh
   a2 <= conv_std_logic_vector(50, 9);
 
   process (CLK, RST_n)
-    file fp_in : text open READ_MODE is "../matlab/samples.txt";
+    file fp_in : text open READ_MODE is "../../matlab/samples.txt";
     variable line_in : line;
     variable x : integer;
   begin -- process
@@ -49,7 +49,7 @@ begin -- beh
       if not endfile(fp_in) then
         readline(fp_in, line_in);
         read(line_in, x);
-        DOUT <= conv_std_logic_vector(x, 16) after tco;
+        DOUT <= conv_std_logic_vector(x, 9) after tco;
         VOUT <= '1' after tco;
         sEndSim <= '0' after tco;
       else
