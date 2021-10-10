@@ -15,6 +15,7 @@ x=(x1+x2)/2 %% input signal
 
 [bi, ai, bq, aq]=myiir_design(N, nb) %% filter design
 
+%IMPLEMENTATION GR18
 %%quantization of input in order to verify 
 xq=floor(x*2^(nb-1));
 idx=find(xq==2^(nb-1));
