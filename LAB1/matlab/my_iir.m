@@ -3,7 +3,7 @@ f1=500;  %% first sinewave freq (in band)
 f2=4500; %% second sinnewave freq (out band)
 
 N=2; %% filter order
-nb=8; %% number of bits
+nb=9; %% number of bits
 
 T=1/500; %% maximum period
 tt=0:1/fs:10*T; %% time samples
@@ -11,9 +11,15 @@ tt=0:1/fs:10*T; %% time samples
 x1=sin(2*pi*f1*tt); %% first sinewave
 x2=sin(2*pi*f2*tt); %% second sinewave
 
-x=(x1+x2)/2; %% input signal
+x=(x1+x2)/2 %% input signal
 
 [bi, ai, bq, aq]=myiir_design(N, nb) %% filter design
+
+%%quantization of input in order to verify 
+xq=floor(x*2^(nb-1));
+idx=find(xq==2^(nb-1));
+xq(idx)=2^(nb-1)-1;
+x=xq/2^(nb-1); %%back to real
 
 y=filter(bq, aq, x); %% apply filter
 
