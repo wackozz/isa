@@ -22,6 +22,7 @@ int myfilter(int x) {
   int y;                     /// output sample
   int fb, ff;                /// feed-back and feed-forward results
 
+  printf("[sample %d]:\n", x);
   /// clean the buffer
   if (first_run == 0) {
     first_run = 1;
@@ -32,15 +33,22 @@ int myfilter(int x) {
   fb = 0;
   ff = 0;
   for (i = 0; i < N; i++) {
+    printf("\t q[%d]*a[%d] =%d (%d)\n", i + 1, i + 1, (-sw[i] * a[i]),
+           (sw[i] * a[i]) >> (NB - 1));
+    printf("\t q[%d]*b[%d] =%d (%d)\n", i + 1, i + 1, (sw[i] * b[i]),
+           (sw[i] * b[i]) >> (NB - 1));
     fb -= (sw[i] * a[i]) >> (NB - 1);
     ff += (sw[i] * b[i]) >> (NB - 1);
   }
   /// compute intermediate value (w) and output sample
 
   w = x + fb;
+  printf("\t tmpa=%d \n", w);
+  printf("\t tmpa*b0=%d (%d) \n", w * b0,(w * b0) >> (NB - 1));
   y = (w * b0) >> (NB - 1);
   y += ff;
-  
+  printf("\t tmpb=%d \n", y);
+
   /// update the shift register
   for (i = N - 1; i > 0; i--) sw[i] = sw[i - 1];
   sw[0] = w;

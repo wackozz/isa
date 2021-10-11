@@ -1,1588 +1,374 @@
-# //  ModelSim SE 6.2g Feb 21 2007 Linux 3.10.0-957.5.1.el7.x86_64
-# //
-# //  Copyright 1991-2007 Mentor Graphics Corporation
-# //              All Rights Reserved.
-# //
-# //  THIS WORK CONTAINS TRADE SECRET AND 
-# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
-# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
-# //  AND IS SUBJECT TO LICENSE TERMS.
-# //
+# Loading project iir
+# reading /home/wackoz/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini
 # Loading project iir
 # Compile of iir_filter.vhd was successful.
 # Compile of clk_gen.vhd was successful.
 # Compile of data_maker_new.vhd was successful.
 # Compile of data_sink.vhd was successful.
 # Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors. 
-vsim work.tb_iir
-# vsim work.tb_iir 
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_iir(fast)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.standard
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_arith(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_unsigned(body)
+# 5 compiles, 0 failed with no errors.
+ls
+# fixed_point_converter
+# iir.mpf
+# keyboard_layout
+# script.m
+# tex
+# work
+do run.do wave
+# vsim -gui -onfinish stop -msgmode both work.tb_iir.v 
+# Start time: 22:23:29 on Oct 11,2021
+# ** Error (suppressible): (vsim-19) Failed to access library 'work.tb_iir' at "work.tb_iir".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 131
+# Load canceled
+vsim -gui -onfinish stop -msgmode both work.tb_iir
+# vsim -gui -onfinish stop -msgmode both work.tb_iir 
+# Start time: 22:23:29 on Oct 11,2021
+# Loading work.tb_iir
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
 # Loading work.clk_gen(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
+# Loading ieee.std_logic_textio(body)
 # Loading work.data_maker(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.numeric_std(body)
+# ** Warning: (vsim-7) Failed to open VHDL file "../../matlab/samples.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_iir/SM
+# Loading ieee.numeric_std(body)
 # Loading work.iir_filter(arch)
 # Loading work.data_sink(beh)
-add wave *
-run 1u
-# Invalid time value: 1u
-run 1us
-quit -sim
+# WARNING: No extended dataflow license exists
+
+continue
+# invoked "continue" outside of a loop
+run
+# Load canceled
+resume
+# End time: 22:25:40 on Oct 11,2021, Elapsed time: 0:02:11
+# Errors: 1, Warnings: 7
+# Error: Wave format file not found: "./wave.do"
+do run.do
 # Compile of iir_filter.vhd was successful.
 # Compile of clk_gen.vhd was successful.
 # Compile of data_maker_new.vhd was successful.
 # Compile of data_sink.vhd was successful.
 # Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors. 
-vsim work.tb_iir
-# vsim work.tb_iir 
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_iir(fast)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.standard
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_arith(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_unsigned(body)
+# 5 compiles, 0 failed with no errors.
+# vsim work.tb_iir(str) -t ns 
+# Start time: 22:28:32 on Oct 11,2021
+# ** Error: (vsim-3170) Could not find 'tb_iir(str)'.
+#         Searched libraries:
+#             /home/wackoz/Documenti/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 2
+resume
+# End time: 22:28:42 on Oct 11,2021, Elapsed time: 0:00:10
+# Errors: 1, Warnings: 2
+# ** Error: No Design Loaded!
+# Error in macro ./run.do line 4
+# No Design Loaded!
+#     while executing
+# "run 10 us"
+do run.do
+# Compile of iir_filter.vhd was successful.
+# Compile of clk_gen.vhd was successful.
+# Compile of data_maker_new.vhd was successful.
+# Compile of data_sink.vhd was successful.
+# Compile of tb_iir.v was successful.
+# 5 compiles, 0 failed with no errors.
+# vsim work.tb_iir -t ns 
+# Start time: 22:28:48 on Oct 11,2021
+# Loading work.tb_iir
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
 # Loading work.clk_gen(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
+# Loading ieee.std_logic_textio(body)
 # Loading work.data_maker(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.numeric_std(body)
+# ** Warning: (vsim-7) Failed to open VHDL file "../../matlab/samples.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Instance: /tb_iir/SM
+# Loading ieee.numeric_std(body)
 # Loading work.iir_filter(arch)
 # Loading work.data_sink(beh)
-add wave *
-run 1us
-add wave sim:/tb_iir/UUT/outputpro/*
-restart
-# Loading work.tb_iir(fast)
-run 1us
-add wave sim:/tb_iir/UUT/clock
-add wave sim:/tb_iir/UUT/rst_n
-add wave sim:/tb_iir/UUT/din
-add wave sim:/tb_iir/UUT/a1
-add wave sim:/tb_iir/UUT/a2
-add wave sim:/tb_iir/UUT/b0
-add wave sim:/tb_iir/UUT/b1
-add wave sim:/tb_iir/UUT/b2
-add wave sim:/tb_iir/UUT/vin
-add wave sim:/tb_iir/UUT/dout
-add wave sim:/tb_iir/UUT/vout
-add wave sim:/tb_iir/UUT/d_reg1
-add wave sim:/tb_iir/UUT/d_reg2
-add wave sim:/tb_iir/UUT/q_reg1
-add wave sim:/tb_iir/UUT/q_reg2
-restart
-# Loading work.tb_iir(fast)
-run 1 us
-quit -sim
+# WARNING: No extended dataflow license exists
+# ** Fatal: (vsim-7) Failed to open VHDL file "../../matlab/samples.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 15 ns  Iteration: 2  Process: /tb_iir/SM/line__39 File: /home/wackoz/github/ISA/LAB1/hdl/tb/data_maker_new.vhd
+# Fatal error in Process line__39 at /home/wackoz/github/ISA/LAB1/hdl/tb/data_maker_new.vhd line 49
+# 
+# HDL call sequence:
+# Stopped at /home/wackoz/github/ISA/LAB1/hdl/tb/data_maker_new.vhd 49 Process line__39
+# 
+do run.do
 # Compile of iir_filter.vhd was successful.
 # Compile of clk_gen.vhd was successful.
 # Compile of data_maker_new.vhd was successful.
 # Compile of data_sink.vhd was successful.
 # Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors. 
-vsim work.tb_iir
-# vsim work.tb_iir 
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_iir(fast)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.standard
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_arith(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_unsigned(body)
+# 5 compiles, 0 failed with no errors.
+# End time: 22:30:16 on Oct 11,2021, Elapsed time: 0:01:28
+# Errors: 1, Warnings: 4
+# vsim work.tb_iir -t ns 
+# Start time: 22:30:16 on Oct 11,2021
+# Loading work.tb_iir
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
 # Loading work.clk_gen(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
+# Loading ieee.std_logic_textio(body)
 # Loading work.data_maker(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.numeric_std(body)
+# ** Warning: (vsim-7) Failed to open VHDL file "samples.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Instance: /tb_iir/SM
+# Loading ieee.numeric_std(body)
 # Loading work.iir_filter(arch)
 # Loading work.data_sink(beh)
-add wave *
-run 1 us
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 45 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 45 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 55 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 55 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 65 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 65 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 75 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 75 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 85 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 85 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 95 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 95 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 105 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 105 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 115 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 115 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 125 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 125 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 135 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 135 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 145 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 145 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 155 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 155 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 165 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 165 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 175 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 175 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 185 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 185 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 195 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 195 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 205 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 205 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 215 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 215 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 225 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 225 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 235 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 235 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 245 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 245 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 255 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 255 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 265 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 265 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 275 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 275 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 285 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 285 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 295 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 295 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 305 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 305 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 315 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 315 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 325 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 325 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 335 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 335 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 345 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 345 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 355 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 355 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 365 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 365 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 375 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 375 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 385 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 385 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 395 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 395 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 405 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 405 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 415 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 415 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 425 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 425 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 435 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 435 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 445 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 445 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 455 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 455 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 465 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 465 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 475 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 475 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 485 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 485 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 495 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 495 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 505 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 505 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 515 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 515 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 525 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 525 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 535 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 535 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 545 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 545 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 555 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 555 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 565 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 565 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 575 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 575 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 585 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 585 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 595 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 595 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 605 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 605 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 615 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 615 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 625 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 625 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 635 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 635 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 645 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 645 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 655 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 655 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 665 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 665 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 675 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 675 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 685 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 685 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 695 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 695 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 705 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 705 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 715 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 715 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 725 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 725 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 735 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 735 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 745 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 745 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 755 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 755 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 765 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 765 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 775 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 775 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 785 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 785 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 795 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 795 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 805 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 805 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 815 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 815 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 825 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 825 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 835 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 835 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 845 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 845 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 855 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 855 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 865 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 865 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 875 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 875 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 885 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 885 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 895 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 895 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 905 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 905 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 915 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 915 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 925 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 925 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 935 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 935 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 945 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 945 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 955 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 955 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 965 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 965 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 975 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 975 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 985 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 985 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 995 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 995 ns  Iteration: 2  Instance: /tb_iir/DS
+# WARNING: No extended dataflow license exists
+# ** Fatal: (vsim-7) Failed to open VHDL file "samples.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 15 ns  Iteration: 2  Process: /tb_iir/SM/line__39 File: /home/wackoz/github/ISA/LAB1/hdl/tb/data_maker_new.vhd
+# Fatal error in Process line__39 at /home/wackoz/github/ISA/LAB1/hdl/tb/data_maker_new.vhd line 49
+# 
+# HDL call sequence:
+# Stopped at /home/wackoz/github/ISA/LAB1/hdl/tb/data_maker_new.vhd 49 Process line__39
+# 
+do run.do
 # Compile of iir_filter.vhd was successful.
 # Compile of clk_gen.vhd was successful.
 # Compile of data_maker_new.vhd was successful.
 # Compile of data_sink.vhd was successful.
 # Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_iir(fast)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.standard
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_arith(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_unsigned(body)
+# 5 compiles, 0 failed with no errors.
+# End time: 22:31:14 on Oct 11,2021, Elapsed time: 0:00:58
+# Errors: 1, Warnings: 3
+# vsim work.tb_iir -t ns 
+# Start time: 22:31:14 on Oct 11,2021
+# Loading work.tb_iir
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
 # Loading work.clk_gen(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
+# Loading ieee.std_logic_textio(body)
 # Loading work.data_maker(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.numeric_std(body)
+# Loading ieee.numeric_std(body)
 # Loading work.iir_filter(arch)
 # Loading work.data_sink(beh)
-run 1 us
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 45 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 45 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 55 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 55 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 65 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 65 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 75 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 75 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 85 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 85 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 95 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 95 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 105 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 105 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 115 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 115 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 125 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 125 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 135 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 135 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 145 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 145 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 155 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 155 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 165 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 165 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 175 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 175 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 185 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 185 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 195 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 195 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 205 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 205 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 215 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 215 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 225 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 225 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 235 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 235 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 245 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 245 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 255 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 255 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 265 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 265 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 275 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 275 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 285 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 285 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 295 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 295 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 305 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 305 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 315 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 315 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 325 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 325 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 335 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 335 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 345 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 345 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 355 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 355 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 365 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 365 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 375 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 375 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 385 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 385 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 395 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 395 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 405 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 405 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 415 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 415 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 425 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 425 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 435 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 435 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 445 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 445 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 455 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 455 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 465 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 465 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 475 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 475 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 485 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 485 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 495 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 495 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 505 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 505 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 515 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 515 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 525 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 525 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 535 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 535 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 545 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 545 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 555 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 555 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 565 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 565 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 575 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 575 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 585 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 585 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 595 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 595 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 605 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 605 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 615 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 615 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 625 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 625 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 635 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 635 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 645 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 645 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 655 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 655 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 665 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 665 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 675 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 675 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 685 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 685 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 695 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 695 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 705 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 705 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 715 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 715 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 725 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 725 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 735 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 735 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 745 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 745 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 755 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 755 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 765 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 765 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 775 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 775 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 785 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 785 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 795 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 795 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 805 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 805 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 815 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 815 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 825 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 825 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 835 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 835 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 845 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 845 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 855 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 855 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 865 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 865 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 875 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 875 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 885 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 885 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 895 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 895 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 905 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 905 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 915 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 915 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 925 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 925 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 935 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 935 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 945 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 945 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 955 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 955 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 965 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 965 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 975 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 975 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 985 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 985 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 995 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 995 ns  Iteration: 2  Instance: /tb_iir/DS
-add wave sim:/tb_iir/UUT/*
-restart
-# Loading work.tb_iir(fast)
-restart
-# Loading work.tb_iir(fast)
-run 1 us
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 45 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 45 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 55 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 55 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 65 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 65 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 75 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 75 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 85 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 85 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 95 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 95 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 105 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 105 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 115 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 115 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 125 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 125 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 135 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 135 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 145 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 145 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 155 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 155 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 165 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 165 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 175 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 175 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 185 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 185 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 195 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 195 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 205 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 205 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 215 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 215 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 225 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 225 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 235 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 235 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 245 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 245 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 255 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 255 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 265 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 265 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 275 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 275 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 285 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 285 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 295 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 295 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 305 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 305 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 315 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 315 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 325 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 325 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 335 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 335 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 345 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 345 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 355 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 355 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 365 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 365 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 375 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 375 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 385 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 385 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 395 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 395 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 405 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 405 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 415 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 415 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 425 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 425 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 435 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 435 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 445 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 445 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 455 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 455 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 465 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 465 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 475 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 475 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 485 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 485 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 495 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 495 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 505 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 505 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 515 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 515 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 525 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 525 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 535 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 535 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 545 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 545 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 555 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 555 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 565 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 565 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 575 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 575 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 585 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 585 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 595 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 595 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 605 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 605 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 615 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 615 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 625 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 625 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 635 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 635 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 645 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 645 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 655 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 655 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 665 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 665 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 675 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 675 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 685 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 685 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 695 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 695 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 705 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 705 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 715 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 715 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 725 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 725 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 735 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 735 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 745 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 745 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 755 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 755 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 765 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 765 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 775 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 775 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 785 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 785 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 795 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 795 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 805 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 805 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 815 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 815 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 825 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 825 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 835 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 835 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 845 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 845 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 855 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 855 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 865 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 865 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 875 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 875 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 885 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 885 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 895 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 895 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 905 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 905 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 915 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 915 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 925 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 925 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 935 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 935 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 945 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 945 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 955 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 955 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 965 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 965 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 975 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 975 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 985 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 985 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 995 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 995 ns  Iteration: 2  Instance: /tb_iir/DS
-restart
-# Loading work.tb_iir(fast)
+# WARNING: No extended dataflow license exists
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/wackoz/Documenti/wave.do
+do run.do
 # Compile of iir_filter.vhd was successful.
 # Compile of clk_gen.vhd was successful.
 # Compile of data_maker_new.vhd was successful.
 # Compile of data_sink.vhd was successful.
 # Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_iir(fast)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.standard
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_arith(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_unsigned(body)
+# 5 compiles, 0 failed with no errors.
+# End time: 22:48:30 on Oct 11,2021, Elapsed time: 0:17:16
+# Errors: 0, Warnings: 2
+# vsim work.tb_iir -t ns 
+# Start time: 22:48:30 on Oct 11,2021
+# Loading work.tb_iir
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
 # Loading work.clk_gen(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
+# Loading ieee.std_logic_textio(body)
 # Loading work.data_maker(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.numeric_std(body)
+# Loading ieee.numeric_std(body)
 # Loading work.iir_filter(arch)
 # Loading work.data_sink(beh)
-run 1 us
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 45 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 45 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 65 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 65 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 85 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 85 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 105 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 105 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 125 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 125 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 145 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 145 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 165 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 165 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 185 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 185 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 205 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 205 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 225 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 225 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 245 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 245 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 265 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 265 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 285 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 285 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 305 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 305 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 325 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 325 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 345 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 345 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 365 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 365 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 385 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 385 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 405 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 405 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 425 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 425 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 445 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 445 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 465 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 465 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 485 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 485 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 505 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 505 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 525 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 525 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 545 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 545 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 565 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 565 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 585 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 585 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 605 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 605 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 625 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 625 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 645 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 645 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 665 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 665 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 685 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 685 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 705 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 705 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 725 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 725 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 745 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 745 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 765 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 765 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 785 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 785 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 805 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 805 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 825 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 825 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 845 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 845 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 865 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 865 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 885 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 885 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 905 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 905 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 925 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 925 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 945 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 945 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 965 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 965 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 985 ns  Iteration: 2  Instance: /tb_iir/DS
-# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-#    Time: 985 ns  Iteration: 2  Instance: /tb_iir/DS
+# WARNING: No extended dataflow license exists
+do run.do
 # Compile of iir_filter.vhd was successful.
 # Compile of clk_gen.vhd was successful.
 # Compile of data_maker_new.vhd was successful.
 # Compile of data_sink.vhd was successful.
 # Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors. 
-# Compile of iir_filter.vhd was successful.
-# Compile of clk_gen.vhd was successful.
-# Compile of data_maker_new.vhd was successful.
-# Compile of data_sink.vhd was successful.
-# Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_iir(fast)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.standard
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_arith(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_unsigned(body)
+# 5 compiles, 0 failed with no errors.
+# End time: 22:48:46 on Oct 11,2021, Elapsed time: 0:00:16
+# Errors: 0, Warnings: 2
+# vsim work.tb_iir -t ns 
+# Start time: 22:48:46 on Oct 11,2021
+# Loading work.tb_iir
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
 # Loading work.clk_gen(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
+# Loading ieee.std_logic_textio(body)
 # Loading work.data_maker(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.numeric_std(body)
+# Loading ieee.numeric_std(body)
 # Loading work.iir_filter(arch)
 # Loading work.data_sink(beh)
-run 1 us
+# WARNING: No extended dataflow license exists
+do run.do
 # Compile of iir_filter.vhd was successful.
 # Compile of clk_gen.vhd was successful.
 # Compile of data_maker_new.vhd was successful.
 # Compile of data_sink.vhd was successful.
 # Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors. 
-# Compile of iir_filter.vhd was successful.
-# Compile of clk_gen.vhd was successful.
-# Compile of data_maker_new.vhd was successful.
-# Compile of data_sink.vhd was successful.
-# Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors. 
-add wave /tb_iir/UUT/outputpro/tmpa
-add wave /tb_iir/UUT/outputpro/tmpb
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_iir(fast)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.standard
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_arith(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_unsigned(body)
+# 5 compiles, 0 failed with no errors.
+# End time: 23:18:17 on Oct 11,2021, Elapsed time: 0:29:31
+# Errors: 0, Warnings: 2
+# vsim work.tb_iir -t ns 
+# Start time: 23:18:17 on Oct 11,2021
+# Loading work.tb_iir
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
 # Loading work.clk_gen(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
+# Loading ieee.std_logic_textio(body)
 # Loading work.data_maker(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.numeric_std(body)
+# Loading ieee.numeric_std(body)
 # Loading work.iir_filter(arch)
 # Loading work.data_sink(beh)
-# Warning in wave window restart: (vish-4014) No objects found matching '/tb_iir/UUT/d_reg1'. 
-# Warning in wave window restart: (vish-4014) No objects found matching '/tb_iir/UUT/d_reg2'. 
-run 1 us
+# WARNING: No extended dataflow license exists
+do run.do
 # Compile of iir_filter.vhd was successful.
 # Compile of clk_gen.vhd was successful.
 # Compile of data_maker_new.vhd was successful.
 # Compile of data_sink.vhd was successful.
 # Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.tb_iir(fast)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.standard
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_arith(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_unsigned(body)
+# 5 compiles, 0 failed with no errors.
+# End time: 23:18:44 on Oct 11,2021, Elapsed time: 0:00:27
+# Errors: 0, Warnings: 2
+# vsim work.tb_iir -t ns 
+# Start time: 23:18:44 on Oct 11,2021
+# Loading work.tb_iir
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
 # Loading work.clk_gen(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
+# Loading ieee.std_logic_textio(body)
 # Loading work.data_maker(beh)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.numeric_std(body)
+# Loading ieee.numeric_std(body)
 # Loading work.iir_filter(arch)
 # Loading work.data_sink(beh)
-run 1 us
+# WARNING: No extended dataflow license exists
+add wave \
+/tb_iir/UUT/outputpro/TMPq1_a1 \
+/tb_iir/UUT/outputpro/TMPq2_a2 \
+/tb_iir/UUT/outputpro/TMPtmpa_b0 \
+/tb_iir/UUT/outputpro/TMPq1_b1 \
+/tb_iir/UUT/outputpro/TMPq2_b2 \
+/tb_iir/UUT/outputpro/TMPa \
+/tb_iir/UUT/outputpro/TMPb 
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/wackoz/Documenti/wave.do
+do run.do
 # Compile of iir_filter.vhd was successful.
 # Compile of clk_gen.vhd was successful.
 # Compile of data_maker_new.vhd was successful.
 # Compile of data_sink.vhd was successful.
 # Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors. 
-restart
-# Loading work.tb_iir(fast)
-run 1us
+# 5 compiles, 0 failed with no errors.
+# End time: 23:20:32 on Oct 11,2021, Elapsed time: 0:01:48
+# Errors: 0, Warnings: 2
+# vsim work.tb_iir -t ns 
+# Start time: 23:20:32 on Oct 11,2021
+# Loading work.tb_iir
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.clk_gen(beh)
+# Loading ieee.std_logic_textio(body)
+# Loading work.data_maker(beh)
+# Loading ieee.numeric_std(body)
+# Loading work.iir_filter(arch)
+# Loading work.data_sink(beh)
+# WARNING: No extended dataflow license exists
+do run.do
+# Compile of iir_filter.vhd was successful.
+# Compile of clk_gen.vhd was successful.
+# Compile of data_maker_new.vhd was successful.
+# Compile of data_sink.vhd was successful.
+# Compile of tb_iir.v was successful.
+# 5 compiles, 0 failed with no errors.
+# End time: 23:50:52 on Oct 11,2021, Elapsed time: 0:30:20
+# Errors: 0, Warnings: 2
+# vsim work.tb_iir -t ns 
+# Start time: 23:50:52 on Oct 11,2021
+# Loading work.tb_iir
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.clk_gen(beh)
+# Loading ieee.std_logic_textio(body)
+# Loading work.data_maker(beh)
+# Loading ieee.numeric_std(body)
+# Loading work.iir_filter(arch)
+# Loading work.data_sink(beh)
+# WARNING: No extended dataflow license exists
+do run.do
+# Compile of iir_filter.vhd was successful.
+# Compile of clk_gen.vhd was successful.
+# Compile of data_maker_new.vhd was successful.
+# Compile of data_sink.vhd was successful.
+# Compile of tb_iir.v was successful.
+# 5 compiles, 0 failed with no errors.
+# End time: 23:59:17 on Oct 11,2021, Elapsed time: 0:08:25
+# Errors: 0, Warnings: 2
+# vsim work.tb_iir -t ns 
+# Start time: 23:59:17 on Oct 11,2021
+# Loading work.tb_iir
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.clk_gen(beh)
+# Loading ieee.std_logic_textio(body)
+# Loading work.data_maker(beh)
+# Loading ieee.numeric_std(body)
+# Loading work.iir_filter(arch)
+# Loading work.data_sink(beh)
+# WARNING: No extended dataflow license exists
+do run.do
+# Compile of iir_filter.vhd was successful.
+# Compile of clk_gen.vhd was successful.
+# Compile of data_maker_new.vhd was successful.
+# Compile of data_sink.vhd was successful.
+# Compile of tb_iir.v was successful.
+# 5 compiles, 0 failed with no errors.
+# End time: 00:00:11 on Oct 12,2021, Elapsed time: 0:00:54
+# Errors: 0, Warnings: 2
+# vsim work.tb_iir -t ns 
+# Start time: 00:00:11 on Oct 12,2021
+# Loading work.tb_iir
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.clk_gen(beh)
+# Loading ieee.std_logic_textio(body)
+# Loading work.data_maker(beh)
+# Loading ieee.numeric_std(body)
+# Loading work.iir_filter(arch)
+# Loading work.data_sink(beh)
+# WARNING: No extended dataflow license exists
+# End time: 00:01:05 on Oct 12,2021, Elapsed time: 0:00:54
+# Errors: 0, Warnings: 1

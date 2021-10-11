@@ -33,11 +33,11 @@ begin -- beh
   b0 <= conv_std_logic_vector(52, 9);
   b1 <= conv_std_logic_vector(105, 9);
   b2 <= conv_std_logic_vector(52, 9);
-  a1 <= conv_std_logic_vector(-95, 9);
-  a2 <= conv_std_logic_vector(50, 9);
+  a1 <= conv_std_logic_vector(95, 9);
+  a2 <= conv_std_logic_vector(-50, 9);
 
-  process (CLK, RST_n)
-    file fp_in : text open READ_MODE is "../../matlab/samples.txt";
+  process (CLK, RST_n) --modify path
+    file fp_in : text open READ_MODE is "samples.txt";
     variable line_in : line;
     variable x : integer;
   begin -- process
