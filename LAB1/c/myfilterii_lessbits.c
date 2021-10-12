@@ -4,7 +4,7 @@
 // Gr18 C model for IIR filter
 
 #define N 2   /// order of the filter
-#define NB 7  /// number of bits
+#define NB 5  /// number of bits
 
 const int b0 = 52;           /// coefficient b0
 const int b[N] = {105, 52};  /// b array
@@ -46,7 +46,7 @@ int myfilter(int x) {
   }
   /// compute intermediate value (w) and output sample
 
-  w = (x>>2) + fb;
+  w = (x>>(9-NB)) + fb;
   printf("\t tmpa=%d \n", w);
   printf("\t tmpa*b0=%d (%d) \n", w * b0,(w * b0) >> (NB - 1));
   y = (w * b0) >> (NB - 1);
