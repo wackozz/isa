@@ -8,7 +8,7 @@
 
 const int b0 = 52;           /// coefficient b0
 const int b[N] = {105, 52};  /// b array
-const int a[N] = {-95, 50};  /// a array
+const int a[N] = {95, -50};  /// a array
 
 /// Perform fixed point filtering assuming direct form II
 ///\param x is the new input sample
@@ -28,16 +28,20 @@ int myfilter(int x) {
     first_run = 1;
     for (i = 0; i < N; i++) sw[i] = 0;
   }
-
+  int tmp_fb = 0;
   /// compute feed-back and feed-forward
   fb = 0;
+  
   ff = 0;
   for (i = 0; i < N; i++) {
     printf("\t q[%d]*a[%d] =%d (%d)\n", i + 1, i + 1, (-sw[i] * a[i]),
            (sw[i] * a[i]) >> (NB - 1));
+
     printf("\t q[%d]*b[%d] =%d (%d)\n", i + 1, i + 1, (sw[i] * b[i]),
            (sw[i] * b[i]) >> (NB - 1));
-    fb -= (sw[i] * a[i]) >> (NB - 1);
+
+    fb += (sw[i] * a[i]) >>(NB-1);
+    tmp_fb = (sw[i] * a[i]);
     ff += (sw[i] * b[i]) >> (NB - 1);
   }
   /// compute intermediate value (w) and output sample
