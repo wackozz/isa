@@ -24,14 +24,12 @@ architecture arch of iir_filter is
 begin
 
   outputpro : process (clock, rst_n)
-    variable TMPq1_a1 : signed(17 downto 0) := (others => '0');
-    variable TMPq2_a2 : signed(17 downto 0) := (others => '0');
-    variable TMPtmpa_b0 : signed(17 downto 0) := (others => '0');
-    variable TMPq1_b1 : signed(17 downto 0) := (others => '0');
-    variable TMPq2_b2 : signed(17 downto 0) := (others => '0');
-    
-    variable TMPa : signed(8 downto 0) := (others => '0');
-    variable TMPb : signed(8 downto 0) := (others => '0');
+    variable TMPq1_a1 : signed(17 downto 0);
+    variable TMPq2_a2 : signed(17 downto 0);
+    variable TMPtmpa_b0 : signed(17 downto 0);
+    variable TMPq1_b1 : signed(17 downto 0);
+    variable TMPq2_b2 : signed(17 downto 0);
+    variable TMPa : signed(8 downto 0);
   begin
     if (rising_edge(clock)) then
       if (rst_n = '1') then
@@ -43,7 +41,7 @@ begin
           TMPa := din_s + (TMPq1_a1(16 downto 8) + TMPq2_a2(16 downto 8));
           q_reg1 <= TMPa;
           --TMPb := TMPa * b0_s + (q_reg1 * b1_s + q_reg2 * b2_s);
-          TMPtmpa_b0 := TMPa*b0_s; 
+          TMPtmpa_b0 := TMPa * b0_s;
           TMPq1_b1 := q_reg1 * b1_s;
           TMPq2_b2 := q_reg2 * b2_s;
           TMPb := TMPtmpa_b0(16 downto 8) + TMPq1_b1(16 downto 8) + TMPq2_b2(16 downto 8);
