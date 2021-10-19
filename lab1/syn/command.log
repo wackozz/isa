@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version O-2018.06-SP4 for linux64 -- Nov 27, 2018
-#@ # Date:   Tue Oct 19 14:02:55 2021
+#@ # Date:   Tue Oct 19 20:03:44 2021
 #@ # Run by: isa18_2021_2022@localhost.localdomain
 #@ 
 
@@ -6627,6 +6627,16 @@ source /software/synopsys/syn_current_64.18/admin/setup/.synopsys_dc.setup
 #@ # -- End source /software/synopsys/syn_current_64.18/auxx/syn/lc_commands.tbc
 
 #@ # -- End source /software/synopsys/syn_current_64.18/admin/setup/.synopsys_dc.setup
+
+source /home/isa18_2021_2022/github/isa/lab1/syn/.synopsys_dc.setup
+#@ # -- Starting source /home/isa18_2021_2022/github/isa/lab1/syn/.synopsys_dc.setup
+
+#@ define_design_lib WORK -path ./work
+#@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
+#@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
+#@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
+#@ set synthetic_library [list "dw_foundation.sldb" ]
+#@ # -- End source /home/isa18_2021_2022/github/isa/lab1/syn/.synopsys_dc.setup
 
 gui_start
 #@ # -- Starting source /software/synopsys/syn_current_64.18/auxx/tcllib/lib/itk4.0.1/itk.tcl
@@ -42989,82 +42999,46 @@ gui_start
 #@ 
 #@ # -- End source /software/synopsys/syn_current_64.18/auxx/tcllib/lib/iwidgets4.1/watch.itk
 
-analyze -f vhdl -lib WORK ../hdl/src/iir_filter.vhd
-set power_preserve_rtl_hier_names true
-elaborate IIR_FILTER -arch ARCH -lib WORK > ./elaborate.txt
+source .synopsys_dc.setup
+#@ # -- Starting source .synopsys_dc.setup
+
+#@ define_design_lib WORK -path ./work
+#@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
+#@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
+#@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
+#@ set synthetic_library [list "dw_foundation.sldb" ]
+#@ # -- End source .synopsys_dc.setup
+
+source run.do
+#@ # -- Starting source run.do
+
+#@ gui_start
+#@ 
+#@ analyze -f vhdl -lib WORK ../hdl/src/iir_filter.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+#@ set power_preserve_rtl_hier_names true
+#@ elaborate IIR_FILTER -arch ARCH -lib WORK > ./elaborate.txt
+#@ 
+#@ create_clock -name MY_CLK -period 10.0 clock
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ # -- End source run.do
+
 change_selection [get_s iir_filter]
 change_selection [get_s iir_filter]
-change_selection [get_s {rst_n {q_reg1[8]} {q_reg1[7]} {q_reg1[6]} {q_reg1[5]} {q_reg1[4]} {q_reg1[3]} {q_reg1[2]} {q_reg1[1]} {q_reg1[0]} {q_reg1[0]}}]
-change_selection -add [get_s {{q_reg1[8]} {q_reg1[7]} {q_reg1[6]} {q_reg1[5]} {q_reg1[4]} {q_reg1[3]} {q_reg1[2]} {q_reg1[1]} {q_reg1[0]} {q_reg1[1]}}]
-change_selection -add [get_s {{q_reg1[2]} {q_reg1[3]} {q_reg1[4]} {q_reg1[5]} {q_reg1[6]} {q_reg1[7]} {q_reg1[8]} {q_reg1[](size:9)}}]
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -hrel .2
-gui_scroll -window [gui_get_current_window -view] -hrel .2
-gui_scroll -window [gui_get_current_window -view] -hrel .2
-gui_scroll -window [gui_get_current_window -view] -hrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -hrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -hrel .2
-gui_scroll -window [gui_get_current_window -view] -hrel -.2
-gui_scroll -window [gui_get_current_window -view] -hrel -.2
-gui_scroll -window [gui_get_current_window -view] -hrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -hrel .2
-gui_scroll -window [gui_get_current_window -view] -hrel .2
-gui_scroll -window [gui_get_current_window -view] -hrel .2
-gui_scroll -window [gui_get_current_window -view] -hrel .2
-gui_scroll -window [gui_get_current_window -view] -hrel .2
-change_selection [get_s {{TMPa[0]}}]
-change_selection [get_s iir_filter]
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -hrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel -.2
-gui_scroll -window [gui_get_current_window -view] -hrel .2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-change_selection [get_s iir_filter]
-gui_scroll -window [gui_get_current_window -view] -hrel -.2
-gui_scroll -window [gui_get_current_window -view] -vrel .2
-gui_scroll -window [gui_get_current_window -view] -hrel -.2
-gui_scroll -window [gui_get_current_window -view] -hrel -.2
-gui_scroll -window [gui_get_current_window -view] -hrel -.2
-change_selection [get_s iir_filter]
-change_selection [get_s N16]
 gui_zoom -window [gui_get_current_window -view] -full
-create_clock -name MY_CLK -period 10.0 CLK
-set_dont_touch_network MY_CLK
-set_clock_uncertainty 0.07 [get_clock MY_CLK]
-set_input_delay
-set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] CLK]
-set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
-set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
-set_load $OLOAD [all_outputs]
+gui_zoom -window [gui_get_current_window -view] -full
+change_selection [get_s vout_reg]
+change_selection [get_s vout_reg]
+gui_zoom -window [gui_get_current_window -view] -factor 0.5
+gui_zoom -window [gui_get_current_window -view] -full
+gui_zoom -window [gui_get_current_window -view] -full
+gui_zoom -window [gui_get_current_window -view] -factor 2.0
+gui_zoom -window [gui_get_current_window -view] -factor 2.0
+gui_zoom -window [gui_get_current_window -view] -factor 2.0
+gui_zoom -window [gui_get_current_window -view] -factor 2.0
+change_selection [get_s iir_filter]

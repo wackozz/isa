@@ -262,7 +262,12 @@
 /software/synopsys/syn_current_64.18/auxx/gui/dv/dv_path_cat_view.tcl
 /software/synopsys/syn_current_64.18/auxx/gui/common/table/table.tcl
 /software/synopsys/syn_current_64.18/auxx/gui/common/table/table_internal.tcl
+/home/isa18_2021_2022/github/isa/lab1/syn/.synopsys_dc.setup
+/home/isa18_2021_2022/github/isa/lab1/syn/run.do
 /home/isa18_2021_2022/github/isa/lab1/hdl/src/iir_filter.vhd
+/software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db
+/software/synopsys/syn_current_64.18/libraries/syn/dw_foundation.sldb
+/home/isa18_2021_2022/github/isa/lab1/hdl/src/reg.vhd
 /software/synopsys/syn_current_64.18/libraries/syn/gtech.db
 /software/synopsys/syn_current_64.18/libraries/syn/standard.sldb
 /software/synopsys/syn_current_64.18/libraries/syn/generic.sdb
