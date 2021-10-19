@@ -5,62 +5,101 @@ use ieee.numeric_std.all;
 entity iir_filter is
   port (
 
-    clock : in std_logic;
-    rst_n : in std_logic;
-    din : in std_logic_vector(8 downto 0);
-    a1, a2 : in std_logic_vector(8 downto 0);
-    b0, b1, b2 : in std_logic_vector(8 downto 0);
-    vin : in std_logic;
-    dout : out std_logic_vector(8 downto 0);
-    vout : out std_logic
-  );
+    clock      : in  std_logic;
+    rst_n      : in  std_logic;
+    din        : in  std_logic_vector(8 downto 0);
+    a1, a2     : in  std_logic_vector(8 downto 0);
+    b0, b1, b2 : in  std_logic_vector(8 downto 0);
+    vin        : in  std_logic;
+    dout       : out std_logic_vector(8 downto 0);
+    vout       : out std_logic
+    );
 end iir_filter;
 
 architecture arch of iir_filter is
-  signal q_reg1, q_reg2 : signed(8 downto 0);
-  signal din_s, dout_s : signed(8 downto 0);
-  signal a1_s, a2_s, b0_s, b1_s, b2_s : signed(8 downto 0);
+  component reg is
+    generic (
+      N : integer);
+    port (
+      D                    : in  std_logic_vector(N - 1 downto 0);
+      clock, reset, enable : in  std_logic;
+      Q                    : out std_logic_vector(N - 1 downto 0));
+  end component reg;
+  signal tmp_a_slv, tmp_b_slv, q_reg1, q_reg2 : std_logic_vector(8 downto 0);
+  signal din_s                                : signed(8 downto 0);
+  signal a1_s, a2_s, b0_s, b1_s, b2_s         : signed(8 downto 0);
+  signal TMPq1_a1                             : signed(17 downto 0);
+  signal TMPq2_a2                             : signed(17 downto 0);
+  signal TMPtmpa_b0                           : signed(17 downto 0);
+  signal TMPq1_b1                             : signed(17 downto 0);
+  signal TMPq2_b2                             : signed(17 downto 0);
+  signal TMPa                                 : signed(8 downto 0);
+  signal TMPb                                 : signed(8 downto 0);
 
 begin
 
-  outputpro : process (clock, rst_n)
-    variable TMPq1_a1 : signed(17 downto 0);
-    variable TMPq2_a2 : signed(17 downto 0);
-    variable TMPtmpa_b0 : signed(17 downto 0);
-    variable TMPq1_b1 : signed(17 downto 0);
-    variable TMPq2_b2 : signed(17 downto 0);
-    variable TMPa : signed(8 downto 0);
-    variable TMPb : signed(8 downto 0);
-  begin
-    if (rising_edge(clock)) then
-      if (rst_n = '1') then
-        if vin = '1' then
-          q_reg2 <= q_reg1;
-          --TMPa := din_s + (q_reg1 * a1_s + q_reg2 * a2_s);
-          TMPq1_a1 := q_reg1 * a1_s;
-          TMPq2_a2 := q_reg2 * a2_s;
-          TMPa := din_s + (TMPq1_a1(16 downto 8) + TMPq2_a2(16 downto 8));
-          q_reg1 <= TMPa;
-          --TMPb := TMPa * b0_s + (q_reg1 * b1_s + q_reg2 * b2_s);
-          TMPtmpa_b0 := TMPa * b0_s;
-          TMPq1_b1 := q_reg1 * b1_s;
-          TMPq2_b2 := q_reg2 * b2_s;
-          TMPb := TMPtmpa_b0(16 downto 8) + TMPq1_b1(16 downto 8) + TMPq2_b2(16 downto 8);
-          dout_s <= TMPb;
-          vout <= '1';
-        end if;
-      else
-        q_reg1 <= (others => '0');
-        q_reg2 <= (others => '0');
-      end if;
-    end if;
-  end process; -- outputpro
-  a1_s <= signed(a1);
-  a2_s <= signed(a2);
-  b0_s <= signed(b0);
-  b1_s <= signed(b1);
-  b2_s <= signed(b2);
-  din_s <= signed(din);
-  dout <= std_logic_vector(dout_s);
 
+  TMPq1_a1 <= signed(q_reg1) * a1_s;
+  TMPq2_a2 <= signed(q_reg2) * a2_s;
+  TMPa     <= din_s + (TMPq1_a1(16 downto 8) + TMPq2_a2(16 downto 8));
+
+  TMPtmpa_b0 <= TMPa * b0_s;
+  TMPq1_b1   <= signed(q_reg1) * b1_s;
+  TMPq2_b2   <= signed(q_reg2) * b2_s;
+  TMPb       <= TMPtmpa_b0(16 downto 8) + TMPq1_b1(16 downto 8) + TMPq2_b2(16 downto 8);
+
+  -- instance "reg_1"
+  reg_1 : reg
+    generic map (
+      N => 9)
+    port map (
+      D      => tmp_a_slv,
+      clock  => clock,
+      reset  => rst_n,
+      enable => vin,
+      Q      => q_reg1);
+
+  -- instance "reg_2"
+  reg_2 : reg
+    generic map (
+      N => 9)
+    port map (
+      D      => q_reg1,
+      clock  => clock,
+      reset  => rst_n,
+      enable => vin,
+      Q      => q_reg2);
+
+  -- instance "reg_dout"
+  reg_dout : reg
+    generic map (
+      N => 9)
+    port map (
+      D      => tmp_b_slv,
+      clock  => clock,
+      reset  => rst_n,
+      enable => vin,
+      Q      => dout);
+
+  -- purpose: FF for vout
+  -- type   : sequential
+  -- inputs : clock, rst_n, vin
+  -- outputs: vout
+  ff_vout : process (clock, rst_n) is
+  begin  -- process vout
+    if rst_n = '0' then                     -- asynchronous reset (active low)
+      vout <= '0';
+    elsif clock'event and clock = '1' then  -- rising clock edge
+      vout <= vin;
+    end if;
+  end process ff_vout;
+
+  din_s      <= signed(din);
+  a1_s       <= signed(a1);
+  a2_s       <= signed(a2);
+  b0_s       <= signed(b0);
+  b1_s       <= signed(b1);
+  b2_s       <= signed(b2);
+  tmp_a_slv  <= std_logic_vector(tmpa);
+  tmp_b_slv  <= std_logic_vector(tmpb);
 end architecture;
