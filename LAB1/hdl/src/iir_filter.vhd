@@ -30,6 +30,7 @@ begin
     variable TMPq1_b1 : signed(17 downto 0);
     variable TMPq2_b2 : signed(17 downto 0);
     variable TMPa : signed(8 downto 0);
+    variable TMPb : signed(8 downto 0);
   begin
     if (rising_edge(clock)) then
       if (rst_n = '1') then
