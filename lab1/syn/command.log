@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version O-2018.06-SP4 for linux64 -- Nov 27, 2018
-#@ # Date:   Mon Oct 25 17:02:41 2021
+#@ # Date:   Tue Oct 26 13:41:04 2021
 #@ # Run by: isa18_2021_2022@localhost.localdomain
 #@ 
 
@@ -43002,8 +43002,6 @@ gui_start
 source run.do
 #@ # -- Starting source run.do
 
-#@ gui_start
-#@ 
 #@ source .synopsys_dc.setup
 #@ # -- Starting source .synopsys_dc.setup
 
@@ -43017,9 +43015,23 @@ source run.do
 #@ 
 #@ analyze -f vhdl -lib WORK ../hdl/src/iir_filter.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/ff.vhd
 #@ set power_preserve_rtl_hier_names true
 #@ elaborate IIR_FILTER -arch ARCH -lib WORK > ./elaborate.txt
+#@ uniquify
+#@ link
 #@ 
+#@ # -- End source run.do
+
+change_selection [get_s iir_filter]
+change_selection [get_s iir_filter]
+gui_zoom -window [gui_get_current_window -view] -full
+change_selection 
+gui_zoom -window [gui_get_current_window -view] -full
+change_selection [get_s iir_filter]
+source synthesis.do
+#@ # -- Starting source synthesis.do
+
 #@ create_clock -name MY_CLK -period 10.0 clock
 #@ set_dont_touch_network MY_CLK
 #@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
@@ -43039,9 +43051,231 @@ source run.do
 #@ write -f verilog -hierarchy -output ../netlist/iir_filter.v
 #@ write_sdc ../netlist/iir_filter.sdc
 #@ #quit
+#@ # -- End source synthesis.do
+
+source run.do
+#@ # -- Starting source run.do
+
+#@ source .synopsys_dc.setup
+#@ # -- Starting source .synopsys_dc.setup
+
+#@ define_design_lib WORK -path ./work
+#@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
+#@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
+#@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
+#@ set synthetic_library [list "dw_foundation.sldb" ]
+#@ # -- End source .synopsys_dc.setup
+
+#@ 
+#@ analyze -f vhdl -lib WORK ../hdl/src/iir_filter.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/ff.vhd
+#@ set power_preserve_rtl_hier_names true
+#@ elaborate IIR_FILTER -arch ARCH -lib WORK > ./elaborate.txt
+#@ uniquify
+#@ link
+#@ 
 #@ # -- End source run.do
 
 change_selection [get_s iir_filter]
 change_selection [get_s iir_filter]
-change_selection 
 gui_zoom -window [gui_get_current_window -view] -full
+change_selection [get_s ff_1]
+gui_zoom -window [gui_get_current_window -view] -full
+change_selection [get_s reg_2]
+change_selection [get_s reg_2/N0]
+gui_zoom -window [gui_get_current_window -view] -full
+change_selection [get_s reg_2]
+change_selection [get_s reg_2]
+source synthesis.do
+#@ # -- Starting source synthesis.do
+
+#@ create_clock -name MY_CLK -period 5 clock
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ 
+#@ compile
+#@ 
+#@ report_timing > report/report_timing.txt
+#@ report_area > report/report_area.txt
+#@ 
+#@ ungroup -all -flatten
+#@ change_names -hierarchy -rules verilog
+#@ write_sdf ../netlist/iir_filter.sdf
+#@ write -f verilog -hierarchy -output ../netlist/iir_filter.v
+#@ write_sdc ../netlist/iir_filter.sdc
+#@ #quit
+#@ # -- End source synthesis.do
+
+source synthesis.do
+#@ # -- Starting source synthesis.do
+
+#@ create_clock -name MY_CLK -period 4.2 clock
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ 
+#@ compile
+#@ 
+#@ report_timing > report/report_timing.txt
+#@ report_area > report/report_area.txt
+#@ 
+#@ ungroup -all -flatten
+#@ change_names -hierarchy -rules verilog
+#@ write_sdf ../netlist/iir_filter.sdf
+#@ write -f verilog -hierarchy -output ../netlist/iir_filter.v
+#@ write_sdc ../netlist/iir_filter.sdc
+#@ #quit
+#@ # -- End source synthesis.do
+
+source synthesis.do
+#@ # -- Starting source synthesis.do
+
+#@ create_clock -name MY_CLK -period 4.5 clock
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ 
+#@ compile
+#@ 
+#@ report_timing > report/report_timing.txt
+#@ report_area > report/report_area.txt
+#@ 
+#@ ungroup -all -flatten
+#@ change_names -hierarchy -rules verilog
+#@ write_sdf ../netlist/iir_filter.sdf
+#@ write -f verilog -hierarchy -output ../netlist/iir_filter.v
+#@ write_sdc ../netlist/iir_filter.sdc
+#@ #quit
+#@ # -- End source synthesis.do
+
+source synthesis.do
+#@ # -- Starting source synthesis.do
+
+#@ create_clock -name MY_CLK -period 4.2 clock
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ 
+#@ compile
+#@ 
+#@ report_timing > report/report_timing.txt
+#@ report_area > report/report_area.txt
+#@ 
+#@ ungroup -all -flatten
+#@ change_names -hierarchy -rules verilog
+#@ write_sdf ../netlist/iir_filter.sdf
+#@ write -f verilog -hierarchy -output ../netlist/iir_filter.v
+#@ write_sdc ../netlist/iir_filter.sdc
+#@ #quit
+#@ # -- End source synthesis.do
+
+source synthesis.do
+#@ # -- Starting source synthesis.do
+
+#@ create_clock -name MY_CLK -period 4.5 clock
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ 
+#@ compile
+#@ 
+#@ report_timing > report/report_timing.txt
+#@ report_area > report/report_area.txt
+#@ 
+#@ ungroup -all -flatten
+#@ change_names -hierarchy -rules verilog
+#@ write_sdf ../netlist/iir_filter.sdf
+#@ write -f verilog -hierarchy -output ../netlist/iir_filter.v
+#@ write_sdc ../netlist/iir_filter.sdc
+#@ #quit
+#@ # -- End source synthesis.do
+
+source synthesis.do
+#@ # -- Starting source synthesis.do
+
+#@ create_clock -name MY_CLK -period 4.2 clock
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ 
+#@ compile
+#@ 
+#@ report_timing > report/report_timing.txt
+#@ report_area > report/report_area.txt
+#@ 
+#@ ungroup -all -flatten
+#@ change_names -hierarchy -rules verilog
+#@ write_sdf ../netlist/iir_filter.sdf
+#@ write -f verilog -hierarchy -output ../netlist/iir_filter.v
+#@ write_sdc ../netlist/iir_filter.sdc
+#@ #quit
+#@ # -- End source synthesis.do
+
+source run.do
+#@ # -- Starting source run.do
+
+#@ source .synopsys_dc.setup
+#@ # -- Starting source .synopsys_dc.setup
+
+#@ define_design_lib WORK -path ./work
+#@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
+#@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
+#@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
+#@ set synthetic_library [list "dw_foundation.sldb" ]
+#@ # -- End source .synopsys_dc.setup
+
+#@ 
+#@ analyze -f vhdl -lib WORK ../hdl/src/iir_filter.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/ff.vhd
+#@ set power_preserve_rtl_hier_names true
+#@ elaborate IIR_FILTER -arch ARCH -lib WORK > ./elaborate.txt
+#@ uniquify
+#@ link
+#@ 
+#@ # -- End source run.do
+
+source synthesis.do
+#@ # -- Starting source synthesis.do
+
+#@ create_clock -name MY_CLK -period 4.2 clock
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ 
+#@ compile
+#@ 
+#@ report_timing > report/report_timing.txt
+#@ report_area > report/report_area.txt
+#@ 
+#@ ungroup -all -flatten
+#@ change_names -hierarchy -rules verilog
+#@ write_sdf ../netlist/iir_filter.sdf
+#@ write -f verilog -hierarchy -output ../netlist/iir_filter.v
+#@ write_sdc ../netlist/iir_filter.sdc
+#@ #quit
+#@ # -- End source synthesis.do
+
