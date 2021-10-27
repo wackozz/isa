@@ -1,0 +1,95 @@
+Information: Updating design information... (UID-85)
+Warning: There are infeasible paths detected in your design that were ignored during optimization. Please run 'report_timing -attributes' and/or 'create_qor_snapshot/query_qor_snapshot -infeasible_paths' to identify these paths.  (OPT-1721)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : iir_filter
+Version: O-2018.06-SP4
+Date   : Wed Oct 27 17:47:41 2021
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: a1[8] (input port clocked by MY_CLK)
+  Endpoint: reg_dout_Q_reg_8_
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  iir_filter         5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock MY_CLK (rise edge)                 0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.50       0.50 r
+  a1[8] (in)                               0.00       0.50 r
+  U9018/Z (XOR2_X1)                        0.08       0.58 r
+  U9261/ZN (NAND2_X1)                      0.04       0.62 f
+  U8560/ZN (XNOR2_X1)                      0.08       0.70 r
+  U9265/ZN (INV_X1)                        0.03       0.74 f
+  U9267/ZN (NAND3_X1)                      0.03       0.77 r
+  U9269/ZN (OAI211_X1)                     0.04       0.81 f
+  U8223/ZN (OR2_X2)                        0.07       0.88 f
+  U8222/Z (XOR2_X1)                        0.08       0.96 f
+  U8488/ZN (XNOR2_X1)                      0.06       1.01 f
+  U8487/ZN (XNOR2_X1)                      0.06       1.07 f
+  U9279/ZN (INV_X1)                        0.04       1.11 r
+  U9378/ZN (NAND2_X1)                      0.04       1.15 f
+  U9380/ZN (NAND2_X1)                      0.03       1.18 r
+  U8796/ZN (NOR3_X1)                       0.03       1.21 f
+  U8797/ZN (AOI21_X1)                      0.07       1.28 r
+  U8197/ZN (AND3_X2)                       0.07       1.36 r
+  U9384/Z (XOR2_X1)                        0.08       1.44 r
+  U9385/ZN (NAND2_X1)                      0.04       1.48 f
+  U9387/ZN (OAI211_X1)                     0.04       1.52 r
+  U8631/ZN (AND2_X1)                       0.05       1.57 r
+  U8190/Z (XOR2_X1)                        0.07       1.65 r
+  U9476/ZN (NAND2_X1)                      0.03       1.68 f
+  U9508/ZN (NAND2_X1)                      0.04       1.72 r
+  U9509/ZN (INV_X1)                        0.04       1.75 f
+  U8309/ZN (OAI21_X1)                      0.05       1.80 r
+  U8324/ZN (XNOR2_X1)                      0.07       1.86 r
+  U8468/ZN (XNOR2_X1)                      0.07       1.93 r
+  U10005/ZN (NAND2_X1)                     0.04       1.97 f
+  U10006/ZN (NAND3_X1)                     0.04       2.01 r
+  U10007/ZN (OAI21_X1)                     0.05       2.05 f
+  U10090/ZN (OAI22_X1)                     0.06       2.12 r
+  U8777/ZN (XNOR2_X1)                      0.07       2.18 r
+  U8776/ZN (XNOR2_X1)                      0.06       2.25 r
+  U8146/Z (BUF_X1)                         0.05       2.30 r
+  U10176/ZN (NAND2_X1)                     0.03       2.33 f
+  U8129/ZN (OAI21_X1)                      0.06       2.38 r
+  U10320/ZN (INV_X1)                       0.03       2.41 f
+  U8029/ZN (AND3_X1)                       0.04       2.46 f
+  U8028/ZN (NOR2_X1)                       0.03       2.49 r
+  U8261/ZN (NAND2_X1)                      0.03       2.52 f
+  U8056/ZN (AND2_X1)                       0.04       2.56 f
+  U8103/ZN (XNOR2_X1)                      0.05       2.61 f
+  U10494/ZN (NAND2_X1)                     0.04       2.65 r
+  U10549/ZN (NAND3_X1)                     0.04       2.69 f
+  U8573/ZN (NAND4_X1)                      0.04       2.73 r
+  U8768/ZN (NAND4_X1)                      0.04       2.77 f
+  reg_dout_Q_reg_8_/D (DFFR_X1)            0.01       2.78 f
+  data arrival time                                   2.78
+
+  clock MY_CLK (rise edge)                 0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                       -0.07      -0.07
+  reg_dout_Q_reg_8_/CK (DFFR_X1)           0.00      -0.07 r
+  library setup time                      -0.04      -0.11
+  data required time                                 -0.11
+  -----------------------------------------------------------
+  data required time                                 -0.11
+  data arrival time                                  -2.78
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -2.89
+
+
+1

@@ -1,0 +1,112 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : iir_filter
+Version: O-2018.06-SP4
+Date   : Wed Oct 27 18:18:44 2021
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: a1[2] (input port clocked by MY_CLK)
+  Endpoint: reg_dout/Q_reg[8]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  iir_filter         5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.50       0.50 r
+  a1[2] (in)                                              0.00       0.50 r
+  mult_48/b[2] (iir_filter_DW_mult_tc_1)                  0.00       0.50 r
+  mult_48/U354/ZN (XNOR2_X1)                              0.06       0.56 r
+  mult_48/U353/ZN (OAI22_X1)                              0.04       0.60 f
+  mult_48/U225/ZN (AND3_X1)                               0.04       0.64 f
+  mult_48/U223/Z (MUX2_X1)                                0.07       0.71 f
+  mult_48/U348/ZN (AOI222_X1)                             0.10       0.81 r
+  mult_48/U227/ZN (INV_X1)                                0.03       0.84 f
+  mult_48/U347/ZN (AOI222_X1)                             0.09       0.93 r
+  mult_48/U226/ZN (INV_X1)                                0.03       0.96 f
+  mult_48/U346/ZN (AOI222_X1)                             0.09       1.05 r
+  mult_48/U214/ZN (INV_X1)                                0.03       1.08 f
+  mult_48/U345/ZN (AOI222_X1)                             0.09       1.18 r
+  mult_48/U213/ZN (INV_X1)                                0.03       1.20 f
+  mult_48/U344/ZN (AOI222_X1)                             0.09       1.30 r
+  mult_48/U222/ZN (INV_X1)                                0.03       1.32 f
+  mult_48/U10/CO (FA_X1)                                  0.09       1.41 f
+  mult_48/U9/CO (FA_X1)                                   0.09       1.50 f
+  mult_48/U8/CO (FA_X1)                                   0.09       1.59 f
+  mult_48/U7/CO (FA_X1)                                   0.09       1.68 f
+  mult_48/U6/CO (FA_X1)                                   0.09       1.77 f
+  mult_48/U5/S (FA_X1)                                    0.14       1.91 r
+  mult_48/product[13] (iir_filter_DW_mult_tc_1)           0.00       1.91 r
+  add_1_root_add_0_root_add_50_2/B[5] (iir_filter_DW01_add_1)
+                                                          0.00       1.91 r
+  add_1_root_add_0_root_add_50_2/U1_5/S (FA_X1)           0.12       2.03 f
+  add_1_root_add_0_root_add_50_2/SUM[5] (iir_filter_DW01_add_1)
+                                                          0.00       2.03 f
+  add_0_root_add_0_root_add_50_2/B[5] (iir_filter_DW01_add_0)
+                                                          0.00       2.03 f
+  add_0_root_add_0_root_add_50_2/U1_5/S (FA_X1)           0.21       2.25 r
+  add_0_root_add_0_root_add_50_2/SUM[5] (iir_filter_DW01_add_0)
+                                                          0.00       2.25 r
+  mult_52/a[5] (iir_filter_DW_mult_tc_4)                  0.00       2.25 r
+  mult_52/U220/ZN (INV_X1)                                0.05       2.30 f
+  mult_52/U306/ZN (XNOR2_X1)                              0.06       2.35 r
+  mult_52/U305/ZN (NAND2_X1)                              0.07       2.42 f
+  mult_52/U289/ZN (OAI22_X1)                              0.08       2.50 r
+  mult_52/U48/S (HA_X1)                                   0.08       2.58 r
+  mult_52/U47/S (FA_X1)                                   0.12       2.70 f
+  mult_52/U341/ZN (AOI222_X1)                             0.11       2.81 r
+  mult_52/U217/ZN (INV_X1)                                0.03       2.84 f
+  mult_52/U340/ZN (AOI222_X1)                             0.09       2.93 r
+  mult_52/U216/ZN (INV_X1)                                0.03       2.96 f
+  mult_52/U339/ZN (AOI222_X1)                             0.09       3.05 r
+  mult_52/U228/ZN (INV_X1)                                0.03       3.08 f
+  mult_52/U10/CO (FA_X1)                                  0.09       3.17 f
+  mult_52/U9/CO (FA_X1)                                   0.09       3.26 f
+  mult_52/U8/CO (FA_X1)                                   0.09       3.35 f
+  mult_52/U7/CO (FA_X1)                                   0.09       3.44 f
+  mult_52/U6/CO (FA_X1)                                   0.09       3.53 f
+  mult_52/U5/CO (FA_X1)                                   0.09       3.62 f
+  mult_52/U4/CO (FA_X1)                                   0.09       3.71 f
+  mult_52/U3/CO (FA_X1)                                   0.09       3.80 f
+  mult_52/U240/Z (XOR2_X1)                                0.07       3.87 f
+  mult_52/U239/Z (XOR2_X1)                                0.08       3.95 f
+  mult_52/product[16] (iir_filter_DW_mult_tc_4)           0.00       3.95 f
+  add_0_root_add_0_root_add_55_2/B[8] (iir_filter_DW01_add_2)
+                                                          0.00       3.95 f
+  add_0_root_add_0_root_add_55_2/U1_8/S (FA_X1)           0.14       4.09 r
+  add_0_root_add_0_root_add_55_2/SUM[8] (iir_filter_DW01_add_2)
+                                                          0.00       4.09 r
+  reg_dout/D[8] (reg_N9_0)                                0.00       4.09 r
+  reg_dout/U19/ZN (NAND2_X1)                              0.03       4.12 f
+  reg_dout/U18/ZN (OAI21_X1)                              0.03       4.15 r
+  reg_dout/Q_reg[8]/D (DFFR_X1)                           0.01       4.16 r
+  data arrival time                                                  4.16
+
+  clock MY_CLK (rise edge)                               16.80      16.80
+  clock network delay (ideal)                             0.00      16.80
+  clock uncertainty                                      -0.07      16.73
+  reg_dout/Q_reg[8]/CK (DFFR_X1)                          0.00      16.73 r
+  library setup time                                     -0.04      16.69
+  data required time                                                16.69
+  --------------------------------------------------------------------------
+  data required time                                                16.69
+  data arrival time                                                 -4.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                       12.53
+
+
+1

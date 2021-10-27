@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : iir_filter
+Version: O-2018.06-SP4
+Date   : Wed Oct 27 18:18:45 2021
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /software/dk/nangate45/synopsys/NangateOpenCellLibrary_typical_ecsm_nowlm.db)
+
+Number of ports:                          431
+Number of nets:                          1619
+Number of cells:                         1033
+Number of combinational cells:            987
+Number of sequential cells:                28
+Number of macros/black boxes:               0
+Number of buf/inv:                        126
+Number of references:                      13
+
+Combinational area:               1819.706005
+Buf/Inv area:                       72.618000
+Noncombinational area:             148.960005
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  1968.666010
+Total area:                 undefined
+1
