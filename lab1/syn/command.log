@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version O-2018.06-SP4 for linux64 -- Nov 27, 2018
-#@ # Date:   Wed Oct 27 18:14:53 2021
+#@ # Date:   Wed Oct 27 20:23:43 2021
 #@ # Run by: isa18_2021_2022@localhost.localdomain
 #@ 
 
@@ -42999,54 +42999,21 @@ gui_start
 #@ 
 #@ # -- End source /software/synopsys/syn_current_64.18/auxx/tcllib/lib/iwidgets4.1/watch.itk
 
-source scripts/synth_iir.tcl
-#@ # -- Starting source scripts/synth_iir.tcl
+source scripts/powercons.tcl
+#@ # -- Starting source scripts/powercons.tcl
 
-#@ proc elab {} {
-#@ source .synopsys_dc.setup
-#@ #adding elemts
-#@ analyze -f vhdl -lib WORK ../hdl/src/iir_filter.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/ff.vhd
-#@ set power_preserve_rtl_hier_names true
-#@ elaborate IIR_FILTER -arch ARCH -lib WORK > ./elaborate.txt
-#@ #filter contains multiple instances of reg, need to uniquify
-#@ uniquify 
-#@ link
-#@ }
-#@ 
-#@ proc synth {clk_var} {
-#@ #set clock @argv1+-0.07ns
-#@ create_clock -name MY_CLK -period $clk_var clock
-#@ set_dont_touch_network MY_CLK
-#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
-#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
-#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
-#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
-#@ set_load $OLOAD [all_outputs]
-#@ 	 
-#@ compile
-#@ 
-#@ report_timing > reports/report_timing_${clk_var}_ns.txt
-#@ report_area > reports/report_area_clk_${clk_var}_ns.txt
-#@ 
-#@ ungroup -all -flatten
-#@ change_names -hierarchy -rules verilog
-#@ write_sdf ../netlist/iir_filter.sdf
-#@ write -f verilog -hierarchy -output ../netlist/iir_filter.v
-#@ write_sdc ../netlist/iir_filter.sdc
-#@ #quit
-#@ }
-#@ elab
-#@ # -- Starting source .synopsys_dc.setup
+#@ verilog -netlist ../netlist/iir_filter.v
+#@ read_saif -input ../saif/iir_filter_syn.saif -instance tb_iir/UUT -unit ns -scale 1
+#@ create_clock -name MY_CLK clock
+#@ report_power > reports/power_report.txt
+#@ # -- End source scripts/powercons.tcl
 
-#@ define_design_lib WORK -path ./work
-#@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
-#@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
-#@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
-#@ set synthetic_library [list "dw_foundation.sldb" ]
-#@ # -- End source .synopsys_dc.setup
+source scripts/powercons.tcl
+#@ # -- Starting source scripts/powercons.tcl
 
-#@ synth 4.2
-#@ # -- End source scripts/synth_iir.tcl
+#@ read_verilog -netlist ../netlist/iir_filter.v
+#@ read_saif -input ../saif/iir_filter_syn.saif -instance tb_iir/UUT -unit ns -scale 1
+#@ create_clock -name MY_CLK clock
+#@ report_power > reports/power_report.txt
+#@ # -- End source scripts/powercons.tcl
 

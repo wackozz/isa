@@ -1,5 +1,3 @@
-puts "str";
-
 proc test {a} {
     puts $a;
 }
