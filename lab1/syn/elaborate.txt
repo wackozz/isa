@@ -1,6 +1,9 @@
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/gtech.db'
+Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
 Running PRESTO HDLC
 Presto compilation completed successfully.
-Warning: Overwriting design file '/home/isa18_2021_2022/github/isa/lab1/syn/iir_filter.db'. (DDB-24)
 Elaborated 1 design.
 Current design is now 'iir_filter'.
 Information: Building the design 'reg' instantiated from design 'iir_filter' with
