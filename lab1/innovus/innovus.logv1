@@ -1,0 +1,136 @@
+[10/29 13:50:30      0s] 
+[10/29 13:50:30      0s] Cadence Innovus(TM) Implementation System.
+[10/29 13:50:30      0s] Copyright 2017 Cadence Design Systems, Inc. All rights reserved worldwide.
+[10/29 13:50:30      0s] 
+[10/29 13:50:30      0s] Version:	v17.11-s080_1, built Fri Aug 4 11:13:11 PDT 2017
+[10/29 13:50:30      0s] Options:	
+[10/29 13:50:30      0s] Date:		Fri Oct 29 13:50:30 2021
+[10/29 13:50:30      0s] Host:		localhost.localdomain (x86_64 w/Linux 3.10.0-957.5.1.el7.x86_64) (1core*2cpus*Westmere E56xx/L56xx/X56xx (Nehalem-C) 4096KB)
+[10/29 13:50:30      0s] OS:		CentOS Linux release 7.6.1810 (Core) 
+[10/29 13:50:30      0s] 
+[10/29 13:50:30      0s] License:
+[10/29 13:50:30      0s] 		invs	Innovus Implementation System	17.1	checkout succeeded
+[10/29 13:50:30      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[10/29 13:51:23     21s] @(#)CDS: Innovus v17.11-s080_1 (64bit) 08/04/2017 11:13 (Linux 2.6.18-194.el5)
+[10/29 13:51:23     21s] @(#)CDS: NanoRoute 17.11-s080_1 NR170721-2155/17_11-UB (database version 2.30, 390.7.1) {superthreading v1.44}
+[10/29 13:51:23     21s] @(#)CDS: AAE 17.11-s034 (64bit) 08/04/2017 (Linux 2.6.18-194.el5)
+[10/29 13:51:23     21s] @(#)CDS: CTE 17.11-s053_1 () Aug  1 2017 23:31:41 ( )
+[10/29 13:51:23     21s] @(#)CDS: SYNTECH 17.11-s012_1 () Jul 21 2017 02:29:12 ( )
+[10/29 13:51:23     21s] @(#)CDS: CPE v17.11-s095
+[10/29 13:51:23     21s] @(#)CDS: IQRC/TQRC 16.1.1-s215 (64bit) Thu Jul  6 20:18:10 PDT 2017 (Linux 2.6.18-194.el5)
+[10/29 13:51:23     21s] @(#)CDS: OA 22.50-p063 Fri Feb  3 19:45:13 2017
+[10/29 13:51:23     21s] @(#)CDS: SGN 10.10-p124 (19-Aug-2014) (64 bit executable)
+[10/29 13:51:23     21s] @(#)CDS: RCDB 11.10
+[10/29 13:51:23     21s] --- Running on localhost.localdomain (x86_64 w/Linux 3.10.0-957.5.1.el7.x86_64) (1core*2cpus*Westmere E56xx/L56xx/X56xx (Nehalem-C) 4096KB) ---
+[10/29 13:51:23     21s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_19307_localhost.localdomain_isa18_2021_2022_LsQc38.
+
+[10/29 13:51:23     21s] Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[10/29 13:51:27     22s] 
+[10/29 13:51:27     22s] **INFO:  MMMC transition support version v31-84 
+[10/29 13:51:27     22s] 
+[10/29 13:51:27     22s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[10/29 13:51:27     22s] <CMD> suppressMessage ENCEXT-2799
+[10/29 13:51:28     22s] <CMD> getDrawView
+[10/29 13:51:28     22s] <CMD> loadWorkspace -name Physical
+[10/29 13:51:29     22s] <CMD> win
+[10/29 22:25:28   1280s] <CMD> setPreference percentageOfPan 70
+[10/29 22:26:07   1282s] <CMD> setPreference percentageOfPan 30
+[10/29 22:38:34   1314s] <CMD> get_visible_nets
+[10/29 22:41:40   1324s] <CMD> setPreference TextDisplaySize s
+[10/29 22:41:46   1325s] <CMD> setPreference TextDisplaySize m
+[10/29 22:41:51   1325s] <CMD> setPreference TermCrossPix 0
+[10/29 22:41:51   1325s] <CMD> setPreference TextDisplaySize s
+[10/29 22:43:29   1330s] <CMD> set init_design_netlisttype verilog
+[10/29 22:43:29   1330s] <CMD> set init_design_settop 1
+[10/29 22:43:29   1330s] <CMD> set init_top_cell iir_filter
+[10/29 22:43:29   1330s] <CMD> set init_verilog ../netlist/iir_filter.v
+[10/29 22:43:29   1330s] <CMD> set init_lef_file /software/dk/nangate45/lef/NangateOpenCellLibrary.lef
+[10/29 22:43:29   1330s] <CMD> set init_gnd_net VSS
+[10/29 22:43:29   1330s] <CMD> set init_pwr_net VDD
+[10/29 22:43:33   1330s] <CMD> init_design
+[10/29 22:43:33   1330s] 
+[10/29 22:43:33   1330s] Loading LEF file /software/dk/nangate45/lef/NangateOpenCellLibrary.lef ...
+[10/29 22:43:33   1330s] Set DBUPerIGU to M2 pitch 380.
+[10/29 22:43:33   1330s] 
+[10/29 22:43:33   1330s] viaInitial starts at Fri Oct 29 22:43:33 2021
+viaInitial ends at Fri Oct 29 22:43:33 2021
+*** End library_loading (cpu=0.00min, real=0.00min, mem=0.0M, fe_cpu=22.17min, fe_real=533.05min, fe_mem=516.0M) ***
+[10/29 22:43:33   1330s] #% Begin Load netlist data ... (date=10/29 22:43:33, mem=430.3M)
+[10/29 22:43:33   1330s] *** Begin netlist parsing (mem=516.0M) ***
+[10/29 22:43:33   1330s] Created 0 new cells from 0 timing libraries.
+[10/29 22:43:33   1330s] Reading netlist ...
+[10/29 22:43:33   1330s] Backslashed names will retain backslash and a trailing blank character.
+[10/29 22:43:33   1330s] Reading verilog netlist '../netlist/iir_filter.v'
+[10/29 22:43:33   1330s] 
+[10/29 22:43:33   1330s] *** Memory Usage v#1 (Current mem = 517.965M, initial mem = 179.684M) ***
+[10/29 22:43:33   1330s] *** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=518.0M) ***
+[10/29 22:43:34   1330s] #% End Load netlist data ... (date=10/29 22:43:33, total cpu=0:00:00.0, real=0:00:01.0, peak res=432.1M, current mem=432.1M)
+[10/29 22:43:34   1330s] Set top cell to iir_filter.
+[10/29 22:43:35   1330s] Hooked 0 DB cells to tlib cells.
+[10/29 22:43:35   1330s] Starting recursive module instantiation check.
+[10/29 22:43:35   1330s] No recursion found.
+[10/29 22:43:35   1330s] Building hierarchical netlist for Cell iir_filter ...
+[10/29 22:43:35   1330s] *** Netlist is unique.
+[10/29 22:43:35   1330s] ** info: there are 135 modules.
+[10/29 22:43:35   1330s] ** info: there are 1015 stdCell insts.
+[10/29 22:43:35   1330s] 
+[10/29 22:43:35   1330s] *** Memory Usage v#1 (Current mem = 527.629M, initial mem = 179.684M) ***
+[10/29 22:43:35   1330s] Generated pitch 1.68 in metal10 is different from 1.6 defined in technology file in preferred direction.
+[10/29 22:43:35   1330s] Generated pitch 0.84 in metal8 is different from 0.8 defined in technology file in preferred direction.
+[10/29 22:43:35   1330s] Generated pitch 0.84 in metal7 is different from 0.8 defined in technology file in preferred direction.
+[10/29 22:43:35   1330s] Set Default Net Delay as 1000 ps.
+[10/29 22:43:35   1330s] Set Default Net Load as 0.5 pF. 
+[10/29 22:43:35   1330s] Set Default Input Pin Transition as 0.1 ps.
+[10/29 22:43:35   1331s] **WARN: (IMPSYT-7328):	The design has been initialized in physical-only mode because the init_mmmc_file global variable was not defined. Timing analysis will not be possible within this session. You can only use commands that do not depend on timing data. If you need to use timing, you need to restart with an init_mmmc_file to define the timing setup, or you can save this design and use restoreDesign -mmmc_file <viewDef.tcl> to add the timing setup information.
+[10/29 22:43:35   1331s] Patterns Extraction called explicitly through PreRoutePatternsIfNeeded call 
+[10/29 22:43:35   1331s] Extraction setup Started 
+[10/29 22:43:35   1331s] 
+[10/29 22:43:35   1331s] *** Summary of all messages that are not suppressed in this session:
+[10/29 22:43:35   1331s] Severity  ID               Count  Summary                                  
+[10/29 22:43:35   1331s] WARNING   IMPSYT-7328          1  The design has been initialized in physi...
+[10/29 22:43:35   1331s] *** Message Summary: 1 warning(s), 0 error(s)
+[10/29 22:43:35   1331s] 
+[10/29 22:44:05   1332s] <CMD> getIoFlowFlag
+[10/29 22:45:40   1337s] <CMD> setIoFlowFlag 0
+[10/29 22:45:40   1337s] <CMD> floorPlan -coreMarginsBy die -site FreePDK45_38x28_10R_NP_162NW_34O -r 1.0 0.6 5 5 5 5
+[10/29 22:45:40   1337s] Generated pitch 1.68 in metal10 is different from 1.6 defined in technology file in preferred direction.
+[10/29 22:45:40   1337s] Generated pitch 0.84 in metal8 is different from 0.8 defined in technology file in preferred direction.
+[10/29 22:45:40   1337s] Generated pitch 0.84 in metal7 is different from 0.8 defined in technology file in preferred direction.
+[10/29 22:45:40   1337s] **WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+[10/29 22:45:40   1337s] <CMD> uiSetTool select
+[10/29 22:45:40   1337s] <CMD> getIoFlowFlag
+[10/29 22:45:40   1337s] <CMD> fit
+[10/29 22:45:56   1338s] <CMD> setIoFlowFlag 0
+[10/29 22:45:56   1338s] <CMD> floorPlan -site FreePDK45_38x28_10R_NP_162NW_34O -r 1 0.6 5 5 5 5
+[10/29 22:45:56   1338s] Generated pitch 1.68 in metal10 is different from 1.6 defined in technology file in preferred direction.
+[10/29 22:45:56   1338s] Generated pitch 0.84 in metal8 is different from 0.8 defined in technology file in preferred direction.
+[10/29 22:45:56   1338s] Generated pitch 0.84 in metal7 is different from 0.8 defined in technology file in preferred direction.
+[10/29 22:45:56   1338s] <CMD> uiSetTool select
+[10/29 22:45:56   1338s] <CMD> getIoFlowFlag
+[10/29 22:45:56   1338s] <CMD> fit
+[10/29 22:46:01   1338s] <CMD> setIoFlowFlag 0
+[10/29 22:46:01   1338s] <CMD> floorPlan -site FreePDK45_38x28_10R_NP_162NW_34O -r 0.953840912962 0.598786 5.13 5.04 5.13 5.04
+[10/29 22:46:01   1338s] Generated pitch 1.68 in metal10 is different from 1.6 defined in technology file in preferred direction.
+[10/29 22:46:01   1338s] Generated pitch 0.84 in metal8 is different from 0.8 defined in technology file in preferred direction.
+[10/29 22:46:01   1338s] Generated pitch 0.84 in metal7 is different from 0.8 defined in technology file in preferred direction.
+[10/29 22:46:01   1338s] <CMD> uiSetTool select
+[10/29 22:46:01   1338s] <CMD> getIoFlowFlag
+[10/29 22:46:01   1338s] <CMD> fit
+[10/29 22:46:11   1339s] <CMD> set sprCreateIeRingOffset 1.0
+[10/29 22:46:11   1339s] <CMD> set sprCreateIeRingThreshold 1.0
+[10/29 22:46:11   1339s] <CMD> set sprCreateIeRingJogDistance 1.0
+[10/29 22:46:11   1339s] <CMD> set sprCreateIeRingLayers {}
+[10/29 22:46:11   1339s] <CMD> set sprCreateIeRingOffset 1.0
+[10/29 22:46:11   1339s] <CMD> set sprCreateIeRingThreshold 1.0
+[10/29 22:46:11   1339s] <CMD> set sprCreateIeRingJogDistance 1.0
+[10/29 22:46:11   1339s] <CMD> set sprCreateIeRingLayers {}
+[10/29 22:46:12   1339s] <CMD> set sprCreateIeStripeWidth 10.0
+[10/29 22:46:12   1339s] <CMD> set sprCreateIeStripeThreshold 1.0
+[10/29 22:46:12   1339s] <CMD> set sprCreateIeStripeWidth 10.0
+[10/29 22:46:12   1339s] <CMD> set sprCreateIeStripeThreshold 1.0
+[10/29 22:46:12   1339s] <CMD> set sprCreateIeRingOffset 1.0
+[10/29 22:46:12   1339s] <CMD> set sprCreateIeRingThreshold 1.0
+[10/29 22:46:12   1339s] <CMD> set sprCreateIeRingJogDistance 1.0
+[10/29 22:46:12   1339s] <CMD> set sprCreateIeRingLayers {}
+[10/29 22:46:12   1339s] <CMD> set sprCreateIeStripeWidth 10.0
+[10/29 22:46:12   1339s] <CMD> set sprCreateIeStripeThreshold 1.0

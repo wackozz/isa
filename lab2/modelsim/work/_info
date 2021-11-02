@@ -1,0 +1,341 @@
+m255
+13
+cModel Technology
+d/home/isa18_2021_2022/github/isa/lab1/modelsim
+T_opt
+Vg<C=gQ_HBY1ZCBjN1nJR23
+06 8 4 ./work fpmul_tb arch 1
+o-quiet -auto_acc_if_foreign -work work
+tExplicit 1
+OE;O;6.2g;35
+Efpmul
+w1254929557
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/isa18_2021_2022/github/isa/lab2/modelsim
+8/home/isa18_2021_2022/github/isa/lab2/hdl/fpmul_single_cycle.vhd
+F/home/isa18_2021_2022/github/isa/lab2/hdl/fpmul_single_cycle.vhd
+l0
+L16
+VmP4=H6lfM4>]MVcPRa?D03
+OE;C;6.2g;35
+32
+o-work work -2002 -explicit
+tExplicit 1
+Asingle_cycle
+DE work unpackfp H>gCS@]RQYHoQC;lTzlek1
+DE work packfp WQ9<D@iM0UG077d^oMXB71
+DE work fpround NMRnSNO`X:K0TdhdcBf2c0
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DE work fpnormalize CB^PX0J4Ek5n=X6eYWLJf1
+DE work fpmul mP4=H6lfM4>]MVcPRa?D03
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+l142
+L45
+VEYS:?;GmomZB1?MbN`7h40
+OE;C;6.2g;35
+32
+M3 ieee std_logic_1164
+M2 ieee std_logic_arith
+M1 ieee std_logic_unsigned
+o-work work -2002 -explicit
+tExplicit 1
+Apipeline
+DE work fpmul_stage4 4Y?7e0UXoYQ^`GfY[5<d61
+DE work fpmul_stage3 n;`:2aHG3ALagddlU@I293
+DE work fpmul_stage2 :`F:FJI`c_QjDenA]MBeI0
+DE work fpmul_stage1 8bQ;hL_]Hjjk?^8^^UcQ33
+DE work fpmul mP4=H6lfM4>]MVcPRa?D03
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+l158
+L45
+V8F6gK`^5cn@mUgeS4<KO:3
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 ieee std_logic_arith
+o-work work -2002 -explicit
+tExplicit 1
+F/home/isa18_2021_2022/github/isa/lab2/hdl/fpmul_pipeline.vhd
+8/home/isa18_2021_2022/github/isa/lab2/hdl/fpmul_pipeline.vhd
+Efpmul_stage1
+w1254929557
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/isa18_2021_2022/github/isa/lab2/modelsim
+8/home/isa18_2021_2022/github/isa/lab2/hdl/fpmul_stage1_struct.vhd
+F/home/isa18_2021_2022/github/isa/lab2/hdl/fpmul_stage1_struct.vhd
+l0
+L16
+V8bQ;hL_]Hjjk?^8^^UcQ33
+OE;C;6.2g;35
+32
+o-work work -2002 -explicit
+tExplicit 1
+Astruct
+DE work unpackfp H>gCS@]RQYHoQC;lTzlek1
+DE work fpmul_stage1 8bQ;hL_]Hjjk?^8^^UcQ33
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+l99
+L53
+V<<mAV>Ng6KM0lh_OJRjPz3
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 ieee std_logic_arith
+o-work work -2002 -explicit
+tExplicit 1
+Efpmul_stage2
+w1254929557
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/isa18_2021_2022/github/isa/lab2/modelsim
+8/home/isa18_2021_2022/github/isa/lab2/hdl/fpmul_stage2_struct.vhd
+F/home/isa18_2021_2022/github/isa/lab2/hdl/fpmul_stage2_struct.vhd
+l0
+L16
+V:`F:FJI`c_QjDenA]MBeI0
+OE;C;6.2g;35
+32
+o-work work -2002 -explicit
+tExplicit 1
+Astruct
+DE work fpmul_stage2 :`F:FJI`c_QjDenA]MBeI0
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+l74
+L59
+V^`D;^bbPka>g`z<gT:a:12
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 ieee std_logic_arith
+o-work work -2002 -explicit
+tExplicit 1
+Efpmul_stage3
+w1254929557
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/isa18_2021_2022/github/isa/lab2/modelsim
+8/home/isa18_2021_2022/github/isa/lab2/hdl/fpmul_stage3_struct.vhd
+F/home/isa18_2021_2022/github/isa/lab2/hdl/fpmul_stage3_struct.vhd
+l0
+L16
+Vn;`:2aHG3ALagddlU@I293
+OE;C;6.2g;35
+32
+o-work work -2002 -explicit
+tExplicit 1
+Astruct
+DE work fpround NMRnSNO`X:K0TdhdcBf2c0
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DE work fpnormalize CB^PX0J4Ek5n=X6eYWLJf1
+DE work fpmul_stage3 n;`:2aHG3ALagddlU@I293
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+l100
+L58
+VCV:>Bl7zVZ207ZRS;N37I3
+OE;C;6.2g;35
+32
+M3 ieee std_logic_1164
+M2 ieee std_logic_arith
+M1 ieee std_logic_unsigned
+o-work work -2002 -explicit
+tExplicit 1
+Efpmul_stage4
+w1254929557
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/isa18_2021_2022/github/isa/lab2/modelsim
+8/home/isa18_2021_2022/github/isa/lab2/hdl/fpmul_stage4_struct.vhd
+F/home/isa18_2021_2022/github/isa/lab2/hdl/fpmul_stage4_struct.vhd
+l0
+L16
+V4Y?7e0UXoYQ^`GfY[5<d61
+OE;C;6.2g;35
+32
+o-work work -2002 -explicit
+tExplicit 1
+Astruct
+DE work packfp WQ9<D@iM0UG077d^oMXB71
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DE work fpnormalize CB^PX0J4Ek5n=X6eYWLJf1
+DE work fpmul_stage4 4Y?7e0UXoYQ^`GfY[5<d61
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+l96
+L51
+V@0k3K<D_=FL;OZB2LfWO[1
+OE;C;6.2g;35
+32
+M3 ieee std_logic_1164
+M2 ieee std_logic_arith
+M1 ieee std_logic_unsigned
+o-work work -2002 -explicit
+tExplicit 1
+Efpmul_tb
+w1635850683
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/isa18_2021_2022/github/isa/lab2/modelsim
+8/home/isa18_2021_2022/github/isa/lab2/tb/FPmul_tb.vhd
+F/home/isa18_2021_2022/github/isa/lab2/tb/FPmul_tb.vhd
+l0
+L27
+V[8EQK8I?5mlbUXo=lKT;S0
+OE;C;6.2g;35
+32
+o-work work -2002 -explicit
+tExplicit 1
+Aarch
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DE work fpmul mP4=H6lfM4>]MVcPRa?D03
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work fpmul_tb [8EQK8I?5mlbUXo=lKT;S0
+l40
+L32
+VgXXh<47]SE1JT;7:GzJa91
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 ieee std_logic_arith
+o-work work -2002 -explicit
+tExplicit 1
+Cfpmul_tb_arch_cfg
+aarch
+efpmul_tb
+DE work fpmul mP4=H6lfM4>]MVcPRa?D03
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DA work fpmul_tb arch gXXh<47]SE1JT;7:GzJa91
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work fpmul_tb [8EQK8I?5mlbUXo=lKT;S0
+w1635850683
+d/home/isa18_2021_2022/github/isa/lab2/modelsim
+8/home/isa18_2021_2022/github/isa/lab2/tb/FPmul_tb.vhd
+F/home/isa18_2021_2022/github/isa/lab2/tb/FPmul_tb.vhd
+l0
+L71
+Vi[4DCZeW:e92maz60GOG61
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 ieee std_logic_arith
+o-work work -2002 -explicit
+tExplicit 1
+Efpnormalize
+w1254929557
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/isa18_2021_2022/github/isa/lab2/modelsim
+8/home/isa18_2021_2022/github/isa/lab2/hdl/fpnormalize_fpnormalize.vhd
+F/home/isa18_2021_2022/github/isa/lab2/hdl/fpnormalize_fpnormalize.vhd
+l0
+L17
+VCB^PX0J4Ek5n=X6eYWLJf1
+OE;C;6.2g;35
+32
+o-work work -2002 -explicit
+tExplicit 1
+Afpnormalize
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work fpnormalize CB^PX0J4Ek5n=X6eYWLJf1
+l35
+L34
+V?2g4XN^_LZX>[fgVFTg]=1
+OE;C;6.2g;35
+32
+M3 ieee std_logic_1164
+M2 ieee std_logic_arith
+M1 ieee std_logic_unsigned
+o-work work -2002 -explicit
+tExplicit 1
+Efpround
+w1254929557
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/isa18_2021_2022/github/isa/lab2/modelsim
+8/home/isa18_2021_2022/github/isa/lab2/hdl/fpround_fpround.vhd
+F/home/isa18_2021_2022/github/isa/lab2/hdl/fpround_fpround.vhd
+l0
+L17
+VNMRnSNO`X:K0TdhdcBf2c0
+OE;C;6.2g;35
+32
+o-work work -2002 -explicit
+tExplicit 1
+Afpround
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work fpround NMRnSNO`X:K0TdhdcBf2c0
+l35
+L34
+VPSbM`k<Z1E0g;TcEciljb3
+OE;C;6.2g;35
+32
+M3 ieee std_logic_1164
+M2 ieee std_logic_arith
+M1 ieee std_logic_unsigned
+o-work work -2002 -explicit
+tExplicit 1
+Epackfp
+w1254929557
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/isa18_2021_2022/github/isa/lab2/modelsim
+8/home/isa18_2021_2022/github/isa/lab2/hdl/packfp_packfp.vhd
+F/home/isa18_2021_2022/github/isa/lab2/hdl/packfp_packfp.vhd
+l0
+L16
+VWQ9<D@iM0UG077d^oMXB71
+OE;C;6.2g;35
+32
+o-work work -2002 -explicit
+tExplicit 1
+Apackfp
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work packfp WQ9<D@iM0UG077d^oMXB71
+l34
+L33
+VA6g]32Se0M=NL595BdAOW2
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 ieee std_logic_arith
+o-work work -2002 -explicit
+tExplicit 1
+Eunpackfp
+w1254929557
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/isa18_2021_2022/github/isa/lab2/modelsim
+8/home/isa18_2021_2022/github/isa/lab2/hdl/unpackfp_unpackfp.vhd
+F/home/isa18_2021_2022/github/isa/lab2/hdl/unpackfp_unpackfp.vhd
+l0
+L15
+VH>gCS@]RQYHoQC;lTzlek1
+OE;C;6.2g;35
+32
+o-work work -2002 -explicit
+tExplicit 1
+Aunpackfp
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work unpackfp H>gCS@]RQYHoQC;lTzlek1
+l37
+L33
+VhgN=;4Y8zFR_`_c=gG4>]2
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 ieee std_logic_arith
+o-work work -2002 -explicit
+tExplicit 1

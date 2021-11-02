@@ -1,0 +1,16 @@
+H 2141964 11 3 0 6 6 0 0 0 0
+L 4 ieee 19 $MODEL_TECH/../ieee
+L 3 std 18 $MODEL_TECH/../std
+L 4 work 6 ./work
+D 26 ./work.fpmul(single_cycle) EYS:?;GmomZB1?MbN`7h40 4 1
+D 21 ./work.fpmul_tb(arch) gXXh<47]SE1JT;7:GzJa91 5 1
+D 31 ./work.fpnormalize(fpnormalize) ?2g4XN^_LZX>[fgVFTg]=1 0 1
+D 23 ./work.fpround(fpround) PSbM`k<Z1E0g;TcEciljb3 1 1
+D 21 ./work.packfp(packfp) A6g]32Se0M=NL595BdAOW2 2 1
+D 25 ./work.unpackfp(unpackfp) hgN=;4Y8zFR_`_c=gG4>]2 3 1
+2 0  1 QS6Cgz;Fm3RE<T>STi=GY0 5 5 1
+2 0  0 NbU7BKcYX9Y;<Pk?]BIQQ1 2 2 1
+2 0  0 XAV`[acBV=zMb^1jRQI_:2 3 3 1
+2 0  1 [jaE6DJ8NMIfZ7fMWK2f;0 4 4 1
+2 0  1 ]@i5Ae8BD:AF@T_7ooOFE3 0 0 1
+2 0  1 P]DJdlI4@bW614ES==`ic1 1 1 1
