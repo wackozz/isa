@@ -8,8 +8,6 @@
 # //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
 # //  AND IS SUBJECT TO LICENSE TERMS.
 # //
-# Loading project iir_filter_post_synth
-# reading /software/mentor/modelsim_6.2g/linux/../modelsim.ini
 # Loading project switching_activity
 # Compile of clk_gen.vhd was successful.
 # Compile of data_maker_new.vhd was successful.
@@ -17,11 +15,27 @@
 # Compile of tb_iir.v was successful.
 # Compile of iir_filter.v was successful.
 # 5 compiles, 0 failed with no errors. 
-vsim -L /software/dk/nangate45/verilog/msim6.2g
-# No design specified
-vsim -L /software/dk/nangate45/verilog/msim6.2g work.tb_iir
+ls
+# dump.vcd
+# open_modelsim.sh
+# results.txt
+# run_postplace.do
+# samples.txt
+# switching_activity.cr.mti
+# switching_activity.mpf
+# transcript
+# vsim.wlf
+# wave.do
+# work
+source run_postplace.do
+# Compile of clk_gen.vhd was successful.
+# Compile of data_maker_new.vhd was successful.
+# Compile of data_sink.vhd was successful.
+# Compile of tb_iir.v was successful.
+# Compile of iir_filter.v was successful.
+# 5 compiles, 0 failed with no errors. 
 # vsim -L /software/dk/nangate45/verilog/msim6.2g work.tb_iir 
-# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.tb_iir(fast)
 # Loading /software/dk/nangate45/verilog/msim6.2g.BUF_X1(fast)
 # Loading /software/dk/nangate45/verilog/msim6.2g.AOI21_X1(fast)
@@ -49,9 +63,6 @@ vsim -L /software/dk/nangate45/verilog/msim6.2g work.tb_iir
 # Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
 # Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
 # Loading work.data_maker(beh)
-# ** Error: (vsim-7) Failed to open VHDL file "samples.txt" in r mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ns  Iteration: 0  Instance: /tb_iir/SM
 # ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/innovus/iir_filter.v(3638): [TFMPC] - Too few port connections. Expected 5, found 4.
 #         Region: /tb_iir/UUT/add_1_root_add_0_root_add_55_2_U1_8
 # ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/innovus/iir_filter.v(3683): [TFMPC] - Too few port connections. Expected 5, found 4.
@@ -61,7 +72,6 @@ vsim -L /software/dk/nangate45/verilog/msim6.2g work.tb_iir
 # ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/innovus/iir_filter.v(5038): [TFMPC] - Too few port connections. Expected 5, found 4.
 #         Region: /tb_iir/UUT/add_0_root_add_0_root_add_50_2_U1_8
 # Loading work.data_sink(beh)
-vsim -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_iir/UUT=../innovus/iir_filter.sdf work.tb_iir
 # vsim -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_iir/UUT=../innovus/iir_filter.sdf work.tb_iir 
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.tb_iir(fast)
@@ -93,9 +103,6 @@ vsim -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_iir/UUT=../innovus/i
 # Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
 # Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
 # Loading work.data_maker(beh)
-# ** Error: (vsim-7) Failed to open VHDL file "samples.txt" in r mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ns  Iteration: 0  Instance: /tb_iir/SM
 # ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/innovus/iir_filter.v(3638): [TFMPC] - Too few port connections. Expected 5, found 4.
 #         Region: /tb_iir/UUT/add_1_root_add_0_root_add_55_2_U1_8
 # ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/innovus/iir_filter.v(3683): [TFMPC] - Too few port connections. Expected 5, found 4.
@@ -108,28 +115,4 @@ vsim -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_iir/UUT=../innovus/i
 # Loading timing data from ../innovus/iir_filter.sdf
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
 #    Time: 0 ns  Iteration: 0  Region: /tb_iir  File: /home/isa18_2021_2022/github/isa/lab1/hdl/tb/tb_iir.v
-vcd add /tb_iir/UUT/*
 run 2 us
-# ** Fatal: (vsim-7) Failed to open VHDL file "samples.txt" in r mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 15 ns  Iteration: 2  Process: /tb_iir/SM/line__39 File: /home/isa18_2021_2022/github/isa/lab1/hdl/tb/data_maker_new.vhd
-# Fatal error in Process line__39 at /home/isa18_2021_2022/github/isa/lab1/hdl/tb/data_maker_new.vhd line 49
-# 
-run 2 us
-# Cannot continue because of fatal error.
-run 2 us
-# Cannot continue because of fatal error.
-run 2 us
-# Cannot continue because of fatal error.
-ls
-# dump.vcd
-# results.txt
-# samples.txt
-# switching_activity.mpf
-# vsim.wlf
-# work
-run 2 us
-# Cannot continue because of fatal error.
-run 10 us
-# Cannot continue because of fatal error.
-quit
