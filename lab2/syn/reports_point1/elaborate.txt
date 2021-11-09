@@ -1,0 +1,27 @@
+Warning: Can't read link_library file 'your_library.db'. (UID-3)
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Warning: Overwriting design file '/home/isa18_2021_2022/github/isa/lab2/syn/FPmul.db'. (DDB-24)
+Warning: Overwriting design file '/home/isa18_2021_2022/github/isa/lab2/syn/FPmul.db'. (DDB-24)
+Warning: Overwriting design file '/home/isa18_2021_2022/github/isa/lab2/syn/FPmul.db'. (DDB-24)
+Warning: Overwriting design file '/home/isa18_2021_2022/github/isa/lab2/syn/FPmul.db'. (DDB-24)
+Warning: Overwriting design file '/home/isa18_2021_2022/github/isa/lab2/syn/FPmul.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'FPmul'.
+Warning: Can't read link_library file 'your_library.db'. (UID-3)
+Information: Building the design 'reg' instantiated from design 'FPmul' with
+	the parameters "N=32". (HDL-193)
+
+Inferred memory devices in process
+	in routine reg_N32 line 29 in file
+		'../hdl/src/reg.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'PackFP'. (HDL-193)
+Warning: Cannot find the design 'PackFP' in the library 'WORK'. (LBR-1)
+Warning: Design 'FPmul' has '5' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
