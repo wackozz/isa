@@ -1,0 +1,299 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/stefano/Desktop/lab1_local/hdl_7bit/sim
+Eclk_gen
+Z1 w1635271522
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 17
+R0
+Z6 8/home/stefano/Desktop/lab1_local/hdl_7bit/tb/clk_gen.vhd
+Z7 F/home/stefano/Desktop/lab1_local/hdl_7bit/tb/clk_gen.vhd
+l0
+L6 1
+V4bc`7UdH`BlHk=^=TDQ9H2
+!s100 JA8Ue1n4KCD]`nb]FQfQ[2
+Z8 OV;C;2020.1;71
+32
+Z9 !s110 1636465977
+!i10b 1
+Z10 !s108 1636465977.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/stefano/Desktop/lab1_local/hdl_7bit/tb/clk_gen.vhd|
+Z12 !s107 /home/stefano/Desktop/lab1_local/hdl_7bit/tb/clk_gen.vhd|
+!i113 1
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1 CvgOpt 0
+Abeh
+R2
+R3
+R4
+R5
+DEx4 work 7 clk_gen 0 22 4bc`7UdH`BlHk=^=TDQ9H2
+!i122 17
+l19
+L13 29
+VdBQiMTcGMoC@`J@8JZl4?1
+!s100 G^OAm3OKA7iiHa=gPhmWW3
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Edata_maker
+Z15 w1636401203
+Z16 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+R2
+R3
+R4
+R5
+!i122 18
+R0
+Z17 8/home/stefano/Desktop/lab1_local/hdl_7bit/tb/data_maker_new.vhd
+Z18 F/home/stefano/Desktop/lab1_local/hdl_7bit/tb/data_maker_new.vhd
+l0
+Z19 L10 1
+VGJf6nOMPc=LTSFZW<R9e<2
+!s100 1e<]]j8ZFS6j4?I0jmm<]3
+R8
+32
+R9
+!i10b 1
+R10
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/stefano/Desktop/lab1_local/hdl_7bit/tb/data_maker_new.vhd|
+Z21 !s107 /home/stefano/Desktop/lab1_local/hdl_7bit/tb/data_maker_new.vhd|
+!i113 1
+R13
+R14
+Abeh
+R16
+R2
+R3
+R4
+R5
+DEx4 work 10 data_maker 0 22 GJf6nOMPc=LTSFZW<R9e<2
+!i122 18
+l31
+L24 57
+Vlbi?OaPPFOZY2gKX6IXNK0
+!s100 H0jOIBQc95XTTmQNWcUE>3
+R8
+32
+R9
+!i10b 1
+R10
+R20
+R21
+!i113 1
+R13
+R14
+Edata_sink
+Z22 w1636465547
+R16
+R2
+R3
+R4
+R5
+!i122 19
+R0
+Z23 8/home/stefano/Desktop/lab1_local/hdl_7bit/tb/data_sink.vhd
+Z24 F/home/stefano/Desktop/lab1_local/hdl_7bit/tb/data_sink.vhd
+l0
+R19
+VV9@Cm]PFKTcR^0^j4LVC<3
+!s100 Z:8h4h8R<fGUUmIca97Yj3
+R8
+32
+R9
+!i10b 1
+R10
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/stefano/Desktop/lab1_local/hdl_7bit/tb/data_sink.vhd|
+Z26 !s107 /home/stefano/Desktop/lab1_local/hdl_7bit/tb/data_sink.vhd|
+!i113 1
+R13
+R14
+Abeh
+R16
+R2
+R3
+R4
+R5
+DEx4 work 9 data_sink 0 22 V9@Cm]PFKTcR^0^j4LVC<3
+!i122 19
+l20
+L18 19
+VPR^e2Zz?e01GEVR3QG<1[0
+!s100 ME<3D>aRj@I4S?QjgVROm2
+R8
+32
+R9
+!i10b 1
+R10
+R25
+R26
+!i113 1
+R13
+R14
+Eff
+R1
+R4
+R5
+!i122 14
+R0
+Z27 8/home/stefano/Desktop/lab1_local/hdl_7bit/src/ff.vhd
+Z28 F/home/stefano/Desktop/lab1_local/hdl_7bit/src/ff.vhd
+l0
+L6 1
+VdlAEflJa^1=Xfz`<m^;kA2
+!s100 6P6zNnUNXNY8X_ST87[GQ1
+R8
+32
+R9
+!i10b 1
+R10
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/stefano/Desktop/lab1_local/hdl_7bit/src/ff.vhd|
+Z30 !s107 /home/stefano/Desktop/lab1_local/hdl_7bit/src/ff.vhd|
+!i113 1
+R13
+R14
+Astr
+R4
+R5
+DEx4 work 2 ff 0 22 dlAEflJa^1=Xfz`<m^;kA2
+!i122 14
+l25
+L19 20
+VlPce:?V]=g<cAhADIgJWF1
+!s100 ]Sj:K;W4MTLDlQF=B7`5^2
+R8
+32
+R9
+!i10b 1
+R10
+R29
+R30
+!i113 1
+R13
+R14
+Eiir_filter
+Z31 w1636465955
+Z32 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R4
+R5
+!i122 15
+R0
+Z33 8/home/stefano/Desktop/lab1_local/hdl_7bit/src/iir_filter.vhd
+Z34 F/home/stefano/Desktop/lab1_local/hdl_7bit/src/iir_filter.vhd
+l0
+L5 1
+VRYMH?mjboT5C>NOTBF?F81
+!s100 We70DN8Qbbno`EA0:bKGk3
+R8
+32
+R9
+!i10b 1
+R10
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/stefano/Desktop/lab1_local/hdl_7bit/src/iir_filter.vhd|
+Z36 !s107 /home/stefano/Desktop/lab1_local/hdl_7bit/src/iir_filter.vhd|
+!i113 1
+R13
+R14
+Aarch
+R32
+R4
+R5
+DEx4 work 10 iir_filter 0 22 RYMH?mjboT5C>NOTBF?F81
+!i122 15
+l48
+L19 91
+V`8Wi9N[;Oa9G_=FBkkmeM3
+!s100 [Z@M`2JFGndRKzmQT[Je_0
+R8
+32
+R9
+!i10b 1
+R10
+R35
+R36
+!i113 1
+R13
+R14
+Ereg
+R1
+R4
+R5
+!i122 16
+R0
+Z37 8/home/stefano/Desktop/lab1_local/hdl_7bit/src/reg.vhd
+Z38 F/home/stefano/Desktop/lab1_local/hdl_7bit/src/reg.vhd
+l0
+L6 1
+VQ7aZPVnl4g9iK06S=31d<2
+!s100 7SWJYeiHnmXdd[4A6b04V0
+R8
+32
+R9
+!i10b 1
+R10
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/stefano/Desktop/lab1_local/hdl_7bit/src/reg.vhd|
+Z40 !s107 /home/stefano/Desktop/lab1_local/hdl_7bit/src/reg.vhd|
+!i113 1
+R13
+R14
+Astr
+R4
+R5
+DEx4 work 3 reg 0 22 Q7aZPVnl4g9iK06S=31d<2
+!i122 16
+l27
+L21 20
+V3nXn0T7zFZc32?k:i?el80
+!s100 H:I>X6KXCAzX1j160A?`Y0
+R8
+32
+R9
+!i10b 1
+R10
+R39
+R40
+!i113 1
+R13
+R14
+vtb_iir
+R9
+!i10b 1
+!s100 K0kT>:THQFDiQo=a6ciNZ1
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+IzI_6kS:[_LVTI<l_oFR681
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1636465735
+8/home/stefano/Desktop/lab1_local/hdl_7bit/tb/tb_iir.v
+F/home/stefano/Desktop/lab1_local/hdl_7bit/tb/tb_iir.v
+!i122 20
+L0 3 52
+OV;L;2020.1;71
+r1
+!s85 0
+31
+R10
+!s107 /home/stefano/Desktop/lab1_local/hdl_7bit/tb/tb_iir.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/stefano/Desktop/lab1_local/hdl_7bit/tb/tb_iir.v|
+!i113 1
+o-work work
+tCvgOpt 0
