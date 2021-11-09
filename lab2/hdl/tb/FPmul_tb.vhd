@@ -6,7 +6,7 @@
 -- Author     :   <isa18_2021_2022@localhost.localdomain>
 -- Company    : 
 -- Created    : 2021-11-02
--- Last update: 2021-11-02
+-- Last update: 2021-11-09
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -59,41 +59,41 @@ begin  -- architecture arch
     FP_B <= x"00000000";
     wait until clk = '1';
 
-    FP_A <= x"3e8e377a";
-    FP_B <= x"3e8e377a";
+    FP_A <= x"3e9e377a";
+    FP_B <= x"3e9e377a";
     wait until clk = '1';
 
-    FP_A <= x"0bc80005";
-    FP_B <= x"0bc80005";
+    FP_A <= x"25a00002";
+    FP_B <= x"25a00002";
     wait until clk = '1';
 
-    FP_A <= x"3f278ddf";
-    FP_B <= x"3f278ddf";
+    FP_A <= x"3f4f1bbd";
+    FP_B <= x"3f4f1bbd";
     wait until clk = '1';
 
-    FP_A <= x"0b100005";
-    FP_B <= x"0b100005";
+    FP_A <= x"25400003";
+    FP_B <= x"25400003";
     wait until clk = '1';
 
     FP_A <= x"3f800000";
     FP_B <= x"3f800000";
     wait until clk = '1';
 
-    FP_A <= x"0c440004";
-    FP_B <= x"0c440004";
+    FP_A <= x"a5e00002";
+    FP_B <= x"a5e00002";
     wait until clk = '1';
 
-    FP_A <= x"3f278ddf";
-    FP_B <= x"3f278ddf";
+    FP_A <= x"3f4f1bbd";
+    FP_B <= x"3f4f1bbd";
     wait until clk = '1';
 
-    FP_A <= x"0da20000";
-    FP_B <= x"0da20000";
+    FP_A <= x"a6900000";
+    FP_B <= x"a6900000";
     wait until clk = '1';
 
-    FP_A <= x"3dc3910d";
-    FP_B <= x"3dc3910d";
-    wait until clk = '1';
+    FP_A <= x"3e9e377a";
+    FP_B <= x"3e9e377a";
+    wait;
   end process WaveGen_Proc;
 
   -- purpose: writing output file
