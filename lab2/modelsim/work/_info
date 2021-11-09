@@ -178,14 +178,16 @@ M1 ieee std_logic_unsigned
 o-work work -2002 -explicit
 tExplicit 1
 Efpmul_tb
-w1635850683
+w1635945582
+DP std textio K]Z^fghZ6B=BjnK5NomDT3
+DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 d/home/isa18_2021_2022/github/isa/lab2/modelsim
 8/home/isa18_2021_2022/github/isa/lab2/tb/FPmul_tb.vhd
 F/home/isa18_2021_2022/github/isa/lab2/tb/FPmul_tb.vhd
 l0
-L27
-V[8EQK8I?5mlbUXo=lKT;S0
+L29
+V^BjoRh<]_dfnbQCG1HERf2
 OE;C;6.2g;35
 32
 o-work work -2002 -explicit
@@ -193,14 +195,18 @@ tExplicit 1
 Aarch
 DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
 DE work fpmul mP4=H6lfM4>]MVcPRa?D03
+DP std textio K]Z^fghZ6B=BjnK5NomDT3
+DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-DE work fpmul_tb [8EQK8I?5mlbUXo=lKT;S0
-l40
-L32
-VgXXh<47]SE1JT;7:GzJa91
+DE work fpmul_tb ^BjoRh<]_dfnbQCG1HERf2
+l42
+L34
+Vj`coBDDzEa5Q_7ASYW4gG1
 OE;C;6.2g;35
 32
-M2 ieee std_logic_1164
+M4 ieee std_logic_1164
+M3 ieee std_logic_textio
+M2 std textio
 M1 ieee std_logic_arith
 o-work work -2002 -explicit
 tExplicit 1
@@ -209,19 +215,23 @@ aarch
 efpmul_tb
 DE work fpmul mP4=H6lfM4>]MVcPRa?D03
 DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
-DA work fpmul_tb arch gXXh<47]SE1JT;7:GzJa91
+DA work fpmul_tb arch j`coBDDzEa5Q_7ASYW4gG1
+DP std textio K]Z^fghZ6B=BjnK5NomDT3
+DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-DE work fpmul_tb [8EQK8I?5mlbUXo=lKT;S0
-w1635850683
+DE work fpmul_tb ^BjoRh<]_dfnbQCG1HERf2
+w1635945582
 d/home/isa18_2021_2022/github/isa/lab2/modelsim
 8/home/isa18_2021_2022/github/isa/lab2/tb/FPmul_tb.vhd
 F/home/isa18_2021_2022/github/isa/lab2/tb/FPmul_tb.vhd
 l0
-L71
+L118
 Vi[4DCZeW:e92maz60GOG61
 OE;C;6.2g;35
 32
-M2 ieee std_logic_1164
+M4 ieee std_logic_1164
+M3 ieee std_logic_textio
+M2 std textio
 M1 ieee std_logic_arith
 o-work work -2002 -explicit
 tExplicit 1
