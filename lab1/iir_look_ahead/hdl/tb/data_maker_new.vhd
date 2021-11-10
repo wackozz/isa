@@ -35,7 +35,7 @@ begin  -- beh
   d3 <= conv_std_logic_vector(52, 9);
 
   process (CLK, RST_n, i)               --modify path
-    file fp_in       : text open read_mode is "samples.txt";
+    file fp_in       : text open read_mode is "../samples.txt";
     variable line_in : line;
     variable x       : integer;
   begin  -- process

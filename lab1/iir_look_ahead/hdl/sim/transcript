@@ -1,125 +1,25 @@
-# Loading project iir
-# reading /home/wackoz/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini
-# Loading project iir
+# Project file /home/stefano/Desktop/lab1_local/hdl_7bit/sim/iir_7bit.mpf was not found.
+# Unable to open project.
+# Loading project iir_look_ahead
+# Compile of ff.vhd was successful.
 # Compile of iir_filter.vhd was successful.
+# Compile of reg.vhd was successful.
 # Compile of clk_gen.vhd was successful.
 # Compile of data_maker_new.vhd was successful.
 # Compile of data_sink.vhd was successful.
 # Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors.
-ls
-# fixed_point_converter
-# iir.mpf
-# keyboard_layout
-# script.m
-# tex
-# work
-do run.do wave
-# vsim -gui -onfinish stop -msgmode both work.tb_iir.v 
-# Start time: 22:23:29 on Oct 11,2021
-# ** Error (suppressible): (vsim-19) Failed to access library 'work.tb_iir' at "work.tb_iir".
-# No such file or directory. (errno = ENOENT)
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./run.do PAUSED at line 131
-# Load canceled
-vsim -gui -onfinish stop -msgmode both work.tb_iir
-# vsim -gui -onfinish stop -msgmode both work.tb_iir 
-# Start time: 22:23:29 on Oct 11,2021
-# Loading work.tb_iir
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.clk_gen(beh)
-# Loading ieee.std_logic_textio(body)
-# Loading work.data_maker(beh)
-# ** Warning: (vsim-7) Failed to open VHDL file "../../matlab/samples.txt" in r mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ps  Iteration: 0  Instance: /tb_iir/SM
-# Loading ieee.numeric_std(body)
-# Loading work.iir_filter(arch)
-# Loading work.data_sink(beh)
-# WARNING: No extended dataflow license exists
-
-continue
-# invoked "continue" outside of a loop
-run
-# Load canceled
-resume
-# End time: 22:25:40 on Oct 11,2021, Elapsed time: 0:02:11
-# Errors: 1, Warnings: 7
-# Error: Wave format file not found: "./wave.do"
+# 7 compiles, 0 failed with no errors.
 do run.do
+# Compile of ff.vhd was successful.
 # Compile of iir_filter.vhd was successful.
+# Compile of reg.vhd was successful.
 # Compile of clk_gen.vhd was successful.
 # Compile of data_maker_new.vhd was successful.
 # Compile of data_sink.vhd was successful.
 # Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors.
-# vsim work.tb_iir(str) -t ns 
-# Start time: 22:28:32 on Oct 11,2021
-# ** Error: (vsim-3170) Could not find 'tb_iir(str)'.
-#         Searched libraries:
-#             /home/wackoz/Documenti/work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./run.do PAUSED at line 2
-resume
-# End time: 22:28:42 on Oct 11,2021, Elapsed time: 0:00:10
-# Errors: 1, Warnings: 2
-# ** Error: No Design Loaded!
-# Error in macro ./run.do line 4
-# No Design Loaded!
-#     while executing
-# "run 10 us"
-do run.do
-# Compile of iir_filter.vhd was successful.
-# Compile of clk_gen.vhd was successful.
-# Compile of data_maker_new.vhd was successful.
-# Compile of data_sink.vhd was successful.
-# Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors.
+# 7 compiles, 0 failed with no errors.
 # vsim work.tb_iir -t ns 
-# Start time: 22:28:48 on Oct 11,2021
-# Loading work.tb_iir
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.clk_gen(beh)
-# Loading ieee.std_logic_textio(body)
-# Loading work.data_maker(beh)
-# ** Warning: (vsim-7) Failed to open VHDL file "../../matlab/samples.txt" in r mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ns  Iteration: 0  Instance: /tb_iir/SM
-# Loading ieee.numeric_std(body)
-# Loading work.iir_filter(arch)
-# Loading work.data_sink(beh)
-# WARNING: No extended dataflow license exists
-# ** Fatal: (vsim-7) Failed to open VHDL file "../../matlab/samples.txt" in r mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 15 ns  Iteration: 2  Process: /tb_iir/SM/line__39 File: /home/wackoz/github/ISA/LAB1/hdl/tb/data_maker_new.vhd
-# Fatal error in Process line__39 at /home/wackoz/github/ISA/LAB1/hdl/tb/data_maker_new.vhd line 49
-# 
-# HDL call sequence:
-# Stopped at /home/wackoz/github/ISA/LAB1/hdl/tb/data_maker_new.vhd 49 Process line__39
-# 
-do run.do
-# Compile of iir_filter.vhd was successful.
-# Compile of clk_gen.vhd was successful.
-# Compile of data_maker_new.vhd was successful.
-# Compile of data_sink.vhd was successful.
-# Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors.
-# End time: 22:30:16 on Oct 11,2021, Elapsed time: 0:01:28
-# Errors: 1, Warnings: 4
-# vsim work.tb_iir -t ns 
-# Start time: 22:30:16 on Oct 11,2021
+# Start time: 20:42:30 on Nov 10,2021
 # Loading work.tb_iir
 # Loading std.standard
 # Loading std.textio(body)
@@ -134,27 +34,55 @@ do run.do
 #    Time: 0 ns  Iteration: 0  Instance: /tb_iir/SM
 # Loading ieee.numeric_std(body)
 # Loading work.iir_filter(arch)
+# Loading work.reg(str)
+# Loading work.ff(str)
 # Loading work.data_sink(beh)
-# WARNING: No extended dataflow license exists
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/a1_i'.
+# Executing ONERROR command at macro ./run.do line 9
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/a2_i'.
+# Executing ONERROR command at macro ./run.do line 10
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/b0_i'.
+# Executing ONERROR command at macro ./run.do line 11
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/b1_i'.
+# Executing ONERROR command at macro ./run.do line 12
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/b2_i'.
+# Executing ONERROR command at macro ./run.do line 13
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq1_a1'.
+# Executing ONERROR command at macro ./run.do line 18
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq1_b1'.
+# Executing ONERROR command at macro ./run.do line 19
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq2_a2'.
+# Executing ONERROR command at macro ./run.do line 21
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq2_b2'.
+# Executing ONERROR command at macro ./run.do line 22
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPtmpa_b0'.
+# Executing ONERROR command at macro ./run.do line 23
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPa'.
+# Executing ONERROR command at macro ./run.do line 24
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPb'.
+# Executing ONERROR command at macro ./run.do line 25
 # ** Fatal: (vsim-7) Failed to open VHDL file "samples.txt" in r mode.
 # No such file or directory. (errno = ENOENT)
-#    Time: 15 ns  Iteration: 2  Process: /tb_iir/SM/line__39 File: /home/wackoz/github/ISA/LAB1/hdl/tb/data_maker_new.vhd
-# Fatal error in Process line__39 at /home/wackoz/github/ISA/LAB1/hdl/tb/data_maker_new.vhd line 49
+#    Time: 15 ns  Iteration: 2  Process: /tb_iir/SM/line__37 File: /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_maker_new.vhd
+# Fatal error in Process line__37 at /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_maker_new.vhd line 47
 # 
 # HDL call sequence:
-# Stopped at /home/wackoz/github/ISA/LAB1/hdl/tb/data_maker_new.vhd 49 Process line__39
+# Stopped at /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_maker_new.vhd 47 Process line__37
 # 
+# Executing ONERROR command at macro ./run.do line 44
 do run.do
+# Compile of ff.vhd was successful.
 # Compile of iir_filter.vhd was successful.
+# Compile of reg.vhd was successful.
 # Compile of clk_gen.vhd was successful.
 # Compile of data_maker_new.vhd was successful.
 # Compile of data_sink.vhd was successful.
 # Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors.
-# End time: 22:31:14 on Oct 11,2021, Elapsed time: 0:00:58
-# Errors: 1, Warnings: 3
+# 7 compiles, 0 failed with no errors.
+# End time: 20:43:31 on Nov 10,2021, Elapsed time: 0:01:01
+# Errors: 1, Warnings: 9
 # vsim work.tb_iir -t ns 
-# Start time: 22:31:14 on Oct 11,2021
+# Start time: 20:43:31 on Nov 10,2021
 # Loading work.tb_iir
 # Loading std.standard
 # Loading std.textio(body)
@@ -166,209 +94,37 @@ do run.do
 # Loading work.data_maker(beh)
 # Loading ieee.numeric_std(body)
 # Loading work.iir_filter(arch)
+# Loading work.reg(str)
+# Loading work.ff(str)
 # Loading work.data_sink(beh)
-# WARNING: No extended dataflow license exists
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/wackoz/Documenti/wave.do
-do run.do
-# Compile of iir_filter.vhd was successful.
-# Compile of clk_gen.vhd was successful.
-# Compile of data_maker_new.vhd was successful.
-# Compile of data_sink.vhd was successful.
-# Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors.
-# End time: 22:48:30 on Oct 11,2021, Elapsed time: 0:17:16
-# Errors: 0, Warnings: 2
-# vsim work.tb_iir -t ns 
-# Start time: 22:48:30 on Oct 11,2021
-# Loading work.tb_iir
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.clk_gen(beh)
-# Loading ieee.std_logic_textio(body)
-# Loading work.data_maker(beh)
-# Loading ieee.numeric_std(body)
-# Loading work.iir_filter(arch)
-# Loading work.data_sink(beh)
-# WARNING: No extended dataflow license exists
-do run.do
-# Compile of iir_filter.vhd was successful.
-# Compile of clk_gen.vhd was successful.
-# Compile of data_maker_new.vhd was successful.
-# Compile of data_sink.vhd was successful.
-# Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors.
-# End time: 22:48:46 on Oct 11,2021, Elapsed time: 0:00:16
-# Errors: 0, Warnings: 2
-# vsim work.tb_iir -t ns 
-# Start time: 22:48:46 on Oct 11,2021
-# Loading work.tb_iir
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.clk_gen(beh)
-# Loading ieee.std_logic_textio(body)
-# Loading work.data_maker(beh)
-# Loading ieee.numeric_std(body)
-# Loading work.iir_filter(arch)
-# Loading work.data_sink(beh)
-# WARNING: No extended dataflow license exists
-do run.do
-# Compile of iir_filter.vhd was successful.
-# Compile of clk_gen.vhd was successful.
-# Compile of data_maker_new.vhd was successful.
-# Compile of data_sink.vhd was successful.
-# Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors.
-# End time: 23:18:17 on Oct 11,2021, Elapsed time: 0:29:31
-# Errors: 0, Warnings: 2
-# vsim work.tb_iir -t ns 
-# Start time: 23:18:17 on Oct 11,2021
-# Loading work.tb_iir
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.clk_gen(beh)
-# Loading ieee.std_logic_textio(body)
-# Loading work.data_maker(beh)
-# Loading ieee.numeric_std(body)
-# Loading work.iir_filter(arch)
-# Loading work.data_sink(beh)
-# WARNING: No extended dataflow license exists
-do run.do
-# Compile of iir_filter.vhd was successful.
-# Compile of clk_gen.vhd was successful.
-# Compile of data_maker_new.vhd was successful.
-# Compile of data_sink.vhd was successful.
-# Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors.
-# End time: 23:18:44 on Oct 11,2021, Elapsed time: 0:00:27
-# Errors: 0, Warnings: 2
-# vsim work.tb_iir -t ns 
-# Start time: 23:18:44 on Oct 11,2021
-# Loading work.tb_iir
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.clk_gen(beh)
-# Loading ieee.std_logic_textio(body)
-# Loading work.data_maker(beh)
-# Loading ieee.numeric_std(body)
-# Loading work.iir_filter(arch)
-# Loading work.data_sink(beh)
-# WARNING: No extended dataflow license exists
-add wave \
-/tb_iir/UUT/outputpro/TMPq1_a1 \
-/tb_iir/UUT/outputpro/TMPq2_a2 \
-/tb_iir/UUT/outputpro/TMPtmpa_b0 \
-/tb_iir/UUT/outputpro/TMPq1_b1 \
-/tb_iir/UUT/outputpro/TMPq2_b2 \
-/tb_iir/UUT/outputpro/TMPa \
-/tb_iir/UUT/outputpro/TMPb 
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/wackoz/Documenti/wave.do
-do run.do
-# Compile of iir_filter.vhd was successful.
-# Compile of clk_gen.vhd was successful.
-# Compile of data_maker_new.vhd was successful.
-# Compile of data_sink.vhd was successful.
-# Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors.
-# End time: 23:20:32 on Oct 11,2021, Elapsed time: 0:01:48
-# Errors: 0, Warnings: 2
-# vsim work.tb_iir -t ns 
-# Start time: 23:20:32 on Oct 11,2021
-# Loading work.tb_iir
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.clk_gen(beh)
-# Loading ieee.std_logic_textio(body)
-# Loading work.data_maker(beh)
-# Loading ieee.numeric_std(body)
-# Loading work.iir_filter(arch)
-# Loading work.data_sink(beh)
-# WARNING: No extended dataflow license exists
-do run.do
-# Compile of iir_filter.vhd was successful.
-# Compile of clk_gen.vhd was successful.
-# Compile of data_maker_new.vhd was successful.
-# Compile of data_sink.vhd was successful.
-# Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors.
-# End time: 23:50:52 on Oct 11,2021, Elapsed time: 0:30:20
-# Errors: 0, Warnings: 2
-# vsim work.tb_iir -t ns 
-# Start time: 23:50:52 on Oct 11,2021
-# Loading work.tb_iir
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.clk_gen(beh)
-# Loading ieee.std_logic_textio(body)
-# Loading work.data_maker(beh)
-# Loading ieee.numeric_std(body)
-# Loading work.iir_filter(arch)
-# Loading work.data_sink(beh)
-# WARNING: No extended dataflow license exists
-do run.do
-# Compile of iir_filter.vhd was successful.
-# Compile of clk_gen.vhd was successful.
-# Compile of data_maker_new.vhd was successful.
-# Compile of data_sink.vhd was successful.
-# Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors.
-# End time: 23:59:17 on Oct 11,2021, Elapsed time: 0:08:25
-# Errors: 0, Warnings: 2
-# vsim work.tb_iir -t ns 
-# Start time: 23:59:17 on Oct 11,2021
-# Loading work.tb_iir
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.clk_gen(beh)
-# Loading ieee.std_logic_textio(body)
-# Loading work.data_maker(beh)
-# Loading ieee.numeric_std(body)
-# Loading work.iir_filter(arch)
-# Loading work.data_sink(beh)
-# WARNING: No extended dataflow license exists
-do run.do
-# Compile of iir_filter.vhd was successful.
-# Compile of clk_gen.vhd was successful.
-# Compile of data_maker_new.vhd was successful.
-# Compile of data_sink.vhd was successful.
-# Compile of tb_iir.v was successful.
-# 5 compiles, 0 failed with no errors.
-# End time: 00:00:11 on Oct 12,2021, Elapsed time: 0:00:54
-# Errors: 0, Warnings: 2
-# vsim work.tb_iir -t ns 
-# Start time: 00:00:11 on Oct 12,2021
-# Loading work.tb_iir
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.clk_gen(beh)
-# Loading ieee.std_logic_textio(body)
-# Loading work.data_maker(beh)
-# Loading ieee.numeric_std(body)
-# Loading work.iir_filter(arch)
-# Loading work.data_sink(beh)
-# WARNING: No extended dataflow license exists
-# End time: 00:01:05 on Oct 12,2021, Elapsed time: 0:00:54
-# Errors: 0, Warnings: 1
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/a1_i'.
+# Executing ONERROR command at macro ./run.do line 9
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/a2_i'.
+# Executing ONERROR command at macro ./run.do line 10
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/b0_i'.
+# Executing ONERROR command at macro ./run.do line 11
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/b1_i'.
+# Executing ONERROR command at macro ./run.do line 12
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/b2_i'.
+# Executing ONERROR command at macro ./run.do line 13
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq1_a1'.
+# Executing ONERROR command at macro ./run.do line 18
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq1_b1'.
+# Executing ONERROR command at macro ./run.do line 19
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq2_a2'.
+# Executing ONERROR command at macro ./run.do line 21
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq2_b2'.
+# Executing ONERROR command at macro ./run.do line 22
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPtmpa_b0'.
+# Executing ONERROR command at macro ./run.do line 23
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPa'.
+# Executing ONERROR command at macro ./run.do line 24
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPb'.
+# Executing ONERROR command at macro ./run.do line 25
+add wave -position insertpoint sim:/tb_iir/UUT/*
+restart
+run
+restart
+run
+restart
+run

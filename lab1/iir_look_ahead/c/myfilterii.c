@@ -3,12 +3,12 @@
 
 // Gr18 C model for IIR filter
 
-#define N 2   /// order of the filter
+#define N 3   /// order of the filter
 #define NB 9  /// number of bits
 
-const int b0 = 52;           /// coefficient b0
-const int b[N] = {105, 52};  /// b array
-const int a[N] = {95, -50};  /// a array
+const int d0 = 52;           /// coefficient b0
+const int c[N] = {0, 35, -19};  /// b array
+const int d[N] = {-19, -39, 52};  /// a array
 
 /// Perform fixed point filtering assuming direct form II
 ///\param x is the new input sample
@@ -34,22 +34,25 @@ int myfilter(int x) {
   
   ff = 0;
   for (i = 0; i < N; i++) {
-    printf("\t q[%d]*a[%d] =%d (%d)\n", i + 1, i + 1, (-sw[i] * a[i]),
-           (sw[i] * a[i]) >> (NB - 1));
+    if (i>0 && i<N){
+      printf("\t q[%d]*c[%d] =%d (%d)\n", i + 1, i, (sw[i] * c[i]),
+           (sw[i] * c[i]) >> (NB - 1));
+    }
 
-    printf("\t q[%d]*b[%d] =%d (%d)\n", i + 1, i + 1, (sw[i] * b[i]),
-           (sw[i] * b[i]) >> (NB - 1));
+    printf("\t q[%d]*d[%d] =%d (%d)\n", i + 1, i + 1, (sw[i] * d[i]),
+           (sw[i] * d[i]) >> (NB - 1));
 
-    fb += (sw[i] * a[i]) >>(NB-1);
-    tmp_fb = (sw[i] * a[i]);
-    ff += (sw[i] * b[i]) >> (NB - 1);
+    if (i>0 && i<N){
+      fb += (sw[i] * c[i]) >>(NB-1);
+    }
+    ff += (sw[i] * d[i]) >> (NB - 1);
   }
   /// compute intermediate value (w) and output sample
 
   w = x + fb;
   printf("\t tmpa=%d \n", w);
-  printf("\t tmpa*b0=%d (%d) \n", w * b0,(w * b0) >> (NB - 1));
-  y = (w * b0) >> (NB - 1);
+  printf("\t tmpa*d0=%d (%d) \n", w * d0,(w * d0) >> (NB - 1));
+  y = (w * d0) >> (NB - 1);
   y += ff;
   printf("\t tmpb=%d \n", y);
 
