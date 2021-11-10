@@ -1,0 +1,52 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/wackoz/github/ISA/LAB1/hdl/src
+Eiir_filter
+Z0 w1636549308
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 52
+Z4 d/home/wackoz/github/isa/lab1/iir_look_ahead/hdl/src
+Z5 8iir_filter.vhd
+Z6 Fiir_filter.vhd
+l0
+L5 1
+Vh9I1F]F:BH5:1dHi?MoSQ0
+!s100 We70DN8Qbbno`EA0:bKGk3
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1636550763
+!i10b 1
+Z9 !s108 1636550763.000000
+Z10 !s90 iir_filter.vhd|
+Z11 !s107 iir_filter.vhd|
+!i113 1
+Z12 tExplicit 1 CvgOpt 0
+Aarch
+R1
+R2
+R3
+DEx4 work 10 iir_filter 0 22 h9I1F]F:BH5:1dHi?MoSQ0
+!i122 52
+l47
+L19 89
+VMOEo:>kedh7ohX6]BZOFj2
+!s100 dZ7mzzY=QU6BG:<U6DcO^0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
