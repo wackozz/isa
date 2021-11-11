@@ -1,0 +1,41 @@
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Warning: Overwriting design file '/home/isa18_2021_2022/github/isa/lab1/tmp/syn/iir_filter.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'iir_filter'.
+Information: Building the design 'reg' instantiated from design 'iir_filter' with
+	the parameters "N=7". (HDL-193)
+
+Inferred memory devices in process
+	in routine reg_N7 line 29 in file
+		'../hdl/src/reg.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'reg' instantiated from design 'iir_filter' with
+	the parameters "N=8". (HDL-193)
+
+Inferred memory devices in process
+	in routine reg_N8 line 29 in file
+		'../hdl/src/reg.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'ff'. (HDL-193)
+
+Inferred memory devices in process
+	in routine ff line 27 in file
+		'../hdl/src/ff.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+1
