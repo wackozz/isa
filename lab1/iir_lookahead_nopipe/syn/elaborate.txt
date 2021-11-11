@@ -1,0 +1,43 @@
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Warning: Design 'iir_filter' was renamed to 'iir_filter_1' to avoid
+	a conflict with another design that has the same name but
+different parameters. (LINK-17)
+Elaborated 1 design.
+Current design is now 'iir_filter_1'.
+Information: Building the design 'reg' instantiated from design 'iir_filter_1' with
+	the parameters "N=7". (HDL-193)
+
+Inferred memory devices in process
+	in routine reg_N7 line 29 in file
+		'../hdl/src/reg.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'reg' instantiated from design 'iir_filter_1' with
+	the parameters "N=8". (HDL-193)
+
+Inferred memory devices in process
+	in routine reg_N8 line 29 in file
+		'../hdl/src/reg.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'ff'. (HDL-193)
+
+Inferred memory devices in process
+	in routine ff line 27 in file
+		'../hdl/src/ff.vhd'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+1
