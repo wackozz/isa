@@ -1,0 +1,130 @@
+# Project file /home/stefano/Desktop/lab1_local/hdl_7bit/sim/iir_7bit.mpf was not found.
+# Unable to open project.
+# Loading project iir_look_ahead
+# Compile of ff.vhd was successful.
+# Compile of iir_filter.vhd was successful.
+# Compile of reg.vhd was successful.
+# Compile of clk_gen.vhd was successful.
+# Compile of data_maker_new.vhd was successful.
+# Compile of data_sink.vhd was successful.
+# Compile of tb_iir.v was successful.
+# 7 compiles, 0 failed with no errors.
+do run.do
+# Compile of ff.vhd was successful.
+# Compile of iir_filter.vhd was successful.
+# Compile of reg.vhd was successful.
+# Compile of clk_gen.vhd was successful.
+# Compile of data_maker_new.vhd was successful.
+# Compile of data_sink.vhd was successful.
+# Compile of tb_iir.v was successful.
+# 7 compiles, 0 failed with no errors.
+# vsim work.tb_iir -t ns 
+# Start time: 20:42:30 on Nov 10,2021
+# Loading work.tb_iir
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.clk_gen(beh)
+# Loading ieee.std_logic_textio(body)
+# Loading work.data_maker(beh)
+# ** Warning: (vsim-7) Failed to open VHDL file "samples.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Instance: /tb_iir/SM
+# Loading ieee.numeric_std(body)
+# Loading work.iir_filter(arch)
+# Loading work.reg(str)
+# Loading work.ff(str)
+# Loading work.data_sink(beh)
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/a1_i'.
+# Executing ONERROR command at macro ./run.do line 9
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/a2_i'.
+# Executing ONERROR command at macro ./run.do line 10
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/b0_i'.
+# Executing ONERROR command at macro ./run.do line 11
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/b1_i'.
+# Executing ONERROR command at macro ./run.do line 12
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/b2_i'.
+# Executing ONERROR command at macro ./run.do line 13
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq1_a1'.
+# Executing ONERROR command at macro ./run.do line 18
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq1_b1'.
+# Executing ONERROR command at macro ./run.do line 19
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq2_a2'.
+# Executing ONERROR command at macro ./run.do line 21
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq2_b2'.
+# Executing ONERROR command at macro ./run.do line 22
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPtmpa_b0'.
+# Executing ONERROR command at macro ./run.do line 23
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPa'.
+# Executing ONERROR command at macro ./run.do line 24
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPb'.
+# Executing ONERROR command at macro ./run.do line 25
+# ** Fatal: (vsim-7) Failed to open VHDL file "samples.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 15 ns  Iteration: 2  Process: /tb_iir/SM/line__37 File: /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_maker_new.vhd
+# Fatal error in Process line__37 at /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_maker_new.vhd line 47
+# 
+# HDL call sequence:
+# Stopped at /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_maker_new.vhd 47 Process line__37
+# 
+# Executing ONERROR command at macro ./run.do line 44
+do run.do
+# Compile of ff.vhd was successful.
+# Compile of iir_filter.vhd was successful.
+# Compile of reg.vhd was successful.
+# Compile of clk_gen.vhd was successful.
+# Compile of data_maker_new.vhd was successful.
+# Compile of data_sink.vhd was successful.
+# Compile of tb_iir.v was successful.
+# 7 compiles, 0 failed with no errors.
+# End time: 20:43:31 on Nov 10,2021, Elapsed time: 0:01:01
+# Errors: 1, Warnings: 9
+# vsim work.tb_iir -t ns 
+# Start time: 20:43:31 on Nov 10,2021
+# Loading work.tb_iir
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.clk_gen(beh)
+# Loading ieee.std_logic_textio(body)
+# Loading work.data_maker(beh)
+# Loading ieee.numeric_std(body)
+# Loading work.iir_filter(arch)
+# Loading work.reg(str)
+# Loading work.ff(str)
+# Loading work.data_sink(beh)
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/a1_i'.
+# Executing ONERROR command at macro ./run.do line 9
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/a2_i'.
+# Executing ONERROR command at macro ./run.do line 10
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/b0_i'.
+# Executing ONERROR command at macro ./run.do line 11
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/b1_i'.
+# Executing ONERROR command at macro ./run.do line 12
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/b2_i'.
+# Executing ONERROR command at macro ./run.do line 13
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq1_a1'.
+# Executing ONERROR command at macro ./run.do line 18
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq1_b1'.
+# Executing ONERROR command at macro ./run.do line 19
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq2_a2'.
+# Executing ONERROR command at macro ./run.do line 21
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPq2_b2'.
+# Executing ONERROR command at macro ./run.do line 22
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPtmpa_b0'.
+# Executing ONERROR command at macro ./run.do line 23
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPa'.
+# Executing ONERROR command at macro ./run.do line 24
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_iir/UUT/outputpro/TMPb'.
+# Executing ONERROR command at macro ./run.do line 25
+add wave -position insertpoint sim:/tb_iir/UUT/*
+restart
+run
+restart
+run
+restart
+run

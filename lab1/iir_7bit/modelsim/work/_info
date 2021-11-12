@@ -3,9 +3,9 @@ m255
 cModel Technology
 d/home/isa18_2021_2022/github/isa/lab1/tmp/modelsim
 T_opt
-V=mPOC<0KPb2az_fKMdDU31
+V2TK:l?7`<`<FE`WIdSzeb2
 06 6 4 ./work tb_iir fast 0
-o-quiet -auto_acc_if_foreign -work work -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_iir/UUT=../netlist/iir_filter.sdf -suppress 1948
+o-quiet -auto_acc_if_foreign -work work -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_iir/UUT=../innovus/iir_filter.sdf -suppress 1948
 tExplicit 1
 OE;O;6.2g;35
 Eclk_gen
@@ -108,12 +108,13 @@ M1 std textio
 o-work work -2002 -explicit
 tExplicit 1
 viir_filter
-I:8e]cWkMMK;74mWhKLK<X0
+IJcm9_jgd:kQ@4S81QI3^T1
 V@0KiU@F2aBRheBNl<@b2B0
-w1636658091
-8/home/isa18_2021_2022/github/isa/lab1/tmp/netlist/iir_filter.v
-F/home/isa18_2021_2022/github/isa/lab1/tmp/netlist/iir_filter.v
-L0 8
+d/home/isa18_2021_2022/github/isa/lab1/iir_7bit/modelsim
+w1636738488
+8/home/isa18_2021_2022/github/isa/lab1/iir_7bit/innovus/iir_filter.v
+F/home/isa18_2021_2022/github/isa/lab1/iir_7bit/innovus/iir_filter.v
+L0 15
 V@0KiU@F2aBRheBNl<@b2B0
 OE;L;6.2g;35
 r1
