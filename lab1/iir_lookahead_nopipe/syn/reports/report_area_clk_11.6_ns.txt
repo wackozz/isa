@@ -1,9 +1,9 @@
  
 ****************************************
 Report : area
-Design : iir_filter_1
+Design : iir_filter
 Version: O-2018.06-SP4
-Date   : Thu Nov 11 22:41:07 2021
+Date   : Fri Nov 12 16:56:33 2021
 ****************************************
 
 Library(s) Used:

@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version O-2018.06-SP4 for linux64 -- Nov 27, 2018
-#@ # Date:   Thu Nov 11 20:37:46 2021
+#@ # Date:   Fri Nov 12 18:17:17 2021
 #@ # Run by: isa18_2021_2022@localhost.localdomain
 #@ 
 
@@ -6628,15 +6628,15 @@ source /software/synopsys/syn_current_64.18/admin/setup/.synopsys_dc.setup
 
 #@ # -- End source /software/synopsys/syn_current_64.18/admin/setup/.synopsys_dc.setup
 
-source /home/isa18_2021_2022/github/isa/lab1/tmp/syn/.synopsys_dc.setup
-#@ # -- Starting source /home/isa18_2021_2022/github/isa/lab1/tmp/syn/.synopsys_dc.setup
+source /home/isa18_2021_2022/github/isa/lab1/iir_7bit/syn/.synopsys_dc.setup
+#@ # -- Starting source /home/isa18_2021_2022/github/isa/lab1/iir_7bit/syn/.synopsys_dc.setup
 
 #@ define_design_lib WORK -path ./work
 #@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
 #@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
 #@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
 #@ set synthetic_library [list "dw_foundation.sldb" ]
-#@ # -- End source /home/isa18_2021_2022/github/isa/lab1/tmp/syn/.synopsys_dc.setup
+#@ # -- End source /home/isa18_2021_2022/github/isa/lab1/iir_7bit/syn/.synopsys_dc.setup
 
 gui_start
 #@ # -- Starting source /software/synopsys/syn_current_64.18/auxx/tcllib/lib/itk4.0.1/itk.tcl
@@ -43008,4 +43008,3 @@ source scripts/powercons.tcl
 #@ report_power > reports/power_report.txt
 #@ # -- End source scripts/powercons.tcl
 
-change_selection [get_s iir_filter]
