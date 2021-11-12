@@ -1,0 +1,54 @@
+/home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/reg.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/reg.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity reg
+-- Compiling architecture str of reg
+
+} {} {}} /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/tb_iir.v {1 {vlog -work work -stats=none /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/tb_iir.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_iir
+
+Top level modules:
+	tb_iir
+
+} {} {}} /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_sink.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_sink.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package std_logic_textio
+-- Compiling entity data_sink
+-- Compiling architecture beh of data_sink
+
+} {} {}} /home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/ff.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/ff.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ff
+-- Compiling architecture str of ff
+
+} {} {}} /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/clk_gen.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/clk_gen.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity clk_gen
+-- Compiling architecture beh of clk_gen
+
+} {} {}} /home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/iir_filter.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/iir_filter.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity iir_filter
+-- Compiling architecture arch of iir_filter
+
+} {} {}}
