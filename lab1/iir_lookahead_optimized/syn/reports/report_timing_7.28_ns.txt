@@ -1,0 +1,71 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : iir_filter
+Version: O-2018.06-SP4
+Date   : Fri Nov 12 20:18:02 2021
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: c3[3] (input port clocked by MY_CLK)
+  Endpoint: reg_1/Q_reg[6]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  iir_filter         5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.50       0.50 f
+  c3[3] (in)                                              0.00       0.50 f
+  mult_50/b[1] (iir_filter_DW_mult_tc_4)                  0.00       0.50 f
+  mult_50/U116/ZN (INV_X1)                                0.05       0.55 r
+  mult_50/U167/ZN (NOR2_X1)                               0.03       0.58 f
+  mult_50/U44/CO (HA_X1)                                  0.05       0.64 f
+  mult_50/U42/CO (FA_X1)                                  0.09       0.72 f
+  mult_50/U39/S (FA_X1)                                   0.11       0.83 f
+  mult_50/U147/ZN (AOI222_X1)                             0.13       0.96 r
+  mult_50/U146/ZN (OAI222_X1)                             0.07       1.03 f
+  mult_50/U8/CO (FA_X1)                                   0.10       1.12 f
+  mult_50/U7/CO (FA_X1)                                   0.09       1.21 f
+  mult_50/U6/CO (FA_X1)                                   0.09       1.30 f
+  mult_50/U5/CO (FA_X1)                                   0.09       1.39 f
+  mult_50/U4/CO (FA_X1)                                   0.09       1.48 f
+  mult_50/U3/CO (FA_X1)                                   0.09       1.57 f
+  mult_50/U126/ZN (XNOR2_X1)                              0.06       1.63 f
+  mult_50/U125/Z (XOR2_X1)                                0.08       1.71 f
+  mult_50/product[12] (iir_filter_DW_mult_tc_4)           0.00       1.71 f
+  add_52/B[6] (iir_filter_DW01_add_2)                     0.00       1.71 f
+  add_52/U1_6/S (FA_X1)                                   0.14       1.85 r
+  add_52/SUM[6] (iir_filter_DW01_add_2)                   0.00       1.85 r
+  reg_1/D[6] (reg_N7_7)                                   0.00       1.85 r
+  reg_1/U5/ZN (NAND2_X1)                                  0.03       1.88 f
+  reg_1/U4/ZN (OAI21_X1)                                  0.03       1.91 r
+  reg_1/Q_reg[6]/D (DFFR_X1)                              0.01       1.92 r
+  data arrival time                                                  1.92
+
+  clock MY_CLK (rise edge)                                7.28       7.28
+  clock network delay (ideal)                             0.00       7.28
+  clock uncertainty                                      -0.07       7.21
+  reg_1/Q_reg[6]/CK (DFFR_X1)                             0.00       7.21 r
+  library setup time                                     -0.04       7.17
+  data required time                                                 7.17
+  --------------------------------------------------------------------------
+  data required time                                                 7.17
+  data arrival time                                                 -1.92
+  --------------------------------------------------------------------------
+  slack (MET)                                                        5.26
+
+
+1

@@ -41,6 +41,10 @@ architecture arch of iir_filter is
   signal TMPq8_b0, TMPq7_b1, TMPq5_b2 : signed(13 downto 0);
   signal TMPb : signed (7 downto 0);
   signal tmp_b_slv, dout_pad: std_logic_vector(7 downto 0);
+  signal vout_ff1, vout_ff2 : std_logic;
+  signal q_reg9, q_reg10, q_reg11 : std_logic_vector (7 downto 0);
+  signal q_reg9_s, q_reg10_s, q_reg11_s : signed (7 downto 0);
+
 begin
   TMP_a1 <= din_s * a1_s;
   TMPq3_c3 <= q_reg3_s * c3_s;
@@ -51,7 +55,7 @@ begin
   TMPq8_b0 <= q_reg8_s * b0_s;
   TMPq7_b1 <= q_reg7_s * b1_s;
   TMPq5_b2 <= q_reg5_s * b2_s;
-  TMPb <= TMPq8_b0(13 downto 6) + TMPq7_b1(13 downto 6) + TMPq5_b2(13 downto 6);
+  TMPb <= q_reg11_s + q_reg10_s + q_reg9_s;
  
   -- instance reg 
   reg_1 : reg
@@ -133,10 +137,58 @@ begin
     enable => vin,
     Q => q_reg8);
 
+  reg_9 : reg
+  generic map(
+    N => 8)
+  port map(
+    D => std_logic_vector(TMPq5_b2(13 downto 6)),
+    clock => clock,
+    reset => rst_n,
+    enable => vin,
+    Q => q_reg9);
+
+  reg_10 : reg
+  generic map(
+    N => 8)
+  port map(
+    D => std_logic_vector(TMPq7_b1(13 downto 6)),
+    clock => clock,
+    reset => rst_n,
+    enable => vin,
+    Q => q_reg10);
+
+  reg_11 : reg
+  generic map(
+    N => 8)
+  port map(
+    D => std_logic_vector(tmpq8_b0(13 downto 6)),
+    clock => clock,
+    reset => rst_n,
+    enable => vin,
+    Q => q_reg11);
+
   -- instance "ff"
   ff_1 : ff
     port map(
       D      => vin,
+      clock  => clock,
+      reset  => rst_n,
+      enable => '1',
+      Q      => vout_ff1);
+
+  -- instance "ff"
+  ff_2 : ff
+    port map(
+      D      => vout_ff1,
+      clock  => clock,
+      reset  => rst_n,
+      enable => '1',
+      Q      => vout_ff2);
+
+  -- instance "ff"
+  ff_3 : ff
+    port map(
+      D      => vout_ff2,
       clock  => clock,
       reset  => rst_n,
       enable => '1',
@@ -168,6 +220,9 @@ begin
   q_reg6_s <= signed(q_reg6);
   q_reg7_s <= signed(q_reg7);
   q_reg8_s <= signed(q_reg8);
+  q_reg9_s <= signed(q_reg9);
+  q_reg10_s <= signed(q_reg10);
+  q_reg11_s <= signed(q_reg11);  
   tmp_a_slv <= std_logic_vector(TMPa);
   tmp_b_slv <= std_logic_vector(tmpb);
   dout      <= dout_pad & '0';

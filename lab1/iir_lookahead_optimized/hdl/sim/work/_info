@@ -1,299 +1,193 @@
 m255
-K4
-z2
-!s11f MIXED_VERSIONS
-!s11e vcom 2020.1 2020.02, Feb 28 2020
 13
-!s112 1.1
-!i10d 8192
-!i10e 25
-!i10f 100
 cModel Technology
-Z0 d/home/stefano/github/isa/lab1/iir_look_ahead/hdl/sim
+d/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/sim
+T_opt
+V=26<J:hHbi:nlLGFc3:;Q3
+06 6 4 ./work tb_iir fast 0
+o-quiet -auto_acc_if_foreign -work work
+tExplicit 1
+OE;O;6.2g;35
 Eclk_gen
-Z1 w1636571419
-Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
-Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 17
-R0
-Z6 8/home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/clk_gen.vhd
-Z7 F/home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/clk_gen.vhd
+w1636736631
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/clk_gen.vhd
+F/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/clk_gen.vhd
 l0
-L6 1
-V4bc`7UdH`BlHk=^=TDQ9H2
-!s100 JA8Ue1n4KCD]`nb]FQfQ[2
-Z8 OV;C;2020.1;71
+L6
+Vd5g0W;<;LIGekK2n^ImmS1
+OE;C;6.2g;35
 32
-Z9 !s110 1636573410
-!i10b 1
-Z10 !s108 1636573410.000000
-Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/clk_gen.vhd|
-Z12 !s107 /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/clk_gen.vhd|
-!i113 1
-Z13 o-work work -2002 -explicit
-Z14 tExplicit 1 CvgOpt 0
+o-work work -2002 -explicit
+tExplicit 1
 Abeh
-R2
-R3
-R4
-R5
-DEx4 work 7 clk_gen 0 22 4bc`7UdH`BlHk=^=TDQ9H2
-!i122 17
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work clk_gen d5g0W;<;LIGekK2n^ImmS1
 l19
-L13 29
-VdBQiMTcGMoC@`J@8JZl4?1
-!s100 G^OAm3OKA7iiHa=gPhmWW3
-R8
+L13
+Vj<QW>likElFZ5R9]cVHIP2
+OE;C;6.2g;35
 32
-R9
-!i10b 1
-R10
-R11
-R12
-!i113 1
-R13
-R14
+M3 ieee std_logic_1164
+M2 ieee std_logic_arith
+M1 ieee std_logic_unsigned
+o-work work -2002 -explicit
+tExplicit 1
 Edata_maker
-Z15 w1636573400
-Z16 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
-R2
-R3
-R4
-R5
-!i122 18
-R0
-Z17 8/home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_maker_new.vhd
-Z18 F/home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_maker_new.vhd
+w1636736631
+DP std textio K]Z^fghZ6B=BjnK5NomDT3
+DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/data_maker_new.vhd
+F/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/data_maker_new.vhd
 l0
-Z19 L10 1
-V4Boc27_44zodnS0FRIoKa2
-!s100 3Rm2TAX35VmTHJ2`Zk@cl0
-R8
+L10
+VACEfMAd8WzbaUO354A1NO1
+OE;C;6.2g;35
 32
-Z20 !s110 1636573411
-!i10b 1
-R10
-Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_maker_new.vhd|
-Z22 !s107 /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_maker_new.vhd|
-!i113 1
-R13
-R14
+o-work work -2002 -explicit
+tExplicit 1
 Abeh
-R16
-R2
-R3
-R4
-R5
-DEx4 work 10 data_maker 0 22 4Boc27_44zodnS0FRIoKa2
-!i122 18
+DP std textio K]Z^fghZ6B=BjnK5NomDT3
+DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work data_maker ACEfMAd8WzbaUO354A1NO1
 l28
-L21 58
-V6;<_gnDPNW==@_?W3GLl[0
-!s100 O@nW:]O_QOd3DTm1?Wf680
-R8
+L21
+Vo9cMb36>M9nU:U9imDg0h2
+OE;C;6.2g;35
 32
-R20
-!i10b 1
-R10
-R21
-R22
-!i113 1
-R13
-R14
+M5 ieee std_logic_1164
+M4 ieee std_logic_arith
+M3 ieee std_logic_unsigned
+M2 ieee std_logic_textio
+M1 std textio
+o-work work -2002 -explicit
+tExplicit 1
 Edata_sink
-R1
-R16
-R2
-R3
-R4
-R5
-!i122 19
-R0
-Z23 8/home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_sink.vhd
-Z24 F/home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_sink.vhd
+w1636736631
+DP std textio K]Z^fghZ6B=BjnK5NomDT3
+DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/data_sink.vhd
+F/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/data_sink.vhd
 l0
-R19
-VV9@Cm]PFKTcR^0^j4LVC<3
-!s100 Z:8h4h8R<fGUUmIca97Yj3
-R8
+L10
+VEmA3NES6]B6JCaVUeZ=m]3
+OE;C;6.2g;35
 32
-R20
-!i10b 1
-Z25 !s108 1636573411.000000
-Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_sink.vhd|
-Z27 !s107 /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/data_sink.vhd|
-!i113 1
-R13
-R14
+o-work work -2002 -explicit
+tExplicit 1
 Abeh
-R16
-R2
-R3
-R4
-R5
-DEx4 work 9 data_sink 0 22 V9@Cm]PFKTcR^0^j4LVC<3
-!i122 19
+DP std textio K]Z^fghZ6B=BjnK5NomDT3
+DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work data_sink EmA3NES6]B6JCaVUeZ=m]3
 l20
-L18 19
-VPR^e2Zz?e01GEVR3QG<1[0
-!s100 ME<3D>aRj@I4S?QjgVROm2
-R8
+L18
+VmP7JB`KmLO?Z6A2FFR@zZ1
+OE;C;6.2g;35
 32
-R20
-!i10b 1
-R25
-R26
-R27
-!i113 1
-R13
-R14
+M5 ieee std_logic_1164
+M4 ieee std_logic_arith
+M3 ieee std_logic_unsigned
+M2 ieee std_logic_textio
+M1 std textio
+o-work work -2002 -explicit
+tExplicit 1
 Eff
-R1
-R4
-R5
-!i122 14
-R0
-Z28 8/home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/ff.vhd
-Z29 F/home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/ff.vhd
+w1636736631
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/src/ff.vhd
+F/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/src/ff.vhd
 l0
-L6 1
-VdlAEflJa^1=Xfz`<m^;kA2
-!s100 6P6zNnUNXNY8X_ST87[GQ1
-R8
+L6
+V?^f?@[z_^1]OLI39:PMnT0
+OE;C;6.2g;35
 32
-R9
-!i10b 1
-R10
-Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/ff.vhd|
-Z31 !s107 /home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/ff.vhd|
-!i113 1
-R13
-R14
+o-work work -2002 -explicit
+tExplicit 1
 Astr
-R4
-R5
-DEx4 work 2 ff 0 22 dlAEflJa^1=Xfz`<m^;kA2
-!i122 14
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work ff ?^f?@[z_^1]OLI39:PMnT0
 l25
-L19 20
-VlPce:?V]=g<cAhADIgJWF1
-!s100 ]Sj:K;W4MTLDlQF=B7`5^2
-R8
+L19
+V@a?Az7gJ5<O=3G2WMPBzg2
+OE;C;6.2g;35
 32
-R9
-!i10b 1
-R10
-R30
-R31
-!i113 1
-R13
-R14
+M1 ieee std_logic_1164
+o-work work -2002 -explicit
+tExplicit 1
 Eiir_filter
-R1
-Z32 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
-R4
-R5
-!i122 15
-R0
-Z33 8/home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/iir_filter.vhd
-Z34 F/home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/iir_filter.vhd
+w1636742910
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/src/iir_filter.vhd
+F/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/src/iir_filter.vhd
 l0
-L5 1
-Vk<@KbJ2SUl7aIP5c82o^X1
-!s100 >NgjoibRPXCU]@P6N>38<2
-R8
+L5
+VG1N9N:B0U8_1Z=ZRcX_NX2
+OE;C;6.2g;35
 32
-R9
-!i10b 1
-R10
-Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/iir_filter.vhd|
-Z36 !s107 /home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/iir_filter.vhd|
-!i113 1
-R13
-R14
+o-work work -2002 -explicit
+tExplicit 1
 Aarch
-R32
-R4
-R5
-DEx4 work 10 iir_filter 0 22 k<@KbJ2SUl7aIP5c82o^X1
-!i122 15
-l44
-L19 100
-VZi2W>NP_E5k0Q]Rai=46I3
-!s100 l8Ve:R4=ln>C63FdEN5?82
-R8
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work iir_filter G1N9N:B0U8_1Z=ZRcX_NX2
+l48
+L18
+VEE`U0MLlXFB050URYEUdl3
+OE;C;6.2g;35
 32
-R9
-!i10b 1
-R10
-R35
-R36
-!i113 1
-R13
-R14
+M2 ieee std_logic_1164
+M1 ieee numeric_std
+o-work work -2002 -explicit
+tExplicit 1
 Ereg
-R1
-R4
-R5
-!i122 16
-R0
-Z37 8/home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/reg.vhd
-Z38 F/home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/reg.vhd
+w1636736631
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/src/reg.vhd
+F/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/src/reg.vhd
 l0
-L6 1
-VQ7aZPVnl4g9iK06S=31d<2
-!s100 7SWJYeiHnmXdd[4A6b04V0
-R8
+L6
+Vgg^5EKmGSD2>B8D_ZHUWl0
+OE;C;6.2g;35
 32
-R9
-!i10b 1
-R10
-Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/reg.vhd|
-Z40 !s107 /home/stefano/github/isa/lab1/iir_look_ahead/hdl/src/reg.vhd|
-!i113 1
-R13
-R14
+o-work work -2002 -explicit
+tExplicit 1
 Astr
-R4
-R5
-DEx4 work 3 reg 0 22 Q7aZPVnl4g9iK06S=31d<2
-!i122 16
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work reg gg^5EKmGSD2>B8D_ZHUWl0
 l27
-L21 20
-V3nXn0T7zFZc32?k:i?el80
-!s100 H:I>X6KXCAzX1j160A?`Y0
-R8
+L21
+V`gePmaHWZQFckXZd_a5hN1
+OE;C;6.2g;35
 32
-R9
-!i10b 1
-R10
-R39
-R40
-!i113 1
-R13
-R14
+M1 ieee std_logic_1164
+o-work work -2002 -explicit
+tExplicit 1
 vtb_iir
-R20
-!i10b 1
-!s100 :AhNASMi:`nV96_?Q:j8C0
-!s11b Dg1SIo80bB@j0V0VzS_@n1
-IR]QQk<Mzlk;T;FZA_GBF:3
-VDg1SIo80bB@j0V0VzS_@n1
-R0
-R1
-8/home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/tb_iir.v
-F/home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/tb_iir.v
-!i122 20
-L0 3 53
-OV;L;2020.1;71
+I_lJH_1?5QhU?cP71ijWCe3
+VD>C?Nj0l55a<GWJf=GZDR1
+w1636736631
+8/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/tb_iir.v
+F/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/tb_iir.v
+L0 3
+VD>C?Nj0l55a<GWJf=GZDR1
+OE;L;6.2g;35
 r1
-!s85 0
 31
-R25
-!s107 /home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/tb_iir.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/stefano/github/isa/lab1/iir_look_ahead/hdl/tb/tb_iir.v|
-!i113 1
 o-work work
-tCvgOpt 0

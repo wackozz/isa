@@ -38,8 +38,8 @@ architecture arch of iir_filter is
   signal TMPq2_c2, TMPq3_c3, TMPqx_a1              : signed(13 downto 0);
   signal TMPtmpa_b0, TMPq1_b1, TMPq2_b2            : signed(13 downto 0);
   signal TMPa                                      : signed(6 downto 0);
-  signal TMPb                           : signed(7 downto 0);
-  signal dout_pad, tmp_b_slv                                  : std_logic_vector(7 downto 0);
+  signal TMPb                           		   : signed(7 downto 0);
+  signal dout_pad, tmp_b_slv                       : std_logic_vector(7 downto 0);
 
 begin
   TMPq2_c2 <= signed(q_reg2) * c2_s;
@@ -115,7 +115,7 @@ begin
       clock  => clock,
       reset  => rst_n,
       enable => '1',
-      Q      => vout);
+      Q      => vout_ff);
 
   din_s     <= signed(din(8 downto 2));
   a1_s      <= signed(a1(8 downto 2));

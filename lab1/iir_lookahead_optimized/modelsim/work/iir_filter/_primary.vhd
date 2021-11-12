@@ -6,7 +6,8 @@ entity iir_filter is
         rst_n           : in     vl_logic;
         din             : in     vl_logic_vector(8 downto 0);
         a1              : in     vl_logic_vector(8 downto 0);
-        a2              : in     vl_logic_vector(8 downto 0);
+        c2              : in     vl_logic_vector(8 downto 0);
+        c3              : in     vl_logic_vector(8 downto 0);
         b0              : in     vl_logic_vector(8 downto 0);
         b1              : in     vl_logic_vector(8 downto 0);
         b2              : in     vl_logic_vector(8 downto 0);
