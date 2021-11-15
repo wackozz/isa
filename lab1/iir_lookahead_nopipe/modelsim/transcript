@@ -1,11 +1,45 @@
 # Loading project iir_filter_lookahead_noopt_postplace
+# vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_nopipe/hdl/tb/clk_gen.vhd
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Compiling entity clk_gen
+# -- Compiling architecture beh of clk_gen
+# vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_nopipe/hdl/tb/data_maker_new.vhd
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package textio
+# -- Loading package std_logic_textio
+# -- Compiling entity data_maker
+# -- Compiling architecture beh of data_maker
+# vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_nopipe/hdl/tb/data_sink.vhd
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package textio
+# -- Loading package std_logic_textio
+# -- Compiling entity data_sink
+# -- Compiling architecture beh of data_sink
+# vlog -work work -vopt /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_nopipe/hdl/tb/tb_iir.v
+# Model Technology ModelSim SE vlog 6.2g Compiler 2007.02 Feb 21 2007
+# -- Compiling module tb_iir
+# 
+# Top level modules:
+# 	tb_iir
 # vlog -work work -vopt /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_nopipe/innovus/iir_filter.v
 # Model Technology ModelSim SE vlog 6.2g Compiler 2007.02 Feb 21 2007
 # -- Compiling module iir_filter
 # 
 # Top level modules:
 # 	iir_filter
-# 1 compiles, 4 failed with no errors. 
+# 5 compiles, 0 failed with no errors. 
 # vsim -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_iir/UUT=../innovus/iir_filter.sdf work.tb_iir 
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  ModelSim SE 6.2g Feb 21 2007 Linux 3.10.0-957.5.1.el7.x86_64

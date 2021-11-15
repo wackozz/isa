@@ -1,8 +1,8 @@
 project new . iir_filter_lookahead_noopt_postsynth.mpf
-project addfile ../tb/clk_gen.vhd
-project addfile ../tb/data_maker_new.vhd
-project addfile ../tb/data_sink.vhd
-project addfile ../tb/tb_iir.v
+project addfile ../hdl/tb/clk_gen.vhd
+project addfile ../hdl/tb/data_maker_new.vhd
+project addfile ../hdl/tb/data_sink.vhd
+project addfile ../hdl/tb/tb_iir.v
 project addfile ../netlist/iir_filter.v
 project compileall
 vsim -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_iir/UUT=../netlist/iir_filter.sdf work.tb_iir

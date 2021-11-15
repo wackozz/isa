@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version O-2018.06-SP4 for linux64 -- Nov 27, 2018
-#@ # Date:   Fri Nov 12 18:17:17 2021
+#@ # Date:   Mon Nov 15 20:01:32 2021
 #@ # Run by: isa18_2021_2022@localhost.localdomain
 #@ 
 
@@ -42998,6 +42998,15 @@ gui_start
 #@ }
 #@ 
 #@ # -- End source /software/synopsys/syn_current_64.18/auxx/tcllib/lib/iwidgets4.1/watch.itk
+
+source scripts/powercons.tcl
+#@ # -- Starting source scripts/powercons.tcl
+
+#@ read_verilog -netlist ../netlist/iir_filter.v
+#@ read_saif -input ../saif/iir_filter_syn.saif -instance tb_iir/UUT -unit ns -scale 1
+#@ create_clock -name MY_CLK clock
+#@ report_power > reports/power_report.txt
+#@ # -- End source scripts/powercons.tcl
 
 source scripts/powercons.tcl
 #@ # -- Starting source scripts/powercons.tcl

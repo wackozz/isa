@@ -1,3 +1,4 @@
+# Cannot open macro file: scripts/run_postplace_cmd.dp
 # Loading project iir_filter_7bit_postplace
 # vlog -work work -vopt /home/isa18_2021_2022/github/isa/lab1/iir_7bit/innovus/iir_filter.v
 # Model Technology ModelSim SE vlog 6.2g Compiler 2007.02 Feb 21 2007
@@ -54,5 +55,5 @@
 # Loading work.data_sink(beh)
 # Loading timing data from ../innovus/iir_filter.sdf
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
-#    Time: 0 ns  Iteration: 0  Region: /tb_iir  File: /home/isa18_2021_2022/github/isa/lab1/tmp/hdl/tb/tb_iir.v
+#    Time: 0 ns  Iteration: 0  Region: /tb_iir  File: /home/isa18_2021_2022/github/isa/lab1/iir_7bit/hdl/tb/tb_iir.v
 # reading /software/mentor/modelsim_6.2g/linux/../modelsim.ini
