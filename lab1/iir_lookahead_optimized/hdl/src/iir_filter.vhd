@@ -87,6 +87,7 @@ begin
     reset => rst_n,
     enable => vin,
     Q => q_reg3);
+    
   reg_4 : reg
   generic map(
     N => 7)
