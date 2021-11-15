@@ -3,9 +3,9 @@ m255
 cModel Technology
 d/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/modelsim
 T_opt
-V>SiAi`WhXT[PRJeZJ342X1
+V6=;4MLFk=jN_z8QVgXP2<0
 06 6 4 ./work tb_iir fast 0
-o-quiet -auto_acc_if_foreign -work work -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_iir/UUT=../netlist/iir_filter.sdf -suppress 1948
+o-quiet -auto_acc_if_foreign -work work -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_iir/UUT=../innovus/iir_filter.sdf -suppress 1948
 tExplicit 1
 OE;O;6.2g;35
 Eclk_gen
@@ -108,12 +108,12 @@ OE;C;6.2g;35
 o-work work -2002 -explicit
 tExplicit 1
 viir_filter
-I_ch2C>Lj=2?7Yb<DzhoVL2
+IEBK7@oWL_;3PMOf0QCDP`2
 V?O^HCSZ:oCg^Pgdl6aYnJ2
-w1636745102
-8/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/netlist/iir_filter.v
-F/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/netlist/iir_filter.v
-L0 8
+w1636979579
+8/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/innovus/iir_filter.v
+F/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/innovus/iir_filter.v
+L0 15
 V?O^HCSZ:oCg^Pgdl6aYnJ2
 OE;L;6.2g;35
 r1
