@@ -14,7 +14,7 @@ lappend tmpstr "trgGlbOverflowPctV" 0
 lappend tmpbar "Congestion"
 lappend tmpstr "Congestion" 0
 lappend tmpbar WNS
-lappend tmpstr WNS 5.575
+lappend tmpstr WNS 5.041
 lappend tmpbar TNS
 lappend tmpstr TNS 0.0
 lappend tmpbar Overlap
