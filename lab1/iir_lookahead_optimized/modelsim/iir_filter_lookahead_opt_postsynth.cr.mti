@@ -1,8 +1,0 @@
-/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/netlist/iir_filter.v {1 {vlog -work work -vopt /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/netlist/iir_filter.v
-Model Technology ModelSim SE vlog 6.2g Compiler 2007.02 Feb 21 2007
--- Compiling module iir_filter
-
-Top level modules:
-	iir_filter
-
-} {} {}}

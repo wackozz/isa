@@ -1,5 +1,0 @@
-set IN_DIR "../netlist"
-set TopLevelDesign "iir_filter"
-set LIB_DIR /software/dk/nandgate45/liberty
-set MyTimingLib &{LIB_DIR}/NangateOpenCellLibrary_typical_ecsm_nowlm.lib
-SET 
