@@ -34,4 +34,4 @@ write_sdc ../netlist/iir_filter.sdc
 #quit
 }
 elab
-synth 7.28
+synth 6.64

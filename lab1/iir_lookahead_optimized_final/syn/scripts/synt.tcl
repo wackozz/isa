@@ -20,4 +20,4 @@ write -f verilog -hierarchy -output ../netlist/iir_filter.v
 write_sdc ../netlist/iir_filter.sdc
 #quit
 }
-synth 0
+synth 6.64
