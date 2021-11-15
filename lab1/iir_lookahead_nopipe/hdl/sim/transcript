@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+# Project file /home/stefano/github/isa/lab1/iir_look_ahead/hdl/sim/iir_look_ahead.mpf was not found.
+# Unable to open project.
+cd /home/stefano/github/isa/lab1/iir_lookahead_nopipe/hdl/sim
+=======
 # Loading project iir_filter_lookahead_noopt
 # vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_nopipe/hdl/src/iir_filter.vhd
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
@@ -80,3 +85,4 @@
 # Loading work.ff(str)
 # Loading work.data_sink(beh)
 # reading /software/mentor/modelsim_6.2g/linux/../modelsim.ini
+>>>>>>> 1e6faefc8393845918a76dfc912bb2d899eaea06
