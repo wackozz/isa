@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys DC Expert(TM) in wire load mode
 // Version   : O-2018.06-SP4
-// Date      : Fri Nov 12 18:10:24 2021
+// Date      : Tue Nov 16 17:01:26 2021
 /////////////////////////////////////////////////////////////
 
 
@@ -246,26 +246,26 @@ module iir_filter ( clock, rst_n, din, a1, a2, b0, b1, b2, vin, dout, vout );
   DFFR_X1 reg_2_Q_reg_6_ ( .D(reg_2_n24), .CK(clock), .RN(rst_n), .Q(q_reg2[6]), .QN(reg_2_n31) );
   BUF_X1 reg_dout_U19 ( .A(vin), .Z(reg_dout_n26) );
   BUF_X1 reg_dout_U18 ( .A(vin), .Z(reg_dout_n25) );
-  NAND2_X1 reg_dout_U17 ( .A1(TMPb[5]), .A2(reg_dout_n25), .ZN(reg_dout_n6) );
-  OAI21_X1 reg_dout_U16 ( .B1(reg_dout_n14), .B2(reg_dout_n25), .A(reg_dout_n6), .ZN(reg_dout_n22) );
-  NAND2_X1 reg_dout_U15 ( .A1(TMPb[2]), .A2(reg_dout_n25), .ZN(reg_dout_n3) );
-  OAI21_X1 reg_dout_U14 ( .B1(reg_dout_n11), .B2(reg_dout_n25), .A(reg_dout_n3), .ZN(reg_dout_n19) );
-  NAND2_X1 reg_dout_U13 ( .A1(TMPb[1]), .A2(reg_dout_n25), .ZN(reg_dout_n2) );
-  OAI21_X1 reg_dout_U12 ( .B1(reg_dout_n10), .B2(reg_dout_n25), .A(reg_dout_n2), .ZN(reg_dout_n18) );
-  NAND2_X1 reg_dout_U11 ( .A1(TMPb[4]), .A2(reg_dout_n25), .ZN(reg_dout_n5) );
-  OAI21_X1 reg_dout_U10 ( .B1(reg_dout_n13), .B2(reg_dout_n25), .A(reg_dout_n5), .ZN(reg_dout_n21) );
-  NAND2_X1 reg_dout_U9 ( .A1(TMPb[3]), .A2(reg_dout_n25), .ZN(reg_dout_n4) );
-  OAI21_X1 reg_dout_U8 ( .B1(reg_dout_n12), .B2(reg_dout_n25), .A(reg_dout_n4), 
-        .ZN(reg_dout_n20) );
-  NAND2_X1 reg_dout_U7 ( .A1(reg_dout_n26), .A2(TMPb[0]), .ZN(reg_dout_n1) );
-  OAI21_X1 reg_dout_U6 ( .B1(reg_dout_n9), .B2(reg_dout_n26), .A(reg_dout_n1), 
+  NAND2_X1 reg_dout_U17 ( .A1(TMPb[6]), .A2(reg_dout_n25), .ZN(reg_dout_n7) );
+  OAI21_X1 reg_dout_U16 ( .B1(reg_dout_n15), .B2(reg_dout_n26), .A(reg_dout_n7), .ZN(reg_dout_n23) );
+  NAND2_X1 reg_dout_U15 ( .A1(TMPb[5]), .A2(reg_dout_n25), .ZN(reg_dout_n6) );
+  OAI21_X1 reg_dout_U14 ( .B1(reg_dout_n14), .B2(reg_dout_n25), .A(reg_dout_n6), .ZN(reg_dout_n22) );
+  NAND2_X1 reg_dout_U13 ( .A1(TMPb[4]), .A2(reg_dout_n25), .ZN(reg_dout_n5) );
+  OAI21_X1 reg_dout_U12 ( .B1(reg_dout_n13), .B2(reg_dout_n25), .A(reg_dout_n5), .ZN(reg_dout_n21) );
+  NAND2_X1 reg_dout_U11 ( .A1(TMPb[3]), .A2(reg_dout_n25), .ZN(reg_dout_n4) );
+  OAI21_X1 reg_dout_U10 ( .B1(reg_dout_n12), .B2(reg_dout_n25), .A(reg_dout_n4), .ZN(reg_dout_n20) );
+  NAND2_X1 reg_dout_U9 ( .A1(TMPb[2]), .A2(reg_dout_n25), .ZN(reg_dout_n3) );
+  OAI21_X1 reg_dout_U8 ( .B1(reg_dout_n11), .B2(reg_dout_n25), .A(reg_dout_n3), 
+        .ZN(reg_dout_n19) );
+  NAND2_X1 reg_dout_U7 ( .A1(TMPb[1]), .A2(reg_dout_n25), .ZN(reg_dout_n2) );
+  OAI21_X1 reg_dout_U6 ( .B1(reg_dout_n10), .B2(reg_dout_n25), .A(reg_dout_n2), 
+        .ZN(reg_dout_n18) );
+  NAND2_X1 reg_dout_U5 ( .A1(reg_dout_n26), .A2(TMPb[0]), .ZN(reg_dout_n1) );
+  OAI21_X1 reg_dout_U4 ( .B1(reg_dout_n9), .B2(reg_dout_n26), .A(reg_dout_n1), 
         .ZN(reg_dout_n17) );
-  NAND2_X1 reg_dout_U5 ( .A1(TMPb[7]), .A2(reg_dout_n25), .ZN(reg_dout_n8) );
-  OAI21_X1 reg_dout_U4 ( .B1(reg_dout_n16), .B2(reg_dout_n26), .A(reg_dout_n8), 
+  NAND2_X1 reg_dout_U3 ( .A1(TMPb[7]), .A2(reg_dout_n25), .ZN(reg_dout_n8) );
+  OAI21_X1 reg_dout_U2 ( .B1(reg_dout_n16), .B2(reg_dout_n26), .A(reg_dout_n8), 
         .ZN(reg_dout_n24) );
-  NAND2_X1 reg_dout_U3 ( .A1(TMPb[6]), .A2(reg_dout_n25), .ZN(reg_dout_n7) );
-  OAI21_X1 reg_dout_U2 ( .B1(reg_dout_n15), .B2(reg_dout_n26), .A(reg_dout_n7), 
-        .ZN(reg_dout_n23) );
   DFFR_X1 reg_dout_Q_reg_0_ ( .D(reg_dout_n17), .CK(clock), .RN(rst_n), .Q(
         dout[1]), .QN(reg_dout_n9) );
   DFFR_X1 reg_dout_Q_reg_1_ ( .D(reg_dout_n18), .CK(clock), .RN(rst_n), .Q(
@@ -373,15 +373,15 @@ module iir_filter ( clock, rst_n, din, a1, a2, b0, b1, b2, vin, dout, vout );
   INV_X1 mult_54_U121 ( .A(b0[5]), .ZN(mult_54_n174) );
   INV_X1 mult_54_U120 ( .A(b0[7]), .ZN(mult_54_n172) );
   INV_X1 mult_54_U119 ( .A(mult_54_n1), .ZN(TMPtmpa_b0_13_) );
-  INV_X1 mult_54_U118 ( .A(mult_54_n70), .ZN(mult_54_n166) );
-  INV_X1 mult_54_U117 ( .A(mult_54_n68), .ZN(mult_54_n169) );
-  INV_X1 mult_54_U116 ( .A(TMPa[0]), .ZN(mult_54_n171) );
-  INV_X1 mult_54_U115 ( .A(TMPa[3]), .ZN(mult_54_n167) );
-  INV_X1 mult_54_U114 ( .A(TMPa[2]), .ZN(mult_54_n168) );
-  INV_X1 mult_54_U113 ( .A(TMPa[1]), .ZN(mult_54_n170) );
-  INV_X1 mult_54_U112 ( .A(mult_54_n61), .ZN(mult_54_n164) );
-  INV_X1 mult_54_U111 ( .A(TMPa[5]), .ZN(mult_54_n163) );
-  INV_X1 mult_54_U110 ( .A(TMPa[4]), .ZN(mult_54_n165) );
+  INV_X1 mult_54_U118 ( .A(TMPa[0]), .ZN(mult_54_n171) );
+  INV_X1 mult_54_U117 ( .A(TMPa[3]), .ZN(mult_54_n167) );
+  INV_X1 mult_54_U116 ( .A(TMPa[2]), .ZN(mult_54_n168) );
+  INV_X1 mult_54_U115 ( .A(TMPa[1]), .ZN(mult_54_n170) );
+  INV_X1 mult_54_U114 ( .A(TMPa[4]), .ZN(mult_54_n165) );
+  INV_X1 mult_54_U113 ( .A(mult_54_n70), .ZN(mult_54_n166) );
+  INV_X1 mult_54_U112 ( .A(mult_54_n68), .ZN(mult_54_n169) );
+  INV_X1 mult_54_U111 ( .A(mult_54_n61), .ZN(mult_54_n164) );
+  INV_X1 mult_54_U110 ( .A(TMPa[5]), .ZN(mult_54_n163) );
   INV_X1 mult_54_U109 ( .A(mult_54_n54), .ZN(mult_54_n162) );
   HA_X1 mult_54_U44 ( .A(mult_54_n113), .B(mult_54_n119), .CO(mult_54_n71), 
         .S(mult_54_n72) );
