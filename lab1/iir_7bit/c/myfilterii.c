@@ -5,8 +5,8 @@
 
 #define N 2   /// order of the filter
 #define NB 7 // number of bits
-#define SH 2
 
+const int SH = 9 - NB;
 const int b0 = (52>>SH);          /// coefficient b0
 const int b[N] = {(105>>SH), (52>>SH)};  /// b array
 const int a[N] = {(95>>SH), (-50>>SH)}; /// a array

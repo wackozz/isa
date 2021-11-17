@@ -33,23 +33,23 @@ architecture arch of iir_filter is
       Q : out std_logic);
   end component ff;
 
-  signal tmp_a_slv, q_reg1, q_reg2 : std_logic_vector(6 downto 0);
-  signal din_s : signed(6 downto 0);
-  signal a1_s, a2_s, b0_s, b1_s, b2_s : signed(6 downto 0);
-  signal TMPq1_a1 : signed(13 downto 0);
-  signal TMPq2_a2 : signed(13 downto 0);
-  signal TMPtmpa_b0 : signed(13 downto 0);
-  signal TMPq1_b1 : signed(13 downto 0);
-  signal TMPq2_b2 : signed(13 downto 0);
-  signal tmp_b_slv : std_logic_vector(7 downto 0);
-  signal TMPa : signed(6 downto 0);
+  signal q_reg1, q_reg2 : std_logic_vector(7 downto 0);
+  signal din_s : signed(7 downto 0);
+  signal a1_s, a2_s, b0_s, b1_s, b2_s : signed(7 downto 0);
+  signal TMPq1_a1 : signed(15 downto 0);
+  signal TMPq2_a2 : signed(15 downto 0);
+  signal TMPtmpa_b0 : signed(15 downto 0);
+  signal TMPq1_b1 : signed(15 downto 0);
+  signal TMPq2_b2 : signed(15 downto 0);
+  signal tmp_a_slv, tmp_b_slv : std_logic_vector(7 downto 0);
+  signal TMPa : signed(7 downto 0);
   signal TMPb : signed(7 downto 0);
   signal dout_pad : std_logic_vector(7 downto 0); 
 
 begin
   TMPq1_a1 <= signed(q_reg1) * a1_s;
   TMPq2_a2 <= signed(q_reg2) * a2_s;
-  TMPa <= din_s + (TMPq1_a1(12 downto 6) + TMPq2_a2(12 downto 6));
+  TMPa <= din_s + (TMPq1_a1(13 downto 6) + TMPq2_a2(13 downto 6));
 
   TMPtmpa_b0 <= TMPa * b0_s;
   TMPq1_b1 <= signed(q_reg1) * b1_s;
@@ -59,7 +59,7 @@ begin
   -- instance "reg_1"
   reg_1 : reg
   generic map(
-    N => 7)
+    N => 8)
   port map(
     D => tmp_a_slv,
     clock => clock,
@@ -70,7 +70,7 @@ begin
   -- instance "reg_2"
   reg_2 : reg
   generic map(
-    N => 7)
+    N => 8)
   port map(
     D => q_reg1,
     clock => clock,
@@ -98,12 +98,12 @@ begin
       enable => '1',
       Q => vout);
 
-  din_s <= signed(din(8 downto 2));
-  a1_s <= signed(a1(8 downto 2));
-  a2_s <= signed(a2(8 downto 2));
-  b0_s <= signed(b0(8 downto 2));
-  b1_s <= signed(b1(8 downto 2));
-  b2_s <= signed(b2(8 downto 2));
+  din_s <= signed(din(8) & din(8 downto 2));
+  a1_s <= signed(a1(8) & a1(8 downto 2));
+  a2_s <= signed(a2(8) & a2(8 downto 2));
+  b0_s <= signed(b0(8) & b0(8 downto 2));
+  b1_s <= signed(b1(8) & b1(8 downto 2));
+  b2_s <= signed(b2(8) & b2(8 downto 2));
   tmp_a_slv <= std_logic_vector(tmpa);
   tmp_b_slv <= std_logic_vector(tmpb);
   dout <= dout_pad & '0'; 

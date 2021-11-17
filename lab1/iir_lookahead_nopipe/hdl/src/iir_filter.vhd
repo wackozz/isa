@@ -32,12 +32,12 @@ architecture arch of iir_filter is
       Q                    : out std_logic);
   end component ff;
 
-  signal tmp_a_slv, q_reg1, q_reg2, q_reg3, q_regx : std_logic_vector(6 downto 0);
-  signal din_s                                     : signed(6 downto 0);
-  signal a1_s, c2_s, c3_s, b0_s, b1_s, b2_s        : signed(6 downto 0);
-  signal TMPq2_c2, TMPq3_c3, TMPqx_a1              : signed(13 downto 0);
-  signal TMPtmpa_b0, TMPq1_b1, TMPq2_b2            : signed(13 downto 0);
-  signal TMPa                                      : signed(6 downto 0);
+  signal tmp_a_slv, q_reg1, q_reg2, q_reg3, q_regx : std_logic_vector(7 downto 0);
+  signal din_s                                     : signed(7 downto 0);
+  signal a1_s, c2_s, c3_s, b0_s, b1_s, b2_s        : signed(7 downto 0);
+  signal TMPq2_c2, TMPq3_c3, TMPqx_a1              : signed(15 downto 0);
+  signal TMPtmpa_b0, TMPq1_b1, TMPq2_b2            : signed(15 downto 0);
+  signal TMPa                                      : signed(7 downto 0);
   signal TMPb                           		   : signed(7 downto 0);
   signal dout_pad, tmp_b_slv                       : std_logic_vector(7 downto 0);
 
@@ -45,7 +45,7 @@ begin
   TMPq2_c2 <= signed(q_reg2) * c2_s;
   TMPq3_c3 <= signed(q_reg3) * c3_s;
   TMPqx_a1 <= signed(q_regx) * a1_s;
-  TMPa     <= din_s + TMPqx_a1(12 downto 6) + TMPq2_c2(12 downto 6) + TMPq3_c3(12 downto 6);
+  TMPa     <= din_s + TMPqx_a1(13 downto 6) + TMPq2_c2(13 downto 6) + TMPq3_c3(13 downto 6);
 
   TMPtmpa_b0 <= TMPa * b0_s;
   TMPq1_b1   <= signed(q_reg1) * b1_s;
@@ -56,7 +56,7 @@ begin
   -- instance "reg_x"
   reg_x : reg
     generic map(
-      N => 7)
+      N => 8)
     port map(
       D      => std_logic_vector(din_s),
       clock  => clock,
@@ -67,7 +67,7 @@ begin
   -- instance "reg_1"
   reg_1 : reg
     generic map(
-      N => 7)
+      N => 8)
     port map(
       D      => tmp_a_slv,
       clock  => clock,
@@ -78,7 +78,7 @@ begin
   -- instance "reg_2"
   reg_2 : reg
     generic map(
-      N => 7)
+      N => 8)
     port map(
       D      => q_reg1,
       clock  => clock,
@@ -89,7 +89,7 @@ begin
   -- instance "reg_2"
   reg_3 : reg
     generic map(
-      N => 7)
+      N => 8)
     port map(
       D      => q_reg2,
       clock  => clock,
@@ -115,15 +115,15 @@ begin
       clock  => clock,
       reset  => rst_n,
       enable => '1',
-      Q      => vout_ff);
+      Q      => vout);
 
-  din_s     <= signed(din(8 downto 2));
-  a1_s      <= signed(a1(8 downto 2));
-  c2_s      <= signed(c2(8 downto 2));
-  c3_s      <= signed(c3(8 downto 2));
-  b0_s      <= signed(b0(8 downto 2));
-  b1_s      <= signed(b1(8 downto 2));
-  b2_s      <= signed(b2(8 downto 2));
+  din_s     <= signed(din(8) & din(8 downto 2));
+  a1_s      <= signed(a1(8) & a1(8 downto 2));
+  c2_s      <= signed(c2(8) & c2(8 downto 2));
+  c3_s      <= signed(c3(8) & c3(8 downto 2));
+  b0_s      <= signed(b0(8) & b0(8 downto 2));
+  b1_s      <= signed(b1(8) & b1(8 downto 2));
+  b2_s      <= signed(b2(8) & b2(8 downto 2));
   tmp_a_slv <= std_logic_vector(tmpa);
   tmp_b_slv <= std_logic_vector(tmpb);
   dout      <= dout_pad & '0';
