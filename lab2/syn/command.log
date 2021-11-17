@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version O-2018.06-SP4 for linux64 -- Nov 27, 2018
-#@ # Date:   Tue Nov  9 12:30:41 2021
+#@ # Date:   Tue Nov 16 11:07:41 2021
 #@ # Run by: isa18_2021_2022@localhost.localdomain
 #@ 
 
@@ -6627,6 +6627,16 @@ source /software/synopsys/syn_current_64.18/admin/setup/.synopsys_dc.setup
 #@ # -- End source /software/synopsys/syn_current_64.18/auxx/syn/lc_commands.tbc
 
 #@ # -- End source /software/synopsys/syn_current_64.18/admin/setup/.synopsys_dc.setup
+
+source /home/isa18_2021_2022/github/isa/lab2/syn/.synopsys_dc.setup
+#@ # -- Starting source /home/isa18_2021_2022/github/isa/lab2/syn/.synopsys_dc.setup
+
+#@ define_design_lib WORK -path ./work
+#@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
+#@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
+#@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
+#@ set synthetic_library [list "dw_foundation.sldb" ]
+#@ # -- End source /home/isa18_2021_2022/github/isa/lab2/syn/.synopsys_dc.setup
 
 gui_start
 #@ # -- Starting source /software/synopsys/syn_current_64.18/auxx/tcllib/lib/itk4.0.1/itk.tcl
@@ -43002,8 +43012,7 @@ source scripts/synth_fpmul_reg.tcl
 #@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage4_struct.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/unpackfp_unpackfp.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/FPmul_tb.vhd               
-#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline.vhd       
+#@ analyze -f vhdl -lib WORK ../hdl/src/FPmul_tb.vhd                    
 #@ analyze -f vhdl -lib WORK ../hdl/src/fpnormalize_fpnormalize.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage1_struct.vhd  
 #@ analyze -f vhdl -lib WORK ../hdl/src/fpround_fpround.vhd
@@ -43012,6 +43021,8 @@ source scripts/synth_fpmul_reg.tcl
 #@ #filter contains multiple instances of reg, need to uniquify
 #@ uniquify 
 #@ link
+#@ ungroup -all -flatten
+#@ #set_implementation DW02_mult/csa [find cell *mult*]
 #@ }
 #@ 
 #@ proc synth {clk_var} {
@@ -43026,7 +43037,7 @@ source scripts/synth_fpmul_reg.tcl
 #@ compile
 #@ report_timing > reports_point1/report_timing_${clk_var}_ns.txt
 #@ report_area > reports_point1/report_area_clk_${clk_var}_ns.txt
-#@ ungroup -all -flatten
+#@ report_resources > report_point1/report_resources_clk_${clk_var}_ns.txt
 #@ #quit
 #@ }
 #@ 
@@ -43051,98 +43062,7 @@ source scripts/synth_fpmul_reg.tcl
 #@ source .synopsys_dc.setup
 #@ #adding elemts
 #@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage2_struct.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/packfp.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage3_struct.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage4_struct.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/unpackfp_unpackfp.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/FPmul_tb.vhd               
-#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline.vhd       
-#@ analyze -f vhdl -lib WORK ../hdl/src/fpnormalize_fpnormalize.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage1_struct.vhd  
-#@ analyze -f vhdl -lib WORK ../hdl/src/fpround_fpround.vhd
-#@ set power_preserve_rtl_hier_names true
-#@ elaborate FPmul -arch pipeline -lib WORK > ./reports_point1/elaborate.txt
-#@ #filter contains multiple instances of reg, need to uniquify
-#@ uniquify 
-#@ link
-#@ }
-#@ 
-#@ proc synth {clk_var} {
-#@ #set clock @argv1+-0.07ns
-#@ create_clock -name MY_CLK -period $clk_var clock
-#@ set_dont_touch_network MY_CLK
-#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
-#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
-#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
-#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
-#@ set_load $OLOAD [all_outputs]
-#@ compile
-#@ report_timing > reports_point1/report_timing_${clk_var}_ns.txt
-#@ report_area > reports_point1/report_area_clk_${clk_var}_ns.txt
-#@ ungroup -all -flatten
-#@ #quit
-#@ }
-#@ 
-#@ 
-#@ elab
-#@ # -- Starting source .synopsys_dc.setup
-
-#@ define_design_lib WORK -path ./work
-#@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
-#@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
-#@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
-#@ set synthetic_library [list "dw_foundation.sldb" ]
-#@ # -- End source .synopsys_dc.setup
-
-#@ #synth 0
-#@ # -- End source scripts/synth_fpmul_reg.tcl
-
-change_selection [get_s FPmul]
-change_selection [get_s I4]
-change_selection [get_s FPmul]
-change_selection [get_s {FPmul clk {FP_A[6]} {FP_A[5]} {FP_A[4]} {FP_A[3]} {FP_A[2]} {FP_A[1]} {FP_A[0]} {FP_A[31]} {FP_A[30]} {FP_A[29]} {FP_A[28]}}]
-change_selection -add [get_s {{FP_A[27]} {FP_A[26]} {FP_A[25]} {FP_A[24]} {FP_A[23]} {FP_A[22]} {FP_A[21]} {FP_A[20]} {FP_A[19]} {FP_A[18]} {FP_A[17]} {FP_A[16]}}]
-change_selection -add [get_s {{FP_A[15]} {FP_A[14]} {FP_A[13]} {FP_A[12]} {FP_A[11]} {FP_A[10]} {FP_A[9]} {FP_A[8]} {FP_A[7]} {FP_Z[31]} {FP_Z[30]} {FP_Z[29]}}]
-change_selection -add [get_s {{FP_Z[28]} {FP_Z[27]} {FP_Z[26]} {FP_Z[25]} {FP_Z[24]} {FP_Z[23]} {FP_Z[22]} {FP_Z[21]} {FP_Z[20]} {FP_Z[19]} {FP_Z[18]} {FP_Z[17]}}]
-change_selection -add [get_s {{FP_Z[16]} {FP_Z[15]} {FP_Z[14]} {FP_Z[13]} {FP_Z[12]} {FP_Z[11]} {FP_Z[10]} {FP_Z[9]} {FP_Z[8]} {FP_Z[7]} {FP_Z[6]} {FP_Z[5]}}]
-change_selection -add [get_s {{FP_Z[4]} {FP_Z[3]} {FP_Z[2]} {FP_Z[1]} {FP_Z[0]} {FP_B[31]} {FP_B[30]} {FP_B[29]} {FP_B[28]} {FP_B[27]} {FP_B[26]} {FP_B[25]}}]
-change_selection -add [get_s {{FP_B[24]} {FP_B[23]} {FP_B[22]} {FP_B[21]} {FP_B[20]} {FP_B[19]} {FP_B[18]} {FP_B[17]} {FP_B[16]} {FP_B[15]} {FP_B[14]} {FP_B[13]}}]
-change_selection -add [get_s {{FP_B[12]} {FP_B[11]} {FP_B[10]} {FP_B[9]} {FP_B[8]} {FP_B[7]} {FP_B[6]} {FP_B[5]} {FP_B[4]} {FP_B[3]} {FP_B[2]} {FP_B[1]} {FP_B[0]}}]
-change_selection -add [get_s {{32_pins(FP_A[],...)} {32_pins(FP_Z[],...)} {32_pins(FP_B[],...)}}]
-change_selection [get_s {FPmul clk {FP_A[6]} {FP_A[5]} {FP_A[4]} {FP_A[3]} {FP_A[2]} {FP_A[1]} {FP_A[0]} {FP_A[31]} {FP_A[30]} {FP_A[29]} {FP_A[28]}}]
-change_selection -add [get_s {{FP_A[27]} {FP_A[26]} {FP_A[25]} {FP_A[24]} {FP_A[23]} {FP_A[22]} {FP_A[21]} {FP_A[20]} {FP_A[19]} {FP_A[18]} {FP_A[17]} {FP_A[16]}}]
-change_selection -add [get_s {{FP_A[15]} {FP_A[14]} {FP_A[13]} {FP_A[12]} {FP_A[11]} {FP_A[10]} {FP_A[9]} {FP_A[8]} {FP_A[7]} {FP_Z[31]} {FP_Z[30]} {FP_Z[29]}}]
-change_selection -add [get_s {{FP_Z[28]} {FP_Z[27]} {FP_Z[26]} {FP_Z[25]} {FP_Z[24]} {FP_Z[23]} {FP_Z[22]} {FP_Z[21]} {FP_Z[20]} {FP_Z[19]} {FP_Z[18]} {FP_Z[17]}}]
-change_selection -add [get_s {{FP_Z[16]} {FP_Z[15]} {FP_Z[14]} {FP_Z[13]} {FP_Z[12]} {FP_Z[11]} {FP_Z[10]} {FP_Z[9]} {FP_Z[8]} {FP_Z[7]} {FP_Z[6]} {FP_Z[5]}}]
-change_selection -add [get_s {{FP_Z[4]} {FP_Z[3]} {FP_Z[2]} {FP_Z[1]} {FP_Z[0]} {FP_B[31]} {FP_B[30]} {FP_B[29]} {FP_B[28]} {FP_B[27]} {FP_B[26]} {FP_B[25]}}]
-change_selection -add [get_s {{FP_B[24]} {FP_B[23]} {FP_B[22]} {FP_B[21]} {FP_B[20]} {FP_B[19]} {FP_B[18]} {FP_B[17]} {FP_B[16]} {FP_B[15]} {FP_B[14]} {FP_B[13]}}]
-change_selection -add [get_s {{FP_B[12]} {FP_B[11]} {FP_B[10]} {FP_B[9]} {FP_B[8]} {FP_B[7]} {FP_B[6]} {FP_B[5]} {FP_B[4]} {FP_B[3]} {FP_B[2]} {FP_B[1]} {FP_B[0]}}]
-change_selection -add [get_s {{32_pins(FP_A[],...)} {32_pins(FP_Z[],...)} {32_pins(FP_B[],...)}}]
-change_selection 
-change_selection [get_s FPmul]
-change_selection [get_s FPmul]
-change_selection [get_s {{FP_A[14]} {FP_A[24]} {FP_A[31]} {FP_A[3]} {FP_A[19]} {FP_A[11]} {FP_A[29]} {FP_A[21]} {FP_A[4]} {FP_A[12]} {FP_A[22]} {FP_A[5]}}]
-change_selection -add [get_s {{FP_A[17]} {FP_A[27]} {FP_A[30]} {FP_A[6]} {FP_A[18]} {FP_A[10]} {FP_A[28]} {FP_A[20]} {FP_A[7]} {FP_A[15]} {FP_A[25]} {FP_A[0]}}]
-change_selection -add [get_s {{FP_A[8]} {FP_A[16]} {FP_A[26]} {FP_A[1]} {FP_A[9]} {FP_A[13]} {FP_A[23]} {FP_A[2]} {FP_A[](size:32)}}]
-change_selection [get_s {{FP_A[14]} {FP_A[24]} {FP_A[31]} {FP_A[3]} {FP_A[19]} {FP_A[11]} {FP_A[29]} {FP_A[21]} {FP_A[4]} {FP_A[12]} {FP_A[22]} {FP_A[5]}}]
-change_selection -add [get_s {{FP_A[17]} {FP_A[27]} {FP_A[30]} {FP_A[6]} {FP_A[18]} {FP_A[10]} {FP_A[28]} {FP_A[20]} {FP_A[7]} {FP_A[15]} {FP_A[25]} {FP_A[0]}}]
-change_selection -add [get_s {{FP_A[8]} {FP_A[16]} {FP_A[26]} {FP_A[1]} {FP_A[9]} {FP_A[13]} {FP_A[23]} {FP_A[2]} {FP_A[](size:32)}}]
-change_selection [get_s {{FP_B[8]} {FP_B[16]} {FP_B[26]} {FP_B[1]} {FP_B[9]} {FP_B[13]} {FP_B[23]} {FP_B[2]} {FP_B[14]} {FP_B[24]} {FP_B[31]} {FP_B[3]}}]
-change_selection -add [get_s {{FP_B[19]} {FP_B[11]} {FP_B[29]} {FP_B[21]} {FP_B[4]} {FP_B[12]} {FP_B[22]} {FP_B[5]} {FP_B[17]} {FP_B[27]} {FP_B[30]} {FP_B[6]}}]
-change_selection -add [get_s {{FP_B[18]} {FP_B[10]} {FP_B[28]} {FP_B[20]} {FP_B[7]} {FP_B[15]} {FP_B[25]} {FP_B[0]} {FP_B[](size:32)}}]
-change_selection [get_s {{FP_A[14]} {FP_A[24]} {FP_A[31]} {FP_A[3]} {FP_A[19]} {FP_A[11]} {FP_A[29]} {FP_A[21]} {FP_A[4]} {FP_A[12]} {FP_A[22]} {FP_A[5]}}]
-change_selection -add [get_s {{FP_A[17]} {FP_A[27]} {FP_A[30]} {FP_A[6]} {FP_A[18]} {FP_A[10]} {FP_A[28]} {FP_A[20]} {FP_A[7]} {FP_A[15]} {FP_A[25]} {FP_A[0]}}]
-change_selection -add [get_s {{FP_A[8]} {FP_A[16]} {FP_A[26]} {FP_A[1]} {FP_A[9]} {FP_A[13]} {FP_A[23]} {FP_A[2]} {FP_A[](size:32)}}]
-source scripts/synth_fpmul_reg.tcl
-#@ # -- Starting source scripts/synth_fpmul_reg.tcl
-
-#@ proc elab {} {
-#@ source .synopsys_dc.setup
-#@ #adding elemts
-#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage2_struct.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/packfp.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/packfp_packfp.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage3_struct.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
@@ -43157,6 +43077,8 @@ source scripts/synth_fpmul_reg.tcl
 #@ #filter contains multiple instances of reg, need to uniquify
 #@ uniquify 
 #@ link
+#@ ungroup -all -flatten
+#@ #set_implementation DW02_mult/csa [find cell *mult*]
 #@ }
 #@ 
 #@ proc synth {clk_var} {
@@ -43171,7 +43093,118 @@ source scripts/synth_fpmul_reg.tcl
 #@ compile
 #@ report_timing > reports_point1/report_timing_${clk_var}_ns.txt
 #@ report_area > reports_point1/report_area_clk_${clk_var}_ns.txt
+#@ report_resources > report_point1/report_resources_clk_${clk_var}_ns.txt
+#@ #quit
+#@ }
+#@ 
+#@ 
+#@ elab
+#@ # -- Starting source .synopsys_dc.setup
+
+#@ define_design_lib WORK -path ./work
+#@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
+#@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
+#@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
+#@ set synthetic_library [list "dw_foundation.sldb" ]
+#@ # -- End source .synopsys_dc.setup
+
+#@ #synth 0
+#@ # -- End source scripts/synth_fpmul_reg.tcl
+
+source scripts/synth_fpmul_reg.tcl
+#@ # -- Starting source scripts/synth_fpmul_reg.tcl
+
+#@ proc elab {} {
+#@ source .synopsys_dc.setup
+#@ #adding elemts
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage2_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/packfp_packfp.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage3_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage4_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/unpackfp_unpackfp.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/FPmul_tb.vhd                    
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpnormalize_fpnormalize.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage1_struct.vhd  
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpround_fpround.vhd
+#@ set power_preserve_rtl_hier_names true
+#@ elaborate FPmul -arch pipeline -lib WORK > ./reports_point1/elaborate.txt
+#@ #filter contains multiple instances of reg, need to uniquify
+#@ uniquify 
+#@ link
 #@ ungroup -all -flatten
+#@ #set_implementation DW02_mult/csa [find cell *mult*]
+#@ }
+#@ 
+#@ proc synth {clk_var} {
+#@ #set clock @argv1+-0.07ns
+#@ create_clock -name MY_CLK -period $clk_var clock
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ compile
+#@ report_timing > reports_point1/report_timing_${clk_var}_ns.txt
+#@ report_area > reports_point1/report_area_clk_${clk_var}_ns.txt
+#@ report_resources > report_point1/report_resources_clk_${clk_var}_ns.txt
+#@ #quit
+#@ }
+#@ 
+#@ 
+#@ elab
+#@ # -- Starting source .synopsys_dc.setup
+
+#@ define_design_lib WORK -path ./work
+#@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
+#@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
+#@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
+#@ set synthetic_library [list "dw_foundation.sldb" ]
+#@ # -- End source .synopsys_dc.setup
+
+#@ #synth 0
+#@ # -- End source scripts/synth_fpmul_reg.tcl
+
+source scripts/synth_fpmul_reg.tcl
+#@ # -- Starting source scripts/synth_fpmul_reg.tcl
+
+#@ proc elab {} {
+#@ source .synopsys_dc.setup
+#@ #adding elemts
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage2_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/packfp_packfp.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage3_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage4_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/unpackfp_unpackfp.vhd                   
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpnormalize_fpnormalize.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage1_struct.vhd  
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpround_fpround.vhd
+#@ set power_preserve_rtl_hier_names true
+#@ elaborate FPmul -arch pipeline -lib WORK > ./reports_point1/elaborate.txt
+#@ #filter contains multiple instances of reg, need to uniquify
+#@ uniquify 
+#@ link
+#@ ungroup -all -flatten
+#@ #set_implementation DW02_mult/csa [find cell *mult*]
+#@ }
+#@ 
+#@ proc synth {clk_var} {
+#@ #set clock @argv1+-0.07ns
+#@ create_clock -name MY_CLK -period $clk_var clock
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ compile
+#@ report_timing > reports_point1/report_timing_${clk_var}_ns.txt
+#@ report_area > reports_point1/report_area_clk_${clk_var}_ns.txt
+#@ report_resources > report_point1/report_resources_clk_${clk_var}_ns.txt
 #@ #quit
 #@ }
 #@ 
@@ -43191,4 +43224,376 @@ source scripts/synth_fpmul_reg.tcl
 
 change_selection [get_s FPmul]
 change_selection [get_s FPmul]
-change_selection [get_s rst_n]
+change_selection 
+gui_zoom -window [gui_get_current_window -view] -full
+gui_zoom -window [gui_get_current_window -view] -full
+gui_zoom -window [gui_get_current_window -view] -full
+source scripts/synth_fpmul_reg.tcl
+#@ # -- Starting source scripts/synth_fpmul_reg.tcl
+
+#@ proc elab {} {
+#@ source .synopsys_dc.setup
+#@ #adding elemts
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage2_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/packfp_packfp.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage3_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage4_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/unpackfp_unpackfp.vhd                   
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpnormalize_fpnormalize.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage1_struct.vhd  
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpround_fpround.vhd
+#@ set power_preserve_rtl_hier_names true
+#@ elaborate FPmul -arch pipeline -lib WORK > ./reports_point1/elaborate.txt
+#@ #filter contains multiple instances of reg, need to uniquify
+#@ uniquify 
+#@ link
+#@ ungroup -all -flatten
+#@ #set_implementation DW02_mult/csa [find cell *mult*]
+#@ }
+#@ 
+#@ proc synth {clk_var} {
+#@ #set clock @argv1+-0.07ns
+#@ create_clock -name MY_CLK -period $clk_var clock
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ compile
+#@ report_timing > reports_point1/report_timing_${clk_var}_ns.txt
+#@ report_area > reports_point1/report_area_clk_${clk_var}_ns.txt
+#@ report_resources > report_point1/report_resources_clk_${clk_var}_ns.txt
+#@ #quit
+#@ }
+#@ 
+#@ 
+#@ #elab
+#@ synth 0
+#@ # -- End source scripts/synth_fpmul_reg.tcl
+
+source scripts/synth_fpmul_reg.tcl
+#@ # -- Starting source scripts/synth_fpmul_reg.tcl
+
+#@ proc elab {} {
+#@ source .synopsys_dc.setup
+#@ #adding elemts
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage2_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/packfp_packfp.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage3_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage4_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/unpackfp_unpackfp.vhd                   
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpnormalize_fpnormalize.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage1_struct.vhd  
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpround_fpround.vhd
+#@ set power_preserve_rtl_hier_names true
+#@ elaborate FPmul -arch pipeline -lib WORK > ./reports_point1/elaborate.txt
+#@ #filter contains multiple instances of reg, need to uniquify
+#@ uniquify 
+#@ link
+#@ ungroup -all -flatten
+#@ #set_implementation DW02_mult/csa [find cell *mult*]
+#@ }
+#@ 
+#@ proc synth {clk_var} {
+#@ #set clock @argv1+-0.07ns
+#@ create_clock -name MY_CLK -period $clk_var clk
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ compile
+#@ report_timing > reports_point1/report_timing_${clk_var}_ns.txt
+#@ report_area > reports_point1/report_area_clk_${clk_var}_ns.txt
+#@ report_resources > report_point1/report_resources_clk_${clk_var}_ns.txt
+#@ #quit
+#@ }
+#@ 
+#@ 
+#@ #elab
+#@ synth 0
+#@ # -- End source scripts/synth_fpmul_reg.tcl
+
+source scripts/synth_fpmul_reg.tcl
+#@ # -- Starting source scripts/synth_fpmul_reg.tcl
+
+#@ proc elab {} {
+#@ source .synopsys_dc.setup
+#@ #adding elemts
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage2_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/packfp_packfp.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage3_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage4_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/unpackfp_unpackfp.vhd                   
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpnormalize_fpnormalize.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage1_struct.vhd  
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpround_fpround.vhd
+#@ set power_preserve_rtl_hier_names true
+#@ elaborate FPmul -arch pipeline -lib WORK > ./reports_point1/elaborate.txt
+#@ #filter contains multiple instances of reg, need to uniquify
+#@ uniquify 
+#@ link
+#@ ungroup -all -flatten
+#@ #set_implementation DW02_mult/csa [find cell *mult*]
+#@ create_clock -name MY_CLK -period $clk_var clk
+#@ }
+#@ 
+#@ proc synth {clk_var} {
+#@ #set clock @argv1+-0.07ns
+#@ create_clock -name MY_CLK -period $clk_var clk
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ compile
+#@ report_timing > reports_point1/report_timing_${clk_var}_ns.txt
+#@ report_area > reports_point1/report_area_clk_${clk_var}_ns.txt
+#@ report_resources > report_point1/report_resources_clk_${clk_var}_ns.txt
+#@ #quit
+#@ }
+#@ 
+#@ 
+#@ elab
+#@ # -- Starting source .synopsys_dc.setup
+
+#@ define_design_lib WORK -path ./work
+#@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
+#@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
+#@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
+#@ set synthetic_library [list "dw_foundation.sldb" ]
+#@ # -- End source .synopsys_dc.setup
+
+#@ #synth 0
+#@ # -- End source scripts/synth_fpmul_reg.tcl
+
+source scripts/synth_fpmul_reg.tcl
+#@ # -- Starting source scripts/synth_fpmul_reg.tcl
+
+#@ proc elab {} {
+#@ source .synopsys_dc.setup
+#@ #adding elemts
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage2_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/packfp_packfp.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage3_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage4_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/unpackfp_unpackfp.vhd                   
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpnormalize_fpnormalize.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage1_struct.vhd  
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpround_fpround.vhd
+#@ set power_preserve_rtl_hier_names true
+#@ elaborate FPmul -arch pipeline -lib WORK > ./reports_point1/elaborate.txt
+#@ #filter contains multiple instances of reg, need to uniquify
+#@ uniquify 
+#@ link
+#@ ungroup -all -flatten
+#@ #set_implementation DW02_mult/csa [find cell *mult*]
+#@ create_clock -name MY_CLK -period 0 clk
+#@ }
+#@ 
+#@ proc synth {clk_var} {
+#@ #set clock @argv1+-0.07ns
+#@ create_clock -name MY_CLK -period $clk_var clk
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ compile
+#@ report_timing > reports_point1/report_timing_${clk_var}_ns.txt
+#@ report_area > reports_point1/report_area_clk_${clk_var}_ns.txt
+#@ report_resources > report_point1/report_resources_clk_${clk_var}_ns.txt
+#@ #quit
+#@ }
+#@ 
+#@ 
+#@ elab
+#@ # -- Starting source .synopsys_dc.setup
+
+#@ define_design_lib WORK -path ./work
+#@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
+#@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
+#@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
+#@ set synthetic_library [list "dw_foundation.sldb" ]
+#@ # -- End source .synopsys_dc.setup
+
+#@ #synth 0
+#@ # -- End source scripts/synth_fpmul_reg.tcl
+
+source scripts/synth_fpmul_reg.tcl
+#@ # -- Starting source scripts/synth_fpmul_reg.tcl
+
+#@ proc elab {} {
+#@ source .synopsys_dc.setup
+#@ #adding elemts
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage2_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/packfp_packfp.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage3_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage4_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/unpackfp_unpackfp.vhd                   
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpnormalize_fpnormalize.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage1_struct.vhd  
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpround_fpround.vhd
+#@ set power_preserve_rtl_hier_names true
+#@ elaborate FPmul -arch pipeline -lib WORK > ./reports_point1/elaborate.txt
+#@ #filter contains multiple instances of reg, need to uniquify
+#@ uniquify 
+#@ link
+#@ ungroup -all -flatten
+#@ #set_implementation DW02_mult/csa [find cell *mult*]
+#@ }
+#@ 
+#@ proc synth {clk_var} {
+#@ #set clock @argv1+-0.07ns
+#@ create_clock -name MY_CLK -period $clk_var clk
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ compile
+#@ report_timing > reports_point1/report_timing_${clk_var}_ns.txt
+#@ report_area > reports_point1/report_area_clk_${clk_var}_ns.txt
+#@ report_resources > report_point1/report_resources_clk_${clk_var}_ns.txt
+#@ #quit
+#@ }
+#@ 
+#@ 
+#@ elab
+#@ # -- Starting source .synopsys_dc.setup
+
+#@ define_design_lib WORK -path ./work
+#@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
+#@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
+#@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
+#@ set synthetic_library [list "dw_foundation.sldb" ]
+#@ # -- End source .synopsys_dc.setup
+
+#@ synth 0
+#@ # -- End source scripts/synth_fpmul_reg.tcl
+
+source scripts/synth_fpmul_reg.tcl
+#@ # -- Starting source scripts/synth_fpmul_reg.tcl
+
+#@ proc elab {} {
+#@ source .synopsys_dc.setup
+#@ #adding elemts
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage2_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/packfp_packfp.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage3_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage4_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/unpackfp_unpackfp.vhd                   
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpnormalize_fpnormalize.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage1_struct.vhd  
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpround_fpround.vhd
+#@ set power_preserve_rtl_hier_names true
+#@ elaborate FPmul -arch pipeline -lib WORK > ./reports_point1/elaborate.txt
+#@ #filter contains multiple instances of reg, need to uniquify
+#@ uniquify 
+#@ link
+#@ ungroup -all -flatten
+#@ #set_implementation DW02_mult/csa [find cell *mult*]
+#@ }
+#@ 
+#@ proc synth {clk_var} {
+#@ #set clock @argv1+-0.07ns
+#@ create_clock -name MY_CLK -period $clk_var clk
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ compile
+#@ report_timing > reports_point1/report_timing_${clk_var}_ns.txt
+#@ report_area > reports_point1/report_area_clk_${clk_var}_ns.txt
+#@ report_resources > report_point1/report_resources_clk_${clk_var}_ns.txt
+#@ #quit
+#@ }
+#@ 
+#@ 
+#@ elab
+#@ # -- Starting source .synopsys_dc.setup
+
+#@ define_design_lib WORK -path ./work
+#@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
+#@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
+#@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
+#@ set synthetic_library [list "dw_foundation.sldb" ]
+#@ # -- End source .synopsys_dc.setup
+
+#@ synth 1.42
+#@ # -- End source scripts/synth_fpmul_reg.tcl
+
+source scripts/synth_fpmul_reg.tcl
+#@ # -- Starting source scripts/synth_fpmul_reg.tcl
+
+#@ proc elab {} {
+#@ source .synopsys_dc.setup
+#@ #adding elemts
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage2_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/packfp_packfp.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage3_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage4_struct.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/unpackfp_unpackfp.vhd                   
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpnormalize_fpnormalize.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage1_struct.vhd  
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpround_fpround.vhd
+#@ set power_preserve_rtl_hier_names true
+#@ elaborate FPmul -arch pipeline -lib WORK > ./reports_point1/elaborate.txt
+#@ #filter contains multiple instances of reg, need to uniquify
+#@ uniquify 
+#@ link
+#@ ungroup -all -flatten
+#@ #set_implementation DW02_mult/csa [find cell *mult*]
+#@ }
+#@ 
+#@ proc synth {clk_var} {
+#@ #set clock @argv1+-0.07ns
+#@ create_clock -name MY_CLK -period $clk_var clk
+#@ set_dont_touch_network MY_CLK
+#@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
+#@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
+#@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
+#@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
+#@ set_load $OLOAD [all_outputs]
+#@ compile
+#@ report_timing > reports_point1/report_timing_${clk_var}_ns.txt
+#@ report_area > reports_point1/report_area_clk_${clk_var}_ns.txt
+#@ report_resources > report_point1/report_resources_clk_${clk_var}_ns.txt
+#@ #quit
+#@ }
+#@ 
+#@ 
+#@ elab
+#@ # -- Starting source .synopsys_dc.setup
+
+#@ define_design_lib WORK -path ./work
+#@ set search_path [list . /software/synopsys/syn_current_64.18/libraries/syn /software/dk/nangate45/synopsys ]
+#@ set link_library [list "*" "NangateOpenCellLibrary_typical_ecsm_nowlm.db" "dw_foundation.sldb" ]
+#@ set target_library [list "NangateOpenCellLibrary_typical_ecsm_nowlm.db" ]
+#@ set synthetic_library [list "dw_foundation.sldb" ]
+#@ # -- End source .synopsys_dc.setup
+
+#@ synth 1.57
+#@ # -- End source scripts/synth_fpmul_reg.tcl
+

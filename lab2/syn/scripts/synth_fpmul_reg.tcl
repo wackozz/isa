@@ -2,13 +2,12 @@ proc elab {} {
 source .synopsys_dc.setup
 #adding elemts
 analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage2_struct.vhd
-analyze -f vhdl -lib WORK ../hdl/src/packfp.vhd
+analyze -f vhdl -lib WORK ../hdl/src/packfp_packfp.vhd
 analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage3_struct.vhd
 analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
 analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
 analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage4_struct.vhd
-analyze -f vhdl -lib WORK ../hdl/src/unpackfp_unpackfp.vhd
-analyze -f vhdl -lib WORK ../hdl/src/FPmul_tb.vhd                    
+analyze -f vhdl -lib WORK ../hdl/src/unpackfp_unpackfp.vhd                   
 analyze -f vhdl -lib WORK ../hdl/src/fpnormalize_fpnormalize.vhd
 analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage1_struct.vhd  
 analyze -f vhdl -lib WORK ../hdl/src/fpround_fpround.vhd
@@ -17,11 +16,13 @@ elaborate FPmul -arch pipeline -lib WORK > ./reports_point1/elaborate.txt
 #filter contains multiple instances of reg, need to uniquify
 uniquify 
 link
+ungroup -all -flatten
+#set_implementation DW02_mult/csa [find cell *mult*]
 }
 
 proc synth {clk_var} {
 #set clock @argv1+-0.07ns
-create_clock -name MY_CLK -period $clk_var clock
+create_clock -name MY_CLK -period $clk_var clk
 set_dont_touch_network MY_CLK
 set_clock_uncertainty 0.07 [get_clock MY_CLK]
 set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
@@ -31,10 +32,10 @@ set_load $OLOAD [all_outputs]
 compile
 report_timing > reports_point1/report_timing_${clk_var}_ns.txt
 report_area > reports_point1/report_area_clk_${clk_var}_ns.txt
-ungroup -all -flatten
+report_resources > report_point1/report_resources_clk_${clk_var}_ns.txt
 #quit
 }
 
 
 elab
-#synth 0
+synth 1.57

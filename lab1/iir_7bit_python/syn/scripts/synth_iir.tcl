@@ -33,5 +33,5 @@ write -f verilog -hierarchy -output ../netlist/iir_filter.v
 write_sdc ../netlist/iir_filter.sdc
 quit
 }
+
 elab
-synth 11.44
