@@ -1,5 +1,6 @@
 import os
 #os.system("hdl/sim/simulate.sh")
+
 clk_value = 0
 prove = 0
 while prove <= 3:
@@ -52,6 +53,7 @@ file_object = open('syn/scripts/synth_iir.tcl','a')
 file_object.write('synth '+ str(clk_value))
 file_object.close()
 os.system("syn/synth.sh")
+
 #os.system("modelsim/post_synth.sh")
 #os.system("modelsim/vcd2saif.sh")
 #os.system("syn/power.sh")
