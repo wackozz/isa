@@ -1,6 +1,0 @@
-# do run_postsynth_cmd.do 
-# Loading project iir_filter_7bit_postsynth
-# 0 compiles, 5 failed with no errors. 
-# vsim -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_iir/UUT=../netlist/iir_filter.sdf work.tb_iir 
-# ** Error: (vsim-SDF-3196) Failed to find SDF file "../netlist/iir_filter.sdf".
-# Error loading design
