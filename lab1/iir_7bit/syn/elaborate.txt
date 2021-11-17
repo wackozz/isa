@@ -7,18 +7,6 @@ Presto compilation completed successfully.
 Elaborated 1 design.
 Current design is now 'iir_filter'.
 Information: Building the design 'reg' instantiated from design 'iir_filter' with
-	the parameters "N=7". (HDL-193)
-
-Inferred memory devices in process
-	in routine reg_N7 line 29 in file
-		'../hdl/src/reg.vhd'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|        Q_reg        | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
-===============================================================================
-Presto compilation completed successfully.
-Information: Building the design 'reg' instantiated from design 'iir_filter' with
 	the parameters "N=8". (HDL-193)
 
 Inferred memory devices in process

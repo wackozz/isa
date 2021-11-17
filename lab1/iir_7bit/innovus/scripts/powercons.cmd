@@ -1,19 +1,5 @@
-set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
-suppressMessage ENCEXT-2799
-getDrawView
-loadWorkspace -name Physical
-win
-encMessage warning 0
-encMessage debug 0
-encMessage info 0
-
 set TopLevelDesign "iir_filter"
 
-restoreDesign $TopLevelDesign.enc.dat $TopLevelDesign
-setDrawView fplan
-encMessage warning 1
-encMessage debug 0
-encMessage info 1
 reset_parasitics
 extractRC
 rcOut -setload $TopLevelDesign.setload -rc_corner my_rc

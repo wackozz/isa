@@ -14,19 +14,31 @@ def change_clock_gen(clk_value):
     file_read.close()
     file_write.close()
     os.remove('hdl/tb/clk_gen.vhd')
-    os.rename('hdl/tb/clk_gen_tmp.vhd' , 'clk_gen.vhd')
+    os.rename('hdl/tb/clk_gen_tmp.vhd' , 'hdl/tb/clk_gen.vhd')
 
 os.system("hdl/sim/simulate.sh")
-print("END SIMULATION MODELSIM")
+print("\n**********************END SIMULATION MODELSIM**********************\n")
 
 clk_value = 0
 fine = 0
 flag = 0
 while fine == 0:
+	next = 0
+	file_object = open('syn/scripts/synth_iir.tcl','r')
+	for line in file_object:
+		pos = next
+		next += len(line)
+		line = line.strip()
+		line = " ".join(line.split())
+		if line.split(' ')[0] == "synth":
+			file_object = open('syn/scripts/synth_iir.tcl','ab')
+			file_object.truncate(pos)
+			break
+	pass
 	file_object = open('syn/scripts/synth_iir.tcl','a')
 	file_object.write('synth '+ str(clk_value))
 	file_object.close()
-	print("SYNTHESIS WITH " + str(clk_value) + " ns")
+	print("\n**********************SYNTHESIS WITH " + str(clk_value) + " ns**********************\n")
 	os.system("syn/synth.sh")
 
 	with open('syn/reports/report_timing_' +str(clk_value)+ '_ns.txt','r') as file:
@@ -76,24 +88,25 @@ clk_value = clk_value * 4
 file_object = open('syn/scripts/synth_iir.tcl','a')
 file_object.write('synth '+ str(clk_value))
 file_object.close()
-print("SYNTHESIS WITH " + str(clk_value) + " ns")
+
+print("\n**********************SYNTHESIS WITH " + str(clk_value) + " ns**********************\n")
 os.system("syn/synth.sh")
-print("END SYNTHESIS WITH " + str(clk_value) + " ns")
+print("\n**********************END SYNTHESIS WITH " + str(clk_value) + " ns**********************\n")
 
 change_clock_gen(clk_value)
-print("CLOCK CHANGED")
+print("\n**********************CLOCK CHANGED**********************\n")
 
 os.system("modelsim/post_synth.sh")
-print("END SIMULATION POST SYNTHESIS")
+print("\n**********************END SIMULATION POST SYNTHESIS**********************\n")
 
 os.system("modelsim/vcd2saif.sh")
-print("END VCD TO SAIF")
+print("\n**********************END VCD TO SAIF**********************\n")
 
 os.system("syn/power.sh")
-print("END POWER CONSUMPTION SYNOPSIS")
+print("\n**********************END POWER CONSUMPTION SYNOPSIS**********************\n")
 
-print("OPEN INNOVUS")
+print("\n**********************OPEN INNOVUS**********************\n")
 os.system("innovus/place_route.sh")
-print("INNOVUS OPENED")
+print("\n**********************INNOVUS OPENED**********************\n")
 #os.system("modelsim/post_place.sh")
 #os.system("innovus/powercons.sh")
