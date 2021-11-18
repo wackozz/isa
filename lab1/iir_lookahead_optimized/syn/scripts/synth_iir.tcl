@@ -35,3 +35,4 @@ quit
 }
 
 elab
+synth 6.88

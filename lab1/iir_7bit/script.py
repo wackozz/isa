@@ -107,6 +107,6 @@ print("\n**********************END POWER CONSUMPTION SYNOPSIS*******************
 
 print("\n**********************OPEN INNOVUS**********************\n")
 os.system("innovus/place_route.sh")
-print("\n**********************INNOVUS OPENED**********************\n")
+print("\n**********************INNOVUS CLOSED**********************\n")
 #os.system("modelsim/post_place.sh")
 #os.system("innovus/powercons.sh")
