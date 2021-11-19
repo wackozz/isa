@@ -58,7 +58,7 @@ begin
   TMPb <= q_reg11_s + q_reg10_s + q_reg9_s;
  
   -- instance reg 
-  reg_1 : reg
+  reg_1 : reg 
   generic map(
     N => 8)
   port map(
@@ -98,17 +98,17 @@ begin
     enable => vin,
     Q => q_reg4);
 
-  reg_5 : reg
+  reg_p2_c : reg
   generic map(
     N => 8)
   port map(
     D => q_reg6,
     clock => clock,
     reset => rst_n,
-    enable => vin,
+    enable => vout_ff1,
     Q => q_reg5);
 
-  reg_6 : reg
+  reg_5 : reg
   generic map(
     N => 8)
   port map(
@@ -118,57 +118,57 @@ begin
     enable => vin,
     Q => q_reg6);
 
-  reg_7 : reg
+  reg_p2_b : reg
   generic map(
     N => 8)
   port map(
     D => q_reg4,
     clock => clock,
     reset => rst_n,
-    enable => vin,
+    enable => vout_ff1,
     Q => q_reg7);
 
-  reg_8 : reg
+  reg_p2_a : reg
   generic map(
     N => 8)
   port map(
     D => tmp_a_slv,
     clock => clock,
     reset => rst_n,
-    enable => vin,
+    enable => vout_ff1,
     Q => q_reg8);
 
-  reg_9 : reg
+  reg_p3_c : reg
   generic map(
     N => 8)
   port map(
     D => std_logic_vector(TMPq5_b2(13 downto 6)),
     clock => clock,
     reset => rst_n,
-    enable => vin,
+    enable => vout_ff2,
     Q => q_reg9);
 
-  reg_10 : reg
+  reg_p3_b : reg
   generic map(
     N => 8)
   port map(
     D => std_logic_vector(TMPq7_b1(13 downto 6)),
     clock => clock,
     reset => rst_n,
-    enable => vin,
+    enable => vout_ff2,
     Q => q_reg10);
 
-  reg_11 : reg
+  reg_p3_a : reg
   generic map(
     N => 8)
   port map(
     D => std_logic_vector(tmpq8_b0(13 downto 6)),
     clock => clock,
     reset => rst_n,
-    enable => vin,
+    enable => vout_ff2,
     Q => q_reg11);
 
-  reg_12 : reg
+  reg_p1_a : reg
   generic map(
     N => 8)
   port map(
@@ -178,7 +178,7 @@ begin
     enable => vin,
     Q => q_reg12);
 
-  reg_13 : reg
+  reg_p1_b : reg
   generic map(
     N => 8)
   port map(
@@ -224,6 +224,7 @@ begin
       enable => '1',
       Q      => vout);
 
+
     -- instance "reg_dout"
     reg_dout : reg
     generic map(
@@ -232,7 +233,7 @@ begin
       D      => tmp_b_slv,
       clock  => clock,
       reset  => rst_n,
-      enable => vin,
+      enable => vout_ff3,
       Q      => dout_pad);
 
   din_s <= signed(din(8) & din(8 downto 2));

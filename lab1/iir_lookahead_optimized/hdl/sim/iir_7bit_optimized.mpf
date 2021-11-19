@@ -300,7 +300,7 @@ VoptFlow = 1
 
 ; Simulator resolution
 ; Set to fs, ps, ns, us, ms, or sec with optional prefix of 1, 10, or 100.
-Resolution = ns
+resolution = 1ns
 
 ; User time unit for run commands
 ; Set to default, fs, ps, ns, us, ms, or sec. The default is to use the
@@ -310,7 +310,7 @@ Resolution = ns
 UserTimeUnit = default
 
 ; Default run length
-RunLength = 100
+RunLength = 2 us
 
 ; Maximum iterations that can be run without advancing simulation time
 IterationLimit = 5000
@@ -898,9 +898,9 @@ Project_File_P_3 = vhdl_novitalcheck 0 file_type vhdl group_id 0 vhdl_nodebug 0 
 Project_File_4 = /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/src/ff.vhd
 Project_File_P_4 = vhdl_novitalcheck 0 file_type vhdl group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1636736631 vhdl_disableopt 0 vhdl_vital 0 vhdl_warn1 1 vhdl_vopt 1 vhdl_showsource 0 vhdl_warn2 1 vhdl_explicit 1 vhdl_0InOptions {} vhdl_warn3 1 vhdl_options {} vhdl_warn4 1 ood 0 vhdl_warn5 1 compile_to work compile_order 2 dont_compile 0 cover_nosub 0 vhdl_use93 2002
 Project_File_5 = /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/clk_gen.vhd
-Project_File_P_5 = vhdl_novitalcheck 0 file_type vhdl group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1637191328 vhdl_disableopt 0 vhdl_vital 0 vhdl_warn1 1 vhdl_vopt 1 vhdl_showsource 0 vhdl_warn2 1 vhdl_explicit 1 vhdl_0InOptions {} vhdl_warn3 1 vhdl_options {} vhdl_warn4 1 ood 0 vhdl_warn5 1 compile_to work compile_order 3 dont_compile 0 cover_nosub 0 vhdl_use93 2002
+Project_File_P_5 = vhdl_novitalcheck 0 file_type vhdl group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1637194346 vhdl_disableopt 0 vhdl_vital 0 vhdl_vopt 1 vhdl_warn1 1 vhdl_explicit 1 vhdl_warn2 1 vhdl_showsource 0 vhdl_warn3 1 vhdl_0InOptions {} vhdl_warn4 1 vhdl_options {} vhdl_warn5 1 ood 0 compile_to work compile_order 3 cover_nosub 0 dont_compile 0 vhdl_use93 2002
 Project_File_6 = /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/src/iir_filter.vhd
-Project_File_P_6 = vhdl_novitalcheck 0 file_type vhdl group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1637177553 vhdl_disableopt 0 vhdl_vital 0 vhdl_warn1 1 vhdl_vopt 1 vhdl_showsource 0 vhdl_warn2 1 vhdl_explicit 1 vhdl_0InOptions {} vhdl_warn3 1 vhdl_options {} vhdl_warn4 1 ood 0 vhdl_warn5 1 compile_to work compile_order 0 dont_compile 0 cover_nosub 0 vhdl_use93 2002
+Project_File_P_6 = vhdl_novitalcheck 0 file_type vhdl group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1637346414 vhdl_disableopt 0 vhdl_vital 0 vhdl_warn1 1 vhdl_vopt 1 vhdl_showsource 0 vhdl_warn2 1 vhdl_explicit 1 vhdl_0InOptions {} vhdl_warn3 1 vhdl_options {} vhdl_warn4 1 ood 0 vhdl_warn5 1 compile_to work compile_order 0 dont_compile 0 cover_nosub 0 vhdl_use93 2002
 Project_Sim_Count = 0
 Project_Folder_Count = 0
 Echo_Compile_Output = 0
