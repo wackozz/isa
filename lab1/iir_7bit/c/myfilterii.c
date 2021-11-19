@@ -57,6 +57,7 @@ int myfilter(int x)
   printf("\t tmpa*b0=%d \n", (w * b0)>>(NB-1));
   y =  (w * b0) >> (NB-1);
   y += ff;
+  y = (y << 1);
   printf("\t tmpb=%d \n", y);
 
   /// update the shift register
