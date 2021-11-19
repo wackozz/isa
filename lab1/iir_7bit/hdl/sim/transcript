@@ -55,6 +55,7 @@
 # 	tb_iir
 # 7 compiles, 0 failed with no errors. 
 # vsim -t ns work.tb_iir 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  ModelSim SE 6.2g Feb 21 2007 Linux 3.10.0-957.5.1.el7.x86_64
 # //
 # //  Copyright 1991-2007 Mentor Graphics Corporation
