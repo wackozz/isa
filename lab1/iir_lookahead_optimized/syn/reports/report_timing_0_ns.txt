@@ -8,14 +8,14 @@ Report : timing
         -max_paths 1
 Design : iir_filter
 Version: O-2018.06-SP4
-Date   : Thu Nov 18 01:01:44 2021
+Date   : Fri Nov 19 19:39:35 2021
 ****************************************
 
 Operating Conditions: typical   Library: NangateOpenCellLibrary
 Wire Load Model Mode: top
 
-  Startpoint: a1[5] (input port clocked by MY_CLK)
-  Endpoint: reg_13/Q_reg[5]
+  Startpoint: din[5] (input port clocked by MY_CLK)
+  Endpoint: reg_p1_b/Q_reg[5]
             (rising edge-triggered flip-flop clocked by MY_CLK)
   Path Group: MY_CLK
   Path Type: max
@@ -28,40 +28,38 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock MY_CLK (rise edge)                                0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  input external delay                                    0.50       0.50 f
-  a1[5] (in)                                              0.00       0.50 f
-  mult_49/b[3] (iir_filter_DW_mult_tc_6)                  0.00       0.50 f
-  mult_49/U316/ZN (INV_X1)                                0.05       0.55 r
-  mult_49/U312/ZN (NOR2_X1)                               0.04       0.59 f
-  mult_49/U128/S (HA_X1)                                  0.08       0.67 f
-  mult_49/U127/CO (FA_X1)                                 0.09       0.76 f
-  mult_49/U124/CO (FA_X1)                                 0.10       0.87 f
-  mult_49/U120/CO (FA_X1)                                 0.09       0.96 f
-  mult_49/U115/CO (FA_X1)                                 0.09       1.05 f
-  mult_49/U109/S (FA_X1)                                  0.14       1.19 r
-  mult_49/U220/ZN (NOR2_X2)                               0.04       1.23 f
-  mult_49/U340/ZN (NOR2_X1)                               0.05       1.28 r
-  mult_49/U335/ZN (NAND2_X1)                              0.04       1.32 f
-  mult_49/U239/ZN (OAI21_X1)                              0.06       1.37 r
-  mult_49/U351/ZN (AOI21_X1)                              0.03       1.41 f
-  mult_49/U224/ZN (XNOR2_X1)                              0.05       1.46 f
-  mult_49/product[11] (iir_filter_DW_mult_tc_6)           0.00       1.46 f
-  reg_13/D[5] (reg_N8_1)                                  0.00       1.46 f
-  reg_13/U7/Z (MUX2_X1)                                   0.07       1.53 f
-  reg_13/Q_reg[5]/D (DFFR_X1)                             0.01       1.54 f
-  data arrival time                                                  1.54
+  input external delay                                    0.50       0.50 r
+  din[5] (in)                                             0.00       0.50 r
+  mult_49/a[3] (iir_filter_DW_mult_tc_11)                 0.00       0.50 r
+  mult_49/U222/ZN (INV_X32)                               0.44       0.94 f
+  mult_49/U221/ZN (XNOR2_X1)                              0.06       1.00 f
+  mult_49/U380/ZN (NAND2_X1)                              0.03       1.03 r
+  mult_49/U415/ZN (OAI22_X1)                              0.03       1.06 f
+  mult_49/U107/CO (FA_X1)                                 0.09       1.16 f
+  mult_49/U105/S (FA_X1)                                  0.14       1.29 r
+  mult_49/U409/ZN (NAND2_X1)                              0.04       1.33 f
+  mult_49/U239/ZN (OAI21_X1)                              0.06       1.39 r
+  mult_49/U243/ZN (AOI21_X1)                              0.03       1.42 f
+  mult_49/U421/ZN (OAI21_X1)                              0.05       1.47 r
+  mult_49/U361/ZN (XNOR2_X1)                              0.06       1.53 r
+  mult_49/product[11] (iir_filter_DW_mult_tc_11)          0.00       1.53 r
+  reg_p1_b/D[5] (reg_N8_1)                                0.00       1.53 r
+  reg_p1_b/U14/ZN (NAND2_X1)                              0.03       1.55 f
+  reg_p1_b/U15/ZN (OAI21_X1)                              0.03       1.59 r
+  reg_p1_b/Q_reg[5]/D (DFFR_X1)                           0.01       1.60 r
+  data arrival time                                                  1.60
 
   clock MY_CLK (rise edge)                                0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                      -0.07      -0.07
-  reg_13/Q_reg[5]/CK (DFFR_X1)                            0.00      -0.07 r
+  reg_p1_b/Q_reg[5]/CK (DFFR_X1)                          0.00      -0.07 r
   library setup time                                     -0.04      -0.11
   data required time                                                -0.11
   --------------------------------------------------------------------------
   data required time                                                -0.11
-  data arrival time                                                 -1.54
+  data arrival time                                                 -1.60
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -1.65
+  slack (VIOLATED)                                                  -1.70
 
 
 1

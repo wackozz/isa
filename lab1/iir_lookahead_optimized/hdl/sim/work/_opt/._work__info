@@ -3,7 +3,7 @@ m255
 cModel Technology
 d/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/sim
 T_opt
-VT99UO2j25EIl7OTf0Kme]0
+VQc<iA<fc=j>8Qhof]ZaVG3
 06 6 4 ./work tb_iir fast 0
 o-quiet -auto_acc_if_foreign -work work
 tExplicit 1
@@ -110,13 +110,13 @@ tExplicit 1
 Eff
 w1636736631
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+32
 8/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/src/ff.vhd
 F/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/src/ff.vhd
 l0
 L6
 V?^f?@[z_^1]OLI39:PMnT0
 OE;C;6.2g;35
-32
 o-work work -2002 -explicit
 tExplicit 1
 Astr
@@ -161,13 +161,13 @@ tExplicit 1
 Ereg
 w1636736631
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+32
 8/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/src/reg.vhd
 F/home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/src/reg.vhd
 l0
 L6
 Vgg^5EKmGSD2>B8D_ZHUWl0
 OE;C;6.2g;35
-32
 o-work work -2002 -explicit
 tExplicit 1
 Astr

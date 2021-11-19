@@ -21,11 +21,10 @@
 # //
 # Loading work.tb_iir(fast)
 # Loading work.iir_filter(fast)
-# Loading /software/dk/nangate45/verilog/msim6.2g.CLKBUF_X3(fast)
-# Loading /software/dk/nangate45/verilog/msim6.2g.BUF_X2(fast)
 # Loading /software/dk/nangate45/verilog/msim6.2g.BUF_X1(fast)
 # Loading /software/dk/nangate45/verilog/msim6.2g.AOI21_X1(fast)
 # Loading /software/dk/nangate45/verilog/msim6.2g.OAI21_X1(fast)
+# Loading /software/dk/nangate45/verilog/msim6.2g.BUF_X2(fast)
 # Loading /software/dk/nangate45/verilog/msim6.2g.INV_X1(fast)
 # Loading /software/dk/nangate45/verilog/msim6.2g.NAND2_X1(fast)
 # Loading /software/dk/nangate45/verilog/msim6.2g.DFFR_X1(fast)
@@ -53,18 +52,28 @@
 # Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
 # Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
 # Loading work.data_maker(beh)
-# ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/innovus/iir_filter.v(2722): [TFMPC] - Too few port connections. Expected 5, found 4.
+# ** Error: (vsim-7) Failed to open VHDL file "../samples.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Instance: /tb_iir/SM
+# ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/innovus/iir_filter.v(2738): [TFMPC] - Too few port connections. Expected 5, found 4.
 #         Region: /tb_iir/UUT/add_52_U1_7
-# ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/innovus/iir_filter.v(2762): [TFMPC] - Too few port connections. Expected 5, found 4.
+# ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/innovus/iir_filter.v(2778): [TFMPC] - Too few port connections. Expected 5, found 4.
 #         Region: /tb_iir/UUT/add_1_root_add_0_root_add_58_2_U1_7
-# ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/innovus/iir_filter.v(2802): [TFMPC] - Too few port connections. Expected 5, found 4.
+# ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/innovus/iir_filter.v(2818): [TFMPC] - Too few port connections. Expected 5, found 4.
 #         Region: /tb_iir/UUT/add_0_root_add_0_root_add_58_2_U1_7
-# ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/innovus/iir_filter.v(4187): [TFMPC] - Too few port connections. Expected 5, found 4.
+# ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/innovus/iir_filter.v(4193): [TFMPC] - Too few port connections. Expected 5, found 4.
 #         Region: /tb_iir/UUT/add_1_root_add_0_root_add_53_2_U1_7
-# ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/innovus/iir_filter.v(4227): [TFMPC] - Too few port connections. Expected 5, found 4.
+# ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/innovus/iir_filter.v(4233): [TFMPC] - Too few port connections. Expected 5, found 4.
 #         Region: /tb_iir/UUT/add_0_root_add_0_root_add_53_2_U1_7
 # Loading work.data_sink(beh)
 # Loading timing data from ../innovus/iir_filter.sdf
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
 #    Time: 0 ns  Iteration: 0  Region: /tb_iir  File: /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/tb_iir.v
+# ** Fatal: (vsim-7) Failed to open VHDL file "../samples.txt" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 15 ns  Iteration: 2  Process: /tb_iir/SM/line__37 File: /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/data_maker_new.vhd
+# Fatal error in Process line__37 at /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/data_maker_new.vhd line 47
+# 
+# Stopped at /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/data_maker_new.vhd line 47 
+# Stopped at /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/data_maker_new.vhd line 47 
 # reading /software/mentor/modelsim_6.2g/linux/../modelsim.ini
