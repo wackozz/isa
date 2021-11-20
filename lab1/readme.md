@@ -1,6 +1,6 @@
 # Design and implementation of a digital filter
 
-The folder contains the following implementation:
+The following implementation have been developed:
 - IIR DF2 [Q1.9]
 - IIR DF2 [Q2.6]
 - IIR DF2 lookahead 
