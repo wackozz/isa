@@ -5,3 +5,5 @@ The following implementation have been developed:
 - IIR DF2 [Q2.6]
 - IIR DF2 lookahead 
 - IIR DF2 lookahead with retiming and pipeling
+
+In the matlab folder, the original design script can be found.
