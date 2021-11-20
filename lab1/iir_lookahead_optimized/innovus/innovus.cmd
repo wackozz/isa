@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Fri Nov 19 19:50:08 2021                
+#  Created on Sat Nov 20 18:03:03 2021                
 #                                                     
 #######################################################
 
@@ -13,6 +13,16 @@
 #@(#)CDS: CPE v17.11-s095
 #@(#)CDS: IQRC/TQRC 16.1.1-s215 (64bit) Thu Jul  6 20:18:10 PDT 2017 (Linux 2.6.18-194.el5)
 
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getDrawView
+loadWorkspace -name Physical
+win
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getDrawView
+loadWorkspace -name Physical
+win
 set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
 suppressMessage ENCEXT-2799
 getDrawView

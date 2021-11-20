@@ -52,9 +52,6 @@
 # Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
 # Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
 # Loading work.data_maker(beh)
-# ** Error: (vsim-7) Failed to open VHDL file "../samples.txt" in r mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ns  Iteration: 0  Instance: /tb_iir/SM
 # ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/innovus/iir_filter.v(2738): [TFMPC] - Too few port connections. Expected 5, found 4.
 #         Region: /tb_iir/UUT/add_52_U1_7
 # ** Warning: (vsim-3017) /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/innovus/iir_filter.v(2778): [TFMPC] - Too few port connections. Expected 5, found 4.
@@ -69,11 +66,4 @@
 # Loading timing data from ../innovus/iir_filter.sdf
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
 #    Time: 0 ns  Iteration: 0  Region: /tb_iir  File: /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/tb_iir.v
-# ** Fatal: (vsim-7) Failed to open VHDL file "../samples.txt" in r mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 15 ns  Iteration: 2  Process: /tb_iir/SM/line__37 File: /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/data_maker_new.vhd
-# Fatal error in Process line__37 at /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/data_maker_new.vhd line 47
-# 
-# Stopped at /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/data_maker_new.vhd line 47 
-# Stopped at /home/isa18_2021_2022/github/isa/lab1/iir_lookahead_optimized/hdl/tb/data_maker_new.vhd line 47 
 # reading /software/mentor/modelsim_6.2g/linux/../modelsim.ini
