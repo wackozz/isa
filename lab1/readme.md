@@ -1,4 +1,4 @@
-# Design and implementation of a digital filter
+# LAB1: Design and implementation of a digital filter
 
 The following implementation have been developed:
 - IIR DF2 [Q1.8]
