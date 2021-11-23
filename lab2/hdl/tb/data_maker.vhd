@@ -9,8 +9,9 @@ use std.textio.all;
 
 entity data_maker is
   port (
-    CLK  : in  std_logic;
-    DATA : out std_logic_vector(31 downto 0));
+    CLK  	: in  std_logic;
+    RST_n	: in  std_logic;
+    DATA 	: out std_logic_vector(31 downto 0));
 end data_maker;
 
 architecture beh of data_maker is
@@ -22,12 +23,14 @@ begin  -- beh
     variable ptr : line;
     variable val : std_logic_vector(31 downto 0);
   begin  -- process
-    if CLK'event and CLK = '1' then  -- rising clock edge
-      if (not(endfile(fp))) then
-        readline(fp, ptr);
-        hread(ptr, val);        
-      end if;
-      DATA <= val;
+	if (RST_n = '0') then
+		DATA <= (others => '0');
+    elsif CLK'event and CLK = '1' then  -- rising clock edge
+    	if (not(endfile(fp))) then
+          readline(fp, ptr);
+          hread(ptr, val);        
+        end if;
+    DATA <= val;
     end if;
   end process;
 

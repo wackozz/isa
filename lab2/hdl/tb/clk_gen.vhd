@@ -28,7 +28,7 @@ begin  -- beh
   end process;
   
   CLK <= CLK_i;
-  
+
   process
   begin  -- process
     RST_n <= '0';
@@ -36,5 +36,6 @@ begin  -- beh
     RST_n <= '1';
     wait;
   end process;
+
 
 end beh;
