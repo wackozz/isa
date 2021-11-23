@@ -238,7 +238,7 @@ begin
       D      => FP_A,
       clock  => clk,
       reset  => rst_n,
-      enable => en,
+      enable => '1',
       Q      => FP_A_reg_out);
 
   -- instance "reg_2"
@@ -249,7 +249,7 @@ begin
       D      => FP_B,
       clock  => clk,
       reset  => rst_n,
-      enable => en,
+      enable => '1',
       Q      => FP_B_reg_out);
 
 end pipeline;
