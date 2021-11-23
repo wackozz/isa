@@ -1,5 +1,5 @@
-# do scripts/run_fpmul_reg_cmd.do fpmul_reg 
-# Loading project fpmul_reg
+# do scripts/run_fpmul_reg_stage2_opt_cmd.do fpmul_reg_stage2_opt 
+# Loading project fpmul_reg_stage2_opt
 # vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg.vhd
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
@@ -12,12 +12,27 @@
 # -- Loading entity fpmul_stage3
 # -- Loading entity fpmul_stage4
 # -- Loading entity reg
+# vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_stage2_struct_reg.vhd
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity fpmul_stage2
+# -- Compiling architecture struct of fpmul_stage2
+# -- Loading entity ff
+# -- Loading entity reg
 # vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/reg.vhd
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
 # -- Loading package std_logic_1164
 # -- Compiling entity reg
 # -- Compiling architecture str of reg
+# vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/ff.vhd
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity ff
+# -- Compiling architecture str of ff
 # vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/common/fpmul_stage1_struct.vhd
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
@@ -26,13 +41,6 @@
 # -- Compiling entity fpmul_stage1
 # -- Compiling architecture struct of fpmul_stage1
 # -- Loading entity unpackfp
-# vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/common/fpmul_stage2_struct.vhd
-# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
-# -- Loading package standard
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Compiling entity fpmul_stage2
-# -- Compiling architecture struct of fpmul_stage2
 # vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/common/fpmul_stage3_struct.vhd
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
@@ -101,7 +109,7 @@
 # -- Loading package std_logic_textio
 # -- Compiling entity data_maker
 # -- Compiling architecture beh of data_maker
-# vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/tb/data_sink.vhd
+# vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/tb/data_sink_stage2_opt.vhd
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
 # -- Loading package std_logic_1164
@@ -117,7 +125,7 @@
 # 
 # Top level modules:
 # 	tb_fpmul
-# 14 compiles, 0 failed with no errors. 
+# 15 compiles, 0 failed with no errors. 
 # vsim -t ns work.tb_fpmul 
 # //  ModelSim SE 6.2g Feb 21 2007 Linux 3.10.0-957.5.1.el7.x86_64
 # //
@@ -141,13 +149,16 @@
 # Loading work.fpmul(pipeline)#1
 # Loading work.fpmul_stage1(struct)
 # Loading work.unpackfp(unpackfp)
-# Loading work.fpmul_stage2(struct)
+# Loading work.fpmul_stage2(struct)#1
+# Loading work.ff(str)
+# Loading work.reg(str)#1
+# Loading work.reg(str)#2
 # Loading work.fpmul_stage3(struct)#1
 # Loading work.fpnormalize(fpnormalize)#1
 # Loading work.fpround(fpround)#1
 # Loading work.fpmul_stage4(struct)
 # Loading work.packfp(packfp)
-# Loading work.reg(str)#1
+# Loading work.reg(str)#3
 # Loading work.data_sink(beh)
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /tb_fpmul/UUT/i3/i11
@@ -176,7 +187,7 @@
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 1  Instance: /tb_fpmul/UUT/i2
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 5 ns  Iteration: 4  Instance: /tb_fpmul/UUT/i3/i11
+#    Time: 15 ns  Iteration: 4  Instance: /tb_fpmul/UUT/i3/i11
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 5 ns  Iteration: 4  Instance: /tb_fpmul/UUT/i3/i11
+#    Time: 15 ns  Iteration: 4  Instance: /tb_fpmul/UUT/i3/i11
 # reading /software/mentor/modelsim_6.2g/linux/../modelsim.ini

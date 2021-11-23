@@ -3,6 +3,7 @@ source .synopsys_dc.setup
 #adding elemts
 analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
 analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+analyze -f vhdl -lib WORK ../hdl/src/ff.vhd
 analyze -f vhdl -lib WORK ../hdl/src/common/fpmul_stage1_struct.vhd
 analyze -f vhdl -lib WORK ../hdl/src/fpmul_stage2_struct_reg.vhd
 analyze -f vhdl -lib WORK ../hdl/src/common/fpmul_stage3_struct.vhd
@@ -29,12 +30,11 @@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
 set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
 set_load $OLOAD [all_outputs]
 compile_ultra
-report_timing > reports_synth_fpmul_reg_stage_opt_compile_ultra/report_timing_${clk_var}_ns.txt
-report_area > reports_synth_fpmul_reg_stage_opt_compile_ultra/report_area_clk_${clk_var}_ns.txt
+report_timing > reports_synth_fpmul_reg_stage2_opt_compile_ultra/report_timing_${clk_var}_ns.txt
+report_area > reports_synth_fpmul_reg_stage2_opt_compile_ultra/report_area_clk_${clk_var}_ns.txt
 report_resources > reports_synth_fpmul_reg_stage2_opt_compile_ultra/report_resources_clk_${clk_var}_ns.txt
 quit
 }
 
 
 elab
-synth 4.29
