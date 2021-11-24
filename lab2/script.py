@@ -91,16 +91,16 @@ def change_clock_gen(clk_value):
 
 def part1():
 	#-----------------MODELSIM SIMULATION--------------------
-	os.system("hdl/sim/simulate_fpmul_reg.sh")
+	##os.system("hdl/sim/simulate_fpmul_reg.sh")
 
 	#-----------------------POINT 1.1------------------------
 	synth("synth_fpmul_reg_flatten")
 
 	#-----------------------POINT 1.2------------------------
-	synth("synth_fpmul_reg_stage2CSA")
+	##synth("synth_fpmul_reg_stage2CSA")
 
 	#-----------------------POINT 1.3------------------------
-	synth("synth_fpmul_reg_stage2PPARCH")
+	##synth("synth_fpmul_reg_stage2PPARCH")
 
 def part2():
 	#-----------------MODELSIM SIMULATION--------------------
@@ -116,6 +116,6 @@ def part2():
 
 ##########################  MAIN  ###########################
 
-#part1()
+part1()
 
-part2()
+#part2()

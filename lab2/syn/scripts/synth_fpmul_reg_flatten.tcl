@@ -32,10 +32,9 @@ set_load $OLOAD [all_outputs]
 compile
 report_timing > reports_synth_fpmul_reg_flatten/report_timing_${clk_var}_ns.txt
 report_area > reports_synth_fpmul_reg_flatten/report_area_clk_${clk_var}_ns.txt
-#report_resources > reports_synth_fpmul_reg_flatten/report_resources_clk_${clk_var}_ns.txt
+report_resources > reports_synth_fpmul_reg_flatten/report_resources_clk_${clk_var}_ns.txt
 quit
 }
 
 
 elab
-synth 6.32
