@@ -1,0 +1,846 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fc7a3543b09, pid=226076, tid=0x00007fc7a08c1700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_265-b01) (build 1.8.0_265-b01)
+# Java VM: OpenJDK 64-Bit Server VM (25.265-b01 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# V  [libjvm.so+0x475b09]  Compile::remove_useless_nodes(Unique_Node_List&)+0x89
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fc79c0c4800):  JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=226084, stack(0x00007fc7a07c2000,0x00007fc7a08c2000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 2 (SEGV_ACCERR), si_addr: 0x00007fc76c3ee770
+
+Registers:
+RAX=0x000000000000000c, RBX=0x00007fc77c3de650, RCX=0x00007fc76c3ee748, RDX=0x000000000000000e
+RSP=0x00007fc7a08bf220, RBP=0x00007fc7a08bf260, RSI=0x000000000000000e, RDI=0x00007fc7681af8a0
+R8 =0x00007fc77c391208, R9 =0x00007fc77c3911a8, R10=0x00000000000000d1, R11=0x0000000000002000
+R12=0x00007fc7a08bf470, R13=0x0000000000000001, R14=0x00007fc7a08bff30, R15=0x0000000000000328
+RIP=0x00007fc7a3543b09, EFLAGS=0x0000000000010202, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007fc7a08bf220)
+0x00007fc7a08bf220:   00000000000105f6 0000000000000c00
+0x00007fc7a08bf230:   00007fc7a08bf250 00007fc7a08bf460
+0x00007fc7a08bf240:   00007fc7a08bf470 00007fc7a08bf370
+0x00007fc7a08bf250:   00007fc7a08bf4c0 00007fc7a08bf490
+0x00007fc7a08bf260:   00007fc7a08bf2b0 00007fc7a39f9630
+0x00007fc7a08bf270:   0000000000000000 00007fc700000000
+0x00007fc7a08bf280:   00007fc7a08bf410 00007fc7a08bf410
+0x00007fc7a08bf290:   00007fc7681c2ce8 00007fc7a08bf3c0
+0x00007fc7a08bf2a0:   00007fc7681c2fc0 00007fc7a08bff30
+0x00007fc7a08bf2b0:   00007fc7a08bfed0 00007fc7a35505b8
+0x00007fc7a08bf2c0:   000000000000000c 00007fc770340d10
+0x00007fc7a08bf2d0:   00007fc7a08c08d0 00007fc7a08c08e8
+0x00007fc7a08bf2e0:   00007fc79c0b9050 0000000000000004
+0x00007fc7a08bf2f0:   0000000000000000 0000000000000000
+0x00007fc7a08bf300:   0000000000000002 00007fc7a08bf370
+0x00007fc7a08bf310:   00007fc79c0b9050 00007fc7a08c08d0
+0x00007fc7a08bf320:   0000000000000001 00007fc7a08c00c8
+0x00007fc7a08bf330:   00007fc7a08bff30 0000000000000000
+0x00007fc7a08bf340:   00007fc79c0c4ea0 00007fc77c277320
+0x00007fc7a08bf350:   00007fc77c27a420 00007fc77c27f308
+0x00007fc7a08bf360:   0000000000028310 0000000000000000
+0x00007fc7a08bf370:   00007fc7a08c0020 0000000000001000
+0x00007fc7a08bf380:   00007fc774082e20 0000000000000461
+0x00007fc7a08bf390:   00007fc7a4022db0 00007fc7a08c0020
+0x00007fc7a08bf3a0:   0000000000000200 00007fc77c383820
+0x00007fc7a08bf3b0:   0000000000000000 0000000000000000
+0x00007fc7a08bf3c0:   0000000000000000 0000000000000000
+0x00007fc7a08bf3d0:   0000000000000000 0000000000000000
+0x00007fc7a08bf3e0:   0000000000000000 00007fc7a08bff30
+0x00007fc7a08bf3f0:   0000000000000000 00007fc7a3b91681
+0x00007fc7a08bf400:   0000000000000001 0000000000000000
+0x00007fc7a08bf410:   00007fc7a4014110 0000000000000001 
+
+Instructions: (pc=0x00007fc7a3543b09)
+0x00007fc7a3543ae9:   89 eb 49 d3 e3 46 85 1c 97 74 26 83 c0 01 39 c2
+0x00007fc7a3543af9:   7e 3c 4c 8b 4b 10 48 63 c8 4d 8d 04 c9 49 8b 08
+0x00007fc7a3543b09:   8b 49 28 41 89 ca 41 c1 ea 05 45 39 54 24 30 77
+0x00007fc7a3543b19:   c6 83 ee 01 83 e8 01 83 ea 01 89 73 20 49 8b 0c 
+
+Register to memory mapping:
+
+RAX=0x000000000000000c is an unknown value
+RBX=0x00007fc77c3de650 is an unknown value
+RCX=0x00007fc76c3ee748 is an unknown value
+RDX=0x000000000000000e is an unknown value
+RSP=0x00007fc7a08bf220 is pointing into the stack for thread: 0x00007fc79c0c4800
+RBP=0x00007fc7a08bf260 is pointing into the stack for thread: 0x00007fc79c0c4800
+RSI=0x000000000000000e is an unknown value
+RDI=0x00007fc7681af8a0 is an unknown value
+R8 =0x00007fc77c391208 is an unknown value
+R9 =0x00007fc77c3911a8 is an unknown value
+R10=0x00000000000000d1 is an unknown value
+R11=0x0000000000002000 is an unknown value
+R12=0x00007fc7a08bf470 is pointing into the stack for thread: 0x00007fc79c0c4800
+R13=0x0000000000000001 is an unknown value
+R14=0x00007fc7a08bff30 is pointing into the stack for thread: 0x00007fc79c0c4800
+R15=0x0000000000000328 is an unknown value
+
+
+Stack: [0x00007fc7a07c2000,0x00007fc7a08c2000],  sp=0x00007fc7a08bf220,  free space=1012k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x475b09]  Compile::remove_useless_nodes(Unique_Node_List&)+0x89
+V  [libjvm.so+0x92b630]  PhaseRemoveUseless::PhaseRemoveUseless(PhaseGVN*, Unique_Node_List*, Phase::PhaseNumber)+0x280
+V  [libjvm.so+0x4825b8]  Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)+0x1428
+V  [libjvm.so+0x3dbca8]  C2Compiler::compile_method(ciEnv*, ciMethod*, int)+0x1c8
+V  [libjvm.so+0x4891a2]  CompileBroker::invoke_compiler_on_method(CompileTask*)+0x872
+V  [libjvm.so+0x489da8]  CompileBroker::compiler_thread_loop()+0x4a8
+V  [libjvm.so+0xa2d242]  JavaThread::thread_main_inner()+0x1f2
+V  [libjvm.so+0x8d7c72]  java_start(Thread*)+0xf2
+C  [libpthread.so.0+0x9609]  start_thread+0xd9
+
+
+Current CompileTask:
+C2:    801 1012       4       java.lang.String::split (326 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007fc79c0d3800 JavaThread "Service Thread" daemon [_thread_blocked, id=226086, stack(0x00007fc7a05bf000,0x00007fc7a06c0000)]
+  0x00007fc79c0c6800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=226085, stack(0x00007fc7a06c1000,0x00007fc7a07c1000)]
+=>0x00007fc79c0c4800 JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=226084, stack(0x00007fc7a07c2000,0x00007fc7a08c2000)]
+  0x00007fc79c0c2000 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=226083, stack(0x00007fc7a08c3000,0x00007fc7a09c3000)]
+  0x00007fc79c0c0000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=226082, stack(0x00007fc7a09c4000,0x00007fc7a0ac4000)]
+  0x00007fc79c0be800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=226081, stack(0x00007fc7a0ac4000,0x00007fc7a0bc5000)]
+  0x00007fc79c086800 JavaThread "Finalizer" daemon [_thread_blocked, id=226080, stack(0x00007fc7a1147000,0x00007fc7a1248000)]
+  0x00007fc79c082000 JavaThread "Reference Handler" daemon [_thread_blocked, id=226079, stack(0x00007fc7a1248000,0x00007fc7a1349000)]
+  0x00007fc79c011000 JavaThread "main" [_thread_in_Java, id=226077, stack(0x00007fc7a2e7f000,0x00007fc7a2f7f000)]
+
+Other Threads:
+  0x00007fc79c078000 VMThread [stack: 0x00007fc7a134a000,0x00007fc7a144a000] [id=226078]
+  0x00007fc79c0d6800 WatcherThread [stack: 0x00007fc7a04bf000,0x00007fc7a05bf000] [id=226087]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000a2400000, size: 1500 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ def new generation   total 75584K, used 57904K [0x00000000a2400000, 0x00000000a7600000, 0x00000000c1800000)
+  eden space 67200K,  86% used [0x00000000a2400000, 0x00000000a5c8c048, 0x00000000a65a0000)
+  from space 8384K,   0% used [0x00000000a65a0000, 0x00000000a65a0000, 0x00000000a6dd0000)
+  to   space 8384K,   0% used [0x00000000a6dd0000, 0x00000000a6dd0000, 0x00000000a7600000)
+ tenured generation   total 167936K, used 0K [0x00000000c1800000, 0x00000000cbc00000, 0x0000000100000000)
+   the space 167936K,   0% used [0x00000000c1800000, 0x00000000c1800000, 0x00000000c1800200, 0x00000000cbc00000)
+ Metaspace       used 8755K, capacity 8812K, committed 8960K, reserved 1056768K
+  class space    used 890K, capacity 912K, committed 1024K, reserved 1048576K
+
+Card table byte_map: [0x00007fc7a216b000,0x00007fc7a245a000] byte_map_base: 0x00007fc7a1c59000
+
+Polling page: 0x00007fc7a4518000
+
+CodeCache: size=245760Kb used=4256Kb max_used=4259Kb free=241503Kb
+ bounds [0x00007fc78d000000, 0x00007fc78d430000, 0x00007fc79c000000]
+ total_blobs=1351 nmethods=1020 adapters=244
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0,793 Thread 0x00007fc79c0c6800 1031       1       com.altera.sopcmodel.util.CatalogCard::getDisplayName (5 bytes)
+Event: 0,793 Thread 0x00007fc79c0c6800 nmethod 1031 0x00007fc78d4096d0 code [0x00007fc78d409820, 0x00007fc78d409930]
+Event: 0,795 Thread 0x00007fc79c0c6800 1032       3       com.altera.sopcmodel.util.CatalogCard::setTags2 (6 bytes)
+Event: 0,795 Thread 0x00007fc79c0c6800 nmethod 1032 0x00007fc78d41e050 code [0x00007fc78d41e1a0, 0x00007fc78d41e310]
+Event: 0,795 Thread 0x00007fc79c0c6800 1033       1       com.altera.sopcmodel.util.CatalogCard::getDescription (5 bytes)
+Event: 0,795 Thread 0x00007fc79c0c6800 nmethod 1033 0x00007fc78d42c950 code [0x00007fc78d42caa0, 0x00007fc78d42cbb0]
+Event: 0,795 Thread 0x00007fc79c0c6800 1034       1       com.altera.sopcmodel.util.CatalogCard::getCategories (5 bytes)
+Event: 0,795 Thread 0x00007fc79c0c6800 nmethod 1034 0x00007fc78d42c690 code [0x00007fc78d42c7e0, 0x00007fc78d42c8f0]
+Event: 0,795 Thread 0x00007fc79c0c6800 1035       1       com.altera.sopcmodel.util.CatalogCard::getDocumentUrls (5 bytes)
+Event: 0,795 Thread 0x00007fc79c0c6800 nmethod 1035 0x00007fc78d42c3d0 code [0x00007fc78d42c520, 0x00007fc78d42c630]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (10 events):
+Event: 0,464 Thread 0x00007fc79c011000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc78d25ba44 method=java.util.regex.Pattern.RemoveQEQuoting()V @ 22
+Event: 0,473 Thread 0x00007fc79c011000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc78d1e58d0 method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+Event: 0,498 Thread 0x00007fc79c011000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc78d222490 method=sun.misc.MetaIndex.mayContain(Ljava/lang/String;)Z @ 38
+Event: 0,564 Thread 0x00007fc79c011000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc78d30bb84 method=com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.skipSpaces()Z @ 303
+Event: 0,581 Thread 0x00007fc79c011000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc78d31efbc method=com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.scanChar(Lcom/sun/org/apache/xerces/internal/impl/XMLScanner$NameType;)I @ 59
+Event: 0,581 Thread 0x00007fc79c011000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc78d30f768 method=com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.scanLiteral(ILcom/sun/org/apache/xerces/internal/xni/XMLString;Z)I @ 587
+Event: 0,592 Thread 0x00007fc79c011000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc78d30dbf4 method=com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.peekChar()I @ 14
+Event: 0,611 Thread 0x00007fc79c011000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc78d346c50 method=com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.scanQName(Lcom/sun/org/apache/xerces/internal/xni/QName;Lcom/sun/org/apache/xerces/internal/impl/XMLScanner$NameType
+Event: 0,618 Thread 0x00007fc79c011000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc78d31d3a0 method=com.sun.org.apache.xerces.internal.util.SymbolTable.addSymbol([CII)Ljava/lang/String; @ 38
+Event: 0,647 Thread 0x00007fc79c011000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fc78d33ec3c method=com.sun.org.apache.xerces.internal.util.AugmentationsImpl$SmallContainer.clear()V @ 9
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0,729 Thread 0x00007fc79c011000 Exception <a 'java/lang/ClassNotFoundException': > (0x00000000a4f4f180) thrown at [/home/adoptopenjdk/workspace/build-scripts/jobs/jdk8u/jdk8u-linux-x64-hotspot/workspace/build/src/hotspot/src/share/vm/prims/jni.cpp, line 738]
+Event: 0,729 Thread 0x00007fc79c011000 Exception <a 'java/lang/ClassNotFoundException': > (0x00000000a4f57e30) thrown at [/home/adoptopenjdk/workspace/build-scripts/jobs/jdk8u/jdk8u-linux-x64-hotspot/workspace/build/src/hotspot/src/share/vm/prims/jni.cpp, line 738]
+Event: 0,729 Thread 0x00007fc79c011000 Exception <a 'java/lang/ClassNotFoundException': > (0x00000000a4f60aa0) thrown at [/home/adoptopenjdk/workspace/build-scripts/jobs/jdk8u/jdk8u-linux-x64-hotspot/workspace/build/src/hotspot/src/share/vm/prims/jni.cpp, line 738]
+Event: 0,755 Thread 0x00007fc79c011000 Exception <a 'java/lang/ClassNotFoundException': > (0x00000000a5200f38) thrown at [/home/adoptopenjdk/workspace/build-scripts/jobs/jdk8u/jdk8u-linux-x64-hotspot/workspace/build/src/hotspot/src/share/vm/prims/jni.cpp, line 738]
+Event: 0,760 Thread 0x00007fc79c011000 Exception <a 'java/lang/ClassNotFoundException': > (0x00000000a52b18d8) thrown at [/home/adoptopenjdk/workspace/build-scripts/jobs/jdk8u/jdk8u-linux-x64-hotspot/workspace/build/src/hotspot/src/share/vm/prims/jni.cpp, line 738]
+Event: 0,764 Thread 0x00007fc79c011000 Exception <a 'java/lang/ClassNotFoundException': > (0x00000000a532f808) thrown at [/home/adoptopenjdk/workspace/build-scripts/jobs/jdk8u/jdk8u-linux-x64-hotspot/workspace/build/src/hotspot/src/share/vm/prims/jni.cpp, line 738]
+Event: 0,780 Thread 0x00007fc79c011000 Exception <a 'java/lang/ClassNotFoundException': > (0x00000000a55b55b0) thrown at [/home/adoptopenjdk/workspace/build-scripts/jobs/jdk8u/jdk8u-linux-x64-hotspot/workspace/build/src/hotspot/src/share/vm/prims/jni.cpp, line 738]
+Event: 0,781 Thread 0x00007fc79c011000 Exception <a 'java/lang/ClassNotFoundException': > (0x00000000a55eeef8) thrown at [/home/adoptopenjdk/workspace/build-scripts/jobs/jdk8u/jdk8u-linux-x64-hotspot/workspace/build/src/hotspot/src/share/vm/prims/jni.cpp, line 738]
+Event: 0,781 Thread 0x00007fc79c011000 Exception <a 'java/lang/ClassNotFoundException': > (0x00000000a55f1ae0) thrown at [/home/adoptopenjdk/workspace/build-scripts/jobs/jdk8u/jdk8u-linux-x64-hotspot/workspace/build/src/hotspot/src/share/vm/prims/jni.cpp, line 738]
+Event: 0,781 Thread 0x00007fc79c011000 Exception <a 'java/lang/ClassNotFoundException': > (0x00000000a55fbe78) thrown at [/home/adoptopenjdk/workspace/build-scripts/jobs/jdk8u/jdk8u-linux-x64-hotspot/workspace/build/src/hotspot/src/share/vm/prims/jni.cpp, line 738]
+
+Events (10 events):
+Event: 0,755 Thread 0x00007fc79c011000 DEOPT PACKING pc=0x00007fc78d3b542a sp=0x00007fc7a2f7c7d0
+Event: 0,755 Thread 0x00007fc79c011000 DEOPT UNPACKING pc=0x00007fc78d0474c4 sp=0x00007fc7a2f7c508 mode 0
+Event: 0,758 Thread 0x00007fc79c011000 DEOPT PACKING pc=0x00007fc78d3b542a sp=0x00007fc7a2f7c7d0
+Event: 0,758 Thread 0x00007fc79c011000 DEOPT UNPACKING pc=0x00007fc78d0474c4 sp=0x00007fc7a2f7c508 mode 0
+Event: 0,776 Thread 0x00007fc79c011000 DEOPT PACKING pc=0x00007fc78d3b02ca sp=0x00007fc7a2f7ca00
+Event: 0,776 Thread 0x00007fc79c011000 DEOPT UNPACKING pc=0x00007fc78d0474c4 sp=0x00007fc7a2f7c750 mode 0
+Event: 0,781 Thread 0x00007fc79c011000 DEOPT PACKING pc=0x00007fc78d3b02ca sp=0x00007fc7a2f7ca00
+Event: 0,781 Thread 0x00007fc79c011000 DEOPT UNPACKING pc=0x00007fc78d0474c4 sp=0x00007fc7a2f7c750 mode 0
+Event: 0,785 Thread 0x00007fc79c011000 DEOPT PACKING pc=0x00007fc78d3b02ca sp=0x00007fc7a2f7ca00
+Event: 0,785 Thread 0x00007fc79c011000 DEOPT UNPACKING pc=0x00007fc78d0474c4 sp=0x00007fc7a2f7c750 mode 0
+
+
+Dynamic libraries:
+a2400000-a7600000 rw-p 00000000 00:00 0 
+a7600000-c1800000 ---p 00000000 00:00 0 
+c1800000-cbc00000 rw-p 00000000 00:00 0 
+cbc00000-100000000 ---p 00000000 00:00 0 
+100000000-100100000 rw-p 00000000 00:00 0 
+100100000-140000000 ---p 00000000 00:00 0 
+556f7ba00000-556f7ba01000 r-xp 00000000 103:07 650833                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/bin/java
+556f7bc00000-556f7bc01000 r--p 00000000 103:07 650833                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/bin/java
+556f7bc01000-556f7bc02000 rw-p 00001000 103:07 650833                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/bin/java
+556f7c289000-556f7c2aa000 rw-p 00000000 00:00 0                          [heap]
+7fc760000000-7fc760021000 rw-p 00000000 00:00 0 
+7fc760021000-7fc764000000 ---p 00000000 00:00 0 
+7fc768000000-7fc76830f000 rw-p 00000000 00:00 0 
+7fc76830f000-7fc76c000000 ---p 00000000 00:00 0 
+7fc76c000000-7fc76c021000 rw-p 00000000 00:00 0 
+7fc76c021000-7fc770000000 ---p 00000000 00:00 0 
+7fc770000000-7fc7706c4000 rw-p 00000000 00:00 0 
+7fc7706c4000-7fc774000000 ---p 00000000 00:00 0 
+7fc774000000-7fc77482d000 rw-p 00000000 00:00 0 
+7fc77482d000-7fc778000000 ---p 00000000 00:00 0 
+7fc778000000-7fc778021000 rw-p 00000000 00:00 0 
+7fc778021000-7fc77c000000 ---p 00000000 00:00 0 
+7fc77c000000-7fc77c9d8000 rw-p 00000000 00:00 0 
+7fc77c9d8000-7fc780000000 ---p 00000000 00:00 0 
+7fc780000000-7fc780021000 rw-p 00000000 00:00 0 
+7fc780021000-7fc784000000 ---p 00000000 00:00 0 
+7fc784000000-7fc784021000 rw-p 00000000 00:00 0 
+7fc784021000-7fc788000000 ---p 00000000 00:00 0 
+7fc788000000-7fc788021000 rw-p 00000000 00:00 0 
+7fc788021000-7fc78c000000 ---p 00000000 00:00 0 
+7fc78cd49000-7fc78cd86000 r--s 0024e000 103:07 660189                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/xbean.jar
+7fc78cd86000-7fc78cd88000 r--s 00008000 103:07 660182                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/wraplf.jar
+7fc78cd88000-7fc78cd89000 r--s 00002000 103:07 660194                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/swing-worker.jar
+7fc78cd89000-7fc78cd8b000 r--s 00014000 103:07 660208                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/org-netbeans-swing-outline-RELEASE691-sources.jar
+7fc78cd8b000-7fc78cd8c000 r--s 00011000 103:07 660221                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/miglayout-swing.jar
+7fc78cd8c000-7fc78cd92000 r--s 0002e000 103:07 660184                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/l2fprod-common-sheet.jar
+7fc78cd92000-7fc78cd94000 r--s 00004000 103:07 660230                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/jsr173_1.0_api.jar
+7fc78cd94000-7fc78cd9f000 r--s 0008b000 103:07 660214                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/jgraphx.jar
+7fc78cd9f000-7fc78cdb0000 r--s 0014c000 103:07 660157                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/jfreechart-1.0.13.jar
+7fc78cdb0000-7fc78cde8000 r--s 00217000 103:07 660170                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/docking-frames-core.jar
+7fc78cde8000-7fc78cdff000 r-xp 00000000 103:07 650883                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libnet.so
+7fc78cdff000-7fc78cffe000 ---p 00017000 103:07 650883                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libnet.so
+7fc78cffe000-7fc78cfff000 r--p 00016000 103:07 650883                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libnet.so
+7fc78cfff000-7fc78d000000 rw-p 00017000 103:07 650883                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libnet.so
+7fc78d000000-7fc78d430000 rwxp 00000000 00:00 0 
+7fc78d430000-7fc79c000000 ---p 00000000 00:00 0 
+7fc79c000000-7fc79cb75000 rw-p 00000000 00:00 0 
+7fc79cb75000-7fc7a0000000 ---p 00000000 00:00 0 
+7fc7a0000000-7fc7a0004000 r--s 00031000 103:07 660139                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/jline-2.12.jar
+7fc7a0004000-7fc7a000a000 r--s 00046000 103:07 660136                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/jcommon-1.0.16.jar
+7fc7a000a000-7fc7a0020000 r--s 000bc000 103:07 660183                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/docking-frames-common.jar
+7fc7a0020000-7fc7a0030000 r--s 000a9000 103:07 660151                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/commons-collections4-4.3.jar
+7fc7a0030000-7fc7a0032000 r--s 00003000 103:07 660119                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.util.elf.jar
+7fc7a0032000-7fc7a0034000 r--s 00002000 103:07 660252                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.tools.sopcformats.jar
+7fc7a0034000-7fc7a0035000 r--s 00002000 103:07 660142                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.tools.exampledesigns.jar
+7fc7a0035000-7fc7a0036000 r--s 00006000 103:07 660158                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.spdy.jar
+7fc7a0036000-7fc7a0037000 r--s 0000b000 103:07 660210                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.sldhubchannel.jar
+7fc7a0037000-7fc7a0039000 r--s 00007000 103:07 660215                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.gdbserver.jar
+7fc7a0039000-7fc7a003a000 r--s 00007000 103:07 660163                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.issp.jar
+7fc7a003a000-7fc7a003d000 r--s 0000d000 103:07 660114                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.monitor.jar
+7fc7a003d000-7fc7a0044000 r--s 0003f000 103:07 660160                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.busanalyzer.jar
+7fc7a0044000-7fc7a0045000 r--s 00003000 103:07 660259                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.iobus.jar
+7fc7a0045000-7fc7a0046000 r--s 00002000 103:07 660202                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.helper.jar
+7fc7a0046000-7fc7a004c000 r--s 0002c000 103:07 660249                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.dashboard.jar
+7fc7a004c000-7fc7a0050000 r--s 00020000 103:07 660180                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.trace.gui.jar
+7fc7a0050000-7fc7a0055000 r--s 00029000 103:07 660238                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.trace.database.jar
+7fc7a0055000-7fc7a0056000 r--s 00001000 103:07 660199                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.plugin.memory.jar
+7fc7a0056000-7fc7a0058000 r--s 00003000 103:07 660254                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.plugin.pli.jar
+7fc7a0058000-7fc7a0059000 r--s 00006000 103:07 660126                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.tcpchannel.jar
+7fc7a0059000-7fc7a005c000 r--s 00011000 103:07 660235                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.usb.jar
+7fc7a005c000-7fc7a0060000 r--s 0001d000 103:07 660171                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.trace.drivers.jar
+7fc7a0060000-7fc7a0061000 r--s 00001000 103:07 660240                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.matlabapi.jar
+7fc7a0061000-7fc7a0065000 r--s 0001d000 103:07 660143                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.app.jar
+7fc7a0065000-7fc7a0067000 r--s 0000c000 103:07 660159                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopcmodel.components.hwtclvalidator.jar
+7fc7a0067000-7fc7a0068000 r--s 0000e000 103:07 660211                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopcmodel.components.atlantic.packetformatconverter.jar
+7fc7a0068000-7fc7a006a000 r--s 00003000 103:07 660263                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.script.debugwindow.jar
+7fc7a006a000-7fc7a006c000 r--s 00001000 103:07 660262                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.nios2.trace.jar
+7fc7a006c000-7fc7a006e000 r--s 00009000 103:07 660120                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.nios2.rtl.trace.jar
+7fc7a006e000-7fc7a0080000 r--s 00091000 103:07 660132                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.nios2.isa.jar
+7fc7a0080000-7fc7a0089000 r--s 00076000 103:07 660168                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/jmwizc.jar
+7fc7a0089000-7fc7a008b000 r--s 00007000 103:07 660260                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.qsys.ipxact.module.jar
+7fc7a008b000-7fc7a008d000 r--s 0000a000 103:07 660239                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.widgets.jar
+7fc7a008d000-7fc7a0092000 r--s 00055000 103:07 660258                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.qsys.hypericonnect.jar
+7fc7a0092000-7fc7a00c3000 rw-p 00000000 00:00 0 
+7fc7a00c3000-7fc7a00d4000 r-xp 00000000 103:07 650913                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libnio.so
+7fc7a00d4000-7fc7a02d4000 ---p 00011000 103:07 650913                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libnio.so
+7fc7a02d4000-7fc7a02d5000 r--p 00011000 103:07 650913                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libnio.so
+7fc7a02d5000-7fc7a02d6000 rw-p 00012000 103:07 650913                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libnio.so
+7fc7a02d6000-7fc7a02db000 r--s 00035000 103:07 660191                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopcmodel.sbtools.jar
+7fc7a02db000-7fc7a02dd000 r--s 00007000 103:07 660133                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.qsys.blackboxmodule.jar
+7fc7a02dd000-7fc7a02de000 r--s 00003000 103:07 660118                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.qsys.ui.jar
+7fc7a02de000-7fc7a030f000 r--s 00411000 103:07 660117                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopceditor.jar
+7fc7a030f000-7fc7a0312000 r--s 00020000 103:07 660131                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.iplauncher.jar
+7fc7a0312000-7fc7a0314000 r--s 0000e000 103:07 660234                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.ip.regenerator.jar
+7fc7a0314000-7fc7a0317000 r--s 00024000 103:07 660257                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.genman.jar
+7fc7a0317000-7fc7a031a000 r--s 0002d000 103:07 660224                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.launch.jar
+7fc7a031a000-7fc7a031c000 r--s 00006000 103:07 660264                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.configrom.jar
+7fc7a031c000-7fc7a031d000 r--s 00000000 103:07 660200                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.jtagsimulator.jar
+7fc7a031d000-7fc7a031e000 r--s 00002000 103:07 660207                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.lightclient.jar
+7fc7a031e000-7fc7a0320000 r--s 00007000 103:07 660165                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.driver.jar
+7fc7a0320000-7fc7a0328000 r--s 00048000 103:07 660243                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.plugin.jtag.jar
+7fc7a0328000-7fc7a0336000 r--s 00072000 103:07 660205                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.plugin.elf.jar
+7fc7a0336000-7fc7a033a000 r--s 00036000 103:07 660177                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.gui.jar
+7fc7a033a000-7fc7a033d000 r--s 00038000 103:07 660256                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.scripting.jar
+7fc7a033d000-7fc7a0343000 r--s 0004a000 103:07 660122                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.designs.jar
+7fc7a0343000-7fc7a034e000 r--s 00184000 103:07 660161                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.systemconsole.jar
+7fc7a034e000-7fc7a0355000 r--s 00056000 103:07 660233                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.flash.jar
+7fc7a0355000-7fc7a0356000 r--s 00004000 103:07 660216                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.cpexample.jar
+7fc7a0356000-7fc7a0357000 r--s 00003000 103:07 660164                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.tcl.ui.jar
+7fc7a0357000-7fc7a0358000 r--s 0001f000 103:07 660155                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.scripting.jar
+7fc7a0358000-7fc7a035a000 r--s 00006000 103:07 660195                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.plugin.lwhal.jar
+7fc7a035a000-7fc7a035d000 r--s 0000b000 103:07 660248                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.plugin.hal.jar
+7fc7a035d000-7fc7a0361000 r--s 0001c000 103:07 660236                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.plugin.core.jar
+7fc7a0361000-7fc7a0363000 r--s 0000f000 103:07 660253                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.commandline.jar
+7fc7a0363000-7fc7a0370000 r--s 00084000 103:07 660251                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.editor.jar
+7fc7a0370000-7fc7a0377000 r--s 00063000 103:07 660203                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.megawizard2.jar
+7fc7a0377000-7fc7a037b000 r--s 00029000 103:07 660242                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopcmodel.components.atlantic.jar
+7fc7a037b000-7fc7a0386000 r--s 00074000 103:07 660185                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/velocity-dep-1.4.jar
+7fc7a0386000-7fc7a038e000 r--s 00051000 103:07 660220                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/velocity-1.4.jar
+7fc7a038e000-7fc7a0392000 r--s 0001f000 103:07 660201                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/explicitlayout.jar
+7fc7a0392000-7fc7a0394000 r--s 00006000 103:07 660228                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopcfactories.jar
+7fc7a0394000-7fc7a0396000 r--s 0001a000 103:07 660255                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopclibrary.jar
+7fc7a0396000-7fc7a0397000 r--s 00000000 103:07 660138                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.librarian.jar
+7fc7a0397000-7fc7a0398000 r--s 00002000 103:07 660178                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopcplatform.jar
+7fc7a0398000-7fc7a0399000 r--s 00000000 103:07 660232                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.service.jre.jar
+7fc7a0399000-7fc7a039a000 r--s 00000000 103:07 660169                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/xmlbeans-2.2.0.jar
+7fc7a039a000-7fc7a039e000 r--s 0001e000 103:07 660179                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.utilities.jar
+7fc7a039e000-7fc7a039f000 r--s 00003000 103:07 660125                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopcmodel.embeddedsw.jar
+7fc7a039f000-7fc7a03a1000 r--s 00016000 103:07 660148                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.swinfo.jar
+7fc7a03a1000-7fc7a03a5000 r--s 0000d000 103:07 660241                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.schema.jar
+7fc7a03a5000-7fc7a03a7000 r--s 0000b000 103:07 660229                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.elements.jar
+7fc7a03a7000-7fc7a03ac000 r--s 0008b000 103:07 660167                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.jar
+7fc7a03ac000-7fc7a03af000 r--s 00014000 103:07 660146                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.app_lib.jar
+7fc7a03af000-7fc7a03b5000 r--s 0007a000 103:07 660113                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/jacl1.3.2a.jar
+7fc7a03b5000-7fc7a03ba000 r--s 0002a000 103:07 660140                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.tcl.interpreter.jar
+7fc7a03ba000-7fc7a03bd000 r--s 00012000 103:07 660237                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopcreport.build.jar
+7fc7a03bd000-7fc7a03bf000 r--s 00007000 103:07 660121                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopcreport.jar
+7fc7a03bf000-7fc7a03c1000 r--s 0000d000 103:07 660175                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopcmodel.atlantic.jar
+7fc7a03c1000-7fc7a03c2000 r--s 0000c000 103:07 660173                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/commons-logging-1.1.jar
+7fc7a03c2000-7fc7a03c6000 r--s 0003e000 103:07 660127                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.utilities.jar
+7fc7a03c6000-7fc7a03c8000 r--s 00007000 103:07 660247                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.qsys.model.common.jar
+7fc7a03c8000-7fc7a03cd000 r--s 0000f000 103:07 660196                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.privateinterfaces.jar
+7fc7a03cd000-7fc7a03d0000 r--s 0000b000 103:07 660156                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.entityinterfaces.jar
+7fc7a03d0000-7fc7a03e1000 r--s 000e8000 103:07 660124                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopcmodel.jar
+7fc7a03e1000-7fc7a03e2000 r--s 0000b000 103:07 660149                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopcdocument.jar
+7fc7a03e2000-7fc7a03e7000 r--s 00054000 103:07 660187                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopcmodel.transforms.jar
+7fc7a03e7000-7fc7a03ef000 r--s 00051000 103:07 660227                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.qsys.ipxact.jar
+7fc7a03ef000-7fc7a03f5000 r--s 00031000 103:07 660222                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/jaxb-core.jar
+7fc7a03f5000-7fc7a03f9000 r--s 00015000 103:07 660115                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/jaxb-api.jar
+7fc7a03f9000-7fc7a040a000 r--s 000d0000 103:07 660166                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/jaxb-impl.jar
+7fc7a040a000-7fc7a0412000 r--s 00051000 103:07 660150                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.qsys.cmsis.jar
+7fc7a0412000-7fc7a0419000 r--s 00050000 103:07 660244                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopc.generator.jar
+7fc7a0419000-7fc7a0420000 r--s 0007d000 103:07 660225                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopcmodel.components.tclmodule.jar
+7fc7a0420000-7fc7a0426000 r--s 00045000 103:07 660153                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/hamcrest-all-1.3.jar
+7fc7a0426000-7fc7a0429000 r--s 0002a000 103:07 660245                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.hdlwriter.jar
+7fc7a0429000-7fc7a042c000 r--s 0000e000 103:07 660218                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.minieval2.jar
+7fc7a042c000-7fc7a042d000 r--s 00006000 103:07 660206                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.hdlcomponent.jar
+7fc7a042d000-7fc7a0430000 r--s 00036000 103:07 660176                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/org-netbeans-swing-outline.jar
+7fc7a0430000-7fc7a0432000 r--s 00010000 103:07 660135                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.sopc.qsymbol.jar
+7fc7a0432000-7fc7a0434000 r--s 00000000 103:07 660134                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.version.jar
+7fc7a0434000-7fc7a0436000 r--s 00018000 103:07 660172                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.jdbcsqlite.jar
+7fc7a0436000-7fc7a0439000 r--s 0000e000 103:07 660246                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.infrastructure.jar
+7fc7a0439000-7fc7a0441000 r--s 0004f000 103:07 660192                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.ui.ientity.jar
+7fc7a0441000-7fc7a0447000 r--s 00048000 103:07 660129                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/commons-lang3-3.1.jar
+7fc7a0447000-7fc7a0448000 r--s 00000000 103:07 660130                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/failureaccess-1.0.1.jar
+7fc7a0448000-7fc7a047a000 r--s 0026d000 103:07 660141                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/guava-27.1-jre.jar
+7fc7a047a000-7fc7a047b000 r--s 00005000 103:07 660197                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.ui.quartus.jar
+7fc7a047b000-7fc7a047d000 r--s 00004000 103:07 660261                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/mydoggy-res.jar
+7fc7a047d000-7fc7a047f000 r--s 00007000 103:07 660123                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/mydoggy-api.jar
+7fc7a047f000-7fc7a048f000 r--s 000a4000 103:07 660213                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/mydoggy-plaf.jar
+7fc7a048f000-7fc7a0491000 r--s 00010000 103:07 660212                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/miglayout15-swing.jar
+7fc7a0491000-7fc7a049b000 r--s 00052000 103:07 660188                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.ui.jar
+7fc7a049b000-7fc7a04a9000 r--s 0007b000 103:07 660152                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.componenteditor2.jar
+7fc7a04a9000-7fc7a04ad000 r--s 00022000 103:07 660217                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/binding-2.0.6.jar
+7fc7a04ad000-7fc7a04b4000 r--s 00094000 103:07 660223                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/beansbinding-1.2.1.jar
+7fc7a04b4000-7fc7a04b7000 r--s 00011000 103:07 660116                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/basicmodel.jar
+7fc7a04b7000-7fc7a04b8000 r--s 00007000 103:07 660193                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/asm-commons-3.1.jar
+7fc7a04b8000-7fc7a04b9000 r--s 0000a000 103:07 660147                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/asm-3.1.jar
+7fc7a04b9000-7fc7a04bd000 r--s 0004a000 103:07 660204                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/appframework-1.03.jar
+7fc7a04bd000-7fc7a04be000 r--s 00002000 103:07 660219                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/TableLayout.jar
+7fc7a04be000-7fc7a04bf000 ---p 00000000 00:00 0 
+7fc7a04bf000-7fc7a05bf000 rw-p 00000000 00:00 0 
+7fc7a05bf000-7fc7a05c2000 ---p 00000000 00:00 0 
+7fc7a05c2000-7fc7a06c0000 rw-p 00000000 00:00 0 
+7fc7a06c0000-7fc7a06c1000 ---p 00000000 00:00 0 
+7fc7a06c1000-7fc7a06c4000 ---p 00000000 00:00 0 
+7fc7a06c4000-7fc7a07c1000 rw-p 00000000 00:00 0 
+7fc7a07c1000-7fc7a07c2000 ---p 00000000 00:00 0 
+7fc7a07c2000-7fc7a07c5000 ---p 00000000 00:00 0 
+7fc7a07c5000-7fc7a08c2000 rw-p 00000000 00:00 0 
+7fc7a08c2000-7fc7a08c3000 ---p 00000000 00:00 0 
+7fc7a08c3000-7fc7a08c6000 ---p 00000000 00:00 0 
+7fc7a08c6000-7fc7a09c3000 rw-p 00000000 00:00 0 
+7fc7a09c3000-7fc7a09c4000 ---p 00000000 00:00 0 
+7fc7a09c4000-7fc7a09c7000 ---p 00000000 00:00 0 
+7fc7a09c7000-7fc7a0ac4000 rw-p 00000000 00:00 0 
+7fc7a0ac4000-7fc7a0ac7000 ---p 00000000 00:00 0 
+7fc7a0ac7000-7fc7a0bc5000 rw-p 00000000 00:00 0 
+7fc7a0bc5000-7fc7a0bcb000 r--s 000d3000 103:07 650853                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/jfr.jar
+7fc7a0bcb000-7fc7a0bd0000 r--s 002f9000 103:07 650820                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/charsets.jar
+7fc7a0bd0000-7fc7a0bd5000 r--s 000a7000 103:07 650817                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/jsse.jar
+7fc7a0bd5000-7fc7a1147000 r--p 00000000 103:06 2228251                   /usr/lib/locale/locale-archive
+7fc7a1147000-7fc7a114a000 ---p 00000000 00:00 0 
+7fc7a114a000-7fc7a1248000 rw-p 00000000 00:00 0 
+7fc7a1248000-7fc7a124b000 ---p 00000000 00:00 0 
+7fc7a124b000-7fc7a1349000 rw-p 00000000 00:00 0 
+7fc7a1349000-7fc7a134a000 ---p 00000000 00:00 0 
+7fc7a134a000-7fc7a1498000 rw-p 00000000 00:00 0 
+7fc7a1498000-7fc7a166a000 r--s 03ca8000 103:07 650824                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/rt.jar
+7fc7a166a000-7fc7a167d000 r--s 00346000 103:07 650852                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/resources.jar
+7fc7a167d000-7fc7a1f36000 rw-p 00000000 00:00 0 
+7fc7a1f36000-7fc7a1f76000 ---p 00000000 00:00 0 
+7fc7a1f76000-7fc7a1fc9000 rw-p 00000000 00:00 0 
+7fc7a1fc9000-7fc7a216b000 ---p 00000000 00:00 0 
+7fc7a216b000-7fc7a2194000 rw-p 00000000 00:00 0 
+7fc7a2194000-7fc7a2265000 ---p 00000000 00:00 0 
+7fc7a2265000-7fc7a22b7000 rw-p 00000000 00:00 0 
+7fc7a22b7000-7fc7a2459000 ---p 00000000 00:00 0 
+7fc7a2459000-7fc7a246b000 rw-p 00000000 00:00 0 
+7fc7a246b000-7fc7a281a000 ---p 00000000 00:00 0 
+7fc7a281a000-7fc7a2835000 r-xp 00000000 103:07 650895                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libzip.so
+7fc7a2835000-7fc7a2a34000 ---p 0001b000 103:07 650895                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libzip.so
+7fc7a2a34000-7fc7a2a35000 r--p 0001a000 103:07 650895                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libzip.so
+7fc7a2a35000-7fc7a2a36000 rw-p 0001b000 103:07 650895                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libzip.so
+7fc7a2a36000-7fc7a2a5f000 r-xp 00000000 103:07 650898                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libjava.so
+7fc7a2a5f000-7fc7a2c5e000 ---p 00029000 103:07 650898                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libjava.so
+7fc7a2c5e000-7fc7a2c5f000 r--p 00028000 103:07 650898                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libjava.so
+7fc7a2c5f000-7fc7a2c61000 rw-p 00029000 103:07 650898                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libjava.so
+7fc7a2c61000-7fc7a2c71000 r-xp 00000000 103:07 650916                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libverify.so
+7fc7a2c71000-7fc7a2e70000 ---p 00010000 103:07 650916                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libverify.so
+7fc7a2e70000-7fc7a2e72000 r--p 0000f000 103:07 650916                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libverify.so
+7fc7a2e72000-7fc7a2e73000 rw-p 00011000 103:07 650916                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/libverify.so
+7fc7a2e73000-7fc7a2e76000 r--p 00000000 103:06 2230522                   /usr/lib/x86_64-linux-gnu/librt-2.31.so
+7fc7a2e76000-7fc7a2e7a000 r-xp 00003000 103:06 2230522                   /usr/lib/x86_64-linux-gnu/librt-2.31.so
+7fc7a2e7a000-7fc7a2e7b000 r--p 00007000 103:06 2230522                   /usr/lib/x86_64-linux-gnu/librt-2.31.so
+7fc7a2e7b000-7fc7a2e7c000 ---p 00008000 103:06 2230522                   /usr/lib/x86_64-linux-gnu/librt-2.31.so
+7fc7a2e7c000-7fc7a2e7d000 r--p 00008000 103:06 2230522                   /usr/lib/x86_64-linux-gnu/librt-2.31.so
+7fc7a2e7d000-7fc7a2e7e000 rw-p 00009000 103:06 2230522                   /usr/lib/x86_64-linux-gnu/librt-2.31.so
+7fc7a2e7e000-7fc7a2e7f000 ---p 00000000 00:00 0 
+7fc7a2e7f000-7fc7a2e82000 ---p 00000000 00:00 0 
+7fc7a2e82000-7fc7a2f7f000 rw-p 00000000 00:00 0 
+7fc7a2f7f000-7fc7a2f8e000 r--p 00000000 103:06 2230509                   /usr/lib/x86_64-linux-gnu/libm-2.31.so
+7fc7a2f8e000-7fc7a3035000 r-xp 0000f000 103:06 2230509                   /usr/lib/x86_64-linux-gnu/libm-2.31.so
+7fc7a3035000-7fc7a30cc000 r--p 000b6000 103:06 2230509                   /usr/lib/x86_64-linux-gnu/libm-2.31.so
+7fc7a30cc000-7fc7a30cd000 r--p 0014c000 103:06 2230509                   /usr/lib/x86_64-linux-gnu/libm-2.31.so
+7fc7a30cd000-7fc7a30ce000 rw-p 0014d000 103:06 2230509                   /usr/lib/x86_64-linux-gnu/libm-2.31.so
+7fc7a30ce000-7fc7a3d83000 r-xp 00000000 103:07 650920                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/server/libjvm.so
+7fc7a3d83000-7fc7a3f82000 ---p 00cb5000 103:07 650920                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/server/libjvm.so
+7fc7a3f82000-7fc7a4025000 r--p 00cb4000 103:07 650920                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/server/libjvm.so
+7fc7a4025000-7fc7a404e000 rw-p 00d57000 103:07 650920                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/server/libjvm.so
+7fc7a404e000-7fc7a4098000 rw-p 00000000 00:00 0 
+7fc7a4098000-7fc7a40bd000 r--p 00000000 103:06 2230499                   /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7fc7a40bd000-7fc7a4235000 r-xp 00025000 103:06 2230499                   /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7fc7a4235000-7fc7a427f000 r--p 0019d000 103:06 2230499                   /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7fc7a427f000-7fc7a4280000 ---p 001e7000 103:06 2230499                   /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7fc7a4280000-7fc7a4283000 r--p 001e7000 103:06 2230499                   /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7fc7a4283000-7fc7a4286000 rw-p 001ea000 103:06 2230499                   /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7fc7a4286000-7fc7a428a000 rw-p 00000000 00:00 0 
+7fc7a428a000-7fc7a428b000 r--p 00000000 103:06 2230508                   /usr/lib/x86_64-linux-gnu/libdl-2.31.so
+7fc7a428b000-7fc7a428d000 r-xp 00001000 103:06 2230508                   /usr/lib/x86_64-linux-gnu/libdl-2.31.so
+7fc7a428d000-7fc7a428e000 r--p 00003000 103:06 2230508                   /usr/lib/x86_64-linux-gnu/libdl-2.31.so
+7fc7a428e000-7fc7a428f000 r--p 00003000 103:06 2230508                   /usr/lib/x86_64-linux-gnu/libdl-2.31.so
+7fc7a428f000-7fc7a4290000 rw-p 00004000 103:06 2230508                   /usr/lib/x86_64-linux-gnu/libdl-2.31.so
+7fc7a4290000-7fc7a42a6000 r-xp 00000000 103:07 650919                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/jli/libjli.so
+7fc7a42a6000-7fc7a44a5000 ---p 00016000 103:07 650919                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/jli/libjli.so
+7fc7a44a5000-7fc7a44a6000 r--p 00015000 103:07 650919                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/jli/libjli.so
+7fc7a44a6000-7fc7a44a7000 rw-p 00016000 103:07 650919                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/amd64/jli/libjli.so
+7fc7a44a7000-7fc7a44ae000 r--p 00000000 103:06 2230520                   /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
+7fc7a44ae000-7fc7a44bf000 r-xp 00007000 103:06 2230520                   /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
+7fc7a44bf000-7fc7a44c4000 r--p 00018000 103:06 2230520                   /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
+7fc7a44c4000-7fc7a44c5000 r--p 0001c000 103:06 2230520                   /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
+7fc7a44c5000-7fc7a44c6000 rw-p 0001d000 103:06 2230520                   /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
+7fc7a44c6000-7fc7a44ca000 rw-p 00000000 00:00 0 
+7fc7a44ca000-7fc7a44cb000 r--s 0000d000 103:07 660250                    /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/Nlview.jar
+7fc7a44cb000-7fc7a44cd000 r--s 00016000 103:07 650854                    /home/wackoz/intelFPGA_lite/20.1/quartus/linux64/jre64/lib/jce.jar
+7fc7a44cd000-7fc7a44d5000 rw-s 00000000 103:06 1840850                   /tmp/hsperfdata_wackoz/226076
+7fc7a44d5000-7fc7a44d8000 r--p 00000000 103:06 2230515                   /usr/lib/x86_64-linux-gnu/libnss_files-2.31.so
+7fc7a44d8000-7fc7a44df000 r-xp 00003000 103:06 2230515                   /usr/lib/x86_64-linux-gnu/libnss_files-2.31.so
+7fc7a44df000-7fc7a44e1000 r--p 0000a000 103:06 2230515                   /usr/lib/x86_64-linux-gnu/libnss_files-2.31.so
+7fc7a44e1000-7fc7a44e2000 r--p 0000b000 103:06 2230515                   /usr/lib/x86_64-linux-gnu/libnss_files-2.31.so
+7fc7a44e2000-7fc7a44e3000 rw-p 0000c000 103:06 2230515                   /usr/lib/x86_64-linux-gnu/libnss_files-2.31.so
+7fc7a44e3000-7fc7a44ec000 rw-p 00000000 00:00 0 
+7fc7a44ec000-7fc7a44ed000 r--p 00000000 103:06 2230495                   /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7fc7a44ed000-7fc7a4510000 r-xp 00001000 103:06 2230495                   /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7fc7a4510000-7fc7a4518000 r--p 00024000 103:06 2230495                   /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7fc7a4518000-7fc7a4519000 r--p 00000000 00:00 0 
+7fc7a4519000-7fc7a451a000 r--p 0002c000 103:06 2230495                   /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7fc7a451a000-7fc7a451b000 rw-p 0002d000 103:06 2230495                   /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7fc7a451b000-7fc7a451c000 rw-p 00000000 00:00 0 
+7fffbad6a000-7fffbad8f000 rw-p 00000000 00:00 0                          [stack]
+7fffbadb5000-7fffbadb9000 r--p 00000000 00:00 0                          [vvar]
+7fffbadb9000-7fffbadbb000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xmx1500M -XX:+UseSerialGC 
+java_command: com.altera.sopcmodel.sbtools.sbcatalog.SbCatalog --xml --project-directory= --search-path=$,/home/wackoz/github/isa/lab2/hdl/sim,/home/wackoz/github/isa/lab2/hdl/sim
+java_class_path (initial): /home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/Nlview.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/TableLayout.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/appframework-1.03.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/asm-3.1.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/asm-commons-3.1.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/basicmodel.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/beansbinding-1.2.1.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/binding-2.0.6.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.componenteditor2.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.app_lib.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.editor.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.elements.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.plugin.core.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.plugin.hal.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.plugin.lwhal.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.schema.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.bsp.scripting.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.commandline.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.cpexample.jar:/home/wackoz/intelFPGA_lite/20.1/quartus/sopc_builder/model/lib/com.altera.embeddedsw.flash.jar:/home/wac
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/home/wackoz/intelFPGA_lite/20.1/quartus/linux64:/home/wackoz/intelFPGA_lite/20.1/quartus/adm:/home/wackoz/intelFPGA_lite/20.1/quartus/linux64:/home/wackoz/.local/bin:/home/wackoz/intelFPGA_lite/20.1/quartus/bin:/home/wackoz/intelFPGA_lite/20.1/modelsim_ase/bin:/home/wackoz/.local/bin:/home/wackoz/intelFPGA_lite/20.1/quartus/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+USERNAME=wackoz
+LD_LIBRARY_PATH=/home/wackoz/intelFPGA_lite/20.1/quartus/linux64:/home/wackoz/intelFPGA_lite/20.1/quartus/linux64:
+SHELL=/bin/bash
+DISPLAY=:1
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xa83ff0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xa83ff0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8d6220], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x8d6220], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x8d6220], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8d6220], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8d60f0], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x8d62e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x8d62e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x8d62e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8d62e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=20.04
+DISTRIB_CODENAME=focal
+DISTRIB_DESCRIPTION="Ubuntu 20.04.3 LTS"
+
+uname:Linux 5.11.0-40-generic #44~20.04.2-Ubuntu SMP Tue Oct 26 18:07:44 UTC 2021 x86_64
+libc:glibc 2.31 NPTL 2.31 
+rlimit: STACK 10240k, CORE 0k, NPROC 62410, NOFILE 1048576, AS infinity
+load average:0,67 0,65 0,68
+
+/proc/meminfo:
+MemTotal:       16045900 kB
+MemFree:         6697584 kB
+MemAvailable:   14005232 kB
+Buffers:          510452 kB
+Cached:          6711764 kB
+SwapCached:            0 kB
+Active:          3494020 kB
+Inactive:        4696768 kB
+Active(anon):      25260 kB
+Inactive(anon):  1193692 kB
+Active(file):    3468760 kB
+Inactive(file):  3503076 kB
+Unevictable:      215868 kB
+Mlocked:              16 kB
+SwapTotal:        976892 kB
+SwapFree:         976892 kB
+Dirty:               764 kB
+Writeback:             0 kB
+AnonPages:       1184436 kB
+Mapped:           598116 kB
+Shmem:            260872 kB
+KReclaimable:     675692 kB
+Slab:             829204 kB
+SReclaimable:     675692 kB
+SUnreclaim:       153512 kB
+KernelStack:       10784 kB
+PageTables:        18408 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     8999840 kB
+Committed_AS:    5296084 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       38228 kB
+VmallocChunk:          0 kB
+Percpu:             9504 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      508428 kB
+DirectMap2M:    10680320 kB
+DirectMap1G:     5242880 kB
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0-7
+cpu_memory_nodes: 0
+active_processor_count: 8
+cpu_quota: -1
+cpu_period: 100000
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -1
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 1971216384
+memory_max_usage_in_bytes: 2775867392
+
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 12, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz
+stepping	: 12
+microcode	: 0xea
+cpu MHz		: 3399.999
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml ept_mode_based_exec
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds
+bogomips	: 4599.93
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz
+stepping	: 12
+microcode	: 0xea
+cpu MHz		: 3400.000
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml ept_mode_based_exec
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds
+bogomips	: 4599.93
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz
+stepping	: 12
+microcode	: 0xea
+cpu MHz		: 2300.000
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml ept_mode_based_exec
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds
+bogomips	: 4599.93
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz
+stepping	: 12
+microcode	: 0xea
+cpu MHz		: 2300.000
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 6
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml ept_mode_based_exec
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds
+bogomips	: 4599.93
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 4
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz
+stepping	: 12
+microcode	: 0xea
+cpu MHz		: 2300.000
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 0
+cpu cores	: 4
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml ept_mode_based_exec
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds
+bogomips	: 4599.93
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 5
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz
+stepping	: 12
+microcode	: 0xea
+cpu MHz		: 2300.000
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml ept_mode_based_exec
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds
+bogomips	: 4599.93
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 6
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz
+stepping	: 12
+microcode	: 0xea
+cpu MHz		: 3399.998
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 5
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml ept_mode_based_exec
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds
+bogomips	: 4599.93
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 7
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz
+stepping	: 12
+microcode	: 0xea
+cpu MHz		: 3400.036
+cache size	: 8192 KB
+physical id	: 0
+siblings	: 8
+core id		: 3
+cpu cores	: 4
+apicid		: 7
+initial apicid	: 7
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml ept_mode_based_exec
+bugs		: spectre_v1 spectre_v2 spec_store_bypass swapgs itlb_multihit srbds
+bogomips	: 4599.93
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 16045900k(6690528k free), swap 976892k(976892k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.265-b01) for linux-amd64 JRE (1.8.0_265-b01), built on Jul 28 2020 15:17:23 by "jenkins" with gcc 4.8.2 20140120 (Red Hat 4.8.2-15)
+
+time: Fri Nov 26 01:12:08 2021
+timezone: CET
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

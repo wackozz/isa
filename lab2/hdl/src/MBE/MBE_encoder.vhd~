@@ -1,0 +1,60 @@
+-------------------------------------------------------------------------------
+-- Title      : MBE encoder
+-- Project    : 
+-------------------------------------------------------------------------------
+-- File       : MBE_encoder.vhd
+-- Author     : wackoz  <wackoz@wT14>
+-- Company    : 
+-- Created    : 2021-11-25
+-- Last update: 2021-11-26
+-- Platform   : 
+-- Standard   : VHDL'93/02
+-------------------------------------------------------------------------------
+-- Description: Encoder for MBE multiplier
+-------------------------------------------------------------------------------
+-- Copyright (c) 2021 
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author  Description
+-- 2021-11-25  1.0      wackoz  Created
+-------------------------------------------------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+-------------------------------------------------------------------------------
+
+entity MBE_encoder is
+
+  port (
+    A : in  std_logic_vector(2 downto 0);   -- input triplet
+    P : out std_logic_vector(1 downto 0));  -- output
+end entity MBE_encoder;
+
+-------------------------------------------------------------------------------
+-- Table of conversion:
+-- 000:0
+-- 001:+1
+-- 010:+1
+-- 011:+2
+-- 100:-1
+-- 101:-1
+-- 110:-1
+-- 111:0
+-------------------------------------------------------------------------------
+architecture str of MBE_encoder is
+  signal Q : std_logic_vector(1 downto 0);  -- Magnitude for P
+begin  -- architecture str
+
+  Q <= "00" when (not((A(1) xor A(0)) or (A(2) xor A(1)))) = '1' else  -- DeMorgan
+       "01" when (A(1) xor A(0)) = '1' else
+       "10" when (not(A(1) xor A(0)) and (A(2) xor A(1))) = '1' else
+       "11";
+       
+  
+  P(0) <= ((Q(0) xor A(2)) or A(2));
+  P(1) <= ((Q(1) xor A(2)) or A(2));
+
+end architecture str;
+
+-------------------------------------------------------------------------------
