@@ -2,7 +2,7 @@
 # Integrated System Architectures projects
 Lab projects for the integrated system architectures course. AY 2021/2022.
 ## Contributors:
-- Federica Bongo ([@fedebongp](https://github.com/fedebongo))
+- Federica Bongo ([@fedebongo](https://github.com/fedebongo))
 - Stefano Rizzello ([@stefanorizzello](https://github.com/stefanorizzello))
 - Francesco Vacca ([@wackozz](https://github.com/wackozz))
 
