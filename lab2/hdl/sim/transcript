@@ -8,29 +8,36 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity MBE_encoder
 # -- Compiling architecture str of MBE_encoder
+# ** Warning: /home/wackoz/github/isa/lab2/hdl/src/MBE/MBE_encoder.vhd(63): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
 # vcom -work work -2002 -explicit -stats=none /home/wackoz/github/isa/lab2/hdl/tb/MBE_encoder_tb.vhd
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
 # -- Loading package std_logic_textio
 # -- Compiling entity MBE_encoder_tb
 # -- Compiling architecture str of MBE_encoder_tb
-# -- Loading package NUMERIC_STD
 # -- Loading entity MBE_encoder
 # -- Compiling configuration MBE_encoder_tb_str_cfg
 # -- Loading entity MBE_encoder_tb
 # -- Loading architecture str of MBE_encoder_tb
 # 2 compiles, 0 failed with no errors.
 # vsim work.MBE_encoder_tb -t ns 
-# Start time: 17:01:30 on Nov 26,2021
+# Start time: 17:58:36 on Nov 27,2021
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_textio(body)
 # Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
 # Loading work.mbe_encoder_tb(str)
 # Loading work.mbe_encoder(str)
-# End time: 17:01:30 on Nov 26,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /mbe_encoder_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /mbe_encoder_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /mbe_encoder_tb
+# End time: 17:58:36 on Nov 27,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 8
 # reading modelsim.ini

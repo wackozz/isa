@@ -438,23 +438,23 @@ R15
 R12
 R2
 Embe_encoder
-Z70 w1637936939
+Z70 w1638032263
 Z71 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z72 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z73 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 302
+!i122 582
 Z74 d/home/wackoz/github/isa/lab2/hdl/sim
 Z75 8/home/wackoz/github/isa/lab2/hdl/src/MBE/MBE_encoder.vhd
 Z76 F/home/wackoz/github/isa/lab2/hdl/src/MBE/MBE_encoder.vhd
 l0
 L27 1
-V8O1B[KB3g@DMEG@Rja1b63
-!s100 f]7hCilzaW:Nc4CA[ZbMI1
+VJjkmTXM4a]4<WA_1jeJOA2
+!s100 P0n93Ad;[RbXgPm^4^>Sg2
 Z77 OV;C;2020.1;71
 32
-Z78 !s110 1637942490
+Z78 !s110 1638032316
 !i10b 1
-Z79 !s108 1637942490.000000
+Z79 !s108 1638032316.000000
 Z80 !s90 -work|work|-2002|-explicit|-stats=none|/home/wackoz/github/isa/lab2/hdl/src/MBE/MBE_encoder.vhd|
 Z81 !s107 /home/wackoz/github/isa/lab2/hdl/src/MBE/MBE_encoder.vhd|
 !i113 1
@@ -464,12 +464,12 @@ Astr
 R71
 R72
 R73
-Z83 DEx4 work 11 mbe_encoder 0 22 8O1B[KB3g@DMEG@Rja1b63
-!i122 302
-l49
-L46 17
-Vl7Oz_mYMWWOjQD3BFB1GQ0
-!s100 `J]ei3lgAMI3MN`LX2Uda0
+Z83 DEx4 work 11 mbe_encoder 0 22 JjkmTXM4a]4<WA_1jeJOA2
+!i122 582
+l60
+L46 28
+VM2jC?^=EAnVDD<oLA4A^C2
+!s100 4:ZIo2JTh[VgggH5FDeVd2
 R77
 32
 R78
@@ -481,18 +481,19 @@ R81
 R12
 R82
 Embe_encoder_tb
-Z84 w1637942489
+Z84 w1638032315
 Z85 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
-R72
 R73
-!i122 303
+R72
+R71
+!i122 583
 R74
 Z86 8/home/wackoz/github/isa/lab2/hdl/tb/MBE_encoder_tb.vhd
 Z87 F/home/wackoz/github/isa/lab2/hdl/tb/MBE_encoder_tb.vhd
 l0
-L29 1
-V4zCG<cIUMTeU^VfJS?]zR1
-!s100 f3_`i?aX7Sh2ZH@ZGK<Sa0
+L30 1
+VloYMYJkob7aKC_eHhkPE<1
+!s100 ?i3?1dT>FmdDR]_E[?iJb3
 R77
 32
 R78
@@ -504,17 +505,17 @@ Z89 !s107 /home/wackoz/github/isa/lab2/hdl/tb/MBE_encoder_tb.vhd|
 R12
 R82
 Astr
-R71
 R83
 R85
-R72
 R73
-Z90 DEx4 work 14 mbe_encoder_tb 0 22 4zCG<cIUMTeU^VfJS?]zR1
-!i122 303
-l45
-Z91 L35 52
-Vlld5[R2DH4?OocdZGbbPJ1
-!s100 ^MPSYdiHlQ57XNhfjMW172
+R72
+R71
+Z90 DEx4 work 14 mbe_encoder_tb 0 22 loYMYJkob7aKC_eHhkPE<1
+!i122 583
+l46
+Z91 L36 54
+V?X2X5D=_L;XJ2PgbC7A0E2
+!s100 MmI_H?h0Hm7S?3R5=kold0
 R77
 32
 R78
@@ -529,21 +530,21 @@ Cmbe_encoder_tb_str_cfg
 eMBE_encoder_tb
 astr
 R83
-R71
-DAx4 work 14 mbe_encoder_tb 3 str 22 lld5[R2DH4?OocdZGbbPJ1
+DAx4 work 14 mbe_encoder_tb 3 str 22 ?X2X5D=_L;XJ2PgbC7A0E2
 R85
-R72
 R73
+R72
+R71
 R90
-!i122 303
+!i122 583
 R84
 R74
 R86
 R87
 l0
-L90 1
-VRO]4<TE_c98EC2eNhdHXj3
-!s100 0e@Z:QzHhzIAcmkZBB3640
+L93 1
+V0Pg@3L1Bl6l^;?@>A0O?@0
+!s100 G1QI[iL3g@mGmbLcm1a_41
 R77
 32
 R78

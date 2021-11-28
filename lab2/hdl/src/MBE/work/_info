@@ -10,43 +10,45 @@ z2
 cModel Technology
 Z0 d/home/wackoz/github/isa/lab2/hdl/src/MBE
 Embe_encoder
-Z1 w1637879427
+Z1 w1638031547
 Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 20
+!i122 33
 R0
 Z5 8MBE_encoder.vhd
 Z6 FMBE_encoder.vhd
 l0
 L27 1
-V94fn^ON91ciPXi@o?jgz[1
-!s100 S8Q@YB>gML4CkGJfEMzIV1
-Z7 OL;C;2021.2;73
-32
-Z8 !s110 1637879430
+V208_BU[XM`bH<bCYI2;D72
+!s100 o9XzXTK^hlVWC<LVzSjT70
+Z7 OV;C;2020.1;71
+31
+Z8 !s110 1638031553
 !i10b 1
-Z9 !s108 1637879430.000000
-Z10 !s90 MBE_encoder.vhd|
+Z9 !s108 1638031553.000000
+Z10 !s90 -93|-work|work|MBE_encoder.vhd|
 Z11 !s107 MBE_encoder.vhd|
-!i113 0
-Z12 tExplicit 1 CvgOpt 0
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
 Astr
 R2
 R3
 R4
-Z13 DEx4 work 11 mbe_encoder 0 22 94fn^ON91ciPXi@o?jgz[1
-!i122 20
-l47
-Z14 L45 12
-VR^PL=cUcH>33j;Lm45@k02
-!s100 lK`6kkQ8ne62i=F15RKiD2
+Z14 DEx4 work 11 mbe_encoder 0 22 208_BU[XM`bH<bCYI2;D72
+!i122 33
+l60
+L46 39
+VE>Umc;6X6V0Bn_@8ieEJ00
+!s100 LN]e8Oibhn>^VEO?Rdz190
 R7
-32
+31
 R8
 !i10b 1
 R9
 R10
 R11
-!i113 0
+!i113 1
 R12
+R13

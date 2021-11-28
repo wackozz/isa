@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2021-11-25
--- Last update: 2021-11-26
+-- Last update: 2021-11-27
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -25,11 +25,11 @@ use ieee.numeric_std.all;
 -------------------------------------------------------------------------------
 
 entity MBE_encoder is
-  generic(N : integer);
+  generic(N : integer := 16);
   port (
     triplet : in  std_logic_vector(2 downto 0);
-    A       : in  std_logic_vector(N-1 downto 0);  -- input A
-    P       : out std_logic_vector(N downto 0));   -- Partialproduct output
+    A       : in  std_logic_vector(N-1 downto 0);   -- input A
+    P       : out std_logic_vector(N downto 0));  -- Partialproduct output
 end entity MBE_encoder;
 
 -------------------------------------------------------------------------------
@@ -44,12 +44,23 @@ end entity MBE_encoder;
 -- 111:0
 -------------------------------------------------------------------------------
 architecture str of MBE_encoder is
-  signal Q                                       : std_logic_vector(N downto 0);  -- Magnitude for P
-  signal MSB_triplet_ext, LSB_triplet_ext, zeros : std_logic_vector(N downto 0);
+  signal Q                                   : std_logic_vector(N downto 0);  --|P|
+  signal MSB_triplet_ext, MSB_triplet, zeros : std_logic_vector(N downto 0);
+
+  component ripple_carry_adder is
+    generic (
+      N : natural);
+    port (
+      A   : in  std_logic_vector(N-1 downto 0);
+      B   : in  std_logic_vector(N-1 downto 0);
+      Cin : in  std_logic;
+      Sum : out std_logic_vector(N downto 0));
+  end component ripple_carry_adder;
+
 begin  -- architecture str
 
   MSB_triplet_ext <= (others => triplet(2));
-  LSB_triplet_ext <= (others => triplet(1));
+  MSB_triplet     <= (0      => triplet(2), others => '0');
   zeros           <= (others => '0');
 
   Q <= zeros when (not((triplet(1) xor triplet(0)) or (triplet(2) xor triplet(1)))) = '1' else
@@ -57,7 +68,7 @@ begin  -- architecture str
        (A&'0') when (not(triplet(1) xor triplet(0)) and (triplet(2) xor triplet(1))) = '1' else
        (others => 'X');
 
-  P <= ((Q xor MSB_triplet_ext) or (LSB_triplet_ext));
+  P <= std_logic_vector((signed(Q xor MSB_triplet_ext)) + signed(MSB_triplet));
 
 end architecture str;
 

@@ -42,7 +42,7 @@ architecture str of MBE_encoder_tb is
   signal A       : std_logic_vector(7 downto 0);
   signal P       : std_logic_vector(8 downto 0);
   signal P_int   : integer;             -- integer to print
-  signal A_int   : integer;             -- integer to print
+
 begin
 
   DUT : entity work.MBE_encoder
@@ -56,8 +56,7 @@ begin
   -- clock generation
   Clk <= not Clk after 10 ns;
 
-  -- P,A integer gen
-  A_int <= to_integer(signed(A));
+  -- P integer gen
   P_int <= to_integer(signed(P));
   -- read file
   READ_Proc : process(clk)
