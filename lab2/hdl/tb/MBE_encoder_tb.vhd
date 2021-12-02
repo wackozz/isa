@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2021-11-25
--- Last update: 2021-11-27
+-- Last update: 2021-11-29
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -57,8 +57,6 @@ begin
   Clk <= not Clk after 10 ns;
 
   -- P,A integer gen
-  A_int <= to_integer(signed(A));
-  P_int <= to_integer(signed(P));
   -- read file
   READ_Proc : process(clk)
     file fp      : text open read_mode is "../tb/data/MBE_encoder_input.dat";
@@ -81,7 +79,7 @@ begin
     variable line_out : line;
   begin  -- process
     if CLK'event and CLK = '1' and EOF = '0' then  -- rising clock edge
-      write(line_out, P_int);
+      write(line_out, P);
       writeline(res_fp, line_out);
     end if;
   end process WRITE_Proc;

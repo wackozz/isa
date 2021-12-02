@@ -1,43 +1,329 @@
-# do scripts/simulate.do MBE_encoder
+# reading modelsim.ini
 # Loading project MBE_encoder_proj
-# vcom -work work -2002 -explicit -stats=none /home/wackoz/github/isa/lab2/hdl/src/MBE/MBE_encoder.vhd
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity MBE_encoder
-# -- Compiling architecture str of MBE_encoder
-# ** Warning: /home/wackoz/github/isa/lab2/hdl/src/MBE/MBE_encoder.vhd(63): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
-# vcom -work work -2002 -explicit -stats=none /home/wackoz/github/isa/lab2/hdl/tb/MBE_encoder_tb.vhd
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_textio
-# -- Compiling entity MBE_encoder_tb
-# -- Compiling architecture str of MBE_encoder_tb
-# -- Loading entity MBE_encoder
-# -- Compiling configuration MBE_encoder_tb_str_cfg
-# -- Loading entity MBE_encoder_tb
-# -- Loading architecture str of MBE_encoder_tb
-# 2 compiles, 0 failed with no errors.
-# vsim work.MBE_encoder_tb -t ns 
-# Start time: 17:58:36 on Nov 27,2021
+# reading modelsim.ini
+# reading /home/wackoz/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini
+# Loading project mbe_multiplier
+project addfile /home/wackoz/github/isa/lab2/hdl/src/MBE/dadda_tree.vhd
+project addfile /home/wackoz/github/isa/lab2/hdl/src/MBE/half_adder.vhd
+project addfile /home/wackoz/github/isa/lab2/hdl/src/MBE/full_adder.vhd
+project addfile /home/wackoz/github/isa/lab2/hdl/src/MBE/MBE_encoder.vhd
+project addfile /home/wackoz/github/isa/lab2/hdl/src/MBE/mbe_multiplier.vhd
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd was successful.
+# 5 compiles, 0 failed with no errors.
+project addfile /home/wackoz/github/isa/lab2/hdl/src/MBE/mbe_multiplier_tb.vhd
+# Error opening /home/wackoz/github/isa/lab2/hdl/src/MBE/mbe_multiplier_tb.vhd
+# Path name '/home/wackoz/github/isa/lab2/hdl/src/MBE/mbe_multiplier_tb.vhd' doesn't exist.
+project addfile /home/wackoz/github/isa/lab2/hdl/src/MBE/MBE_multiplier_tb.vhd
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd was successful.
+# Compile of MBE_multiplier_tb.vhd failed with 6 errors.
+# 6 compiles, 1 failed with 6 errors.
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd was successful.
+# Compile of MBE_multiplier_tb.vhd failed with 2 errors.
+# 6 compiles, 1 failed with 2 errors.
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd was successful.
+# Compile of MBE_multiplier_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim work.mbe_multiplier_tb
+# vsim work.mbe_multiplier_tb 
+# Start time: 12:25:28 on Dec 01,2021
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
-# Loading ieee.std_logic_textio(body)
-# Loading work.mbe_encoder_tb(str)
+# Loading work.mbe_multiplier_tb(arch)
+# Loading work.mbe_multiplier(arch)
 # Loading work.mbe_encoder(str)
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /mbe_encoder_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /mbe_encoder_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /mbe_encoder_tb
-# End time: 17:58:36 on Nov 27,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 8
-# reading modelsim.ini
+# Loading work.dadda_tree(arch)
+# Loading work.half_adder(rtl)
+# Loading work.full_adder(gate_level)
+# WARNING: No extended dataflow license exists
+add wave *
+run 1 us
+add wave -position insertpoint sim:/mbe_multiplier_tb/DUT/*
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run 1 us
+do mbe_sim.do
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd was successful.
+# Compile of MBE_multiplier_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# End time: 12:37:29 on Dec 01,2021, Elapsed time: 0:12:01
+# Errors: 0, Warnings: 2
+# vsim work.mbe_multiplier_tb -t ns 
+# Start time: 12:37:29 on Dec 01,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mbe_multiplier_tb(arch)
+# Loading work.mbe_multiplier(arch)
+# Loading work.mbe_encoder(str)
+# Loading work.dadda_tree(arch)
+# Loading work.half_adder(rtl)
+# Loading work.full_adder(gate_level)
+# WARNING: No extended dataflow license exists
+do mbe_sim.do
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd was successful.
+# Compile of MBE_multiplier_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# End time: 12:41:17 on Dec 01,2021, Elapsed time: 0:03:48
+# Errors: 0, Warnings: 2
+# vsim work.mbe_multiplier_tb -t ns 
+# Start time: 12:41:17 on Dec 01,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mbe_multiplier_tb(arch)
+# Loading work.mbe_multiplier(arch)
+# Loading work.mbe_encoder(str)
+# Loading work.dadda_tree(arch)
+# Loading work.half_adder(rtl)
+# Loading work.full_adder(gate_level)
+# WARNING: No extended dataflow license exists
+do mbe_sim.do
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd failed with 13 errors.
+# Compile of MBE_multiplier_tb.vhd was successful.
+# 6 compiles, 1 failed with 13 errors.
+# End time: 12:45:26 on Dec 01,2021, Elapsed time: 0:04:09
+# Errors: 0, Warnings: 2
+# vsim work.mbe_multiplier_tb -t ns 
+# Start time: 12:45:26 on Dec 01,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mbe_multiplier_tb(arch)
+# Loading work.mbe_multiplier(arch)
+# Loading work.mbe_encoder(str)
+# Loading work.dadda_tree(arch)
+# Loading work.half_adder(rtl)
+# Loading work.full_adder(gate_level)
+# WARNING: No extended dataflow license exists
+do mbe_sim.do
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd failed with 78 errors.
+# Compile of MBE_multiplier_tb.vhd was successful.
+# 6 compiles, 1 failed with 78 errors.
+# End time: 18:28:44 on Dec 01,2021, Elapsed time: 5:43:18
+# Errors: 0, Warnings: 2
+# vsim work.mbe_multiplier_tb -t ns 
+# Start time: 18:28:44 on Dec 01,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mbe_multiplier_tb(arch)
+# Loading work.mbe_multiplier(arch)
+# Loading work.mbe_encoder(str)
+# Loading work.dadda_tree(arch)
+# Loading work.half_adder(rtl)
+# Loading work.full_adder(gate_level)
+# WARNING: No extended dataflow license exists
+do mbe_sim.do
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd failed with 78 errors.
+# Compile of MBE_multiplier_tb.vhd was successful.
+# 6 compiles, 1 failed with 78 errors.
+# End time: 18:30:54 on Dec 01,2021, Elapsed time: 0:02:10
+# Errors: 0, Warnings: 2
+# vsim work.mbe_multiplier_tb -t ns 
+# Start time: 18:30:54 on Dec 01,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mbe_multiplier_tb(arch)
+# Loading work.mbe_multiplier(arch)
+# Loading work.mbe_encoder(str)
+# Loading work.dadda_tree(arch)
+# Loading work.half_adder(rtl)
+# Loading work.full_adder(gate_level)
+# WARNING: No extended dataflow license exists
+project compileall
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd failed with 78 errors.
+# Compile of MBE_multiplier_tb.vhd was successful.
+# 6 compiles, 1 failed with 78 errors.
+project compileall
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd was successful.
+# Compile of MBE_multiplier_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+do mbe_sim.do
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd was successful.
+# Compile of MBE_multiplier_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# End time: 18:32:52 on Dec 01,2021, Elapsed time: 0:01:58
+# Errors: 0, Warnings: 4
+# vsim work.mbe_multiplier_tb -t ns 
+# Start time: 18:32:52 on Dec 01,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mbe_multiplier_tb(arch)
+# Loading work.mbe_multiplier(arch)
+# Loading work.mbe_encoder(str)
+# Loading work.dadda_tree(arch)
+# Loading work.half_adder(rtl)
+# Loading work.full_adder(gate_level)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/mbe_multiplier_tb/DUT/*
+add wave -r /*
+do mbe_sim.do
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd was successful.
+# Compile of MBE_multiplier_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# End time: 18:36:17 on Dec 01,2021, Elapsed time: 0:03:25
+# Errors: 0, Warnings: 2
+# vsim work.mbe_multiplier_tb -t ns 
+# Start time: 18:36:17 on Dec 01,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mbe_multiplier_tb(arch)
+# Loading work.mbe_multiplier(arch)
+# Loading work.mbe_encoder(str)
+# Loading work.dadda_tree(arch)
+# Loading work.half_adder(rtl)
+# Loading work.full_adder(gate_level)
+# WARNING: No extended dataflow license exists
+do mbe_sim.do
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd was successful.
+# Compile of MBE_multiplier_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# End time: 18:37:51 on Dec 01,2021, Elapsed time: 0:01:34
+# Errors: 0, Warnings: 2
+# vsim work.mbe_multiplier_tb -t ns 
+# Start time: 18:37:51 on Dec 01,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mbe_multiplier_tb(arch)
+# Loading work.mbe_multiplier(arch)
+# Loading work.mbe_encoder(str)
+# Loading work.dadda_tree(arch)
+# Loading work.half_adder(rtl)
+# Loading work.full_adder(gate_level)
+# WARNING: No extended dataflow license exists
+do mbe_sim.do
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd was successful.
+# Compile of MBE_multiplier_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# End time: 18:41:49 on Dec 01,2021, Elapsed time: 0:03:58
+# Errors: 0, Warnings: 2
+# vsim work.mbe_multiplier_tb -t ns 
+# Start time: 18:41:49 on Dec 01,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mbe_multiplier_tb(arch)
+# Loading work.mbe_multiplier(arch)
+# Loading work.mbe_encoder(str)
+# Loading work.dadda_tree(arch)
+# Loading work.half_adder(rtl)
+# Loading work.full_adder(gate_level)
+do mbe_sim.do
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd was successful.
+# Compile of MBE_multiplier_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# End time: 22:36:36 on Dec 01,2021, Elapsed time: 3:54:47
+# Errors: 0, Warnings: 2
+# vsim work.mbe_multiplier_tb -t ns 
+# Start time: 22:36:36 on Dec 01,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mbe_multiplier_tb(arch)
+# Loading work.mbe_multiplier(arch)
+# Loading work.mbe_encoder(str)
+# Loading work.dadda_tree(arch)
+# Loading work.half_adder(rtl)
+# Loading work.full_adder(gate_level)
+do mbe_sim.do
+# Compile of dadda_tree.vhd was successful.
+# Compile of half_adder.vhd was successful.
+# Compile of full_adder.vhd was successful.
+# Compile of MBE_encoder.vhd was successful.
+# Compile of mbe_multiplier.vhd was successful.
+# Compile of MBE_multiplier_tb.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+# End time: 22:37:10 on Dec 01,2021, Elapsed time: 0:00:34
+# Errors: 0, Warnings: 2
+# vsim work.mbe_multiplier_tb -t ns 
+# Start time: 22:37:10 on Dec 01,2021
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.mbe_multiplier_tb(arch)
+# Loading work.mbe_multiplier(arch)
+# Loading work.mbe_encoder(str)
+# Loading work.dadda_tree(arch)
+# Loading work.half_adder(rtl)
+# Loading work.full_adder(gate_level)

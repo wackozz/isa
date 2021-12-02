@@ -1,17 +1,15 @@
-
 #Multiplication NxN
 #N partial products
-N=8
-A = "0"+str(bin(144)).split('b')[1]
-B = 132
+N=24
+A = "0"+str(bin(13)).split('b')[1]
+B = 15
 triplets = []
 Pp = []
 Result = 0
 
 #MBE encoder
 A=''.join([A,'0'])
-if((len(A)%2) == 0):
-    A=''.join([A[len(A)-1],A])
+A=''.join(['0',A])
 
 #triplets production
 for i in range(len(A)-2,0,-2):

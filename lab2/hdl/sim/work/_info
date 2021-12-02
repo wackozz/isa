@@ -438,23 +438,23 @@ R15
 R12
 R2
 Embe_encoder
-Z70 w1638032263
+Z70 w1638181465
 Z71 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z72 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z73 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 582
+!i122 652
 Z74 d/home/wackoz/github/isa/lab2/hdl/sim
 Z75 8/home/wackoz/github/isa/lab2/hdl/src/MBE/MBE_encoder.vhd
 Z76 F/home/wackoz/github/isa/lab2/hdl/src/MBE/MBE_encoder.vhd
 l0
 L27 1
-VJjkmTXM4a]4<WA_1jeJOA2
-!s100 P0n93Ad;[RbXgPm^4^>Sg2
+VS0n^F2<biA9Xk3?k>S80S2
+!s100 J2>36Vk:@0k8J`::kJn_m3
 Z77 OV;C;2020.1;71
 32
-Z78 !s110 1638032316
+Z78 !s110 1638181526
 !i10b 1
-Z79 !s108 1638032316.000000
+Z79 !s108 1638181526.000000
 Z80 !s90 -work|work|-2002|-explicit|-stats=none|/home/wackoz/github/isa/lab2/hdl/src/MBE/MBE_encoder.vhd|
 Z81 !s107 /home/wackoz/github/isa/lab2/hdl/src/MBE/MBE_encoder.vhd|
 !i113 1
@@ -464,12 +464,12 @@ Astr
 R71
 R72
 R73
-Z83 DEx4 work 11 mbe_encoder 0 22 JjkmTXM4a]4<WA_1jeJOA2
-!i122 582
-l60
-L46 28
-VM2jC?^=EAnVDD<oLA4A^C2
-!s100 4:ZIo2JTh[VgggH5FDeVd2
+Z83 DEx4 work 11 mbe_encoder 0 22 S0n^F2<biA9Xk3?k>S80S2
+!i122 652
+l51
+L47 18
+V3L=405?c9PK6Pn`ZXGjP72
+!s100 c6dZCCHc>P3C:4PHoUSm43
 R77
 32
 R78
@@ -481,12 +481,12 @@ R81
 R12
 R82
 Embe_encoder_tb
-Z84 w1638032315
+Z84 w1638181526
 Z85 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
 R73
 R72
 R71
-!i122 583
+!i122 653
 R74
 Z86 8/home/wackoz/github/isa/lab2/hdl/tb/MBE_encoder_tb.vhd
 Z87 F/home/wackoz/github/isa/lab2/hdl/tb/MBE_encoder_tb.vhd
@@ -496,11 +496,11 @@ VloYMYJkob7aKC_eHhkPE<1
 !s100 ?i3?1dT>FmdDR]_E[?iJb3
 R77
 32
-R78
+Z88 !s110 1638181527
 !i10b 1
 R79
-Z88 !s90 -work|work|-2002|-explicit|-stats=none|/home/wackoz/github/isa/lab2/hdl/tb/MBE_encoder_tb.vhd|
-Z89 !s107 /home/wackoz/github/isa/lab2/hdl/tb/MBE_encoder_tb.vhd|
+Z89 !s90 -work|work|-2002|-explicit|-stats=none|/home/wackoz/github/isa/lab2/hdl/tb/MBE_encoder_tb.vhd|
+Z90 !s107 /home/wackoz/github/isa/lab2/hdl/tb/MBE_encoder_tb.vhd|
 !i113 1
 R12
 R82
@@ -510,19 +510,19 @@ R85
 R73
 R72
 R71
-Z90 DEx4 work 14 mbe_encoder_tb 0 22 loYMYJkob7aKC_eHhkPE<1
-!i122 583
+Z91 DEx4 work 14 mbe_encoder_tb 0 22 loYMYJkob7aKC_eHhkPE<1
+!i122 653
 l46
-Z91 L36 54
-V?X2X5D=_L;XJ2PgbC7A0E2
-!s100 MmI_H?h0Hm7S?3R5=kold0
+Z92 L36 52
+V]^ThTJ=D@K:RhcDn6nnb10
+!s100 mcbZY3nPMUIOZ`[<@gc>f1
 R77
 32
-R78
+R88
 !i10b 1
 R79
-R88
 R89
+R90
 !i113 1
 R12
 R82
@@ -530,28 +530,28 @@ Cmbe_encoder_tb_str_cfg
 eMBE_encoder_tb
 astr
 R83
-DAx4 work 14 mbe_encoder_tb 3 str 22 ?X2X5D=_L;XJ2PgbC7A0E2
+DAx4 work 14 mbe_encoder_tb 3 str 22 ]^ThTJ=D@K:RhcDn6nnb10
 R85
 R73
 R72
 R71
-R90
-!i122 583
+R91
+!i122 653
 R84
 R74
 R86
 R87
 l0
-L93 1
-V0Pg@3L1Bl6l^;?@>A0O?@0
-!s100 G1QI[iL3g@mGmbLcm1a_41
+L91 1
+VT>RcE60IQ^]Al]kJKhziT2
+!s100 HAHOFi94VcMUHQjbHkP9K2
 R77
 32
-R78
+R88
 !i10b 0
 R79
-R88
 R89
+R90
 !i113 1
 R12
 R82
@@ -560,8 +560,8 @@ R50
 R6
 R7
 R8
-Z92 8/home/isa18_2021_2022/github/isa/lab2/hdl/src/common/packfp_packfp.vhd
-Z93 F/home/isa18_2021_2022/github/isa/lab2/hdl/src/common/packfp_packfp.vhd
+Z93 8/home/isa18_2021_2022/github/isa/lab2/hdl/src/common/packfp_packfp.vhd
+Z94 F/home/isa18_2021_2022/github/isa/lab2/hdl/src/common/packfp_packfp.vhd
 l0
 L16
 VWQ9<D@iM0UG077d^oMXB71
@@ -583,11 +583,11 @@ R43
 R12
 R2
 Ereg
-Z94 w1636457251
+Z95 w1636457251
 R7
 R8
-Z95 8/home/isa18_2021_2022/github/isa/lab2/hdl/src/reg.vhd
-Z96 F/home/isa18_2021_2022/github/isa/lab2/hdl/src/reg.vhd
+Z96 8/home/isa18_2021_2022/github/isa/lab2/hdl/src/reg.vhd
+Z97 F/home/isa18_2021_2022/github/isa/lab2/hdl/src/reg.vhd
 l0
 L6
 Vgg^5EKmGSD2>B8D_ZHUWl0
@@ -608,13 +608,13 @@ R12
 R2
 vtb_fpmul
 IJ6QFDeEf=TK^_ddEIkUdG0
-Z97 VC^@`0^lZIhGmPzQQh^IiG3
+Z98 VC^@`0^lZIhGmPzQQh^IiG3
 R8
 w1637668891
 8/home/isa18_2021_2022/github/isa/lab2/hdl/tb/tb_fpmul_reg.v
 F/home/isa18_2021_2022/github/isa/lab2/hdl/tb/tb_fpmul_reg.v
 L0 3
-R97
+R98
 OE;L;6.2g;35
 r1
 31
@@ -624,8 +624,8 @@ R50
 R6
 R7
 R8
-Z98 8/home/isa18_2021_2022/github/isa/lab2/hdl/src/common/unpackfp_unpackfp.vhd
-Z99 F/home/isa18_2021_2022/github/isa/lab2/hdl/src/common/unpackfp_unpackfp.vhd
+Z99 8/home/isa18_2021_2022/github/isa/lab2/hdl/src/common/unpackfp_unpackfp.vhd
+Z100 F/home/isa18_2021_2022/github/isa/lab2/hdl/src/common/unpackfp_unpackfp.vhd
 l0
 L15
 VH>gCS@]RQYHoQC;lTzlek1
