@@ -8,17 +8,23 @@ entity dadda_tree is
 
 	port (
 	Pp_0 : std_logic_vector(27 downto 0);
-	Pp_1, Pp_2, Pp_3, Pp_4, Pp_5, Pp_6, Pp_7, Pp_8, Pp_9, Pp_10, Pp_11 : in std_logic_vector(28 downto 0);
+	Pp_1, Pp_2, Pp_3, Pp_4, Pp_5, Pp_6, Pp_7, Pp_8, Pp_9, Pp_10 : in std_logic_vector(28 downto 0);
+	Pp_11 : in std_logic_vector(27 downto 0);
 	Pp_12 : in std_logic_vector(26 downto 0);
-
 	Z		: out std_logic_vector(48-1 downto 0));	-- output Z
 
 end entity dadda_tree;
 
 architecture arch of dadda_tree is
 
+------------------------
 -- SIGNALS
+------------------------
+
+-- PARTIAL PRODUCTS (INPUT)
 signal Pp_EXT_0, Pp_EXT_1, Pp_EXT_2, Pp_EXT_3, Pp_EXT_4, Pp_EXT_5, Pp_EXT_6, Pp_EXT_7, Pp_EXT_8, Pp_EXT_9, Pp_EXT_10, Pp_EXT_11, Pp_EXT_12 : std_logic_vector(47 downto 0):=(others => '0');
+
+-- STEP NO.6 (inverse pyramid creation)
 signal r_L6_0, r_L6_1, r_L6_2, r_L6_3, r_L6_4, r_L6_5, r_L6_6, r_L6_7, r_L6_8, r_L6_9, r_L6_10, r_L6_11, r_L6_12: std_logic_vector(48-1 downto 0):=(others => '0');	-- input
 
 
@@ -26,26 +32,34 @@ signal r_L6_0, r_L6_1, r_L6_2, r_L6_3, r_L6_4, r_L6_5, r_L6_6, r_L6_7, r_L6_8, r
 signal r_L5_0, r_L5_1, r_L5_2, r_L5_3, r_L5_4, r_L5_5, r_L5_6, r_L5_7, r_L5_8, r_L5_9, r_L5_10, r_L5_11, r_L5_12: std_logic_vector(48-1 downto 0):=(others => '0');
 
 
+
 --STEP NO. 4
 signal r_L4_0, r_L4_1, r_L4_2, r_L4_3, r_L4_4, r_L4_5, r_L4_6, r_L4_7, r_L4_8: std_logic_vector(48-1 downto 0):=(others => '0');
+
 
 
 --STEP NO. 3
 signal r_L3_0, r_L3_1, r_L3_2, r_L3_3, r_L3_4, r_L3_5: std_logic_vector(48-1 downto 0):=(others => '0');
 
 
+
 --STEP NO. 2
 signal r_L2_0, r_L2_1, r_L2_2, r_L2_3: std_logic_vector(48-1 downto 0):=(others => '0');
+
 
 
 --STEP NO. 1
 signal r_L1_0, r_L1_1, r_L1_2: std_logic_vector(48-1 downto 0):=(others => '0');
 
 
+
 --STEP NO. 0
 signal r_L0_0, r_L0_1: std_logic_vector(48-1 downto 0):=(others => '0');
 
+------------------------
 -- COMPONENTS
+------------------------
+
 component full_adder is
 	port (
 		A	: in  std_logic;
@@ -64,7 +78,12 @@ port (
 end component half_adder;
 
 begin
- Pp_EXT_0 <=(48-1 downto Pp_0'length => '0')&Pp_0;
+------------------------
+-- SIGNALS ASSIGNEMENT
+------------------------
+
+-- Zero padding for partial products in input
+Pp_EXT_0 <=(48-1 downto Pp_0'length => '0')&Pp_0;
 Pp_EXT_1<=(48-1 downto Pp_1'length => '0')&std_logic_vector(shift_left(unsigned(Pp_1),0));
 Pp_EXT_2<=(48-1 downto Pp_2'length => '0')&std_logic_vector(shift_left(unsigned(Pp_2),2));
 Pp_EXT_3<=(48-1 downto Pp_3'length => '0')&std_logic_vector(shift_left(unsigned(Pp_3),4));
@@ -77,6 +96,8 @@ Pp_EXT_9<=(48-1 downto Pp_9'length => '0')&std_logic_vector(shift_left(unsigned(
 Pp_EXT_10<=(48-1 downto Pp_10'length => '0')&std_logic_vector(shift_left(unsigned(Pp_10),18));
 Pp_EXT_11<=(48-1 downto Pp_11'length => '0')&std_logic_vector(shift_left(unsigned(Pp_11),20));
 Pp_EXT_12<=(48-1 downto Pp_12'length => '0')&std_logic_vector(shift_left(unsigned(Pp_12),22));
+
+-- Assignment for dadda tree creation 
 r_L6_0(28)<=Pp_EXT_1(28);
  r_L6_1(28)<=Pp_EXT_2(28);
  r_L6_2(28)<=Pp_EXT_3(28);
@@ -208,8 +229,6 @@ r_L6_0(28)<=Pp_EXT_1(28);
  r_L6_0(47)<=Pp_EXT_10(47);
  r_L6_1(47)<=Pp_EXT_11(47);
  
-
-
 
 --STEP L5	d =13:
 r_L5_0(0)<= r_L6_0(0);

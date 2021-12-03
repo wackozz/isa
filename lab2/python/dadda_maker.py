@@ -42,18 +42,21 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
     #ENTITY
     file.write("entity dadda_tree is\n\n")
     file.write("\tport (\n\t")
+    #partial product declaration:
     #first
     file.write("Pp_0 : ")
     file.write("std_logic_vector("+str(N+3)+" downto 0);\n\t")
-
-    #PPExt loop
-    for i in range(1,H-2,1):
+    #Loop: second to second last-1
+    for i in range(1,H-3,1):
         file.write("Pp_"+str(i)+", ")
-    file.write("Pp_"+str(H-2)+" : ")
+    file.write("Pp_"+str(H-3)+" : ")
     file.write("in std_logic_vector("+str(N+4)+" downto 0);\n")
+    #second last
+    file.write("\tPp_"+str(H-2)+" : ")
+    file.write("in std_logic_vector("+str(N+3)+" downto 0);\n")
     #last
     file.write("\tPp_"+str(H-1)+" : ")
-    file.write("in std_logic_vector("+str(N+2)+" downto 0);\n\n")
+    file.write("in std_logic_vector("+str(N+2)+" downto 0);\n")
     #output
     file.write("\tZ\t\t: out std_logic_vector("+str(2*N)+"-1 downto 0));\t-- output Z\n\n")
     file.write("end entity dadda_tree;\n\n")
@@ -62,15 +65,20 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
     file.write("architecture arch of dadda_tree is\n\n")
 
     #SIGNAL DECLARATION
+    file.write("------------------------\n")
     file.write("-- SIGNALS\n")
+    file.write("------------------------\n\n")
 
-    #Partial product extension to 64 bits
+    #Partial products
+    file.write("-- PARTIAL PRODUCTS (INPUT)\n")
     file.write("signal ")
     for i in range(0,H-1,1):
         file.write("Pp_EXT_"+str(i)+", ")
     file.write("Pp_EXT_"+str(H-1)+" : ")
-    file.write("std_logic_vector("+str(2*N-1)+" downto 0):=(others => '0');\n")
+    file.write("std_logic_vector("+str(2*N-1)+" downto 0):=(others => '0');\n\n")
 
+    file.write("-- STEP NO."+str(step)+" (inverse pyramid creation)\n")
+    
     #Last step signals
     file.write("signal ")
     for i in range(0,H-1,1):
@@ -78,7 +86,7 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
     file.write("r_L"+str(step)+"_"+str(H-1))
     file.write(": std_logic_vector("+str(2*N)+"-1 downto 0):=(others => '0');\t-- input\n")
 
-    #rows
+    #signals for other steps
     step = step -1
     while (step > -1):
         file.write("\n\n--STEP NO. "+str(step)+"\n")
@@ -86,36 +94,41 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
         for i in range(0,dadda_lst[step]-1,1):
             file.write("r_L"+str(step)+"_"+str(i)+", ")
         file.write("r_L"+str(step)+"_"+str(dadda_lst[step]-1))
-        file.write(": std_logic_vector("+str(2*N)+"-1 downto 0):=(others => '0');\n")
+        file.write(": std_logic_vector("+str(2*N)+"-1 downto 0):=(others => '0');\n\n")
         step = step -1
+
     #COMPONENT DECLARATION
-    file.write("\n-- COMPONENTS\n")
+    file.write("------------------------\n")
+    file.write("-- COMPONENTS\n")
+    file.write("------------------------\n\n")
+
     #full adder
     file.write("component full_adder is\n\tport (\n\t\tA\t: in  std_logic;\n\t\tB\t: in  std_logic;\n\t\tCin\t: in  std_logic;\n\t\tSum\t: out std_logic;\n\t\tCout : out std_logic);\nend component full_adder;\n\n")
     #half adder
     file.write("component half_adder is\nport (\n\tA\t: in  std_logic;\n\tB\t: in  std_logic;\n\tS\t: out std_logic;\n\tCout\t: out std_logic);\nend component half_adder;\n\n")
 
     #BEGIN
-    file.write("begin\n ")
-
-    #PORT MAP
+    file.write("begin\n")
+    
+    step = max_step+1 
+    
+    file.write("------------------------\n")
+    file.write("-- SIGNALS ASSIGNEMENT\n")
+    file.write("------------------------\n\n")
     #FIRST STEP
-    step = max_step+1
     
-    #SIGNAL ASSIGNMENT
-    #pp extension
-    
-    #first
+    file.write("-- Zero padding for partial products in input\n")
+    #zero padding for pp extension: first
     file.write("Pp_EXT_0 <=")
     file.write("("+str(2*N)+"-1 downto Pp_0'length => '0')&Pp_0;\n")
-
-    #PPExt loop
+    #zero padding for pp extension: second to last
     sh=0
     for k in range(1,H,1):
         file.write("Pp_EXT_"+str(k)+"<=")
         file.write("("+str(2*N)+"-1 downto Pp_"+str(k)+"'length => '0')&std_logic_vector(shift_left(unsigned(Pp_"+str(k)+"),"+str(sh)+"));\n")
         sh=sh+2
     
+    file.write("\n-- Assignment for dadda tree creation \n")
     #pyramid creation:
     pos_pp = 0
     for i in range((2*N)-N+4, (2*N),1):
@@ -124,9 +137,7 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
             file.write("r_L"+str(step)+"_"+str(j)+"("+str(i)+")<=")
             file.write("Pp_EXT_"+str(pos_pp+j-1)+"("+str(i)+");\n ") 
     
-    file.write("\n\n")
-
-    #procedure
+    #tree assignment
     step = step -1
     while(step>=0):
         c=[0]*64 #carries for the next stage

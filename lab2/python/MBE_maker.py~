@@ -1,5 +1,0 @@
-#MBE multiplier maker
-
-with open("connections.txt","w") as file:
-    file.write("-- SIGNAL")
-    file.close()
