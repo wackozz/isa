@@ -21,7 +21,8 @@ signal B_ext : std_logic_vector(24-1+3 downto 0);
 signal par_pro_0, par_pro_1, par_pro_2, par_pro_3, par_pro_4, par_pro_5, par_pro_6, par_pro_7, par_pro_8, par_pro_9, par_pro_10, par_pro_11, par_pro_12 : std_logic_vector(24 downto 0);
 
 signal par_pro_EXT_0 : std_logic_vector(27 downto 0);
-signal par_pro_EXT_1, par_pro_EXT_2, par_pro_EXT_3, par_pro_EXT_4, par_pro_EXT_5, par_pro_EXT_6, par_pro_EXT_7, par_pro_EXT_8, par_pro_EXT_9, par_pro_EXT_10, par_pro_EXT_11 : std_logic_vector(28 downto 0);
+signal par_pro_EXT_1, par_pro_EXT_2, par_pro_EXT_3, par_pro_EXT_4, par_pro_EXT_5, par_pro_EXT_6, par_pro_EXT_7, par_pro_EXT_8, par_pro_EXT_9, par_pro_EXT_10 : std_logic_vector(28 downto 0);
+signal par_pro_EXT_11 : std_logic_vector(27 downto 0);
 signal par_pro_EXT_12 : std_logic_vector(26 downto 0);
 
 signal triplet_0, triplet_1, triplet_2, triplet_3, triplet_4, triplet_5, triplet_6, triplet_7, triplet_8, triplet_9, triplet_10, triplet_11, triplet_12 : std_logic_vector(2 downto 0);
@@ -39,9 +40,9 @@ end component MBE_encoder;
 component dadda_tree is
 	port (
 	Pp_0 : std_logic_vector(27 downto 0);
-	Pp_1, Pp_2, Pp_3, Pp_4, Pp_5, Pp_6, Pp_7, Pp_8, Pp_9, Pp_10, Pp_11 : in std_logic_vector(28 downto 0);
+	Pp_1, Pp_2, Pp_3, Pp_4, Pp_5, Pp_6, Pp_7, Pp_8, Pp_9, Pp_10 : in std_logic_vector(28 downto 0);
+	Pp_11 : in std_logic_vector(27 downto 0);
 	Pp_12 : in std_logic_vector(26 downto 0);
-
 	Z		: out std_logic_vector(48-1 downto 0));	-- output Z
 
 end component dadda_tree;
@@ -92,7 +93,7 @@ Par_pro_EXT_7<='1'&not(triplet_7(2))&Par_pro_7&'0'&triplet_6(2);
 Par_pro_EXT_8<='1'&not(triplet_8(2))&Par_pro_8&'0'&triplet_7(2);
 Par_pro_EXT_9<='1'&not(triplet_9(2))&Par_pro_9&'0'&triplet_8(2);
 Par_pro_EXT_10<='1'&not(triplet_10(2))&Par_pro_10&'0'&triplet_9(2);
-Par_pro_EXT_11<='1'&not(triplet_11(2))&Par_pro_11&'0'&triplet_10(2);
+Par_pro_EXT_11<=not(triplet_11(2))&Par_pro_11&'0'&triplet_10(2);
 Par_pro_EXT_12<=Par_pro_12&'0'&triplet_11(2);
 
 end architecture arch;

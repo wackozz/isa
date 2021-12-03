@@ -32,7 +32,7 @@ for i in range(0,len(dadda_lst),1):
         max_step = i-1
         break
 
-with open("../hdl/src/MBE/dadda_tree.vhd","w") as file:
+with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
     #HEADER
     file.write("-- Generated .vhd for MBE multiplication\n\n")
     

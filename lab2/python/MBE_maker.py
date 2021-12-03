@@ -14,7 +14,7 @@ for i in range(0,len(dadda_lst),1):
         step = i
         max_step = i-1
         break
-with open("../hdl/src/MBE/mbe_multiplier.vhd","w") as file:
+with open("hdl/src/MBE/mbe_multiplier.vhd","w") as file:
 #with open("mbe_multiplier.vhd","w") as file:
     #HEADER
     file.write("-- Generated .vhd for MBE "+str(N)+"x"+str(N)+"multiplication\n\n")
@@ -52,10 +52,14 @@ with open("../hdl/src/MBE/mbe_multiplier.vhd","w") as file:
 
     #PPExt loop
     file.write("signal ")
-    for i in range(1,H-2,1):
+    for i in range(1,H-3,1):
         file.write("par_pro_EXT_"+str(i)+", ")
-    file.write("par_pro_EXT_"+str(H-2)+" : ")
+    file.write("par_pro_EXT_"+str(H-3)+" : ")
     file.write("std_logic_vector("+str(N+4)+" downto 0);\n")
+    
+    #second last
+    file.write("signal par_pro_EXT_"+str(H-2)+" : ")
+    file.write("std_logic_vector("+str(N+3)+" downto 0);\n")
     
     #last
     file.write("signal par_pro_EXT_"+str(H-1)+" : ")
@@ -91,13 +95,16 @@ with open("../hdl/src/MBE/mbe_multiplier.vhd","w") as file:
     file.write("std_logic_vector("+str(N+3)+" downto 0);\n\t")
 
     #PPExt loop
-    for i in range(1,H-2,1):
+    for i in range(1,H-3,1):
         file.write("Pp_"+str(i)+", ")
-    file.write("Pp_"+str(H-2)+" : ")
+    file.write("Pp_"+str(H-3)+" : ")
     file.write("in std_logic_vector("+str(N+4)+" downto 0);\n")
+    #second last
+    file.write("\tPp_"+str(H-2)+" : ")
+    file.write("in std_logic_vector("+str(N+3)+" downto 0);\n")
     #last
     file.write("\tPp_"+str(H-1)+" : ")
-    file.write("in std_logic_vector("+str(N+2)+" downto 0);\n\n")
+    file.write("in std_logic_vector("+str(N+2)+" downto 0);\n")
     file.write("\tZ\t\t: out std_logic_vector("+str(2*N)+"-1 downto 0));\t-- output Z\n\n")
     file.write("end component dadda_tree;\n\n")
     #BEGIN
@@ -128,8 +135,9 @@ with open("../hdl/src/MBE/mbe_multiplier.vhd","w") as file:
     
     #sign extension
     file.write("\n\nPar_pro_EXT_0<=not(triplet_0(2))&triplet_0(2)&triplet_0(2)&Par_pro_0;\n")
-    for i in range(1,H-1,1):
+    for i in range(1,H-2,1):
         file.write("Par_pro_EXT_"+str(i)+"<='1'&not(triplet_"+str(i)+"(2))&Par_pro_"+str(i)+"&'0'&triplet_"+str(i-1)+"(2);\n")
+    file.write("Par_pro_EXT_"+str(H-2)+"<=not(triplet_"+str(H-2)+"(2))&Par_pro_"+str(H-2)+"&'0'&triplet_"+str(H-3)+"(2);\n")
     file.write("Par_pro_EXT_"+str(H-1)+"<=Par_pro_"+str(H-1)+"&'0'&triplet_"+str(H-2)+"(2);\n")
     
 
