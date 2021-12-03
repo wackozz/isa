@@ -10,11 +10,11 @@ for i in range(2,H,1):
     bit_list.append(i)
     bit_list.append(i)
 #SAT #check here for errors
-for i in range(N,N+math.ceil(N/4)-1,1): 
+for i in range(N,N+math.ceil(N/4),1): 
     bit_list.append(H)
 #FALL
 for i in range(1, H-1,1):
-    if(i == 1):
+    if(i == 1 or i == H-2):
         bit_list.append(H-i)
     else:
         bit_list.append(H-i)
@@ -27,7 +27,7 @@ start_h = 0
 
 #find first number in dadda list
 for i in range(0,len(dadda_lst),1):
-    if(dadda_lst[i] > H):
+    if(dadda_lst[i] >= H):
         step = i
         max_step = i-1
         break
@@ -75,21 +75,18 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
     for i in range(0,H-1,1):
         file.write("Pp_EXT_"+str(i)+", ")
     file.write("Pp_EXT_"+str(H-1)+" : ")
-    file.write("std_logic_vector("+str(2*N-1)+" downto 0):=(others => '0');\n\n")
-
-    file.write("-- STEP NO."+str(step)+" (inverse pyramid creation)\n")
-    
+    file.write("std_logic_vector("+str(2*N-1)+" downto 0):=(others => '0');\n")
     #Last step signals
+    file.write("\n-- STEP NO."+str(step)+" (inverse pyramid creation)\n")
     file.write("signal ")
     for i in range(0,H-1,1):
         file.write("r_L"+str(step)+"_"+str(i)+", ")
     file.write("r_L"+str(step)+"_"+str(H-1))
-    file.write(": std_logic_vector("+str(2*N)+"-1 downto 0):=(others => '0');\t-- input\n")
-
+    file.write(": std_logic_vector("+str(2*N)+"-1 downto 0):=(others => '0');\t-- input\n\n")
     #signals for other steps
     step = step -1
     while (step > -1):
-        file.write("\n\n--STEP NO. "+str(step)+"\n")
+        file.write("--STEP NO. "+str(step)+"\n")
         file.write("signal ")
         for i in range(0,dadda_lst[step]-1,1):
             file.write("r_L"+str(step)+"_"+str(i)+", ")
@@ -105,7 +102,7 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
     #full adder
     file.write("component full_adder is\n\tport (\n\t\tA\t: in  std_logic;\n\t\tB\t: in  std_logic;\n\t\tCin\t: in  std_logic;\n\t\tSum\t: out std_logic;\n\t\tCout : out std_logic);\nend component full_adder;\n\n")
     #half adder
-    file.write("component half_adder is\nport (\n\tA\t: in  std_logic;\n\tB\t: in  std_logic;\n\tS\t: out std_logic;\n\tCout\t: out std_logic);\nend component half_adder;\n\n")
+    file.write("component half_adder is\n\tport (\n\t\tA\t: in  std_logic;\n\t\tB\t: in  std_logic;\n\t\tS\t: out std_logic;\n\t\tCout: out std_logic);\nend component half_adder;\n\n")
 
     #BEGIN
     file.write("begin\n")
@@ -118,30 +115,52 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
     #FIRST STEP
     
     file.write("-- Zero padding for partial products in input\n")
-    #zero padding for pp extension: first
+    #zero padding for pp extension: first and second
     file.write("Pp_EXT_0 <=")
-    file.write("("+str(2*N)+"-1 downto Pp_0'length => '0')&Pp_0;\n")
+    file.write("("+str(2*N)+"-1 downto (Pp_0'length) => '0')&Pp_0;\n")
+    file.write("Pp_EXT_1 <=")
+    file.write("("+str(2*N)+"-1 downto (Pp_1'length) => '0')&Pp_1;\n")
+
     #zero padding for pp extension: second to last
-    sh=0
-    for k in range(1,H,1):
+    sh=2
+    for k in range(2,H-2,1):
         file.write("Pp_EXT_"+str(k)+"<=")
-        file.write("("+str(2*N)+"-1 downto Pp_"+str(k)+"'length => '0')&std_logic_vector(shift_left(unsigned(Pp_"+str(k)+"),"+str(sh)+"));\n")
+        #file.write("("+str(2*N)+"-1 downto (Pp_"+str(k)+"'length) => '0')&std_logic_vector(shift_left(signed(Pp_"+str(k)+"),"+str(sh)+"));\n")
+        file.write("("+str(2*N)+"-1 downto (Pp_"+str(k)+"'length+"+str(sh)+") => '0')&Pp_"+str(k)+"&\"")
+        for i in range (0,sh,1):
+            file.write("0")
+        file.write("\";\n")
         sh=sh+2
+    #last 2
+    file.write("Pp_EXT_"+str(H-2)+"<=")
+    file.write("Pp_"+str(H-2)+"&\"")
+    for i in range (0,sh,1):
+       file.write("0")
+    file.write("\";\n")
+    sh=sh+2
+    file.write("Pp_EXT_"+str(H-1)+"<=")
+    file.write("Pp_"+str(H-1)+"(Pp_"+str(H-1)+"'length-2 downto 0)&\"")
+    for i in range (0,sh,1):
+        file.write("0")
+    file.write("\";\n")
+
     
     file.write("\n-- Assignment for dadda tree creation \n")
     #pyramid creation:
-    pos_pp = 0
+    offset_pp = 0
     for i in range((2*N)-N+4, (2*N),1):
-        pos_pp = H-bit_list[i]
+        offset_pp = H-bit_list[i]
         for j in range(0,bit_list[i],1):
             file.write("r_L"+str(step)+"_"+str(j)+"("+str(i)+")<=")
-            file.write("Pp_EXT_"+str(pos_pp+j-1)+"("+str(i)+");\n ") 
-    
+            file.write("Pp_EXT_"+str(offset_pp+j)+"("+str(i)+");\n") 
+        file.write("--\n")
+    file.write("\n--STARTING COMPRESSION:")
     #tree assignment
+
     step = step -1
     while(step>=0):
-        c=[0]*64 #carries for the next stage
-        file.write("\n\n--STEP L"+str(step)+"\td ="+str(dadda_lst[step])+":\n")
+        c=[0]*(2*N) #carries for the next stage
+        file.write("\n--STEP L"+str(step)+"\td ="+str(dadda_lst[step])+":\n")
         for i in range(0,2*N-1,1):
             diff=bit_list[i]-dadda_lst[step]
             n_fa = 0 #number of FA
@@ -150,9 +169,6 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
             pos_lock=pos
             j=0
             if(diff>=2): #allocate a FA
-                n_fa=0 #initialize full adder num = 0
-                max_n_fa = math.floor(diff/3) 
-                #for j in range (pos_lock,pos_lock+diff-1,3): #FA triplets
                 while (diff >=2):
                     n_fa = n_fa+1
                     file.write("FH_L"+str(step)+"_"+str(i)+"_"+str(n_fa)+":")
@@ -173,7 +189,7 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
                 file.write("HA_L"+str(step)+"_"+str(i)+":")
                 file.write(" half_adder port map(")
                 file.write("r_L"+str(step+1)+"_"+str(j)+"("+str(i)+"), ") #A
-                file.write("r_L"+str(step+1)+"_"+str(j)+"("+str(i)+"), ") #B
+                file.write("r_L"+str(step+1)+"_"+str(j+1)+"("+str(i)+"), ") #B
                 file.write("r_L"+str(step)+"_"+str(pos)+"("+str(i)+"), ") #Sum
                 file.write("r_L"+str(step)+"_"+str(c[i+1])+"("+str(i+1)+"));\n") #Cout
                 c[i+1] = c[i+1]+1 #update position for the next carry in
@@ -182,10 +198,11 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
                 ha = 1 #count for half adder presence
                 pos=pos+1
 
-            for v in range(c[i]+2*ha+3*(n_fa),bit_list[i],1):
-                file.write("r_L"+str(step)+"_"+str(pos)+"("+str(i)+")"+"<= r_L"+str(step+1)+"_"+str(v)+"("+str(i)+")"+";\n")
-                pos = pos+1
-            file.write("\n\n")
+            pos_old = c[i]+2*ha+2*(n_fa)
+            for v in range(pos,bit_list[i],1):
+                file.write("r_L"+str(step)+"_"+str(v)+"("+str(i)+")"+"<= r_L"+str(step+1)+"_"+str(pos_old)+"("+str(i)+")"+";\n")
+                pos_old = pos_old+1
+            file.write("--\n")
         step = step -1
     #SIGNAL ASSOCIATIONS
     file.write("Z <=  std_logic_vector(signed(r_L0_0) + signed(r_L0_1));\n")
