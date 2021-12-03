@@ -31,3 +31,5 @@ for i in range(0,len(triplets),1):
 #check product
 for i in range(0,len(triplets),1):
     Result = Result + pow(4,i) * Pp[i]
+
+input()
