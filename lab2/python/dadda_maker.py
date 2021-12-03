@@ -166,7 +166,7 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
             n_fa = 0 #number of FA
             ha = 0 #presence of the HA [0,1]
             pos=c[i] #position in col
-            pos_lock=pos
+            pos_old = 0
             j=0
             if(diff>=2): #allocate a FA
                 while (diff >=2):
@@ -184,6 +184,7 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
                     bit_list[i]= bit_list[i]-2 #2:3 compression
                     bit_list[i+1]= bit_list[i+1]+1 #update number of col bits with carry out
                     diff=bit_list[i]-dadda_lst[step] #recalculate diff
+                    pos_old = j
 
             if (diff==1): #if positive, diff must be == 2 at this point, half adder
                 file.write("HA_L"+str(step)+"_"+str(i)+":")
@@ -197,9 +198,11 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
                 bit_list[i+1]= bit_list[i+1]+1 #carry out
                 ha = 1 #count for half adder presence
                 pos=pos+1
+                pos_old = j+2
 
-            pos_old = c[i]+2*ha+2*(n_fa)
+            #pos_old = c[i]+n_fa*(2)+(ha*(1))
             for v in range(pos,bit_list[i],1):
+
                 file.write("r_L"+str(step)+"_"+str(v)+"("+str(i)+")"+"<= r_L"+str(step+1)+"_"+str(pos_old)+"("+str(i)+")"+";\n")
                 pos_old = pos_old+1
             file.write("--\n")
