@@ -158,10 +158,13 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
     #tree assignment
 
     step = step -1
+    last = 0 #last iteration
     while(step>=0):
         c=[0]*(2*N) #carries for the next stage
         file.write("\n--STEP L"+str(step)+"\td ="+str(dadda_lst[step])+":\n")
-        for i in range(0,2*N-1,1):
+        for i in range(0,2*N,1):
+            if(i==(2*N)-1):
+                last = 1
             diff=bit_list[i]-dadda_lst[step]
             n_fa = 0 #number of FA
             ha = 0 #presence of the HA [0,1]
@@ -180,9 +183,11 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
                     file.write("r_L"+str(step)+"_"+str(c[i+1])+"("+str(i+1)+"));\n") #Cout
                     j = j+3 #position (old)
                     pos = pos+1 #position (new)
-                    c[i+1] = c[i+1]+1 #update position for the next carry in
+                    
                     bit_list[i]= bit_list[i]-2 #2:3 compression
-                    bit_list[i+1]= bit_list[i+1]+1 #update number of col bits with carry out
+                    if(not last):
+                        bit_list[i+1]= bit_list[i+1]+1 #update number of col bits with carry out
+                        c[i+1] = c[i+1]+1 #update position for the next carry in
                     diff=bit_list[i]-dadda_lst[step] #recalculate diff
                     pos_old = j
 
@@ -193,9 +198,10 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
                 file.write("r_L"+str(step+1)+"_"+str(j+1)+"("+str(i)+"), ") #B
                 file.write("r_L"+str(step)+"_"+str(pos)+"("+str(i)+"), ") #Sum
                 file.write("r_L"+str(step)+"_"+str(c[i+1])+"("+str(i+1)+"));\n") #Cout
-                c[i+1] = c[i+1]+1 #update position for the next carry in
                 bit_list[i]= bit_list[i]-1 #2:3 compression
-                bit_list[i+1]= bit_list[i+1]+1 #carry out
+                if(not last):
+                    c[i+1] = c[i+1]+1 #update position for the next carry in
+                    bit_list[i+1]= bit_list[i+1]+1 #carry out
                 ha = 1 #count for half adder presence
                 pos=pos+1
                 pos_old = j+2
