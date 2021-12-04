@@ -163,8 +163,12 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
         c=[0]*(2*N) #carries for the next stage
         file.write("\n--STEP L"+str(step)+"\td ="+str(dadda_lst[step])+":\n")
         for i in range(0,2*N,1):
+            if (i == 0):
+                last = 0
             if(i==(2*N)-1):
                 last = 1
+                if (step == 0):
+                    bit_list[i]= bit_list[i]-1
             diff=bit_list[i]-dadda_lst[step]
             n_fa = 0 #number of FA
             ha = 0 #presence of the HA [0,1]
@@ -196,8 +200,12 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
                 file.write(" half_adder port map(")
                 file.write("r_L"+str(step+1)+"_"+str(j)+"("+str(i)+"), ") #A
                 file.write("r_L"+str(step+1)+"_"+str(j+1)+"("+str(i)+"), ") #B
-                file.write("r_L"+str(step)+"_"+str(pos)+"("+str(i)+"), ") #Sum
-                file.write("r_L"+str(step)+"_"+str(c[i+1])+"("+str(i+1)+"));\n") #Cout
+                if (not last):
+                    file.write("r_L"+str(step)+"_"+str(pos)+"("+str(i)+"), ") #Sum
+                    file.write("r_L"+str(step)+"_"+str(c[i+1])+"("+str(i+1)+"));\n") #Cout
+                else:
+                    file.write("r_L"+str(step)+"_"+str(pos)+"("+str(i)+")") #Sum
+                    file.write(");\n") #Cout
                 bit_list[i]= bit_list[i]-1 #2:3 compression
                 if(not last):
                     c[i+1] = c[i+1]+1 #update position for the next carry in
