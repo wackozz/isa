@@ -1,4 +1,35 @@
 import math
+
+def print_pyramid(bit_list,step,dadda_lst):
+    with open("dadda_tree_scheme.txt","a") as filed:
+        H=13
+        a=0
+        filed.write("--------------------------------\nSTEP N. : "+ str(step) +"\t\t Dadda Step : " + str(dadda_lst[step]) +"\n--------------------------------\n")
+        for j in range (0,len(bit_list),1):
+            if(a==10):
+                a = 0
+            if(a==0 and j!=0):
+                filed.write("|")
+            else:
+                filed.write(str(a))
+            a=a+1
+        filed.write("\n")  
+        for i in range(0,H,1):
+            count_char = 0
+            for j in range (0,len(bit_list),1):
+                if(bit_list[j]-i>0):
+                    filed.write("#")
+                    count_char += 1
+                else:
+                    filed.write(".")
+            filed.write("\t."+str(i)+"\t(bits=%d)\n"%count_char)
+        filed.write("\n")
+        filed.write(str(bit_list))
+        filed.write("\n\n")
+
+with open("dadda_tree_scheme.txt","w") as filed:
+    pass
+
 #Dadda tree maker
 N = 24
 H = math.ceil((N/2)+1)
@@ -148,6 +179,11 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
     file.write("\n-- Assignment for dadda tree creation \n")
     #pyramid creation:
     offset_pp = 0
+    for i in range(0,(2*N)-N+4,1):
+        for j in range(0,bit_list[i],1):
+            file.write("r_L"+str(step)+"_"+str(j)+"("+str(i)+")<=")
+            file.write("Pp_EXT_"+str(j)+"("+str(i)+");\n") 
+        file.write("--\n")
     for i in range((2*N)-N+4, (2*N),1):
         offset_pp = H-bit_list[i]
         for j in range(0,bit_list[i],1):
@@ -156,6 +192,8 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
         file.write("--\n")
     file.write("\n--STARTING COMPRESSION:")
     #tree assignment
+
+    print_pyramid(bit_list,step,dadda_lst)
 
     step = step -1
     last = 0 #last iteration
@@ -167,8 +205,6 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
                 last = 0
             if(i==(2*N)-1):
                 last = 1
-                if (step == 0):
-                    bit_list[i]= bit_list[i]-1
             diff=bit_list[i]-dadda_lst[step]
             n_fa = 0 #number of FA
             ha = 0 #presence of the HA [0,1]
@@ -183,8 +219,12 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
                     file.write("r_L"+str(step+1)+"_"+str(j)+"("+str(i)+"), ") #A
                     file.write("r_L"+str(step+1)+"_"+str(j+1)+"("+str(i)+"), ") #B
                     file.write("r_L"+str(step+1)+"_"+str(j+2)+"("+str(i)+"), ") #Cin
-                    file.write("r_L"+str(step)+"_"+str(pos)+"("+str(i)+"), ") #Sum
-                    file.write("r_L"+str(step)+"_"+str(c[i+1])+"("+str(i+1)+"));\n") #Cout
+                    if (not last):
+                        file.write("r_L"+str(step)+"_"+str(pos)+"("+str(i)+"), ") #Sum
+                        file.write("r_L"+str(step)+"_"+str(c[i+1])+"("+str(i+1)+"));\n") #Cout
+                    else:
+                        file.write("r_L"+str(step)+"_"+str(pos)+"("+str(i)+")") #Sum
+                        file.write(");\n") #Cout
                     j = j+3 #position (old)
                     pos = pos+1 #position (new)
                     
@@ -220,8 +260,9 @@ with open("hdl/src/MBE/dadda_tree.vhd","w") as file:
                 file.write("r_L"+str(step)+"_"+str(v)+"("+str(i)+")"+"<= r_L"+str(step+1)+"_"+str(pos_old)+"("+str(i)+")"+";\n")
                 pos_old = pos_old+1
             file.write("--\n")
+        print_pyramid(bit_list,step,dadda_lst)
         step = step -1
     #SIGNAL ASSOCIATIONS
-    file.write("Z <=  std_logic_vector(signed(r_L0_0) + signed(r_L0_1));\n")
+    file.write("Z <=  std_logic_vector(unsigned(r_L0_0) + unsigned(r_L0_1));\n")
     #END ARCHITECTURE
     file.write("\nend architecture arch;")
