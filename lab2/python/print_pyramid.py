@@ -1,28 +1,29 @@
 import math
 
 def print_pyramid(bit_list):
-    H=13
-    a=0
-    for j in range (0,len(bit_list),1):
-        if(a==10):
-            a = 0
-        if(a==0 and j!=0):
-            print("|",end='')
-        else:
-            print(a,end='')
-        a=a+1
-    print("\n")  
-    for i in range(0,H,1):
-        count_char = 0
+    with open("dadda_tree_scheme.txt","a") as filed:
+        H=13
+        a=0
         for j in range (0,len(bit_list),1):
-            if(bit_list[j]-i>0):
-                print("#",end='')
-                count_char += 1
+            if(a==10):
+                a = 0
+            if(a==0 and j!=0):
+                filed.write("|",end='')
             else:
-                print(".",end='')
-        print("\t."+str(i)+"\t(bits=%d)"%count_char)
-    print("")
-    print(bit_list) 
+                filed.write(a,end='')
+            a=a+1
+        filed.write("\n")  
+        for i in range(0,H,1):
+            count_char = 0
+            for j in range (0,len(bit_list),1):
+                if(bit_list[j]-i>0):
+                    filed.write("#",end='')
+                    count_char += 1
+                else:
+                    filed.write(".",end='')
+            filed.write("\t."+str(i)+"\t(bits=%d)"%count_char)
+        filed.write("")
+        filed.write(bit_list) 
 
 
 bit_list=[]
