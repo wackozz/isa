@@ -1,7 +1,7 @@
 import math
 
 def print_pyramid(bit_list,step,dadda_lst):
-    with open("dadda_tree_scheme.txt","a") as filed:
+    with open("python/dadda_tree_scheme.txt","a") as filed:
         H=13
         a=0
         filed.write("--------------------------------\nSTEP N. : "+ str(step) +"\t\t Dadda Step : " + str(dadda_lst[step]) +"\n--------------------------------\n")
@@ -27,7 +27,8 @@ def print_pyramid(bit_list,step,dadda_lst):
         filed.write(str(bit_list))
         filed.write("\n\n")
 
-with open("dadda_tree_scheme.txt","w") as filed:
+#output file creation
+with open("python/dadda_tree_scheme.txt","w") as filed:
     pass
 
 #Dadda tree maker
@@ -41,7 +42,7 @@ for i in range(2,H,1):
     bit_list.append(i)
     bit_list.append(i)
 #SAT #check here for errors
-for i in range(N,N+math.ceil(N/4),1): 
+for i in range(N,N+6,1): 
     bit_list.append(H)
 #FALL
 for i in range(1, H-1,1):

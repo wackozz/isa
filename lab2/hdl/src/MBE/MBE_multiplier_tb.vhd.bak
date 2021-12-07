@@ -53,8 +53,8 @@ begin  -- architecture arch
   -- clock generation
 
   -- waveform generation
-    A <= std_logic_vector(to_unsigned(15, A'length));
-    B <= std_logic_vector(to_unsigned(13,B'length));
+    A <= std_logic_vector(to_unsigned(8678393, A'length));
+    B <= std_logic_vector(to_unsigned(8632129,B'length));
 
 
 

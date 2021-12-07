@@ -1,6 +1,6 @@
 #Multiplication NxN
 #N partial products
-N=24
+N=32
 A = "0"+str(bin(8632129)).split('b')[1]
 B = 8678393
 

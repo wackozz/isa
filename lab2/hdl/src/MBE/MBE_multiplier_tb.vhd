@@ -34,9 +34,9 @@ end entity MBE_multiplier_tb;
 architecture arch of MBE_multiplier_tb is
 
   -- component ports
-  signal A : std_logic_vector(24-1 downto 0);
-  signal B : std_logic_vector(24-1 downto 0);
-  signal Z : std_logic_vector(48-1 downto 0);
+  signal A : std_logic_vector(32-1 downto 0);
+  signal B : std_logic_vector(32-1 downto 0);
+  signal Z : std_logic_vector(64-1 downto 0);
 
   -- clock
   signal Clk : std_logic := '1';
