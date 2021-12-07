@@ -12,6 +12,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
+use ieee.numeric_std.all;
 
 entity FPmul_stage2 is
   port(
@@ -75,7 +76,7 @@ architecture struct of FPmul_stage2 is
   signal SIGN_out_stage1_tmp : std_logic;
   signal dout                : std_logic;
   signal dout1               : std_logic_vector(7 downto 0);
-  signal prod                : std_logic_vector(63 downto 0);
+  signal prod                : std_logic_vector(47 downto 0);
 
   component reg is
     generic (
@@ -93,11 +94,17 @@ architecture struct of FPmul_stage2 is
       Q                    : out std_logic);
   end component ff;
 
+  component MBE_multiplier is
+    port (
+      A : in  std_logic_vector(24-1 downto 0);
+      B : in  std_logic_vector(24-1 downto 0);
+      Z : out std_logic_vector(48-1 downto 0));
+  end component MBE_multiplier;
+
 begin
   -- Architecture concurrent statements
   -- HDL Embedded Text Block 1 sig
   -- eb1 1
-  SIG_in_int <= prod(47 downto 20);
 
   -- HDL Embedded Text Block 2 inv
   -- eb5 5
@@ -149,13 +156,6 @@ begin
     dout1      <= conv_std_logic_vector(mw_I4sum(7 downto 0), 8);
   end process I4combo;
 
-  -- ModuleWare code(v1.1) for instance 'I2' of 'mult'
-  I2combo : process (A_SIG, B_SIG)
-    variable dtemp : unsigned(63 downto 0);
-  begin
-    dtemp := (unsigned(A_SIG) * unsigned(B_SIG));
-    prod  <= std_logic_vector(dtemp);
-  end process I2combo;
 
   -- ModuleWare code(v1.1) for instance 'I6' of 'vdd'
   dout <= '1';
@@ -228,7 +228,7 @@ begin
       Q      => SIG_in_int_tmp);
 
   -- instance "reg_2"
-  reg_out_add: entity work.reg
+  reg_out_add : entity work.reg
     generic map (
       N => 8)
     port map (
@@ -238,4 +238,12 @@ begin
       enable => '1',
       Q      => EXP_in_int_tmp);
 
+  -- instance "MBE_multiplier_1"
+  MBE_multiplier_1 : entity work.MBE_multiplier
+    port map (
+      A => A_SIG(23 downto 0),
+      B => B_SIG(23 downto 0),
+      Z => prod);
+  
+  SIG_in_int <= prod(47 downto 20);
 end struct;
