@@ -3,32 +3,34 @@ use ieee.std_logic_1164.all;
 
 -------------------------------------------------------------------------------
 
-entity ff is
+entity reg is
+
+  generic (N : integer := 5);
 
   port (
-    D : in std_logic;
+    D : in std_logic_vector(N - 1 downto 0);
 
     clock, reset, enable : in std_logic;
 
-    Q : out std_logic);
+    Q : out std_logic_vector(N - 1 downto 0));
 
-end ff;
+end reg;
 
 -------------------------------------------------------------------------------
 
-architecture str of ff is
+architecture str of reg is
 
   -----------------------------------------------------------------------------
   -- Internal signal declarations
   -----------------------------------------------------------------------------
 
-begin  -- architecture str
+begin -- architecture str
 
   register_proc : process (clock, reset) is
-  begin  -- process register_proc
-    if reset = '0' then                     -- asynchronous reset (active low)
-      Q <= '0';
-    elsif clock'event and clock = '1' then  -- rising clock edge
+  begin -- process register_proc
+    if reset = '0' then -- asynchronous reset (active low)
+      Q <= (others => '0');
+    elsif clock'event and clock = '1' then -- rising clock edge
       if enable = '1' then
         Q <= D;
       end if;

@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
--- Title      : Testbench for design "FPmul"
+-- Title      : Testbench for design "MBE_multiplier"
 -- Project    : 
 -------------------------------------------------------------------------------
--- File       : FPmul_tb.vhd<src>
+-- File       : MBE_multiplier_tb.vhd
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
--- Created    : 2021-11-09
--- Last update: 2021-11-09
+-- Created    : 2021-12-01
+-- Last update: 2021-12-01
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -16,29 +16,27 @@
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author  Description
--- 2021-11-09  1.0      wackoz	Created
+-- 2021-12-01  1.0      wackoz  Created
 -------------------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 -------------------------------------------------------------------------------
 
-entity FPmul_tb is
+entity MBE_multiplier_tb is
 
-end entity FPmul_tb;
+end entity MBE_multiplier_tb;
 
 -------------------------------------------------------------------------------
 
-architecture arch of FPmul_tb is
+architecture arch of MBE_multiplier_tb is
 
   -- component ports
-  signal FP_A  : std_logic_vector (31 downto 0);
-  signal FP_B  : std_logic_vector (31 downto 0);
-  signal en    : std_logic;
-  signal rst_n : std_logic;
-  signal clk   : std_logic;
-  signal FP_Z  : std_logic_vector (31 downto 0);
+  signal A : std_logic_vector(32-1 downto 0);
+  signal B : std_logic_vector(32-1 downto 0);
+  signal Z : std_logic_vector(64-1 downto 0);
 
   -- clock
   signal Clk : std_logic := '1';
@@ -46,35 +44,27 @@ architecture arch of FPmul_tb is
 begin  -- architecture arch
 
   -- component instantiation
-  DUT: entity work.FPmul
+  DUT : entity work.MBE_multiplier
     port map (
-      FP_A  => FP_A,
-      FP_B  => FP_B,
-      en    => en,
-      rst_n => rst_n,
-      clk   => clk,
-      FP_Z  => FP_Z);
+      A => A,
+      B => B,
+      Z => Z);
 
   -- clock generation
-  Clk <= not Clk after 10 ns;
 
   -- waveform generation
-  WaveGen_Proc: process
-  begin
-    -- insert signal assignments here
+    A <= std_logic_vector(to_unsigned(8678393, A'length));
+    B <= std_logic_vector(to_unsigned(8632129,B'length));
 
-    wait until Clk = '1';
-  end process WaveGen_Proc;
 
-  
 
 end architecture arch;
 
 -------------------------------------------------------------------------------
 
-configuration FPmul_tb_arch_cfg of FPmul_tb is
+configuration MBE_multiplier_tb_arch_cfg of MBE_multiplier_tb is
   for arch
   end for;
-end FPmul_tb_arch_cfg;
+end MBE_multiplier_tb_arch_cfg;
 
 -------------------------------------------------------------------------------
