@@ -1,0 +1,27 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity ram_infer is
+  port
+    (
+      clock         : in  std_logic;
+      data          : in  std_logic_vector (31 downto 0);
+      write_address : in  integer range 0 to 31;
+      read_address  : in  integer range 0 to 31;
+      w_en            : in  std_logic;
+      q             : out std_logic_vector (31 downto 0)
+      );
+end ram_infer;
+architecture rtl of ram_infer is
+  type mem is array(0 to 31) of std_logic_vector(31 downto 0);
+  signal ram_block : mem;
+begin
+  process (clock)
+  begin
+    if (clock'event and clock = '1') then
+      if (w_en = '1') then
+        ram_block(write_address) <= data;
+      end if;
+      q <= ram_block(read_address);
+    end if;
+  end process;
+end rtl;

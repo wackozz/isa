@@ -50,26 +50,69 @@ R10
 !i113 1
 R11
 R12
-Eimmediate_generator
-Z13 w1640202375
+Efetch_stage
+Z13 w1641307163
 Z14 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R2
+R3
+!i122 55
+R0
+Z15 8fetch_stage.vhd
+Z16 Ffetch_stage.vhd
+l0
+Z17 L29 1
+VH@Q_UARa0gk>S9aG0`d_^3
+!s100 g0W298hQRWOe5EzN0:?8H1
+R6
+31
+Z18 !s110 1641307165
+!i10b 1
+Z19 !s108 1641307165.000000
+Z20 !s90 -93|-work|work|fetch_stage.vhd|
+Z21 !s107 fetch_stage.vhd|
+!i113 1
+R11
+R12
+Astr
+R14
+R2
+R3
+Z22 DEx4 work 11 fetch_stage 0 22 H@Q_UARa0gk>S9aG0`d_^3
+!i122 55
+l71
+L42 71
+VeLnb<Mggf[6IBai:0U=Sh1
+!s100 ^jcHFWz<ZE0fED2JV:A4P1
+R6
+31
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 1
+R11
+R12
+Eimmediate_generator
+Z23 w1640202375
+R14
 R2
 R3
 !i122 23
 R0
-Z15 8immediate_generator.vhd
-Z16 Fimmediate_generator.vhd
+Z24 8immediate_generator.vhd
+Z25 Fimmediate_generator.vhd
 l0
 L28 1
 VF7KF@:TWcSgWOAcZQdZ=W0
 !s100 AZHAidZcSQj<293RgB3F;1
 R6
 31
-Z17 !s110 1640202375
+Z26 !s110 1640202375
 !i10b 1
-Z18 !s108 1640202375.000000
-Z19 !s90 -93|-work|work|immediate_generator.vhd|
-Z20 !s107 immediate_generator.vhd|
+Z27 !s108 1640202375.000000
+Z28 !s90 -93|-work|work|immediate_generator.vhd|
+Z29 !s107 immediate_generator.vhd|
 !i113 1
 R11
 R12
@@ -85,11 +128,11 @@ V8NAn1aEf@R_13`doDzN2H2
 !s100 b3WgP4bX`GFJlI0W=P7h80
 R6
 31
-R17
+R26
 !i10b 1
-R18
-R19
-R20
+R27
+R28
+R29
 !i113 1
 R11
 R12
@@ -116,32 +159,73 @@ R6
 !i113 1
 R11
 R12
+Eram
+Z30 w1641237433
+R2
+R3
+!i122 45
+R0
+Z31 8ram.vhd
+Z32 Fram.vhd
+l0
+L3 1
+VG]D0;`QA6^H0=ib5A>n]f1
+!s100 `=lZF[YYPTI::@^JHHOY]1
+R6
+31
+Z33 !s110 1641237441
+!i10b 1
+Z34 !s108 1641237441.000000
+Z35 !s90 -93|-work|work|ram.vhd|
+Z36 !s107 ram.vhd|
+!i113 1
+R11
+R12
+Artl
+R2
+R3
+DEx4 work 3 ram 0 22 G]D0;`QA6^H0=ib5A>n]f1
+!i122 45
+l16
+L13 14
+VmXXHb0j]nZRE=njQz0gV?2
+!s100 O06i>?D[`ZC8gIVm]m3530
+R6
+31
+R33
+!i10b 1
+R34
+R35
+R36
+!i113 1
+R11
+R12
 Erv32i
-Z21 w1640214527
-Z22 DPx4 work 9 param_pkg 0 22 hOhSMzi<a;3mmImbE0EQ50
+Z37 w1640214527
+Z38 DPx4 work 9 param_pkg 0 22 hOhSMzi<a;3mmImbE0EQ50
 R14
 R2
 R3
 !i122 44
 R0
-Z23 8RV32I.vhd
-Z24 FRV32I.vhd
+Z39 8RV32I.vhd
+Z40 FRV32I.vhd
 l0
-L29 1
+R17
 VPe[UOC^nV>QNf^m6Sfh<^0
 !s100 A>FRbQjBGX2aPkMFiV72c3
 R6
 31
-Z25 !s110 1640214527
+Z41 !s110 1640214527
 !i10b 1
-Z26 !s108 1640214527.000000
-Z27 !s90 -93|-work|work|RV32I.vhd|
-!s107 RV32I.vhd|
+Z42 !s108 1640214527.000000
+Z43 !s90 -93|-work|work|RV32I.vhd|
+Z44 !s107 RV32I.vhd|
 !i113 1
 R11
 R12
 Astr
-R22
+R38
 R14
 R2
 R3
@@ -153,11 +237,11 @@ V]_z;ifVhN=o?7fNdT?ZHZ0
 !s100 YR@g0J@Gn1cZ2hZ<@G;Oo2
 R6
 31
-R25
+R41
 !i10b 1
-R26
-R27
-Z28 !s107 RV32I.vhd|
+R42
+R43
+R44
 !i113 1
 R11
 R12

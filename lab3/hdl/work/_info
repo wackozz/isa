@@ -1,0 +1,279 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/wackoz/github/isa/lab3/sim
+Ealu
+Z1 w1640203457
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 1
+R0
+Z4 8../hdl/src/alu.vhd
+Z5 F../hdl/src/alu.vhd
+l0
+L27 1
+V?<8;z39R`Z6nkcm^]zDKU0
+!s100 9LbHI?Ac3=?@G2=kf71zF0
+Z6 OV;C;2020.1;71
+31
+Z7 !s110 1641314495
+!i10b 1
+Z8 !s108 1641314495.000000
+Z9 !s90 -93|-work|work|../hdl/src/alu.vhd|
+Z10 !s107 ../hdl/src/alu.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Astr
+R2
+R3
+DEx4 work 3 alu 0 22 ?<8;z39R`Z6nkcm^]zDKU0
+!i122 1
+l46
+L40 13
+VA4jnzQ5YQUFeVOQC=e85G3
+!s100 _<K3XN^72@=EQX9g[Q8DO0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edec_5to32
+Z13 w1639760583
+Z14 DPx4 work 9 param_pkg 0 22 hOhSMzi<a;3mmImbE0EQ50
+Z15 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R2
+R3
+!i122 4
+R0
+Z16 8../hdl/src/dec_5to32.vhd
+Z17 F../hdl/src/dec_5to32.vhd
+l0
+L6 1
+VoOn3A<Yg>1BLM?E2@Aj?^2
+!s100 SF6HWTeRH65NmYV08MDJS1
+R6
+31
+R7
+!i10b 1
+R8
+Z18 !s90 -93|-work|work|../hdl/src/dec_5to32.vhd|
+Z19 !s107 ../hdl/src/dec_5to32.vhd|
+!i113 1
+R11
+R12
+Aarch
+R14
+R15
+R2
+R3
+DEx4 work 9 dec_5to32 0 22 oOn3A<Yg>1BLM?E2@Aj?^2
+!i122 4
+l15
+L13 45
+Vzz^N]><GlS910EaodPJiV3
+!s100 `P@=bd_A0Mn;o9`>>`oa71
+R6
+31
+R7
+!i10b 1
+R8
+R18
+R19
+!i113 1
+R11
+R12
+Edecode_stage
+w1641314528
+R14
+R15
+R2
+R3
+!i122 9
+R0
+8../hdl/src/decode_stage.vhd
+F../hdl/src/decode_stage.vhd
+l0
+L29 1
+VkbC[9n>hd`M:T^USSo`aT1
+!s100 jJooX^BA:9;[]JLhGVm[S3
+R6
+31
+!s110 1641314528
+!i10b 1
+!s108 1641314528.000000
+!s90 -93|-work|work|../hdl/src/decode_stage.vhd|
+!s107 ../hdl/src/decode_stage.vhd|
+!i113 1
+R11
+R12
+Emux_32to1
+R13
+R14
+R15
+R2
+R3
+!i122 5
+R0
+Z20 8../hdl/src/mux_32to1.vhd
+Z21 F../hdl/src/mux_32to1.vhd
+l0
+L6 1
+VUVSDiS4KjGi`J8iR]HJiN0
+!s100 z[29@V:5kC5Szk813=;e50
+R6
+31
+R7
+!i10b 1
+R8
+Z22 !s90 -93|-work|work|../hdl/src/mux_32to1.vhd|
+Z23 !s107 ../hdl/src/mux_32to1.vhd|
+!i113 1
+R11
+R12
+Aarch
+R14
+R15
+R2
+R3
+DEx4 work 9 mux_32to1 0 22 UVSDiS4KjGi`J8iR]HJiN0
+!i122 5
+l15
+L13 43
+V3<`cA:dMiU;H<1__Z0nX12
+!s100 3NPd0:@ze>Qm]K6J493jU0
+R6
+31
+R7
+!i10b 1
+R8
+R22
+R23
+!i113 1
+R11
+R12
+Pparam_pkg
+R15
+R2
+R3
+!i122 2
+R13
+R0
+8../hdl/src/param_pkg.vhd
+F../hdl/src/param_pkg.vhd
+l0
+L5 1
+VhOhSMzi<a;3mmImbE0EQ50
+!s100 HO5MgEJh_;Qh4jPDXM<812
+R6
+31
+R7
+!i10b 1
+R8
+!s90 -93|-work|work|../hdl/src/param_pkg.vhd|
+!s107 ../hdl/src/param_pkg.vhd|
+!i113 1
+R11
+R12
+Ereg
+Z24 w1640178439
+R14
+R15
+R2
+R3
+!i122 6
+R0
+Z25 8../hdl/src/reg.vhd
+Z26 F../hdl/src/reg.vhd
+l0
+L6 1
+VV;Kk^ljgNoh;ZNN]04IEI3
+!s100 [m8PVaA0gPjT:]ZfWzH8Q0
+R6
+31
+R7
+!i10b 1
+R8
+Z27 !s90 -93|-work|work|../hdl/src/reg.vhd|
+Z28 !s107 ../hdl/src/reg.vhd|
+!i113 1
+R11
+R12
+Aarch
+R14
+R15
+R2
+R3
+DEx4 work 3 reg 0 22 V;Kk^ljgNoh;ZNN]04IEI3
+!i122 6
+l16
+L14 15
+VnFiY_k4K];eVbnSAigh763
+!s100 :dbVZh2Z9bd^;>ga_CbeA3
+R6
+31
+R7
+!i10b 1
+R8
+R27
+R28
+!i113 1
+R11
+R12
+Ereg_file
+R13
+R14
+R15
+R2
+R3
+!i122 7
+R0
+Z29 8../hdl/src/reg_file.vhd
+Z30 F../hdl/src/reg_file.vhd
+l0
+L6 1
+V9dJ[hi`NdXQZ94zgcW<_X0
+!s100 @TW2RCdf>Qc1CI3RJMo?=2
+R6
+31
+R7
+!i10b 1
+R8
+Z31 !s90 -93|-work|work|../hdl/src/reg_file.vhd|
+Z32 !s107 ../hdl/src/reg_file.vhd|
+!i113 1
+R11
+R12
+Aarch
+R14
+R15
+R2
+R3
+DEx4 work 8 reg_file 0 22 9dJ[hi`NdXQZ94zgcW<_X0
+!i122 7
+l47
+L17 48
+V2_<dfI5[ZMkj7zVVOT1nM0
+!s100 ;B<`GRY]7oYcm9zBmOHIC3
+R6
+31
+R7
+!i10b 1
+R8
+R31
+R32
+!i113 1
+R11
+R12

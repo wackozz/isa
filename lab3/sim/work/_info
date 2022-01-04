@@ -1,0 +1,54 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/wackoz/github/isa/lab3/sim
+Efetch_stage
+Z1 w1641307163
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z5 8../hdl/src/fetch_stage.vhd
+Z6 F../hdl/src/fetch_stage.vhd
+l0
+L29 1
+VH@Q_UARa0gk>S9aG0`d_^3
+!s100 g0W298hQRWOe5EzN0:?8H1
+Z7 OV;C;2020.1;71
+31
+Z8 !s110 1641312999
+!i10b 1
+Z9 !s108 1641312999.000000
+Z10 !s90 -93|-work|work|../hdl/src/fetch_stage.vhd|
+!s107 ../hdl/src/fetch_stage.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Astr
+R2
+R3
+R4
+DEx4 work 11 fetch_stage 0 22 H@Q_UARa0gk>S9aG0`d_^3
+!i122 0
+l71
+L42 71
+VeLnb<Mggf[6IBai:0U=Sh1
+!s100 ^jcHFWz<ZE0fED2JV:A4P1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+Z13 !s107 ../hdl/src/fetch_stage.vhd|
+!i113 1
+R11
+R12
