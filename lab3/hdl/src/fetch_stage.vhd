@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-04
+-- Last update: 2022-01-05
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -16,7 +16,7 @@
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author  Description
--- 2022-01-03  1.0      wackoz  Created
+-- 2022-01-03  1.0      GR18  Created
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -29,13 +29,13 @@ use ieee.numeric_std.all;
 entity fetch_stage is
 
   port (
-    clock               : in  std_logic;
-    reset               : in  std_logic;
-    target_address      : in  std_logic_vector(31 downto 0);
-    instruction_mem_adr : out std_logic_vector(31 downto 0);
-    pc_out              : out std_logic_vector(31 downto 0);
-    instruction_in      : in  std_logic_vector(31 downto 0);
-    instruction_out     : out std_logic_vector(31 downto 0));
+    clock                : in  std_logic;
+    reset                : in  std_logic;
+    target_address_fetch : in  std_logic_vector(31 downto 0);
+    instruction_mem_adr  : out std_logic_vector(31 downto 0);
+    pc_decode            : out std_logic_vector(31 downto 0);
+    instruction_fetch    : in  std_logic_vector(31 downto 0);
+    instruction_decode   : out std_logic_vector(31 downto 0));
 end entity fetch_stage;
 
 -------------------------------------------------------------------------------
@@ -93,18 +93,18 @@ begin  -- architecture str
 
   -- mux signals assignment
   pcinput_in_mux_0 <= std_logic_vector(unsigned(pc_out_int) + 4);
-  pcinput_in_mux_1 <= target_address;
+  pcinput_in_mux_1 <= target_address_fetch;
 
   --output assignment
   instruction_mem_adr <= pc_out_int;
   pipe : process (clock, reset) is
   begin  -- process pipe
-    if reset = '0' then -- asynchronous reset (active low)
-      instruction_out <= (others => '0');
-      pc_out <= (others => '0');
+    if reset = '0' then                     -- asynchronous reset (active low)
+      instruction_decode <= (others => '0');
+      pc_decode          <= (others => '0');
     elsif clock'event and clock = '1' then  -- rising clock edge
-      instruction_out <= instruction_in;
-      pc_out          <= pc_out_int;
+      instruction_decode <= instruction_fetch;
+      pc_decode          <= pc_out_int;
     end if;
   end process pipe;
 

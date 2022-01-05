@@ -1,22 +1,22 @@
 -------------------------------------------------------------------------------
 -- Title      : RV32I
--- Project    : 
+-- Project    : RV32I
 -------------------------------------------------------------------------------
 -- File       : RV32I.vhd
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
--- Created    : 2021-12-22
--- Last update: 2022-01-04
+-- Created    : 2022-01-05
+-- Last update: 2022-01-05
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
 -- Description: 
 -------------------------------------------------------------------------------
--- Copyright (c) 2021 
+-- Copyright (c) 2022 
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author  Description
--- 2021-12-22  1.0      GR18    Created
+-- 2022-01-05  1.0      wackoz  Created
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -29,18 +29,28 @@ use work.param_pkg.all;
 entity RV32I is
 
   port (
-    clock           : in  std_logic;
-    reset           : in  std_logic;
-    regWrite        : in  std_logic;
-    PCSrc           : in  std_logic;
-    ALUSrc          : in  std_logic;
-    MemtoReg        : in  std_logic;
-    instruction     : in  std_logic_vector(N-1 downto 0);
-    data_in         : in  std_logic_vector(N-1 downto 0);
-    data_out        : in  std_logic_vector(N-1 downto 0);
-    instruction_adr : out std_logic_vector(N-1 downto 0);
-    data_adr        : out std_logic_vector(N-1 downto 0)
-    );
+
+    -- global ports
+    clock : in std_logic;
+    reset : in std_logic;
+
+    -- ports to "fetch_stage_1"
+    instruction_mem_adr : out std_logic_vector(31 downto 0);
+    instruction_fetch   : in  std_logic_vector(31 downto 0);
+
+    -- ports to "decode_stage_1"
+    RegWrite : in std_logic;
+
+    -- ports to "execute_stage_1"
+    ALUSrc : in std_logic;
+
+    -- ports to "mem_stage_1"
+    read_data_mem  : in  std_logic_vector(31 downto 0);
+    write_data_mem : out std_logic_vector(31 downto 0);
+    data_mem_adr   : out std_logic_vector(31 downto 0);
+
+    -- ports to "wb_stage_1"
+    MemToReg : in std_logic);
 
 end entity RV32I;
 
@@ -48,145 +58,117 @@ end entity RV32I;
 
 architecture str of RV32I is
 
-  component alu is
-    port (
-      A      : in  std_logic_vector(31 downto 0);
-      B      : in  std_logic_vector(31 downto 0);
-      result : out std_logic_vector(31 downto 0));
-  end component alu;
+-----------------------------------------------------------------------------
+-- Internal signal declarations
+-----------------------------------------------------------------------------
 
-  component immediate_generator is
-    port (
-      instruction : in  std_logic_vector(31 downto 0);
-      immediate   : out std_logic_vector(63 downto 0));
-  end component immediate_generator;
+  -- outputs of "fetch_stage_1"
+  signal pc_decode          : std_logic_vector(31 downto 0);
+  signal instruction_decode : std_logic_vector(31 downto 0);
 
-  component reg_file is
-    port (
-      read_reg1, read_reg2   : in  std_logic_vector (n_min-1 downto 0);
-      write_reg              : in  std_logic_vector (n_min-1 downto 0);
-      clock, reset, enable   : in  std_logic;
-      write_data             : in  std_logic_vector (N-1 downto 0);
-      write_en               : in  std_logic;
-      read_data1, read_data2 : out std_logic_vector (N-1 downto 0));
-  end component reg_file;
+  -- outputs of "decode_stage_1"
+  signal alu_ctrl_execute   : std_logic_vector(3 downto 0);
+  signal pc_execute         : std_logic_vector(31 downto 0);
+  signal rd_execute         : std_logic_vector(4 downto 0);
+  signal read_data1_execute : std_logic_vector(31 downto 0);
+  signal read_data2_execute : std_logic_vector(31 downto 0);
+  signal immediate_execute  : std_logic_vector(31 downto 0);
 
-  component reg is
-    port (
-      D                    : in  std_logic_vector (N-1 downto 0);
-      clock, reset, enable : in  std_logic;
-      Q                    : out std_logic_vector (N-1 downto 0));
-  end component reg;
+  -- outputs of "execute_stage_1"
+  signal alu_result_mem       : std_logic_vector(31 downto 0);
+  signal read_data2_mem       : std_logic_vector(31 downto 0);
+  signal target_address_fetch : std_logic_vector(31 downto 0);
+  signal rd_mem               : std_logic_vector(4 downto 0);
 
-  -----------------------------------------------------------------------------
-  -- Internal signal declarations
-  -----------------------------------------------------------------------------
-  signal pcinput_mux_in_0, pcinput_mux_in_1, pcinput_mux_out                                                                  : std_logic_vector(N-1 downto 0);
-  signal pcinput_mux_in_1_tmp                                                                                                 : std_logic_vector(63 downto 0);
-  signal data_mem_mux_in_0, data_mem_mux_in_1, data_mem_mux_out                                                               : std_logic_vector(N-1 downto 0);
-  signal alu_B_mux_in_0, alu_B_mux_in_1, alu_B_mux_out                                                                        : std_logic_vector(N-1 downto 0);
-  signal pc_in, pc_out_fetch, pc_out_decode, pc_out_execute                                                                   : std_logic_vector(N-1 downto 0);
-  signal alu_in_A_decode, alu_in_A_execute, alu_in_B_decode, alu_in_B_execute, alu_result_execute, alu_result_mem             : std_logic_vector(31 downto 0);
-  signal reg_file_read_data_1_decode, reg_file_read_data_1_execute, reg_file_read_data_2_decode, reg_file_read_data_2_execute : std_logic_vector(31 downto 0);
-  signal target_address_execute, target_address_decode                                                                        : std_logic_vector(64 downto 0);
-  signal imm_gen_out_decode, imm_gen_out_execute                                                                              : std_logic_vector(63 downto 0);
-  signal imm_gen_in                                                                                                           : std_logic_vector(32 downto 0);
-  signal immediate                                                                                                            : std_logic_vector(63 downto 0);
-  signal instruction_fetch, instruction_decode                                                                                : std_logic_vector(32 downto 0);
+  -- outputs of "mem_stage_1"
+  signal rd_wb         : std_logic_vector(4 downto 0);
+  signal alu_result_wb : std_logic_vector(31 downto 0);
+  signal read_data_wb  : std_logic_vector(31 downto 0);
+
+  -- outputs of "wb_stage_1"
+  signal write_data_decode : std_logic_vector(31 downto 0);
+  signal write_reg_decode  : std_logic_vector(4 downto 0);
+
 begin  -- architecture str
 
   -----------------------------------------------------------------------------
   -- Component instantiations
   -----------------------------------------------------------------------------
 
-  -- Register File
-  register_file : reg_file
+  -- instance "fetch_stage_1"
+  fetch_stage_1 : entity work.fetch_stage
     port map (
-      read_reg1  => instruction_decode(19 downto 15),  --rs1
-      read_reg2  => instruction_decode(24 downto 20),  --rs2
-      write_reg  => instruction_decode(11 downto 7),
-      clock      => clock,
-      reset      => reset,
-      enable     => '1',
-      write_data => data_mem_mux_out,
-      write_en   => '1',
-      read_data1 => reg_file_read_data_1,
-      read_data2 => reg_file_read_data_2);
+      clock                => clock,
+      reset                => reset,
+      target_address_fetch => target_address_fetch,
+      instruction_mem_adr  => instruction_mem_adr,
+      pc_decode            => pc_decode,
+      instruction_fetch    => instruction_fetch,
+      instruction_decode   => instruction_decode);
 
-  -- Br
-  pcinput_mux : mux_2to1
+  -- instance "decode_stage_1"
+  decode_stage_1 : entity work.decode_stage
     port map (
-      in_mux_0 => pcinput_mux_in_0,
-      in_mux_1 => pcinput_mux_in_1,
-      sel      => PCSrc,
-      out_mux  => PC_in);
+      clock              => clock,
+      reset              => reset,
+      instruction_decode => instruction_decode,
+      pc_decode          => pc_decode,
+      RegWrite           => RegWrite,
+      write_reg_decode   => write_reg_decode,
+      write_data_decode  => write_data_decode,
+      alu_ctrl_execute   => alu_ctrl_execute,
+      pc_execute         => pc_execute,
+      rd_execute         => rd_execute,
+      read_data1_execute => read_data1_execute,
+      read_data2_execute => read_data2_execute,
+      immediate_execute  => immediate_execute);
 
-  -- PC INPUT MUX
-  pcinput_mux_in_0     <= std_logic_vector(unsigned(pc_out_fetch) + 4);
-  pcinput_mux_in_1_tmp <= std_logic_vector(signed(pc_out_execute) + shift_left(signed(immediate_gen_out_execute), 1));
-  pcinput_mux_in_1     <= pcinput_mux_in_1_tmp(31 downto 0);
-
-  -- ALU B mux
-  alu_b_mux : mux_2to1
+  -- instance "execute_stage_1"
+  execute_stage_1 : entity work.execute_stage
     port map (
-      in_mux_0 => reg_file_read_data_2,
-      in_mux_1 => immediate(31 downto 0),
-      sel      => ALUSrc,
-      out_mux  => alu_in_B);
+      clock                => clock,
+      reset                => reset,
+      ALUSrc               => ALUSrc,
+      alu_ctrl_execute     => alu_ctrl_execute,
+      pc_execute           => pc_execute,
+      rd_execute           => rd_execute,
+      read_data1_execute   => read_data1_execute,
+      read_data2_execute   => read_data2_execute,
+      immediate_execute    => immediate_execute,
+      alu_result_mem       => alu_result_mem,
+      read_data2_mem       => read_data2_mem,
+      target_address_fetch => target_address_fetch,
+      rd_mem               => rd_mem);
 
-  -- Data Memory mux
-  data_mem_mux : mux_2to1
+  -- instance "mem_stage_1"
+  mem_stage_1 : entity work.mem_stage
     port map (
-      in_mux_0 => data_in,
-      in_mux_1 => alu_result,
-      sel      => MemtoReg,
-      out_mux  => data_mem_mux_out);
+      clock          => clock,
+      reset          => reset,
+      alu_result_mem => alu_result_mem,
+      read_data2_mem => read_data2_mem,
+      rd_mem         => rd_mem,
+      read_data_mem  => read_data_mem,
+      write_data_mem => write_data_mem,
+      data_mem_adr   => data_mem_adr,
+      rd_wb          => rd_wb,
+      alu_result_wb  => alu_result_wb,
+      read_data_wb   => read_data_wb);
 
-  -- instance "immediate_generator"
-  immediate_generator_1 : immediate_generator
+  -- instance "wb_stage_1"
+  wb_stage_1 : entity work.wb_stage
     port map (
-      instruction => instruction,
-      immediate   => immediate);
+      clock             => clock,
+      reset             => reset,
+      rd_wb             => rd_wb,
+      alu_result_wb     => alu_result_wb,
+      read_data_wb      => read_data_wb,
+      write_data_decode => write_data_decode,
+      write_reg_decode  => write_reg_decode,
+      MemToReg          => MemToReg);
 
-  -- instance "alu-1"
-  alu_1 : alu
-    port map (
-      A      => alu_in_A,
-      B      => alu_in_B,
-      result => alu_result);
 
-  -- Memory output
-  instruction_adr <= PC_out;
-  data_adr        <= alu_result;
-  data_out        <= reg_file_read_data_2;
 
-  --Pipe Processes
-  fetch2decode : process (clock, reset) is
-  begin  -- process fetch2decode
-    if reset = '0' then                     -- asynchronous reset (active low)
-    elsif clock'event and clock = '1' then  -- rising clock edge
-      instruction_decode <= instruction_fetch;
-      pc_out_fetch       <= pc_out_decode;
-    end if;
-  end process fetch2decode;
-
-  decode2execute : process (clock, reset) is
-  begin  -- process decode2execute
-    if reset = '0' then                 -- asynchronous reset (active low)
-
-    elsif clock'event and clock = '1' then  -- rising clock edge
-
-    end if;
-  end process decode2execute;
-
-  execute2mem : process (clock, reset) is
-  begin  -- process execute2mem
-    if reset = '0' then                 -- asynchronous reset (active low)
-
-    elsif clock'event and clock = '1' then  -- rising clock edge
-
-    end if;
-  end process execute2mem;
 end architecture str;
 
 -------------------------------------------------------------------------------

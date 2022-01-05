@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2021-12-22
--- Last update: 2021-12-22
+-- Last update: 2022-01-05
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -29,7 +29,7 @@ entity immediate_generator is
 
   port (
     instruction : in  std_logic_vector(31 downto 0);
-    immediate   : out std_logic_vector(63 downto 0)
+    immediate   : out std_logic_vector(31 downto 0)
     );
 
 end entity immediate_generator;
