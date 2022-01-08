@@ -1,0 +1,84 @@
+-------------------------------------------------------------------------------
+-- Title      : Testbench for design "reg_file"
+-- Project    : riscv
+-------------------------------------------------------------------------------
+-- File       : reg_file_tb.vhd<src>
+-- Author     : stefano  <stefano@stefano-N56JK>
+-- Company    : 
+-- Created    : 2022-01-08
+-- Last update: 2022-01-08
+-- Platform   : 
+-- Standard   : VHDL'93/02
+-------------------------------------------------------------------------------
+-- Description: 
+-------------------------------------------------------------------------------
+-- Copyright (c) 2022 
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author  Description
+-- 2022-01-08  1.0      stefano Created
+-------------------------------------------------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+-------------------------------------------------------------------------------
+
+entity reg_file_tb is
+
+end entity reg_file_tb;
+
+-------------------------------------------------------------------------------
+
+architecture arch of reg_file_tb is
+
+  -- component ports
+  signal read_reg1, read_reg2   : std_logic_vector (n_min-1 downto 0);
+  signal write_reg              : std_logic_vector (n_min-1 downto 0);
+  signal reset, enable          : std_logic;
+  signal write_data             : std_logic_vector (N-1 downto 0);
+  signal write_en               : std_logic;
+  signal read_data1, read_data2 : std_logic_vector (N-1 downto 0);
+
+  -- clock
+  signal clock : std_logic := '1';
+
+begin  -- architecture arch
+
+  -- component instantiation
+  DUT : entity work.reg_file
+    port map (
+      read_reg1  => read_reg1,
+      read_reg2  => read_reg2,
+      write_reg  => write_reg,
+      clock      => clock,
+      reset      => reset,
+      enable     => enable,
+      write_data => write_data,
+      write_en   => write_en,
+      read_data1 => read_data1,
+      read_data2 => read_data2);
+
+  -- clock generation
+  clock <= not clock after 10 ns;
+
+  -- waveform generation
+  WaveGen_Proc : process
+  begin
+    -- insert signal assignments here
+
+    wait until clock = '1';
+  end process WaveGen_Proc;
+
+
+
+end architecture arch;
+
+-------------------------------------------------------------------------------
+
+configuration reg_file_tb_arch_cfg of reg_file_tb is
+  for arch
+  end for;
+end reg_file_tb_arch_cfg;
+
+-------------------------------------------------------------------------------

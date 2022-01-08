@@ -3,7 +3,7 @@
 
 # Directory : "~/github/isa/lab3/hdl/src/"
 # Platform  : ModelSim
-# Generated : 2021-12-22 20:51:41 wackoz
+# Generated : 2022-01-08 13:11:38 stefano
 
 
 # Define compilation command and options
@@ -19,14 +19,34 @@ LIBRARY-work = work
 
 # Define library unit files
 
+UNIT-work-alu = \
+	$(LIBRARY-work)/alu/_primary.dat
+UNIT-work-alu-str = \
+	$(LIBRARY-work)/alu/str.dat
 UNIT-work-dec_5to32 = \
 	$(LIBRARY-work)/dec_5to32/_primary.dat
 UNIT-work-dec_5to32-arch = \
 	$(LIBRARY-work)/dec_5to32/arch.dat
+UNIT-work-decode_stage = \
+	$(LIBRARY-work)/decode_stage/_primary.dat
+UNIT-work-decode_stage-str = \
+	$(LIBRARY-work)/decode_stage/str.dat
+UNIT-work-execute_stage = \
+	$(LIBRARY-work)/execute_stage/_primary.dat
+UNIT-work-execute_stage-str = \
+	$(LIBRARY-work)/execute_stage/str.dat
+UNIT-work-fetch_stage = \
+	$(LIBRARY-work)/fetch_stage/_primary.dat
+UNIT-work-fetch_stage-str = \
+	$(LIBRARY-work)/fetch_stage/str.dat
 UNIT-work-immediate_generator = \
 	$(LIBRARY-work)/immediate_generator/_primary.dat
 UNIT-work-immediate_generator-str = \
 	$(LIBRARY-work)/immediate_generator/str.dat
+UNIT-work-mem_stage = \
+	$(LIBRARY-work)/mem_stage/_primary.dat
+UNIT-work-mem_stage-str = \
+	$(LIBRARY-work)/mem_stage/str.dat
 UNIT-work-mux_2to1 = \
 	$(LIBRARY-work)/mux_2to1/_primary.dat
 UNIT-work-mux_2to1-arch = \
@@ -37,6 +57,14 @@ UNIT-work-mux_32to1-arch = \
 	$(LIBRARY-work)/mux_32to1/arch.dat
 UNIT-work-param_pkg = \
 	$(LIBRARY-work)/param_pkg/_primary.dat
+UNIT-work-prova = \
+	$(LIBRARY-work)/prova/_primary.dat
+UNIT-work-prova-str = \
+	$(LIBRARY-work)/prova/str.dat
+UNIT-work-ram = \
+	$(LIBRARY-work)/ram/_primary.dat
+UNIT-work-ram-rtl = \
+	$(LIBRARY-work)/ram/rtl.dat
 UNIT-work-reg = \
 	$(LIBRARY-work)/reg/_primary.dat
 UNIT-work-reg-arch = \
@@ -49,26 +77,46 @@ UNIT-work-rv32i = \
 	$(LIBRARY-work)/rv32i/_primary.dat
 UNIT-work-rv32i-str = \
 	$(LIBRARY-work)/rv32i/str.dat
+UNIT-work-wb_stage = \
+	$(LIBRARY-work)/wb_stage/_primary.dat
+UNIT-work-wb_stage-str = \
+	$(LIBRARY-work)/wb_stage/str.dat
 
 
 # Define list of all library unit files
 
 ALL_UNITS = \
+	$(UNIT-work-alu) \
+	$(UNIT-work-alu-str) \
 	$(UNIT-work-dec_5to32) \
 	$(UNIT-work-dec_5to32-arch) \
+	$(UNIT-work-decode_stage) \
+	$(UNIT-work-decode_stage-str) \
+	$(UNIT-work-execute_stage) \
+	$(UNIT-work-execute_stage-str) \
+	$(UNIT-work-fetch_stage) \
+	$(UNIT-work-fetch_stage-str) \
 	$(UNIT-work-immediate_generator) \
 	$(UNIT-work-immediate_generator-str) \
+	$(UNIT-work-mem_stage) \
+	$(UNIT-work-mem_stage-str) \
 	$(UNIT-work-mux_2to1) \
 	$(UNIT-work-mux_2to1-arch) \
 	$(UNIT-work-mux_32to1) \
 	$(UNIT-work-mux_32to1-arch) \
 	$(UNIT-work-param_pkg) \
+	$(UNIT-work-prova) \
+	$(UNIT-work-prova-str) \
+	$(UNIT-work-ram) \
+	$(UNIT-work-ram-rtl) \
 	$(UNIT-work-reg) \
 	$(UNIT-work-reg-arch) \
 	$(UNIT-work-reg_file) \
 	$(UNIT-work-reg_file-arch) \
 	$(UNIT-work-rv32i) \
-	$(UNIT-work-rv32i-str)
+	$(UNIT-work-rv32i-str) \
+	$(UNIT-work-wb_stage) \
+	$(UNIT-work-wb_stage-str)
 
 
 
@@ -99,16 +147,49 @@ $(LIBRARY-work) :
 
 # Rules for compiling single library units and their subhierarchy
 
+alu : \
+		library \
+		$(UNIT-work-alu) \
+		$(UNIT-work-alu-str)
+
 dec_5to32 : \
 		library \
 		param_pkg \
 		$(UNIT-work-dec_5to32) \
 		$(UNIT-work-dec_5to32-arch)
 
+decode_stage : \
+		library \
+		immediate_generator \
+		param_pkg \
+		reg_file \
+		$(UNIT-work-decode_stage) \
+		$(UNIT-work-decode_stage-str)
+
+execute_stage : \
+		library \
+		alu \
+		mux_2to1 \
+		param_pkg \
+		$(UNIT-work-execute_stage) \
+		$(UNIT-work-execute_stage-str)
+
+fetch_stage : \
+		library \
+		mux_2to1 \
+		reg \
+		$(UNIT-work-fetch_stage) \
+		$(UNIT-work-fetch_stage-str)
+
 immediate_generator : \
 		library \
 		$(UNIT-work-immediate_generator) \
 		$(UNIT-work-immediate_generator-str)
+
+mem_stage : \
+		library \
+		$(UNIT-work-mem_stage) \
+		$(UNIT-work-mem_stage-str)
 
 mux_2to1 : \
 		library \
@@ -125,6 +206,20 @@ mux_32to1 : \
 param_pkg : \
 		library \
 		$(UNIT-work-param_pkg)
+
+prova : \
+		library \
+		decode_stage \
+		execute_stage \
+		fetch_stage \
+		param_pkg \
+		$(UNIT-work-prova) \
+		$(UNIT-work-prova-str)
+
+ram : \
+		library \
+		$(UNIT-work-ram) \
+		$(UNIT-work-ram-rtl)
 
 reg : \
 		library \
@@ -144,16 +239,29 @@ reg_file : \
 rv32i \
 RV32I : \
 		library \
-		immediate_generator \
-		mux_2to1 \
+		decode_stage \
+		execute_stage \
+		fetch_stage \
+		mem_stage \
 		param_pkg \
-		reg \
-		reg_file \
+		wb_stage \
 		$(UNIT-work-rv32i) \
 		$(UNIT-work-rv32i-str)
 
+wb_stage : \
+		library \
+		mux_2to1 \
+		param_pkg \
+		$(UNIT-work-wb_stage) \
+		$(UNIT-work-wb_stage-str)
+
 
 # Rules for compiling single library unit files
+
+$(UNIT-work-alu) \
+$(UNIT-work-alu-str) : \
+		alu.vhd
+	$(COMPILE) $(OPTIONS) alu.vhd
 
 $(UNIT-work-dec_5to32) \
 $(UNIT-work-dec_5to32-arch) : \
@@ -161,10 +269,38 @@ $(UNIT-work-dec_5to32-arch) : \
 		$(UNIT-work-param_pkg)
 	$(COMPILE) $(OPTIONS) dec_5to32.vhd
 
+$(UNIT-work-decode_stage) \
+$(UNIT-work-decode_stage-str) : \
+		decode_stage.vhd \
+		$(UNIT-work-immediate_generator) \
+		$(UNIT-work-param_pkg) \
+		$(UNIT-work-reg_file)
+	$(COMPILE) $(OPTIONS) decode_stage.vhd
+
+$(UNIT-work-execute_stage) \
+$(UNIT-work-execute_stage-str) : \
+		execute_stage.vhd \
+		$(UNIT-work-alu) \
+		$(UNIT-work-mux_2to1) \
+		$(UNIT-work-param_pkg)
+	$(COMPILE) $(OPTIONS) execute_stage.vhd
+
+$(UNIT-work-fetch_stage) \
+$(UNIT-work-fetch_stage-str) : \
+		fetch_stage.vhd \
+		$(UNIT-work-mux_2to1) \
+		$(UNIT-work-reg)
+	$(COMPILE) $(OPTIONS) fetch_stage.vhd
+
 $(UNIT-work-immediate_generator) \
 $(UNIT-work-immediate_generator-str) : \
 		immediate_generator.vhd
 	$(COMPILE) $(OPTIONS) immediate_generator.vhd
+
+$(UNIT-work-mem_stage) \
+$(UNIT-work-mem_stage-str) : \
+		mem_stage.vhd
+	$(COMPILE) $(OPTIONS) mem_stage.vhd
 
 $(UNIT-work-mux_2to1) \
 $(UNIT-work-mux_2to1-arch) : \
@@ -181,6 +317,20 @@ $(UNIT-work-mux_32to1-arch) : \
 $(UNIT-work-param_pkg) : \
 		param_pkg.vhd
 	$(COMPILE) $(OPTIONS) param_pkg.vhd
+
+$(UNIT-work-prova) \
+$(UNIT-work-prova-str) : \
+		prova.vhd \
+		$(UNIT-work-decode_stage) \
+		$(UNIT-work-execute_stage) \
+		$(UNIT-work-fetch_stage) \
+		$(UNIT-work-param_pkg)
+	$(COMPILE) $(OPTIONS) prova.vhd
+
+$(UNIT-work-ram) \
+$(UNIT-work-ram-rtl) : \
+		ram.vhd
+	$(COMPILE) $(OPTIONS) ram.vhd
 
 $(UNIT-work-reg) \
 $(UNIT-work-reg-arch) : \
@@ -200,12 +350,20 @@ $(UNIT-work-reg_file-arch) : \
 $(UNIT-work-rv32i) \
 $(UNIT-work-rv32i-str) : \
 		RV32I.vhd \
-		$(UNIT-work-immediate_generator) \
-		$(UNIT-work-mux_2to1) \
+		$(UNIT-work-decode_stage) \
+		$(UNIT-work-execute_stage) \
+		$(UNIT-work-fetch_stage) \
+		$(UNIT-work-mem_stage) \
 		$(UNIT-work-param_pkg) \
-		$(UNIT-work-reg) \
-		$(UNIT-work-reg_file)
+		$(UNIT-work-wb_stage)
 	$(COMPILE) $(OPTIONS) RV32I.vhd
+
+$(UNIT-work-wb_stage) \
+$(UNIT-work-wb_stage-str) : \
+		wb_stage.vhd \
+		$(UNIT-work-mux_2to1) \
+		$(UNIT-work-param_pkg)
+	$(COMPILE) $(OPTIONS) wb_stage.vhd
 
 
 ### Makefile ends here

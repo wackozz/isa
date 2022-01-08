@@ -10,453 +10,520 @@ z2
 cModel Technology
 Z0 d/home/wackoz/github/isa/lab3/sim
 Ealu
-Z1 w1640203457
+Z1 w1641572687
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 1
-R0
-Z4 8../hdl/src/alu.vhd
-Z5 F../hdl/src/alu.vhd
+!i122 86
+Z4 d/home/stefano/github/isa/lab3/sim
+Z5 8../hdl/src/alu.vhd
+Z6 F../hdl/src/alu.vhd
 l0
-Z6 L27 1
+Z7 L27 1
 V?<8;z39R`Z6nkcm^]zDKU0
 !s100 9LbHI?Ac3=?@G2=kf71zF0
-Z7 OV;C;2020.1;71
+Z8 OV;C;2020.1;71
 31
-Z8 !s110 1641314495
+Z9 !s110 1641643707
 !i10b 1
-Z9 !s108 1641314495.000000
-Z10 !s90 -93|-work|work|../hdl/src/alu.vhd|
-Z11 !s107 ../hdl/src/alu.vhd|
+Z10 !s108 1641643707.000000
+Z11 !s90 -93|-work|work|../hdl/src/alu.vhd|
+Z12 !s107 ../hdl/src/alu.vhd|
 !i113 1
-Z12 o-93 -work work
-Z13 tExplicit 1 CvgOpt 0
+Z13 o-93 -work work
+Z14 tExplicit 1 CvgOpt 0
 Astr
 R2
 R3
 DEx4 work 3 alu 0 22 ?<8;z39R`Z6nkcm^]zDKU0
-!i122 1
+!i122 86
 l46
 L40 13
 VA4jnzQ5YQUFeVOQC=e85G3
 !s100 _<K3XN^72@=EQX9g[Q8DO0
-R7
-31
 R8
-!i10b 1
+31
 R9
+!i10b 1
 R10
 R11
-!i113 1
 R12
+!i113 1
 R13
+R14
 Edec_5to32
-Z14 w1639760583
+R1
 Z15 DPx4 work 9 param_pkg 0 22 hOhSMzi<a;3mmImbE0EQ50
 Z16 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 R2
 R3
-!i122 4
-R0
+!i122 73
+R4
 Z17 8../hdl/src/dec_5to32.vhd
 Z18 F../hdl/src/dec_5to32.vhd
 l0
 L6 1
 VoOn3A<Yg>1BLM?E2@Aj?^2
 !s100 SF6HWTeRH65NmYV08MDJS1
-R7
-31
 R8
+31
+Z19 !s110 1641643681
 !i10b 1
-R9
-Z19 !s90 -93|-work|work|../hdl/src/dec_5to32.vhd|
-Z20 !s107 ../hdl/src/dec_5to32.vhd|
+Z20 !s108 1641643681.000000
+Z21 !s90 -93|-work|work|../hdl/src/dec_5to32.vhd|
+Z22 !s107 ../hdl/src/dec_5to32.vhd|
 !i113 1
-R12
 R13
+R14
 Aarch
 R15
 R16
 R2
 R3
 DEx4 work 9 dec_5to32 0 22 oOn3A<Yg>1BLM?E2@Aj?^2
-!i122 4
+!i122 73
 l15
 L13 45
 Vzz^N]><GlS910EaodPJiV3
 !s100 `P@=bd_A0Mn;o9`>>`oa71
-R7
-31
 R8
-!i10b 1
-R9
+31
 R19
+!i10b 1
 R20
+R21
+R22
 !i113 1
-R12
 R13
+R14
 Edecode_stage
-Z21 w1641391098
+R1
 R15
 R16
 R2
 R3
-!i122 44
-R0
-Z22 8../hdl/src/decode_stage.vhd
-Z23 F../hdl/src/decode_stage.vhd
+!i122 81
+R4
+Z23 8../hdl/src/decode_stage.vhd
+Z24 F../hdl/src/decode_stage.vhd
 l0
-Z24 L29 1
+Z25 L29 1
 VH1?GNE[R;@?4n9<MMIT?:3
 !s100 _i^QaL5gSbmhi3ooBhf6m1
-R7
+R8
 31
-Z25 !s110 1641391098
+Z26 !s110 1641643682
 !i10b 1
-Z26 !s108 1641391098.000000
-Z27 !s90 -93|-work|work|../hdl/src/decode_stage.vhd|
-Z28 !s107 ../hdl/src/decode_stage.vhd|
+Z27 !s108 1641643682.000000
+Z28 !s90 -93|-work|work|../hdl/src/decode_stage.vhd|
+Z29 !s107 ../hdl/src/decode_stage.vhd|
 !i113 1
-R12
 R13
+R14
 Astr
 R15
 R16
 R2
 R3
-Z29 DEx4 work 12 decode_stage 0 22 H1?GNE[R;@?4n9<MMIT?:3
-!i122 44
+Z30 DEx4 work 12 decode_stage 0 22 H1?GNE[R;@?4n9<MMIT?:3
+!i122 81
 l75
 L50 76
 V]hHHc<i1X@VYJPk?3e:nh1
 !s100 eDj[D<L9;R6EQ<8>[gTL71
-R7
+R8
 31
-R25
-!i10b 1
 R26
+!i10b 1
 R27
 R28
+R29
 !i113 1
-R12
 R13
+R14
 Eexecute_stage
-Z30 w1641392056
+Z31 w1641392056
 R15
 R16
 R2
 R3
 !i122 58
 R0
-Z31 8../hdl/src/execute_stage.vhd
-Z32 F../hdl/src/execute_stage.vhd
+Z32 8../hdl/src/execute_stage.vhd
+Z33 F../hdl/src/execute_stage.vhd
 l0
-R24
+R25
 VOLDc4obXSVo5F:Gz^UV1H1
 !s100 mFJAJ5:JYegHHS]WmlLj<1
-R7
+R8
 31
-Z33 !s110 1641392059
+Z34 !s110 1641392059
 !i10b 1
-Z34 !s108 1641392059.000000
-Z35 !s90 -93|-work|work|../hdl/src/execute_stage.vhd|
-Z36 !s107 ../hdl/src/execute_stage.vhd|
+Z35 !s108 1641392059.000000
+Z36 !s90 -93|-work|work|../hdl/src/execute_stage.vhd|
+Z37 !s107 ../hdl/src/execute_stage.vhd|
 !i113 1
-R12
 R13
+R14
 Astr
 R15
 R16
 R2
 R3
-Z37 DEx4 work 13 execute_stage 0 22 OLDc4obXSVo5F:Gz^UV1H1
+Z38 DEx4 work 13 execute_stage 0 22 OLDc4obXSVo5F:Gz^UV1H1
 !i122 58
 l72
 L50 59
 V@m9QooV3li8`2D3TeFn=L0
 !s100 1XBQ;m_:<:bJYn5CB86Z@3
-R7
+R8
 31
-R33
-!i10b 1
 R34
+!i10b 1
 R35
 R36
+R37
 !i113 1
-R12
 R13
+R14
 Efetch_stage
-Z38 w1641384130
+Z39 w1641384130
 R16
 R2
 R3
 !i122 26
 R0
-Z39 8../hdl/src/fetch_stage.vhd
-Z40 F../hdl/src/fetch_stage.vhd
+Z40 8../hdl/src/fetch_stage.vhd
+Z41 F../hdl/src/fetch_stage.vhd
 l0
-R24
+R25
 VLhR3@zj`flM0`ZB70C4DF3
 !s100 QUQW0jln1lb=2iNOigDoR0
-R7
+R8
 31
-Z41 !s110 1641384131
+Z42 !s110 1641384131
 !i10b 1
-Z42 !s108 1641384131.000000
-Z43 !s90 -93|-work|work|../hdl/src/fetch_stage.vhd|
-Z44 !s107 ../hdl/src/fetch_stage.vhd|
+Z43 !s108 1641384131.000000
+Z44 !s90 -93|-work|work|../hdl/src/fetch_stage.vhd|
+Z45 !s107 ../hdl/src/fetch_stage.vhd|
 !i113 1
-R12
 R13
+R14
 Astr
 R16
 R2
 R3
-Z45 DEx4 work 11 fetch_stage 0 22 LhR3@zj`flM0`ZB70C4DF3
+Z46 DEx4 work 11 fetch_stage 0 22 LhR3@zj`flM0`ZB70C4DF3
 !i122 26
 l71
 L42 71
 VS5Om]0_cnTFnhaENHg4W12
 !s100 Gg=O32nJFK]edG:N7=hR10
-R7
+R8
 31
-R41
-!i10b 1
 R42
+!i10b 1
 R43
 R44
+R45
 !i113 1
-R12
 R13
+R14
+Eimmediate_generator
+R1
+R16
+R2
+R3
+!i122 70
+R4
+Z47 8../hdl/src/immediate_generator.vhd
+Z48 F../hdl/src/immediate_generator.vhd
+l0
+L28 1
+VPPCbzz=eCS4Rahg6jJSmj2
+!s100 mHUcjlF8<RFbLo`fzOZ092
+R8
+31
+R19
+!i10b 1
+R20
+Z49 !s90 -93|-work|work|../hdl/src/immediate_generator.vhd|
+Z50 !s107 ../hdl/src/immediate_generator.vhd|
+!i113 1
+R13
+R14
+Astr
+R16
+R2
+R3
+DEx4 work 19 immediate_generator 0 22 PPCbzz=eCS4Rahg6jJSmj2
+!i122 70
+l46
+L39 22
+V8NAn1aEf@R_13`doDzN2H2
+!s100 b3WgP4bX`GFJlI0W=P7h80
+R8
+31
+R19
+!i10b 1
+R20
+R49
+R50
+!i113 1
+R13
+R14
 Emem_stage
-Z46 w1641394828
+Z51 w1641394828
 R2
 R3
 !i122 61
 R0
-Z47 8../hdl/src/mem_stage.vhd
-Z48 F../hdl/src/mem_stage.vhd
+Z52 8../hdl/src/mem_stage.vhd
+Z53 F../hdl/src/mem_stage.vhd
 l0
-R6
+R7
 VY2iJ3UUDOCCm[[<JV4YhK0
 !s100 g:ObZ[2o<i=U`jDQcdH]63
-R7
+R8
 31
-Z49 !s110 1641394831
+Z54 !s110 1641394831
 !i10b 1
-Z50 !s108 1641394831.000000
-Z51 !s90 -93|-work|work|../hdl/src/mem_stage.vhd|
-Z52 !s107 ../hdl/src/mem_stage.vhd|
+Z55 !s108 1641394831.000000
+Z56 !s90 -93|-work|work|../hdl/src/mem_stage.vhd|
+Z57 !s107 ../hdl/src/mem_stage.vhd|
 !i113 1
-R12
 R13
+R14
 Astr
 R2
 R3
-Z53 DEx4 work 9 mem_stage 0 22 Y2iJ3UUDOCCm[[<JV4YhK0
+Z58 DEx4 work 9 mem_stage 0 22 Y2iJ3UUDOCCm[[<JV4YhK0
 !i122 61
 l51
 L45 20
 V3<@V>zDb^ac1F^jEDW;@]2
 !s100 Al;gcaE?WAiV8TKINm;[31
-R7
+R8
 31
-R49
+R54
 !i10b 1
-R50
-R51
-R52
+R55
+R56
+R57
 !i113 1
-R12
 R13
-Emux_32to1
 R14
+Emux_2to1
+R1
 R15
 R16
 R2
 R3
-!i122 5
-R0
-Z54 8../hdl/src/mux_32to1.vhd
-Z55 F../hdl/src/mux_32to1.vhd
+!i122 88
+R4
+8../hdl/src/mux_2to1.vhd
+F../hdl/src/mux_2to1.vhd
+l0
+L6 1
+VE>miQ1kL1@RiZfADW>^XL3
+!s100 QRBTSTb_OV=cRG5LT0OJo3
+R8
+31
+R9
+!i10b 1
+R10
+!s90 -93|-work|work|../hdl/src/mux_2to1.vhd|
+!s107 ../hdl/src/mux_2to1.vhd|
+!i113 1
+R13
+R14
+Emux_32to1
+R1
+R15
+R16
+R2
+R3
+!i122 75
+R4
+Z59 8../hdl/src/mux_32to1.vhd
+Z60 F../hdl/src/mux_32to1.vhd
 l0
 L6 1
 VUVSDiS4KjGi`J8iR]HJiN0
 !s100 z[29@V:5kC5Szk813=;e50
-R7
-31
 R8
+31
+R19
 !i10b 1
-R9
-Z56 !s90 -93|-work|work|../hdl/src/mux_32to1.vhd|
-Z57 !s107 ../hdl/src/mux_32to1.vhd|
+R20
+Z61 !s90 -93|-work|work|../hdl/src/mux_32to1.vhd|
+Z62 !s107 ../hdl/src/mux_32to1.vhd|
 !i113 1
-R12
 R13
+R14
 Aarch
 R15
 R16
 R2
 R3
 DEx4 work 9 mux_32to1 0 22 UVSDiS4KjGi`J8iR]HJiN0
-!i122 5
+!i122 75
 l15
 L13 43
 V3<`cA:dMiU;H<1__Z0nX12
 !s100 3NPd0:@ze>Qm]K6J493jU0
-R7
-31
 R8
+31
+R19
 !i10b 1
-R9
-R56
-R57
+R20
+R61
+R62
 !i113 1
-R12
 R13
+R14
 Pparam_pkg
 R16
 R2
 R3
-!i122 2
-R14
-R0
+!i122 87
+R1
+R4
 8../hdl/src/param_pkg.vhd
 F../hdl/src/param_pkg.vhd
 l0
 L5 1
 VhOhSMzi<a;3mmImbE0EQ50
 !s100 HO5MgEJh_;Qh4jPDXM<812
-R7
-31
 R8
-!i10b 1
+31
 R9
+!i10b 1
+R10
 !s90 -93|-work|work|../hdl/src/param_pkg.vhd|
 !s107 ../hdl/src/param_pkg.vhd|
 !i113 1
-R12
 R13
+R14
 Ereg
-Z58 w1640178439
+R1
 R15
 R16
 R2
 R3
-!i122 6
-R0
-Z59 8../hdl/src/reg.vhd
-Z60 F../hdl/src/reg.vhd
+!i122 77
+R4
+Z63 8../hdl/src/reg.vhd
+Z64 F../hdl/src/reg.vhd
 l0
 L6 1
 VV;Kk^ljgNoh;ZNN]04IEI3
 !s100 [m8PVaA0gPjT:]ZfWzH8Q0
-R7
-31
 R8
+31
+R19
 !i10b 1
-R9
-Z61 !s90 -93|-work|work|../hdl/src/reg.vhd|
-Z62 !s107 ../hdl/src/reg.vhd|
+R20
+Z65 !s90 -93|-work|work|../hdl/src/reg.vhd|
+Z66 !s107 ../hdl/src/reg.vhd|
 !i113 1
-R12
 R13
+R14
 Aarch
 R15
 R16
 R2
 R3
 DEx4 work 3 reg 0 22 V;Kk^ljgNoh;ZNN]04IEI3
-!i122 6
+!i122 77
 l16
 L14 15
 VnFiY_k4K];eVbnSAigh763
 !s100 :dbVZh2Z9bd^;>ga_CbeA3
-R7
-31
 R8
+31
+R19
 !i10b 1
-R9
-R61
-R62
+R20
+R65
+R66
 !i113 1
-R12
 R13
-Ereg_file
 R14
+Ereg_file
+Z67 w1641642822
 R15
 R16
 R2
 R3
-!i122 7
-R0
-Z63 8../hdl/src/reg_file.vhd
-Z64 F../hdl/src/reg_file.vhd
+!i122 79
+R4
+Z68 8../hdl/src/reg_file.vhd
+Z69 F../hdl/src/reg_file.vhd
 l0
 L6 1
-V9dJ[hi`NdXQZ94zgcW<_X0
-!s100 @TW2RCdf>Qc1CI3RJMo?=2
-R7
-31
+Vz^>hzf@gE]@FlUoXzdWGg1
+!s100 DO78U=@7^CN<?OYzb8loR0
 R8
+31
+R26
 !i10b 1
-R9
-Z65 !s90 -93|-work|work|../hdl/src/reg_file.vhd|
-Z66 !s107 ../hdl/src/reg_file.vhd|
+R20
+Z70 !s90 -93|-work|work|../hdl/src/reg_file.vhd|
+Z71 !s107 ../hdl/src/reg_file.vhd|
 !i113 1
-R12
 R13
+R14
 Aarch
 R15
 R16
 R2
 R3
-DEx4 work 8 reg_file 0 22 9dJ[hi`NdXQZ94zgcW<_X0
-!i122 7
+DEx4 work 8 reg_file 0 22 z^>hzf@gE]@FlUoXzdWGg1
+!i122 79
 l47
 L17 48
-V2_<dfI5[ZMkj7zVVOT1nM0
-!s100 ;B<`GRY]7oYcm9zBmOHIC3
-R7
-31
+VRmC4FoHgZk>EL7FIIaPJC2
+!s100 OhiSPP5om7GH2iWUZYU750
 R8
+31
+R26
 !i10b 1
-R9
-R65
-R66
+R20
+R70
+R71
 !i113 1
-R12
 R13
+R14
 Erv32i
-Z67 w1641396979
+Z72 w1641396979
 R15
 R16
 R2
 R3
 !i122 66
 R0
-Z68 8../hdl/src/RV32I.vhd
-Z69 F../hdl/src/RV32I.vhd
+Z73 8../hdl/src/RV32I.vhd
+Z74 F../hdl/src/RV32I.vhd
 l0
-R24
+R25
 VSX8TTCal<>f:22PT7>:Ye3
 !s100 >^_ihdAjN?azB`o4D3ZTh2
-R7
+R8
 31
-Z70 !s110 1641396979
+Z75 !s110 1641396979
 !i10b 1
-Z71 !s108 1641396979.000000
-Z72 !s90 -93|-work|work|../hdl/src/RV32I.vhd|
-Z73 !s107 ../hdl/src/RV32I.vhd|
+Z76 !s108 1641396979.000000
+Z77 !s90 -93|-work|work|../hdl/src/RV32I.vhd|
+Z78 !s107 ../hdl/src/RV32I.vhd|
 !i113 1
-R12
 R13
+R14
 Astr
-Z74 DEx4 work 8 wb_stage 0 22 iHIW[PnU=@`ZAD0A`XFQ<3
-R53
-R37
-R29
-R45
+DEx4 work 8 wb_stage 0 22 iHIW[PnU=@`ZAD0A`XFQ<3
+R58
+R38
+R30
+R46
 R15
 R16
 R2
@@ -467,40 +534,40 @@ l90
 L61 108
 VX2V6^nZBR=ZNE]7zdoSKl0
 !s100 N[U@me0H2eQhSGWo^5:zB1
-R7
+R8
 31
-R70
+R75
 !i10b 1
-R71
-R72
-R73
+R76
+R77
+R78
 !i113 1
-R12
 R13
+R14
 Ewb_stage
-Z75 w1641397529
+Z79 w1641397529
 R15
 R16
 R2
 R3
 !i122 68
 R0
-Z76 8../hdl/src/wb_stage.vhd
-Z77 F../hdl/src/wb_stage.vhd
+Z80 8../hdl/src/wb_stage.vhd
+Z81 F../hdl/src/wb_stage.vhd
 l0
-R24
+R25
 V_WCRQz_WZ2A@TF_aPgH?j2
 !s100 jaEQ8h5EejWelUWXY;_Aj3
-R7
+R8
 31
-Z78 !s110 1641397529
+Z82 !s110 1641397529
 !i10b 1
-Z79 !s108 1641397529.000000
-Z80 !s90 -93|-work|work|../hdl/src/wb_stage.vhd|
-Z81 !s107 ../hdl/src/wb_stage.vhd|
+Z83 !s108 1641397529.000000
+Z84 !s90 -93|-work|work|../hdl/src/wb_stage.vhd|
+Z85 !s107 ../hdl/src/wb_stage.vhd|
 !i113 1
-R12
 R13
+R14
 Astr
 R15
 R16
@@ -512,13 +579,13 @@ l58
 L45 36
 Vi@K[FgXKcLJ`h7K0O;YXM3
 !s100 __?:iK;12RYLlV6?MiJ1N0
-R7
+R8
 31
-R78
+R82
 !i10b 1
-R79
-R80
-R81
+R83
+R84
+R85
 !i113 1
-R12
 R13
+R14
