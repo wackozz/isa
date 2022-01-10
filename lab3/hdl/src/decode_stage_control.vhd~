@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
 -- Title      : decode_stage_control
--- Project    : riscv
+-- Project    : 
 -------------------------------------------------------------------------------
 -- File       : decode_stage_control.vhd
 -- Author     : stefano  <stefano@stefano-N56JK>
@@ -16,7 +16,7 @@
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author  Description
--- 2022-01-08  1.0      stefano	Created
+-- 2022-01-08  1.0      stefano Created
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -25,6 +25,19 @@ use ieee.std_logic_1164.all;
 -------------------------------------------------------------------------------
 
 entity decode_stage_control is
+
+  port (
+    instruction_decode : in  std_logic_vector(31 downto 0);
+    ALUSrc_execute     : out std_logic;
+    ALUOp_execute      : out std_logic_vector(1 downto 0);
+    Branch_execute     : out std_logic;
+    MemWrite_execute   : out std_logic;
+    MemRead_execute    : out std_logic;
+    MemToReg_execute   : out std_logic;
+    PCSrc_execute      : out std_logic);
+
+  generic (
+    );
 
   port (
     );
@@ -39,12 +52,26 @@ architecture str of decode_stage_control is
   -- Internal signal declarations
   -----------------------------------------------------------------------------
 
+  
+  
 begin  -- architecture str
 
   -----------------------------------------------------------------------------
   -- Component instantiations
   -----------------------------------------------------------------------------
 
+  component control is
+    port (
+      instruction : in  std_logic_vector(31 downto 0);
+      ALUSrc      : out std_logic;
+      MemToReg    : out std_logic;
+      RegWrite    : out std_logic;
+      MemRead     : out std_logic;
+      MemWrite    : out std_logic;
+      Branch      : out std_logic;
+      ALUOp       : out std_logic_vector(1 downto 0));
+  end component control;
+  
 end architecture str;
 
 -------------------------------------------------------------------------------
