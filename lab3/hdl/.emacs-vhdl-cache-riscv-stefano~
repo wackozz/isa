@@ -3,7 +3,7 @@
 ;;; .emacs-vhdl-cache-riscv-stefano - design hierarchy cache file for Emacs VHDL Mode 3.38.1
 
 ;; Project   : riscv
-;; Saved     : 2022-01-10 18:37:53 stefano
+;; Saved     : 2022-01-10 18:58:22 stefano
 
 
 ;; version number
@@ -29,7 +29,7 @@
 
 ;; instantiated entities cache
 (vhdl-aput 'vhdl-ent-inst-alist project '
-(("rv32i_control" "wb_stage" "mem_stage" "execute_stage" "decode_stage" "fetch_stage" "alu" "mux_2to1" "mem_stage_control" "execute_stage_control" "decode_stage_control" "reg" "control" "alu_control" "reg_file" "rv32i" "mux_32to1" "mux_32to1" "dec_5to32" "mux_2to1" "reg" "mux_2to1" "immediate_generator" "reg_file"))
+(("alu" "mux_2to1" "rv32i_control" "wb_stage" "mem_stage" "execute_stage" "decode_stage" "fetch_stage" "mem_stage_control" "execute_stage_control" "decode_stage_control" "reg" "control" "alu_control" "reg_file" "rv32i" "mux_32to1" "mux_32to1" "dec_5to32" "mux_2to1" "reg" "mux_2to1" "immediate_generator" "reg_file"))
 )
 
 ;; design units per file cache

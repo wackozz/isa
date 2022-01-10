@@ -3,10 +3,10 @@
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : RV32I_tb.vhd
--- Author     : wackoz  <wackoz@wT14>
+-- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
--- Created    : 2022-01-03
--- Last update: 2022-01-03
+-- Created    : 2022-01-10
+-- Last update: 2022-01-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -16,11 +16,13 @@
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author  Description
--- 2022-01-03  1.0      wackoz	Created
+-- 2022-01-10  1.0      stefano Created
 -------------------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.param_pkg.all;
 
 -------------------------------------------------------------------------------
 
@@ -32,49 +34,41 @@ end entity RV32I_tb;
 
 architecture arch of RV32I_tb is
 
-  -- component ports
-  signal clock           : std_logic;
-  signal reset           : std_logic;
-  signal regWrite        : std_logic;
-  signal PCSrc           : std_logic;
-  signal ALUSrc          : std_logic;
-  signal MemtoReg        : std_logic;
-  signal instruction     : std_logic_vector(N-1 downto 0);
-  signal data            : std_logic_vector(N-1 downto 0);
-  signal instruction_adr : std_logic_vector(N-1 downto 0);
-  signal data_adr        : std_logic_vector(N-1 downto 0);
+  signal clock               : std_logic;
+  signal reset               : std_logic;
+  signal instruction_mem_adr : std_logic_vector(31 downto 0);
+  signal instruction_fetch   : std_logic_vector(31 downto 0);
+  signal read_data_mem       : std_logic_vector(31 downto 0);
+  signal write_data_mem      : std_logic_vector(31 downto 0);
+  signal data_mem_adr        : std_logic_vector(31 downto 0);
+  signal MemWrite            : std_logic;
+  signal MemRead             : std_logic;
 
-  -- clock
-  signal Clk : std_logic := '1';
+  constant Tck : time := 10 ns;
 
 begin  -- architecture arch
 
   -- component instantiation
-  DUT: entity work.RV32I
+  DUT : entity work.RV32I
     port map (
-      clock           => clock,
-      reset           => reset,
-      regWrite        => regWrite,
-      PCSrc           => PCSrc,
-      ALUSrc          => ALUSrc,
-      MemtoReg        => MemtoReg,
-      instruction     => instruction,
-      data            => data,
-      instruction_adr => instruction_adr,
-      data_adr        => data_adr);
+      clock               => clock,
+      reset               => reset,
+      instruction_mem_adr => instruction_mem_adr,
+      instruction_fetch   => instruction_fetch,
+      read_data_mem       => read_data_mem,
+      write_data_mem      => write_data_mem,
+      data_mem_adr        => data_mem_adr,
+      MemWrite            => MemWrite,
+      MemRead             => MemRead);
 
-  -- clock generation
-  Clk <= not Clk after 10 ns;
-
-  -- waveform generation
-  WaveGen_Proc: process
+  clock_proc : process
   begin
-    -- insert signal assignments here
+    clock <= '0';
+    wait for Tck/2;
+    clock <= '1';
+    wait for Tck/2;
+  end process;
 
-    wait until Clk = '1';
-  end process WaveGen_Proc;
-
-  
 
 end architecture arch;
 

@@ -14,11 +14,13 @@ end mux_2to1;
 architecture arch of mux_2to1 is
 
 begin
-  dec_proc : process (in_mux_0,in_mux_1, sel) is
+  dec_proc : process (sel) is
   begin
+    out_mux <= (others => '0');
     case sel is
-      when '0' => out_mux <= in_mux_0;
-      when '1' => out_mux <= in_mux_1;
+      when '0'    => out_mux <= in_mux_0;
+      when '1'    => out_mux <= in_mux_1;
+      when others => null;
     end case;
   end process;
 end architecture arch;
