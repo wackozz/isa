@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-05
--- Last update: 2022-01-05
+-- Last update: 2022-01-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -26,7 +26,7 @@ use work.param_pkg.all;
 
 -------------------------------------------------------------------------------
 
-entity RV32I is
+entity RV32I is  
 
   port (
 
@@ -38,19 +38,14 @@ entity RV32I is
     instruction_mem_adr : out std_logic_vector(31 downto 0);
     instruction_fetch   : in  std_logic_vector(31 downto 0);
 
-    -- ports to "decode_stage_1"
-    RegWrite : in std_logic;
-
-    -- ports to "execute_stage_1"
-    ALUSrc : in std_logic;
-
     -- ports to "mem_stage_1"
     read_data_mem  : in  std_logic_vector(31 downto 0);
     write_data_mem : out std_logic_vector(31 downto 0);
     data_mem_adr   : out std_logic_vector(31 downto 0);
 
-    -- ports to "wb_stage_1"
-    MemToReg : in std_logic);
+    -- ports to "RV32I_control_1"
+    MemWrite : out std_logic;
+    MemRead  : out std_logic);
 
 end entity RV32I;
 
@@ -75,6 +70,7 @@ architecture str of RV32I is
   signal immediate_execute  : std_logic_vector(31 downto 0);
 
   -- outputs of "execute_stage_1"
+  signal Zero_execute         : std_logic;
   signal alu_result_mem       : std_logic_vector(31 downto 0);
   signal read_data2_mem       : std_logic_vector(31 downto 0);
   signal target_address_fetch : std_logic_vector(31 downto 0);
@@ -89,17 +85,25 @@ architecture str of RV32I is
   signal write_data_decode : std_logic_vector(31 downto 0);
   signal write_reg_decode  : std_logic_vector(4 downto 0);
 
+  -- outputs of "RV32I_control_1"
+  signal ALUSrc   : std_logic;
+  signal ALUCtrl  : std_logic_vector(3 downto 0);
+  signal PCSrc    : std_logic;
+  signal RegWrite : std_logic;
+  signal MemToReg : std_logic;
+
 begin  -- architecture str
 
   -----------------------------------------------------------------------------
   -- Component instantiations
-  -----------------------------------------------------------------------------
+  ----------------------------------------------------------------------------
 
   -- instance "fetch_stage_1"
   fetch_stage_1 : entity work.fetch_stage
     port map (
       clock                => clock,
       reset                => reset,
+      PCSrc                => PCSrc,
       target_address_fetch => target_address_fetch,
       instruction_mem_adr  => instruction_mem_adr,
       pc_decode            => pc_decode,
@@ -129,12 +133,13 @@ begin  -- architecture str
       clock                => clock,
       reset                => reset,
       ALUSrc               => ALUSrc,
-      alu_ctrl_execute     => alu_ctrl_execute,
+      ALUCtrl              => ALUCtrl,
       pc_execute           => pc_execute,
       rd_execute           => rd_execute,
       read_data1_execute   => read_data1_execute,
       read_data2_execute   => read_data2_execute,
       immediate_execute    => immediate_execute,
+      Zero_execute         => Zero_execute,
       alu_result_mem       => alu_result_mem,
       read_data2_mem       => read_data2_mem,
       target_address_fetch => target_address_fetch,
@@ -167,7 +172,21 @@ begin  -- architecture str
       write_reg_decode  => write_reg_decode,
       MemToReg          => MemToReg);
 
-
+  -- instance "RV32I_control_1"
+  RV32I_control_1 : entity work.RV32I_control
+    port map (
+      clock              => clock,
+      reset              => reset,
+      instruction_decode => instruction_decode,
+      ALUSrc             => ALUSrc,
+      alu_ctrl_execute   => alu_ctrl_execute,
+      Zero_execute       => Zero_execute,
+      MemWrite           => MemWrite,
+      MemRead            => MemRead,
+      ALUCtrl            => ALUCtrl,
+      PCSrc              => PCSrc,
+      RegWrite           => RegWrite,
+      MemToReg           => MemToReg);
 
 end architecture str;
 

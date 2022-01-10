@@ -55,86 +55,77 @@ begin  -- architecture str
 
   ctrl_proc : process (opcode) is
   begin  -- process ctrl_proc
-    instruction <= '0';
-    ALUSrc      <= '0';
-    MemToReg    <= '0';
-    RegWritec   <= '0';
-    MemRead     <= '0';
-    MemWrite    <= '0';
-    Branchc     <= '0';
-    ALUOp       <= "00";
+    ALUSrc   <= '0';
+    MemToReg <= '0';
+    RegWrite <= '0';
+    MemRead  <= '0';
+    MemWrite <= '0';
+    Branch   <= '0';
+    ALUOp    <= "00";
     case opcode is
-      when "0110011" => ALUSrc <= '0',  -- R-type
-                      MemToReg <= '1',
-                      RegWrite <= '0',
-                       MemRead <= '0',
-                      MemWrite <= '0',
-                        Branch <= '0',
-                         ALUOp <= "10";
+      when "0110011" => ALUSrc <= '0';  -- R-type
+                        MemToReg <= '0';
+                        RegWrite <= '1';
+                        MemRead  <= '0';
+                        MemWrite <= '0';
+                        Branch   <= '0';
+                        ALUOp    <= "10";
 
-      when "0010011" => ALUSrc <= '1',  -- SRAI
-                      MemToReg <= '0',
-                      RegWrite <= '1',
-                       MemRead <= '0',
-                      MemWrite <= '0',
-                        Branch <= '0',
-                         ALUOp <= "10";
+      when "0010011" => ALUSrc <= '1';  -- SRAI/I-type
+                        MemToReg <= '0';
+                        RegWrite <= '1';
+                        MemRead  <= '0';
+                        MemWrite <= '0';
+                        Branch   <= '0';
+                        ALUOp    <= "10";
 
-      when "0010011" => ALUSrc <= '1',  -- I-type
-                      MemToReg <= '0',
-                      RegWrite <= '1',
-                       MemRead <= '0',
-                      MemWrite <= '0',
-                        Branch <= '0',
-                         ALUOp <= "10";
+      when "0000011" => ALUSrc <= '1';  -- LW
+                        MemToReg <= '1';
+                        RegWrite <= '1';
+                        MemRead  <= '1';
+                        MemWrite <= '0';
+                        Branch   <= '0';
+                        ALUOp    <= "00";
 
-      when "0110011" => ALUSrc <= '1',  -- LW
-                      MemToReg <= '1',
-                      RegWrite <= '1',
-                       MemRead <= '1',
-                      MemWrite <= '0',
-                        Branch <= '0',
-                         ALUOp <= "00";
+      when "0100011" => ALUSrc <= '1';  -- SW
+                        MemToReg <= '0';
+                        RegWrite <= '0';
+                        MemRead  <= '0';
+                        MemWrite <= '1';
+                        Branch   <= '0';
+                        ALUOp    <= "00";
 
-      when "0110011" => ALUSrc <= '1',  -- SW
-                      MemToReg <= '0',
-                      RegWrite <= '0',
-                       MemRead <= '0',
-                      MemWrite <= '1',
-                        Branch <= '0',
-                         ALUOp <= "00";
+      when "1100011" => ALUSrc <= '1';  -- BEQ
+                        MemToReg <= '0';
+                        RegWrite <= '0';
+                        MemRead  <= '0';
+                        MemWrite <= '0';
+                        Branch   <= '1';
+                        ALUOp    <= "01";
 
-      when "0110011" => ALUSrc <= '1',  -- BEQ
-                      MemToReg <= '0',
-                      RegWrite <= '0',
-                       MemRead <= '0',
-                      MemWrite <= '0',
-                        Branch <= '1',
-                         ALUOp <= "01";
+      when "0110111" => ALUSrc <= '1';  -- LUI
+                        MemToReg <= '0';
+                        RegWrite <= '1';
+                        MemRead  <= '0';
+                        MemWrite <= '0';
+                        Branch   <= '0';
+                        ALUOp    <= "00";
 
-      when "0110011" => ALUSrc <= '1',  -- LUI
-                      MemToReg <= '0',
-                      RegWrite <= '1',
-                       MemRead <= '0',
-                      MemWrite <= '0',
-                        Branch <= '0',
-                         ALUOp <= "00";
+      when "0010111" => ALUSrc <= '1';  -- AUIPC
+                        MemToReg <= '0';
+                        RegWrite <= '1';
+                        MemRead  <= '0';
+                        MemWrite <= '0';
+                        Branch   <= '0';
+                        ALUOp    <= "11";
 
-      when "0110011" => ALUSrc <= '1',  -- AUIPC
-                      MemToReg <= '0',
-                      RegWrite <= '1',
-                       MemRead <= '0',
-                      MemWrite <= '0',
-                        Branch <= '0',
-                         ALUOp <= "00";
-
-      when "0110011" => ALUSrc <= '1',  -- J-type
-                      MemToReg <= '0',
-                      RegWrite <= '1',
-                       MemRead <= '0',
-                      MemWrite <= '0',
-                        Branch <= '0',
-                         ALUOp <= "00";
+      when "1101111" => ALUSrc <= '1';  -- J-type
+                        MemToReg <= '0';
+                        RegWrite <= '1';
+                        MemRead  <= '0';
+                        MemWrite <= '0';
+                        Branch   <= '0';
+                        ALUOp    <= "11";
       when others => null;
     end case;
   end process ctrl_proc;

@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-05
+-- Last update: 2022-01-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -31,6 +31,7 @@ entity fetch_stage is
   port (
     clock                : in  std_logic;
     reset                : in  std_logic;
+    PCSrc                : in  std_logic;
     target_address_fetch : in  std_logic_vector(31 downto 0);
     instruction_mem_adr  : out std_logic_vector(31 downto 0);
     pc_decode            : out std_logic_vector(31 downto 0);
@@ -64,9 +65,6 @@ architecture str of fetch_stage is
   -----------------------------------------------------------------------------
   signal pc_in, pc_out_int                  : std_logic_vector(31 downto 0);
   signal pcinput_in_mux_0, pcinput_in_mux_1 : std_logic_vector(31 downto 0);
-
-  --controls (to delete)
-  signal PCSrc : std_logic;
 
 begin  -- architecture str
 

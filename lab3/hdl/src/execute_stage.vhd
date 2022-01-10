@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-05
+-- Last update: 2022-01-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -32,12 +32,13 @@ entity execute_stage is
     clock                : in  std_logic;
     reset                : in  std_logic;
     ALUSrc               : in  std_logic;
-    alu_ctrl_execute     : in  std_logic_vector(3 downto 0);
+    ALUCtrl              : in  std_logic_vector(3 downto 0);
     pc_execute           : in  std_logic_vector(31 downto 0);
     rd_execute           : in  std_logic_vector(4 downto 0);
     read_data1_execute   : in  std_logic_vector(31 downto 0);
     read_data2_execute   : in  std_logic_vector(31 downto 0);
     immediate_execute    : in  std_logic_vector(31 downto 0);
+    Zero_execute         : out std_logic;
     alu_result_mem       : out std_logic_vector(31 downto 0);
     read_data2_mem       : out std_logic_vector(31 downto 0);
     target_address_fetch : out std_logic_vector(31 downto 0);
@@ -59,9 +60,11 @@ architecture str of execute_stage is
 
   component alu is
     port (
-      A      : in  std_logic_vector(31 downto 0);
-      B      : in  std_logic_vector(31 downto 0);
-      result : out std_logic_vector(31 downto 0));
+      A       : in  std_logic_vector(31 downto 0);
+      B       : in  std_logic_vector(31 downto 0);
+      ALUCtrl : in  std_logic_vector(3 downto 0);
+      Zero    : out std_logic;
+      result  : out std_logic_vector(31 downto 0));
   end component alu;
 
   -----------------------------------------------------------------------------
@@ -86,16 +89,18 @@ begin  -- architecture str
   -- instance "alu_inst"
   alu_inst : alu
     port map (
-      A      => read_data1_execute,
-      B      => alu_B,
-      result => alu_result_int);
+      A       => read_data1_execute,
+      B       => alu_B,
+      ALUCtrl => ALUCtrl,
+      Zero    => Zero_execute,
+      result  => alu_result_int);
 
   pipe : process (clock, reset) is
   begin  -- process pipe
     if reset = '0' then                     -- asynchronous reset (active low)
       alu_result_mem <= (others => '0');
       rd_mem         <= (others => '0');
-      read_data2_mem         <= (others => '0');
+      read_data2_mem <= (others => '0');
     elsif clock'event and clock = '1' then  -- rising clock edge
       alu_result_mem <= alu_result_int;
       rd_mem         <= rd_execute;
@@ -105,6 +110,6 @@ begin  -- architecture str
 
   --target address
   target_address_fetch <= std_logic_vector(signed(pc_execute) + (signed(immediate_execute(30 downto 0)&'0')));
-end architecture str;   
+end architecture str;
 
 -------------------------------------------------------------------------------

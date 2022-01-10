@@ -1,22 +1,22 @@
 -------------------------------------------------------------------------------
--- Title      : alu
+-- Title      : RV32I_control
 -- Project    : 
 -------------------------------------------------------------------------------
--- File       : alu.vhd
--- Author     : wackoz  <wackoz@wT14>
+-- File       : RV32I_control.vhd
+-- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
--- Created    : 2021-12-22
+-- Created    : 2022-01-10
 -- Last update: 2022-01-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
--- Description: dummy ALU for processor
+-- Description: 
 -------------------------------------------------------------------------------
--- Copyright (c) 2021 
+-- Copyright (c) 2022 
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author  Description
--- 2021-12-22  1.0      wackoz  Created
+-- 2022-01-10  1.0      stefano	Created
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -24,22 +24,19 @@ use ieee.std_logic_1164.all;
 
 -------------------------------------------------------------------------------
 
-entity alu is
+entity RV32I_control is
 
-
-  port (
-    A       : in  std_logic_vector(31 downto 0);
-    B       : in  std_logic_vector(31 downto 0);
-    ALUCtrl : in  std_logic_vector(3 downto 0);
-    result  : out std_logic_vector(31 downto 0);
-    Zero    : out std_logic
+  generic (
     );
 
-end entity alu;
+  port (
+    );
+
+end entity RV32I_control;
 
 -------------------------------------------------------------------------------
 
-architecture str of alu is
+architecture str of RV32I_control is
 
   -----------------------------------------------------------------------------
   -- Internal signal declarations

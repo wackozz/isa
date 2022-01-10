@@ -1,22 +1,22 @@
 -------------------------------------------------------------------------------
--- Title      : alu
+-- Title      : execute_stage_control
 -- Project    : 
 -------------------------------------------------------------------------------
--- File       : alu.vhd
--- Author     : wackoz  <wackoz@wT14>
+-- File       : execute_stage_control.vhd
+-- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
--- Created    : 2021-12-22
+-- Created    : 2022-01-10
 -- Last update: 2022-01-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
--- Description: dummy ALU for processor
+-- Description: 
 -------------------------------------------------------------------------------
--- Copyright (c) 2021 
+-- Copyright (c) 2022 
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author  Description
--- 2021-12-22  1.0      wackoz  Created
+-- 2022-01-10  1.0      stefano Created
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -24,22 +24,37 @@ use ieee.std_logic_1164.all;
 
 -------------------------------------------------------------------------------
 
-entity alu is
-
+entity execute_stage_control is
 
   port (
-    A       : in  std_logic_vector(31 downto 0);
-    B       : in  std_logic_vector(31 downto 0);
-    ALUCtrl : in  std_logic_vector(3 downto 0);
-    result  : out std_logic_vector(31 downto 0);
-    Zero    : out std_logic
-    );
+    ALUSrc_execute   : in  std_logic;
+    Branch_execute   : in  std_logic;
+    MemRead_execute  : in  std_logic;
+    ALUOp_execute    : in  std_logic_vector(1 downto 0);
+    MemToReg_execute : in  std_logic;
+    MemWrite_execute : in  std_logic;
+    Zero_execute     : in  std_logic;
+    ALUSrc           : out std_logic;
+    ALUOp            : out std_logic;
+    Zero_mem         : out std_logic;
+    Branch_mem       : out std_logic;
+    MemWrite_mem     : out std_logic;
+    MemRead_mem      : out std_logic;
+    MemToReg_mem     : out std_logic;
+    RegWrite_mem     : out std_logic);
 
-end entity alu;
+end entity execute_stage_control;
 
 -------------------------------------------------------------------------------
 
-architecture str of alu is
+architecture str of execute_stage_control is
+
+  component alu_control is
+    port (
+      alu_ctrl_execute : in  std_logic_vector(3 downto 0);
+      ALUOp            : in  std_logic_vector(1 downto 0);
+      ALUCtrl          : out std_logic_vector(3 downto 0));
+  end component alu_control;
 
   -----------------------------------------------------------------------------
   -- Internal signal declarations

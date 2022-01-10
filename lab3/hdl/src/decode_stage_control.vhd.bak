@@ -66,6 +66,7 @@ architecture str of decode_stage_control is
   signal MemRead_int  : std_logic;
   signal MemWrite_int : std_logic;
   signal Branch_int   : std_logic;
+  signal RegWrite_int : std_logic;
   signal ALUOp_int    : std_logic_vector(1 downto 0);
 
 begin  -- architecture str
@@ -83,6 +84,7 @@ begin  -- architecture str
       MemRead     => MemRead_int,
       MemWrite    => MemWrite_int,
       Branch      => Branch_int,
+      RegWrite    => RegWrite_int,
       ALUOp       => ALUOp_int);
 
   pipe : process (clock, reset) is
