@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
--- Title      : alu
+-- Title      : add_sub
 -- Project    : riscv-local
 -------------------------------------------------------------------------------
--- File       : alu.vhd
+-- File       : add_sub.vhd
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-18
@@ -25,55 +25,33 @@ use ieee.numeric_std.all;
 
 -------------------------------------------------------------------------------
 
-entity alu is
+entity add_sub is
 
   port (
-    A       : in  std_logic_vector(31 downto 0);
-    B       : in  std_logic_vector(31 downto 0);
-    ALUCtrl : in  std_logic_vector(3 downto 0);
-    result  : out std_logic_vector(31 downto 0);
-    zero    : out std_logic);
+    A   : in  std_logic_vector(31 downto 0);
+    B   : in  std_logic_vector(31 downto 0);
+    sel : in  std_logic;
+    sum : out std_logic_vector(31 downto 0));
 
-end entity alu;
+end entity add_sub;
 
 -------------------------------------------------------------------------------
 
-architecture str of alu is
+architecture str of add_sub is
 
   -----------------------------------------------------------------------------
   -- Internal signal declarations
   -----------------------------------------------------------------------------
 
-  signal comp       : std_logic_vector(31 downto 0);
-  signal sum_int    : std_logic_vector(31 downto 0);
-  signal xor_result : std_logic_vector(31 downto 0);
-  signal and_result : std_logic_vector(31 downto 0);
-
 begin  -- architecture str
 
-  result <= sum_int when ALUCtrl = "0010" else
-            xor_result when ALUCtrl = "0111" else
-            and_result when ALUCtrl = "0011" else
-            (others => '0');
-
-  zero <= '1' when comp = "11111111111111111111111111111111" else
-          '0' when comp /= "11111111111111111111111111111111";
-
-  comp       <= A xnor B;
-  xor_result <= A xor B;
-  and_result <= A and B;
+  sum <= std_logic_vector(signed(A) + signed(B)) when sel = '0' else
+         std_logic_vector(signed(A) - signed(B)) when sel = '1' else
+         (others => '0');
 
   -----------------------------------------------------------------------------
   -- Component instantiations
   -----------------------------------------------------------------------------
-
-  -- instance "add_sub_1"
-  add_sub_1 : entity work.add_sub
-    port map (
-      A   => A,
-      B   => B,
-      sel => ALUCtrl(2),
-      sum => sum_int);
 
 end architecture str;
 

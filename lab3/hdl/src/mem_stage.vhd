@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-05
+-- Last update: 2022-01-18
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -29,11 +29,8 @@ entity mem_stage is
     clock          : in  std_logic;
     reset          : in  std_logic;
     alu_result_mem : in  std_logic_vector(31 downto 0);
-    read_data2_mem : in  std_logic_vector(31 downto 0);
     rd_mem         : in  std_logic_vector(4 downto 0);
     read_data_mem  : in  std_logic_vector(31 downto 0);
-    write_data_mem : out std_logic_vector(31 downto 0);
-    data_mem_adr   : out std_logic_vector(31 downto 0);
     rd_wb          : out std_logic_vector(4 downto 0);
     alu_result_wb  : out std_logic_vector(31 downto 0);
     read_data_wb   : out std_logic_vector(31 downto 0));

@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-17
--- Last update: 2022-01-17
+-- Last update: 2022-01-18
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -44,12 +44,12 @@ architecture test of ram_tb is
   end component ram;
 
   -- component ports
-  signal data     : std_logic_vector (31 downto 0):=(others => '0');
+  signal data     : std_logic_vector (31 downto 0) := (others => '0');
   signal address  : integer range 0 to 31;
-  signal w_en     : std_logic := '0';
+  signal w_en     : std_logic                      := '0';
   signal q        : std_logic_vector (31 downto 0);
-  signal reset    : std_logic      := '1';
-  signal filename : string(1 to 8) := "data.txt";
+  signal reset    : std_logic                      := '1';
+  signal filename : string(1 to 8)                 := "data.txt";
   -- filename must be of 8 char
 
   -- clock
@@ -78,18 +78,18 @@ begin  -- architecture test
     reset   <= '0';
     wait for 3 ns;
     reset   <= '1';
-    w_en    <= '1';
-    wait for 10 ns;
+    wait for 10.5 ns;
     -- write test
     address <= 25;
     data    <= std_logic_vector(to_unsigned(12, 32));
+    w_en    <= '1';
     wait for 5 ns;
     data    <= std_logic_vector(to_unsigned(0, 32));
+    wait for 5 ns;
     w_en    <= '0';
     wait for 30 ns;
     -- read test
     address <= 25;
-    w_en    <= '0';
     wait;
   end process WaveGen_Proc;
 

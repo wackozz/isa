@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-01-18
+-- Last update: 2022-01-17
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -36,22 +36,23 @@ end entity RV32I_tb;
 -------------------------------------------------------------------------------
 
 architecture arch of RV32I_tb is
-  signal clock               : std_logic := '0';
-  signal reset               : std_logic;
-  signal inst_adr, data_adr  : integer range 0 to 256;
+  signal inst_adr, data_adr  : integer;
   signal write_data_mem      : std_logic_vector(31 downto 0);
   signal data_mem_adr        : std_logic_vector(31 downto 0);
   signal MemWrite            : std_logic;
   signal read_data_mem       : std_logic_vector (31 downto 0);
+  signal clock               : std_logic := '0';
+  signal reset               : std_logic;
   signal instruction_mem_adr : std_logic_vector(31 downto 0);
   signal instruction_fetch   : std_logic_vector(31 downto 0);
   signal MemRead             : std_logic;
+  signal x                   : std_logic_vector (31 downto 0);
 
   component ram is
     port (
       clock    : in  std_logic;
       data     : in  std_logic_vector (31 downto 0);
-      address  : in  integer range 0 to 256;
+      address  : in  integer range 0 to 31;
       w_en     : in  std_logic;
       q        : out std_logic_vector (31 downto 0);
       reset    : in  std_logic;
@@ -74,18 +75,18 @@ architecture arch of RV32I_tb is
 begin  -- architecture arch
 
   clock <= not clock after 10 ns;
-
-  -- waveform generation
+  
+   -- waveform generation
   WaveGen_Proc : process
   begin
     --reset test
     wait for 1 ns;
-    reset <= '0';
+    reset   <= '0';
     wait for 3 ns;
-    reset <= '1';
+    reset   <= '1';
     wait;
   end process WaveGen_Proc;
-
+  
   -- component instantiation
   processor : RV32I
     port map (
@@ -104,7 +105,7 @@ begin  -- architecture arch
     port map (
       clock    => clock,
       data     => x"00000000",
-      address  => inst_adr,
+      address  => 0,
       w_en     => '0',
       q        => instruction_fetch,
       reset    => reset,
@@ -115,15 +116,15 @@ begin  -- architecture arch
     port map (
       clock    => clock,
       data     => write_data_mem,
-      address  => data_adr,
+      address  => 0,
       w_en     => MemWrite,
       q        => read_data_mem,
       reset    => reset,
       filename => "data.txt");
 
 
-  data_adr <= to_integer(unsigned(data_mem_adr(7 downto 0)));
-  inst_adr <= to_integer(unsigned(instruction_mem_adr(7 downto 0)));
+  data_adr <= to_integer(unsigned(data_mem_adr));
+  inst_adr <= to_integer(unsigned(instruction_mem_adr));
 end architecture arch;
 
 -------------------------------------------------------------------------------

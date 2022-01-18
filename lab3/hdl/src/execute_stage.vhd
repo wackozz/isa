@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-10
+-- Last update: 2022-01-18
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -40,7 +40,8 @@ entity execute_stage is
     immediate_execute    : in  std_logic_vector(31 downto 0);
     Zero_execute         : out std_logic;
     alu_result_mem       : out std_logic_vector(31 downto 0);
-    read_data2_mem       : out std_logic_vector(31 downto 0);
+    write_data_mem       : out std_logic_vector(31 downto 0);
+    data_mem_adr         : out std_logic_vector(31 downto 0);
     target_address_fetch : out std_logic_vector(31 downto 0);
     rd_mem               : out std_logic_vector(4 downto 0));
 
@@ -100,11 +101,13 @@ begin  -- architecture str
     if reset = '0' then                     -- asynchronous reset (active low)
       alu_result_mem <= (others => '0');
       rd_mem         <= (others => '0');
-      read_data2_mem <= (others => '0');
+      write_data_mem <= (others => '0');
+      data_mem_adr   <= (others => '0');
     elsif clock'event and clock = '1' then  -- rising clock edge
       alu_result_mem <= alu_result_int;
       rd_mem         <= rd_execute;
-      read_data2_mem <= read_data2_execute;
+      write_data_mem <= read_data2_execute;
+      data_mem_adr <= alu_result_int;
     end if;
   end process pipe;
 
