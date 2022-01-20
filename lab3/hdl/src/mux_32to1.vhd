@@ -6,8 +6,8 @@ use work.param_pkg.all;
 entity mux_32to1 is
   port(
     in_mux  : in  mux_array;
-    sel     : in  std_logic_vector (n_min-1 downto 0);
-    out_mux : out std_logic_vector (N-1 downto 0));
+    sel     : in  std_logic_vector (4 downto 0);
+    out_mux : out std_logic_vector (31 downto 0));
 end mux_32to1;
 
 architecture arch of mux_32to1 is
@@ -15,7 +15,6 @@ architecture arch of mux_32to1 is
 begin
   dec_proc : process (in_mux, sel) is
   begin
-    out_mux <= (others => '0');
     case sel is
       when "00000" => out_mux <= in_mux(0);
       when "00001" => out_mux <= in_mux(1);

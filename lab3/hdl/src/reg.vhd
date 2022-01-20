@@ -1,14 +1,13 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use work.param_pkg.all;
 
 entity reg is
   --generic (N : integer := 32);
   port(
-    D                    : in  std_logic_vector (N-1 downto 0);
+    D                    : in  std_logic_vector (31 downto 0);
     clock, reset, enable : in  std_logic;
-    Q                    : out std_logic_vector (N-1 downto 0));
+    Q                    : out std_logic_vector (31 downto 0));
 end reg;
 
 architecture arch of reg is

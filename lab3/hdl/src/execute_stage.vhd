@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-18
+-- Last update: 2022-01-20
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -22,7 +22,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use work.param_pkg.all;
 
 -------------------------------------------------------------------------------
 
@@ -53,10 +52,10 @@ architecture str of execute_stage is
 
   component mux_2to1 is
     port (
-      in_mux_0 : in  std_logic_vector(N-1 downto 0);
-      in_mux_1 : in  std_logic_vector(N-1 downto 0);
+      in_mux_0 : in  std_logic_vector(31 downto 0);
+      in_mux_1 : in  std_logic_vector(31 downto 0);
       sel      : in  std_logic;
-      out_mux  : out std_logic_vector (N-1 downto 0));
+      out_mux  : out std_logic_vector (31 downto 0));
   end component mux_2to1;
 
   component alu is
