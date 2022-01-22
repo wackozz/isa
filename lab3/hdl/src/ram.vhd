@@ -22,7 +22,7 @@ architecture rtl of ram is
 
 begin
 
-  ram_process : process (clock, reset) is
+  ram_process : process (address, reset) is
     file data_file     : text open read_mode is filename;
     variable data_line : line;
     variable data_init : std_logic_vector(31 downto 0);

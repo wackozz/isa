@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-08
--- Last update: 2022-01-10
+-- Last update: 2022-01-20
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -29,11 +29,13 @@ entity control is
   port (
     instruction : in  std_logic_vector(31 downto 0);
     ALUSrc      : out std_logic;
+    PCSel       : out std_logic;
     MemToReg    : out std_logic;
     RegWrite    : out std_logic;
     MemRead     : out std_logic;
     MemWrite    : out std_logic;
     Branch      : out std_logic;
+    Jump        : out std_logic;
     ALUOp       : out std_logic_vector(1 downto 0));
 end entity control;
 
@@ -56,30 +58,37 @@ begin  -- architecture str
   ctrl_proc : process (opcode) is
   begin  -- process ctrl_proc
     ALUSrc   <= '0';
+    PCSel    <= '0';
     MemToReg <= '0';
     RegWrite <= '0';
     MemRead  <= '0';
     MemWrite <= '0';
     Branch   <= '0';
+    Jump     <= '0';
     ALUOp    <= "00";
     case opcode is
       when "0110011" => ALUSrc <= '0';  -- R-type
+                        PCSel    <= '0';
                         MemToReg <= '0';
                         RegWrite <= '1';
                         MemRead  <= '0';
                         MemWrite <= '0';
                         Branch   <= '0';
+                        Jump     <= '0';
                         ALUOp    <= "10";
 
       when "0010011" => ALUSrc <= '1';  -- SRAI/I-type
+                        PCSel    <= '0';
                         MemToReg <= '0';
                         RegWrite <= '1';
                         MemRead  <= '0';
                         MemWrite <= '0';
                         Branch   <= '0';
+                        Jump     <= '0';
                         ALUOp    <= "10";
 
       when "0000011" => ALUSrc <= '1';  -- LW
+                        PCSel    <= '0';
                         MemToReg <= '1';
                         RegWrite <= '1';
                         MemRead  <= '1';
@@ -88,43 +97,53 @@ begin  -- architecture str
                         ALUOp    <= "00";
 
       when "0100011" => ALUSrc <= '1';  -- SW
+                        PCSel    <= '0';
                         MemToReg <= '0';
                         RegWrite <= '0';
                         MemRead  <= '0';
                         MemWrite <= '1';
                         Branch   <= '0';
+                        Jump     <= '0';
                         ALUOp    <= "00";
 
-      when "1100011" => ALUSrc <= '1';  -- BEQ
+      when "1100011" => ALUSrc <= '0';  -- BEQ
+                        PCSel    <= '0';
                         MemToReg <= '0';
                         RegWrite <= '0';
                         MemRead  <= '0';
                         MemWrite <= '0';
                         Branch   <= '1';
+                        Jump     <= '0';
                         ALUOp    <= "01";
 
       when "0110111" => ALUSrc <= '1';  -- LUI
+                        PCSel    <= '0';
                         MemToReg <= '0';
                         RegWrite <= '1';
                         MemRead  <= '0';
                         MemWrite <= '0';
                         Branch   <= '0';
+                        Jump     <= '0';
                         ALUOp    <= "00";
 
       when "0010111" => ALUSrc <= '1';  -- AUIPC
+                        PCSel    <= '1';
                         MemToReg <= '0';
                         RegWrite <= '1';
                         MemRead  <= '0';
                         MemWrite <= '0';
                         Branch   <= '0';
-                        ALUOp    <= "11";
+                        Jump     <= '0';
+                        ALUOp    <= "00";
 
       when "1101111" => ALUSrc <= '1';  -- J-type
+                        PCSel    <= '0';
                         MemToReg <= '0';
                         RegWrite <= '1';
                         MemRead  <= '0';
                         MemWrite <= '0';
                         Branch   <= '0';
+                        Jump     <= '1';
                         ALUOp    <= "11";
       when others => null;
     end case;

@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-08
--- Last update: 2022-01-10
+-- Last update: 2022-01-20
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -31,8 +31,10 @@ entity decode_stage_control is
     reset              : in  std_logic;
     instruction_decode : in  std_logic_vector(31 downto 0);
     ALUSrc             : out std_logic;
+    PCSel              : out std_logic;
     ALUOp_execute      : out std_logic_vector(1 downto 0);
     Branch_execute     : out std_logic;
+    Jump_execute       : out std_logic;
     MemWrite_execute   : out std_logic;
     MemRead_execute    : out std_logic;
     RegWrite_execute   : out std_logic;
@@ -48,11 +50,13 @@ architecture str of decode_stage_control is
     port (
       instruction : in  std_logic_vector(31 downto 0);
       ALUSrc      : out std_logic;
+      PCSel       : out std_logic;
       MemToReg    : out std_logic;
       RegWrite    : out std_logic;
       MemRead     : out std_logic;
       MemWrite    : out std_logic;
       Branch      : out std_logic;
+      Jump        : out std_logic;
       ALUOp       : out std_logic_vector(1 downto 0));
   end component control;
 
@@ -61,11 +65,13 @@ architecture str of decode_stage_control is
   -----------------------------------------------------------------------------
 
   signal ALUSrc_int   : std_logic;
+  signal PCSel_int    : std_logic;
   signal MemToReg_int : std_logic;
   signal RegWrite_int : std_logic;
   signal MemRead_int  : std_logic;
   signal MemWrite_int : std_logic;
   signal Branch_int   : std_logic;
+  signal Jump_int     : std_logic;
   signal ALUOp_int    : std_logic_vector(1 downto 0);
 
 begin  -- architecture str
@@ -78,27 +84,33 @@ begin  -- architecture str
     port map (
       instruction => instruction_decode,
       ALUSrc      => ALUSrc_int,
+      PCSel       => PCSel_int,
       MemToReg    => MemToReg_int,
       RegWrite    => RegWrite_int,
       MemRead     => MemRead_int,
       MemWrite    => MemWrite_int,
       Branch      => Branch_int,
+      Jump        => Jump_int,
       ALUOp       => ALUOp_int);
 
   pipe : process (clock, reset) is
   begin  -- process pipe
     if reset = '0' then                     -- asynchronous reset (active low)
       ALUSrc           <= '0';
+      PCSel            <= '0';
       ALUOp_execute    <= (others => '0');
       Branch_execute   <= '0';
+      Jump_execute     <= '0';
       MemWrite_execute <= '0';
       MemRead_execute  <= '0';
       MemToReg_execute <= '0';
       RegWrite_execute <= '0';
     elsif clock'event and clock = '1' then  -- rising clock edge
       ALUSrc           <= ALUSrc_int;
+      PCSel            <= PCSel_int;
       ALUOp_execute    <= ALUOp_int;
       Branch_execute   <= Branch_int;
+      Jump_execute     <= Jump_int;
       MemWrite_execute <= MemWrite_int;
       MemRead_execute  <= MemRead_int;
       MemToReg_execute <= MemToReg_int;

@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-01-10
+-- Last update: 2022-01-20
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -30,6 +30,7 @@ entity mem_stage_control is
     clock        : in  std_logic;
     reset        : in  std_logic;
     Branch       : in  std_logic;
+    Jump         : in  std_logic;
     Zero         : in  std_logic;
     MemToReg_mem : in  std_logic;
     RegWrite_mem : in  std_logic;
@@ -47,13 +48,16 @@ architecture str of mem_stage_control is
   -- Internal signal declarations
   -----------------------------------------------------------------------------
 
+  signal Branch_eq : std_logic;
+  
 begin  -- architecture str
 
   -----------------------------------------------------------------------------
   -- Component instantiations
   -----------------------------------------------------------------------------
 
-  PCSrc <= Branch and Zero;
+  Branch_eq <= Branch and Zero;
+  PCSrc <= Branch_eq or Jump;
 
   mem_ctrl_proc : process (clock, reset) is
   begin  -- process mem_ctrl_proc

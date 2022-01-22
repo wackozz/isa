@@ -25,8 +25,8 @@ use ieee.numeric_std.all;
 
 -------------------------------------------------------------------------------
 
-entity RV32I is  
-
+entity RV32I is
+  
   port (
 
     -- global ports
@@ -87,11 +87,11 @@ architecture str of RV32I is
 
   -- outputs of "RV32I_control_1"
   signal ALUSrc   : std_logic;
+  signal PCSel    : std_logic;
   signal ALUCtrl  : std_logic_vector(3 downto 0);
   signal PCSrc    : std_logic;
   signal RegWrite : std_logic;
   signal MemToReg : std_logic;
-
 
 begin  -- architecture str
 
@@ -134,6 +134,7 @@ begin  -- architecture str
       clock                => clock,
       reset                => reset,
       ALUSrc               => ALUSrc,
+      PCSel                => PCSel,
       ALUCtrl              => ALUCtrl,
       pc_execute           => pc_execute,
       rd_execute           => rd_execute,
@@ -178,6 +179,7 @@ begin  -- architecture str
       reset              => reset,
       instruction_decode => instruction_decode,
       ALUSrc             => ALUSrc,
+      PCSel              => PCSel,
       alu_ctrl_execute   => alu_ctrl_execute,
       Zero_execute       => Zero_execute,
       MemWrite           => MemWrite,
@@ -187,7 +189,6 @@ begin  -- architecture str
       RegWrite           => RegWrite,
       MemToReg           => MemToReg);
 
- 
 end architecture str;
 
 -------------------------------------------------------------------------------

@@ -31,6 +31,7 @@ entity execute_stage is
     clock                : in  std_logic;
     reset                : in  std_logic;
     ALUSrc               : in  std_logic;
+    PCSel                : in  std_logic;
     ALUCtrl              : in  std_logic_vector(3 downto 0);
     pc_execute           : in  std_logic_vector(31 downto 0);
     rd_execute           : in  std_logic_vector(4 downto 0);
@@ -70,7 +71,8 @@ architecture str of execute_stage is
   -----------------------------------------------------------------------------
   -- Internal signal declarations
   -----------------------------------------------------------------------------
-  signal alu_B, alu_result_int : std_logic_vector(31 downto 0);
+  signal alu_A, alu_B, alu_result_int : std_logic_vector(31 downto 0);
+  signal target_address_fetch_int     : std_logic_vector(31 downto 0);
 
 begin  -- architecture str
 
@@ -86,10 +88,18 @@ begin  -- architecture str
       sel      => ALUSrc,
       out_mux  => alu_B);
 
+  -- instance "mux_PC"
+  mux_PC : mux_2to1
+    port map (
+      in_mux_0 => read_data1_execute,
+      in_mux_1 => pc_execute,
+      sel      => PCSel,
+      out_mux  => alu_A);
+
   -- instance "alu_inst"
   alu_inst : alu
     port map (
-      A       => read_data1_execute,
+      A       => alu_A,
       B       => alu_B,
       ALUCtrl => ALUCtrl,
       Zero    => Zero_execute,
@@ -98,20 +108,24 @@ begin  -- architecture str
   pipe : process (clock, reset) is
   begin  -- process pipe
     if reset = '0' then                     -- asynchronous reset (active low)
-      alu_result_mem <= (others => '0');
-      rd_mem         <= (others => '0');
-      write_data_mem <= (others => '0');
-      data_mem_adr   <= (others => '0');
+      alu_result_mem       <= (others => '0');
+      rd_mem               <= (others => '0');
+      write_data_mem       <= (others => '0');
+      data_mem_adr         <= (others => '0');
+      target_address_fetch <= (others => '0');
     elsif clock'event and clock = '1' then  -- rising clock edge
-      alu_result_mem <= alu_result_int;
-      rd_mem         <= rd_execute;
-      write_data_mem <= read_data2_execute;
-      data_mem_adr <= alu_result_int;
+      alu_result_mem       <= alu_result_int;
+      rd_mem               <= rd_execute;
+      write_data_mem       <= read_data2_execute;
+      data_mem_adr         <= alu_result_int;
+      target_address_fetch <= target_address_fetch_int;
     end if;
   end process pipe;
 
-  --target address
-  target_address_fetch <= std_logic_vector(signed(pc_execute) + (signed(immediate_execute(30 downto 0)&'0')));
+  --target address, shift already done in immediate generator output for branch
+  --and jump instructions
+  target_address_fetch_int <= std_logic_vector(signed(pc_execute) + (signed(immediate_execute(31 downto 0))));
+
 end architecture str;
 
 -------------------------------------------------------------------------------

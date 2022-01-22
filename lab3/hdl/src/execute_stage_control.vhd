@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-01-10
+-- Last update: 2022-01-20
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -31,6 +31,7 @@ entity execute_stage_control is
     reset            : in  std_logic;
     alu_ctrl_execute : in  std_logic_vector(3 downto 0);
     Branch_execute   : in  std_logic;
+    Jump_execute     : in  std_logic;
     MemRead_execute  : in  std_logic;
     ALUOp_execute    : in  std_logic_vector(1 downto 0);
     MemToReg_execute : in  std_logic;
@@ -39,6 +40,7 @@ entity execute_stage_control is
     Zero_execute     : in  std_logic;
     Zero             : out std_logic;
     Branch           : out std_logic;
+    Jump             : out std_logic;
     MemWrite         : out std_logic;
     MemRead          : out std_logic;
     MemToReg_mem     : out std_logic;
@@ -80,6 +82,7 @@ begin  -- architecture str
     if reset = '0' then                     -- asynchronous reset (active low)
       Zero         <= '0';
       Branch       <= '0';
+      Jump         <= '0';
       MemWrite     <= '0';
       MemRead      <= '0';
       MemToReg_mem <= '0';
@@ -87,6 +90,7 @@ begin  -- architecture str
     elsif clock'event and clock = '1' then  -- rising clock edge
       Zero         <= Zero_execute;
       Branch       <= Branch_execute;
+      Jump         <= Jump_execute;
       MemWrite     <= MemWrite_execute;
       MemRead      <= MemRead_execute;
       MemToReg_mem <= MemToReg_execute;
