@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-05
--- Last update: 2022-01-20
+-- Last update: 2022-01-22
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -26,7 +26,7 @@ use ieee.numeric_std.all;
 -------------------------------------------------------------------------------
 
 entity RV32I is
-  
+
   port (
 
     -- global ports
@@ -68,6 +68,7 @@ architecture str of RV32I is
   signal rd_execute         : std_logic_vector(4 downto 0);
   signal read_data1_execute : std_logic_vector(31 downto 0);
   signal read_data2_execute : std_logic_vector(31 downto 0);
+  signal shamt_execute      : std_logic_vector(4 downto 0);
   signal immediate_execute  : std_logic_vector(31 downto 0);
 
   -- outputs of "execute_stage_1"
@@ -100,7 +101,7 @@ begin  -- architecture str
   ----------------------------------------------------------------------------
 
   -- instance "fetch_stage_1"
-  fetch_stage_1: entity work.fetch_stage
+  fetch_stage_1 : entity work.fetch_stage
     port map (
       clock                => clock,
       reset                => reset,
@@ -112,7 +113,7 @@ begin  -- architecture str
       instruction_decode   => instruction_decode);
 
   -- instance "decode_stage_1"
-  decode_stage_1: entity work.decode_stage
+  decode_stage_1 : entity work.decode_stage
     port map (
       clock              => clock,
       reset              => reset,
@@ -126,16 +127,18 @@ begin  -- architecture str
       rd_execute         => rd_execute,
       read_data1_execute => read_data1_execute,
       read_data2_execute => read_data2_execute,
+      shamt_execute      => shamt_execute,
       immediate_execute  => immediate_execute);
 
   -- instance "execute_stage_1"
-  execute_stage_1: entity work.execute_stage
+  execute_stage_1 : entity work.execute_stage
     port map (
       clock                => clock,
       reset                => reset,
       ALUSrc               => ALUSrc,
       PCSel                => PCSel,
       ALUCtrl              => ALUCtrl,
+      shamt_execute        => shamt_execute,
       pc_execute           => pc_execute,
       rd_execute           => rd_execute,
       read_data1_execute   => read_data1_execute,
@@ -149,7 +152,7 @@ begin  -- architecture str
       rd_mem               => rd_mem);
 
   -- instance "mem_stage_1"
-  mem_stage_1: entity work.mem_stage
+  mem_stage_1 : entity work.mem_stage
     port map (
       clock          => clock,
       reset          => reset,
@@ -161,7 +164,7 @@ begin  -- architecture str
       read_data_wb   => read_data_wb);
 
   -- instance "wb_stage_1"
-  wb_stage_1: entity work.wb_stage
+  wb_stage_1 : entity work.wb_stage
     port map (
       clock             => clock,
       reset             => reset,
@@ -173,7 +176,7 @@ begin  -- architecture str
       MemToReg          => MemToReg);
 
   -- instance "RV32I_control_1"
-  RV32I_control_1: entity work.RV32I_control
+  RV32I_control_1 : entity work.RV32I_control
     port map (
       clock              => clock,
       reset              => reset,

@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-20
+-- Last update: 2022-01-22
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -40,6 +40,7 @@ entity decode_stage is
     rd_execute         : out std_logic_vector(4 downto 0);
     read_data1_execute : out std_logic_vector(31 downto 0);
     read_data2_execute : out std_logic_vector(31 downto 0);
+    shamt_execute      : out std_logic_vector(4 downto 0);
     immediate_execute  : out std_logic_vector(31 downto 0));
 
 end entity decode_stage;
@@ -71,6 +72,7 @@ architecture str of decode_stage is
   signal immediate_int                  : std_logic_vector(31 downto 0);
   signal alu_ctrl_int                   : std_logic_vector(3 downto 0);
   signal rd_int                         : std_logic_vector(4 downto 0);
+  signal shamt_int                      : std_logic_vector(4 downto 0);
 begin  -- architecture str
 
   -----------------------------------------------------------------------------
@@ -106,6 +108,7 @@ begin  -- architecture str
       pc_execute         <= (others => '0');
       alu_ctrl_execute   <= (others => '0');
       rd_execute         <= (others => '0');
+      shamt_execute      <= (others => '0');
 
     elsif clock'event and clock = '1' then  -- rising clock edge
       pc_execute         <= pc_decode;
@@ -114,12 +117,14 @@ begin  -- architecture str
       read_data2_execute <= read_data2_int;
       alu_ctrl_execute   <= alu_ctrl_int;
       rd_execute         <= rd_int;
+      shamt_execute      <= shamt_int;
     end if;
   end process pipe;
 
   -- instruction association
   alu_ctrl_int <= instruction_decode(30)&instruction_decode(14 downto 12);
   rd_int       <= instruction_decode(11 downto 7);
+  shamt_int    <= instruction_decode(24 downto 20);
 end architecture str;
 
 -------------------------------------------------------------------------------

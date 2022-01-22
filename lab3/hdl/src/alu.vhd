@@ -31,6 +31,7 @@ entity alu is
     A       : in  std_logic_vector(31 downto 0);
     B       : in  std_logic_vector(31 downto 0);
     ALUCtrl : in  std_logic_vector(3 downto 0);
+    shamt   : in  std_logic_vector(4 downto 0);
     result  : out std_logic_vector(31 downto 0);
     zero    : out std_logic);
 
@@ -75,11 +76,10 @@ begin  -- architecture str
             shift_result                                  when ALUCtrl = "0101" else
             (others => '0');
 
-  comp         <= A xnor B;
-  xor_result   <= A xor B;
-  and_result   <= A and B;
-  lui_result   <= B;
-  shift_result <= std_logic_vector(shift_right(signed(A), to_integer(signed(B))));
+  comp       <= A xnor B;
+  xor_result <= A xor B;
+  and_result <= A and B;
+  lui_result <= B;
 
   -----------------------------------------------------------------------------
   -- Component instantiations
@@ -92,6 +92,13 @@ begin  -- architecture str
       B   => B,
       sel => ALUCtrl(2),
       sum => sum_int);
+
+  -- instance "barrel_shifter_1"
+  barrel_shifter_1 : entity work.barrel_shifter
+    port map (
+      x  => A,
+      sh => shamt,
+      y  => shift_result);
 
   un_and : unary_AND port map (
     inp  => comp,

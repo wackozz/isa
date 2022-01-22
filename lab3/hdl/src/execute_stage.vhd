@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-20
+-- Last update: 2022-01-22
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -33,6 +33,7 @@ entity execute_stage is
     ALUSrc               : in  std_logic;
     PCSel                : in  std_logic;
     ALUCtrl              : in  std_logic_vector(3 downto 0);
+    shamt_execute        : in  std_logic_vector(4 downto 0);
     pc_execute           : in  std_logic_vector(31 downto 0);
     rd_execute           : in  std_logic_vector(4 downto 0);
     read_data1_execute   : in  std_logic_vector(31 downto 0);
@@ -64,6 +65,7 @@ architecture str of execute_stage is
       A       : in  std_logic_vector(31 downto 0);
       B       : in  std_logic_vector(31 downto 0);
       ALUCtrl : in  std_logic_vector(3 downto 0);
+      shamt   : in  std_logic_vector(4 downto 0);
       Zero    : out std_logic;
       result  : out std_logic_vector(31 downto 0));
   end component alu;
@@ -102,6 +104,7 @@ begin  -- architecture str
       A       => alu_A,
       B       => alu_B,
       ALUCtrl => ALUCtrl,
+      shamt   => shamt_execute,
       Zero    => Zero_execute,
       result  => alu_result_int);
 
