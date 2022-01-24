@@ -23,7 +23,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use work.param_pkg.all;
 use ieee.std_logic_textio.all;
 use std.textio.all;
 
@@ -51,7 +50,7 @@ architecture arch of RV32I_tb is
   signal instruction_mem_adr : std_logic_vector(31 downto 0);
   signal instruction_fetch   : std_logic_vector(31 downto 0);
   signal MemRead             : std_logic;
-  constant NOP_instruction : std_logic_vector := "00000000000000000000000000011001";
+  constant NOP_instruction : std_logic_vector := "00000000000000000000000000010011";
   component ram is
     port (
       clock    : in  std_logic;
@@ -81,7 +80,7 @@ begin  -- architecture arch
   clock <= not clock after 10 ns;
 
   -- Label instructions
-  instr_label : process is
+  instr_label : process (instruction_fetch) is
   begin  -- process label
     if instruction_fetch = NOP_instruction then
       current_instruction <= NOP;
@@ -100,7 +99,7 @@ begin  -- architecture arch
     end if;
   end process instr_label;
 
-  aluop_label : process is
+  aluop_label : process (current_instruction) is
   begin  -- process label
     if current_instruction = AL_REGISTERS or current_instruction = AL_IMMEDIATE then  
       case instruction_fetch(14 downto 12) is
@@ -114,8 +113,9 @@ begin  -- architecture arch
     else
       current_alu_op <= NOT_USED;
     end if;
-
   end process aluop_label;
+
+  
 
   -- waveform generation
   WaveGen_Proc : process
