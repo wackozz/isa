@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-01-20
+-- Last update: 2022-01-25
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -48,7 +48,7 @@ entity RV32I_control is
     -- ports to "mem_stage_control_1"
     PCSrc    : out std_logic;
     RegWrite : out std_logic;
-    MemToReg : out std_logic);
+    MemToReg : out std_logic_vector(1 downto 0));
 
 end entity RV32I_control;
 
@@ -67,13 +67,13 @@ architecture str of RV32I_control is
   signal MemWrite_execute : std_logic;
   signal MemRead_execute  : std_logic;
   signal RegWrite_execute : std_logic;
-  signal MemToReg_execute : std_logic;
+  signal MemToReg_execute : std_logic_vector(1 downto 0);
 
   -- outputs of "execute_stage_control_1"
   signal Zero         : std_logic;
   signal Branch       : std_logic;
   signal Jump         : std_logic;
-  signal MemToReg_mem : std_logic;
+  signal MemToReg_mem : std_logic_vector(1 downto 0);
   signal RegWrite_mem : std_logic;
 
 begin  -- architecture str

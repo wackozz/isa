@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-01-20
+-- Last update: 2022-01-25
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -34,7 +34,7 @@ entity execute_stage_control is
     Jump_execute     : in  std_logic;
     MemRead_execute  : in  std_logic;
     ALUOp_execute    : in  std_logic_vector(1 downto 0);
-    MemToReg_execute : in  std_logic;
+    MemToReg_execute : in  std_logic_vector(1 downto 0);
     MemWrite_execute : in  std_logic;
     RegWrite_execute : in  std_logic;
     Zero_execute     : in  std_logic;
@@ -43,7 +43,7 @@ entity execute_stage_control is
     Jump             : out std_logic;
     MemWrite         : out std_logic;
     MemRead          : out std_logic;
-    MemToReg_mem     : out std_logic;
+    MemToReg_mem     : out std_logic_vector(1 downto 0);
     RegWrite_mem     : out std_logic;
     ALUCtrl          : out std_logic_vector(3 downto 0));
 
@@ -85,7 +85,7 @@ begin  -- architecture str
       Jump         <= '0';
       MemWrite     <= '0';
       MemRead      <= '0';
-      MemToReg_mem <= '0';
+      MemToReg_mem <= "00";
       RegWrite_mem <= '0';
     elsif clock'event and clock = '1' then  -- rising clock edge
       Zero         <= Zero_execute;

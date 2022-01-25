@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-01-20
+-- Last update: 2022-01-25
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -32,11 +32,11 @@ entity mem_stage_control is
     Branch       : in  std_logic;
     Jump         : in  std_logic;
     Zero         : in  std_logic;
-    MemToReg_mem : in  std_logic;
+    MemToReg_mem : in  std_logic_vector(1 downto 0);
     RegWrite_mem : in  std_logic;
     PCSrc        : out std_logic;
     RegWrite     : out std_logic;
-    MemToReg     : out std_logic);
+    MemToReg     : out std_logic_vector(1 downto 0));
 
 end entity mem_stage_control;
 
@@ -62,7 +62,7 @@ begin  -- architecture str
   mem_ctrl_proc : process (clock, reset) is
   begin  -- process mem_ctrl_proc
     if reset = '0' then                     -- asynchronous reset (active low)
-      MemToReg <= '0';
+      MemToReg <= "00";
       RegWrite <= '0';
     elsif clock'event and clock = '1' then  -- rising clock edge
       MemToReg <= MemToReg_mem;
