@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-10
+-- Last update: 2022-01-25
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -35,6 +35,7 @@ entity fetch_stage is
     target_address_fetch : in  std_logic_vector(31 downto 0);
     instruction_mem_adr  : out std_logic_vector(31 downto 0);
     pc_decode            : out std_logic_vector(31 downto 0);
+    next_pc_decode       : out std_logic_vector(31 downto 0);
     instruction_fetch    : in  std_logic_vector(31 downto 0);
     instruction_decode   : out std_logic_vector(31 downto 0));
 end entity fetch_stage;
@@ -65,6 +66,7 @@ architecture str of fetch_stage is
   -----------------------------------------------------------------------------
   signal pc_in, pc_out_int                  : std_logic_vector(31 downto 0);
   signal pcinput_in_mux_0, pcinput_in_mux_1 : std_logic_vector(31 downto 0);
+  signal next_pc                            : std_logic_vector(31 downto 0);
 
 begin  -- architecture str
 
@@ -90,7 +92,7 @@ begin  -- architecture str
       out_mux  => pc_in);
 
   -- mux signals assignment
-  pcinput_in_mux_0 <= std_logic_vector(unsigned(pc_out_int) + 4);
+  pcinput_in_mux_0 <= next_pc;
   pcinput_in_mux_1 <= target_address_fetch;
 
   --output assignment
@@ -106,6 +108,7 @@ begin  -- architecture str
     end if;
   end process pipe;
 
+  next_pc <= std_logic_vector(unsigned(pc_out_int) + 4);
 
 end architecture str;
 

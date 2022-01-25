@@ -1,11 +1,11 @@
 -------------------------------------------------------------------------------
--- Title      : wb_stage
--- Project    : RV32I
+-- Title      : mux_4to1
+-- Project    : 
 -------------------------------------------------------------------------------
--- File       : wb_stage.vhd
--- Author     : wackoz  <wackoz@wT14>
+-- File       : mux_4to1.vhd
+-- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
--- Created    : 2022-01-05
+-- Created    : 2022-01-25
 -- Last update: 2022-01-25
 -- Platform   : 
 -- Standard   : VHDL'93/02
@@ -16,59 +16,52 @@
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author  Description
--- 2022-01-05  1.0      wackoz  Created
+-- 2022-01-25  1.0      stefano Created
 -------------------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
 
 -------------------------------------------------------------------------------
 
-entity wb_stage is
+entity mux_4to1 is
 
-  port (
-    clock             : in  std_logic;
-    reset             : in  std_logic;
-    rd_wb             : in  std_logic_vector(4 downto 0);
-    alu_result_wb     : in  std_logic_vector(31 downto 0);
-    read_data_wb      : in  std_logic_vector(31 downto 0);
-    next_pc_mem       : in  std_logic_vector(31 downto 0);
-    write_data_decode : out std_logic_vector(31 downto 0);
-    write_reg_decode  : out std_logic_vector(4 downto 0);
-    MemToReg          : in  std_logic_vector(1 downto 0));
+  port(
+    in_mux_0 : in  std_logic_vector(31 downto 0);
+    in_mux_1 : in  std_logic_vector(31 downto 0);
+    in_mux_2 : in  std_logic_vector(31 downto 0);
+    in_mux_3 : in  std_logic_vector(31 downto 0);
+    sel      : in  std_logic_vector(1 downto 0);
+    out_mux  : out std_logic_vector (31 downto 0));
 
-end entity wb_stage;
+end entity mux_4to1;
 
 -------------------------------------------------------------------------------
 
-architecture str of wb_stage is
+architecture str of mux_4to1 is
 
   -----------------------------------------------------------------------------
   -- Internal signal declarations
   -----------------------------------------------------------------------------
 
-  signal rd_wb_s : std_logic_vector(4 downto 0);
-
 begin  -- architecture str
+
+  mux_proc : process (sel, in_mux_0, in_mux_1, in_mux_2, in_mux_3) is
+  begin  -- process mux_proc
+    if sel = "00" then
+      out_mux <= in_mux_0;
+    elsif sel = "01" then
+      out_mux <= in_mux_1;
+    elsif sel = "10" then
+      out_mux <= in_mux_2;
+    else
+      out_mux <= in_mux_3;
+    end if;
+  end process mux_proc;
 
   -----------------------------------------------------------------------------
   -- Component instantiations
   -----------------------------------------------------------------------------
-
-  -- instance "mux_4to1_1"
-  mux_4to1_1 : entity work.mux_4to1
-    port map (
-      in_mux_0 => alu_result_wb,
-      in_mux_1 => read_data_wb,
-      in_mux_2 => next_pc_mem,
-      in_mux_3 => x"00000000",
-      sel      => MemToReg,
-      out_mux  => write_data_decode);
-
-
-  rd_wb_s          <= rd_wb;
-  write_reg_decode <= rd_wb_s;
 
 end architecture str;
 

@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-08
--- Last update: 2022-01-20
+-- Last update: 2022-01-25
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ entity decode_stage_control is
     MemWrite_execute   : out std_logic;
     MemRead_execute    : out std_logic;
     RegWrite_execute   : out std_logic;
-    MemToReg_execute   : out std_logic);
+    MemToReg_execute   : out std_logic_vector(1 downto 0));
 
 end entity decode_stage_control;
 
@@ -51,7 +51,7 @@ architecture str of decode_stage_control is
       instruction : in  std_logic_vector(31 downto 0);
       ALUSrc      : out std_logic;
       PCSel       : out std_logic;
-      MemToReg    : out std_logic;
+      MemToReg    : out std_logic_vector(1 downto 0);
       RegWrite    : out std_logic;
       MemRead     : out std_logic;
       MemWrite    : out std_logic;
@@ -66,7 +66,7 @@ architecture str of decode_stage_control is
 
   signal ALUSrc_int   : std_logic;
   signal PCSel_int    : std_logic;
-  signal MemToReg_int : std_logic;
+  signal MemToReg_int : std_logic_vector(1 downto 0);
   signal RegWrite_int : std_logic;
   signal MemRead_int  : std_logic;
   signal MemWrite_int : std_logic;
@@ -103,7 +103,7 @@ begin  -- architecture str
       Jump_execute     <= '0';
       MemWrite_execute <= '0';
       MemRead_execute  <= '0';
-      MemToReg_execute <= '0';
+      MemToReg_execute <= "00";
       RegWrite_execute <= '0';
     elsif clock'event and clock = '1' then  -- rising clock edge
       ALUSrc           <= ALUSrc_int;

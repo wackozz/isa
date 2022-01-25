@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-05
--- Last update: 2022-01-22
+-- Last update: 2022-01-25
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -60,11 +60,13 @@ architecture str of RV32I is
 
   -- outputs of "fetch_stage_1"
   signal pc_decode          : std_logic_vector(31 downto 0);
+  signal next_pc_decode     : std_logic_vector(31 downto 0);
   signal instruction_decode : std_logic_vector(31 downto 0);
 
   -- outputs of "decode_stage_1"
   signal alu_ctrl_execute   : std_logic_vector(3 downto 0);
   signal pc_execute         : std_logic_vector(31 downto 0);
+  signal next_pc_execute    : std_logic_vector(31 downto 0);
   signal rd_execute         : std_logic_vector(4 downto 0);
   signal read_data1_execute : std_logic_vector(31 downto 0);
   signal read_data2_execute : std_logic_vector(31 downto 0);
@@ -75,6 +77,7 @@ architecture str of RV32I is
   signal Zero_execute         : std_logic;
   signal alu_result_mem       : std_logic_vector(31 downto 0);
   signal target_address_fetch : std_logic_vector(31 downto 0);
+  signal next_pc_mem          : std_logic_vector(31 downto 0);
   signal rd_mem               : std_logic_vector(4 downto 0);
 
   -- outputs of "mem_stage_1"
@@ -92,7 +95,7 @@ architecture str of RV32I is
   signal ALUCtrl  : std_logic_vector(3 downto 0);
   signal PCSrc    : std_logic;
   signal RegWrite : std_logic;
-  signal MemToReg : std_logic;
+  signal MemToReg : std_logic_vector(1 downto 0);
 
 begin  -- architecture str
 
@@ -109,6 +112,7 @@ begin  -- architecture str
       target_address_fetch => target_address_fetch,
       instruction_mem_adr  => instruction_mem_adr,
       pc_decode            => pc_decode,
+      next_pc_decode       => next_pc_decode,
       instruction_fetch    => instruction_fetch,
       instruction_decode   => instruction_decode);
 
@@ -119,11 +123,13 @@ begin  -- architecture str
       reset              => reset,
       instruction_decode => instruction_decode,
       pc_decode          => pc_decode,
+      next_pc_decode     => next_pc_decode,
       RegWrite           => RegWrite,
       write_reg_decode   => write_reg_decode,
       write_data_decode  => write_data_decode,
       alu_ctrl_execute   => alu_ctrl_execute,
       pc_execute         => pc_execute,
+      next_pc_execute    => next_pc_execute,
       rd_execute         => rd_execute,
       read_data1_execute => read_data1_execute,
       read_data2_execute => read_data2_execute,
@@ -140,6 +146,7 @@ begin  -- architecture str
       ALUCtrl              => ALUCtrl,
       shamt_execute        => shamt_execute,
       pc_execute           => pc_execute,
+      next_pc_execute      => next_pc_execute,
       rd_execute           => rd_execute,
       read_data1_execute   => read_data1_execute,
       read_data2_execute   => read_data2_execute,
@@ -149,6 +156,7 @@ begin  -- architecture str
       write_data_mem       => write_data_mem,
       data_mem_adr         => data_mem_adr,
       target_address_fetch => target_address_fetch,
+      next_pc_mem          => next_pc_mem,
       rd_mem               => rd_mem);
 
   -- instance "mem_stage_1"
@@ -171,6 +179,7 @@ begin  -- architecture str
       rd_wb             => rd_wb,
       alu_result_wb     => alu_result_wb,
       read_data_wb      => read_data_wb,
+      next_pc_mem       => next_pc_mem,
       write_data_decode => write_data_decode,
       write_reg_decode  => write_reg_decode,
       MemToReg          => MemToReg);
@@ -191,6 +200,7 @@ begin  -- architecture str
       PCSrc              => PCSrc,
       RegWrite           => RegWrite,
       MemToReg           => MemToReg);
+
 
 end architecture str;
 

@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-01-24
+-- Last update: 2022-01-25
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -35,12 +35,14 @@ end entity RV32I_tb;
 -------------------------------------------------------------------------------
 
 architecture arch of RV32I_tb is
-  type instr is (UNDEFINED, LUI, AUIPC, JAL, BEQ, LW, SW, AL_IMMEDIATE, AL_REGISTERS, NOP);
-  type alu_operation is (aluADD, aluAND, aluSRA, aluSLT, aluEXOR, UNDEFINED, NOT_USED);
+  type instr is (LUI, AUIPC, JAL, BEQ, LW, SW, ADD, ADDI, ANDI, SRAI, SLT, EXOR, UNDEFINED, NOP);
   signal current_instruction : instr;
-  signal current_alu_op      : alu_operation;
+  signal opcode              : std_logic_vector(6 downto 0);
+  signal funct3              : std_logic_vector(2 downto 0);
+  signal rs1, rs2, rd        : std_logic_vector(4 downto 0);
+  signal immediate           : std_logic_vector(31 downto 0);
 
-  signal clock               : std_logic := '0';
+  signal clock               : std_logic        := '0';
   signal reset               : std_logic;
   signal inst_adr, data_adr  : integer range 0 to 256;
   signal write_data_mem      : std_logic_vector(31 downto 0);
@@ -50,7 +52,8 @@ architecture arch of RV32I_tb is
   signal instruction_mem_adr : std_logic_vector(31 downto 0);
   signal instruction_fetch   : std_logic_vector(31 downto 0);
   signal MemRead             : std_logic;
-  constant NOP_instruction : std_logic_vector := "00000000000000000000000000010011";
+  constant NOP_instruction   : std_logic_vector := "00000000000000000000000000010011";
+
   component ram is
     port (
       clock    : in  std_logic;
@@ -79,43 +82,25 @@ begin  -- architecture arch
 
   clock <= not clock after 10 ns;
 
-  -- Label instructions
-  instr_label : process (instruction_fetch) is
-  begin  -- process label
-    if instruction_fetch = NOP_instruction then
-      current_instruction <= NOP;
-    else
-      case instruction_fetch(6 downto 0) is
-        when "0110111" => current_instruction <= LUI;
-        when "0010111" => current_instruction <= AUIPC;
-        when "1101111" => current_instruction <= JAL;
-        when "1100011" => current_instruction <= BEQ;
-        when "0000011" => current_instruction <= LW;
-        when "0100011" => current_instruction <= SW;
-        when "0010011" => current_instruction <= AL_IMMEDIATE;
-        when "0110011" => current_instruction <= AL_REGISTERS;
-        when others    => current_instruction <= UNDEFINED;
-      end case;
-    end if;
-  end process instr_label;
+  current_instruction <= LUI when opcode = "0110111" else
+                         AUIPC when opcode = "0010111" else
+                         JAL   when opcode = "1101111" else
+                         BEQ   when opcode = "1100011" else
+                         LW    when opcode = "0000011" else
+                         SW    when opcode = "0100011" else
+                         ADDI  when opcode = "0010011" and funct3 = "000" and instruction_fetch /= NOP_instruction else
+                         ANDI  when opcode = "0010011" and funct3 = "111" else
+                         SRAI  when opcode = "0010011" and funct3 = "101" else
+                         ADD   when opcode = "0110011" and funct3 = "000" else
+                         SLT   when opcode = "0110011" and funct3 = "010" else
+                         EXOR  when opcode = "0110011" and funct3 = "100" else
+                         NOP   when instruction_fetch = NOP_instruction else
+                         UNDEFINED;
 
-  aluop_label : process (current_instruction) is
-  begin  -- process label
-    if current_instruction = AL_REGISTERS or current_instruction = AL_IMMEDIATE then  
-      case instruction_fetch(14 downto 12) is
-        when "000"  => current_alu_op <= aluADD;
-        when "111"  => current_alu_op <= aluAND;
-        when "101"  => current_alu_op <= aluSRA;
-        when "010"  => current_alu_op <= aluSLT;
-        when "100"  => current_alu_op <= aluEXOR;
-        when others => current_alu_op <= UNDEFINED;
-      end case;
-    else
-      current_alu_op <= NOT_USED;
-    end if;
-  end process aluop_label;
+  rs1 <= "00000" when current_instruction = LUI or current_instruction = AUIPC or current_instruction = JAL                                                                                         else instruction_fetch(19 downto 15);
+  rs2 <= "00000" when current_instruction = LUI or current_instruction = AUIPC or current_instruction = JAL or current_instruction = LW or current_instruction = ADDI or current_instruction = ANDI else instruction_fetch(24 downto 20);
+  rd  <= "00000" when current_instruction = BEQ or current_instruction = SW                                                                                                                         else instruction_fetch(11 downto 7);
 
-  
 
   -- waveform generation
   WaveGen_Proc : process
@@ -164,8 +149,17 @@ begin  -- architecture arch
       filename => "data.txt");
 
 
-  data_adr <= to_integer(unsigned(data_mem_adr(7 downto 0)));
-  inst_adr <= to_integer(unsigned(instruction_mem_adr(7 downto 0)));
+  data_adr <= to_integer(unsigned(data_mem_adr(7 downto 0))/4);
+  inst_adr <= to_integer(unsigned(instruction_mem_adr(7 downto 0))/4);
+
+  opcode <= instruction_fetch(6 downto 0);
+  funct3 <= instruction_fetch(14 downto 12);
+
+  -- instance "immediate_generator_1"
+  immediate_generator_1 : entity work.immediate_generator
+    port map (
+      instruction => instruction_fetch,
+      immediate   => immediate);
 end architecture arch;
 
 -------------------------------------------------------------------------------
