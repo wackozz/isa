@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-25
+-- Last update: 2022-01-22
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -35,7 +35,6 @@ entity execute_stage is
     ALUCtrl              : in  std_logic_vector(3 downto 0);
     shamt_execute        : in  std_logic_vector(4 downto 0);
     pc_execute           : in  std_logic_vector(31 downto 0);
-    next_pc_execute      : in  std_logic_vector(31 downto 0);
     rd_execute           : in  std_logic_vector(4 downto 0);
     read_data1_execute   : in  std_logic_vector(31 downto 0);
     read_data2_execute   : in  std_logic_vector(31 downto 0);
@@ -45,7 +44,6 @@ entity execute_stage is
     write_data_mem       : out std_logic_vector(31 downto 0);
     data_mem_adr         : out std_logic_vector(31 downto 0);
     target_address_fetch : out std_logic_vector(31 downto 0);
-    next_pc_mem          : out std_logic_vector(31 downto 0);
     rd_mem               : out std_logic_vector(4 downto 0));
 
 end entity execute_stage;
@@ -118,14 +116,12 @@ begin  -- architecture str
       write_data_mem       <= (others => '0');
       data_mem_adr         <= (others => '0');
       target_address_fetch <= (others => '0');
-      next_pc_mem          <= (others => '0');
     elsif clock'event and clock = '1' then  -- rising clock edge
       alu_result_mem       <= alu_result_int;
       rd_mem               <= rd_execute;
       write_data_mem       <= read_data2_execute;
       data_mem_adr         <= alu_result_int;
       target_address_fetch <= target_address_fetch_int;
-      next_pc_mem          <= next_pc_execute;
     end if;
   end process pipe;
 

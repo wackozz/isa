@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-25
+-- Last update: 2022-01-22
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -32,13 +32,11 @@ entity decode_stage is
     reset              : in  std_logic;
     instruction_decode : in  std_logic_vector(31 downto 0);
     pc_decode          : in  std_logic_vector(31 downto 0);
-    next_pc_decode     : in  std_logic_vector(31 downto 0);
     RegWrite           : in  std_logic;
     write_reg_decode   : in  std_logic_vector(4 downto 0);
     write_data_decode  : in  std_logic_vector(31 downto 0);
     alu_ctrl_execute   : out std_logic_vector(3 downto 0);
     pc_execute         : out std_logic_vector(31 downto 0);
-    next_pc_execute    : out std_logic_vector(31 downto 0);
     rd_execute         : out std_logic_vector(4 downto 0);
     read_data1_execute : out std_logic_vector(31 downto 0);
     read_data2_execute : out std_logic_vector(31 downto 0);
@@ -111,7 +109,6 @@ begin  -- architecture str
       alu_ctrl_execute   <= (others => '0');
       rd_execute         <= (others => '0');
       shamt_execute      <= (others => '0');
-      next_pc_execute    <= (others => '0');
 
     elsif clock'event and clock = '1' then  -- rising clock edge
       pc_execute         <= pc_decode;
@@ -121,7 +118,6 @@ begin  -- architecture str
       alu_ctrl_execute   <= alu_ctrl_int;
       rd_execute         <= rd_int;
       shamt_execute      <= shamt_int;
-      next_pc_execute    <= next_pc_decode;
     end if;
   end process pipe;
 
