@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-25
+-- Last update: 2022-01-26
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -102,9 +102,11 @@ begin  -- architecture str
     if reset = '0' then                     -- asynchronous reset (active low)
       instruction_decode <= (others => '0');
       pc_decode          <= (others => '0');
+      next_pc_decode     <= (others => '0');
     elsif clock'event and clock = '1' then  -- rising clock edge
       instruction_decode <= instruction_fetch;
       pc_decode          <= pc_out_int;
+      next_pc_decode     <= next_pc;
     end if;
   end process pipe;
 

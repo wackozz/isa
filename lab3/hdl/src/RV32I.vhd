@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-05
--- Last update: 2022-01-25
+-- Last update: 2022-01-26
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -83,6 +83,7 @@ architecture str of RV32I is
   -- outputs of "mem_stage_1"
   signal rd_wb         : std_logic_vector(4 downto 0);
   signal alu_result_wb : std_logic_vector(31 downto 0);
+  signal next_pc_wb    : std_logic_vector(31 downto 0);
   signal read_data_wb  : std_logic_vector(31 downto 0);
 
   -- outputs of "wb_stage_1"
@@ -99,12 +100,12 @@ architecture str of RV32I is
 
 begin  -- architecture str
 
-  -----------------------------------------------------------------------------
-  -- Component instantiations
-  ----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+-- Component instantiations
+----------------------------------------------------------------------------
 
   -- instance "fetch_stage_1"
-  fetch_stage_1 : entity work.fetch_stage
+  fetch_stage_1: entity work.fetch_stage
     port map (
       clock                => clock,
       reset                => reset,
@@ -117,7 +118,7 @@ begin  -- architecture str
       instruction_decode   => instruction_decode);
 
   -- instance "decode_stage_1"
-  decode_stage_1 : entity work.decode_stage
+  decode_stage_1: entity work.decode_stage
     port map (
       clock              => clock,
       reset              => reset,
@@ -137,7 +138,7 @@ begin  -- architecture str
       immediate_execute  => immediate_execute);
 
   -- instance "execute_stage_1"
-  execute_stage_1 : entity work.execute_stage
+  execute_stage_1: entity work.execute_stage
     port map (
       clock                => clock,
       reset                => reset,
@@ -160,32 +161,34 @@ begin  -- architecture str
       rd_mem               => rd_mem);
 
   -- instance "mem_stage_1"
-  mem_stage_1 : entity work.mem_stage
+  mem_stage_1: entity work.mem_stage
     port map (
       clock          => clock,
       reset          => reset,
       alu_result_mem => alu_result_mem,
+      next_pc_mem    => next_pc_mem,
       rd_mem         => rd_mem,
       read_data_mem  => read_data_mem,
       rd_wb          => rd_wb,
       alu_result_wb  => alu_result_wb,
+      next_pc_wb     => next_pc_wb,
       read_data_wb   => read_data_wb);
 
   -- instance "wb_stage_1"
-  wb_stage_1 : entity work.wb_stage
+  wb_stage_1: entity work.wb_stage
     port map (
       clock             => clock,
       reset             => reset,
       rd_wb             => rd_wb,
       alu_result_wb     => alu_result_wb,
       read_data_wb      => read_data_wb,
-      next_pc_mem       => next_pc_mem,
+      next_pc_wb        => next_pc_wb,
       write_data_decode => write_data_decode,
       write_reg_decode  => write_reg_decode,
       MemToReg          => MemToReg);
 
   -- instance "RV32I_control_1"
-  RV32I_control_1 : entity work.RV32I_control
+  RV32I_control_1: entity work.RV32I_control
     port map (
       clock              => clock,
       reset              => reset,
@@ -200,8 +203,6 @@ begin  -- architecture str
       PCSrc              => PCSrc,
       RegWrite           => RegWrite,
       MemToReg           => MemToReg);
-
-
 end architecture str;
 
 -------------------------------------------------------------------------------

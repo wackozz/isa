@@ -33,7 +33,7 @@ entity wb_stage is
     rd_wb             : in  std_logic_vector(4 downto 0);
     alu_result_wb     : in  std_logic_vector(31 downto 0);
     read_data_wb      : in  std_logic_vector(31 downto 0);
-    next_pc_mem       : in  std_logic_vector(31 downto 0);
+    next_pc_wb       : in  std_logic_vector(31 downto 0);
     write_data_decode : out std_logic_vector(31 downto 0);
     write_reg_decode  : out std_logic_vector(4 downto 0);
     MemToReg          : in  std_logic_vector(1 downto 0));
@@ -61,7 +61,7 @@ begin  -- architecture str
     port map (
       in_mux_0 => alu_result_wb,
       in_mux_1 => read_data_wb,
-      in_mux_2 => next_pc_mem,
+      in_mux_2 => next_pc_wb,
       in_mux_3 => x"00000000",
       sel      => MemToReg,
       out_mux  => write_data_decode);
