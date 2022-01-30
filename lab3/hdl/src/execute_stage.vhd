@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-25
+-- Last update: 2022-01-30
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -40,6 +40,9 @@ entity execute_stage is
     read_data1_execute   : in  std_logic_vector(31 downto 0);
     read_data2_execute   : in  std_logic_vector(31 downto 0);
     immediate_execute    : in  std_logic_vector(31 downto 0);
+    forward_A            : in  std_logic_vector(1 downto 0);
+    forward_B            : in  std_logic_vector(1 downto 0);
+    write_data_decode    : in  std_logic_vector(31 downto 0);
     Zero_execute         : out std_logic;
     alu_result_mem       : out std_logic_vector(31 downto 0);
     write_data_mem       : out std_logic_vector(31 downto 0);
@@ -77,6 +80,10 @@ architecture str of execute_stage is
   -----------------------------------------------------------------------------
   signal alu_A, alu_B, alu_result_int : std_logic_vector(31 downto 0);
   signal target_address_fetch_int     : std_logic_vector(31 downto 0);
+  signal out_mux_forward_A            : std_logic_vector(31 downto 0);
+  signal out_mux_forward_B            : std_logic_vector(31 downto 0);
+
+  signal data_mem_adr_int : std_logic_vector(31 downto 0);
 
 begin  -- architecture str
 
@@ -87,7 +94,7 @@ begin  -- architecture str
   -- instance "mux_alu_b"
   alu_b_mux : mux_2to1
     port map (
-      in_mux_0 => read_data2_execute,
+      in_mux_0 => out_mux_forward_B,
       in_mux_1 => immediate_execute,
       sel      => ALUSrc,
       out_mux  => alu_B);
@@ -95,7 +102,7 @@ begin  -- architecture str
   -- instance "mux_PC"
   mux_PC : mux_2to1
     port map (
-      in_mux_0 => read_data1_execute,
+      in_mux_0 => out_mux_forward_A,
       in_mux_1 => pc_execute,
       sel      => PCSel,
       out_mux  => alu_A);
@@ -110,20 +117,22 @@ begin  -- architecture str
       Zero    => Zero_execute,
       result  => alu_result_int);
 
+
+
   pipe : process (clock, reset) is
   begin  -- process pipe
     if reset = '0' then                     -- asynchronous reset (active low)
       alu_result_mem       <= (others => '0');
       rd_mem               <= (others => '0');
       write_data_mem       <= (others => '0');
-      data_mem_adr         <= (others => '0');
+      data_mem_adr_int     <= (others => '0');
       target_address_fetch <= (others => '0');
       next_pc_mem          <= (others => '0');
     elsif clock'event and clock = '1' then  -- rising clock edge
       alu_result_mem       <= alu_result_int;
       rd_mem               <= rd_execute;
       write_data_mem       <= read_data2_execute;
-      data_mem_adr         <= alu_result_int;
+      data_mem_adr_int     <= alu_result_int;
       target_address_fetch <= target_address_fetch_int;
       next_pc_mem          <= next_pc_execute;
     end if;
@@ -132,6 +141,28 @@ begin  -- architecture str
   --target address, shift already done in immediate generator output for branch
   --and jump instructions
   target_address_fetch_int <= std_logic_vector(signed(pc_execute) + (signed(immediate_execute(31 downto 0))));
+
+  -- instance "forward_A_mux"
+  forward_A_mux : entity work.mux_4to1
+    port map (
+      in_mux_0 => read_data1_execute,
+      in_mux_1 => write_data_decode,
+      in_mux_2 => data_mem_adr_int,
+      in_mux_3 => x"00000000",
+      sel      => forward_A,
+      out_mux  => out_mux_forward_A);
+
+  -- instance "forward_B_mux"
+  forward_B_mux : entity work.mux_4to1
+    port map (
+      in_mux_0 => read_data2_execute,
+      in_mux_1 => write_data_decode,
+      in_mux_2 => data_mem_adr_int,
+      in_mux_3 => x"00000000",
+      sel      => forward_B,
+      out_mux  => out_mux_forward_B);
+
+  data_mem_adr <= data_mem_adr_int;
 
 end architecture str;
 

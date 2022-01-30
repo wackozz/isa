@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-01-25
+-- Last update: 2022-01-30
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -44,6 +44,12 @@ entity RV32I_control is
     MemWrite         : out std_logic;
     MemRead          : out std_logic;
     ALUCtrl          : out std_logic_vector(3 downto 0);
+    Rs1              : in  std_logic_vector(4 downto 0);
+    Rs2              : in  std_logic_vector(4 downto 0);
+    Rd_mem           : in  std_logic_vector(4 downto 0);
+    Rd_wb            : in  std_logic_vector(4 downto 0);
+    forward_A        : out std_logic_vector(1 downto 0);
+    forward_B        : out std_logic_vector(1 downto 0);
 
     -- ports to "mem_stage_control_1"
     PCSrc    : out std_logic;
@@ -76,6 +82,8 @@ architecture str of RV32I_control is
   signal MemToReg_mem : std_logic_vector(1 downto 0);
   signal RegWrite_mem : std_logic;
 
+  signal RegWrite_int : std_logic;
+
 begin  -- architecture str
 
   -----------------------------------------------------------------------------
@@ -83,7 +91,7 @@ begin  -- architecture str
   -----------------------------------------------------------------------------
 
   -- instance "decode_stage_control_1"
-  decode_stage_control_1: entity work.decode_stage_control
+  decode_stage_control_1 : entity work.decode_stage_control
     port map (
       clock              => clock,
       reset              => reset,
@@ -99,7 +107,7 @@ begin  -- architecture str
       MemToReg_execute   => MemToReg_execute);
 
   -- instance "execute_stage_control_1"
-  execute_stage_control_1: entity work.execute_stage_control
+  execute_stage_control_1 : entity work.execute_stage_control
     port map (
       clock            => clock,
       reset            => reset,
@@ -119,10 +127,17 @@ begin  -- architecture str
       MemRead          => MemRead,
       MemToReg_mem     => MemToReg_mem,
       RegWrite_mem     => RegWrite_mem,
-      ALUCtrl          => ALUCtrl);
+      ALUCtrl          => ALUCtrl,
+      Rs1              => Rs1,
+      Rs2              => Rs2,
+      Rd_mem           => Rd_mem,
+      Rd_wb            => Rd_wb,
+      RegWrite         => RegWrite_int,
+      forward_A        => forward_A,
+      forward_B        => forward_B);
 
   -- instance "mem_stage_control_1"
-  mem_stage_control_1: entity work.mem_stage_control
+  mem_stage_control_1 : entity work.mem_stage_control
     port map (
       clock        => clock,
       reset        => reset,
@@ -132,8 +147,10 @@ begin  -- architecture str
       MemToReg_mem => MemToReg_mem,
       RegWrite_mem => RegWrite_mem,
       PCSrc        => PCSrc,
-      RegWrite     => RegWrite,
+      RegWrite     => RegWrite_int,
       MemToReg     => MemToReg);
+
+  RegWrite <= RegWrite_int;
 
 end architecture str;
 
