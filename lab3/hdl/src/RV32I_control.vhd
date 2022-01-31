@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-01-30
+-- Last update: 2022-01-31
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -35,8 +35,14 @@ entity RV32I_control is
 
     -- ports to "decode_stage_control_1"
     instruction_decode : in  std_logic_vector(31 downto 0);
-    ALUSrc             : out std_logic;
-    PCSel              : out std_logic;
+    Rs1_decode         : in  std_logic_vector(4 downto 0);
+    Rs2_decode         : in  std_logic_vector(4 downto 0);
+    Rd_execute         : in  std_logic_vector(4 downto 0);
+    PcWrite            : out std_logic;
+    FetchPipeWrite     : out std_logic;
+
+    ALUSrc : out std_logic;
+    PCSel  : out std_logic;
 
     -- ports to "execute_stage_control_1"
     alu_ctrl_execute : in  std_logic_vector(3 downto 0);
@@ -44,8 +50,8 @@ entity RV32I_control is
     MemWrite         : out std_logic;
     MemRead          : out std_logic;
     ALUCtrl          : out std_logic_vector(3 downto 0);
-    Rs1              : in  std_logic_vector(4 downto 0);
-    Rs2              : in  std_logic_vector(4 downto 0);
+    Rs1_execute      : in  std_logic_vector(4 downto 0);
+    Rs2_execute      : in  std_logic_vector(4 downto 0);
     Rd_mem           : in  std_logic_vector(4 downto 0);
     Rd_wb            : in  std_logic_vector(4 downto 0);
     forward_A        : out std_logic_vector(1 downto 0);
@@ -73,6 +79,7 @@ architecture str of RV32I_control is
   signal MemWrite_execute : std_logic;
   signal MemRead_execute  : std_logic;
   signal RegWrite_execute : std_logic;
+  signal opcode_execute   : std_logic_vector(6 downto 0);
   signal MemToReg_execute : std_logic_vector(1 downto 0);
 
   -- outputs of "execute_stage_control_1"
@@ -90,12 +97,17 @@ begin  -- architecture str
   -- Component instantiations
   -----------------------------------------------------------------------------
 
+  RegWrite <= RegWrite_int;
+
   -- instance "decode_stage_control_1"
   decode_stage_control_1 : entity work.decode_stage_control
     port map (
       clock              => clock,
       reset              => reset,
       instruction_decode => instruction_decode,
+      Rs1_decode         => Rs1_decode,
+      Rs2_decode         => Rs2_decode,
+      Rd_execute         => Rd_execute,
       ALUSrc             => ALUSrc,
       PCSel              => PCSel,
       ALUOp_execute      => ALUOp_execute,
@@ -104,6 +116,9 @@ begin  -- architecture str
       MemWrite_execute   => MemWrite_execute,
       MemRead_execute    => MemRead_execute,
       RegWrite_execute   => RegWrite_execute,
+      opcode_execute     => opcode_execute,
+      PcWrite            => PcWrite,
+      FetchPipeWrite     => FetchPipeWrite,
       MemToReg_execute   => MemToReg_execute);
 
   -- instance "execute_stage_control_1"
@@ -120,6 +135,7 @@ begin  -- architecture str
       MemWrite_execute => MemWrite_execute,
       RegWrite_execute => RegWrite_execute,
       Zero_execute     => Zero_execute,
+      opcode_execute   => opcode_execute,
       Zero             => Zero,
       Branch           => Branch,
       Jump             => Jump,
@@ -128,8 +144,8 @@ begin  -- architecture str
       MemToReg_mem     => MemToReg_mem,
       RegWrite_mem     => RegWrite_mem,
       ALUCtrl          => ALUCtrl,
-      Rs1              => Rs1,
-      Rs2              => Rs2,
+      Rs1_execute      => Rs1_execute,
+      Rs2_execute      => Rs2_execute,
       Rd_mem           => Rd_mem,
       Rd_wb            => Rd_wb,
       RegWrite         => RegWrite_int,
@@ -149,8 +165,6 @@ begin  -- architecture str
       PCSrc        => PCSrc,
       RegWrite     => RegWrite_int,
       MemToReg     => MemToReg);
-
-  RegWrite <= RegWrite_int;
 
 end architecture str;
 

@@ -9,20 +9,20 @@ entity ram is
     (
       clock    : in  std_logic;
       data     : in  std_logic_vector (31 downto 0);
-      address  : in  integer range 0 to 256;
+      address  : in  integer range 0 to 255;
       w_en     : in  std_logic;
       q        : out std_logic_vector (31 downto 0);
       reset    : in  std_logic;
       filename : in  string(1 to 8));
 end ram;
 architecture rtl of ram is
-  type mem is array(0 to 256) of std_logic_vector(31 downto 0);
+  type mem is array(0 to 255) of std_logic_vector(31 downto 0);
   signal ram_block : mem;
   signal bootload  : boolean := false;
 
 begin
 
-  ram_process : process (address, reset) is
+  ram_process : process (address, reset, data, bootload) is
     file data_file     : text open read_mode is filename;
     variable data_line : line;
     variable data_init : std_logic_vector(31 downto 0);
@@ -32,7 +32,7 @@ begin
     if reset = '0' then                 -- asynchronous reset (active low)
       q <= (others => '0');
       if(bootload = false) then
-        while (not(endfile(data_file)) and i < 256) loop  -- initialize memory with
+        while (not(endfile(data_file)) and i < 255) loop  -- initialize memory with
           readline(data_file, data_line);
           read(data_line, data_init);
           ram_block(i) <= std_logic_vector(data_init);

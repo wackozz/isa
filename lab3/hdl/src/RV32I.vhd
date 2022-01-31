@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-05
--- Last update: 2022-01-30
+-- Last update: 2022-01-31
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -34,8 +34,8 @@ entity RV32I is
     reset : in std_logic;
 
     -- ports to "fetch_stage_1"
-    instruction_mem_adr : out std_logic_vector(31 downto 0);
     instruction_fetch   : in  std_logic_vector(31 downto 0);
+    instruction_mem_adr : out std_logic_vector(31 downto 0);
 
     -- ports to "execute_stage_1"
     write_data_mem : out std_logic_vector(31 downto 0);
@@ -71,8 +71,10 @@ architecture str of RV32I is
   signal read_data1_execute : std_logic_vector(31 downto 0);
   signal read_data2_execute : std_logic_vector(31 downto 0);
   signal shamt_execute      : std_logic_vector(4 downto 0);
-  signal Rs1                : std_logic_vector(4 downto 0);
-  signal Rs2                : std_logic_vector(4 downto 0);
+  signal Rs1_execute        : std_logic_vector(4 downto 0);
+  signal Rs2_execute        : std_logic_vector(4 downto 0);
+  signal Rs1_decode         : std_logic_vector(4 downto 0);
+  signal Rs2_decode         : std_logic_vector(4 downto 0);
   signal immediate_execute  : std_logic_vector(31 downto 0);
 
   -- outputs of "execute_stage_1"
@@ -93,14 +95,16 @@ architecture str of RV32I is
   signal write_reg_decode  : std_logic_vector(4 downto 0);
 
   -- outputs of "RV32I_control_1"
-  signal ALUSrc    : std_logic;
-  signal PCSel     : std_logic;
-  signal ALUCtrl   : std_logic_vector(3 downto 0);
-  signal forward_A : std_logic_vector(1 downto 0);
-  signal forward_B : std_logic_vector(1 downto 0);
-  signal PCSrc     : std_logic;
-  signal RegWrite  : std_logic;
-  signal MemToReg  : std_logic_vector(1 downto 0);
+  signal PcWrite        : std_logic;
+  signal FetchPipeWrite : std_logic;
+  signal ALUSrc         : std_logic;
+  signal PCSel          : std_logic;
+  signal ALUCtrl        : std_logic_vector(3 downto 0);
+  signal forward_A      : std_logic_vector(1 downto 0);
+  signal forward_B      : std_logic_vector(1 downto 0);
+  signal PCSrc          : std_logic;
+  signal RegWrite       : std_logic;
+  signal MemToReg       : std_logic_vector(1 downto 0);
 
 
 begin  -- architecture str
@@ -115,11 +119,13 @@ begin  -- architecture str
       clock                => clock,
       reset                => reset,
       PCSrc                => PCSrc,
+      instruction_fetch    => instruction_fetch,
       target_address_fetch => target_address_fetch,
+      PcWrite              => PcWrite,
+      FetchPipeWrite       => FetchPipeWrite,
       instruction_mem_adr  => instruction_mem_adr,
       pc_decode            => pc_decode,
       next_pc_decode       => next_pc_decode,
-      instruction_fetch    => instruction_fetch,
       instruction_decode   => instruction_decode);
 
   -- instance "decode_stage_1"
@@ -140,8 +146,10 @@ begin  -- architecture str
       read_data1_execute => read_data1_execute,
       read_data2_execute => read_data2_execute,
       shamt_execute      => shamt_execute,
-      Rs1                => Rs1,
-      Rs2                => Rs2,
+      Rs1_execute        => Rs1_execute,
+      Rs2_execute        => Rs2_execute,
+      Rs1_decode         => Rs1_decode,
+      Rs2_decode         => Rs2_decode,
       immediate_execute  => immediate_execute);
 
   -- instance "execute_stage_1"
@@ -203,6 +211,11 @@ begin  -- architecture str
       clock              => clock,
       reset              => reset,
       instruction_decode => instruction_decode,
+      Rs1_decode         => Rs1_decode,
+      Rs2_decode         => Rs2_decode,
+      Rd_execute         => Rd_execute,
+      PcWrite            => PcWrite,
+      FetchPipeWrite     => FetchPipeWrite,
       ALUSrc             => ALUSrc,
       PCSel              => PCSel,
       alu_ctrl_execute   => alu_ctrl_execute,
@@ -210,15 +223,16 @@ begin  -- architecture str
       MemWrite           => MemWrite,
       MemRead            => MemRead,
       ALUCtrl            => ALUCtrl,
-      Rs1                => Rs1,
-      Rs2                => Rs2,
+      Rs1_execute        => Rs1_execute,
+      Rs2_execute        => Rs2_execute,
       Rd_mem             => Rd_mem,
       Rd_wb              => Rd_wb,
-      RegWrite           => RegWrite,
       forward_A          => forward_A,
       forward_B          => forward_B,
       PCSrc              => PCSrc,
+      RegWrite           => RegWrite,
       MemToReg           => MemToReg);
+
 
 end architecture str;
 

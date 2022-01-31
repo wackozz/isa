@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-26
+-- Last update: 2022-01-31
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -32,11 +32,13 @@ entity fetch_stage is
     clock                : in  std_logic;
     reset                : in  std_logic;
     PCSrc                : in  std_logic;
+    instruction_fetch    : in  std_logic_vector(31 downto 0);
     target_address_fetch : in  std_logic_vector(31 downto 0);
+    PcWrite              : in  std_logic;
+    FetchPipeWrite       : in  std_logic;
     instruction_mem_adr  : out std_logic_vector(31 downto 0);
     pc_decode            : out std_logic_vector(31 downto 0);
     next_pc_decode       : out std_logic_vector(31 downto 0);
-    instruction_fetch    : in  std_logic_vector(31 downto 0);
     instruction_decode   : out std_logic_vector(31 downto 0));
 end entity fetch_stage;
 
@@ -80,7 +82,7 @@ begin  -- architecture str
       D      => pc_in,
       clock  => clock,
       reset  => reset,
-      enable => '1',
+      enable => PcWrite,
       Q      => pc_out_int);
 
   -- instance "PCinputmux"
@@ -104,14 +106,16 @@ begin  -- architecture str
       pc_decode          <= (others => '0');
       next_pc_decode     <= (others => '0');
     elsif clock'event and clock = '1' then  -- rising clock edge
-      instruction_decode <= instruction_fetch;
-      pc_decode          <= pc_out_int;
-      next_pc_decode     <= next_pc;
+      if FetchPipeWrite = '1' then
+        instruction_decode <= instruction_fetch;
+        pc_decode          <= pc_out_int;
+        next_pc_decode     <= next_pc;
+      end if;
     end if;
-  end process pipe;
+    end process pipe;
 
-  next_pc <= std_logic_vector(unsigned(pc_out_int) + 4);
+      next_pc <= std_logic_vector(unsigned(pc_out_int) + 4);
 
-end architecture str;
+    end architecture str;
 
 -------------------------------------------------------------------------------

@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-30
+-- Last update: 2022-01-31
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -43,8 +43,10 @@ entity decode_stage is
     read_data1_execute : out std_logic_vector(31 downto 0);
     read_data2_execute : out std_logic_vector(31 downto 0);
     shamt_execute      : out std_logic_vector(4 downto 0);
-    Rs1                : out std_logic_vector(4 downto 0);
-    Rs2                : out std_logic_vector(4 downto 0);
+    Rs1_execute        : out std_logic_vector(4 downto 0);
+    Rs2_execute        : out std_logic_vector(4 downto 0);
+    Rs1_decode         : out std_logic_vector(4 downto 0);
+    Rs2_decode         : out std_logic_vector(4 downto 0);
     immediate_execute  : out std_logic_vector(31 downto 0));
 
 end entity decode_stage;
@@ -78,8 +80,8 @@ architecture str of decode_stage is
   signal rd_int                         : std_logic_vector(4 downto 0);
   signal shamt_int                      : std_logic_vector(4 downto 0);
 
-  signal Rs1_decode : std_logic_vector(4 downto 0);
-  signal Rs2_decode : std_logic_vector(4 downto 0);
+  signal Rs1_Decode_int : std_logic_vector(4 downto 0);
+  signal Rs2_decode_int : std_logic_vector(4 downto 0);
 
 begin  -- architecture str
 
@@ -90,8 +92,8 @@ begin  -- architecture str
   -- instance "register_file"
   register_file : reg_file
     port map (
-      read_reg1  => Rs1_decode,
-      read_reg2  => Rs2_decode,
+      read_reg1  => Rs1_Decode_int,
+      read_reg2  => Rs2_decode_int,
       write_reg  => write_reg_decode,
       clock      => clock,
       reset      => reset,
@@ -110,38 +112,44 @@ begin  -- architecture str
   pipe : process (clock, reset) is
   begin  -- process pipe
     if reset = '0' then                 -- asynchronous reset (active low)
-      immediate_execute  <= (others => '0');
-      read_data1_execute <= (others => '0');
-      read_data2_execute <= (others => '0');
-      pc_execute         <= (others => '0');
-      alu_ctrl_execute   <= (others => '0');
-      rd_execute         <= (others => '0');
-      shamt_execute      <= (others => '0');
-      next_pc_execute    <= (others => '0');
-      Rs1                <= (others => '0');
-      Rs2                <= (others => '0');
+      immediate_execute <= (others => '0');
+      --read_data1_execute <= (others => '0');
+      --read_data2_execute <= (others => '0');
+      pc_execute        <= (others => '0');
+      alu_ctrl_execute  <= (others => '0');
+      rd_execute        <= (others => '0');
+      shamt_execute     <= (others => '0');
+      next_pc_execute   <= (others => '0');
+      Rs1_execute       <= (others => '0');
+      Rs2_execute       <= (others => '0');
 
     elsif clock'event and clock = '1' then  -- rising clock edge
-      pc_execute         <= pc_decode;
-      immediate_execute  <= immediate_int;
-      read_data1_execute <= read_data1_int;
-      read_data2_execute <= read_data2_int;
-      alu_ctrl_execute   <= alu_ctrl_int;
-      rd_execute         <= rd_int;
-      shamt_execute      <= shamt_int;
-      next_pc_execute    <= next_pc_decode;
-      Rs1                <= Rs1_decode;
-      Rs2                <= Rs2_decode;
+      pc_execute        <= pc_decode;
+      immediate_execute <= immediate_int;
+      -- read_data1_execute <= read_data1_int;
+      -- read_data2_execute <= read_data2_int;
+      alu_ctrl_execute  <= alu_ctrl_int;
+      rd_execute        <= rd_int;
+      shamt_execute     <= shamt_int;
+      next_pc_execute   <= next_pc_decode;
+      Rs1_execute       <= Rs1_Decode_int;
+      Rs2_execute       <= Rs2_decode_int;
     end if;
   end process pipe;
+
+  read_data1_execute <= read_data1_int;
+  read_data2_execute <= read_data2_int;
 
   -- instruction association
   alu_ctrl_int <= instruction_decode(30)&instruction_decode(14 downto 12);
   rd_int       <= instruction_decode(11 downto 7);
   shamt_int    <= instruction_decode(24 downto 20);
 
-  Rs1_decode <= instruction_decode(19 downto 15);
-  Rs2_decode <= instruction_decode(24 downto 20);
+  Rs1_Decode_int <= instruction_decode(19 downto 15);
+  Rs2_decode_int <= instruction_decode(24 downto 20);
+
+  Rs1_decode <= Rs1_decode_int;
+  Rs2_decode <= Rs2_decode_int;
 end architecture str;
 
 -------------------------------------------------------------------------------

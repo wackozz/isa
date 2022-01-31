@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-01-30
+-- Last update: 2022-01-31
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -39,6 +39,7 @@ entity execute_stage_control is
     MemWrite_execute : in  std_logic;
     RegWrite_execute : in  std_logic;
     Zero_execute     : in  std_logic;
+    opcode_execute   : in  std_logic_vector(6 downto 0);
     Zero             : out std_logic;
     Branch           : out std_logic;
     Jump             : out std_logic;
@@ -49,13 +50,13 @@ entity execute_stage_control is
     ALUCtrl          : out std_logic_vector(3 downto 0);
 
     -- ports to "forwarding_unit_1"
-    Rs1       : in  std_logic_vector(4 downto 0);
-    Rs2       : in  std_logic_vector(4 downto 0);
-    Rd_mem    : in  std_logic_vector(4 downto 0);
-    Rd_wb     : in  std_logic_vector(4 downto 0);
-    RegWrite  : in  std_logic;
-    forward_A : out std_logic_vector(1 downto 0);
-    forward_B : out std_logic_vector(1 downto 0));
+    Rs1_execute : in  std_logic_vector(4 downto 0);
+    Rs2_execute : in  std_logic_vector(4 downto 0);
+    Rd_mem      : in  std_logic_vector(4 downto 0);
+    Rd_wb       : in  std_logic_vector(4 downto 0);
+    RegWrite    : in  std_logic;
+    forward_A   : out std_logic_vector(1 downto 0);
+    forward_B   : out std_logic_vector(1 downto 0));
 
 end entity execute_stage_control;
 
@@ -113,14 +114,15 @@ begin  -- architecture str
   -- instance "forwarding_unit_1"
   forwarding_unit_1 : entity work.forwarding_unit
     port map (
-      Rs1          => Rs1,
-      Rs2          => Rs2,
-      Rd_mem       => Rd_mem,
-      Rd_wb        => Rd_wb,
-      RegWrite_mem => RegWrite_mem_int,
-      RegWrite     => RegWrite,
-      forward_A    => forward_A,
-      forward_B    => forward_B);
+      Rs1_execute    => Rs1_execute,
+      Rs2_execute    => Rs2_execute,
+      Rd_mem         => Rd_mem,
+      Rd_wb          => Rd_wb,
+      RegWrite_mem   => RegWrite_mem_int,
+      opcode_execute => opcode_execute,
+      RegWrite       => RegWrite,
+      forward_A      => forward_A,
+      forward_B      => forward_B);
 
   RegWrite_mem <= RegWrite_mem_int;
 

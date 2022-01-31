@@ -43,6 +43,9 @@ architecture arch of reg_file is
   signal out_dec_s : std_logic_vector (31 downto 0);
   signal en_reg    : std_logic_vector (31 downto 0);
 
+  signal sel_delay1 : std_logic_vector(4 downto 0);
+  signal sel_delay2 : std_logic_vector(4 downto 0);
+
 begin
 
   gen_and :
@@ -58,8 +61,24 @@ begin
 
   dec : dec_5to32 port map (write_reg, out_dec_s);
 
-  mux1 : mux_32to1 port map (q_array, read_reg1, read_data1);
-  mux2 : mux_32to1 port map (q_array, read_reg2, read_data2);
+  -- mux1 : mux_32to1 port map (q_array, read_reg1, read_data1);
+  -- mux2 : mux_32to1 port map (q_array, read_reg2, read_data2);
+
+  -- internal pipelining
+
+  mux1 : mux_32to1 port map (q_array, sel_delay1, read_data1);
+  mux2 : mux_32to1 port map (q_array, sel_delay2, read_data2);
+
+  mux_del_sel : process (clock, reset) is
+  begin  -- process mux_del_sel
+    if reset = '0' then                     -- asynchronous reset (active low)
+      sel_delay1 <= (others => '0');
+      sel_delay2 <= (others => '0');
+    elsif clock'event and clock = '1' then  -- rising clock edge
+      sel_delay1 <= read_reg1;
+      sel_delay2 <= read_reg2;
+    end if;
+  end process mux_del_sel;
 
   -- instance "x0"
   x0 : entity work.reg
