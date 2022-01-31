@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
--- Title      : barel_shifter
+-- Title      : barrel_shifter
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : barrel_shifter.vhd
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-22
--- Last update: 2022-01-22
+-- Last update: 2022-01-26
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------

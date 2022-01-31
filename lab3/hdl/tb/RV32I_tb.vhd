@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-01-25
+-- Last update: 2022-02-01
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -36,11 +36,15 @@ end entity RV32I_tb;
 
 architecture arch of RV32I_tb is
   type instr is (LUI, AUIPC, JAL, BEQ, LW, SW, ADD, ADDI, ANDI, SRAI, SLT, EXOR, UNDEFINED, NOP);
-  signal current_instruction : instr;
-  signal opcode              : std_logic_vector(6 downto 0);
-  signal funct3              : std_logic_vector(2 downto 0);
-  signal rs1, rs2, rd        : std_logic_vector(4 downto 0);
-  signal immediate           : std_logic_vector(31 downto 0);
+  signal fetch, decode, execute, mem, writeback : instr;
+  signal opcode                                 : std_logic_vector(6 downto 0);
+  signal funct3                                 : std_logic_vector(2 downto 0);
+  signal rs1_fetch, rs2_fetch, rd_fetch         : std_logic_vector(4 downto 0);
+  signal rs1_decode, rs2_decode, rd_decode      : std_logic_vector(4 downto 0);
+  signal rs1_execute, rs2_execute, rd_execute   : std_logic_vector(4 downto 0);
+  signal rs1_mem, rs2_mem, rd_mem               : std_logic_vector(4 downto 0);
+  signal rs1_wb, rs2_wb, rd_wb                  : std_logic_vector(4 downto 0);
+  signal immediate                              : std_logic_vector(31 downto 0);
 
   signal clock               : std_logic        := '0';
   signal reset               : std_logic;
@@ -82,24 +86,64 @@ begin  -- architecture arch
 
   clock <= not clock after 10 ns;
 
-  current_instruction <= LUI when opcode = "0110111" else
-                         AUIPC when opcode = "0010111" else
-                         JAL   when opcode = "1101111" else
-                         BEQ   when opcode = "1100011" else
-                         LW    when opcode = "0000011" else
-                         SW    when opcode = "0100011" else
-                         ADDI  when opcode = "0010011" and funct3 = "000" and instruction_fetch /= NOP_instruction else
-                         ANDI  when opcode = "0010011" and funct3 = "111" else
-                         SRAI  when opcode = "0010011" and funct3 = "101" else
-                         ADD   when opcode = "0110011" and funct3 = "000" else
-                         SLT   when opcode = "0110011" and funct3 = "010" else
-                         EXOR  when opcode = "0110011" and funct3 = "100" else
-                         NOP   when instruction_fetch = NOP_instruction else
-                         UNDEFINED;
+  fetch <= LUI when opcode = "0110111" else
+           AUIPC when opcode = "0010111" else
+           JAL   when opcode = "1101111" else
+           BEQ   when opcode = "1100011" else
+           LW    when opcode = "0000011" else
+           SW    when opcode = "0100011" else
+           ADDI  when opcode = "0010011" and funct3 = "000" and instruction_fetch /= NOP_instruction else
+           ANDI  when opcode = "0010011" and funct3 = "111" else
+           SRAI  when opcode = "0010011" and funct3 = "101" else
+           ADD   when opcode = "0110011" and funct3 = "000" else
+           SLT   when opcode = "0110011" and funct3 = "010" else
+           EXOR  when opcode = "0110011" and funct3 = "100" else
+           NOP   when instruction_fetch = NOP_instruction else
+           UNDEFINED;
 
-  rs1 <= "00000" when current_instruction = LUI or current_instruction = AUIPC or current_instruction = JAL                                                                                         else instruction_fetch(19 downto 15);
-  rs2 <= "00000" when current_instruction = LUI or current_instruction = AUIPC or current_instruction = JAL or current_instruction = LW or current_instruction = ADDI or current_instruction = ANDI else instruction_fetch(24 downto 20);
-  rd  <= "00000" when current_instruction = BEQ or current_instruction = SW                                                                                                                         else instruction_fetch(11 downto 7);
+  decode_phase : process (clock, reset) is
+  begin  -- process decode_phase
+    if reset = '0' then                 -- asynchronous reset (active low)
+      decode      <= UNDEFINED;
+      execute     <= UNDEFINED;
+      mem         <= UNDEFINED;
+      writeback   <= UNDEFINED;
+      rs1_decode  <= "00000";
+      rs1_execute <= "00000";
+      rs1_mem     <= "00000";
+      rs1_wb      <= "00000";
+      rs2_decode  <= "00000";
+      rs2_execute <= "00000";
+      rs2_mem     <= "00000";
+      rs2_wb      <= "00000";
+      rd_decode   <= "00000";
+      rd_execute  <= "00000";
+      rd_mem      <= "00000";
+      rd_wb       <= "00000";
+
+    elsif clock'event and clock = '1' then  -- rising clock edge
+      decode      <= fetch;
+      execute     <= decode;
+      mem         <= execute;
+      writeback   <= mem;
+      rs1_decode  <= rs1_fetch;
+      rs1_execute <= rs1_decode;
+      rs1_mem     <= rs1_execute;
+      rs1_wb      <= rs1_mem;
+      rs2_decode  <= rs2_fetch;
+      rs2_execute <= rs2_decode;
+      rs2_mem     <= rs2_execute;
+      rs2_wb      <= rs2_mem;
+      rd_decode   <= rd_fetch;
+      rd_execute  <= rd_decode;
+      rd_mem      <= rd_execute;
+      rd_wb       <= rd_mem;
+    end if;
+  end process decode_phase;
+
+  rs1_fetch <= "00000" when fetch = LUI or fetch = AUIPC or fetch = JAL                                               else instruction_fetch(19 downto 15);
+  rs2_fetch <= "00000" when fetch = LUI or fetch = AUIPC or fetch = JAL or fetch = LW or fetch = ADDI or fetch = ANDI else instruction_fetch(24 downto 20);
+  rd_fetch  <= "00000" when fetch = BEQ or fetch = SW                                                                 else instruction_fetch(11 downto 7);
 
 
   -- waveform generation
