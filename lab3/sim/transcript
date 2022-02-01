@@ -33,7 +33,7 @@
 # Compile of wb_stage.vhd was successful.
 # 30 compiles, 0 failed with no errors.
 # vsim work.RV32I_tb -t ns 
-# Start time: 15:35:43 on Feb 01,2022
+# Start time: 19:33:09 on Feb 01,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -73,340 +73,6 @@
 #    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Failure: address not aligned to word boundary
-#    Time: 10 ns  Iteration: 3  Process: /rv32i_tb/warning_address File: /home/stefano/Desktop/isa_lab3/tb/RV32I_tb.vhd
-# Break in Process warning_address at /home/stefano/Desktop/isa_lab3/tb/RV32I_tb.vhd line 199
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-step
-run
-# Break in Process warning_address at /home/stefano/Desktop/isa_lab3/tb/RV32I_tb.vhd line 194
-step
-step
-step
-step
-step
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-step
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-run
-# Break in Process warning_address at /home/stefano/Desktop/isa_lab3/tb/RV32I_tb.vhd line 194
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Failure: address not aligned to word boundary
-#    Time: 50 ns  Iteration: 3  Process: /rv32i_tb/warning_address File: /home/stefano/Desktop/isa_lab3/tb/RV32I_tb.vhd
-# Break in Process warning_address at /home/stefano/Desktop/isa_lab3/tb/RV32I_tb.vhd line 197
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Failure: address not aligned to word boundary
-#    Time: 170 ns  Iteration: 3  Process: /rv32i_tb/warning_address File: /home/stefano/Desktop/isa_lab3/tb/RV32I_tb.vhd
-# Break in Process warning_address at /home/stefano/Desktop/isa_lab3/tb/RV32I_tb.vhd line 197
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
 # Compile of RV32I_tb.vhd was successful.
@@ -479,2135 +145,13 @@ run
 #    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd failed with 2 errors.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 1 failed with 2 errors.
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-add wave -position insertpoint  \
-sim:/rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1/cnt_jump
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-add wave -position insertpoint  \
-sim:/rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1/opcode_decode
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd failed with 1 errors.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 1 failed with 1 error.
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd failed with 1 errors.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 1 failed with 1 error.
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-add wave -position insertpoint  \
-sim:/rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1/opcode_fetch
-add wave -position insertpoint  \
-sim:/rv32i_tb/fetch
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-add wave -position insertpoint  \
-sim:/rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1/reset
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-add wave -position insertpoint  \
-sim:/rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1/clock
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 1  Instance: /rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-# Warning in wave window restart: (vish-4014) No objects found matching '/rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1/cnt_jump'. 
 add wave -position insertpoint  \
 sim:/rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1/StallJmp \
 sim:/rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1/StallJmpDel1 \
-sim:/rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1/StallJmpDel2
-restart
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
+sim:/rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1/StallJmpDel2 \
+sim:/rv32i_tb/processor/RV32I_control_1/decode_stage_control_1/hazard_unit_1/StallJmpDel3
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd failed with 2 errors.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 1 failed with 2 errors.
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd failed with 2 errors.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 1 failed with 2 errors.
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Break in Process stall_jmp_mux at /home/stefano/Desktop/isa_lab3/src/hazard_unit.vhd line 90
-run
-# Break in Process stall_proc_jmp at /home/stefano/Desktop/isa_lab3/src/hazard_unit.vhd line 79
-run
-# Break in Process stall_proc_jmp at /home/stefano/Desktop/isa_lab3/src/hazard_unit.vhd line 79
-run
-# Break in Process stall_jmp_mux at /home/stefano/Desktop/isa_lab3/src/hazard_unit.vhd line 90
-run
-# Break in Process stall_proc_jmp at /home/stefano/Desktop/isa_lab3/src/hazard_unit.vhd line 79
-run 85 ns
-run
-# Break in Process stall_proc_jmp at /home/stefano/Desktop/isa_lab3/src/hazard_unit.vhd line 79
-step
-step
-step
-step
-step
-step
-run
-# Break in Process stall_jmp_mux at /home/stefano/Desktop/isa_lab3/src/hazard_unit.vhd line 90
-step
-step
-run
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# Compile of RV32I_tb.vhd was successful.
-# Compile of add_sub.vhd was successful.
-# Compile of alu.vhd was successful.
-# Compile of alu_control.vhd was successful.
-# Compile of barrel_shifter.vhd was successful.
-# Compile of control.vhd was successful.
-# Compile of dec_5to32.vhd was successful.
-# Compile of decode_stage.vhd was successful.
-# Compile of decode_stage_control.vhd was successful.
-# Compile of execute_stage.vhd was successful.
-# Compile of execute_stage_control.vhd was successful.
-# Compile of fetch_stage.vhd was successful.
-# Compile of forwarding_unit.vhd was successful.
-# Compile of hazard_unit.vhd was successful.
-# Compile of immediate_generator.vhd was successful.
-# Compile of mem_stage.vhd was successful.
-# Compile of mem_stage_control.vhd was successful.
-# Compile of mux_2to1.vhd was successful.
-# Compile of mux_2to1_bit.vhd was successful.
-# Compile of mux_2to1_stall.vhd was successful.
-# Compile of mux_4to1.vhd was successful.
-# Compile of mux_32to1.vhd was successful.
-# Compile of param_pkg.vhd was successful.
-# Compile of ram.vhd was successful with warnings.
-# Compile of reg.vhd was successful.
-# Compile of reg_file.vhd was successful.
-# Compile of RV32I.vhd was successful.
-# Compile of RV32I_control.vhd was successful.
-# Compile of unary_AND.vhd was successful.
-# Compile of wb_stage.vhd was successful.
-# 30 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.unary_and(str)
-# Loading work.mux_4to1(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
 run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
@@ -2616,7 +160,570 @@ run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
 add wave -position insertpoint  \
-sim:/rv32i_tb/processor/fetch_stage_1/PC/Q
+sim:/rv32i_tb/fetch
+# Compile of RV32I_tb.vhd was successful.
+# Compile of add_sub.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of alu_control.vhd was successful.
+# Compile of barrel_shifter.vhd was successful.
+# Compile of control.vhd was successful.
+# Compile of dec_5to32.vhd was successful.
+# Compile of decode_stage.vhd was successful.
+# Compile of decode_stage_control.vhd was successful.
+# Compile of execute_stage.vhd was successful.
+# Compile of execute_stage_control.vhd was successful.
+# Compile of fetch_stage.vhd was successful.
+# Compile of forwarding_unit.vhd was successful.
+# Compile of hazard_unit.vhd was successful.
+# Compile of immediate_generator.vhd was successful.
+# Compile of mem_stage.vhd was successful.
+# Compile of mem_stage_control.vhd was successful.
+# Compile of mux_2to1.vhd was successful.
+# Compile of mux_2to1_bit.vhd was successful.
+# Compile of mux_2to1_stall.vhd was successful.
+# Compile of mux_4to1.vhd was successful.
+# Compile of mux_32to1.vhd was successful.
+# Compile of param_pkg.vhd was successful.
+# Compile of ram.vhd was successful with warnings.
+# Compile of reg.vhd was successful.
+# Compile of reg_file.vhd was successful.
+# Compile of RV32I.vhd was successful.
+# Compile of RV32I_control.vhd was successful.
+# Compile of unary_AND.vhd was successful.
+# Compile of wb_stage.vhd was successful.
+# 30 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.rv32i_tb(arch)
+# Loading work.rv32i(str)
+# Loading work.fetch_stage(str)
+# Loading work.reg(arch)
+# Loading work.mux_2to1(arch)
+# Loading work.decode_stage(str)
+# Loading work.param_pkg
+# Loading work.reg_file(arch)
+# Loading work.dec_5to32(arch)
+# Loading work.mux_32to1(arch)
+# Loading work.immediate_generator(str)
+# Loading work.execute_stage(str)
+# Loading work.alu(str)
+# Loading work.add_sub(str)
+# Loading work.barrel_shifter(str)
+# Loading work.mux_2to1_bit(str)
+# Loading work.unary_and(str)
+# Loading work.mux_4to1(str)
+# Loading work.mem_stage(str)
+# Loading work.wb_stage(str)
+# Loading work.rv32i_control(str)
+# Loading work.decode_stage_control(str)
+# Loading work.control(str)
+# Loading work.hazard_unit(str)
+# Loading work.mux_2to1_stall(str)
+# Loading work.execute_stage_control(str)
+# Loading work.alu_control(str)
+# Loading work.forwarding_unit(str)
+# Loading work.mem_stage_control(str)
+# Loading work.ram(rtl)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# Compile of RV32I_tb.vhd was successful.
+# Compile of add_sub.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of alu_control.vhd was successful.
+# Compile of barrel_shifter.vhd was successful.
+# Compile of control.vhd was successful.
+# Compile of dec_5to32.vhd was successful.
+# Compile of decode_stage.vhd was successful.
+# Compile of decode_stage_control.vhd was successful.
+# Compile of execute_stage.vhd was successful.
+# Compile of execute_stage_control.vhd was successful.
+# Compile of fetch_stage.vhd was successful.
+# Compile of forwarding_unit.vhd was successful.
+# Compile of hazard_unit.vhd was successful.
+# Compile of immediate_generator.vhd was successful.
+# Compile of mem_stage.vhd was successful.
+# Compile of mem_stage_control.vhd was successful.
+# Compile of mux_2to1.vhd was successful.
+# Compile of mux_2to1_bit.vhd was successful.
+# Compile of mux_2to1_stall.vhd was successful.
+# Compile of mux_4to1.vhd was successful.
+# Compile of mux_32to1.vhd was successful.
+# Compile of param_pkg.vhd was successful.
+# Compile of ram.vhd was successful with warnings.
+# Compile of reg.vhd was successful.
+# Compile of reg_file.vhd was successful.
+# Compile of RV32I.vhd was successful.
+# Compile of RV32I_control.vhd was successful.
+# Compile of unary_AND.vhd was successful.
+# Compile of wb_stage.vhd was successful.
+# 30 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.rv32i_tb(arch)
+# Loading work.rv32i(str)
+# Loading work.fetch_stage(str)
+# Loading work.reg(arch)
+# Loading work.mux_2to1(arch)
+# Loading work.decode_stage(str)
+# Loading work.param_pkg
+# Loading work.reg_file(arch)
+# Loading work.dec_5to32(arch)
+# Loading work.mux_32to1(arch)
+# Loading work.immediate_generator(str)
+# Loading work.execute_stage(str)
+# Loading work.alu(str)
+# Loading work.add_sub(str)
+# Loading work.barrel_shifter(str)
+# Loading work.mux_2to1_bit(str)
+# Loading work.unary_and(str)
+# Loading work.mux_4to1(str)
+# Loading work.mem_stage(str)
+# Loading work.wb_stage(str)
+# Loading work.rv32i_control(str)
+# Loading work.decode_stage_control(str)
+# Loading work.control(str)
+# Loading work.hazard_unit(str)
+# Loading work.mux_2to1_stall(str)
+# Loading work.execute_stage_control(str)
+# Loading work.alu_control(str)
+# Loading work.forwarding_unit(str)
+# Loading work.mem_stage_control(str)
+# Loading work.ram(rtl)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+add dataflow  \
+sim:/rv32i_tb/clock
+add wave -position insertpoint  \
+sim:/rv32i_tb/clock
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Compile of RV32I_tb.vhd was successful.
+# Compile of add_sub.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of alu_control.vhd was successful.
+# Compile of barrel_shifter.vhd was successful.
+# Compile of control.vhd was successful.
+# Compile of dec_5to32.vhd was successful.
+# Compile of decode_stage.vhd was successful.
+# Compile of decode_stage_control.vhd was successful.
+# Compile of execute_stage.vhd was successful.
+# Compile of execute_stage_control.vhd was successful.
+# Compile of fetch_stage.vhd was successful.
+# Compile of forwarding_unit.vhd was successful.
+# Compile of hazard_unit.vhd was successful.
+# Compile of immediate_generator.vhd was successful.
+# Compile of mem_stage.vhd was successful.
+# Compile of mem_stage_control.vhd was successful.
+# Compile of mux_2to1.vhd was successful.
+# Compile of mux_2to1_bit.vhd was successful.
+# Compile of mux_2to1_stall.vhd was successful.
+# Compile of mux_4to1.vhd was successful.
+# Compile of mux_32to1.vhd was successful.
+# Compile of param_pkg.vhd was successful.
+# Compile of ram.vhd was successful with warnings.
+# Compile of reg.vhd was successful.
+# Compile of reg_file.vhd was successful.
+# Compile of RV32I.vhd was successful.
+# Compile of RV32I_control.vhd was successful.
+# Compile of unary_AND.vhd was successful.
+# Compile of wb_stage.vhd was successful.
+# 30 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.rv32i_tb(arch)
+# Loading work.rv32i(str)
+# Loading work.fetch_stage(str)
+# Loading work.reg(arch)
+# Loading work.mux_2to1(arch)
+# Loading work.decode_stage(str)
+# Loading work.param_pkg
+# Loading work.reg_file(arch)
+# Loading work.dec_5to32(arch)
+# Loading work.mux_32to1(arch)
+# Loading work.immediate_generator(str)
+# Loading work.execute_stage(str)
+# Loading work.alu(str)
+# Loading work.add_sub(str)
+# Loading work.barrel_shifter(str)
+# Loading work.mux_2to1_bit(str)
+# Loading work.unary_and(str)
+# Loading work.mux_4to1(str)
+# Loading work.mem_stage(str)
+# Loading work.wb_stage(str)
+# Loading work.rv32i_control(str)
+# Loading work.decode_stage_control(str)
+# Loading work.control(str)
+# Loading work.hazard_unit(str)
+# Loading work.mux_2to1_stall(str)
+# Loading work.execute_stage_control(str)
+# Loading work.alu_control(str)
+# Loading work.forwarding_unit(str)
+# Loading work.mem_stage_control(str)
+# Loading work.ram(rtl)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# Compile of RV32I_tb.vhd was successful.
+# Compile of add_sub.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of alu_control.vhd was successful.
+# Compile of barrel_shifter.vhd was successful.
+# Compile of control.vhd was successful.
+# Compile of dec_5to32.vhd was successful.
+# Compile of decode_stage.vhd was successful.
+# Compile of decode_stage_control.vhd was successful.
+# Compile of execute_stage.vhd was successful.
+# Compile of execute_stage_control.vhd was successful.
+# Compile of fetch_stage.vhd was successful.
+# Compile of forwarding_unit.vhd was successful.
+# Compile of hazard_unit.vhd was successful.
+# Compile of immediate_generator.vhd was successful.
+# Compile of mem_stage.vhd was successful.
+# Compile of mem_stage_control.vhd was successful.
+# Compile of mux_2to1.vhd was successful.
+# Compile of mux_2to1_bit.vhd was successful.
+# Compile of mux_2to1_stall.vhd was successful.
+# Compile of mux_4to1.vhd was successful.
+# Compile of mux_32to1.vhd was successful.
+# Compile of param_pkg.vhd was successful.
+# Compile of ram.vhd was successful with warnings.
+# Compile of reg.vhd was successful.
+# Compile of reg_file.vhd was successful.
+# Compile of RV32I.vhd was successful.
+# Compile of RV32I_control.vhd was successful.
+# Compile of unary_AND.vhd was successful.
+# Compile of wb_stage.vhd was successful.
+# 30 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.rv32i_tb(arch)
+# Loading work.rv32i(str)
+# Loading work.fetch_stage(str)
+# Loading work.reg(arch)
+# Loading work.mux_2to1(arch)
+# Loading work.decode_stage(str)
+# Loading work.param_pkg
+# Loading work.reg_file(arch)
+# Loading work.dec_5to32(arch)
+# Loading work.mux_32to1(arch)
+# Loading work.immediate_generator(str)
+# Loading work.execute_stage(str)
+# Loading work.alu(str)
+# Loading work.add_sub(str)
+# Loading work.barrel_shifter(str)
+# Loading work.mux_2to1_bit(str)
+# Loading work.unary_and(str)
+# Loading work.mux_4to1(str)
+# Loading work.mem_stage(str)
+# Loading work.wb_stage(str)
+# Loading work.rv32i_control(str)
+# Loading work.decode_stage_control(str)
+# Loading work.control(str)
+# Loading work.hazard_unit(str)
+# Loading work.mux_2to1_stall(str)
+# Loading work.execute_stage_control(str)
+# Loading work.alu_control(str)
+# Loading work.forwarding_unit(str)
+# Loading work.mem_stage_control(str)
+# Loading work.ram(rtl)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# Compile of RV32I_tb.vhd was successful.
+# Compile of add_sub.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of alu_control.vhd was successful.
+# Compile of barrel_shifter.vhd was successful.
+# Compile of control.vhd was successful.
+# Compile of dec_5to32.vhd was successful.
+# Compile of decode_stage.vhd was successful.
+# Compile of decode_stage_control.vhd was successful.
+# Compile of execute_stage.vhd was successful.
+# Compile of execute_stage_control.vhd was successful.
+# Compile of fetch_stage.vhd was successful.
+# Compile of forwarding_unit.vhd was successful.
+# Compile of hazard_unit.vhd was successful.
+# Compile of immediate_generator.vhd was successful.
+# Compile of mem_stage.vhd was successful.
+# Compile of mem_stage_control.vhd was successful.
+# Compile of mux_2to1.vhd was successful.
+# Compile of mux_2to1_bit.vhd was successful.
+# Compile of mux_2to1_stall.vhd was successful.
+# Compile of mux_4to1.vhd was successful.
+# Compile of mux_32to1.vhd was successful.
+# Compile of param_pkg.vhd was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.rv32i_tb(arch)
+# Loading work.fetch_stage(str)
+# Loading work.mux_2to1(arch)
+# Loading work.decode_stage(str)
+# Loading work.param_pkg
+# Loading work.reg_file(arch)
+# Loading work.dec_5to32(arch)
+# Loading work.mux_32to1(arch)
+# Loading work.immediate_generator(str)
+# Loading work.execute_stage(str)
+# Loading work.alu(str)
+# Loading work.add_sub(str)
+# Loading work.barrel_shifter(str)
+# Loading work.mux_2to1_bit(str)
+# Loading work.mux_4to1(str)
+# Loading work.mem_stage(str)
+# Loading work.decode_stage_control(str)
+# Loading work.control(str)
+# Loading work.hazard_unit(str)
+# Loading work.mux_2to1_stall(str)
+# Loading work.execute_stage_control(str)
+# Loading work.alu_control(str)
+# Loading work.forwarding_unit(str)
+# Loading work.mem_stage_control(str)
+# Loading work.ram(rtl)
+# Compile of ram.vhd was successful with warnings.
+# Compile of reg.vhd was successful.
+# Compile of reg_file.vhd was successful.
+# Compile of RV32I.vhd was successful.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# Compile of RV32I_control.vhd was successful.
+# Compile of unary_AND.vhd was successful.
+# Compile of wb_stage.vhd was successful.
+# 30 compiles, 0 failed with no errors.
+# Compile of RV32I_tb.vhd was successful.
+# Compile of add_sub.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of alu_control.vhd was successful.
+# Compile of barrel_shifter.vhd was successful.
+# Compile of control.vhd was successful.
+# Compile of dec_5to32.vhd was successful.
+# Compile of decode_stage.vhd was successful.
+# Compile of decode_stage_control.vhd was successful.
+# Compile of execute_stage.vhd was successful.
+# Compile of execute_stage_control.vhd was successful.
+# Compile of fetch_stage.vhd was successful.
+# Compile of forwarding_unit.vhd was successful.
+# Compile of hazard_unit.vhd was successful.
+# Compile of immediate_generator.vhd was successful.
+# Compile of mem_stage.vhd was successful.
+# Compile of mem_stage_control.vhd was successful.
+# Compile of mux_2to1.vhd was successful.
+# Compile of mux_2to1_bit.vhd was successful.
+# Compile of mux_2to1_stall.vhd was successful.
+# Compile of mux_4to1.vhd was successful.
+# Compile of mux_32to1.vhd was successful.
+# Compile of param_pkg.vhd was successful.
+# Compile of ram.vhd was successful with warnings.
+# Compile of reg.vhd was successful.
+# Compile of reg_file.vhd was successful.
+# Compile of RV32I.vhd was successful.
+# Compile of RV32I_control.vhd was successful.
+# Compile of unary_AND.vhd was successful.
+# Compile of wb_stage.vhd was successful.
+# 30 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.rv32i_tb(arch)
+# Loading work.rv32i(str)
+# Loading work.fetch_stage(str)
+# Loading work.reg(arch)
+# Loading work.mux_2to1(arch)
+# Loading work.decode_stage(str)
+# Loading work.param_pkg
+# Loading work.reg_file(arch)
+# Loading work.dec_5to32(arch)
+# Loading work.mux_32to1(arch)
+# Loading work.immediate_generator(str)
+# Loading work.execute_stage(str)
+# Loading work.alu(str)
+# Loading work.add_sub(str)
+# Loading work.barrel_shifter(str)
+# Loading work.mux_2to1_bit(str)
+# Loading work.unary_and(str)
+# Loading work.mux_4to1(str)
+# Loading work.mem_stage(str)
+# Loading work.wb_stage(str)
+# Loading work.rv32i_control(str)
+# Loading work.decode_stage_control(str)
+# Loading work.control(str)
+# Loading work.hazard_unit(str)
+# Loading work.mux_2to1_stall(str)
+# Loading work.execute_stage_control(str)
+# Loading work.alu_control(str)
+# Loading work.forwarding_unit(str)
+# Loading work.mem_stage_control(str)
+# Loading work.ram(rtl)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# Compile of RV32I_tb.vhd was successful.
+# Compile of add_sub.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of alu_control.vhd was successful.
+# Compile of barrel_shifter.vhd was successful.
+# Compile of control.vhd was successful.
+# Compile of dec_5to32.vhd was successful.
+# Compile of decode_stage.vhd was successful.
+# Compile of decode_stage_control.vhd was successful.
+# Compile of execute_stage.vhd was successful.
+# Compile of execute_stage_control.vhd was successful.
+# Compile of fetch_stage.vhd was successful.
+# Compile of forwarding_unit.vhd was successful.
+# Compile of hazard_unit.vhd was successful.
+# Compile of immediate_generator.vhd was successful.
+# Compile of mem_stage.vhd was successful.
+# Compile of mem_stage_control.vhd was successful.
+# Compile of mux_2to1.vhd was successful.
+# Compile of mux_2to1_bit.vhd was successful.
+# Compile of mux_2to1_stall.vhd was successful.
+# Compile of mux_4to1.vhd was successful.
+# Compile of mux_32to1.vhd was successful.
+# Compile of param_pkg.vhd was successful.
+# Compile of ram.vhd was successful with warnings.
+# Compile of reg.vhd was successful.
+# Compile of reg_file.vhd was successful.
+# Compile of RV32I.vhd was successful.
+# Compile of RV32I_control.vhd was successful.
+# Compile of unary_AND.vhd was successful.
+# Compile of wb_stage.vhd was successful.
+# 30 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.rv32i_tb(arch)
+# Loading work.rv32i(str)
+# Loading work.fetch_stage(str)
+# Loading work.reg(arch)
+# Loading work.mux_2to1(arch)
+# Loading work.decode_stage(str)
+# Loading work.param_pkg
+# Loading work.reg_file(arch)
+# Loading work.dec_5to32(arch)
+# Loading work.mux_32to1(arch)
+# Loading work.immediate_generator(str)
+# Loading work.execute_stage(str)
+# Loading work.alu(str)
+# Loading work.add_sub(str)
+# Loading work.barrel_shifter(str)
+# Loading work.mux_2to1_bit(str)
+# Loading work.unary_and(str)
+# Loading work.mux_4to1(str)
+# Loading work.mem_stage(str)
+# Loading work.wb_stage(str)
+# Loading work.rv32i_control(str)
+# Loading work.decode_stage_control(str)
+# Loading work.control(str)
+# Loading work.hazard_unit(str)
+# Loading work.mux_2to1_stall(str)
+# Loading work.execute_stage_control(str)
+# Loading work.alu_control(str)
+# Loading work.forwarding_unit(str)
+# Loading work.mem_stage_control(str)
+# Loading work.ram(rtl)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# Compile of RV32I_tb.vhd was successful.
+# Compile of add_sub.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of alu_control.vhd was successful.
+# Compile of barrel_shifter.vhd was successful.
+# Compile of control.vhd was successful.
+# Compile of dec_5to32.vhd was successful.
+# Compile of decode_stage.vhd was successful.
+# Compile of decode_stage_control.vhd was successful.
+# Compile of execute_stage.vhd was successful.
+# Compile of execute_stage_control.vhd was successful.
+# Compile of fetch_stage.vhd was successful.
+# Compile of forwarding_unit.vhd was successful.
+# Compile of hazard_unit.vhd was successful.
+# Compile of immediate_generator.vhd was successful.
+# Compile of mem_stage.vhd was successful.
+# Compile of mem_stage_control.vhd was successful.
+# Compile of mux_2to1.vhd was successful.
+# Compile of mux_2to1_bit.vhd was successful.
+# Compile of mux_2to1_stall.vhd was successful.
+# Compile of mux_4to1.vhd was successful.
+# Compile of mux_32to1.vhd was successful.
+# Compile of param_pkg.vhd was successful.
+# Compile of ram.vhd was successful with warnings.
+# Compile of reg.vhd was successful.
+# Compile of reg_file.vhd was successful.
+# Compile of RV32I.vhd was successful.
+# Compile of RV32I_control.vhd was successful.
+# Compile of unary_AND.vhd was successful.
+# Compile of wb_stage.vhd was successful.
+# 30 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.rv32i_tb(arch)
+# Loading work.rv32i(str)
+# Loading work.fetch_stage(str)
+# Loading work.reg(arch)
+# Loading work.mux_2to1(arch)
+# Loading work.decode_stage(str)
+# Loading work.param_pkg
+# Loading work.reg_file(arch)
+# Loading work.dec_5to32(arch)
+# Loading work.mux_32to1(arch)
+# Loading work.immediate_generator(str)
+# Loading work.execute_stage(str)
+# Loading work.alu(str)
+# Loading work.add_sub(str)
+# Loading work.barrel_shifter(str)
+# Loading work.mux_2to1_bit(str)
+# Loading work.unary_and(str)
+# Loading work.mux_4to1(str)
+# Loading work.mem_stage(str)
+# Loading work.wb_stage(str)
+# Loading work.rv32i_control(str)
+# Loading work.decode_stage_control(str)
+# Loading work.control(str)
+# Loading work.hazard_unit(str)
+# Loading work.mux_2to1_stall(str)
+# Loading work.execute_stage_control(str)
+# Loading work.alu_control(str)
+# Loading work.forwarding_unit(str)
+# Loading work.mem_stage_control(str)
+# Loading work.ram(rtl)
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 run
@@ -2626,5 +733,22 @@ run
 #    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# End time: 19:05:15 on Feb 01,2022, Elapsed time: 3:29:32
-# Errors: 0, Warnings: 4
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/stefano/Desktop/isa_lab3/sim/wave.do

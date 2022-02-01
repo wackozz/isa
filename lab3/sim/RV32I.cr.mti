@@ -94,6 +94,23 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity control
 -- Compiling architecture str of control
 
+} {} {}} /home/stefano/Desktop/isa_lab3/src/forwarding_unit.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/forwarding_unit.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity forwarding_unit
+-- Compiling architecture str of forwarding_unit
+
+} {} {}} /home/stefano/Desktop/isa_lab3/src/param_pkg.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/param_pkg.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package param_pkg
+
 } {} {}} /home/stefano/Desktop/isa_lab3/src/alu.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/alu.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -122,22 +139,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity mem_stage_control
 -- Compiling architecture str of mem_stage_control
 
-} {} {}} /home/stefano/Desktop/isa_lab3/src/param_pkg.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/param_pkg.vhd
+} {} {}} /home/stefano/Desktop/isa_lab3/src/immediate_generator.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/immediate_generator.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling package param_pkg
-
-} {} {}} /home/stefano/Desktop/isa_lab3/src/forwarding_unit.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/forwarding_unit.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity forwarding_unit
--- Compiling architecture str of forwarding_unit
+-- Compiling entity immediate_generator
+-- Compiling architecture str of immediate_generator
 
 } {} {}} /home/stefano/Desktop/isa_lab3/src/mux_2to1_bit.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/mux_2to1_bit.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -148,14 +157,25 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity mux_2to1_bit
 -- Compiling architecture str of mux_2to1_bit
 
-} {} {}} /home/stefano/Desktop/isa_lab3/src/immediate_generator.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/immediate_generator.vhd
+} {} {}} /home/stefano/Desktop/isa_lab3/src/execute_stage_control.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/execute_stage_control.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling entity immediate_generator
--- Compiling architecture str of immediate_generator
+-- Compiling entity execute_stage_control
+-- Compiling architecture str of execute_stage_control
+-- Loading entity alu_control
+-- Loading entity forwarding_unit
+
+} {} {}} /home/stefano/Desktop/isa_lab3/src/reg.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/reg.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity reg
+-- Compiling architecture arch of reg
 
 } {} {}} /home/stefano/Desktop/isa_lab3/src/RV32I.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/RV32I.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -172,25 +192,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading entity wb_stage
 -- Loading entity RV32I_control
 
-} {} {}} /home/stefano/Desktop/isa_lab3/src/reg.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/reg.vhd
+} {} {}} /home/stefano/Desktop/isa_lab3/src/decode_stage.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/decode_stage.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling entity reg
--- Compiling architecture arch of reg
-
-} {} {}} /home/stefano/Desktop/isa_lab3/src/execute_stage_control.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/execute_stage_control.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity execute_stage_control
--- Compiling architecture str of execute_stage_control
--- Loading entity alu_control
--- Loading entity forwarding_unit
+-- Compiling entity decode_stage
+-- Compiling architecture str of decode_stage
 
 } {} {}} /home/stefano/Desktop/isa_lab3/src/mux_2to1.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/mux_2to1.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -200,15 +209,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package NUMERIC_STD
 -- Compiling entity mux_2to1
 -- Compiling architecture arch of mux_2to1
-
-} {} {}} /home/stefano/Desktop/isa_lab3/src/decode_stage.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/decode_stage.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity decode_stage
--- Compiling architecture str of decode_stage
 
 } {} {}} /home/stefano/Desktop/isa_lab3/src/ram.vhd {2 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/ram.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -220,14 +220,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling architecture rtl of ram
 ** Warning: /home/stefano/Desktop/isa_lab3/src/ram.vhd(47): (vcom-1013) Initial value of "data_file" depends on value of signal "filename".
 
-} {} {}} /home/stefano/Desktop/isa_lab3/src/hazard_unit.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/hazard_unit.vhd
+} {} {}} /home/stefano/Desktop/isa_lab3/src/mux_4to1.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/mux_4to1.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity hazard_unit
--- Compiling architecture str of hazard_unit
+-- Compiling entity mux_4to1
+-- Compiling architecture str of mux_4to1
 
 } {} {}} /home/stefano/Desktop/isa_lab3/src/unary_AND.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/unary_AND.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -237,13 +236,21 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity unary_AND
 -- Compiling architecture str of unary_AND
 
-} {} {}} /home/stefano/Desktop/isa_lab3/src/mux_4to1.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/mux_4to1.vhd
+} {} {}} /home/stefano/Desktop/isa_lab3/src/alu_control.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/alu_control.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity mux_4to1
--- Compiling architecture str of mux_4to1
+-- Compiling entity alu_control
+-- Compiling architecture str of alu_control
+
+} {} {}} /home/stefano/Desktop/isa_lab3/src/mem_stage.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/mem_stage.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mem_stage
+-- Compiling architecture str of mem_stage
 
 } {} {}} /home/stefano/Desktop/isa_lab3/src/mux_32to1.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/mux_32to1.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -255,21 +262,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity mux_32to1
 -- Compiling architecture arch of mux_32to1
 
-} {} {}} /home/stefano/Desktop/isa_lab3/src/mem_stage.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/mem_stage.vhd
+} {} {}} /home/stefano/Desktop/isa_lab3/src/barrel_shifter.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/barrel_shifter.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity mem_stage
--- Compiling architecture str of mem_stage
-
-} {} {}} /home/stefano/Desktop/isa_lab3/src/alu_control.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/alu_control.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity alu_control
--- Compiling architecture str of alu_control
+-- Loading package NUMERIC_STD
+-- Compiling entity barrel_shifter
+-- Compiling architecture str of barrel_shifter
 
 } {} {}} /home/stefano/Desktop/isa_lab3/src/wb_stage.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/wb_stage.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -280,14 +280,5 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity wb_stage
 -- Compiling architecture str of wb_stage
 -- Loading entity mux_4to1
-
-} {} {}} /home/stefano/Desktop/isa_lab3/src/barrel_shifter.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/src/barrel_shifter.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity barrel_shifter
--- Compiling architecture str of barrel_shifter
 
 } {} {}}
