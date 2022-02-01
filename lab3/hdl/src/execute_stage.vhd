@@ -6,7 +6,7 @@
 -- Author     : wackoz  <wackoz@wT14>
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-01-30
+-- Last update: 2022-02-01
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -131,7 +131,7 @@ begin  -- architecture str
     elsif clock'event and clock = '1' then  -- rising clock edge
       alu_result_mem       <= alu_result_int;
       rd_mem               <= rd_execute;
-      write_data_mem       <= read_data2_execute;
+      write_data_mem       <= out_mux_forward_B;
       data_mem_adr_int     <= alu_result_int;
       target_address_fetch <= target_address_fetch_int;
       next_pc_mem          <= next_pc_execute;

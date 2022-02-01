@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-30
--- Last update: 2022-01-31
+-- Last update: 2022-02-01
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -55,7 +55,7 @@ architecture str of forwarding_unit is
 
 begin  -- architecture str
 
-  forwarding_proc : process (Rs1_execute, Rs2_execute, Rd_mem, Rd_wb, RegWrite_mem, RegWrite) is
+  forwarding_proc : process (Rs1_execute_int, Rs2_execute_int, Rd_mem_int, Rd_wb_int, RegWrite_mem, RegWrite) is
   begin  -- process forwarding_proc
     -- EX Hazard
     if (RegWrite = '1' and (Rd_wb_int /= "00000") and not ((RegWrite_mem = '1') and (Rd_mem_int /= "00000") and (Rd_mem_int = Rs1_execute_int)) and (Rd_wb_int = Rs1_execute_int)) then
@@ -105,8 +105,8 @@ begin  -- architecture str
     elsif opcode_execute = "0100011" then  --SW
       Rs1_execute_int <= Rs1_execute;
       Rs2_execute_int <= Rs2_execute;
-      Rd_mem_int      <= "00000";
-      Rd_wb_int       <= "00000";
+      Rd_mem_int      <= Rd_mem;
+      Rd_wb_int       <= Rd_wb;
     elsif opcode_execute = "0010011" then  --ADDI / ANDI
       Rs1_execute_int <= Rs1_execute;
       Rs2_execute_int <= "00000";

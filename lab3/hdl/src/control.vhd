@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-01-08
--- Last update: 2022-01-25
+-- Last update: 2022-02-01
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -97,7 +97,7 @@ begin  -- architecture str
                         ALUOp    <= "00";
 
       when "0100011" => ALUSrc <= '1';  -- SW
-                        PCSel    <= '0';
+                        PCSel    <= '0';  
                         MemToReg <= "00";
                         RegWrite <= '0';
                         MemRead  <= '0';
