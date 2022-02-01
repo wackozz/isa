@@ -3,7 +3,7 @@
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : RV32I_tb.vhd
--- Author     : stefano  <stefano@stefano-N56JK>
+-- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-10
 -- Last update: 2022-02-01
@@ -13,11 +13,6 @@
 -- Description: 
 -------------------------------------------------------------------------------
 -- Copyright (c) 2022 
--------------------------------------------------------------------------------
--- Revisions  :
--- Date        Version  Author  Description
--- 2022-01-10  0.1      stefano Created
--- 2022-01-17  1.0      wackoz  initial experient
 -------------------------------------------------------------------------------
 
 library ieee;

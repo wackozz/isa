@@ -3,10 +3,10 @@
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : barrel_shifter.vhd
--- Author     : stefano  <stefano@stefano-N56JK>
+-- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-22
--- Last update: 2022-01-26
+-- Last update: 2022-02-01
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------

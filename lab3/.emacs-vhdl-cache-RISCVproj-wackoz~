@@ -3,7 +3,7 @@
 ;;; .emacs-vhdl-cache-RISCVproj-wackoz - design hierarchy cache file for Emacs VHDL Mode 3.38.1
 
 ;; Project   : RISCVproj
-;; Saved     : 2022-01-26 15:10:02 wackoz
+;; Saved     : 2022-01-26 16:31:44 wackoz
 
 
 ;; version number
@@ -29,7 +29,7 @@
 
 ;; instantiated entities cache
 (vhdl-aput 'vhdl-ent-inst-alist project '
-(("mux_2to1" "reg" "rv32i_control" "wb_stage" "mem_stage" "execute_stage" "decode_stage" "fetch_stage" "reg_file" "ram" "immediate_generator" "ram" "ram" "rv32i" "mux_4to1" "mux_32to1" "mux_32to1" "dec_5to32" "reg" "fetch_stage" "reg" "alu_control" "alu" "mux_2to1" "mux_2to1" "control" "immediate_generator" "reg_file" "mux_2to1_bit" "mux_2to1_bit" "mux_2to1_bit" "mux_2to1_bit" "mux_2to1_bit" "unary_and" "barrel_shifter" "add_sub" "mem_stage_control" "execute_stage_control" "decode_stage_control"))
+(("mux_2to1_bit" "mux_2to1_bit" "mux_2to1_bit" "mux_2to1_bit" "mux_2to1_bit" "mux_2to1" "reg" "rv32i_control" "wb_stage" "mem_stage" "execute_stage" "decode_stage" "fetch_stage" "reg_file" "ram" "immediate_generator" "ram" "ram" "rv32i" "mux_4to1" "mux_32to1" "mux_32to1" "dec_5to32" "reg" "fetch_stage" "reg" "alu_control" "alu" "mux_2to1" "mux_2to1" "control" "immediate_generator" "reg_file" "unary_and" "barrel_shifter" "add_sub" "mem_stage_control" "execute_stage_control" "decode_stage_control"))
 )
 
 ;; design units per file cache

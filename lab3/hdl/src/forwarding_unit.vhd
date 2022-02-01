@@ -3,7 +3,7 @@
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : forwarding_unit.vhd
--- Author     : stefano  <stefano@stefano-N56JK>
+-- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-30
 -- Last update: 2022-02-01
@@ -13,10 +13,6 @@
 -- Description: 
 -------------------------------------------------------------------------------
 -- Copyright (c) 2022 
--------------------------------------------------------------------------------
--- Revisions  :
--- Date        Version  Author  Description
--- 2022-01-30  1.0      stefano Created
 -------------------------------------------------------------------------------
 
 library ieee;
