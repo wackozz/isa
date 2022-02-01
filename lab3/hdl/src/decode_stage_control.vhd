@@ -26,6 +26,7 @@ entity decode_stage_control is
   port (
     clock              : in  std_logic;
     reset              : in  std_logic;
+    instruction_fetch  : in  std_logic_vector(31 downto 0);
     instruction_decode : in  std_logic_vector(31 downto 0);
     Rs1_decode         : in  std_logic_vector(4 downto 0);
     Rs2_decode         : in  std_logic_vector(4 downto 0);
@@ -142,7 +143,11 @@ begin  -- architecture str
   -- instance "hazard_unit_1"
   hazard_unit_1 : entity work.hazard_unit
     port map (
+      clock           => clock,
+      reset           => reset,
+      opcode_fetch    => instruction_fetch(6 downto 0),
       MemRead_execute => MemRead_execute_int,
+      opcode_decode   => instruction_decode(6 downto 0),
       Rs1_decode      => Rs1_decode,
       Rs2_decode      => Rs2_decode,
       Rd_execute      => Rd_execute,

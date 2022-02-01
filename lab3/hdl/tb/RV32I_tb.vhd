@@ -191,6 +191,13 @@ begin  -- architecture arch
   data_adr <= to_integer(unsigned(data_mem_adr(7 downto 0))/4);
   inst_adr <= to_integer(unsigned(instruction_mem_adr(7 downto 0))/4);
 
+  warning_address : process (data_adr, inst_adr) is
+  begin  -- process warning_address
+    if to_integer(unsigned(data_mem_adr(7 downto 0))) mod 4 /= 0 and (MemWrite = '1' or MemWrite = '1') then
+      report "address not aligned to word boundary" severity failure;
+    end if;
+  end process warning_address;
+
   opcode <= instruction_fetch(6 downto 0);
   funct3 <= instruction_fetch(14 downto 12);
 

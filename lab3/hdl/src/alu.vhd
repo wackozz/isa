@@ -18,7 +18,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-(())
 -------------------------------------------------------------------------------
 
 entity alu is
@@ -51,14 +50,13 @@ architecture str of alu is
   signal sum_int      : std_logic_vector(31 downto 0);
   signal xor_result   : std_logic_vector(31 downto 0);
   signal and_result   : std_logic_vector(31 downto 0);
-  signal lui_result   : std_logic_vector(31 downto 0);
   signal shift_result : std_logic_vector(31 downto 0);
   signal zero_sig     : std_logic_vector(31 downto 0);
 
 
 begin  -- architecture str
 
-  --sum/auipc
+  --sum/auipc/lui
   result <= sum_int when ALUCtrl = "0010" else
             --xor
             xor_result                                    when ALUCtrl = "0111" else
@@ -66,8 +64,6 @@ begin  -- architecture str
             and_result                                    when ALUCtrl = "0011" else
             --slt
             "0000000000000000000000000000000"&sum_int(31) when ALUCtrl = "0100" else
-            --lui
-            lui_result                                    when ALUCtrl = "0010" else
             --srai
             shift_result                                  when ALUCtrl = "0101" else
             (others => '0');
@@ -75,7 +71,6 @@ begin  -- architecture str
   comp       <= A xnor B;
   xor_result <= A xor B;
   and_result <= A and B;
-  lui_result <= B;
 
   -----------------------------------------------------------------------------
   -- Component instantiations

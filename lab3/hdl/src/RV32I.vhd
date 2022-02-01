@@ -206,6 +206,7 @@ begin  -- architecture str
     port map (
       clock              => clock,
       reset              => reset,
+      instruction_fetch  => instruction_fetch,
       instruction_decode => instruction_decode,
       Rs1_decode         => Rs1_decode,
       Rs2_decode         => Rs2_decode,

@@ -91,8 +91,8 @@ begin  -- architecture str
     elsif opcode_execute = "1100011" then  --BEQ
       Rs1_execute_int <= Rs1_execute;
       Rs2_execute_int <= Rs2_execute;
-      Rd_mem_int      <= "00000";
-      Rd_wb_int       <= "00000";
+      Rd_mem_int      <= Rd_mem;
+      Rd_wb_int       <= Rd_wb;
     elsif opcode_execute = "0000011" then  --LW
       Rs1_execute_int <= Rs1_execute;
       Rs2_execute_int <= "00000";

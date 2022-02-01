@@ -16,7 +16,7 @@
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author  Description
--- 2022-02-01  1.0      wackoz	Created
+-- 2022-02-01  1.0      wackoz  Created
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -43,7 +43,7 @@ architecture rtl of ram is
 
 begin
 
-  ram_process : process (address, reset, data, bootload) is
+  ram_process : process (clock, address, reset, data, bootload) is
     file data_file     : text open read_mode is filename;
     variable data_line : line;
     variable data_init : std_logic_vector(31 downto 0);
@@ -65,7 +65,7 @@ begin
         end loop;
         bootload <= true;
       end if;
-    elsif (w_en = '1') then
+    elsif (w_en = '1') and clock'event and clock = '1' then
       ram_block(address) <= data;
     else
       q <= ram_block(address);

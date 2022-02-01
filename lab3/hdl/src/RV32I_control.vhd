@@ -30,6 +30,7 @@ entity RV32I_control is
     reset : in std_logic;
 
     -- ports to "decode_stage_control_1"
+    instruction_fetch  : in  std_logic_vector(31 downto 0);
     instruction_decode : in  std_logic_vector(31 downto 0);
     Rs1_decode         : in  std_logic_vector(4 downto 0);
     Rs2_decode         : in  std_logic_vector(4 downto 0);
@@ -100,6 +101,7 @@ begin  -- architecture str
     port map (
       clock              => clock,
       reset              => reset,
+      instruction_fetch  => instruction_fetch,
       instruction_decode => instruction_decode,
       Rs1_decode         => Rs1_decode,
       Rs2_decode         => Rs2_decode,
