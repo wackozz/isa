@@ -1,0 +1,84 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/stefano/Desktop/isa_lab3/tb
+Erv32i_tb
+Z1 w1643727770
+Z2 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+Z3 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 22
+R0
+Z6 8RV32I_tb.vhd
+Z7 FRV32I_tb.vhd
+l0
+L26 1
+Vg6n5e56zQ?H]@ELKm5eC;0
+!s100 G<IF^ii7KjiNkY?:V<VdB0
+Z8 OV;C;2020.1;71
+31
+!s110 1643727770
+!i10b 1
+!s108 1643727770.000000
+Z9 !s90 -93|-work|work|RV32I_tb.vhd|
+Z10 !s107 RV32I_tb.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aarch
+R2
+R3
+R4
+R5
+Z13 DEx4 work 8 rv32i_tb 0 22 VWGYMo<<KQ7[N@?e[01lD3
+!i122 8
+l79
+L37 114
+VczRo9L1g>=lJF>>^XKR]I2
+!s100 6AI;CCiPNeGgWEZ901=S>0
+R8
+31
+Z14 !s110 1643100939
+!i10b 1
+Z15 !s108 1643100939.000000
+R9
+R10
+!i113 1
+R11
+R12
+Crv32i_tb_arch_cfg
+eRV32I_tb
+aarch
+DAx4 work 8 rv32i_tb 4 arch 22 czRo9L1g>=lJF>>^XKR]I2
+R2
+R3
+R4
+R5
+R13
+!i122 8
+w1643100910
+R0
+R6
+R7
+l0
+L154 1
+VGhHoVIEd4jN^g[UV@6Pd<3
+!s100 fHCCAk>gBd1a>[5jlTzPc2
+R8
+31
+R14
+!i10b 0
+R15
+R9
+R10
+!i113 1
+R11
+R12
