@@ -1,8 +1,9 @@
 proc elab {} {
 source .synopsys_dc.setup
 #adding elemts
-analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
-analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg/fpmul_pipeline_reg.vhd
+analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg/reg.vhd
+analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg/ff.vhd
 analyze -f vhdl -lib WORK ../hdl/src/common/fpmul_stage1_struct.vhd
 analyze -f vhdl -lib WORK ../hdl/src/common/fpmul_stage2_struct.vhd
 analyze -f vhdl -lib WORK ../hdl/src/common/fpmul_stage3_struct.vhd
@@ -12,7 +13,7 @@ analyze -f vhdl -lib WORK ../hdl/src/common/unpackfp_unpackfp.vhd
 analyze -f vhdl -lib WORK ../hdl/src/common/fpnormalize_fpnormalize.vhd
 analyze -f vhdl -lib WORK ../hdl/src/common/fpround_fpround.vhd
 set power_preserve_rtl_hier_names true
-elaborate FPmul -arch pipeline -lib WORK > reports_synth_fpmul_reg_flatten/elaborate.txt
+elaborate FPmul -arch pipeline -lib WORK > reports/reports_synth_fpmul_reg_flatten/elaborate.txt
 #filter contains multiple instances of reg, need to uniquify
 uniquify 
 link
@@ -30,9 +31,9 @@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
 set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
 set_load $OLOAD [all_outputs]
 compile
-report_timing > reports_synth_fpmul_reg_flatten/report_timing_${clk_var}_ns.txt
-report_area > reports_synth_fpmul_reg_flatten/report_area_clk_${clk_var}_ns.txt
-report_resources > reports_synth_fpmul_reg_flatten/report_resources_clk_${clk_var}_ns.txt
+report_timing > reports/reports_synth_fpmul_reg_flatten/report_timing_${clk_var}_ns.txt
+report_area > reports/reports_synth_fpmul_reg_flatten/report_area_clk_${clk_var}_ns.txt
+report_resources > reports/reports_synth_fpmul_reg_flatten/report_resources_clk_${clk_var}_ns.txt
 quit
 }
 

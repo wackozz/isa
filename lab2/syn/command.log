@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version O-2018.06-SP4 for linux64 -- Nov 27, 2018
-#@ # Date:   Wed Nov 24 16:50:44 2021
+#@ # Date:   Thu Dec  9 20:04:59 2021
 #@ # Run by: isa18_2021_2022@localhost.localdomain
 #@ 
 
@@ -6638,16 +6638,22 @@ source /home/isa18_2021_2022/github/isa/lab2/syn/.synopsys_dc.setup
 #@ set synthetic_library [list "dw_foundation.sldb" ]
 #@ # -- End source /home/isa18_2021_2022/github/isa/lab2/syn/.synopsys_dc.setup
 
-source -echo -verbose /home/isa18_2021_2022/github/isa/lab2/syn/scripts/synth_fpmul_reg_flatten.tcl
-#@ # -- Starting source /home/isa18_2021_2022/github/isa/lab2/syn/scripts/synth_fpmul_reg_flatten.tcl
+source -echo -verbose /home/isa18_2021_2022/github/isa/lab2/syn/scripts/synth_fpmul_mbe_flatten.tcl
+#@ # -- Starting source /home/isa18_2021_2022/github/isa/lab2/syn/scripts/synth_fpmul_mbe_flatten.tcl
 
 #@ proc elab {} {
 #@ source .synopsys_dc.setup
 #@ #adding elemts
-#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg/fpmul_pipeline_reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg/reg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg/ff.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg/stage2_mbe/fpmul_stage2_struct_mbe_noreg.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/dadda_tree.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/full_adder.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/half_adder.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/MBE_encoder.vhd
+#@ analyze -f vhdl -lib WORK ../hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/mbe_multiplier.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/common/fpmul_stage1_struct.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/common/fpmul_stage2_struct.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/common/fpmul_stage3_struct.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/common/fpmul_stage4_struct.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/common/packfp_packfp.vhd
@@ -6655,12 +6661,11 @@ source -echo -verbose /home/isa18_2021_2022/github/isa/lab2/syn/scripts/synth_fp
 #@ analyze -f vhdl -lib WORK ../hdl/src/common/fpnormalize_fpnormalize.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/common/fpround_fpround.vhd
 #@ set power_preserve_rtl_hier_names true
-#@ elaborate FPmul -arch pipeline -lib WORK > reports_synth_fpmul_reg_flatten/elaborate.txt
+#@ elaborate FPmul -arch pipeline -lib WORK > reports/reports_synth_fpmul_mbe_flatten/elaborate.txt
 #@ #filter contains multiple instances of reg, need to uniquify
 #@ uniquify 
 #@ link
 #@ ungroup -all -flatten
-#@ #set_implementation DW02_mult/csa [find cell I2/mult_134]
 #@ }
 #@ 
 #@ proc synth {clk_var} {
@@ -6673,9 +6678,9 @@ source -echo -verbose /home/isa18_2021_2022/github/isa/lab2/syn/scripts/synth_fp
 #@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
 #@ set_load $OLOAD [all_outputs]
 #@ compile
-#@ report_timing > reports_synth_fpmul_reg_flatten/report_timing_${clk_var}_ns.txt
-#@ report_area > reports_synth_fpmul_reg_flatten/report_area_clk_${clk_var}_ns.txt
-#@ report_resources > reports_synth_fpmul_reg_flatten/report_resources_clk_${clk_var}_ns.txt
+#@ report_timing > reports/reports_synth_fpmul_mbe_flatten/report_timing_${clk_var}_ns.txt
+#@ report_area > reports/reports_synth_fpmul_mbe_flatten/report_area_clk_${clk_var}_ns.txt
+#@ report_resources > reports/reports_synth_fpmul_mbe_flatten/report_resources_clk_${clk_var}_ns.txt
 #@ quit
 #@ }
 #@ 
@@ -6690,4 +6695,4 @@ source -echo -verbose /home/isa18_2021_2022/github/isa/lab2/syn/scripts/synth_fp
 #@ set synthetic_library [list "dw_foundation.sldb" ]
 #@ # -- End source .synopsys_dc.setup
 
-#@ synth 1.58
+#@ synth 2.74

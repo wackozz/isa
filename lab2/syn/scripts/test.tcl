@@ -1,5 +1,1 @@
-proc test {a} {
-    puts $a;
-}
-
-test 2;
+puts $test

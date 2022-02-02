@@ -23,7 +23,7 @@ def synth(file_name):
 		print("\n**********************SYNTHESIS WITH " + str(clk_value) + " ns**********************\n")
 		os.system('syn/'+file_name+'.sh')
 
-		with open('syn/reports_'+file_name+'/report_timing_' +str(clk_value)+ '_ns.txt','r') as file:
+		with open('syn/reports/reports_'+file_name+'/report_timing_' +str(clk_value)+ '_ns.txt','r') as file:
 			for line in file:
 				if len(line.split(' '))>2:
 					if ((line.split(' ')[2] == "slack")):
@@ -36,7 +36,7 @@ def synth(file_name):
 		line_to_save = line_to_save.split(' ')[2]
 		if line_to_save == "increase":
 			flag = 1
-			with open('syn/reports_'+file_name+'/report_timing_' +str(clk_value)+ '_ns.txt','r') as file:
+			with open('syn/reports/reports_'+file_name+'/report_timing_' +str(clk_value)+ '_ns.txt','r') as file:
 				for line in file:
 					if len(line.split(' '))>2:
 						if ((line.split(' ')[2] == "slack")):
@@ -90,32 +90,51 @@ def change_clock_gen(clk_value):
 #-------------------INIZIO FUNZIONI----------------------
 
 def part1():
-	#-----------------MODELSIM SIMULATION--------------------
-	##os.system("hdl/sim/simulate_fpmul_reg.sh")
+	#---------------- MODELSIM SIMULATION -------------------
+	#os.system("hdl/sim/simulate_fpmul_reg.sh")
 
-	#-----------------------POINT 1.1------------------------
+	#----------------------- REG IN -------------------------
 	synth("synth_fpmul_reg_flatten")
 
-	#-----------------------POINT 1.2------------------------
-	##synth("synth_fpmul_reg_stage2CSA")
+	synth("synth_fpmul_reg_CSA")
 
-	#-----------------------POINT 1.3------------------------
-	##synth("synth_fpmul_reg_stage2PPARCH")
+	synth("synth_fpmul_reg_PPARCH")
 
 def part2():
 	#-----------------MODELSIM SIMULATION--------------------
-	os.system("hdl/sim/simulate_fpmul_reg_stage2_opt.sh")
+	#os.system("hdl/sim/simulate_fpmul_reg_stage2_opt.sh")
 
-	#-----------------------POINT 2.1------------------------
+	#----------------------- STAGE 2 ------------------------
+	#synth("synth_fpmul_reg_stage2_flatten")
+
 	synth("synth_fpmul_reg_stage2_opt")
 
-	#-----------------------POINT 2.2------------------------
-	synth("synth_fpmul_reg_stage2_opt_compile_ultra")
+	synth("synth_fpmul_reg_stage2_compile_ultra")
 
+	synth("synth_fpmul_reg_stage2_CSA_opt")
 
+	synth("synth_fpmul_reg_stage2_CSA_compile_ultra")
+
+	synth("synth_fpmul_reg_stage2_PPARCH_opt")
+
+	synth("synth_fpmul_reg_stage2_PPARCH_compile_ultra")
+
+def part3():
+	#-----------------MODELSIM SIMULATION--------------------
+	#os.system("hdl/sim/")
+
+	#------------------------- MBE --------------------------
+	synth("synth_fpmul_mbe_flatten")
+
+	synth("synth_fpmul_mbe_opt")
+
+	synth("synth_fpmul_mbe_compile_ultra")
+	
 
 ##########################  MAIN  ###########################
 
-part1()
+#part1()
 
 #part2()
+
+#part3()
