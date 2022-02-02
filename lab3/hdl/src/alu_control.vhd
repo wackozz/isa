@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-02-01
+-- Last update: 2022-02-02
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -55,7 +55,7 @@ begin  -- architecture str
       when "01" => ALUCtrl <= "0110";
       when "11" => ALUCtrl <= "0000";
       when "10" =>
-        if (funct7 = '0') and (funct3 = "000") then ALUCtrl    <= "0010";  -- ADD
+        if (funct3 = "000") then ALUCtrl    <= "0010";  -- ADD
         elsif (funct7 = '0') and (funct3 = "010") then ALUCtrl <= "0100";  -- SET<
         elsif (funct7 = '0') and (funct3 = "100") then ALUCtrl <= "0111";  --XOR
         elsif (funct7 = '1') and (funct3 = "101") then ALUCtrl <= "0101";  --SHIFT
