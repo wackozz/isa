@@ -34,7 +34,7 @@ analyze -f vhdl -lib WORK ../hdl/src/unary_AND.vhd
 analyze -f vhdl -lib WORK ../hdl/src/wb_stage.vhd
 
 set power_preserve_rtl_hier_names true
-elaborate RV32I -arch str -lib WORK > ./reports_riscv/elaborate.txt
+elaborate RV32I -arch str -lib WORK > ./reports/elaborate.txt
 #filter contains multiple instances of reg, need to uniquify
 uniquify 
 link
@@ -52,12 +52,12 @@ set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
 set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
 set_load $OLOAD [all_outputs]
 compile
-report_timing > reports_riscvreport_timing_${clk_var}_ns.txt
-report_area > reports_riscv/report_area_clk_${clk_var}_ns.txt
-report_resources > report_riscv/report_resources_clk_${clk_var}_ns.txt
+report_timing > reports/report_timing_${clk_var}_ns.txt
+report_area > reports/report_area_clk_${clk_var}_ns.txt
+report_resources > reports/report_resources_clk_${clk_var}_ns.txt
 #quit
 }
 
 
 elab
-synth 1.57
+synth 0

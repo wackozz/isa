@@ -90,7 +90,7 @@ def change_clock_gen(clk_value):
 ##########################  MAIN  ###########################
 
 #---------------- MODELSIM SIMULATION -------------------
-os.system("hdl/sim/simulate_riscv.sh")
+os.system("sim/simulate_riscv.sh")
 
 synth("synth_riscv")
 
