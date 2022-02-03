@@ -1,4 +1,4 @@
-project new . RV32I.mpf
+project new . $1.mpf
 project addfile ../src/absolute_value.vhd
 project addfile ../src/add_sub.vhd
 project addfile ../src/alu.vhd
@@ -27,3 +27,8 @@ project addfile ../src/RV32I_control.vhd
 project addfile ../src/unary_AND.vhd
 project addfile ../src/wb_stage.vhd
 project addfile ../tb/RV32I_tb.vhd
+vsim work.tb_fpmul -t ns
+run 1 us
+quit -sim
+project close
+quit

@@ -34,7 +34,7 @@ analyze -f vhdl -lib WORK ../hdl/src/unary_AND.vhd
 analyze -f vhdl -lib WORK ../hdl/src/wb_stage.vhd
 
 set power_preserve_rtl_hier_names true
-elaborate RV32I -arch pipeline -lib WORK > ./reports_riscv/elaborate.txt
+elaborate RV32I -arch str -lib WORK > ./reports_riscv/elaborate.txt
 #filter contains multiple instances of reg, need to uniquify
 uniquify 
 link
