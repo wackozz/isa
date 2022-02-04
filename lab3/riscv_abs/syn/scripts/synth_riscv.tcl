@@ -54,7 +54,14 @@ compile
 report_timing > reports/report_timing_${clk_var}_ns.txt
 report_area > reports/report_area_clk_${clk_var}_ns.txt
 report_resources > reports/report_resources_clk_${clk_var}_ns.txt
-#quit
+
+ungroup -all -flatten
+change_names -hierarchy -rules verilog
+write_sdf ../netlist/riscv.sdf
+write -f verilog -hierarchy -output ../netlist/riscv.v
+write_sdc ../netlist/riscv.sdc
+
+quit
 }
 
 
