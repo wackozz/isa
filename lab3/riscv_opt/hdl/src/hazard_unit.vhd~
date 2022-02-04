@@ -61,7 +61,7 @@ begin  -- architecture str
       StallSrc       <= '0';
     elsif StallJmp = '1' then
       PcWrite        <= '0';
-      FetchPipeWrite <= '0';
+      FetchPipeWrite <= '1';
       StallSrc       <= '1';
     elsif StallJmpDel1 = '1' then
       PcWrite        <= '0';
@@ -82,8 +82,6 @@ begin  -- architecture str
     end if;
   end process hazard_proc;
 
-
-
   stall_proc_jmp : process (clock, reset) is
   begin  -- process stall_proc
     if reset = '0' then                     -- asynchronous reset (active low)
@@ -103,17 +101,6 @@ begin  -- architecture str
       StallJmp <= '0';
     end if;
   end process stall_proc_jmp;
-
--- stall_jmp_mux : process (opcode_fetch, StallJmpDel1, StallJmpDel2) is
--- begin  -- process stall_jmp_mux
---   if StallJmpDel1 = '0' and StallJmpDel2 = '0' then
---     if opcode_fetch = "1101111" or opcode_fetch = "1100011" then
---       StallJmp <= '1';
---     end if;
---   else
---     StallJmp <= '0';
---   end if;
--- end process stall_jmp_mux;
 
   reg_detect_proc : process (opcode_decode, Rs1_decode, Rs2_decode, Rd_execute) is
   begin  -- process reg_detect_proc
@@ -159,7 +146,6 @@ begin  -- architecture str
       Rd_execute_int <= "00000";
     end if;
   end process reg_detect_proc;
-
 
 -----------------------------------------------------------------------------
 -- Component instantiations

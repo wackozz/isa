@@ -36,6 +36,10 @@ entity decode_stage_control is
     RegWrite_mem       : in  std_logic;
     RegWrite           : in  std_logic;
     Zero               : in  std_logic;
+    MemWrite_decode    : in  std_logic;
+    Rs1_fetch          : in  std_logic_vector(4 downto 0);
+    Rs2_fetch          : in  std_logic_vector(4 downto 0);
+    Rd_decode          : in  std_logic_vector(4 downto 0);
     ALUSrc             : out std_logic;
     PCSel              : out std_logic;
     AbsSel             : out std_logic;
@@ -159,6 +163,10 @@ begin  -- architecture str
     port map (
       clock           => clock,
       reset           => reset,
+      MemWrite_decode => MemWrite_decode,
+      Rs1_fetch       => Rs1_fetch,
+      Rs2_fetch       => Rs2_fetch,
+      Rd_decode       => Rd_decode,
       opcode_fetch    => instruction_fetch(6 downto 0),
       MemRead_execute => MemRead_execute_int,
       opcode_decode   => instruction_decode(6 downto 0),

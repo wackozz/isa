@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RV32I
-Fri Feb  4 17:27:23 2022
+Fri Feb  4 18:47:07 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -14,28 +14,27 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Registers Packed Into Inferred Megafunctions
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|altshift_taps:MemToReg_execute_rtl_0|shift_taps_4km:auto_generated|altsyncram_k861:altsyncram4
- 16. Parameter Settings for Inferred Entity Instance: RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|altshift_taps:MemToReg_execute_rtl_0
- 17. Parameter Settings for Inferred Entity Instance: execute_stage:execute_stage_1|alu:alu_inst|add_sub:add_sub_1|lpm_add_sub:Add0
- 18. altshift_taps Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|mux_2to1_stall:mux_2to1_stall_1"
- 20. Port Connectivity Checks: "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1"
- 21. Port Connectivity Checks: "wb_stage:wb_stage_1|mux_4to1:mux_4to1_1"
- 22. Port Connectivity Checks: "execute_stage:execute_stage_1|mux_4to1:forward_B_mux"
- 23. Port Connectivity Checks: "execute_stage:execute_stage_1|mux_4to1:forward_A_mux"
- 24. Port Connectivity Checks: "decode_stage:decode_stage_1|mux_4to1:mux_4to1_Rs2_forwarding"
- 25. Port Connectivity Checks: "decode_stage:decode_stage_1|mux_4to1:mux_4to1_Rs1_forwarding"
- 26. Port Connectivity Checks: "decode_stage:decode_stage_1|reg_file:register_file|reg:x0"
- 27. Port Connectivity Checks: "decode_stage:decode_stage_1|reg_file:register_file|dec_5to32:dec"
- 28. Post-Synthesis Netlist Statistics for Top Partition
- 29. Elapsed Time Per Partition
- 30. Analysis & Synthesis Messages
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Registers Packed Into Inferred Megafunctions
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|altshift_taps:MemToReg_execute_rtl_0|shift_taps_4km:auto_generated|altsyncram_k861:altsyncram4
+ 15. Parameter Settings for Inferred Entity Instance: RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|altshift_taps:MemToReg_execute_rtl_0
+ 16. Parameter Settings for Inferred Entity Instance: execute_stage:execute_stage_1|alu:alu_inst|add_sub:add_sub_1|lpm_add_sub:Add0
+ 17. altshift_taps Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|mux_2to1_stall:mux_2to1_stall_1"
+ 19. Port Connectivity Checks: "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1"
+ 20. Port Connectivity Checks: "wb_stage:wb_stage_1|mux_4to1:mux_4to1_1"
+ 21. Port Connectivity Checks: "execute_stage:execute_stage_1|mux_4to1:forward_B_mux"
+ 22. Port Connectivity Checks: "execute_stage:execute_stage_1|mux_4to1:forward_A_mux"
+ 23. Port Connectivity Checks: "decode_stage:decode_stage_1|mux_4to1:mux_4to1_Rs2_forwarding"
+ 24. Port Connectivity Checks: "decode_stage:decode_stage_1|mux_4to1:mux_4to1_Rs1_forwarding"
+ 25. Port Connectivity Checks: "decode_stage:decode_stage_1|reg_file:register_file|reg:x0"
+ 26. Port Connectivity Checks: "decode_stage:decode_stage_1|reg_file:register_file|dec_5to32:dec"
+ 27. Post-Synthesis Netlist Statistics for Top Partition
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
 
 
 
@@ -62,16 +61,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Feb  4 17:27:23 2022       ;
+; Analysis & Synthesis Status        ; Successful - Fri Feb  4 18:47:07 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; RV32I                                       ;
 ; Top-level Entity Name              ; RV32I                                       ;
 ; Family                             ; Cyclone 10 LP                               ;
-; Total logic elements               ; 3,518                                       ;
-;     Total combinational functions  ; 2,347                                       ;
-;     Dedicated logic registers      ; 1,405                                       ;
-; Total registers                    ; 1405                                        ;
-; Total pins                         ; 132                                         ;
+; Total logic elements               ; 3,504                                       ;
+;     Total combinational functions  ; 2,334                                       ;
+;     Dedicated logic registers      ; 1,404                                       ;
+; Total registers                    ; 1404                                        ;
+; Total pins                         ; 148                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 93                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -177,9 +176,9 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.5%      ;
-;     Processor 3            ;   0.5%      ;
-;     Processor 4            ;   0.5%      ;
+;     Processor 2            ;   0.6%      ;
+;     Processor 3            ;   0.6%      ;
+;     Processor 4            ;   0.6%      ;
 +----------------------------+-------------+
 
 
@@ -246,31 +245,31 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 3,518       ;
+; Estimated Total logic elements              ; 3,504       ;
 ;                                             ;             ;
-; Total combinational functions               ; 2347        ;
+; Total combinational functions               ; 2334        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 1913        ;
-;     -- 3 input functions                    ; 333         ;
-;     -- <=2 input functions                  ; 101         ;
+;     -- 4 input functions                    ; 1899        ;
+;     -- 3 input functions                    ; 347         ;
+;     -- <=2 input functions                  ; 88          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 2221        ;
+;     -- normal mode                          ; 2208        ;
 ;     -- arithmetic mode                      ; 126         ;
 ;                                             ;             ;
-; Total registers                             ; 1405        ;
-;     -- Dedicated logic registers            ; 1405        ;
+; Total registers                             ; 1404        ;
+;     -- Dedicated logic registers            ; 1404        ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 132         ;
+; I/O pins                                    ; 148         ;
 ; Total memory bits                           ; 93          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 1436        ;
-; Total fan-out                               ; 14649       ;
-; Average fan-out                             ; 3.62        ;
+; Maximum fan-out                             ; 1435        ;
+; Total fan-out                               ; 14622       ;
+; Average fan-out                             ; 3.60        ;
 +---------------------------------------------+-------------+
 
 
@@ -279,31 +278,31 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                                 ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                             ; Entity Name            ; Library Name ;
 +------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |RV32I                                                     ; 2347 (0)            ; 1405 (0)                  ; 93          ; 0            ; 0       ; 0         ; 132  ; 0            ; |RV32I                                                                                                                                                                          ; RV32I                  ; work         ;
-;    |RV32I_control:RV32I_control_1|                         ; 143 (0)             ; 30 (0)                    ; 93          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1                                                                                                                                            ; RV32I_control          ; work         ;
-;       |decode_stage_control:decode_stage_control_1|        ; 87 (14)             ; 24 (15)                   ; 93          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1                                                                                                ; decode_stage_control   ; work         ;
+; |RV32I                                                     ; 2334 (0)            ; 1404 (0)                  ; 93          ; 0            ; 0       ; 0         ; 148  ; 0            ; |RV32I                                                                                                                                                                          ; RV32I                  ; work         ;
+;    |RV32I_control:RV32I_control_1|                         ; 137 (0)             ; 29 (0)                    ; 93          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1                                                                                                                                            ; RV32I_control          ; work         ;
+;       |decode_stage_control:decode_stage_control_1|        ; 80 (12)             ; 23 (15)                   ; 93          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1                                                                                                ; decode_stage_control   ; work         ;
 ;          |altshift_taps:MemToReg_execute_rtl_0|            ; 9 (0)               ; 6 (0)                     ; 93          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|altshift_taps:MemToReg_execute_rtl_0                                                           ; altshift_taps          ; work         ;
 ;             |shift_taps_4km:auto_generated|                ; 9 (2)               ; 6 (3)                     ; 93          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|altshift_taps:MemToReg_execute_rtl_0|shift_taps_4km:auto_generated                             ; shift_taps_4km         ; work         ;
 ;                |altsyncram_k861:altsyncram4|               ; 0 (0)               ; 0 (0)                     ; 93          ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|altshift_taps:MemToReg_execute_rtl_0|shift_taps_4km:auto_generated|altsyncram_k861:altsyncram4 ; altsyncram_k861        ; work         ;
 ;                |cntr_i8h:cntr5|                            ; 2 (2)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|altshift_taps:MemToReg_execute_rtl_0|shift_taps_4km:auto_generated|cntr_i8h:cntr5              ; cntr_i8h               ; work         ;
 ;                |cntr_vof:cntr1|                            ; 5 (5)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|altshift_taps:MemToReg_execute_rtl_0|shift_taps_4km:auto_generated|cntr_vof:cntr1              ; cntr_vof               ; work         ;
-;          |branch_forwarding_unit:branch_forwarding_unit_1| ; 20 (20)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|branch_forwarding_unit:branch_forwarding_unit_1                                                ; branch_forwarding_unit ; work         ;
+;          |branch_forwarding_unit:branch_forwarding_unit_1| ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|branch_forwarding_unit:branch_forwarding_unit_1                                                ; branch_forwarding_unit ; work         ;
 ;          |control:control_1|                               ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|control:control_1                                                                              ; control                ; work         ;
-;          |hazard_unit:hazard_unit_1|                       ; 26 (26)             ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|hazard_unit:hazard_unit_1                                                                      ; hazard_unit            ; work         ;
-;          |mux_2to1_stall:mux_2to1_stall_1|                 ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|mux_2to1_stall:mux_2to1_stall_1                                                                ; mux_2to1_stall         ; work         ;
-;       |execute_stage_control:execute_stage_control_1|      ; 56 (0)              ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|execute_stage_control:execute_stage_control_1                                                                                              ; execute_stage_control  ; work         ;
+;          |hazard_unit:hazard_unit_1|                       ; 22 (22)             ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|hazard_unit:hazard_unit_1                                                                      ; hazard_unit            ; work         ;
+;          |mux_2to1_stall:mux_2to1_stall_1|                 ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|mux_2to1_stall:mux_2to1_stall_1                                                                ; mux_2to1_stall         ; work         ;
+;       |execute_stage_control:execute_stage_control_1|      ; 57 (0)              ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|execute_stage_control:execute_stage_control_1                                                                                              ; execute_stage_control  ; work         ;
 ;          |alu_control:alu_control_1|                       ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|execute_stage_control:execute_stage_control_1|alu_control:alu_control_1                                                                    ; alu_control            ; work         ;
-;          |forwarding_unit:forwarding_unit_1|               ; 47 (47)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|execute_stage_control:execute_stage_control_1|forwarding_unit:forwarding_unit_1                                                            ; forwarding_unit        ; work         ;
+;          |forwarding_unit:forwarding_unit_1|               ; 48 (48)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|execute_stage_control:execute_stage_control_1|forwarding_unit:forwarding_unit_1                                                            ; forwarding_unit        ; work         ;
 ;       |mem_stage_control:mem_stage_control_1|              ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|RV32I_control:RV32I_control_1|mem_stage_control:mem_stage_control_1                                                                                                      ; mem_stage_control      ; work         ;
-;    |decode_stage:decode_stage_1|                           ; 1550 (32)           ; 1107 (115)                ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1                                                                                                                                              ; decode_stage           ; work         ;
-;       |equality_checker:equality_checker_1|                ; 31 (31)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|equality_checker:equality_checker_1                                                                                                          ; equality_checker       ; work         ;
-;       |immediate_generator:immediate_generator_1|          ; 54 (54)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|immediate_generator:immediate_generator_1                                                                                                    ; immediate_generator    ; work         ;
+;    |decode_stage:decode_stage_1|                           ; 1543 (32)           ; 1107 (115)                ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1                                                                                                                                              ; decode_stage           ; work         ;
+;       |equality_checker:equality_checker_1|                ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|equality_checker:equality_checker_1                                                                                                          ; equality_checker       ; work         ;
+;       |immediate_generator:immediate_generator_1|          ; 53 (53)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|immediate_generator:immediate_generator_1                                                                                                    ; immediate_generator    ; work         ;
 ;       |mux_4to1:mux_4to1_Rs1_forwarding|                   ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|mux_4to1:mux_4to1_Rs1_forwarding                                                                                                             ; mux_4to1               ; work         ;
-;       |mux_4to1:mux_4to1_Rs2_forwarding|                   ; 33 (33)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|mux_4to1:mux_4to1_Rs2_forwarding                                                                                                             ; mux_4to1               ; work         ;
-;       |reg_file:register_file|                             ; 1336 (0)            ; 992 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file                                                                                                                       ; reg_file               ; work         ;
-;          |dec_5to32:dec|                                   ; 43 (43)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|dec_5to32:dec                                                                                                         ; dec_5to32              ; work         ;
+;       |mux_4to1:mux_4to1_Rs2_forwarding|                   ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|mux_4to1:mux_4to1_Rs2_forwarding                                                                                                             ; mux_4to1               ; work         ;
+;       |reg_file:register_file|                             ; 1330 (0)            ; 992 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file                                                                                                                       ; reg_file               ; work         ;
+;          |dec_5to32:dec|                                   ; 40 (40)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|dec_5to32:dec                                                                                                         ; dec_5to32              ; work         ;
 ;          |mux_32to1:mux1|                                  ; 645 (645)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|mux_32to1:mux1                                                                                                        ; mux_32to1              ; work         ;
-;          |mux_32to1:mux2|                                  ; 648 (648)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|mux_32to1:mux2                                                                                                        ; mux_32to1              ; work         ;
+;          |mux_32to1:mux2|                                  ; 645 (645)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|mux_32to1:mux2                                                                                                        ; mux_32to1              ; work         ;
 ;          |reg:\gen_reg:10:reg_i|                           ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|reg:\gen_reg:10:reg_i                                                                                                 ; reg                    ; work         ;
 ;          |reg:\gen_reg:11:reg_i|                           ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|reg:\gen_reg:11:reg_i                                                                                                 ; reg                    ; work         ;
 ;          |reg:\gen_reg:12:reg_i|                           ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|reg:\gen_reg:12:reg_i                                                                                                 ; reg                    ; work         ;
@@ -335,7 +334,7 @@ https://fpgasoftware.intel.com/eula.
 ;          |reg:\gen_reg:7:reg_i|                            ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|reg:\gen_reg:7:reg_i                                                                                                  ; reg                    ; work         ;
 ;          |reg:\gen_reg:8:reg_i|                            ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|reg:\gen_reg:8:reg_i                                                                                                  ; reg                    ; work         ;
 ;          |reg:\gen_reg:9:reg_i|                            ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|reg:\gen_reg:9:reg_i                                                                                                  ; reg                    ; work         ;
-;    |execute_stage:execute_stage_1|                         ; 529 (36)            ; 71 (71)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|execute_stage:execute_stage_1                                                                                                                                            ; execute_stage          ; work         ;
+;    |execute_stage:execute_stage_1|                         ; 529 (35)            ; 71 (71)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|execute_stage:execute_stage_1                                                                                                                                            ; execute_stage          ; work         ;
 ;       |absolute_value:absolute_value_1|                    ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|execute_stage:execute_stage_1|absolute_value:absolute_value_1                                                                                                            ; absolute_value         ; work         ;
 ;       |alu:alu_inst|                                       ; 191 (27)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|execute_stage:execute_stage_1|alu:alu_inst                                                                                                                               ; alu                    ; work         ;
 ;          |add_sub:add_sub_1|                               ; 65 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|execute_stage:execute_stage_1|alu:alu_inst|add_sub:add_sub_1                                                                                                             ; add_sub                ; work         ;
@@ -403,7 +402,7 @@ https://fpgasoftware.intel.com/eula.
 ;             |mux_2to1_bit:\gen_stage3:23:mux_i|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|execute_stage:execute_stage_1|alu:alu_inst|barrel_shifter:barrel_shifter_1|mux_2to1_bit:\gen_stage3:23:mux_i                                                             ; mux_2to1_bit           ; work         ;
 ;             |mux_2to1_bit:\gen_stage4:1:mux_i|             ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|execute_stage:execute_stage_1|alu:alu_inst|barrel_shifter:barrel_shifter_1|mux_2to1_bit:\gen_stage4:1:mux_i                                                              ; mux_2to1_bit           ; work         ;
 ;       |mux_2to1:alu_b_mux|                                 ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|execute_stage:execute_stage_1|mux_2to1:alu_b_mux                                                                                                                         ; mux_2to1               ; work         ;
-;       |mux_2to1:mux_2to1_alu_abs|                          ; 125 (125)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|execute_stage:execute_stage_1|mux_2to1:mux_2to1_alu_abs                                                                                                                  ; mux_2to1               ; work         ;
+;       |mux_2to1:mux_2to1_alu_abs|                          ; 126 (126)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|execute_stage:execute_stage_1|mux_2to1:mux_2to1_alu_abs                                                                                                                  ; mux_2to1               ; work         ;
 ;       |mux_2to1:mux_PC|                                    ; 69 (69)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|execute_stage:execute_stage_1|mux_2to1:mux_PC                                                                                                                            ; mux_2to1               ; work         ;
 ;       |mux_4to1:forward_B_mux|                             ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|execute_stage:execute_stage_1|mux_4to1:forward_B_mux                                                                                                                     ; mux_4to1               ; work         ;
 ;    |fetch_stage:fetch_stage_1|                             ; 61 (30)             ; 126 (94)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |RV32I|fetch_stage:fetch_stage_1                                                                                                                                                ; fetch_stage            ; work         ;
@@ -423,17 +422,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
 ; RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|altshift_taps:MemToReg_execute_rtl_0|shift_taps_4km:auto_generated|altsyncram_k861:altsyncram4|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 3            ; 31           ; 3            ; 31           ; 93   ; None ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                                                         ;
-+--------------------------------------------------------------------------------------------------------------+---------------------+------------------------+
-; Latch Name                                                                                                   ; Latch Enable Signal ; Free of Timing Hazards ;
-+--------------------------------------------------------------------------------------------------------------+---------------------+------------------------+
-; RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|hazard_unit:hazard_unit_1|StallJmp ; GND                 ; yes                    ;
-; Number of user-specified and inferred latches = 1                                                            ;                     ;                        ;
-+--------------------------------------------------------------------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -489,11 +477,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; decode_stage:decode_stage_1|reg_file:register_file|sel_delay1[2]                              ; Merged with decode_stage:decode_stage_1|Rs1_execute[2]                                                    ;
 ; decode_stage:decode_stage_1|reg_file:register_file|sel_delay1[1]                              ; Merged with decode_stage:decode_stage_1|Rs1_execute[1]                                                    ;
 ; decode_stage:decode_stage_1|reg_file:register_file|sel_delay1[0]                              ; Merged with decode_stage:decode_stage_1|Rs1_execute[0]                                                    ;
-; fetch_stage:fetch_stage_1|next_pc_decode[1]                                                   ; Merged with fetch_stage:fetch_stage_1|pc_decode[1]                                                        ;
-; fetch_stage:fetch_stage_1|next_pc_decode[0]                                                   ; Merged with fetch_stage:fetch_stage_1|pc_decode[0]                                                        ;
-; decode_stage:decode_stage_1|next_pc_execute[1]                                                ; Merged with decode_stage:decode_stage_1|pc_execute[1]                                                     ;
-; decode_stage:decode_stage_1|next_pc_execute[0]                                                ; Merged with decode_stage:decode_stage_1|pc_execute[0]                                                     ;
 ; RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|MemToReg_execute[0] ; Merged with RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|MemRead_execute_int ;
+; fetch_stage:fetch_stage_1|pc_decode[1]                                                        ; Merged with fetch_stage:fetch_stage_1|next_pc_decode[1]                                                   ;
+; fetch_stage:fetch_stage_1|pc_decode[0]                                                        ; Merged with fetch_stage:fetch_stage_1|next_pc_decode[0]                                                   ;
+; decode_stage:decode_stage_1|pc_execute[1]                                                     ; Merged with decode_stage:decode_stage_1|next_pc_execute[1]                                                ;
+; decode_stage:decode_stage_1|pc_execute[0]                                                     ; Merged with decode_stage:decode_stage_1|next_pc_execute[0]                                                ;
 ; Total Number of Removed Registers = 84                                                        ;                                                                                                           ;
 +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
 
@@ -503,10 +491,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1405  ;
+; Total registers                              ; 1404  ;
 ; Number of registers using Synchronous Clear  ; 19    ;
 ; Number of registers using Synchronous Load   ; 20    ;
-; Number of registers using Asynchronous Clear ; 1401  ;
+; Number of registers using Asynchronous Clear ; 1400  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 1119  ;
 ; Number of registers using Preset             ; 0     ;
@@ -542,25 +530,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; 10:1               ; 15 bits   ; 90 LEs        ; 60 LEs               ; 30 LEs                 ; Yes        ; |RV32I|execute_stage:execute_stage_1|alu_result_mem[20]                                                                                            ;
+; 10:1               ; 15 bits   ; 90 LEs        ; 60 LEs               ; 30 LEs                 ; Yes        ; |RV32I|execute_stage:execute_stage_1|alu_result_mem[27]                                                                                            ;
 ; 12:1               ; 8 bits    ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; Yes        ; |RV32I|execute_stage:execute_stage_1|alu_result_mem[15]                                                                                            ;
-; 13:1               ; 4 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |RV32I|execute_stage:execute_stage_1|alu_result_mem[5]                                                                                             ;
+; 13:1               ; 4 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |RV32I|execute_stage:execute_stage_1|alu_result_mem[6]                                                                                             ;
 ; 14:1               ; 2 bits    ; 18 LEs        ; 14 LEs               ; 4 LEs                  ; Yes        ; |RV32I|execute_stage:execute_stage_1|alu_result_mem[3]                                                                                             ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |RV32I|decode_stage:decode_stage_1|immediate_generator:immediate_generator_1|Mux10                                                                 ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |RV32I|decode_stage:decode_stage_1|mux_4to1:mux_4to1_Rs1_forwarding|out_mux[9]                                                                     ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |RV32I|decode_stage:decode_stage_1|mux_4to1:mux_4to1_Rs2_forwarding|out_mux[15]                                                                    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|hazard_unit:hazard_unit_1|FetchPipeWrite                          ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |RV32I|execute_stage:execute_stage_1|mux_4to1:forward_B_mux|out_mux[13]                                                                            ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |RV32I|wb_stage:wb_stage_1|mux_4to1:mux_4to1_1|out_mux[26]                                                                                         ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |RV32I|execute_stage:execute_stage_1|mux_2to1:mux_PC|out_mux[4]                                                                                    ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; No         ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|branch_forwarding_unit:branch_forwarding_unit_1|Rs1_decode_int[4] ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; No         ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|hazard_unit:hazard_unit_1|Rs1_decode_int[4]                       ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; No         ; |RV32I|RV32I_control:RV32I_control_1|execute_stage_control:execute_stage_control_1|forwarding_unit:forwarding_unit_1|Rs1_execute_int[4]            ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|mux_32to1:mux1|Mux17                                                                     ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|mux_32to1:mux2|Mux24                                                                     ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 15 LEs               ; 10 LEs                 ; No         ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|hazard_unit:hazard_unit_1|Rs2_decode_int[4]                       ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |RV32I|decode_stage:decode_stage_1|immediate_generator:immediate_generator_1|Mux11                                                                 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |RV32I|decode_stage:decode_stage_1|mux_4to1:mux_4to1_Rs1_forwarding|out_mux[22]                                                                    ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |RV32I|decode_stage:decode_stage_1|mux_4to1:mux_4to1_Rs2_forwarding|out_mux[8]                                                                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |RV32I|execute_stage:execute_stage_1|mux_4to1:forward_B_mux|out_mux[11]                                                                            ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |RV32I|wb_stage:wb_stage_1|mux_4to1:mux_4to1_1|out_mux[31]                                                                                         ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |RV32I|execute_stage:execute_stage_1|mux_2to1:mux_PC|out_mux[9]                                                                                    ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; No         ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|branch_forwarding_unit:branch_forwarding_unit_1|Rs1_decode_int[1] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|hazard_unit:hazard_unit_1|PcWrite                                 ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; No         ; |RV32I|RV32I_control:RV32I_control_1|execute_stage_control:execute_stage_control_1|forwarding_unit:forwarding_unit_1|Rs1_execute_int[1]            ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|mux_32to1:mux1|Mux20                                                                     ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |RV32I|decode_stage:decode_stage_1|reg_file:register_file|mux_32to1:mux2|Mux1                                                                      ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 15 LEs               ; 10 LEs                 ; No         ; |RV32I|RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|branch_forwarding_unit:branch_forwarding_unit_1|Rs2_decode_int[0] ;
 ; 9:1                ; 6 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; No         ; |RV32I|decode_stage:decode_stage_1|immediate_generator:immediate_generator_1|Mux23                                                                 ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; No         ; |RV32I|decode_stage:decode_stage_1|immediate_generator:immediate_generator_1|Mux15                                                                 ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; No         ; |RV32I|decode_stage:decode_stage_1|immediate_generator:immediate_generator_1|Mux17                                                                 ;
 ; 34:1               ; 5 bits    ; 110 LEs       ; 5 LEs                ; 105 LEs                ; No         ; |RV32I|RV32I_control:RV32I_control_1|execute_stage_control:execute_stage_control_1|forwarding_unit:forwarding_unit_1|Rs2_execute_int[4]            ;
 ; 10:1               ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |RV32I|decode_stage:decode_stage_1|immediate_generator:immediate_generator_1|Mux27                                                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -718,27 +705,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 132                         ;
-; cycloneiii_ff         ; 1405                        ;
-;     CLR               ; 262                         ;
+; boundary_port         ; 148                         ;
+; cycloneiii_ff         ; 1404                        ;
+;     CLR               ; 261                         ;
 ;     CLR SCLR SLD      ; 19                          ;
 ;     CLR SLD           ; 1                           ;
 ;     ENA CLR           ; 1119                        ;
 ;     plain             ; 4                           ;
-; cycloneiii_lcell_comb ; 2347                        ;
+; cycloneiii_lcell_comb ; 2334                        ;
 ;     arith             ; 126                         ;
 ;         2 data inputs ; 63                          ;
 ;         3 data inputs ; 63                          ;
-;     normal            ; 2221                        ;
+;     normal            ; 2208                        ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 4                           ;
-;         2 data inputs ; 32                          ;
-;         3 data inputs ; 270                         ;
-;         4 data inputs ; 1913                        ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 284                         ;
+;         4 data inputs ; 1899                        ;
 ; cycloneiii_ram_block  ; 31                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 17.00                       ;
-; Average LUT depth     ; 12.11                       ;
+; Average LUT depth     ; 12.01                       ;
 +-----------------------+-----------------------------+
 
 
@@ -747,7 +734,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:07     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -757,7 +744,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri Feb  4 17:27:07 2022
+    Info: Processing started: Fri Feb  4 18:46:51 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RV32I -c RV32I
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -771,10 +758,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file /home/s
     Info (12022): Found design unit 1: unary_AND-str File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/unary_AND.vhd Line: 33
     Info (12023): Found entity 1: unary_AND File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/unary_AND.vhd Line: 23
 Info (12021): Found 2 design units, including 1 entities, in source file /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I_control.vhd
-    Info (12022): Found design unit 1: RV32I_control-str File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I_control.vhd Line: 68
+    Info (12022): Found design unit 1: RV32I_control-str File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I_control.vhd Line: 72
     Info (12023): Found entity 1: RV32I_control File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I_control.vhd Line: 24
 Info (12021): Found 2 design units, including 1 entities, in source file /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd
-    Info (12022): Found design unit 1: RV32I-str File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 50
+    Info (12022): Found design unit 1: RV32I-str File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 54
     Info (12023): Found entity 1: RV32I File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 24
 Warning (12019): Can't analyze file -- file ../hdl/src/reg_regfile.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/reg_file.vhd
@@ -813,7 +800,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file /home/s
     Info (12022): Found design unit 1: immediate_generator-str File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/immediate_generator.vhd Line: 35
     Info (12023): Found entity 1: immediate_generator File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/immediate_generator.vhd Line: 24
 Info (12021): Found 2 design units, including 1 entities, in source file /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd
-    Info (12022): Found design unit 1: hazard_unit-str File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 42
+    Info (12022): Found design unit 1: hazard_unit-str File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 46
     Info (12023): Found entity 1: hazard_unit File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 24
 Info (12021): Found 2 design units, including 1 entities, in source file /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/forwarding_unit.vhd
     Info (12022): Found design unit 1: forwarding_unit-str File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/forwarding_unit.vhd Line: 41
@@ -831,7 +818,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file /home/s
     Info (12022): Found design unit 1: equality_checker-str File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/equality_checker.vhd Line: 33
     Info (12023): Found entity 1: equality_checker File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/equality_checker.vhd Line: 23
 Info (12021): Found 2 design units, including 1 entities, in source file /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage_control.vhd
-    Info (12022): Found design unit 1: decode_stage_control-str File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage_control.vhd Line: 59
+    Info (12022): Found design unit 1: decode_stage_control-str File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage_control.vhd Line: 63
     Info (12023): Found entity 1: decode_stage_control File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage_control.vhd Line: 24
 Info (12021): Found 2 design units, including 1 entities, in source file /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage.vhd
     Info (12022): Found design unit 1: decode_stage-str File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage.vhd Line: 57
@@ -858,7 +845,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file /home/s
     Info (12022): Found design unit 1: absolute_value-str File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/absolute_value.vhd Line: 38
     Info (12023): Found entity 1: absolute_value File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/absolute_value.vhd Line: 28
 Info (12127): Elaborating entity "RV32I" for the top level hierarchy
-Info (12128): Elaborating entity "fetch_stage" for hierarchy "fetch_stage:fetch_stage_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 115
+Info (12128): Elaborating entity "fetch_stage" for hierarchy "fetch_stage:fetch_stage_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 119
 Info (12128): Elaborating entity "reg" for hierarchy "fetch_stage:fetch_stage_1|reg:PC" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/fetch_stage.vhd Line: 76
 Info (12128): Elaborating entity "mux_2to1" for hierarchy "fetch_stage:fetch_stage_1|mux_2to1:pcinputmux" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/fetch_stage.vhd Line: 85
 Info (10041): Inferred latch for "out_mux[0]" at mux_2to1.vhd(16) File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/mux_2to1.vhd Line: 16
@@ -893,7 +880,7 @@ Info (10041): Inferred latch for "out_mux[28]" at mux_2to1.vhd(16) File: /home/s
 Info (10041): Inferred latch for "out_mux[29]" at mux_2to1.vhd(16) File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/mux_2to1.vhd Line: 16
 Info (10041): Inferred latch for "out_mux[30]" at mux_2to1.vhd(16) File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/mux_2to1.vhd Line: 16
 Info (10041): Inferred latch for "out_mux[31]" at mux_2to1.vhd(16) File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/mux_2to1.vhd Line: 16
-Info (12128): Elaborating entity "decode_stage" for hierarchy "decode_stage:decode_stage_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 130
+Info (12128): Elaborating entity "decode_stage" for hierarchy "decode_stage:decode_stage_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 134
 Info (12128): Elaborating entity "reg_file" for hierarchy "decode_stage:decode_stage_1|reg_file:register_file" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage.vhd Line: 98
 Info (12128): Elaborating entity "dec_5to32" for hierarchy "decode_stage:decode_stage_1|reg_file:register_file|dec_5to32:dec" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/reg_file.vhd Line: 79
 Info (12128): Elaborating entity "mux_32to1" for hierarchy "decode_stage:decode_stage_1|reg_file:register_file|mux_32to1:mux1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/reg_file.vhd Line: 86
@@ -901,31 +888,36 @@ Info (12128): Elaborating entity "immediate_generator" for hierarchy "decode_sta
 Info (12128): Elaborating entity "mux_4to1" for hierarchy "decode_stage:decode_stage_1|mux_4to1:mux_4to1_Rs1_forwarding" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage.vhd Line: 166
 Info (12128): Elaborating entity "equality_checker" for hierarchy "decode_stage:decode_stage_1|equality_checker:equality_checker_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage.vhd Line: 186
 Info (12128): Elaborating entity "unary_AND" for hierarchy "decode_stage:decode_stage_1|equality_checker:equality_checker_1|unary_AND:unary_AND_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/equality_checker.vhd Line: 47
-Info (12128): Elaborating entity "execute_stage" for hierarchy "execute_stage:execute_stage_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 159
+Info (12128): Elaborating entity "execute_stage" for hierarchy "execute_stage:execute_stage_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 163
 Info (12128): Elaborating entity "alu" for hierarchy "execute_stage:execute_stage_1|alu:alu_inst" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/execute_stage.vhd Line: 106
 Info (12128): Elaborating entity "add_sub" for hierarchy "execute_stage:execute_stage_1|alu:alu_inst|add_sub:add_sub_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/alu.vhd Line: 79
 Info (12128): Elaborating entity "barrel_shifter" for hierarchy "execute_stage:execute_stage_1|alu:alu_inst|barrel_shifter:barrel_shifter_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/alu.vhd Line: 87
 Info (12128): Elaborating entity "mux_2to1_bit" for hierarchy "execute_stage:execute_stage_1|alu:alu_inst|barrel_shifter:barrel_shifter_1|mux_2to1_bit:\gen_stage0:30:mux_i" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/barrel_shifter.vhd Line: 62
 Info (12128): Elaborating entity "absolute_value" for hierarchy "execute_stage:execute_stage_1|absolute_value:absolute_value_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/execute_stage.vhd Line: 156
-Info (12128): Elaborating entity "mem_stage" for hierarchy "mem_stage:mem_stage_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 184
-Info (12128): Elaborating entity "wb_stage" for hierarchy "wb_stage:wb_stage_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 198
-Info (12128): Elaborating entity "RV32I_control" for hierarchy "RV32I_control:RV32I_control_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 211
-Info (12128): Elaborating entity "decode_stage_control" for hierarchy "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I_control.vhd Line: 97
-Info (12128): Elaborating entity "control" for hierarchy "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|control:control_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage_control.vhd Line: 116
-Info (12128): Elaborating entity "hazard_unit" for hierarchy "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|hazard_unit:hazard_unit_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage_control.vhd Line: 158
-Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(74): signal "StallJmpDel3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 74
-Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(96): signal "StallJmpDel1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 96
-Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(96): signal "StallJmpDel2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 96
-Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(96): signal "StallJmpDel3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 96
-Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(97): signal "opcode_fetch" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 97
-Warning (10631): VHDL Process Statement warning at hazard_unit.vhd(85): inferring latch(es) for signal or variable "StallJmp", which holds its previous value in one or more paths through the process File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 85
-Info (10041): Inferred latch for "StallJmp" at hazard_unit.vhd(85) File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 85
-Info (12128): Elaborating entity "mux_2to1_stall" for hierarchy "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|mux_2to1_stall:mux_2to1_stall_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage_control.vhd Line: 175
-Info (12128): Elaborating entity "branch_forwarding_unit" for hierarchy "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|branch_forwarding_unit:branch_forwarding_unit_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage_control.vhd Line: 197
-Info (12128): Elaborating entity "execute_stage_control" for hierarchy "RV32I_control:RV32I_control_1|execute_stage_control:execute_stage_control_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I_control.vhd Line: 127
+Info (12128): Elaborating entity "mem_stage" for hierarchy "mem_stage:mem_stage_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 188
+Info (12128): Elaborating entity "wb_stage" for hierarchy "wb_stage:wb_stage_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 202
+Info (12128): Elaborating entity "RV32I_control" for hierarchy "RV32I_control:RV32I_control_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I.vhd Line: 215
+Info (12128): Elaborating entity "decode_stage_control" for hierarchy "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I_control.vhd Line: 101
+Info (12128): Elaborating entity "control" for hierarchy "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|control:control_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage_control.vhd Line: 120
+Info (12128): Elaborating entity "hazard_unit" for hierarchy "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|hazard_unit:hazard_unit_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage_control.vhd Line: 162
+Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(63): signal "opcode_fetch" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(63): signal "opcode_decode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(65): signal "MemWrite_decode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(65): signal "Rd_decode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(65): signal "Rs1_fetch" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(65): signal "Rs2_fetch" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(74): signal "opcode_fetch" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(74): signal "opcode_decode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(104): signal "StallJmpDel1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(104): signal "StallJmpDel2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(105): signal "opcode_fetch" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at hazard_unit.vhd(105): signal "opcode_decode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/hazard_unit.vhd Line: 105
+Info (12128): Elaborating entity "mux_2to1_stall" for hierarchy "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|mux_2to1_stall:mux_2to1_stall_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage_control.vhd Line: 183
+Info (12128): Elaborating entity "branch_forwarding_unit" for hierarchy "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|branch_forwarding_unit:branch_forwarding_unit_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/decode_stage_control.vhd Line: 205
+Info (12128): Elaborating entity "execute_stage_control" for hierarchy "RV32I_control:RV32I_control_1|execute_stage_control:execute_stage_control_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I_control.vhd Line: 135
 Info (12128): Elaborating entity "alu_control" for hierarchy "RV32I_control:RV32I_control_1|execute_stage_control:execute_stage_control_1|alu_control:alu_control_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/execute_stage_control.vhd Line: 77
 Info (12128): Elaborating entity "forwarding_unit" for hierarchy "RV32I_control:RV32I_control_1|execute_stage_control:execute_stage_control_1|forwarding_unit:forwarding_unit_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/execute_stage_control.vhd Line: 99
-Info (12128): Elaborating entity "mem_stage_control" for hierarchy "RV32I_control:RV32I_control_1|mem_stage_control:mem_stage_control_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I_control.vhd Line: 152
+Info (12128): Elaborating entity "mem_stage_control" for hierarchy "RV32I_control:RV32I_control_1|mem_stage_control:mem_stage_control_1" File: /home/stefano/Desktop/isa_lab3/riscv_opt/hdl/src/RV32I_control.vhd Line: 160
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276034): Inferred altshift_taps megafunction from the following design logic: "RV32I_control:RV32I_control_1|decode_stage_control:decode_stage_control_1|MemToReg_execute_rtl_0"
         Info (286033): Parameter NUMBER_OF_TAPS set to 1
@@ -963,14 +955,14 @@ Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal 
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3809 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 66 input pins
+Info (21057): Implemented 3810 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 82 input pins
     Info (21059): Implemented 66 output pins
-    Info (21061): Implemented 3646 logic cells
+    Info (21061): Implemented 3631 logic cells
     Info (21064): Implemented 31 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 460 megabytes
-    Info: Processing ended: Fri Feb  4 17:27:23 2022
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 467 megabytes
+    Info: Processing ended: Fri Feb  4 18:47:07 2022
     Info: Elapsed time: 00:00:16
     Info: Total CPU time (on all processors): 00:00:30
 

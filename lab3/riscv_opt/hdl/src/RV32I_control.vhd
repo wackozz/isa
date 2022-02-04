@@ -36,6 +36,10 @@ entity RV32I_control is
     Rs2_decode         : in  std_logic_vector(4 downto 0);
     Rd_execute         : in  std_logic_vector(4 downto 0);
     Zero               : in  std_logic;
+    MemWrite_decode    : in  std_logic;                   
+    Rs1_fetch          : in  std_logic_vector(4 downto 0);
+    Rs2_fetch          : in  std_logic_vector(4 downto 0);
+    Rd_decode          : in  std_logic_vector(4 downto 0);
     AbsSel             : out std_logic;
     PcWrite            : out std_logic;
     FetchPipeWrite     : out std_logic;
@@ -98,6 +102,10 @@ begin  -- architecture str
     port map (
       clock              => clock,
       reset              => reset,
+      MemWrite_decode    => MemWrite_decode,
+      Rs1_fetch          => Rs1_fetch,
+      Rs2_fetch          => Rs2_fetch,
+      Rd_decode          => Rd_decode,
       PCSrc              => PCSrc,
       forward_mux_Rs1    => forward_mux_Rs1,
       forward_mux_Rs2    => forward_mux_Rs2,

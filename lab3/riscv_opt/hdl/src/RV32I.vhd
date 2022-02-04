@@ -22,7 +22,7 @@ use ieee.numeric_std.all;
 -------------------------------------------------------------------------------
 
 entity RV32I is
-  
+
   port (
 
     -- global ports
@@ -40,8 +40,12 @@ entity RV32I is
     read_data_mem : in std_logic_vector(31 downto 0);
 
     -- ports to "RV32I_control_1"
-    MemWrite : out std_logic;
-    MemRead  : out std_logic);
+    MemWrite_decode : in  std_logic;
+    Rs1_fetch       : in  std_logic_vector(4 downto 0);
+    Rs2_fetch       : in  std_logic_vector(4 downto 0);
+    Rd_decode       : in  std_logic_vector(4 downto 0);
+    MemWrite        : out std_logic;
+    MemRead         : out std_logic);
 
 end entity RV32I;
 
@@ -218,6 +222,10 @@ begin  -- architecture str
       Rs2_decode         => Rs2_decode,
       Rd_execute         => Rd_execute,
       Zero               => Zero,
+      MemWrite_decode    => MemWrite_decode,
+      Rs1_fetch          => Rs1_fetch,
+      Rs2_fetch          => Rs2_fetch,
+      Rd_decode          => Rd_decode,
       AbsSel             => AbsSel,
       PcWrite            => PcWrite,
       FetchPipeWrite     => FetchPipeWrite,

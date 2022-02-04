@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri Feb  4 17:27:23 2022
+Analysis & Synthesis Status : Successful - Fri Feb  4 18:47:07 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : RV32I
 Top-level Entity Name : RV32I
 Family : Cyclone 10 LP
-Total logic elements : 3,518
-    Total combinational functions : 2,347
-    Dedicated logic registers : 1,405
-Total registers : 1405
-Total pins : 132
+Total logic elements : 3,504
+    Total combinational functions : 2,334
+    Dedicated logic registers : 1,404
+Total registers : 1404
+Total pins : 148
 Total virtual pins : 0
 Total memory bits : 93
 Embedded Multiplier 9-bit elements : 0

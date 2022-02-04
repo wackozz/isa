@@ -276,11 +276,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "instruction_fetch[3]",
+					"name" : "instruction_fetch[0]",
 					"strict" : false
 				},
 				{
-					"name" : "instruction_fetch[2]",
+					"name" : "instruction_fetch[1]",
 					"strict" : false
 				},
 				{
@@ -292,19 +292,79 @@
 					"strict" : false
 				},
 				{
+					"name" : "instruction_fetch[2]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction_fetch[3]",
+					"strict" : false
+				},
+				{
 					"name" : "instruction_fetch[4]",
 					"strict" : false
 				},
 				{
-					"name" : "instruction_fetch[1]",
+					"name" : "MemWrite_decode",
 					"strict" : false
 				},
 				{
-					"name" : "instruction_fetch[0]",
+					"name" : "Rs1_fetch[0]",
 					"strict" : false
 				},
 				{
-					"name" : "instruction_fetch[19]",
+					"name" : "Rs1_fetch[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Rd_decode[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Rd_decode[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Rs1_fetch[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Rs1_fetch[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Rd_decode[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Rd_decode[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Rs1_fetch[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Rd_decode[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Rs2_fetch[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Rs2_fetch[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Rs2_fetch[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Rs2_fetch[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Rs2_fetch[4]",
 					"strict" : false
 				},
 				{
@@ -324,6 +384,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "instruction_fetch[19]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction_fetch[21]",
+					"strict" : false
+				},
+				{
 					"name" : "instruction_fetch[20]",
 					"strict" : false
 				},
@@ -332,15 +400,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "instruction_fetch[21]",
-					"strict" : false
-				},
-				{
 					"name" : "instruction_fetch[22]",
 					"strict" : false
 				},
 				{
 					"name" : "instruction_fetch[24]",
+					"strict" : false
+				},
+				{
+					"name" : "read_data_mem[0]",
 					"strict" : false
 				},
 				{
@@ -357,10 +425,6 @@
 				},
 				{
 					"name" : "read_data_mem[4]",
-					"strict" : false
-				},
-				{
-					"name" : "read_data_mem[0]",
 					"strict" : false
 				},
 				{
@@ -393,10 +457,6 @@
 				},
 				{
 					"name" : "read_data_mem[12]",
-					"strict" : false
-				},
-				{
-					"name" : "read_data_mem[31]",
 					"strict" : false
 				},
 				{
@@ -472,11 +532,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "instruction_fetch[7]",
+					"name" : "read_data_mem[31]",
 					"strict" : false
 				},
 				{
-					"name" : "instruction_fetch[11]",
+					"name" : "instruction_fetch[7]",
 					"strict" : false
 				},
 				{
@@ -484,11 +544,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "instruction_fetch[10]",
+					"strict" : false
+				},
+				{
 					"name" : "instruction_fetch[9]",
 					"strict" : false
 				},
 				{
-					"name" : "instruction_fetch[10]",
+					"name" : "instruction_fetch[11]",
 					"strict" : false
 				},
 				{
