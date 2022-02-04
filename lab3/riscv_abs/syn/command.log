@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version O-2018.06-SP4 for linux64 -- Nov 27, 2018
-#@ # Date:   Thu Feb  3 22:01:30 2022
+#@ # Date:   Fri Feb  4 12:47:03 2022
 #@ # Run by: isa18_2021_2022@localhost.localdomain
 #@ 
 
@@ -6670,14 +6670,13 @@ source -echo -verbose /home/isa18_2021_2022/github/isa/lab3/riscv_abs/syn/script
 #@ analyze -f vhdl -lib WORK ../hdl/src/ram.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/reg_file.vhd
-#@ analyze -f vhdl -lib WORK ../hdl/src/reg_regfile.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/RV32I.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/RV32I_control.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/unary_AND.vhd
 #@ analyze -f vhdl -lib WORK ../hdl/src/wb_stage.vhd
 #@ 
 #@ set power_preserve_rtl_hier_names true
-#@ elaborate RV32I -arch str -lib WORK > ./reports_riscv/elaborate.txt
+#@ elaborate RV32I -arch str -lib WORK > ./reports/elaborate.txt
 #@ #filter contains multiple instances of reg, need to uniquify
 #@ uniquify 
 #@ link
@@ -6687,7 +6686,7 @@ source -echo -verbose /home/isa18_2021_2022/github/isa/lab3/riscv_abs/syn/script
 #@ 
 #@ proc synth {clk_var} {
 #@ #set clock @argv1+-0.07ns
-#@ create_clock -name MY_CLK -period $clk_var clk
+#@ create_clock -name MY_CLK -period $clk_var clock
 #@ set_dont_touch_network MY_CLK
 #@ set_clock_uncertainty 0.07 [get_clock MY_CLK]
 #@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]
@@ -6695,9 +6694,9 @@ source -echo -verbose /home/isa18_2021_2022/github/isa/lab3/riscv_abs/syn/script
 #@ set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
 #@ set_load $OLOAD [all_outputs]
 #@ compile
-#@ report_timing > reports_riscv/report_timing_${clk_var}_ns.txt
-#@ report_area > reports_riscv/report_area_clk_${clk_var}_ns.txt
-#@ report_resources > reports_riscv/report_resources_clk_${clk_var}_ns.txt
+#@ report_timing > reports/report_timing_${clk_var}_ns.txt
+#@ report_area > reports/report_area_clk_${clk_var}_ns.txt
+#@ report_resources > reports/report_resources_clk_${clk_var}_ns.txt
 #@ #quit
 #@ }
 #@ 
@@ -6715,3 +6714,4 @@ source -echo -verbose /home/isa18_2021_2022/github/isa/lab3/riscv_abs/syn/script
 #@ synth 0
 #@ # -- End source /home/isa18_2021_2022/github/isa/lab3/riscv_abs/syn/scripts/synth_riscv.tcl
 
+check_design

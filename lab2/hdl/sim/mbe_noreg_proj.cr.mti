@@ -111,13 +111,6 @@ Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 -- Compiling entity packfp
 -- Compiling architecture packfp of packfp
 
-} {} {}} /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/full_adder.vhd {1 {vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/full_adder.vhd
-Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
--- Loading package standard
--- Loading package std_logic_1164
--- Compiling entity full_adder
--- Compiling architecture gate_level of full_adder
-
 } {} {}} /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/mbe_multiplier.vhd {1 {vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/mbe_multiplier.vhd
 Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 -- Loading package standard
@@ -126,12 +119,27 @@ Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 -- Compiling entity mbe_multiplier
 -- Compiling architecture arch of mbe_multiplier
 
-} {} {}} /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg/reg.vhd {1 {vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg/reg.vhd
+} {} {}} /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/full_adder.vhd {1 {vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/full_adder.vhd
 Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 -- Loading package standard
 -- Loading package std_logic_1164
--- Compiling entity reg
--- Compiling architecture str of reg
+-- Compiling entity full_adder
+-- Compiling architecture gate_level of full_adder
+
+} {} {}} /home/isa18_2021_2022/github/isa/lab2/hdl/tb/tb_fpmul.v {1 {vlog -work work -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/tb/tb_fpmul.v
+Model Technology ModelSim SE vlog 6.2g Compiler 2007.02 Feb 21 2007
+-- Compiling module tb_fpmul
+
+Top level modules:
+	tb_fpmul
+
+} {} {}} /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/MBE_encoder.vhd {1 {vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/MBE_encoder.vhd
+Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Loading package numeric_std
+-- Compiling entity mbe_encoder
+-- Compiling architecture str of mbe_encoder
 
 } {} {}} /home/isa18_2021_2022/github/isa/lab2/hdl/src/common/fpround_fpround.vhd {1 {vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/common/fpround_fpround.vhd
 Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
@@ -142,20 +150,12 @@ Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 -- Compiling entity fpround
 -- Compiling architecture fpround of fpround
 
-} {} {}} /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/MBE_encoder.vhd {1 {vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg/stage2_mbe/mbe/MBE_encoder.vhd
+} {} {}} /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg/reg.vhd {1 {vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/src/fpmul_pipeline_reg/reg.vhd
 Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 -- Loading package standard
 -- Loading package std_logic_1164
--- Loading package numeric_std
--- Compiling entity mbe_encoder
--- Compiling architecture str of mbe_encoder
-
-} {} {}} /home/isa18_2021_2022/github/isa/lab2/hdl/tb/tb_fpmul.v {1 {vlog -work work -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/tb/tb_fpmul.v
-Model Technology ModelSim SE vlog 6.2g Compiler 2007.02 Feb 21 2007
--- Compiling module tb_fpmul
-
-Top level modules:
-	tb_fpmul
+-- Compiling entity reg
+-- Compiling architecture str of reg
 
 } {} {}} /home/isa18_2021_2022/github/isa/lab2/hdl/tb/data_sink.vhd {1 {vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab2/hdl/tb/data_sink.vhd
 Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007

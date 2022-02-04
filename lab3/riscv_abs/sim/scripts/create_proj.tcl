@@ -11,11 +11,14 @@ project addfile ../hdl/src/decode_stage_control.vhd
 project addfile ../hdl/src/execute_stage.vhd
 project addfile ../hdl/src/execute_stage_control.vhd
 project addfile ../hdl/src/fetch_stage.vhd
+project addfile ../hdl/src/forwarding_unit.vhd
+project addfile ../hdl/src/hazard_unit.vhd
 project addfile ../hdl/src/immediate_generator.vhd
 project addfile ../hdl/src/mem_stage.vhd
 project addfile ../hdl/src/mem_stage_control.vhd
 project addfile ../hdl/src/mux_2to1.vhd
 project addfile ../hdl/src/mux_2to1_bit.vhd
+project addfile ../hdl/src/mux_2to1_stall.vhd
 project addfile ../hdl/src/mux_4to1.vhd
 project addfile ../hdl/src/mux_32to1.vhd
 project addfile ../hdl/src/param_pkg.vhd

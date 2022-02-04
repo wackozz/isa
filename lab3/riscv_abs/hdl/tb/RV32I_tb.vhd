@@ -203,10 +203,10 @@ begin  -- architecture arch
   funct3 <= instruction_fetch(14 downto 12);
 
   -- instance "immediate_generator_1"
-  immediate_generator_1 : entity work.immediate_generator
-    port map (
-      instruction => instruction_fetch,
-      immediate   => immediate);
+  --immediate_generator_1 : entity work.immediate_generator
+  --  port map (
+  --    instruction => instruction_fetch,
+  --    immediate   => immediate);
 end architecture arch;
 
 -------------------------------------------------------------------------------

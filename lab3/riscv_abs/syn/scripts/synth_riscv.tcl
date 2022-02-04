@@ -27,7 +27,6 @@ analyze -f vhdl -lib WORK ../hdl/src/param_pkg.vhd
 analyze -f vhdl -lib WORK ../hdl/src/ram.vhd
 analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
 analyze -f vhdl -lib WORK ../hdl/src/reg_file.vhd
-analyze -f vhdl -lib WORK ../hdl/src/reg_regfile.vhd
 analyze -f vhdl -lib WORK ../hdl/src/RV32I.vhd
 analyze -f vhdl -lib WORK ../hdl/src/RV32I_control.vhd
 analyze -f vhdl -lib WORK ../hdl/src/unary_AND.vhd
@@ -44,7 +43,7 @@ ungroup -all -flatten
 
 proc synth {clk_var} {
 #set clock @argv1+-0.07ns
-create_clock -name MY_CLK -period $clk_var clk
+create_clock -name MY_CLK -period $clk_var clock
 set_dont_touch_network MY_CLK
 set_clock_uncertainty 0.07 [get_clock MY_CLK]
 set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] clock]

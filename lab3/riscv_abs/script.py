@@ -23,7 +23,7 @@ def synth(file_name):
 		print("\n**********************SYNTHESIS WITH " + str(clk_value) + " ns**********************\n")
 		os.system('syn/'+file_name+'.sh')
 
-		with open('syn/reports/reports_'+file_name+'/report_timing_' +str(clk_value)+ '_ns.txt','r') as file:
+		with open('syn/reports/report_timing_' +str(clk_value)+ '_ns.txt','r') as file:
 			for line in file:
 				if len(line.split(' '))>2:
 					if ((line.split(' ')[2] == "slack")):
@@ -36,7 +36,7 @@ def synth(file_name):
 		line_to_save = line_to_save.split(' ')[2]
 		if line_to_save == "increase":
 			flag = 1
-			with open('syn/reports/reports_'+file_name+'/report_timing_' +str(clk_value)+ '_ns.txt','r') as file:
+			with open('syn/reports/report_timing_' +str(clk_value)+ '_ns.txt','r') as file:
 				for line in file:
 					if len(line.split(' '))>2:
 						if ((line.split(' ')[2] == "slack")):
