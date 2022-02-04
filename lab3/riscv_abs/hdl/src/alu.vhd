@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-18
--- Last update: 2022-02-01
+-- Last update: 2022-02-04
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -51,7 +51,7 @@ architecture str of alu is
   signal xor_result   : std_logic_vector(31 downto 0);
   signal and_result   : std_logic_vector(31 downto 0);
   signal shift_result : std_logic_vector(31 downto 0);
-  signal zero_sig     : std_logic_vector(31 downto 0);
+  signal zero_sig     : std_logic_vector(30 downto 0);
 
 
 begin  -- architecture str
@@ -59,18 +59,19 @@ begin  -- architecture str
   --sum/auipc/lui
   result <= sum_int when ALUCtrl = "0010" else
             --xor
-            xor_result                                    when ALUCtrl = "0111" else
+            xor_result             when ALUCtrl = "0111" else
             --and
-            and_result                                    when ALUCtrl = "0011" else
+            and_result             when ALUCtrl = "0011" else
             --slt
-            "0000000000000000000000000000000"&sum_int(31) when ALUCtrl = "0100" else
+            zero_sig & sum_int(31) when ALUCtrl = "0100" else
             --srai
-            shift_result                                  when ALUCtrl = "0101" else
+            shift_result           when ALUCtrl = "0101" else
             (others => '0');
 
   comp       <= A xnor B;
   xor_result <= A xor B;
   and_result <= A and B;
+  zero_sig   <= (others => '0');
 
   -----------------------------------------------------------------------------
   -- Component instantiations
