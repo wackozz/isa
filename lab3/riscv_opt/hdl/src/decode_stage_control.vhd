@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-08
--- Last update: 2022-02-04
+-- Last update: 2022-02-06
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -36,7 +36,6 @@ entity decode_stage_control is
     RegWrite_mem       : in  std_logic;
     RegWrite           : in  std_logic;
     Zero               : in  std_logic;
-    MemWrite_decode    : in  std_logic;
     Rs1_fetch          : in  std_logic_vector(4 downto 0);
     Rs2_fetch          : in  std_logic_vector(4 downto 0);
     Rd_decode          : in  std_logic_vector(4 downto 0);
@@ -163,7 +162,7 @@ begin  -- architecture str
     port map (
       clock           => clock,
       reset           => reset,
-      MemWrite_decode => MemWrite_decode,
+      MemWrite_decode => MemWrite_int,
       Rs1_fetch       => Rs1_fetch,
       Rs2_fetch       => Rs2_fetch,
       Rd_decode       => Rd_decode,

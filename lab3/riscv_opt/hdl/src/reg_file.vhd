@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-02-01
--- Last update: 2022-02-01
+-- Last update: 2022-02-06
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -91,7 +91,7 @@ begin
     if reset = '0' then                     -- asynchronous reset (active low)
       sel_delay1 <= (others => '0');
       sel_delay2 <= (others => '0');
-    elsif clock'event and clock = '1' then  -- rising clock edge
+    elsif clock'event and clock = '0' then  -- rising clock edge
       sel_delay1 <= read_reg1;
       sel_delay2 <= read_reg2;
     end if;

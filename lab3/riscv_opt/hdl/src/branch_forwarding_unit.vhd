@@ -6,7 +6,7 @@
 -- Author     : stefano  <stefano@stefano-N56JK>
 -- Company    : 
 -- Created    : 2022-02-04
--- Last update: 2022-02-04
+-- Last update: 2022-02-06
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -46,94 +46,29 @@ architecture str of branch_forwarding_unit is
   -- Internal signal declarations
   -----------------------------------------------------------------------------
 
-  signal Rs1_decode_int : std_logic_vector(4 downto 0);
-  signal Rs2_decode_int : std_logic_vector(4 downto 0);
-  signal Rd_mem_int      : std_logic_vector(4 downto 0);
-  signal Rd_wb_int       : std_logic_vector(4 downto 0);
-
 begin  -- architecture str
 
-  forwarding_proc : process (Rs1_decode_int, Rs2_decode_int, Rd_mem_int, Rd_wb_int, RegWrite_mem, RegWrite) is
+  forwarding_proc : process (Rs1_decode, Rs2_decode, Rd_mem, Rd_wb, RegWrite_mem, RegWrite) is
   begin  -- process forwarding_proc
     -- EX Hazard
-    if (RegWrite = '1' and (Rd_wb_int /= "00000") and not ((RegWrite_mem = '1') and (Rd_mem_int /= "00000") and (Rd_mem_int = Rs1_decode_int)) and (Rd_wb_int = Rs1_decode_int)) then
+    if (RegWrite = '1' and (Rd_wb /= "00000") and not ((RegWrite_mem = '1') and (Rd_mem /= "00000") and (Rd_mem = Rs1_decode)) and (Rd_wb = Rs1_decode)) then
       forward_mux_Rs1 <= "01";
-    elsif (RegWrite_mem = '1' and (Rd_mem_int /= "00000") and (Rd_mem_int = Rs1_decode_int)) then
+    elsif (RegWrite_mem = '1' and (Rd_mem /= "00000") and (Rd_mem = Rs1_decode)) then
       forward_mux_Rs1 <= "10";
     else
       forward_mux_Rs1 <= "00";
     end if;
     -- MEM Hazard
-    if (RegWrite = '1' and (Rd_wb_int /= "00000") and not ((RegWrite_mem = '1') and (Rd_mem_int /= "00000") and (Rd_mem_int = Rs2_decode_int)) and (Rd_wb_int = Rs2_decode_int)) then
+    if (RegWrite = '1' and (Rd_wb /= "00000") and not ((RegWrite_mem = '1') and (Rd_mem /= "00000") and (Rd_mem = Rs2_decode)) and (Rd_wb = Rs2_decode)) then
       forward_mux_Rs2 <= "01";
-    elsif (RegWrite_mem = '1' and (Rd_mem_int /= "00000") and (Rd_mem_int = Rs2_decode_int)) then
+    elsif (RegWrite_mem = '1' and (Rd_mem /= "00000") and (Rd_mem = Rs2_decode)) then
       forward_mux_Rs2 <= "10";
     else
       forward_mux_Rs2 <= "00";
     end if;
   end process forwarding_proc;
 
-  reg_detect_proc : process (opcode_decode, Rs1_decode, Rs2_decode, Rd_mem, Rd_wb) is
-  begin  -- process reg_detect_proc
-    if opcode_decode = "0110111" then     --LUI
-      Rs1_decode_int <= "00000";
-      Rs2_decode_int <= "00000";
-      Rd_mem_int      <= Rd_mem;
-      Rd_wb_int       <= Rd_wb;
-    elsif opcode_decode = "0010111" then  --AUIPC
-      Rs1_decode_int <= "00000";
-      Rs2_decode_int <= "00000";
-      Rd_mem_int      <= Rd_mem;
-      Rd_wb_int       <= Rd_wb;
-    elsif opcode_decode = "1101111" then  --JAL
-      Rs1_decode_int <= "00000";
-      Rs2_decode_int <= "00000";
-      Rd_mem_int      <= Rd_mem;
-      Rd_wb_int       <= Rd_wb;
-    elsif opcode_decode = "1100011" then  --BEQ
-      Rs1_decode_int <= Rs1_decode;
-      Rs2_decode_int <= Rs2_decode;
-      Rd_mem_int      <= Rd_mem;
-      Rd_wb_int       <= Rd_wb;
-    elsif opcode_decode = "0000011" then  --LW
-      Rs1_decode_int <= Rs1_decode;
-      Rs2_decode_int <= "00000";
-      Rd_mem_int      <= Rd_mem;
-      Rd_wb_int       <= Rd_wb;
-    elsif opcode_decode = "0100011" then  --SW
-      Rs1_decode_int <= Rs1_decode;
-      Rs2_decode_int <= Rs2_decode;
-      Rd_mem_int      <= Rd_mem;
-      Rd_wb_int       <= Rd_wb;
-    elsif opcode_decode = "0010011" then  --ADDI / ANDI
-      Rs1_decode_int <= Rs1_decode;
-      Rs2_decode_int <= "00000";
-      Rd_mem_int      <= Rd_mem;
-      Rd_wb_int       <= Rd_wb;
-    elsif opcode_decode = "0010011" then  -- SRAI
-      Rs1_decode_int <= Rs1_decode;
-      Rs2_decode_int <= "00000";
-      Rd_mem_int      <= Rd_mem;
-      Rd_wb_int       <= Rd_wb;
-    elsif opcode_decode = "0110011" then  --ADD / SLT / XOR
-      Rs1_decode_int <= Rs1_decode;
-      Rs2_decode_int <= Rs2_decode;
-      Rd_mem_int      <= Rd_mem;
-      Rd_wb_int       <= Rd_wb;
-    elsif opcode_decode = "0001011" then  --ABSOLUTE
-      Rs1_decode_int <= Rs1_decode;
-      Rs2_decode_int <= "00000";
-      Rd_mem_int      <= Rd_mem;
-      Rd_wb_int       <= Rd_wb;
-    else
-      Rs1_decode_int <= "00000";
-      Rs2_decode_int <= "00000";
-      Rd_mem_int      <= "00000";
-      Rd_wb_int       <= "00000";
-    end if;
-  end process reg_detect_proc;
-
-
+ 
 -----------------------------------------------------------------------------
 -- Component instantiations
 -----------------------------------------------------------------------------

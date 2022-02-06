@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-02-01
+-- Last update: 2022-02-06
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -32,6 +32,9 @@ entity fetch_stage is
     target_address_fetch : in  std_logic_vector(31 downto 0);
     PcWrite              : in  std_logic;
     FetchPipeWrite       : in  std_logic;
+    Rs1_fetch            : out std_logic_vector(4 downto 0);
+    Rs2_fetch            : out std_logic_vector(4 downto 0);
+    Rd_decode            : out std_logic_vector(4 downto 0);
     instruction_mem_adr  : out std_logic_vector(31 downto 0);
     pc_decode            : out std_logic_vector(31 downto 0);
     next_pc_decode       : out std_logic_vector(31 downto 0);
@@ -65,7 +68,7 @@ architecture str of fetch_stage is
   signal pc_in, pc_out_int                  : std_logic_vector(31 downto 0);
   signal pcinput_in_mux_0, pcinput_in_mux_1 : std_logic_vector(31 downto 0);
   signal next_pc                            : std_logic_vector(31 downto 0);
-
+  signal instruction_decode_int             : std_logic_vector(31 downto 0);
 begin  -- architecture str
 
   -----------------------------------------------------------------------------
@@ -98,20 +101,24 @@ begin  -- architecture str
   pipe : process (clock, reset) is
   begin  -- process pipe
     if reset = '0' then                     -- asynchronous reset (active low)
-      instruction_decode <= (others => '0');
-      pc_decode          <= (others => '0');
-      next_pc_decode     <= (others => '0');
+      instruction_decode_int <= (others => '0');
+      pc_decode              <= (others => '0');
+      next_pc_decode         <= (others => '0');
     elsif clock'event and clock = '1' then  -- rising clock edge
       if FetchPipeWrite = '1' then
-        instruction_decode <= instruction_fetch;
-        pc_decode          <= pc_out_int;
-        next_pc_decode     <= next_pc;
+        instruction_decode_int <= instruction_fetch;
+        pc_decode              <= pc_out_int;
+        next_pc_decode         <= next_pc;
       end if;
     end if;
-    end process pipe;
+  end process pipe;
 
-      next_pc <= std_logic_vector(unsigned(pc_out_int) + 4);
+  next_pc            <= std_logic_vector(unsigned(pc_out_int) + 4);
+  instruction_decode <= instruction_decode_int;
+  Rd_decode          <= instruction_decode_int(11 downto 7);
+  Rs1_fetch          <= instruction_fetch(19 downto 15);
+  Rs2_fetch          <= instruction_fetch(24 downto 20);
 
-    end architecture str;
+end architecture str;
 
 -------------------------------------------------------------------------------
