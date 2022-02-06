@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-08
--- Last update: 2022-02-06
+-- Last update: 2022-02-07
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -53,6 +53,7 @@ entity decode_stage_control is
     PCSrc              : out std_logic;
     forward_mux_Rs1    : out std_logic_vector(1 downto 0);
     forward_mux_Rs2    : out std_logic_vector(1 downto 0);
+    Flush              : out std_logic;
     MemToReg_execute   : out std_logic_vector(1 downto 0));
 
 end entity decode_stage_control;
@@ -174,6 +175,8 @@ begin  -- architecture str
       Rd_execute      => Rd_execute,
       PcWrite         => PcWrite,
       FetchPipeWrite  => FetchPipeWrite,
+      branch          => branch_nostall,
+      Flush           => flush,
       StallSrc        => StallSrc);
 
   MemRead_execute <= MemRead_execute_int;

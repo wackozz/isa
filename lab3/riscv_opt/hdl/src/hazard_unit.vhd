@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-31
--- Last update: 2022-02-06
+-- Last update: 2022-02-07
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -28,6 +28,7 @@ entity hazard_unit is
     reset           : in  std_logic;
     MemRead_execute : in  std_logic;
     MemWrite_decode : in  std_logic;
+    branch          : in  std_logic;
     opcode_fetch    : in  std_logic_vector(6 downto 0);
     opcode_decode   : in  std_logic_vector(6 downto 0);
     Rs1_decode      : in  std_logic_vector(4 downto 0);
@@ -37,6 +38,7 @@ entity hazard_unit is
     Rd_execute      : in  std_logic_vector(4 downto 0);
     Rd_decode       : in  std_logic_vector(4 downto 0);
     PcWrite         : out std_logic;
+    Flush           : out std_logic;
     FetchPipeWrite  : out std_logic;
     StallSrc        : out std_logic);
 
@@ -44,7 +46,7 @@ end entity hazard_unit;
 -------------------------------------------------------------------------------
 
 architecture str of hazard_unit is
-  type states is (idle, stall, stall_twice1, stall_twice2, nop);
+  type states is (idle, stall, stall_twice1, stall_twice2, idle2, idle3, flush_state);
   signal current_state, next_state : states;
 -----------------------------------------------------------------------------
 -- Internal signal declarations
@@ -60,7 +62,7 @@ begin  -- architecture str
     end if;
   end process fsm;
 
-  state_ev : process(current_state, opcode_fetch, opcode_decode, rs1_fetch, rs2_fetch, rd_decode) is
+  state_ev : process(current_state, branch, opcode_fetch, opcode_decode, rs1_fetch, rs2_fetch, rd_decode) is
   begin  -- process state_ev
     case current_state is
       when idle =>
@@ -74,13 +76,29 @@ begin  -- architecture str
         else
           next_state <= idle;
         end if;
+
       when stall =>
-        next_state <= nop;
+        if branch = '1' then
+          next_state <= idle;
+        else
+          next_state <= idle2;
+        end if;
+
       when stall_twice1 =>
         next_state <= stall_twice2;
+
       when stall_twice2 =>
-        next_state <= nop;
-      when nop =>
+        if branch = '1' then
+          next_state <= idle;
+        else
+          next_state <= idle2;
+        end if;
+
+      when idle2 =>
+        next_state <= idle3;
+      when idle3 =>
+        next_state <= flush_state;
+      when flush_state =>
         next_state <= idle;
       when others => null;
     end case;
@@ -93,22 +111,38 @@ begin  -- architecture str
         PcWrite        <= '1';
         FetchPipeWrite <= '1';
         StallSrc       <= '1';
+        Flush          <= '0';
+      when idle2 =>
+        PcWrite        <= '1';
+        FetchPipeWrite <= '1';
+        StallSrc       <= '1';
+        Flush          <= '0';
+      when idle3 =>
+        PcWrite        <= '1';
+        FetchPipeWrite <= '1';
+        StallSrc       <= '1';
+        Flush          <= '0';
       when stall =>
         PcWrite        <= '0';
         FetchPipeWrite <= '0';
         StallSrc       <= '1';
+        Flush          <= '0';
       when stall_twice1 =>
         PcWrite        <= '0';
         FetchPipeWrite <= '0';
         StallSrc       <= '1';
+        Flush          <= '0';
       when stall_twice2 =>
         PcWrite        <= '0';
         FetchPipeWrite <= '0';
         StallSrc       <= '1';
-      when nop =>
+        Flush          <= '0';
+      when flush_state =>
         PcWrite        <= '1';
         FetchPipeWrite <= '1';
         StallSrc       <= '0';
+        Flush          <= '1';
+
       when others => null;
     end case;
   end process state_as;

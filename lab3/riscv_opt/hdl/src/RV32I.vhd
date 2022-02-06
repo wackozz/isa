@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-05
--- Last update: 2022-02-06
+-- Last update: 2022-02-07
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ entity RV32I is
     write_data_mem : out std_logic_vector(31 downto 0);
 
     -- ports to "mem_stage_1"
-    read_data_mem : in std_logic_vector(31 downto 0);
+    read_data_mem : in  std_logic_vector(31 downto 0);
     data_mem_adr  : out std_logic_vector(31 downto 0);
 
     -- ports to "RV32I_control_1"
@@ -96,6 +96,7 @@ architecture str of RV32I is
 
   -- outputs of "RV32I_control_1"
   signal AbsSel          : std_logic;
+  signal Flush           : std_logic;
   signal PcWrite         : std_logic;
   signal FetchPipeWrite  : std_logic;
   signal PCSrc           : std_logic;
@@ -138,6 +139,7 @@ begin  -- architecture str
     port map (
       clock                => clock,
       reset                => reset,
+      Flush                => Flush,
       instruction_decode   => instruction_decode,
       pc_decode            => pc_decode,
       next_pc_decode       => next_pc_decode,

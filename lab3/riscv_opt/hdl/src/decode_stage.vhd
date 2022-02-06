@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-02-04
+-- Last update: 2022-02-07
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -27,6 +27,7 @@ entity decode_stage is
     clock                : in  std_logic;
     reset                : in  std_logic;
     instruction_decode   : in  std_logic_vector(31 downto 0);
+    Flush                : in  std_logic;
     pc_decode            : in  std_logic_vector(31 downto 0);
     next_pc_decode       : in  std_logic_vector(31 downto 0);
     RegWrite             : in  std_logic;
@@ -76,7 +77,6 @@ architecture str of decode_stage is
   -- Internal signal declarations
   -----------------------------------------------------------------------------
   signal read_data1_int, read_data2_int : std_logic_vector(31 downto 0);
-  signal target_address_fetch_int       : std_logic_vector(31 downto 0);
   signal immediate_int                  : std_logic_vector(31 downto 0);
   signal alu_ctrl_int                   : std_logic_vector(3 downto 0);
   signal rd_int                         : std_logic_vector(4 downto 0);
@@ -117,36 +117,44 @@ begin  -- architecture str
   pipe : process (clock, reset) is
   begin  -- process pipe
     if reset = '0' then                 -- asynchronous reset (active low)
-      immediate_execute    <= (others => '0');
+      immediate_execute <= (others => '0');
       --read_data1_execute <= (others => '0');
       --read_data2_execute <= (others => '0');
-      pc_execute           <= (others => '0');
-      alu_ctrl_execute     <= (others => '0');
-      rd_execute           <= (others => '0');
-      shamt_execute        <= (others => '0');
-      next_pc_execute      <= (others => '0');
-      Rs1_execute          <= (others => '0');
-      Rs2_execute          <= (others => '0');
-      target_address_fetch <= (others => '0');
+      pc_execute        <= (others => '0');
+      alu_ctrl_execute  <= (others => '0');
+      rd_execute        <= (others => '0');
+      shamt_execute     <= (others => '0');
+      next_pc_execute   <= (others => '0');
+      Rs1_execute       <= (others => '0');
+      Rs2_execute       <= (others => '0');
 
     elsif clock'event and clock = '1' then  -- rising clock edge
-      pc_execute           <= pc_decode;
-      immediate_execute    <= immediate_int;
+      if Flush = '1' then
+        immediate_execute <= (others => '0');
+        pc_execute        <= (others => '0');
+        alu_ctrl_execute  <= (others => '0');
+        rd_execute        <= (others => '0');
+        shamt_execute     <= (others => '0');
+        next_pc_execute   <= (others => '0');
+        Rs1_execute       <= (others => '0');
+        Rs2_execute       <= (others => '0');
+      end if;
+      pc_execute        <= pc_decode;
+      immediate_execute <= immediate_int;
       -- read_data1_execute <= read_data1_int;
       -- read_data2_execute <= read_data2_int;
-      alu_ctrl_execute     <= alu_ctrl_int;
-      rd_execute           <= rd_int;
-      shamt_execute        <= shamt_int;
-      next_pc_execute      <= next_pc_decode;
-      Rs1_execute          <= Rs1_Decode_int;
-      Rs2_execute          <= Rs2_decode_int;
-      target_address_fetch <= target_address_fetch_int;
+      alu_ctrl_execute  <= alu_ctrl_int;
+      rd_execute        <= rd_int;
+      shamt_execute     <= shamt_int;
+      next_pc_execute   <= next_pc_decode;
+      Rs1_execute       <= Rs1_Decode_int;
+      Rs2_execute       <= Rs2_decode_int;
     end if;
   end process pipe;
 
   --target address, shift already done in immediate generator output for branch
   --and jump instructions
-  target_address_fetch_int <= std_logic_vector(signed(pc_decode) + (signed(immediate_int(31 downto 0))));
+  target_address_fetch <= std_logic_vector(signed(pc_decode) + (signed(immediate_int(31 downto 0))));
 
   read_data1_execute <= read_data1_int;
   read_data2_execute <= read_data2_int;

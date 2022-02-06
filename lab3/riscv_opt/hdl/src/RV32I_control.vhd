@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-02-06
+-- Last update: 2022-02-07
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -47,6 +47,7 @@ entity RV32I_control is
     forward_mux_Rs2    : out std_logic_vector(1 downto 0);
     ALUSrc             : out std_logic;
     PCSel              : out std_logic;
+    Flush              : out std_logic;
 
     -- ports to "execute_stage_control_1"
     alu_ctrl_execute : in  std_logic_vector(3 downto 0);
@@ -126,6 +127,7 @@ begin  -- architecture str
       RegWrite_execute   => RegWrite_execute,
       opcode_execute     => opcode_execute,
       PcWrite            => PcWrite,
+      Flush              => Flush,
       FetchPipeWrite     => FetchPipeWrite,
       MemToReg_execute   => MemToReg_execute);
 
