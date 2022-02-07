@@ -158,6 +158,9 @@ begin  -- architecture str
   --and jump instructions
   target_address_fetch <= std_logic_vector(signed(pc_decode) + (signed(immediate_int(31 downto 0))));
 
+  read_data1_execute <= read_data1_int;
+  read_data2_execute <= read_data2_int;
+
   -- instruction association
   alu_ctrl_int <= instruction_decode(30)&instruction_decode(14 downto 12);
   rd_int       <= instruction_decode(11 downto 7);

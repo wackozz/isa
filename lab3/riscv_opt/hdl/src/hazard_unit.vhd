@@ -46,7 +46,7 @@ end entity hazard_unit;
 -------------------------------------------------------------------------------
 
 architecture str of hazard_unit is
-  type states is (idle, stall, stall_twice1, stall_twice2, idle2, idle3, flush_state);
+  type states is (idle, stall, stall_twice1, stall_twice2, idle2, idle3, flush_state, nop);
   signal current_state, next_state : states;
 -----------------------------------------------------------------------------
 -- Internal signal declarations
@@ -73,6 +73,8 @@ begin  -- architecture str
                                                or opcode_decode /= "0100011")
                and((rs1_fetch = rd_decode) or (rs2_fetch = rd_decode))) then
           next_state <= stall;          -- stall once for other inst
+        elsif (MemRead_execute = '1' and ((Rd_execute = Rs1_decode) or (Rd_execute = Rs2_decode))) then
+          next_state <= nop;
         else
           next_state <= idle;
         end if;
@@ -99,6 +101,8 @@ begin  -- architecture str
       when idle3 =>
         next_state <= flush_state;
       when flush_state =>
+        next_state <= idle;
+      when nop =>
         next_state <= idle;
       when others => null;
     end case;
@@ -136,6 +140,11 @@ begin  -- architecture str
         PcWrite        <= '0';
         FetchPipeWrite <= '0';
         StallSrc       <= '1';
+        Flush          <= '0';
+      when nop =>
+        PcWrite        <= '0';
+        FetchPipeWrite <= '0';
+        StallSrc       <= '0';
         Flush          <= '0';
       when flush_state =>
         PcWrite        <= '1';
