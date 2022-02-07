@@ -129,7 +129,7 @@ begin  -- architecture str
         Flush          <= '0';
       when stall_twice1 =>
         PcWrite        <= '0';
-        FetchPipeWrite <= '0';
+        FetchPipeWrite <= '1';
         StallSrc       <= '1';
         Flush          <= '0';
       when stall_twice2 =>
