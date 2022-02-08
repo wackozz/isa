@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-08
--- Last update: 2022-02-07
+-- Last update: 2022-02-08
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -108,7 +108,7 @@ architecture str of decode_stage_control is
   signal ctrl_no_stall : std_logic_vector(11 downto 0);
   signal controls      : std_logic_vector(11 downto 0);
   signal StallSrc      : std_logic;
-
+  signal PCSrc_int     : std_logic;
   signal opcode_decode : std_logic_vector(6 downto 0);
 
 begin  -- architecture str
@@ -175,7 +175,7 @@ begin  -- architecture str
       Rd_execute      => Rd_execute,
       PcWrite         => PcWrite,
       FetchPipeWrite  => FetchPipeWrite,
-      branch          => branch_nostall,
+      PCSrc           => PCSrc_int,
       Flush           => flush,
       StallSrc        => StallSrc);
 
@@ -218,7 +218,8 @@ begin  -- architecture str
 
   opcode_decode <= instruction_decode(6 downto 0);
 
-  PCSrc <= (Zero and Branch_int) or Jump_int;
+  PCSrc_int <= (Zero and Branch_int) or Jump_int;
+  PCSrc     <= PcSrc_int;
 
 end architecture str;
 
