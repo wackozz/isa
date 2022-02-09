@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-08
--- Last update: 2022-02-08
+-- Last update: 2022-02-09
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -218,7 +218,7 @@ begin  -- architecture str
 
   opcode_decode <= instruction_decode(6 downto 0);
 
-  PCSrc_int <= (Zero and Branch_int) or Jump_int;
+  PCSrc_int <= (Zero and Branch_noStall) or Jump_int;
   PCSrc     <= PcSrc_int;
 
 end architecture str;

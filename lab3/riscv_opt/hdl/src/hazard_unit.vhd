@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-31
--- Last update: 2022-02-08
+-- Last update: 2022-02-09
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -77,6 +77,8 @@ begin  -- architecture str
           next_state <= stall_jmp;
         elsif (MemRead_execute = '1' and ((Rd_execute = Rs1_decode) or (Rd_execute = Rs2_decode))) then
           next_state <= nop;
+        -- elsif (MemRead_execute = '1' and ((Rd_execute = Rs1_decode) or (Rd_execute = Rs2_decode))) then    
+        --   next_state <= nop;
         else
           next_state <= idle;
         end if;
@@ -184,6 +186,11 @@ begin  -- architecture str
         Flush          <= '1';
       when stall_jmp =>
         PcWrite        <= '1';
+        FetchPipeWrite <= '0';
+        StallSrc       <= '1';
+        Flush          <= '0';
+      when nop =>
+        PcWrite        <= '0';
         FetchPipeWrite <= '0';
         StallSrc       <= '1';
         Flush          <= '0';

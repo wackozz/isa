@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-08
--- Last update: 2022-02-04
+-- Last update: 2022-02-08
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -31,6 +31,14 @@ entity decode_stage_control is
     Rs1_decode         : in  std_logic_vector(4 downto 0);
     Rs2_decode         : in  std_logic_vector(4 downto 0);
     Rd_execute         : in  std_logic_vector(4 downto 0);
+    Rd_mem             : in  std_logic_vector(4 downto 0);
+    Rd_wb              : in  std_logic_vector(4 downto 0);
+    RegWrite_mem       : in  std_logic;
+    RegWrite           : in  std_logic;
+    Zero               : in  std_logic;
+    Rs1_fetch          : in  std_logic_vector(4 downto 0);
+    Rs2_fetch          : in  std_logic_vector(4 downto 0);
+    Rd_decode          : in  std_logic_vector(4 downto 0);
     ALUSrc             : out std_logic;
     PCSel              : out std_logic;
     AbsSel             : out std_logic;
@@ -42,6 +50,10 @@ entity decode_stage_control is
     opcode_execute     : out std_logic_vector(6 downto 0);
     PcWrite            : out std_logic;
     FetchPipeWrite     : out std_logic;
+    PCSrc              : out std_logic;
+    forward_mux_Rs1    : out std_logic_vector(1 downto 0);
+    forward_mux_Rs2    : out std_logic_vector(1 downto 0);
+    Flush              : out std_logic;
     MemToReg_execute   : out std_logic_vector(1 downto 0));
 
 end entity decode_stage_control;
@@ -96,6 +108,8 @@ architecture str of decode_stage_control is
   signal ctrl_no_stall : std_logic_vector(11 downto 0);
   signal controls      : std_logic_vector(11 downto 0);
   signal StallSrc      : std_logic;
+  signal PCSrc_int     : std_logic;
+  signal opcode_decode : std_logic_vector(6 downto 0);
 
 begin  -- architecture str
 
@@ -149,6 +163,10 @@ begin  -- architecture str
     port map (
       clock           => clock,
       reset           => reset,
+      MemWrite_decode => MemWrite_int,
+      Rs1_fetch       => Rs1_fetch,
+      Rs2_fetch       => Rs2_fetch,
+      Rd_decode       => Rd_decode,
       opcode_fetch    => instruction_fetch(6 downto 0),
       MemRead_execute => MemRead_execute_int,
       opcode_decode   => instruction_decode(6 downto 0),
@@ -157,6 +175,8 @@ begin  -- architecture str
       Rd_execute      => Rd_execute,
       PcWrite         => PcWrite,
       FetchPipeWrite  => FetchPipeWrite,
+      PCSrc           => PCSrc_int,
+      Flush           => flush,
       StallSrc        => StallSrc);
 
   MemRead_execute <= MemRead_execute_int;
@@ -182,6 +202,24 @@ begin  -- architecture str
   Branch_int   <= controls(3);
   Jump_int     <= controls(2);
   ALUOp_int    <= controls(1 downto 0);
+
+  -- instance "branch_forwarding_unit_1"
+  branch_forwarding_unit_1 : entity work.branch_forwarding_unit
+    port map (
+      Rs1_decode      => Rs1_decode,
+      Rs2_decode      => Rs2_decode,
+      Rd_mem          => Rd_mem,
+      Rd_wb           => Rd_wb,
+      opcode_decode   => opcode_decode,
+      RegWrite_mem    => RegWrite_mem,
+      RegWrite        => RegWrite,
+      forward_mux_Rs1 => forward_mux_Rs1,
+      forward_mux_Rs2 => forward_mux_Rs2);
+
+  opcode_decode <= instruction_decode(6 downto 0);
+
+  PCSrc_int <= (Zero and Branch_int) or Jump_int;
+  PCSrc     <= PcSrc_int;
 
 end architecture str;
 
