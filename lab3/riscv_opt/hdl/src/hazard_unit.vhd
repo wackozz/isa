@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-31
--- Last update: 2022-02-09
+-- Last update: 2022-02-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -39,7 +39,7 @@ entity hazard_unit is
     Rd_decode       : in  std_logic_vector(4 downto 0);
     PcWrite         : out std_logic;
     Flush           : out std_logic;
-    FetchPipeWrite  : out std_logic;
+    PipeWrite       : out std_logic;
     StallSrc        : out std_logic);
 
 end entity hazard_unit;
@@ -150,50 +150,50 @@ begin  -- architecture str
   begin  -- process state_as
     case current_state is
       when idle =>
-        PcWrite        <= '1';
-        FetchPipeWrite <= '1';
-        StallSrc       <= '1';
-        Flush          <= '0';
+        PcWrite   <= '1';
+        PipeWrite <= '1';
+        StallSrc  <= '1';
+        Flush     <= '0';
       when idle2 =>
-        PcWrite        <= '1';
-        FetchPipeWrite <= '1';
-        StallSrc       <= '1';
-        Flush          <= '0';
+        PcWrite   <= '1';
+        PipeWrite <= '1';
+        StallSrc  <= '1';
+        Flush     <= '0';
       when idle3 =>
-        PcWrite        <= '1';
-        FetchPipeWrite <= '1';
-        StallSrc       <= '1';
-        Flush          <= '0';
+        PcWrite   <= '1';
+        PipeWrite <= '1';
+        StallSrc  <= '1';
+        Flush     <= '0';
       when stall =>
-        PcWrite        <= '0';
-        FetchPipeWrite <= '0';
-        StallSrc       <= '1';
-        Flush          <= '0';
+        PcWrite   <= '0';
+        PipeWrite <= '0';
+        StallSrc  <= '1';
+        Flush     <= '0';
       when stall_twice1 =>
-        PcWrite        <= '0';
-        FetchPipeWrite <= '0';
-        StallSrc       <= '1';
-        Flush          <= '0';
+        PcWrite   <= '0';
+        PipeWrite <= '0';
+        StallSrc  <= '1';
+        Flush     <= '0';
       when stall_twice2 =>
-        PcWrite        <= '0';
-        FetchPipeWrite <= '0';
-        StallSrc       <= '1';
-        Flush          <= '0';
+        PcWrite   <= '0';
+        PipeWrite <= '0';
+        StallSrc  <= '1';
+        Flush     <= '0';
       when flush_state =>
-        PcWrite        <= '1';
-        FetchPipeWrite <= '1';
-        StallSrc       <= '0';
-        Flush          <= '1';
+        PcWrite   <= '1';
+        PipeWrite <= '1';
+        StallSrc  <= '0';
+        Flush     <= '1';
       when stall_jmp =>
-        PcWrite        <= '1';
-        FetchPipeWrite <= '0';
-        StallSrc       <= '1';
-        Flush          <= '0';
+        PcWrite   <= '1';
+        PipeWrite <= '0';
+        StallSrc  <= '1';
+        Flush     <= '0';
       when nop =>
-        PcWrite        <= '0';
-        FetchPipeWrite <= '0';
-        StallSrc       <= '1';
-        Flush          <= '0';
+        PcWrite   <= '0';
+        PipeWrite <= '0';
+        StallSrc  <= '0';
+        Flush     <= '0';
 
       when others => null;
     end case;

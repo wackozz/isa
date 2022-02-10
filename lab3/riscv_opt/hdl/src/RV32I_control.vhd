@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-02-07
+-- Last update: 2022-02-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -41,7 +41,7 @@ entity RV32I_control is
     Rd_decode          : in  std_logic_vector(4 downto 0);
     AbsSel             : out std_logic;
     PcWrite            : out std_logic;
-    FetchPipeWrite     : out std_logic;
+    PipeWrite          : out std_logic;
     PCSrc              : out std_logic;
     forward_mux_Rs1    : out std_logic_vector(1 downto 0);
     forward_mux_Rs2    : out std_logic_vector(1 downto 0);
@@ -128,7 +128,7 @@ begin  -- architecture str
       opcode_execute     => opcode_execute,
       PcWrite            => PcWrite,
       Flush              => Flush,
-      FetchPipeWrite     => FetchPipeWrite,
+      PipeWrite          => PipeWrite,
       MemToReg_execute   => MemToReg_execute);
 
   -- instance "execute_stage_control_1"

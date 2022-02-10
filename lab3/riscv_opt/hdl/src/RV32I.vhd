@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-05
--- Last update: 2022-02-07
+-- Last update: 2022-02-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -98,7 +98,7 @@ architecture str of RV32I is
   signal AbsSel          : std_logic;
   signal Flush           : std_logic;
   signal PcWrite         : std_logic;
-  signal FetchPipeWrite  : std_logic;
+  signal PipeWrite       : std_logic;
   signal PCSrc           : std_logic;
   signal forward_mux_Rs1 : std_logic_vector(1 downto 0);
   signal forward_mux_Rs2 : std_logic_vector(1 downto 0);
@@ -128,7 +128,7 @@ begin  -- architecture str
       Rs1_fetch            => Rs1_fetch,
       Rs2_fetch            => Rs2_fetch,
       Rd_decode            => Rd_decode,
-      FetchPipeWrite       => FetchPipeWrite,
+      PipeWrite            => PipeWrite,
       instruction_mem_adr  => instruction_mem_adr,
       pc_decode            => pc_decode,
       next_pc_decode       => next_pc_decode,
@@ -140,6 +140,7 @@ begin  -- architecture str
       clock                => clock,
       reset                => reset,
       Flush                => Flush,
+      PipeWrite => PipeWrite,
       instruction_decode   => instruction_decode,
       pc_decode            => pc_decode,
       next_pc_decode       => next_pc_decode,
@@ -170,6 +171,7 @@ begin  -- architecture str
       clock              => clock,
       reset              => reset,
       ALUSrc             => ALUSrc,
+            PipeWrite            => PipeWrite,
       PCSel              => PCSel,
       AbsSel             => AbsSel,
       ALUCtrl            => ALUCtrl,
@@ -232,7 +234,7 @@ begin  -- architecture str
       Rd_decode          => Rd_decode,
       AbsSel             => AbsSel,
       PcWrite            => PcWrite,
-      FetchPipeWrite     => FetchPipeWrite,
+      PipeWrite          => PipeWrite,
       PCSrc              => PCSrc,
       forward_mux_Rs1    => forward_mux_Rs1,
       forward_mux_Rs2    => forward_mux_Rs2,
