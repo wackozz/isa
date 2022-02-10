@@ -39,6 +39,7 @@ entity hazard_unit is
     Rd_decode         : in  std_logic_vector(4 downto 0);
     PcWrite           : out std_logic;
     Flush             : out std_logic;
+    Flush_execute     : out std_logic;
     PipeWrite_fetch   : out std_logic;
     PipeWrite_decode  : out std_logic;
     PipeWrite_execute : out std_logic;
@@ -49,7 +50,7 @@ end entity hazard_unit;
 -------------------------------------------------------------------------------
 
 architecture str of hazard_unit is
-  type states is (idle, stall, stall_jmp, stall_twice1, stall_twice2, idle2, idle3, flush_state, nop);
+  type states is (idle, stall, stall_jmp, stall_twice1, stall_decode, stall_twice2, idle2, idle3, flush_state, nop, flush_mem_state);
   signal current_state, next_state : states;
 -----------------------------------------------------------------------------
 -- Internal signal declarations
@@ -69,8 +70,10 @@ begin  -- architecture str
   begin  -- process state_ev
     case current_state is
       when idle =>
-        if ((opcode_fetch = "1100011") and (opcode_decode = "0000011")
-            and((rs1_fetch = rd_decode) or (rs2_fetch = rd_decode))) then
+        if (opcode_decode = "1100011" and PCSrc = '1') then
+          next_state <= flush_state;
+        elsif ((opcode_fetch = "1100011") and (opcode_decode = "0000011")
+               and((rs1_fetch = rd_decode) or (rs2_fetch = rd_decode))) then
           next_state <= stall_twice1;   --stall twice if decode inst is LW
         elsif ((opcode_fetch = "1100011") and (opcode_decode /= "1100011"
                                                or opcode_decode /= "0100011")
@@ -89,7 +92,7 @@ begin  -- architecture str
       when stall =>
         if (opcode_fetch = "1101111") then
           next_state <= stall_jmp;
-        elsif PCSrc = '1' then
+        elsif PCSrc = '0' then
           next_state <= idle;
         else
           next_state <= idle2;
@@ -142,6 +145,14 @@ begin  -- architecture str
         if (opcode_fetch = "1101111") then
           next_state <= stall_jmp;
         else
+          next_state <= flush_mem_state;
+        end if;
+
+
+      when flush_mem_state =>
+        if (opcode_fetch = "1101111") then
+          next_state <= stall_jmp;
+        else
           next_state <= idle;
         end if;
 
@@ -151,6 +162,14 @@ begin  -- architecture str
 
   state_as : process (current_state, opcode_fetch, opcode_decode, rs1_fetch, rs2_fetch, rd_decode) is
   begin  -- process state_as
+    PcWrite           <= '1';
+    PipeWrite_fetch   <= '1';
+    PipeWrite_decode  <= '1';
+    PipeWrite_execute <= '1';
+    PipeWrite_mem     <= '1';
+    StallSrc          <= '1';
+    Flush             <= '0';
+    Flush_execute     <= '0';
     case current_state is
       when idle =>
         PcWrite           <= '1';
@@ -222,8 +241,11 @@ begin  -- architecture str
         PipeWrite_decode  <= '0';
         PipeWrite_execute <= '0';
         PipeWrite_mem     <= '1';
-        StallSrc          <= '0';
+        StallSrc          <= '1';
         Flush             <= '0';
+        flush_execute     <= '1';
+      when flush_mem_state =>
+        flush_execute <= '0';
 
       when others => null;
     end case;

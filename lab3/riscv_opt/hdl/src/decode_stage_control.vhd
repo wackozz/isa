@@ -57,6 +57,7 @@ entity decode_stage_control is
     forward_mux_Rs1    : out std_logic_vector(1 downto 0);
     forward_mux_Rs2    : out std_logic_vector(1 downto 0);
     Flush              : out std_logic;
+    Flush_execute      : out std_logic;
     MemToReg_execute   : out std_logic_vector(1 downto 0));
 
 end entity decode_stage_control;
@@ -167,7 +168,7 @@ begin  -- architecture str
       clock             => clock,
       reset             => reset,
       MemWrite_decode   => MemWrite_int,
-      PCWrite => PCWrite,
+      PCWrite           => PCWrite,
       Rs1_fetch         => Rs1_fetch,
       Rs2_fetch         => Rs2_fetch,
       Rd_decode         => Rd_decode,
@@ -183,6 +184,7 @@ begin  -- architecture str
       PipeWrite_mem     => PipeWrite_mem,
       PCSrc             => PCSrc_int,
       Flush             => flush,
+      Flush_execute     => Flush_execute,
       StallSrc          => StallSrc);
 
   MemRead_execute <= MemRead_execute_int;

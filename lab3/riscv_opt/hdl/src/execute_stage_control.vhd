@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-02-04
+-- Last update: 2022-02-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -26,6 +26,8 @@ entity execute_stage_control is
   port (
     clock            : in  std_logic;
     reset            : in  std_logic;
+    PipeWrite_execute : in std_logic;
+    FLush_execute    : in  std_logic;
     alu_ctrl_execute : in  std_logic_vector(3 downto 0);
     MemRead_execute  : in  std_logic;
     ALUOp_execute    : in  std_logic_vector(1 downto 0);
@@ -88,28 +90,35 @@ begin  -- architecture str
       MemToReg_mem     <= "00";
       RegWrite_mem_int <= '0';
     elsif clock'event and clock = '1' then  -- rising clock edge
-      MemWrite         <= MemWrite_execute;
-      MemRead          <= MemRead_execute;
-      MemToReg_mem     <= MemToReg_execute;
-      RegWrite_mem_int <= RegWrite_execute;
+      if(Flush_execute = '1') then
+        MemWrite         <= '0';
+        MemRead          <= '0';
+        MemToReg_mem     <= "00";
+        RegWrite_mem_int <= '0';
+      elsif PipeWrite_execute = '1' then
+        MemWrite         <= MemWrite_execute;
+        MemRead          <= MemRead_execute;
+        MemToReg_mem     <= MemToReg_execute;
+        RegWrite_mem_int <= RegWrite_execute;
+      end if;
     end if;
-  end process pipe;
+    end process pipe;
 
-  -- instance "forwarding_unit_1"
-  forwarding_unit_1 : entity work.forwarding_unit
-    port map (
-      Rs1_execute    => Rs1_execute,
-      Rs2_execute    => Rs2_execute,
-      Rd_mem         => Rd_mem,
-      Rd_wb          => Rd_wb,
-      RegWrite_mem   => RegWrite_mem_int,
-      opcode_execute => opcode_execute,
-      RegWrite       => RegWrite,
-      forward_A      => forward_A,
-      forward_B      => forward_B);
+      -- instance "forwarding_unit_1"
+      forwarding_unit_1 : entity work.forwarding_unit
+        port map (
+          Rs1_execute    => Rs1_execute,
+          Rs2_execute    => Rs2_execute,
+          Rd_mem         => Rd_mem,
+          Rd_wb          => Rd_wb,
+          RegWrite_mem   => RegWrite_mem_int,
+          opcode_execute => opcode_execute,
+          RegWrite       => RegWrite,
+          forward_A      => forward_A,
+          forward_B      => forward_B);
 
-  RegWrite_mem <= RegWrite_mem_int;
+      RegWrite_mem <= RegWrite_mem_int;
 
-end architecture str;
+    end architecture str;
 
 -------------------------------------------------------------------------------

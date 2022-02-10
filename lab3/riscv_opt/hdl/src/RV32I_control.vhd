@@ -87,10 +87,13 @@ architecture str of RV32I_control is
   signal MemToReg_execute : std_logic_vector(1 downto 0);
 
   -- outputs of "execute_stage_control_1"
-  signal MemToReg_mem : std_logic_vector(1 downto 0);
-  signal RegWrite_mem : std_logic;
+  signal MemToReg_mem  : std_logic_vector(1 downto 0);
+  signal RegWrite_mem  : std_logic;
+  signal Flush_execute : std_logic;
+  signal RegWrite_int  : std_logic;
 
-  signal RegWrite_int : std_logic;
+  signal PipeWrite_execute_int : std_logic;
+  signal PipeWrite_mem_int : std_logic;
 
 begin  -- architecture str
 
@@ -124,6 +127,7 @@ begin  -- architecture str
       AbsSel             => AbsSel,
       ALUSrc             => ALUSrc,
       PCSel              => PCSel,
+      Flush_execute      => Flush_execute,
       ALUOp_execute      => ALUOp_execute,
       MemWrite_execute   => MemWrite_execute,
       MemRead_execute    => MemRead_execute,
@@ -131,46 +135,52 @@ begin  -- architecture str
       opcode_execute     => opcode_execute,
       PcWrite            => PcWrite,
       Flush              => Flush,
-      PipeWrite_fetch    => PipeWrite_fetch  ,
-      PipeWrite_decode   => PipeWrite_decode ,
-      PipeWrite_execute  => PipeWrite_execute,
-      PipeWrite_mem      => PipeWrite_mem    ,
+      PipeWrite_fetch    => PipeWrite_fetch,
+      PipeWrite_decode   => PipeWrite_decode,
+      PipeWrite_execute  => PipeWrite_execute_int,
+      PipeWrite_mem      => PipeWrite_mem_int,
       MemToReg_execute   => MemToReg_execute);
 
   -- instance "execute_stage_control_1"
   execute_stage_control_1 : entity work.execute_stage_control
     port map (
-      clock            => clock,
-      reset            => reset,
-      alu_ctrl_execute => alu_ctrl_execute,
-      MemRead_execute  => MemRead_execute,
-      ALUOp_execute    => ALUOp_execute,
-      MemToReg_execute => MemToReg_execute,
-      MemWrite_execute => MemWrite_execute,
-      RegWrite_execute => RegWrite_execute,
-      opcode_execute   => opcode_execute,
-      MemWrite         => MemWrite,
-      MemRead          => MemRead,
-      MemToReg_mem     => MemToReg_mem,
-      RegWrite_mem     => RegWrite_mem,
-      ALUCtrl          => ALUCtrl,
-      Rs1_execute      => Rs1_execute,
-      Rs2_execute      => Rs2_execute,
-      Rd_mem           => Rd_mem,
-      Rd_wb            => Rd_wb,
-      RegWrite         => RegWrite_int,
-      forward_A        => forward_A,
-      forward_B        => forward_B);
+      clock             => clock,
+      reset             => reset,
+      PipeWrite_execute => PipeWrite_execute_int,
+      Flush_execute     => FLush_execute,
+      alu_ctrl_execute  => alu_ctrl_execute,
+      MemRead_execute   => MemRead_execute,
+      ALUOp_execute     => ALUOp_execute,
+      MemToReg_execute  => MemToReg_execute,
+      MemWrite_execute  => MemWrite_execute,
+      RegWrite_execute  => RegWrite_execute,
+      opcode_execute    => opcode_execute,
+      MemWrite          => MemWrite,
+      MemRead           => MemRead,
+      MemToReg_mem      => MemToReg_mem,
+      RegWrite_mem      => RegWrite_mem,
+      ALUCtrl           => ALUCtrl,
+      Rs1_execute       => Rs1_execute,
+      Rs2_execute       => Rs2_execute,
+      Rd_mem            => Rd_mem,
+      Rd_wb             => Rd_wb,
+      RegWrite          => RegWrite_int,
+      forward_A         => forward_A,
+      forward_B         => forward_B);
 
   -- instance "mem_stage_control_1"
   mem_stage_control_1 : entity work.mem_stage_control
     port map (
-      clock        => clock,
-      reset        => reset,
-      MemToReg_mem => MemToReg_mem,
-      RegWrite_mem => RegWrite_mem,
-      RegWrite     => RegWrite_int,
-      MemToReg     => MemToReg);
+      clock         => clock,
+      reset         => reset,
+      PipeWrite_mem => PipeWrite_mem_int,
+      MemToReg_mem  => MemToReg_mem,
+      RegWrite_mem  => RegWrite_mem,
+      RegWrite      => RegWrite_int,
+      MemToReg      => MemToReg);
+
+  PipeWrite_mem <= PipeWrite_mem_int;
+  PipeWrite_execute <= PipeWrite_execute_int;
 
 end architecture str;
 
