@@ -173,7 +173,7 @@ begin  -- architecture str
       Rs2_fetch         => Rs2_fetch,
       Rd_decode         => Rd_decode,
       opcode_fetch      => instruction_fetch(6 downto 0),
-      MemRead_execute   => MemRead_execute_int,
+      MemRead_decode    => MemRead_int,
       opcode_decode     => instruction_decode(6 downto 0),
       Rs1_decode        => Rs1_decode,
       Rs2_decode        => Rs2_decode,
