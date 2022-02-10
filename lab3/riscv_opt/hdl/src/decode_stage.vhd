@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-02-09
+-- Last update: 2022-02-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -29,6 +29,7 @@ entity decode_stage is
     instruction_decode   : in  std_logic_vector(31 downto 0);
     instruction_execute  : out std_logic_vector(31 downto 0);  -- TO BE REMOVED
     Flush                : in  std_logic;
+    PipeWrite            : in  std_logic;
     pc_decode            : in  std_logic_vector(31 downto 0);
     next_pc_decode       : in  std_logic_vector(31 downto 0);
     RegWrite             : in  std_logic;
@@ -120,38 +121,39 @@ begin  -- architecture str
     if reset = '0' then                 -- asynchronous reset (active low)
       immediate_execute   <= (others => '0');
       instruction_execute <= (others => '0');
-      
-      pc_execute          <= (others => '0');
-      alu_ctrl_execute    <= (others => '0');
-      rd_execute          <= (others => '0');
-      shamt_execute       <= (others => '0');
-      next_pc_execute     <= (others => '0');
-      Rs1_execute         <= (others => '0');
-      Rs2_execute         <= (others => '0');
+
+      pc_execute       <= (others => '0');
+      alu_ctrl_execute <= (others => '0');
+      rd_execute       <= (others => '0');
+      shamt_execute    <= (others => '0');
+      next_pc_execute  <= (others => '0');
+      Rs1_execute      <= (others => '0');
+      Rs2_execute      <= (others => '0');
 
     elsif clock'event and clock = '1' then  -- rising clock edge
       if Flush = '1' then
         immediate_execute   <= (others => '0');
         instruction_execute <= (others => '0');
-        
-        pc_execute          <= (others => '0');
-        alu_ctrl_execute    <= (others => '0');
-        rd_execute          <= (others => '0');
-        shamt_execute       <= (others => '0');
-        next_pc_execute     <= (others => '0');
-        Rs1_execute         <= (others => '0');
-        Rs2_execute         <= (others => '0');
+
+        pc_execute       <= (others => '0');
+        alu_ctrl_execute <= (others => '0');
+        rd_execute       <= (others => '0');
+        shamt_execute    <= (others => '0');
+        next_pc_execute  <= (others => '0');
+        Rs1_execute      <= (others => '0');
+        Rs2_execute      <= (others => '0');
+      elsif PipeWrite = '1' then
+        pc_execute          <= pc_decode;
+        instruction_execute <= instruction_decode;
+        immediate_execute   <= immediate_int;
+
+        alu_ctrl_execute <= alu_ctrl_int;
+        rd_execute       <= rd_int;
+        shamt_execute    <= shamt_int;
+        next_pc_execute  <= next_pc_decode;
+        Rs1_execute      <= Rs1_Decode_int;
+        Rs2_execute      <= Rs2_decode_int;
       end if;
-      pc_execute          <= pc_decode;
-      instruction_execute <= instruction_decode;
-      immediate_execute   <= immediate_int;
-      
-      alu_ctrl_execute    <= alu_ctrl_int;
-      rd_execute          <= rd_int;
-      shamt_execute       <= shamt_int;
-      next_pc_execute     <= next_pc_decode;
-      Rs1_execute         <= Rs1_Decode_int;
-      Rs2_execute         <= Rs2_decode_int;
     end if;
   end process pipe;
 
@@ -199,23 +201,17 @@ begin  -- architecture str
 
   pipe_read_data : process (clock, reset) is
   begin  -- process pipe
-    if reset = '0' then                 -- asynchronous reset (active low)
-
+    if reset = '0' then                     -- asynchronous reset (active low)
       read_data1_execute <= (others => '0');
       read_data2_execute <= (others => '0');
-
-
     elsif clock'event and clock = '0' then  -- rising clock edge
       if Flush = '1' then
-
         read_data1_execute <= (others => '0');
         read_data2_execute <= (others => '0');
-
+      elsif PipeWrite = '1' then
+        read_data1_execute <= read_data1_int;
+        read_data2_execute <= read_data2_int;
       end if;
-
-      read_data1_execute <= read_data1_int;
-      read_data2_execute <= read_data2_int;
-
     end if;
   end process pipe_read_data;
 

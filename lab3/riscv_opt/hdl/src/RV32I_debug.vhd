@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-05
--- Last update: 2022-02-07
+-- Last update: 2022-02-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -99,7 +99,7 @@ architecture str of RV32I is
   signal AbsSel          : std_logic;
   signal Flush           : std_logic;
   signal PcWrite         : std_logic;
-  signal FetchPipeWrite  : std_logic;
+  signal PipeWrite       : std_logic;
   signal PCSrc           : std_logic;
   signal forward_mux_Rs1 : std_logic_vector(1 downto 0);
   signal forward_mux_Rs2 : std_logic_vector(1 downto 0);
@@ -131,7 +131,7 @@ begin  -- architecture str
       Rs1_fetch            => Rs1_fetch,
       Rs2_fetch            => Rs2_fetch,
       Rd_decode            => Rd_decode,
-      FetchPipeWrite       => FetchPipeWrite,
+      PipeWrite            => PipeWrite,
       instruction_mem_adr  => instruction_mem_adr,
       pc_decode            => pc_decode,
       next_pc_decode       => next_pc_decode,
@@ -143,8 +143,9 @@ begin  -- architecture str
       clock                => clock,
       reset                => reset,
       Flush                => Flush,
+      PipeWrite            => PipeWrite,
       instruction_decode   => instruction_decode_int,
-      instruction_execute   => instruction_execute,
+      instruction_execute  => instruction_execute,
       pc_decode            => pc_decode,
       next_pc_decode       => next_pc_decode,
       RegWrite             => RegWrite,
@@ -173,6 +174,7 @@ begin  -- architecture str
     port map (
       clock              => clock,
       reset              => reset,
+      PipeWrite          => PipeWrite,
       ALUSrc             => ALUSrc,
       PCSel              => PCSel,
       AbsSel             => AbsSel,
@@ -198,6 +200,7 @@ begin  -- architecture str
     port map (
       clock          => clock,
       reset          => reset,
+      PipeWrite      => PipeWrite,
       alu_result_mem => alu_result_mem,
       next_pc_mem    => next_pc_mem,
       rd_mem         => rd_mem,
@@ -225,6 +228,7 @@ begin  -- architecture str
     port map (
       clock              => clock,
       reset              => reset,
+      Flush              => Flush,
       instruction_fetch  => instruction_fetch,
       instruction_decode => instruction_decode_int,
       Rs1_decode         => Rs1_decode,
@@ -236,7 +240,7 @@ begin  -- architecture str
       Rd_decode          => Rd_decode,
       AbsSel             => AbsSel,
       PcWrite            => PcWrite,
-      FetchPipeWrite     => FetchPipeWrite,
+      PipeWrite          => PipeWrite,
       PCSrc              => PCSrc,
       forward_mux_Rs1    => forward_mux_Rs1,
       forward_mux_Rs2    => forward_mux_Rs2,

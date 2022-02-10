@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-02-01
+-- Last update: 2022-02-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -26,6 +26,7 @@ entity execute_stage is
   port (
     clock                : in  std_logic;
     reset                : in  std_logic;
+    PipeWrite            : in  std_logic;
     ALUSrc               : in  std_logic;
     PCSel                : in  std_logic;
     ALUCtrl              : in  std_logic_vector(3 downto 0);
@@ -125,12 +126,14 @@ begin  -- architecture str
       target_address_fetch <= (others => '0');
       next_pc_mem          <= (others => '0');
     elsif clock'event and clock = '1' then  -- rising clock edge
-      alu_result_mem       <= alu_result_int;
-      rd_mem               <= rd_execute;
-      write_data_mem       <= out_mux_forward_B;
-      data_mem_adr_int     <= alu_result_int;
-      target_address_fetch <= target_address_fetch_int;
-      next_pc_mem          <= next_pc_execute;
+      if PipeWrite = '1' then
+        alu_result_mem       <= alu_result_int;
+        rd_mem               <= rd_execute;
+        write_data_mem       <= out_mux_forward_B;
+        data_mem_adr_int     <= alu_result_int;
+        target_address_fetch <= target_address_fetch_int;
+        next_pc_mem          <= next_pc_execute;
+      end if;
     end if;
   end process pipe;
 
