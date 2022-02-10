@@ -70,8 +70,8 @@ def synth(file_name):
 
 
 def change_clock_gen(clk_value):
-    file_read = open('../hdl/tb/RV32I_tb.vhd', 'r')
-    file_write = open('../hdl/tb/RV32I_tb_tmp.vhd', 'w')
+    file_read = open('hdl/tb/RV32I_tb.vhd', 'r')
+    file_write = open('hdl/tb/RV32I_tb_tmp.vhd', 'w')
     for line in file_read:
         line2write = line
         line = line.strip()
@@ -83,8 +83,8 @@ def change_clock_gen(clk_value):
             file_write.write(line2write)
     file_read.close()
     file_write.close()
-    os.remove('../hdl/tb/RV32I_tb.vhd')
-    os.rename('../hdl/tb/RV32I_tb_tmp.vhd' , '../hdl/tb/RV32I_tb.vhd')
+    os.remove('hdl/tb/RV32I_tb.vhd')
+    os.rename('hdl/tb/RV32I_tb_tmp.vhd' , 'hdl/tb/RV32I_tb.vhd')
 
 
 ##########################  MAIN  ###########################
@@ -94,12 +94,12 @@ os.system("sim/simulate_riscv.sh")
 
 change_clock_gen(synth("synth_riscv"))
 
-os.system("../modelsim/vcd2saif.sh")
+os.system("modelsim/vcd2saif.sh")
 
-os.system("../syn/power.sh")
+os.system("syn/power.sh")
 
-os.system("../innovus/place_route.sh")
+os.system("innovus/place_route.sh")
 
-os.system("../modelsim/post_place.sh")
+os.system("modelsim/post_place.sh")
 
-os.system("../innovus/powercons.sh")
+os.system("innovus/powercons.sh")

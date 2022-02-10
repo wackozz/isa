@@ -65,4 +65,3 @@ quit
 
 
 elab
-synth 0

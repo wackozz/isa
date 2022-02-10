@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : resources
+Design : RV32I
+Version: O-2018.06-SP4
+Date   : Thu Feb 10 02:14:08 2022
+****************************************
+
+Resource Sharing Report for design RV32I in file ../hdl/src/fetch_stage.vhd
+
+===============================================================================
+|          |              |            | Contained     |                      |
+| Resource | Module       | Parameters | Resources     | Contained Operations |
+===============================================================================
+| r606     | DW01_add     | width=32   |               | fetch_stage_1/add_113 |
+| r608     | DW01_add     | width=32   |               | execute_stage_1/add_142 |
+| r610     | DW01_add     | width=32   |               | execute_stage_1/alu_inst/add_sub_1/add_45 |
+| r612     | DW01_sub     | width=32   |               | execute_stage_1/alu_inst/add_sub_1/sub_45 |
+| r618     | DW_cmp       | width=5    |               | RV32I_control_1/decode_stage_control_1/hazard_unit_1/eq_58_2 |
+| r620     | DW_cmp       | width=5    |               | RV32I_control_1/decode_stage_control_1/hazard_unit_1/eq_58_3 |
+| r622     | DW_cmp       | width=5    |               | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_57_3 |
+| r624     | DW_cmp       | width=5    |               | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_57_4 |
+| r626     | DW_cmp       | width=5    |               | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_59_2 |
+| r628     | DW_cmp       | width=5    |               | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_65_3 |
+| r630     | DW_cmp       | width=5    |               | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_65_4 |
+| r632     | DW_cmp       | width=5    |               | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_67_2 |
+| r1216    | DW01_sub     | width=32   |               | sub_1_root_execute_stage_1/absolute_value_1/add_52_ni |
+| r1218    | DW01_inc     | width=32   |               | add_0_root_execute_stage_1/absolute_value_1/add_52_ni |
+===============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_0_root_execute_stage_1/absolute_value_1/add_52_ni      |                |
+|                    | DW01_inc         | pparch (area,speed)                 |
+| fetch_stage_1/add_113                 |                    |                |
+|                    | DW01_add         | pparch (area,speed)                 |
+| execute_stage_1/add_142               |                    |                |
+|                    | DW01_add         | pparch (area,speed)                 |
+| execute_stage_1/alu_inst/add_sub_1/add_45                  |                |
+|                    | DW01_add         | pparch (area,speed)                 |
+| execute_stage_1/alu_inst/add_sub_1/sub_45                  |                |
+|                    | DW01_sub         | pparch (area,speed)                 |
+===============================================================================
+
+1

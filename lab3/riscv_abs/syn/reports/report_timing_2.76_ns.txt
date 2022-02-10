@@ -1,0 +1,195 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'RV32I' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : RV32I
+Version: O-2018.06-SP4
+Date   : Thu Feb 10 02:31:01 2022
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: RV32I_control_1/decode_stage_control_1/opcode_execute_reg[3]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: execute_stage_1/alu_result_mem_reg[31]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RV32I              5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  RV32I_control_1/decode_stage_control_1/opcode_execute_reg[3]/CK (DFFR_X1)
+                                                          0.00 #     0.00 r
+  RV32I_control_1/decode_stage_control_1/opcode_execute_reg[3]/Q (DFFR_X1)
+                                                          0.08       0.08 f
+  U5637/ZN (NOR3_X1)                                      0.06       0.14 r
+  U5638/ZN (OAI21_X1)                                     0.04       0.18 f
+  U3612/ZN (OR2_X1)                                       0.06       0.25 f
+  U4523/ZN (XNOR2_X1)                                     0.06       0.31 f
+  U5644/ZN (NOR3_X1)                                      0.06       0.37 r
+  U3603/ZN (NAND4_X1)                                     0.04       0.40 f
+  U3591/ZN (AND2_X1)                                      0.04       0.45 f
+  U5648/ZN (NAND2_X1)                                     0.03       0.48 r
+  U5649/ZN (NAND2_X1)                                     0.03       0.51 f
+  U5650/ZN (NAND2_X1)                                     0.03       0.54 r
+  U7726/ZN (OAI221_X1)                                    0.04       0.58 f
+  U7727/ZN (INV_X1)                                       0.03       0.61 r
+  U3568/ZN (OAI22_X1)                                     0.04       0.65 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/B[0] (RV32I_DW01_add_0)
+                                                          0.00       0.65 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U112/ZN (AND2_X1)
+                                                          0.05       0.70 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U166/ZN (NAND2_X1)
+                                                          0.03       0.73 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U111/ZN (NAND3_X1)
+                                                          0.03       0.76 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U124/ZN (NAND2_X1)
+                                                          0.03       0.80 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U126/ZN (NAND3_X1)
+                                                          0.04       0.83 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U130/ZN (NAND2_X1)
+                                                          0.04       0.87 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U8/ZN (NAND3_X1)
+                                                          0.04       0.91 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U18/ZN (NAND2_X1)
+                                                          0.04       0.94 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U5/ZN (NAND3_X1)
+                                                          0.04       0.98 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U173/ZN (NAND2_X1)
+                                                          0.04       1.01 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U44/ZN (NAND3_X1)
+                                                          0.04       1.05 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U104/ZN (NAND2_X1)
+                                                          0.03       1.08 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U106/ZN (NAND3_X1)
+                                                          0.03       1.12 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U1_7/CO (FA_X1)
+                                                          0.10       1.21 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U192/ZN (NAND2_X1)
+                                                          0.04       1.25 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U9/ZN (NAND3_X1)
+                                                          0.04       1.29 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U13/ZN (NAND2_X1)
+                                                          0.04       1.33 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U7/ZN (NAND3_X1)
+                                                          0.04       1.36 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U198/ZN (NAND2_X1)
+                                                          0.04       1.40 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U56/ZN (NAND3_X1)
+                                                          0.04       1.43 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U97/ZN (NAND2_X1)
+                                                          0.04       1.47 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U100/ZN (NAND3_X1)
+                                                          0.04       1.51 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U75/ZN (NAND2_X1)
+                                                          0.03       1.55 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U77/ZN (NAND3_X1)
+                                                          0.04       1.59 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U208/ZN (NAND2_X1)
+                                                          0.04       1.62 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U210/ZN (NAND3_X1)
+                                                          0.04       1.66 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U60/ZN (NAND2_X1)
+                                                          0.03       1.69 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U62/ZN (NAND3_X1)
+                                                          0.04       1.73 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U261/ZN (NAND2_X1)
+                                                          0.04       1.77 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U68/ZN (NAND3_X1)
+                                                          0.04       1.81 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U88/ZN (NAND2_X1)
+                                                          0.04       1.84 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U91/ZN (NAND3_X1)
+                                                          0.04       1.89 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U33/ZN (NAND2_X1)
+                                                          0.04       1.93 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U153/ZN (NAND3_X1)
+                                                          0.04       1.96 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U251/ZN (NAND2_X1)
+                                                          0.04       2.00 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U252/ZN (NAND3_X1)
+                                                          0.04       2.03 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U257/ZN (NAND2_X1)
+                                                          0.03       2.07 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U151/ZN (NAND3_X1)
+                                                          0.04       2.11 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U185/ZN (NAND2_X1)
+                                                          0.04       2.15 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U188/ZN (NAND3_X1)
+                                                          0.04       2.19 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U179/ZN (NAND2_X1)
+                                                          0.03       2.22 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U181/ZN (NAND3_X1)
+                                                          0.04       2.26 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U137/ZN (NAND2_X1)
+                                                          0.04       2.30 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U139/ZN (NAND3_X1)
+                                                          0.04       2.34 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U213/ZN (NAND2_X1)
+                                                          0.04       2.37 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U216/ZN (NAND3_X1)
+                                                          0.04       2.41 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U231/ZN (NAND2_X1)
+                                                          0.04       2.45 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U233/ZN (NAND3_X1)
+                                                          0.04       2.49 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U243/ZN (NAND2_X1)
+                                                          0.04       2.52 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U246/ZN (NAND3_X1)
+                                                          0.04       2.56 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U144/ZN (NAND2_X1)
+                                                          0.03       2.60 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U82/ZN (NAND3_X1)
+                                                          0.04       2.64 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U220/ZN (NAND2_X1)
+                                                          0.04       2.67 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U222/ZN (NAND3_X1)
+                                                          0.04       2.71 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U225/ZN (NAND2_X1)
+                                                          0.04       2.75 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U34/ZN (NAND3_X1)
+                                                          0.04       2.79 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U29/ZN (NAND2_X1)
+                                                          0.04       2.82 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U147/ZN (NAND3_X1)
+                                                          0.04       2.86 f
+  execute_stage_1/alu_inst/add_sub_1/add_45/U157/ZN (NAND2_X1)
+                                                          0.03       2.89 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U108/ZN (AND3_X1)
+                                                          0.05       2.94 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/U109/ZN (XNOR2_X1)
+                                                          0.05       3.00 r
+  execute_stage_1/alu_inst/add_sub_1/add_45/SUM[31] (RV32I_DW01_add_0)
+                                                          0.00       3.00 r
+  U7786/ZN (AOI22_X1)                                     0.04       3.03 f
+  U7788/ZN (NAND2_X1)                                     0.04       3.07 r
+  execute_stage_1/alu_result_mem_reg[31]/D (DFFR_X1)      0.01       3.08 r
+  data arrival time                                                  3.08
+
+  clock MY_CLK (rise edge)                                2.76       2.76
+  clock network delay (ideal)                             0.00       2.76
+  clock uncertainty                                      -0.07       2.69
+  execute_stage_1/alu_result_mem_reg[31]/CK (DFFR_X1)     0.00       2.69 r
+  library setup time                                     -0.03       2.66
+  data required time                                                 2.66
+  --------------------------------------------------------------------------
+  data required time                                                 2.66
+  data arrival time                                                 -3.08
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.42
+
+
+1

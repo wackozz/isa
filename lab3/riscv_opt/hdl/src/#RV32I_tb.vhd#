@@ -63,7 +63,7 @@ begin  -- architecture arch
 
   -- clock generation
   Clk <= not Clk after 10 ns;
-
+  
   -- waveform generation
   WaveGen_Proc: process
   begin
