@@ -1,0 +1,19 @@
+# do scripts/run_postsynth_cmd.do riscv_postsynth
+# Loading project riscv_postsynth
+# vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/tb/RV32I_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# ** Error: /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/tb/RV32I_tb.vhd(9): near "<": syntax error
+# /home/stefano/intelFPGA/20.1/modelsim_ase/linuxaloem/vcom failed.
+# vlog -work work -stats=none /home/stefano/Desktop/isa_lab3/riscv_abs/netlist/riscv.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Compiling module RV32I
+# 
+# Top level modules:
+# 	RV32I
+# 2 compiles, 0 failed with no errors.
+# ** Error (suppressible): (vsim-SDF-3196) Failed to find SDF file "../netlist/iir_filter.sdf".
+# Use the -help option for complete vsim usage.
+# vsim -L /software/dk/nangate45/verilog/msim6.2g -sdftyp "/rv32i_tb/UUT=../netlist/iir_filter.sdf" work.rv32i_tb 
+# Error loading design
+# Errors: 1, Warnings: 5
