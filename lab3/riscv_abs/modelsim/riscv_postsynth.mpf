@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ; Copyright 1991-2007 Mentor Graphics Corporation
+=======
+; Copyright 1991-2009 Mentor Graphics Corporation
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ;
 ; All Rights Reserved.
 ;
@@ -7,10 +11,102 @@
 ;   
 
 [Library]
+<<<<<<< HEAD
 ;vhdl_psl_checkers = $MODEL_TECH/../vhdl_psl_checkers       // Source files only for this release
 ;verilog_psl_checkers = $MODEL_TECH/../verilog_psl_checkers // Source files only for this release
 
 others = /software/mentor/modelsim_6.2g/linux/../modelsim.ini
+=======
+std = $MODEL_TECH/../std
+ieee = $MODEL_TECH/../ieee
+verilog = $MODEL_TECH/../verilog
+vital2000 = $MODEL_TECH/../vital2000
+std_developerskit = $MODEL_TECH/../std_developerskit
+synopsys = $MODEL_TECH/../synopsys
+modelsim_lib = $MODEL_TECH/../modelsim_lib
+sv_std = $MODEL_TECH/../sv_std
+
+; Altera Primitive libraries
+;
+; VHDL Section
+;
+altera_mf = $MODEL_TECH/../altera/vhdl/altera_mf
+altera = $MODEL_TECH/../altera/vhdl/altera
+altera_lnsim = $MODEL_TECH/../altera/vhdl/altera_lnsim
+lpm = $MODEL_TECH/../altera/vhdl/220model
+220model = $MODEL_TECH/../altera/vhdl/220model
+maxii = $MODEL_TECH/../altera/vhdl/maxii
+maxv = $MODEL_TECH/../altera/vhdl/maxv
+fiftyfivenm = $MODEL_TECH/../altera/vhdl/fiftyfivenm
+sgate = $MODEL_TECH/../altera/vhdl/sgate
+arriaii = $MODEL_TECH/../altera/vhdl/arriaii
+arriaii_hssi = $MODEL_TECH/../altera/vhdl/arriaii_hssi
+arriaii_pcie_hip = $MODEL_TECH/../altera/vhdl/arriaii_pcie_hip
+arriaiigz = $MODEL_TECH/../altera/vhdl/arriaiigz
+arriaiigz_hssi = $MODEL_TECH/../altera/vhdl/arriaiigz_hssi
+arriaiigz_pcie_hip = $MODEL_TECH/../altera/vhdl/arriaiigz_pcie_hip
+stratixiv = $MODEL_TECH/../altera/vhdl/stratixiv
+stratixiv_hssi = $MODEL_TECH/../altera/vhdl/stratixiv_hssi
+stratixiv_pcie_hip = $MODEL_TECH/../altera/vhdl/stratixiv_pcie_hip
+cycloneiv = $MODEL_TECH/../altera/vhdl/cycloneiv
+cycloneiv_hssi = $MODEL_TECH/../altera/vhdl/cycloneiv_hssi
+cycloneiv_pcie_hip = $MODEL_TECH/../altera/vhdl/cycloneiv_pcie_hip
+cycloneive = $MODEL_TECH/../altera/vhdl/cycloneive
+stratixv = $MODEL_TECH/../altera/vhdl/stratixv
+stratixv_hssi = $MODEL_TECH/../altera/vhdl/stratixv_hssi
+stratixv_pcie_hip = $MODEL_TECH/../altera/vhdl/stratixv_pcie_hip
+arriavgz = $MODEL_TECH/../altera/vhdl/arriavgz
+arriavgz_hssi = $MODEL_TECH/../altera/vhdl/arriavgz_hssi
+arriavgz_pcie_hip = $MODEL_TECH/../altera/vhdl/arriavgz_pcie_hip
+arriav = $MODEL_TECH/../altera/vhdl/arriav
+cyclonev = $MODEL_TECH/../altera/vhdl/cyclonev
+twentynm = $MODEL_TECH/../altera/vhdl/twentynm
+twentynm_hssi = $MODEL_TECH/../altera/vhdl/twentynm_hssi
+twentynm_hip = $MODEL_TECH/../altera/vhdl/twentynm_hip
+cyclone10lp = $MODEL_TECH/../altera/vhdl/cyclone10lp
+;
+; Verilog Section
+;
+altera_mf_ver = $MODEL_TECH/../altera/verilog/altera_mf
+altera_ver = $MODEL_TECH/../altera/verilog/altera
+altera_lnsim_ver = $MODEL_TECH/../altera/verilog/altera_lnsim
+lpm_ver = $MODEL_TECH/../altera/verilog/220model
+220model_ver = $MODEL_TECH/../altera/verilog/220model
+maxii_ver = $MODEL_TECH/../altera/verilog/maxii
+maxv_ver = $MODEL_TECH/../altera/verilog/maxv
+fiftyfivenm_ver = $MODEL_TECH/../altera/verilog/fiftyfivenm
+sgate_ver = $MODEL_TECH/../altera/verilog/sgate
+arriaii_ver = $MODEL_TECH/../altera/verilog/arriaii
+arriaii_hssi_ver = $MODEL_TECH/../altera/verilog/arriaii_hssi
+arriaii_pcie_hip_ver = $MODEL_TECH/../altera/verilog/arriaii_pcie_hip
+arriaiigz_ver = $MODEL_TECH/../altera/verilog/arriaiigz
+arriaiigz_hssi_ver = $MODEL_TECH/../altera/verilog/arriaiigz_hssi
+arriaiigz_pcie_hip_ver = $MODEL_TECH/../altera/verilog/arriaiigz_pcie_hip
+stratixiv_ver = $MODEL_TECH/../altera/verilog/stratixiv
+stratixiv_hssi_ver = $MODEL_TECH/../altera/verilog/stratixiv_hssi
+stratixiv_pcie_hip_ver = $MODEL_TECH/../altera/verilog/stratixiv_pcie_hip
+stratixv_ver = $MODEL_TECH/../altera/verilog/stratixv
+stratixv_hssi_ver = $MODEL_TECH/../altera/verilog/stratixv_hssi
+stratixv_pcie_hip_ver = $MODEL_TECH/../altera/verilog/stratixv_pcie_hip
+arriavgz_ver = $MODEL_TECH/../altera/verilog/arriavgz
+arriavgz_hssi_ver = $MODEL_TECH/../altera/verilog/arriavgz_hssi
+arriavgz_pcie_hip_ver = $MODEL_TECH/../altera/verilog/arriavgz_pcie_hip
+arriav_ver = $MODEL_TECH/../altera/verilog/arriav
+arriav_hssi_ver = $MODEL_TECH/../altera/verilog/arriav_hssi
+arriav_pcie_hip_ver = $MODEL_TECH/../altera/verilog/arriav_pcie_hip
+cyclonev_ver = $MODEL_TECH/../altera/verilog/cyclonev
+cyclonev_hssi_ver = $MODEL_TECH/../altera/verilog/cyclonev_hssi
+cyclonev_pcie_hip_ver = $MODEL_TECH/../altera/verilog/cyclonev_pcie_hip
+cycloneiv_ver = $MODEL_TECH/../altera/verilog/cycloneiv
+cycloneiv_hssi_ver = $MODEL_TECH/../altera/verilog/cycloneiv_hssi
+cycloneiv_pcie_hip_ver = $MODEL_TECH/../altera/verilog/cycloneiv_pcie_hip
+cycloneive_ver = $MODEL_TECH/../altera/verilog/cycloneive
+twentynm_ver = $MODEL_TECH/../altera/verilog/twentynm
+twentynm_hssi_ver = $MODEL_TECH/../altera/verilog/twentynm_hssi
+twentynm_hip_ver = $MODEL_TECH/../altera/verilog/twentynm_hip
+cyclone10lp_ver = $MODEL_TECH/../altera/verilog/cyclone10lp
+
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 work = work
 [vcom]
 ; VHDL93 variable selects language version as the default. 
@@ -18,6 +114,10 @@ work = work
 ; Value of 0 or 1987 for VHDL-1987.
 ; Value of 1 or 1993 for VHDL-1993.
 ; Default or value of 2 or 2002 for VHDL-2002.
+<<<<<<< HEAD
+=======
+; Default or value of 3 or 2008 for VHDL-2008.
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 VHDL93 = 2002
 
 ; Show source line containing error. Default is off.
@@ -60,12 +160,15 @@ Explicit = 1
 ; Turn off VITAL compliance checking warnings. Default is to show warnings.
 ; Show_VitalChecksWarnings = 0
 
+<<<<<<< HEAD
 ; Turn off PSL assertion warning messages. Default is to show warnings.
 ; Show_PslChecksWarnings = 0
 
 ; Enable parsing of embedded PSL assertions. Default is enabled.
 ; EmbeddedPsl = 0
 
+=======
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ; Keep silent about case statement static warnings.
 ; Default is to give a warning.
 ; NoCaseStaticError = 1
@@ -74,12 +177,15 @@ Explicit = 1
 ; Default is to give a warning.
 ; NoOthersStaticError = 1
 
+<<<<<<< HEAD
 ; Treat as errors:
 ;   case statement static warnings
 ;   warnings caused by aggregates that are not locally static
 ; Overrides NoCaseStaticError, NoOthersStaticError settings.
 ; PedanticErrors = 1
 
+=======
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ; Turn off inclusion of debugging info within design units.
 ; Default is to include debugging info.
 ; NoDebug = 1
@@ -95,9 +201,12 @@ Explicit = 1
 ; waits, or function/procedure/task invocations. Default is off.
 ; ScalarOpts = 1
 
+<<<<<<< HEAD
 ; Turns on lint-style checking.
 ; Show_Lint = 1
 
+=======
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ; Require the user to specify a configuration for all bindings,
 ; and do not generate a compile time default binding for the
 ; component. This will result in an elaboration error of
@@ -105,10 +214,13 @@ Explicit = 1
 ; issue of a false dependency upon the unused default binding.
 ; RequireConfigForAllDefaultBinding = 1
 
+<<<<<<< HEAD
 ; Perform default binding at compile time.
 ; Default is to do default binding at load time.
 ; BindAtCompile=1;
 
+=======
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ; Inhibit range checking on subscripts of arrays. Range checking on
 ; scalars defined with subtypes is inhibited by default.
 ; NoIndexCheck = 1
@@ -117,6 +229,7 @@ Explicit = 1
 ; scalar objects defined with subtypes.
 ; NoRangeCheck = 1
 
+<<<<<<< HEAD
 ; Run the 0in tools from within the simulator. 
 ; Default value set to 0. Please set it to 1 to invoke 0in.
 ; VcomZeroIn = 1
@@ -138,17 +251,23 @@ Explicit = 1
 ; Use this directory for compiler temporary files instead of "work/_temp"
 ; CompilerTempDir = /tmp
 
+=======
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 [vlog]
 
 ; Turn off inclusion of debugging info within design units.
 ; Default is to include debugging info.
 ; NoDebug = 1
 
+<<<<<<< HEAD
 ; Turn on `protect compiler directive processing.
 ; Default is to ignore `protect directives.
 ; Protect = 1
 
 ; Turn off "Loading..." messages. Default is messages on.
+=======
+; Turn off "loading..." messages. Default is messages on.
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ; Quiet = 1
 
 ; Turn on Verilog hazard checking (order-dependent accessing of global vars).
@@ -159,13 +278,19 @@ Explicit = 1
 ; insensitivity for module names. Default is no conversion.
 ; UpCase = 1
 
+<<<<<<< HEAD
 ; Activate optimizations on expressions that do not involve signals,
 ; waits, or function/procedure/task invocations. Default is off.
 ; ScalarOpts = 1
+=======
+; Turn on incremental compilation of modules. Default is off.
+; Incremental = 1
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 
 ; Turns on lint-style checking.
 ; Show_Lint = 1
 
+<<<<<<< HEAD
 ; Show source line containing error. Default is off.
 ; Show_source = 1
 
@@ -301,6 +426,12 @@ VoptFlow = 1
 ; Simulator resolution
 ; Set to fs, ps, ns, us, ms, or sec with optional prefix of 1, 10, or 100.
 Resolution = ns
+=======
+[vsim]
+; Simulator resolution
+; Set to fs, ps, ns, us, ms, or sec with optional prefix of 1, 10, or 100.
+Resolution = ps
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 
 ; User time unit for run commands
 ; Set to default, fs, ps, ns, us, ms, or sec. The default is to use the
@@ -315,6 +446,7 @@ RunLength = 100
 ; Maximum iterations that can be run without advancing simulation time
 IterationLimit = 5000
 
+<<<<<<< HEAD
 ; Control PSL and Verilog Assume directives during simulation
 ; Set SimulateAssumeDirectives = 0 to disable assume being simulated as asserts
 ; Set SimulateAssumeDirectives = 1 to enable assume simulation as asserts
@@ -332,11 +464,15 @@ IterationLimit = 5000
 
 ; Directives to license manager can be set either as single value or as
 ; space separated multi-values:
+=======
+; Directive to license manager:
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ; vhdl          Immediately reserve a VHDL license
 ; vlog          Immediately reserve a Verilog license
 ; plus          Immediately reserve a VHDL and Verilog license
 ; nomgc         Do not look for Mentor Graphics Licenses
 ; nomti         Do not look for Model Technology Licenses
+<<<<<<< HEAD
 ; noqueue       Do not wait in the license queue when a license is not available
 ; viewsim       Try for viewer license but accept simulator license(s) instead
 ;               of queuing for viewer license (PE ONLY)
@@ -360,11 +496,24 @@ IterationLimit = 5000
 BreakOnAssertion = 3
 
 ; VHDL assertion Message Format
+=======
+; noqueue       Do not wait in the license queue when a license isn't available
+; viewsim	Try for viewer license but accept simulator license(s) instead
+;		of queuing for viewer license
+; License = plus
+
+; Stop the simulator after a VHDL/Verilog assertion message
+; 0 = Note  1 = Warning  2 = Error  3 = Failure  4 = Fatal
+BreakOnAssertion = 3
+
+; Assertion Message Format
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ; %S - Severity Level 
 ; %R - Report Message
 ; %T - Time of assertion
 ; %D - Delta
 ; %I - Instance or Region pathname (if available)
+<<<<<<< HEAD
 ; %i - Instance pathname with process
 ; %O - Process name
 ; %K - Kind of object path is to return: Instance, Signal, Process or Unknown
@@ -401,6 +550,15 @@ ShowFunctions = 1
 
 
 ; Default radix for all windows and commands.
+=======
+; %% - print '%' character
+; AssertionFormat = "** %S: %R\n   Time: %T  Iteration: %D%I\n"
+
+; Assertion File - alternate file for storing VHDL/Verilog assertion messages
+; AssertFile = assert.log
+
+; Default radix for all windows and commands...
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ; Set to symbolic, ascii, binary, octal, decimal, hex, unsigned
 DefaultRadix = symbolic
 
@@ -421,6 +579,7 @@ TranscriptFile = transcript
 PathSeparator = /
 
 ; Specify the dataset separator for fully rooted contexts.
+<<<<<<< HEAD
 ; The default is ':'. For example: sim:/top
 ; Must not be the same character as PathSeparator.
 DatasetSeparator = :
@@ -430,12 +589,19 @@ DatasetSeparator = :
 ; Must not be the same character as DatasetSeparator.
 ; SignalSpyPathSeparator = /
 
+=======
+; The default is ':'. For example, sim:/top
+; Must not be the same character as PathSeparator.
+DatasetSeparator = :
+
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ; Disable VHDL assertion messages
 ; IgnoreNote = 1
 ; IgnoreWarning = 1
 ; IgnoreError = 1
 ; IgnoreFailure = 1
 
+<<<<<<< HEAD
 ; Disable System Verilog assertion messages
 ; Info and Warning are disabled by default
 ; IgnoreSVAInfo = 0
@@ -443,6 +609,8 @@ DatasetSeparator = :
 ; IgnoreSVAError = 1
 ; IgnoreSVAFatal = 1
 
+=======
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ; Default force kind. May be freeze, drive, deposit, or default
 ; or in other terms, fixed, wired, or charged.
 ; A value of "default" will use the signal kind to determine the
@@ -469,10 +637,13 @@ ConcurrentFileLimit = 40
 ; The default is 0.
 ; WaveSignalNameWidth = 0
 
+<<<<<<< HEAD
 ; Turn off warnings when changing VHDL constants and generics
 ; Default is 1 to generate warning messages
 ; WarnConstantChange = 0
 
+=======
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ; Turn off warnings from the std_logic_arith, std_logic_unsigned
 ; and std_logic_signed packages.
 ; StdArithNoWarnings = 1
@@ -496,6 +667,7 @@ ConcurrentFileLimit = 40
 ; The default is 1 (compressed).
 ; CheckpointCompressMode = 0
 
+<<<<<<< HEAD
 ; Specify whether to enable SystemVerilog DPI out-of-the-blue call. 
 ; Out-of-the-blue call refers to a SystemVerilog export function call 
 ; directly from a C function that don't have the proper context setup 
@@ -504,11 +676,17 @@ ConcurrentFileLimit = 40
 ; The default is 0 (disabled).
 ; DpiOutOfTheBlue = 1
 
+=======
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ; List of dynamically loaded objects for Verilog PLI applications
 ; Veriuser = veriuser.sl
 
 ; Specify default options for the restart command. Options can be one
+<<<<<<< HEAD
 ; or more of: -force -nobreakpoint -nolist -nolog -nowave -noassertions
+=======
+; or more of: -force -nobreakpoint -nolist -nolog -nowave
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ; DefaultRestartOptions = -force
 
 ; HP-UX 10.20 ONLY - Enable memory locking to speed up large designs
@@ -516,11 +694,14 @@ ConcurrentFileLimit = 40
 ; Specify number of megabytes to lock.
 ; LockedMemory = 1000
 
+<<<<<<< HEAD
 ; HP-UX 11.00 ONLY - Use /usr/lib/libCsup_v2.sl for shared object loading.
 ; This is necessary when C++ files have been compiled with aCC's -AA option.
 ; The default behavior is to use /usr/lib/libCsup.sl.
 ; UseCsupV2 = 1
 
+=======
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 ; Turn on (1) or off (0) WLF file compression.
 ; The default is 1 (compress WLF file).
 ; WLFCompress = 0
@@ -549,6 +730,7 @@ ConcurrentFileLimit = 40
 ; The default is 0 (do not delete WLF file when simulation ends).
 ; WLFDeleteOnQuit = 1
 
+<<<<<<< HEAD
 ; Specify whether or not a WLF file should be optimized during 
 ; simulation.  If set to 0, the WLF file will not be optimized.
 ; The default is 1, optimize the WLF file.
@@ -859,6 +1041,14 @@ libhm = $MODEL_TECH/libhm.sl
 ; libsfi = <sfi_dir>/lib/pcnt/lm_sfi.dll
 ;  Logic Modeling's hardware modeler SFI software (Linux)
 ; libsfi = <sfi_dir>/lib/linux/libsfi.so
+=======
+; Automatic SDF compilation
+; Disables automatic compilation of SDF files in flows that support it.
+; Default is on, uncomment to turn off.
+; NoAutoSDFCompile = 1
+
+[lmc]
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 
 [msg_system]
 ; Change a message severity or suppress a message.
@@ -883,6 +1073,7 @@ libhm = $MODEL_TECH/libhm.sl
 ;    wlf   {wlf file only}
 ; msgmode = both
 [Project]
+<<<<<<< HEAD
 Project_Version = 6
 Project_DefaultLib = work
 Project_SortMethod = unused
@@ -893,15 +1084,38 @@ Project_File_1 = /home/isa18_2021_2022/github/isa/lab3/riscv_abs/hdl/src/ram.vhd
 Project_File_P_1 = vhdl_novitalcheck 0 file_type vhdl group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1643829604 vhdl_disableopt 0 vhdl_vital 0 vhdl_warn1 1 vhdl_vopt 1 vhdl_showsource 0 vhdl_warn2 1 vhdl_explicit 1 vhdl_0InOptions {} vhdl_warn3 1 vhdl_options {} vhdl_warn4 1 ood 0 vhdl_warn5 1 compile_to work compile_order 0 dont_compile 0 cover_nosub 0 vhdl_use93 2002
 Project_File_2 = /home/isa18_2021_2022/github/isa/lab3/riscv_abs/hdl/tb/RV32I_tb.vhd
 Project_File_P_2 = vhdl_novitalcheck 0 file_type vhdl group_id 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1644458572 vhdl_disableopt 0 vhdl_vital 0 vhdl_warn1 1 vhdl_vopt 1 vhdl_showsource 0 vhdl_warn2 1 vhdl_explicit 1 vhdl_0InOptions {} vhdl_warn3 1 vhdl_options {} vhdl_warn4 1 ood 0 vhdl_warn5 1 compile_to work compile_order 1 dont_compile 0 cover_nosub 0 vhdl_use93 2002
+=======
+** Warning: ; Warning -- Do not edit the project properties directly.
+;            Property names are dynamic in nature and property
+;            values have special syntax.  Changing property data directly
+;            can result in a corrupt MPF file.  All project properties
+;            can be modified through project window dialogs.
+Project_Version = 6
+Project_DefaultLib = work
+Project_SortMethod = unused
+Project_Files_Count = 2
+Project_File_0 = /home/stefano/Desktop/isa_lab3/riscv_abs/netlist/riscv.v
+Project_File_P_0 = cover_toggle 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 cover_branch 0 vlog_noload 0 folder {Top Level} last_compile 1644450911 cover_fsm 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 cover_optlevel 3 vlog_hazard 0 vlog_showsource 0 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to work vlog_upper 0 cover_noshort 0 compile_order 1 dont_compile 0 cover_expr 0 cover_stmt 0
+Project_File_1 = /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/tb/RV32I_tb.vhd
+Project_File_P_1 = vhdl_novitalcheck 0 file_type vhdl group_id 0 cover_nofec 0 vhdl_nodebug 0 vhdl_1164 1 vhdl_noload 0 vhdl_synth 0 vhdl_enable0In 0 folder {Top Level} last_compile 1644450911 vhdl_disableopt 0 cover_excludedefault 0 vhdl_vital 0 vhdl_warn1 1 vhdl_showsource 0 vhdl_explicit 1 vhdl_warn2 1 vhdl_0InOptions {} cover_covercells 0 vhdl_warn3 1 vhdl_options {} cover_optlevel 3 voptflow 1 vhdl_warn4 1 ood 0 toggle - vhdl_warn5 1 compile_to work cover_noshort 0 compile_order 0 dont_compile 0 cover_nosub 0 vhdl_use93 2002
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 Project_Sim_Count = 0
 Project_Folder_Count = 0
 Echo_Compile_Output = 0
 Save_Compile_Report = 1
 Project_Opt_Count = 0
 ForceSoftPaths = 0
+<<<<<<< HEAD
 ReOpenSourceFiles = 1
 VERILOG_DoubleClick = Edit
 VERILOG_CustomDoubleClick = 
+=======
+ProjectStatusDelay = 5000
+VERILOG_DoubleClick = Edit
+VERILOG_CustomDoubleClick = 
+SYSTEMVERILOG_DoubleClick = Edit
+SYSTEMVERILOG_CustomDoubleClick = 
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 VHDL_DoubleClick = Edit
 VHDL_CustomDoubleClick = 
 PSL_DoubleClick = Edit
@@ -922,6 +1136,27 @@ XML_DoubleClick = Edit
 XML_CustomDoubleClick = 
 LOGFILE_DoubleClick = Edit
 LOGFILE_CustomDoubleClick = 
+<<<<<<< HEAD
 EditorState = 
 Project_Major_Version = 6
 Project_Minor_Version = 2
+=======
+UCDB_DoubleClick = Edit
+UCDB_CustomDoubleClick = 
+TDB_DoubleClick = Edit
+TDB_CustomDoubleClick = 
+UPF_DoubleClick = Edit
+UPF_CustomDoubleClick = 
+PCF_DoubleClick = Edit
+PCF_CustomDoubleClick = 
+PROJECT_DoubleClick = Edit
+PROJECT_CustomDoubleClick = 
+VRM_DoubleClick = Edit
+VRM_CustomDoubleClick = 
+DEBUGDATABASE_DoubleClick = Edit
+DEBUGDATABASE_CustomDoubleClick = 
+DEBUGARCHIVE_DoubleClick = Edit
+DEBUGARCHIVE_CustomDoubleClick = 
+Project_Major_Version = 2020
+Project_Minor_Version = 1
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d

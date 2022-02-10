@@ -3,9 +3,9 @@ m255
 cModel Technology
 d/home/isa18_2021_2022/github/isa/lab3/riscv_opt/modelsim
 T_opt
-VD[GD39Kjz`:EJDn383E7T2
+Vn[R4_4;Ng7=FjL=XTRBW:2
 06 8 4 ./work rv32i_tb arch 0
-o-quiet -auto_acc_if_foreign -work work -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /rv32i_tb/=../netlist/riscv.sdf -suppress 1948
+o-quiet -auto_acc_if_foreign -work work -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /rv32i_tb/processor=../netlist/riscv.sdf -suppress 1948
 tExplicit 1
 OE;O;6.2g;35
 Eram

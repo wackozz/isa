@@ -24,21 +24,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity immediate_generator
 -- Compiling architecture str of immediate_generator
 
-} {} {}} /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/src/RV32I.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/src/RV32I.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity RV32I
--- Compiling architecture str of RV32I
--- Loading entity fetch_stage
--- Loading entity decode_stage
--- Loading entity execute_stage
--- Loading entity mem_stage
--- Loading entity wb_stage
--- Loading entity RV32I_control
-
 } {} {}} /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/src/reg.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/src/reg.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -156,16 +141,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity barrel_shifter
 -- Compiling architecture str of barrel_shifter
 
-} {} {}} /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/src/wb_stage.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/src/wb_stage.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity wb_stage
--- Compiling architecture str of wb_stage
--- Loading entity mux_4to1
-
 } {} {}} /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/src/fetch_stage.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/src/fetch_stage.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -247,21 +222,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package std_logic_1164
 -- Compiling entity control
 -- Compiling architecture str of control
-
-} {} {}} /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/tb/RV32I_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/tb/RV32I_tb.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package std_logic_textio
--- Compiling entity RV32I_tb
--- Compiling architecture arch of RV32I_tb
--- Loading entity RV32I
--- Loading entity ram
--- Compiling configuration RV32I_tb_arch_cfg
--- Loading entity RV32I_tb
--- Loading architecture arch of RV32I_tb
 
 } {} {}} /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/src/alu.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/src/alu.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020

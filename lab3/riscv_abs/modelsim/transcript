@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # do scripts/run_postsynth_cmd.do riscv_postsynth 
 # Loading project riscv_postsynth
 # vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab3/riscv_abs/hdl/src/ram.vhd
@@ -26,10 +27,22 @@
 # -- Loading architecture arch of rv32i_tb
 # vlog -work work -vopt /home/isa18_2021_2022/github/isa/lab3/riscv_abs/netlist/riscv.v
 # Model Technology ModelSim SE vlog 6.2g Compiler 2007.02 Feb 21 2007
+=======
+# do scripts/run_postsynth_cmd.do riscv_postsynth
+# Loading project riscv_postsynth
+# vcom -work work -2002 -explicit -stats=none /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/tb/RV32I_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# ** Error: /home/stefano/Desktop/isa_lab3/riscv_abs/hdl/tb/RV32I_tb.vhd(9): near "<": syntax error
+# /home/stefano/intelFPGA/20.1/modelsim_ase/linuxaloem/vcom failed.
+# vlog -work work -stats=none /home/stefano/Desktop/isa_lab3/riscv_abs/netlist/riscv.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
 # -- Compiling module RV32I
 # 
 # Top level modules:
 # 	RV32I
+<<<<<<< HEAD
 # 3 compiles, 0 failed with no errors. 
 # vsim -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /rv32i_tb/=../netlist/riscv.sdf work.rv32i_tb 
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
@@ -1992,3 +2005,11 @@
 # ** Error: (vsim-SDF-3445) Failed to parse SDF file "../netlist/riscv.sdf".
 #    Time: 0 ns  Iteration: 0  Region: /rv32i_tb  File: /home/isa18_2021_2022/github/isa/lab3/riscv_abs/hdl/tb/RV32I_tb.vhd
 # Error loading design
+=======
+# 2 compiles, 0 failed with no errors.
+# ** Error (suppressible): (vsim-SDF-3196) Failed to find SDF file "../netlist/iir_filter.sdf".
+# Use the -help option for complete vsim usage.
+# vsim -L /software/dk/nangate45/verilog/msim6.2g -sdftyp "/rv32i_tb/UUT=../netlist/iir_filter.sdf" work.rv32i_tb 
+# Error loading design
+# Errors: 1, Warnings: 5
+>>>>>>> 80922c3a0cf888544b68334e0933817269900a3d
