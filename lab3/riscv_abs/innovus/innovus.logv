@@ -31,3 +31,9 @@
 [02/10 02:36:24     20s] 
 [02/10 02:36:24     20s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
 [02/10 02:36:24     20s] <CMD> suppressMessage ENCEXT-2799
+[02/10 02:40:24     20s] Innovus terminated by external (TERM) signal.
+[02/10 02:40:24     20s] 
+[02/10 02:40:24     20s] *** Memory Usage v#1 (Current mem = 420.902M, initial mem = 179.684M) ***
+[02/10 02:40:24     20s] *** Message Summary: 0 warning(s), 0 error(s)
+[02/10 02:40:24     20s] 
+[02/10 02:40:24     20s] --- Ending "Innovus" (totcpu=0:00:20.9, real=0:04:28, mem=420.9M) ---

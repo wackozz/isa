@@ -18,3 +18,9 @@ Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_si
 
 <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
 <CMD> suppressMessage ENCEXT-2799
+Innovus terminated by external (TERM) signal.
+
+*** Memory Usage v#1 (Current mem = 420.902M, initial mem = 179.684M) ***
+*** Message Summary: 0 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:20.9, real=0:04:28, mem=420.9M) ---

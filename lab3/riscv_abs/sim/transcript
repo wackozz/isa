@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # do scripts/run_riscv_cmd.do riscv 
 # Loading project riscv
 # vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab3/riscv_abs/hdl/src/absolute_value.vhd
@@ -259,6 +260,53 @@
 # Loading /software/mentor/modelsim_6.2g/linux/../ieee.numeric_std(body)
 # Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
 # Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
+=======
+# Loading project riscv_abs
+cd /home/stefano/Desktop/isa_lab3/riscv_abs/sim
+# reading /home/stefano/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini
+# Loading project riscv_abs
+# Compile of absolute_value.vhd was successful.
+# Compile of add_sub.vhd was successful.
+# Compile of alu.vhd was successful.
+# Compile of alu_control.vhd was successful.
+# Compile of barrel_shifter.vhd was successful.
+# Compile of control.vhd was successful.
+# Compile of dec_5to32.vhd was successful.
+# Compile of decode_stage.vhd was successful.
+# Compile of decode_stage_control.vhd was successful.
+# Compile of execute_stage.vhd was successful.
+# Compile of execute_stage_control.vhd was successful.
+# Compile of fetch_stage.vhd was successful.
+# Compile of forwarding_unit.vhd was successful.
+# Compile of hazard_unit.vhd was successful.
+# Compile of immediate_generator.vhd was successful.
+# Compile of mem_stage.vhd was successful.
+# Compile of mem_stage_control.vhd was successful.
+# Compile of mux_2to1.vhd was successful.
+# Compile of mux_2to1_bit.vhd was successful.
+# Compile of mux_2to1_stall.vhd was successful.
+# Compile of mux_4to1.vhd was successful.
+# Compile of mux_32to1.vhd was successful.
+# Compile of param_pkg.vhd was successful.
+# Compile of ram.vhd was successful with warnings.
+# Compile of reg.vhd was successful.
+# Compile of reg_file.vhd was successful.
+# Compile of reg_regfile.vhd was successful.
+# Compile of RV32I.vhd was successful.
+# Compile of RV32I_control.vhd was successful.
+# Compile of unary_AND.vhd was successful.
+# Compile of wb_stage.vhd was successful.
+# Compile of RV32I_tb.vhd was successful.
+# 32 compiles, 0 failed with no errors.
+vsim work.rv32i_tb -t ns
+# vsim work.rv32i_tb -t ns 
+# Start time: 00:03:00 on Feb 10,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+>>>>>>> 097cbbd3d029e3c4ef7498c45a1ed55ecf934ac6
 # Loading work.rv32i_tb(arch)
 # Loading work.rv32i(str)
 # Loading work.fetch_stage(str)
@@ -290,10 +338,19 @@
 # Loading work.forwarding_unit(str)
 # Loading work.mem_stage_control(str)
 # Loading work.ram(rtl)
+<<<<<<< HEAD
+=======
+# WARNING: No extended dataflow license exists
+do scripts/wave.do
+run 10 us
+>>>>>>> 097cbbd3d029e3c4ef7498c45a1ed55ecf934ac6
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
+<<<<<<< HEAD
 # reading /software/mentor/modelsim_6.2g/linux/../modelsim.ini
+=======
+>>>>>>> 097cbbd3d029e3c4ef7498c45a1ed55ecf934ac6

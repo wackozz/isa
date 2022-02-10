@@ -6,7 +6,11 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-10
+<<<<<<< HEAD
 -- Last update: 2022-02-10
+=======
+-- Last update: 2022-02-09
+>>>>>>> 097cbbd3d029e3c4ef7498c45a1ed55ecf934ac6
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -53,6 +57,7 @@ architecture arch of RV32I_tb is
   signal MemRead             : std_logic;
   constant NOP_instruction   : std_logic_vector := "00000000000000000000000000010011";
 
+<<<<<<< HEAD
   --component ram is
   --  port (
   --    clock    : in  std_logic;
@@ -76,6 +81,31 @@ architecture arch of RV32I_tb is
   --    MemWrite            : out std_logic;
   --    MemRead             : out std_logic);
   --end component RV32I;
+=======
+  -- component ram is
+  --   port (
+  --     clock    : in  std_logic;
+  --     data     : in  std_logic_vector (31 downto 0);
+  --     address  : in  integer range 0 to 256;
+  --     w_en     : in  std_logic;
+  --     q        : out std_logic_vector (31 downto 0);
+  --     reset    : in  std_logic;
+  --     filename : in  string(1 to 8));
+  -- end component ram;
+
+  -- component RV32I is
+  --   port (
+  --     clock               : in  std_logic;
+  --     reset               : in  std_logic;
+  --     instruction_mem_adr : out std_logic_vector(31 downto 0);
+  --     instruction_fetch   : in  std_logic_vector(31 downto 0);
+  --     read_data_mem       : in  std_logic_vector(31 downto 0);
+  --     write_data_mem      : out std_logic_vector(31 downto 0);
+  --     data_mem_adr        : out std_logic_vector(31 downto 0);
+  --     MemWrite            : out std_logic;
+  --     MemRead             : out std_logic);
+  -- end component RV32I;
+>>>>>>> 097cbbd3d029e3c4ef7498c45a1ed55ecf934ac6
 
 begin  -- architecture arch
 

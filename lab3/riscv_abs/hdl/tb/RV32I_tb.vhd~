@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-02-01
+-- Last update: 2022-02-02
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ end entity RV32I_tb;
 -------------------------------------------------------------------------------
 
 architecture arch of RV32I_tb is
-  type instr is (LUI, AUIPC, JAL, BEQ, LW, SW, ADD, ADDI, ANDI, SRAI, SLT, EXOR, UNDEFINED, NOP);
+  type instr is (LUI, AUIPC, JAL, BEQ, LW, SW, ADD, ADDI, ANDI, SRAI, SLT, EXOR, UNDEFINED, NOP, ABSOLUTE);
   signal fetch, decode, execute, mem, writeback : instr;
   signal opcode                                 : std_logic_vector(6 downto 0);
   signal funct3                                 : std_logic_vector(2 downto 0);
@@ -82,18 +82,19 @@ begin  -- architecture arch
   clock <= not clock after 10 ns;
 
   fetch <= LUI when opcode = "0110111" else
-           AUIPC when opcode = "0010111" else
-           JAL   when opcode = "1101111" else
-           BEQ   when opcode = "1100011" else
-           LW    when opcode = "0000011" else
-           SW    when opcode = "0100011" else
-           ADDI  when opcode = "0010011" and funct3 = "000" and instruction_fetch /= NOP_instruction else
-           ANDI  when opcode = "0010011" and funct3 = "111" else
-           SRAI  when opcode = "0010011" and funct3 = "101" else
-           ADD   when opcode = "0110011" and funct3 = "000" else
-           SLT   when opcode = "0110011" and funct3 = "010" else
-           EXOR  when opcode = "0110011" and funct3 = "100" else
-           NOP   when instruction_fetch = NOP_instruction else
+           ABSOLUTE when opcode = "0001011" else
+           AUIPC    when opcode = "0010111" else
+           JAL      when opcode = "1101111" else
+           BEQ      when opcode = "1100011" else
+           LW       when opcode = "0000011" else
+           SW       when opcode = "0100011" else
+           ADDI     when opcode = "0010011" and funct3 = "000" and instruction_fetch /= NOP_instruction else
+           ANDI     when opcode = "0010011" and funct3 = "111" else
+           SRAI     when opcode = "0010011" and funct3 = "101" else
+           ADD      when opcode = "0110011" and funct3 = "000" else
+           SLT      when opcode = "0110011" and funct3 = "010" else
+           EXOR     when opcode = "0110011" and funct3 = "100" else
+           NOP      when instruction_fetch = NOP_instruction else
            UNDEFINED;
 
   decode_phase : process (clock, reset) is
@@ -202,10 +203,10 @@ begin  -- architecture arch
   funct3 <= instruction_fetch(14 downto 12);
 
   -- instance "immediate_generator_1"
-  immediate_generator_1 : entity work.immediate_generator
-    port map (
-      instruction => instruction_fetch,
-      immediate   => immediate);
+  --immediate_generator_1 : entity work.immediate_generator
+  --  port map (
+  --    instruction => instruction_fetch,
+  --    immediate   => immediate);
 end architecture arch;
 
 -------------------------------------------------------------------------------
