@@ -94,14 +94,14 @@ os.system("./sim/simulate_riscv.sh")
 
 synth("synth_riscv")
 
-#os.system("./modelsim/post_synth.sh")
+os.system("./modelsim/post_synth.sh")
 
-#os.system("./modelsim/vcd2saif.sh")
+os.system("./modelsim/vcd2saif.sh")
 
-#os.system("./syn/power.sh")
+os.system("./syn/power.sh")
 
-#os.system("./innovus/place_route.sh")
+os.system("./innovus/place_route.sh")
 
-#os.system("./modelsim/post_place.sh")
+os.system("./modelsim/post_place.sh")
 
-#os.system("./innovus/powercons.sh")
+os.system("./innovus/powercons.sh")

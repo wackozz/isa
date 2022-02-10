@@ -58,9 +58,9 @@ report_resources > reports/report_resources_clk_${clk_var}_ns.txt
 
 ungroup -all -flatten
 change_names -hierarchy -rules verilog
-write_sdf ../netlist/riscv.sdf
-write -f verilog -hierarchy -output ../netlist/riscv.v
-write_sdc ../netlist/riscv.sdc
+write_sdf ../netlist/RV32I.sdf
+write -f verilog -hierarchy -output ../netlist/RV32I.v
+write_sdc ../netlist/RV32I.sdc
 
 quit
 }

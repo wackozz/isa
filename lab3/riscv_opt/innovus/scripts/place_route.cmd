@@ -6,7 +6,7 @@ win
 
 source design.globals
 
-set TopLevelDesign "riscv"
+set TopLevelDesign "RV32I"
 
 set init_mmmc_file mmm_design.tcl
 init_design
@@ -85,15 +85,15 @@ rcOut -setres $TopLevelDesign.setres -rc_corner my_rc
 rcOut -spf $TopLevelDesign.spf -rc_corner my_rc
 rcOut -spef $TopLevelDesign.spef -rc_corner my_rc
 redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
-timeDesign -postRoute -pathReports -drvReports -slackReports -numPaths 50 -prefix iir_filter_postRoute -outDir timingReports
+timeDesign -postRoute -pathReports -drvReports -slackReports -numPaths 50 -prefix RV32I_postRoute -outDir timingReports
 redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
-timeDesign -postRoute -hold -pathReports -slackReports -numPaths 50 -prefix iir_filter_postRoute -outDir timingReports
+timeDesign -postRoute -hold -pathReports -slackReports -numPaths 50 -prefix RV32I_postRoute -outDir timingReports
 verifyConnectivity -type all -error 1000 -warning 50
 setVerifyGeometryMode -area { 0 0 0 0 } -minWidth true -minSpacing true -minArea true -sameNet true -short true -overlap true -offRGrid false -offMGrid true -mergedMGridCheck true -minHole true -implantCheck true -minimumCut true -minStep true -viaEnclosure true -antenna false -insuffMetalOverlap true -pinInBlkg false -diffCellViol true -sameCellViol false -padFillerCellsOverlap true -routingBlkgPinOverlap true -routingCellBlkgOverlap true -regRoutingOnly false -stackedViasOnRegNet false -wireExt true -useNonDefaultSpacing false -maxWidth true -maxNonPrefLength -1 -error 1000
 verifyGeometry
 setVerifyGeometryMode -area { 0 0 0 0 }
-reportGateCount -level 5 -limit 100 -outfile iir_filter.gateCount
-saveNetlist iir_filter.v
+reportGateCount -level 5 -limit 100 -outfile RV32I.gateCount
+saveNetlist RV32I.v
 all_hold_analysis_views 
 all_setup_analysis_views 
 write_sdf  -ideal_clock_network $TopLevelDesign.sdf
