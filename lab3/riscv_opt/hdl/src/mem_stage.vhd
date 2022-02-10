@@ -24,7 +24,6 @@ entity mem_stage is
   port (
     clock          : in  std_logic;
     reset          : in  std_logic;
-    PipeWrite_mem      : in std_logic;
     alu_result_mem : in  std_logic_vector(31 downto 0);
     next_pc_mem    : in  std_logic_vector(31 downto 0);
     rd_mem         : in  std_logic_vector(4 downto 0);
@@ -53,12 +52,10 @@ begin  -- architecture str
       read_data_wb  <= (others => '0');
       next_pc_wb    <= (others => '0');
     elsif clock'event and clock = '1' then  -- rising clock edge
-      if PipeWrite_mem = '1' then
-        rd_wb         <= rd_mem;
-        alu_result_wb <= alu_result_mem;
-        read_data_wb  <= read_data_mem;
-        next_pc_wb    <= next_pc_mem;
-      end if;
+      rd_wb         <= rd_mem;
+      alu_result_wb <= alu_result_mem;
+      read_data_wb  <= read_data_mem;
+      next_pc_wb    <= next_pc_mem;
     end if;
   end process pipe;
 end architecture str;

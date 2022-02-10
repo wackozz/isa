@@ -24,11 +24,13 @@ use ieee.numeric_std.all;
 entity RV32I is
 
   port (
-
+    -- instruction
+    instruction_decode  : out std_logic_vector(31 downto 0);
+    instruction_execute : out std_logic_vector(31 downto 0);
     -- global ports
-    clock             : in std_logic;
-    reset             : in std_logic;
-    instruction_fetch : in std_logic_vector(31 downto 0);
+    clock               : in  std_logic;
+    reset               : in  std_logic;
+    instruction_fetch   : in  std_logic_vector(31 downto 0);
 
     -- ports to "fetch_stage_1"
     instruction_mem_adr : out std_logic_vector(31 downto 0);
@@ -55,12 +57,11 @@ architecture str of RV32I is
 -----------------------------------------------------------------------------
 
   -- outputs of "fetch_stage_1"
-  signal pc_decode          : std_logic_vector(31 downto 0);
-  signal next_pc_decode     : std_logic_vector(31 downto 0);
-  signal instruction_decode : std_logic_vector(31 downto 0);
-  signal Rs1_fetch          : std_logic_vector(4 downto 0);
-  signal Rs2_fetch          : std_logic_vector(4 downto 0);
-  signal Rd_decode          : std_logic_vector(4 downto 0);
+  signal pc_decode      : std_logic_vector(31 downto 0);
+  signal next_pc_decode : std_logic_vector(31 downto 0);
+  signal Rs1_fetch      : std_logic_vector(4 downto 0);
+  signal Rs2_fetch      : std_logic_vector(4 downto 0);
+  signal Rd_decode      : std_logic_vector(4 downto 0);
 
   -- outputs of "decode_stage_1"
   signal alu_ctrl_execute     : std_logic_vector(3 downto 0);
@@ -95,19 +96,21 @@ architecture str of RV32I is
   signal write_reg_decode  : std_logic_vector(4 downto 0);
 
   -- outputs of "RV32I_control_1"
-  signal AbsSel            : std_logic;
-  signal PcWrite           : std_logic;
-  signal PipeWrite_fetch   : std_logic;
-  signal PCSrc             : std_logic;
-  signal forward_mux_Rs1   : std_logic_vector(1 downto 0);
-  signal forward_mux_Rs2   : std_logic_vector(1 downto 0);
-  signal ALUSrc            : std_logic;
-  signal PCSel             : std_logic;
-  signal ALUCtrl           : std_logic_vector(3 downto 0);
-  signal forward_A         : std_logic_vector(1 downto 0);
-  signal forward_B         : std_logic_vector(1 downto 0);
-  signal RegWrite          : std_logic;
-  signal MemToReg          : std_logic_vector(1 downto 0);
+  signal AbsSel          : std_logic;
+  signal PcWrite         : std_logic;
+  signal PipeWrite_fetch : std_logic;
+  signal PCSrc           : std_logic;
+  signal forward_mux_Rs1 : std_logic_vector(1 downto 0);
+  signal forward_mux_Rs2 : std_logic_vector(1 downto 0);
+  signal ALUSrc          : std_logic;
+  signal PCSel           : std_logic;
+  signal ALUCtrl         : std_logic_vector(3 downto 0);
+  signal forward_A       : std_logic_vector(1 downto 0);
+  signal forward_B       : std_logic_vector(1 downto 0);
+  signal RegWrite        : std_logic;
+  signal MemToReg        : std_logic_vector(1 downto 0);
+
+  signal instruction_decode_int : std_logic_vector(31 downto 0);
 
 begin  -- architecture str
 
@@ -121,9 +124,9 @@ begin  -- architecture str
       clock                => clock,
       reset                => reset,
       PCSrc                => PCSrc,
+      PcWrite              => PcWrite,
       instruction_fetch    => instruction_fetch,
       target_address_fetch => target_address_fetch,
-      PcWrite              => PcWrite,
       Rs1_fetch            => Rs1_fetch,
       Rs2_fetch            => Rs2_fetch,
       Rd_decode            => Rd_decode,
@@ -131,14 +134,15 @@ begin  -- architecture str
       instruction_mem_adr  => instruction_mem_adr,
       pc_decode            => pc_decode,
       next_pc_decode       => next_pc_decode,
-      instruction_decode   => instruction_decode);
+      instruction_decode   => instruction_decode_int);
 
   -- instance "decode_stage_1"
   decode_stage_1 : entity work.decode_stage
     port map (
       clock                => clock,
       reset                => reset,
-      instruction_decode   => instruction_decode,
+      instruction_decode   => instruction_decode_int,
+      instruction_execute  => instruction_execute,
       pc_decode            => pc_decode,
       next_pc_decode       => next_pc_decode,
       RegWrite             => RegWrite,
@@ -219,9 +223,8 @@ begin  -- architecture str
     port map (
       clock              => clock,
       reset              => reset,
-      PipeWrite_fetch    => PipeWrite_fetch,
       instruction_fetch  => instruction_fetch,
-      instruction_decode => instruction_decode,
+      instruction_decode => instruction_decode_int,
       Rs1_decode         => Rs1_decode,
       Rs2_decode         => Rs2_decode,
       Rd_execute         => Rd_execute,
@@ -231,6 +234,7 @@ begin  -- architecture str
       Rd_decode          => Rd_decode,
       AbsSel             => AbsSel,
       PcWrite            => PcWrite,
+      PipeWrite_fetch    => PipeWrite_fetch,
       PCSrc              => PCSrc,
       forward_mux_Rs1    => forward_mux_Rs1,
       forward_mux_Rs2    => forward_mux_Rs2,
@@ -249,7 +253,8 @@ begin  -- architecture str
       RegWrite           => RegWrite,
       MemToReg           => MemToReg);
 
-  data_mem_adr <= data_mem_adr_int;
+  instruction_decode <= instruction_decode_int;
+  data_mem_adr       <= data_mem_adr_int;
 end architecture str;
 
 -------------------------------------------------------------------------------

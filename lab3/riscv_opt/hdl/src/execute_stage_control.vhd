@@ -26,8 +26,6 @@ entity execute_stage_control is
   port (
     clock            : in  std_logic;
     reset            : in  std_logic;
-    PipeWrite_execute : in std_logic;
-    FLush_execute    : in  std_logic;
     alu_ctrl_execute : in  std_logic_vector(3 downto 0);
     MemRead_execute  : in  std_logic;
     ALUOp_execute    : in  std_logic_vector(1 downto 0);
@@ -90,17 +88,10 @@ begin  -- architecture str
       MemToReg_mem     <= "00";
       RegWrite_mem_int <= '0';
     elsif clock'event and clock = '1' then  -- rising clock edge
-      if(Flush_execute = '1') then
-        MemWrite         <= '0';
-        MemRead          <= '0';
-        MemToReg_mem     <= "00";
-        RegWrite_mem_int <= '0';
-      elsif PipeWrite_execute = '1' then
         MemWrite         <= MemWrite_execute;
         MemRead          <= MemRead_execute;
         MemToReg_mem     <= MemToReg_execute;
         RegWrite_mem_int <= RegWrite_execute;
-      end if;
     end if;
     end process pipe;
 

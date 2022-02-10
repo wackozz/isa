@@ -29,7 +29,6 @@ entity execute_stage is
     ALUSrc             : in  std_logic;
     PCSel              : in  std_logic;
     AbsSel             : in  std_logic;
-    PipeWrite_execute          : in  std_logic;
     ALUCtrl            : in  std_logic_vector(3 downto 0);
     shamt_execute      : in  std_logic_vector(4 downto 0);
     pc_execute         : in  std_logic_vector(31 downto 0);
@@ -123,13 +122,11 @@ begin  -- architecture str
       data_mem_adr_int <= (others => '0');
       next_pc_mem      <= (others => '0');
     elsif clock'event and clock = '1' then  -- rising clock edge
-      if PipeWrite_execute = '1' then
-        alu_result_mem   <= out_mux_alu_abs;
-        rd_mem           <= rd_execute;
-        write_data_mem   <= out_mux_forward_B;
-        data_mem_adr_int <= out_mux_alu_abs;
-        next_pc_mem      <= next_pc_execute;
-      end if;
+      alu_result_mem   <= out_mux_alu_abs;
+      rd_mem           <= rd_execute;
+      write_data_mem   <= out_mux_forward_B;
+      data_mem_adr_int <= out_mux_alu_abs;
+      next_pc_mem      <= next_pc_execute;
     end if;
   end process pipe;
 

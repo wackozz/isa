@@ -25,7 +25,6 @@ entity mem_stage_control is
   port (
     clock         : in  std_logic;
     reset         : in  std_logic;
-    PipeWrite_mem : in  std_logic;
     MemToReg_mem  : in  std_logic_vector(1 downto 0);
     RegWrite_mem  : in  std_logic;
     RegWrite      : out std_logic;
@@ -54,12 +53,11 @@ begin  -- architecture str
       MemToReg <= "00";
       RegWrite <= '0';
     elsif clock'event and clock = '1' then
-      if PipeWrite_mem = '1' then
-        MemToReg <= MemToReg_mem;
-        RegWrite <= RegWrite_mem;
-      end if; end if;  -- rising clock 
-    end process pipe;
+      MemToReg <= MemToReg_mem;
+      RegWrite <= RegWrite_mem;
+    end if;  -- rising clock 
+  end process pipe;
 
-    end architecture str;
+end architecture str;
 
 -------------------------------------------------------------------------------

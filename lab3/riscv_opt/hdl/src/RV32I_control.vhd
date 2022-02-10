@@ -42,15 +42,11 @@ entity RV32I_control is
     AbsSel             : out std_logic;
     PcWrite            : out std_logic;
     PipeWrite_fetch    : out std_logic;
-    PipeWrite_decode   : out std_logic;
-    PipeWrite_execute  : out std_logic;
-    PipeWrite_mem      : out std_logic;
     PCSrc              : out std_logic;
     forward_mux_Rs1    : out std_logic_vector(1 downto 0);
     forward_mux_Rs2    : out std_logic_vector(1 downto 0);
     ALUSrc             : out std_logic;
     PCSel              : out std_logic;
-    Flush              : out std_logic;
 
     -- ports to "execute_stage_control_1"
     alu_ctrl_execute : in  std_logic_vector(3 downto 0);
@@ -92,8 +88,6 @@ architecture str of RV32I_control is
   signal Flush_execute : std_logic;
   signal RegWrite_int  : std_logic;
 
-  signal PipeWrite_execute_int : std_logic;
-  signal PipeWrite_mem_int : std_logic;
 
 begin  -- architecture str
 
@@ -127,18 +121,13 @@ begin  -- architecture str
       AbsSel             => AbsSel,
       ALUSrc             => ALUSrc,
       PCSel              => PCSel,
-      Flush_execute      => Flush_execute,
       ALUOp_execute      => ALUOp_execute,
       MemWrite_execute   => MemWrite_execute,
       MemRead_execute    => MemRead_execute,
       RegWrite_execute   => RegWrite_execute,
       opcode_execute     => opcode_execute,
       PcWrite            => PcWrite,
-      Flush              => Flush,
       PipeWrite_fetch    => PipeWrite_fetch,
-      PipeWrite_decode   => PipeWrite_decode,
-      PipeWrite_execute  => PipeWrite_execute_int,
-      PipeWrite_mem      => PipeWrite_mem_int,
       MemToReg_execute   => MemToReg_execute);
 
   -- instance "execute_stage_control_1"
@@ -146,8 +135,6 @@ begin  -- architecture str
     port map (
       clock             => clock,
       reset             => reset,
-      PipeWrite_execute => PipeWrite_execute_int,
-      Flush_execute     => FLush_execute,
       alu_ctrl_execute  => alu_ctrl_execute,
       MemRead_execute   => MemRead_execute,
       ALUOp_execute     => ALUOp_execute,
@@ -173,14 +160,11 @@ begin  -- architecture str
     port map (
       clock         => clock,
       reset         => reset,
-      PipeWrite_mem => PipeWrite_mem_int,
       MemToReg_mem  => MemToReg_mem,
       RegWrite_mem  => RegWrite_mem,
       RegWrite      => RegWrite_int,
       MemToReg      => MemToReg);
 
-  PipeWrite_mem <= PipeWrite_mem_int;
-  PipeWrite_execute <= PipeWrite_execute_int;
 
 end architecture str;
 

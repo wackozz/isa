@@ -50,14 +50,9 @@ entity decode_stage_control is
     opcode_execute     : out std_logic_vector(6 downto 0);
     PcWrite            : out std_logic;
     PipeWrite_fetch    : out std_logic;
-    PipeWrite_decode   : out std_logic;
-    PipeWrite_execute  : out std_logic;
-    PipeWrite_mem      : out std_logic;
     PCSrc              : out std_logic;
     forward_mux_Rs1    : out std_logic_vector(1 downto 0);
     forward_mux_Rs2    : out std_logic_vector(1 downto 0);
-    Flush              : out std_logic;
-    Flush_execute      : out std_logic;
     MemToReg_execute   : out std_logic_vector(1 downto 0));
 
 end entity decode_stage_control;
@@ -179,12 +174,7 @@ begin  -- architecture str
       Rs2_decode        => Rs2_decode,
       Rd_execute        => Rd_execute,
       PipeWrite_fetch   => PipeWrite_fetch,
-      PipeWrite_decode  => PipeWrite_decode,
-      PipeWrite_execute => PipeWrite_execute,
-      PipeWrite_mem     => PipeWrite_mem,
       PCSrc             => PCSrc_int,
-      Flush             => flush,
-      Flush_execute     => Flush_execute,
       StallSrc          => StallSrc);
 
   MemRead_execute <= MemRead_execute_int;

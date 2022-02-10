@@ -38,12 +38,7 @@ entity hazard_unit is
     Rd_execute        : in  std_logic_vector(4 downto 0);
     Rd_decode         : in  std_logic_vector(4 downto 0);
     PcWrite           : out std_logic;
-    Flush             : out std_logic;
-    Flush_execute     : out std_logic;
     PipeWrite_fetch   : out std_logic;
-    PipeWrite_decode  : out std_logic;
-    PipeWrite_execute : out std_logic;
-    PipeWrite_mem     : out std_logic;
     StallSrc          : out std_logic);
 
 end entity hazard_unit;
@@ -118,12 +113,7 @@ begin  -- architecture str
   begin  -- process state_as
     PcWrite           <= '1';
     PipeWrite_fetch   <= '1';
-    PipeWrite_decode  <= '1';
-    PipeWrite_execute <= '1';
-    PipeWrite_mem     <= '1';
     StallSrc          <= '1';
-    Flush             <= '0';
-    Flush_execute     <= '0';
     case current_state is
       when idle =>
       when idle2 =>
