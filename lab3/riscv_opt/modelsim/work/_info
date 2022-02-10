@@ -3,7 +3,7 @@ m255
 cModel Technology
 d/home/isa18_2021_2022/github/isa/lab3/riscv_opt/modelsim
 T_opt
-Vn[R4_4;Ng7=FjL=XTRBW:2
+VRBm`T:6bg3TOjbYOCj4jN2
 06 8 4 ./work rv32i_tb arch 0
 o-quiet -auto_acc_if_foreign -work work -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /rv32i_tb/processor=../netlist/riscv.sdf -suppress 1948
 tExplicit 1
@@ -38,9 +38,9 @@ M1 std textio
 o-work work -2002 -explicit
 tExplicit 1
 vRV32I
-I7O=^o5BLInl2=cZbM981i3
+IEIZoeaaTgHFlIfjElb>S<1
 VNH<6kcb=7LQ7=hAeBFz=[0
-w1644464461
+w1644508672
 8/home/isa18_2021_2022/github/isa/lab3/riscv_opt/netlist/riscv.v
 F/home/isa18_2021_2022/github/isa/lab3/riscv_opt/netlist/riscv.v
 L0 8

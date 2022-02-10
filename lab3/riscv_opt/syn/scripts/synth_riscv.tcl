@@ -67,4 +67,3 @@ quit
 
 
 elab
-synth 2.16

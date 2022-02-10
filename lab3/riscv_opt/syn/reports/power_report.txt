@@ -10,7 +10,7 @@ Report : power
         -analysis_effort low
 Design : RV32I
 Version: O-2018.06-SP4
-Date   : Thu Feb 10 04:41:14 2022
+Date   : Thu Feb 10 17:06:30 2022
 ****************************************
 
 
@@ -36,12 +36,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  = 642.6513 uW   (90%)
-  Net Switching Power  =  72.4050 uW   (10%)
+  Cell Internal Power  = 654.0425 uW   (94%)
+  Net Switching Power  =  38.9571 uW    (6%)
                          ---------
-Total Dynamic Power    = 715.0563 uW  (100%)
+Total Dynamic Power    = 692.9997 uW  (100%)
 
-Cell Leakage Power     = 253.2088 uW
+Cell Leakage Power     = 274.7546 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -50,10 +50,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network  6.5890e-02            8.0425           14.3532            8.1227  (   0.84%)
-register         617.9881            8.9080        1.2321e+05          750.1044  (  77.47%)
-sequential     4.0884e-02        2.9229e-02          289.1921            0.3593  (   0.04%)
-combinational     24.5560           55.4252        1.2970e+05          209.6780  (  21.66%)
+clock_network  6.5894e-02            8.0418           14.3532            8.1221  (   0.84%)
+register         630.3021            9.0251        1.2555e+05          764.8774  (  79.04%)
+sequential     4.2360e-02        8.6418e-02          387.6357            0.5164  (   0.05%)
+combinational     23.6339           21.8039        1.4880e+05          194.2400  (  20.07%)
 --------------------------------------------------------------------------------------------------
-Total            642.6509 uW        72.4049 uW     2.5321e+05 nW       968.2645 uW
+Total            654.0443 uW        38.9572 uW     2.7475e+05 nW       967.7559 uW
 1

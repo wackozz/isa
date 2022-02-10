@@ -33,7 +33,7 @@ project addfile ../hdl/src/unary_AND.vhd
 project addfile ../hdl/src/wb_stage.vhd
 project addfile ../hdl/tb/RV32I_tb.vhd
 project compileall
-vsim work.rv32i_tb -t ns
+vsim work.rv32i_tb -t us
 run 1 us
 quit -sim
 project close

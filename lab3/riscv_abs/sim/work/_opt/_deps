@@ -1,0 +1,8 @@
+H 2141964 11 3 0 2 2 0 0 0 0
+L 4 ieee 19 $MODEL_TECH/../ieee
+L 3 std 18 $MODEL_TECH/../std
+L 4 work 6 ./work
+D 15 ./work.ram(rtl) Ih]0zi^T?<4N0;RG;@cDn3 0 1
+D 21 ./work.rv32i_tb(arch) bFk47?6Eg3kD6[IdU98iQ2 1 1
+2 0  0 =z@D@z6TnfnQ6H2Fa;:AB0 0 0 1
+2 0  0 3JEbRTcSEO=n@Ml<<D:U]0 1 1 1

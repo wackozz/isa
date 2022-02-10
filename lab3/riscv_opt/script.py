@@ -1,7 +1,7 @@
 import os
 
 def synth(file_name):
-	clk_value = 2.16
+	clk_value = 0
 	fine = 0
 	flag = 0
 	while fine == 0:
@@ -21,7 +21,7 @@ def synth(file_name):
 		file_object.write('synth '+ str(clk_value))
 		file_object.close()
 		print("\n**********************SYNTHESIS WITH " + str(clk_value) + " ns**********************\n")
-		os.system('syn/'+file_name+'.sh')
+		os.system('./syn/'+file_name+'.sh')
 
 		with open('syn/reports/report_timing_' +str(clk_value)+ '_ns.txt','r') as file:
 			for line in file:
@@ -92,16 +92,16 @@ def change_clock_gen(clk_value):
 
 os.system("./sim/simulate_riscv.sh")
 
-change_clock_gen(synth("synth_riscv"))
+synth("synth_riscv")
 
-os.system("./modelsim/post_synth.sh")
+#os.system("./modelsim/post_synth.sh")
 
-os.system("./modelsim/vcd2saif.sh")
+#os.system("./modelsim/vcd2saif.sh")
 
-os.system("./syn/power.sh")
+#os.system("./syn/power.sh")
 
-os.system("./innovus/place_route.sh")
+#os.system("./innovus/place_route.sh")
 
-os.system("modelsim/post_place.sh")
+#os.system("./modelsim/post_place.sh")
 
-os.system("innovus/powercons.sh")
+#os.system("./innovus/powercons.sh")

@@ -3,7 +3,7 @@ m255
 cModel Technology
 d/home/isa18_2021_2022/github/isa/lab3/riscv_opt/modelsim
 T_opt
-Vn[R4_4;Ng7=FjL=XTRBW:2
+VRBm`T:6bg3TOjbYOCj4jN2
 06 8 4 ./work rv32i_tb arch 0
 o-quiet -auto_acc_if_foreign -work work -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /rv32i_tb/processor=../netlist/riscv.sdf -suppress 1948
 tExplicit 1
@@ -13,13 +13,13 @@ w1644318626
 DP std textio K]Z^fghZ6B=BjnK5NomDT3
 DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-32
 8/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/ram.vhd
 F/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/ram.vhd
 l0
 L28
 VS]lSWXa14IkAWMo^@B<`A0
 OE;C;6.2g;35
+32
 o-work work -2002 -explicit
 tExplicit 1
 Artl
@@ -38,9 +38,9 @@ OE;C;6.2g;35
 o-work work -2002 -explicit
 tExplicit 1
 vRV32I
-w1644464461
-I7O=^o5BLInl2=cZbM981i3
+IEIZoeaaTgHFlIfjElb>S<1
 VNH<6kcb=7LQ7=hAeBFz=[0
+w1644508672
 8/home/isa18_2021_2022/github/isa/lab3/riscv_opt/netlist/riscv.v
 F/home/isa18_2021_2022/github/isa/lab3/riscv_opt/netlist/riscv.v
 L0 8
@@ -56,13 +56,13 @@ DP std textio K]Z^fghZ6B=BjnK5NomDT3
 DP ieee std_logic_textio 8YS?iX`WD1REQG`ZRYQGB2
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-32
 8/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/tb/RV32I_tb.vhd
 F/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/tb/RV32I_tb.vhd
 l0
 L26
 Vd9LzTGdgHYLLGmX]WPYoo0
 OE;C;6.2g;35
+32
 o-work work -2002 -explicit
 tExplicit 1
 Aarch

@@ -1,0 +1,72 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'RV32I' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : RV32I
+Version: O-2018.06-SP4
+Date   : Thu Feb 10 16:50:32 2022
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: decode_stage_1/register_file/sel_delay2_reg[4]
+              (rising edge-triggered flip-flop clocked by MY_CLK')
+  Endpoint: fetch_stage_1/PC/Q_reg[0]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  RV32I              5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK' (rise edge)                               1.02       1.02
+  clock network delay (ideal)                             0.00       1.02
+  decode_stage_1/register_file/sel_delay2_reg[4]/CK (DFFR_X1)
+                                                          0.00       1.02 r
+  decode_stage_1/register_file/sel_delay2_reg[4]/Q (DFFR_X1)
+                                                          0.11       1.13 r
+  U6930/ZN (NOR2_X1)                                      0.03       1.16 f
+  U6934/ZN (NAND2_X1)                                     0.05       1.21 r
+  U6980/ZN (NOR2_X1)                                      0.04       1.24 f
+  U5547/Z (BUF_X2)                                        0.06       1.30 f
+  U7492/ZN (AOI22_X1)                                     0.06       1.36 r
+  U5876/ZN (AND4_X1)                                      0.06       1.42 r
+  U5927/ZN (NAND2_X1)                                     0.03       1.45 f
+  U7496/ZN (NOR2_X1)                                      0.05       1.49 r
+  U7497/ZN (AOI21_X1)                                     0.03       1.53 f
+  U7498/ZN (XNOR2_X1)                                     0.05       1.58 f
+  U7499/ZN (NOR2_X1)                                      0.04       1.62 r
+  U5940/ZN (NAND4_X1)                                     0.04       1.67 f
+  U5939/ZN (NOR2_X1)                                      0.04       1.71 r
+  U8456/ZN (NAND4_X1)                                     0.04       1.75 f
+  U5682/ZN (AND2_X1)                                      0.05       1.80 f
+  U5690/ZN (NOR2_X1)                                      0.04       1.84 r
+  U5688/Z (BUF_X1)                                        0.05       1.89 r
+  U9349/Z (MUX2_X1)                                       0.08       1.97 f
+  fetch_stage_1/PC/Q_reg[0]/D (DFFR_X1)                   0.01       1.97 f
+  data arrival time                                                  1.97
+
+  clock MY_CLK (rise edge)                                2.04       2.04
+  clock network delay (ideal)                             0.00       2.04
+  clock uncertainty                                      -0.07       1.97
+  fetch_stage_1/PC/Q_reg[0]/CK (DFFR_X1)                  0.00       1.97 r
+  library setup time                                     -0.04       1.93
+  data required time                                                 1.93
+  --------------------------------------------------------------------------
+  data required time                                                 1.93
+  data arrival time                                                 -1.97
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.04
+
+
+1

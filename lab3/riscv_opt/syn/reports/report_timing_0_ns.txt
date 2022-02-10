@@ -9,7 +9,7 @@ Report : timing
         -max_paths 1
 Design : RV32I
 Version: O-2018.06-SP4
-Date   : Thu Feb 10 04:14:42 2022
+Date   : Thu Feb 10 16:28:37 2022
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
@@ -17,9 +17,9 @@ Date   : Thu Feb 10 04:14:42 2022
 Operating Conditions: typical   Library: NangateOpenCellLibrary
 Wire Load Model Mode: top
 
-  Startpoint: RV32I_control_1/decode_stage_control_1/opcode_execute_reg[3]
+  Startpoint: RV32I_control_1/decode_stage_control_1/opcode_execute_reg[4]
               (rising edge-triggered flip-flop clocked by MY_CLK)
-  Endpoint: execute_stage_1/data_mem_adr_int_reg[31]
+  Endpoint: execute_stage_1/alu_result_mem_reg[22]
             (rising edge-triggered flip-flop clocked by MY_CLK)
   Path Group: MY_CLK
   Path Type: max
@@ -32,49 +32,45 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   clock MY_CLK (rise edge)                                0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  RV32I_control_1/decode_stage_control_1/opcode_execute_reg[3]/CK (DFFR_X1)
+  RV32I_control_1/decode_stage_control_1/opcode_execute_reg[4]/CK (DFFR_X1)
                                                           0.00 #     0.00 r
-  RV32I_control_1/decode_stage_control_1/opcode_execute_reg[3]/Q (DFFR_X1)
-                                                          0.09       0.09 f
-  U5437/ZN (AOI21_X1)                                     0.05       0.14 r
-  U5204/ZN (NAND4_X1)                                     0.05       0.19 f
-  U5468/ZN (NOR2_X1)                                      0.06       0.26 r
-  U5469/ZN (XNOR2_X1)                                     0.07       0.33 r
-  U5171/ZN (AND3_X1)                                      0.06       0.38 r
-  U5358/ZN (NAND3_X1)                                     0.04       0.42 f
-  U5197/Z (BUF_X1)                                        0.05       0.47 f
-  U5215/Z (BUF_X2)                                        0.05       0.52 f
-  U4906/ZN (OAI21_X2)                                     0.06       0.57 r
-  U5705/ZN (NAND2_X1)                                     0.03       0.60 f
-  U5453/ZN (NAND2_X1)                                     0.03       0.63 r
-  U5434/ZN (XNOR2_X1)                                     0.06       0.69 r
-  U5027/ZN (OR2_X1)                                       0.04       0.73 r
-  U5726/ZN (NAND2_X1)                                     0.03       0.77 f
-  U5454/ZN (NOR2_X1)                                      0.05       0.81 r
-  U5751/ZN (NAND2_X1)                                     0.03       0.85 f
-  U5823/ZN (OAI21_X1)                                     0.04       0.89 r
-  U5824/ZN (AOI21_X1)                                     0.03       0.92 f
-  U5825/Z (BUF_X1)                                        0.05       0.97 f
-  U6045/ZN (OAI21_X1)                                     0.05       1.02 r
-  U6055/ZN (XNOR2_X1)                                     0.06       1.08 r
-  U6406/ZN (NAND2_X1)                                     0.03       1.11 f
-  U6421/ZN (NAND2_X1)                                     0.03       1.14 r
-  execute_stage_1/data_mem_adr_int_reg[31]/D (DFFR_X1)
-                                                          0.01       1.15 r
-  data arrival time                                                  1.15
+  RV32I_control_1/decode_stage_control_1/opcode_execute_reg[4]/Q (DFFR_X1)
+                                                          0.10       0.10 r
+  U5909/ZN (OAI21_X1)                                     0.03       0.13 f
+  U5682/ZN (NAND3_X1)                                     0.03       0.16 r
+  U5911/ZN (NAND2_X1)                                     0.04       0.20 f
+  U5916/ZN (NAND2_X1)                                     0.05       0.25 r
+  U5917/ZN (XNOR2_X1)                                     0.06       0.31 r
+  U5479/ZN (AND4_X2)                                      0.07       0.37 r
+  U5825/ZN (NAND2_X1)                                     0.04       0.41 f
+  U5472/ZN (AND3_X2)                                      0.05       0.46 f
+  U5704/Z (BUF_X2)                                        0.05       0.51 f
+  U6151/ZN (NAND2_X1)                                     0.05       0.56 r
+  U5793/ZN (NAND4_X1)                                     0.06       0.62 f
+  U6156/ZN (NOR2_X1)                                      0.05       0.67 r
+  U6433/ZN (OAI21_X1)                                     0.03       0.70 f
+  U6434/ZN (AOI21_X1)                                     0.06       0.76 r
+  U6442/ZN (OAI21_X1)                                     0.03       0.79 f
+  U6443/ZN (AOI21_X1)                                     0.06       0.85 r
+  U5845/Z (BUF_X2)                                        0.07       0.91 r
+  U10075/ZN (OAI21_X1)                                    0.04       0.95 f
+  U10077/ZN (XNOR2_X1)                                    0.05       1.01 f
+  U10078/ZN (NAND2_X1)                                    0.03       1.03 r
+  U10095/ZN (NAND2_X1)                                    0.02       1.06 f
+  execute_stage_1/alu_result_mem_reg[22]/D (DFFR_X1)      0.01       1.07 f
+  data arrival time                                                  1.07
 
   clock MY_CLK (rise edge)                                0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                      -0.07      -0.07
-  execute_stage_1/data_mem_adr_int_reg[31]/CK (DFFR_X1)
-                                                          0.00      -0.07 r
-  library setup time                                     -0.03      -0.10
-  data required time                                                -0.10
+  execute_stage_1/alu_result_mem_reg[22]/CK (DFFR_X1)     0.00      -0.07 r
+  library setup time                                     -0.04      -0.11
+  data required time                                                -0.11
   --------------------------------------------------------------------------
-  data required time                                                -0.10
-  data arrival time                                                 -1.15
+  data required time                                                -0.11
+  data arrival time                                                 -1.07
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -1.25
+  slack (VIOLATED)                                                  -1.18
 
 
 1
