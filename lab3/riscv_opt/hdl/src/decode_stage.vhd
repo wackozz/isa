@@ -29,7 +29,7 @@ entity decode_stage is
     instruction_decode   : in  std_logic_vector(31 downto 0);
     instruction_execute  : out std_logic_vector(31 downto 0);  -- TO BE REMOVED
     Flush                : in  std_logic;
-    PipeWrite            : in  std_logic;
+    PipeWrite_decode            : in  std_logic;
     pc_decode            : in  std_logic_vector(31 downto 0);
     next_pc_decode       : in  std_logic_vector(31 downto 0);
     RegWrite             : in  std_logic;
@@ -142,7 +142,7 @@ begin  -- architecture str
         next_pc_execute  <= (others => '0');
         Rs1_execute      <= (others => '0');
         Rs2_execute      <= (others => '0');
-      elsif PipeWrite = '1' then
+      elsif PipeWrite_decode = '1' then
         pc_execute          <= pc_decode;
         instruction_execute <= instruction_decode;
         immediate_execute   <= immediate_int;
@@ -208,7 +208,7 @@ begin  -- architecture str
       if Flush = '1' then
         read_data1_execute <= (others => '0');
         read_data2_execute <= (others => '0');
-      elsif PipeWrite = '1' then
+      elsif PipeWrite_decode = '1' then
         read_data1_execute <= read_data1_int;
         read_data2_execute <= read_data2_int;
       end if;

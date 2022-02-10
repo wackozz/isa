@@ -31,7 +31,7 @@ entity fetch_stage is
     instruction_fetch    : in  std_logic_vector(31 downto 0);
     target_address_fetch : in  std_logic_vector(31 downto 0);
     PcWrite              : in  std_logic;
-    PipeWrite       : in  std_logic;
+    PipeWrite_fetch       : in  std_logic;
     Rs1_fetch            : out std_logic_vector(4 downto 0);
     Rs2_fetch            : out std_logic_vector(4 downto 0);
     Rd_decode            : out std_logic_vector(4 downto 0);
@@ -105,7 +105,7 @@ begin  -- architecture str
       pc_decode              <= (others => '0');
       next_pc_decode         <= (others => '0');
     elsif clock'event and clock = '1' then  -- rising clock edge
-      if PipeWrite = '1' then
+      if PipeWrite_fetch = '1' then
         instruction_decode_int <= instruction_fetch;
         pc_decode              <= pc_out_int;
         next_pc_decode         <= next_pc;

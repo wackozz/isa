@@ -41,7 +41,10 @@ entity RV32I_control is
     Rd_decode          : in  std_logic_vector(4 downto 0);
     AbsSel             : out std_logic;
     PcWrite            : out std_logic;
-    PipeWrite          : out std_logic;
+    PipeWrite_fetch    : out std_logic;
+    PipeWrite_decode   : out std_logic;
+    PipeWrite_execute  : out std_logic;
+    PipeWrite_mem      : out std_logic;
     PCSrc              : out std_logic;
     forward_mux_Rs1    : out std_logic_vector(1 downto 0);
     forward_mux_Rs2    : out std_logic_vector(1 downto 0);
@@ -128,7 +131,10 @@ begin  -- architecture str
       opcode_execute     => opcode_execute,
       PcWrite            => PcWrite,
       Flush              => Flush,
-      PipeWrite          => PipeWrite,
+      PipeWrite_fetch    => PipeWrite_fetch  ,
+      PipeWrite_decode   => PipeWrite_decode ,
+      PipeWrite_execute  => PipeWrite_execute,
+      PipeWrite_mem      => PipeWrite_mem    ,
       MemToReg_execute   => MemToReg_execute);
 
   -- instance "execute_stage_control_1"

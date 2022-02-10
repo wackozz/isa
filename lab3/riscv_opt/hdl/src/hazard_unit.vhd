@@ -24,23 +24,26 @@ use ieee.numeric_std.all;
 entity hazard_unit is
 
   port (
-    clock           : in  std_logic;
-    reset           : in  std_logic;
-    MemRead_execute : in  std_logic;
-    MemWrite_decode : in  std_logic;
-    PCSrc           : in  std_logic;
-    opcode_fetch    : in  std_logic_vector(6 downto 0);
-    opcode_decode   : in  std_logic_vector(6 downto 0);
-    Rs1_decode      : in  std_logic_vector(4 downto 0);
-    Rs2_decode      : in  std_logic_vector(4 downto 0);
-    Rs1_fetch       : in  std_logic_vector(4 downto 0);
-    Rs2_fetch       : in  std_logic_vector(4 downto 0);
-    Rd_execute      : in  std_logic_vector(4 downto 0);
-    Rd_decode       : in  std_logic_vector(4 downto 0);
-    PcWrite         : out std_logic;
-    Flush           : out std_logic;
-    PipeWrite       : out std_logic;
-    StallSrc        : out std_logic);
+    clock             : in  std_logic;
+    reset             : in  std_logic;
+    MemRead_execute   : in  std_logic;
+    MemWrite_decode   : in  std_logic;
+    PCSrc             : in  std_logic;
+    opcode_fetch      : in  std_logic_vector(6 downto 0);
+    opcode_decode     : in  std_logic_vector(6 downto 0);
+    Rs1_decode        : in  std_logic_vector(4 downto 0);
+    Rs2_decode        : in  std_logic_vector(4 downto 0);
+    Rs1_fetch         : in  std_logic_vector(4 downto 0);
+    Rs2_fetch         : in  std_logic_vector(4 downto 0);
+    Rd_execute        : in  std_logic_vector(4 downto 0);
+    Rd_decode         : in  std_logic_vector(4 downto 0);
+    PcWrite           : out std_logic;
+    Flush             : out std_logic;
+    PipeWrite_fetch   : out std_logic;
+    PipeWrite_decode  : out std_logic;
+    PipeWrite_execute : out std_logic;
+    PipeWrite_mem     : out std_logic;
+    StallSrc          : out std_logic);
 
 end entity hazard_unit;
 -------------------------------------------------------------------------------
@@ -150,50 +153,77 @@ begin  -- architecture str
   begin  -- process state_as
     case current_state is
       when idle =>
-        PcWrite   <= '1';
-        PipeWrite <= '1';
-        StallSrc  <= '1';
-        Flush     <= '0';
+        PcWrite           <= '1';
+        PipeWrite_fetch   <= '1';
+        PipeWrite_decode  <= '1';
+        PipeWrite_execute <= '1';
+        PipeWrite_mem     <= '1';
+        StallSrc          <= '1';
+        Flush             <= '0';
       when idle2 =>
-        PcWrite   <= '1';
-        PipeWrite <= '1';
-        StallSrc  <= '1';
-        Flush     <= '0';
+        PcWrite           <= '1';
+        PipeWrite_fetch   <= '1';
+        PipeWrite_decode  <= '1';
+        PipeWrite_execute <= '1';
+        PipeWrite_mem     <= '1';
+        StallSrc          <= '1';
+        Flush             <= '0';
       when idle3 =>
-        PcWrite   <= '1';
-        PipeWrite <= '1';
-        StallSrc  <= '1';
-        Flush     <= '0';
+        PcWrite           <= '1';
+        PipeWrite_fetch   <= '1';
+        PipeWrite_decode  <= '1';
+        PipeWrite_execute <= '1';
+        PipeWrite_mem     <= '1';
+        StallSrc          <= '1';
+        Flush             <= '0';
       when stall =>
-        PcWrite   <= '0';
-        PipeWrite <= '0';
-        StallSrc  <= '1';
-        Flush     <= '0';
+        PcWrite           <= '0';
+        PipeWrite_fetch   <= '0';
+        PipeWrite_decode  <= '1';
+        PipeWrite_execute <= '1';
+        PipeWrite_mem     <= '1';
+        StallSrc          <= '1';
+        Flush             <= '0';
       when stall_twice1 =>
-        PcWrite   <= '0';
-        PipeWrite <= '0';
-        StallSrc  <= '1';
-        Flush     <= '0';
+        PcWrite           <= '0';
+        PipeWrite_fetch   <= '0';
+        PipeWrite_decode  <= '1';
+        PipeWrite_execute <= '1';
+        PipeWrite_mem     <= '1';
+        StallSrc          <= '1';
+        Flush             <= '0';
       when stall_twice2 =>
-        PcWrite   <= '0';
-        PipeWrite <= '0';
-        StallSrc  <= '1';
-        Flush     <= '0';
+        PcWrite           <= '0';
+        PipeWrite_fetch   <= '0';
+        PipeWrite_decode  <= '1';
+        PipeWrite_execute <= '1';
+        PipeWrite_mem     <= '1';
+        StallSrc          <= '1';
+        Flush             <= '0';
       when flush_state =>
-        PcWrite   <= '1';
-        PipeWrite <= '1';
-        StallSrc  <= '0';
-        Flush     <= '1';
+        PcWrite           <= '1';
+        PipeWrite_fetch   <= '1';
+        PipeWrite_decode  <= '1';
+        PipeWrite_execute <= '1';
+        PipeWrite_mem     <= '1';
+        StallSrc          <= '0';
+        Flush             <= '1';
       when stall_jmp =>
-        PcWrite   <= '1';
-        PipeWrite <= '0';
-        StallSrc  <= '1';
-        Flush     <= '0';
+        PcWrite           <= '1';
+        PipeWrite_fetch   <= '0';
+        PipeWrite_decode  <= '1';
+        PipeWrite_execute <= '1';
+        PipeWrite_mem     <= '1';
+        StallSrc          <= '1';
+        Flush             <= '0';
       when nop =>
-        PcWrite   <= '0';
-        PipeWrite <= '0';
-        StallSrc  <= '0';
-        Flush     <= '0';
+        PcWrite           <= '0';
+        PipeWrite_fetch   <= '0';
+        PipeWrite_decode  <= '0';
+        PipeWrite_execute <= '0';
+        PipeWrite_mem     <= '1';
+        StallSrc          <= '0';
+        Flush             <= '0';
 
       when others => null;
     end case;

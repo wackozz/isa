@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-03
--- Last update: 2022-02-04
+-- Last update: 2022-02-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -24,27 +24,28 @@ use ieee.numeric_std.all;
 entity execute_stage is
 
   port (
-    clock                : in  std_logic;
-    reset                : in  std_logic;
-    ALUSrc               : in  std_logic;
-    PCSel                : in  std_logic;
-    AbsSel               : in  std_logic;
-    ALUCtrl              : in  std_logic_vector(3 downto 0);
-    shamt_execute        : in  std_logic_vector(4 downto 0);
-    pc_execute           : in  std_logic_vector(31 downto 0);
-    next_pc_execute      : in  std_logic_vector(31 downto 0);
-    rd_execute           : in  std_logic_vector(4 downto 0);
-    read_data1_execute   : in  std_logic_vector(31 downto 0);
-    read_data2_execute   : in  std_logic_vector(31 downto 0);
-    immediate_execute    : in  std_logic_vector(31 downto 0);
-    forward_A            : in  std_logic_vector(1 downto 0);
-    forward_B            : in  std_logic_vector(1 downto 0);
-    write_data_decode    : in  std_logic_vector(31 downto 0);
-    alu_result_mem       : out std_logic_vector(31 downto 0);
-    write_data_mem       : out std_logic_vector(31 downto 0);
-    data_mem_adr         : out std_logic_vector(31 downto 0);
-    next_pc_mem          : out std_logic_vector(31 downto 0);
-    rd_mem               : out std_logic_vector(4 downto 0));
+    clock              : in  std_logic;
+    reset              : in  std_logic;
+    ALUSrc             : in  std_logic;
+    PCSel              : in  std_logic;
+    AbsSel             : in  std_logic;
+    PipeWrite_execute          : in  std_logic;
+    ALUCtrl            : in  std_logic_vector(3 downto 0);
+    shamt_execute      : in  std_logic_vector(4 downto 0);
+    pc_execute         : in  std_logic_vector(31 downto 0);
+    next_pc_execute    : in  std_logic_vector(31 downto 0);
+    rd_execute         : in  std_logic_vector(4 downto 0);
+    read_data1_execute : in  std_logic_vector(31 downto 0);
+    read_data2_execute : in  std_logic_vector(31 downto 0);
+    immediate_execute  : in  std_logic_vector(31 downto 0);
+    forward_A          : in  std_logic_vector(1 downto 0);
+    forward_B          : in  std_logic_vector(1 downto 0);
+    write_data_decode  : in  std_logic_vector(31 downto 0);
+    alu_result_mem     : out std_logic_vector(31 downto 0);
+    write_data_mem     : out std_logic_vector(31 downto 0);
+    data_mem_adr       : out std_logic_vector(31 downto 0);
+    next_pc_mem        : out std_logic_vector(31 downto 0);
+    rd_mem             : out std_logic_vector(4 downto 0));
 
 end entity execute_stage;
 
@@ -122,11 +123,13 @@ begin  -- architecture str
       data_mem_adr_int <= (others => '0');
       next_pc_mem      <= (others => '0');
     elsif clock'event and clock = '1' then  -- rising clock edge
-      alu_result_mem   <= out_mux_alu_abs;
-      rd_mem           <= rd_execute;
-      write_data_mem   <= out_mux_forward_B;
-      data_mem_adr_int <= out_mux_alu_abs;
-      next_pc_mem      <= next_pc_execute;
+      if PipeWrite_execute = '1' then
+        alu_result_mem   <= out_mux_alu_abs;
+        rd_mem           <= rd_execute;
+        write_data_mem   <= out_mux_forward_B;
+        data_mem_adr_int <= out_mux_alu_abs;
+        next_pc_mem      <= next_pc_execute;
+      end if;
     end if;
   end process pipe;
 

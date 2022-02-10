@@ -96,20 +96,23 @@ architecture str of RV32I is
   signal write_reg_decode  : std_logic_vector(4 downto 0);
 
   -- outputs of "RV32I_control_1"
-  signal AbsSel          : std_logic;
-  signal Flush           : std_logic;
-  signal PcWrite         : std_logic;
-  signal PipeWrite       : std_logic;
-  signal PCSrc           : std_logic;
-  signal forward_mux_Rs1 : std_logic_vector(1 downto 0);
-  signal forward_mux_Rs2 : std_logic_vector(1 downto 0);
-  signal ALUSrc          : std_logic;
-  signal PCSel           : std_logic;
-  signal ALUCtrl         : std_logic_vector(3 downto 0);
-  signal forward_A       : std_logic_vector(1 downto 0);
-  signal forward_B       : std_logic_vector(1 downto 0);
-  signal RegWrite        : std_logic;
-  signal MemToReg        : std_logic_vector(1 downto 0);
+  signal AbsSel            : std_logic;
+  signal Flush             : std_logic;
+  signal PcWrite           : std_logic;
+  signal PipeWrite_fetch   : std_logic;
+  signal PipeWrite_decode  : std_logic;
+  signal PipeWrite_execute : std_logic;
+  signal PipeWrite_mem     : std_logic;
+  signal PCSrc             : std_logic;
+  signal forward_mux_Rs1   : std_logic_vector(1 downto 0);
+  signal forward_mux_Rs2   : std_logic_vector(1 downto 0);
+  signal ALUSrc            : std_logic;
+  signal PCSel             : std_logic;
+  signal ALUCtrl           : std_logic_vector(3 downto 0);
+  signal forward_A         : std_logic_vector(1 downto 0);
+  signal forward_B         : std_logic_vector(1 downto 0);
+  signal RegWrite          : std_logic;
+  signal MemToReg          : std_logic_vector(1 downto 0);
 
   signal instruction_decode_int : std_logic_vector(31 downto 0);
 
@@ -125,13 +128,13 @@ begin  -- architecture str
       clock                => clock,
       reset                => reset,
       PCSrc                => PCSrc,
+      PcWrite              => PcWrite,
       instruction_fetch    => instruction_fetch,
       target_address_fetch => target_address_fetch,
-      PcWrite              => PcWrite,
       Rs1_fetch            => Rs1_fetch,
       Rs2_fetch            => Rs2_fetch,
       Rd_decode            => Rd_decode,
-      PipeWrite            => PipeWrite,
+      PipeWrite_fetch      => PipeWrite_fetch,
       instruction_mem_adr  => instruction_mem_adr,
       pc_decode            => pc_decode,
       next_pc_decode       => next_pc_decode,
@@ -143,7 +146,7 @@ begin  -- architecture str
       clock                => clock,
       reset                => reset,
       Flush                => Flush,
-      PipeWrite            => PipeWrite,
+      PipeWrite_decode     => PipeWrite_decode,
       instruction_decode   => instruction_decode_int,
       instruction_execute  => instruction_execute,
       pc_decode            => pc_decode,
@@ -174,7 +177,7 @@ begin  -- architecture str
     port map (
       clock              => clock,
       reset              => reset,
-      PipeWrite          => PipeWrite,
+      PipeWrite_execute  => PipeWrite_execute,
       ALUSrc             => ALUSrc,
       PCSel              => PCSel,
       AbsSel             => AbsSel,
@@ -200,7 +203,7 @@ begin  -- architecture str
     port map (
       clock          => clock,
       reset          => reset,
-      PipeWrite      => PipeWrite,
+      PipeWrite_mem  => PipeWrite_mem,
       alu_result_mem => alu_result_mem,
       next_pc_mem    => next_pc_mem,
       rd_mem         => rd_mem,
@@ -240,7 +243,10 @@ begin  -- architecture str
       Rd_decode          => Rd_decode,
       AbsSel             => AbsSel,
       PcWrite            => PcWrite,
-      PipeWrite          => PipeWrite,
+      PipeWrite_fetch    => PipeWrite_fetch,
+      PipeWrite_decode   => PipeWrite_decode,
+      PipeWrite_execute  => PipeWrite_execute,
+      PipeWrite_mem      => PipeWrite_mem,
       PCSrc              => PCSrc,
       forward_mux_Rs1    => forward_mux_Rs1,
       forward_mux_Rs2    => forward_mux_Rs2,

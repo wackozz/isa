@@ -49,7 +49,10 @@ entity decode_stage_control is
     RegWrite_execute   : out std_logic;
     opcode_execute     : out std_logic_vector(6 downto 0);
     PcWrite            : out std_logic;
-    PipeWrite          : out std_logic;
+    PipeWrite_fetch    : out std_logic;
+    PipeWrite_decode   : out std_logic;
+    PipeWrite_execute  : out std_logic;
+    PipeWrite_mem      : out std_logic;
     PCSrc              : out std_logic;
     forward_mux_Rs1    : out std_logic_vector(1 downto 0);
     forward_mux_Rs2    : out std_logic_vector(1 downto 0);
@@ -161,23 +164,26 @@ begin  -- architecture str
   -- instance "hazard_unit_1"
   hazard_unit_1 : entity work.hazard_unit
     port map (
-      clock           => clock,
-      reset           => reset,
-      MemWrite_decode => MemWrite_int,
-      Rs1_fetch       => Rs1_fetch,
-      Rs2_fetch       => Rs2_fetch,
-      Rd_decode       => Rd_decode,
-      opcode_fetch    => instruction_fetch(6 downto 0),
-      MemRead_execute => MemRead_execute_int,
-      opcode_decode   => instruction_decode(6 downto 0),
-      Rs1_decode      => Rs1_decode,
-      Rs2_decode      => Rs2_decode,
-      Rd_execute      => Rd_execute,
-      PcWrite         => PcWrite,
-      PipeWrite       => PipeWrite,
-      PCSrc           => PCSrc_int,
-      Flush           => flush,
-      StallSrc        => StallSrc);
+      clock             => clock,
+      reset             => reset,
+      MemWrite_decode   => MemWrite_int,
+      PCWrite => PCWrite,
+      Rs1_fetch         => Rs1_fetch,
+      Rs2_fetch         => Rs2_fetch,
+      Rd_decode         => Rd_decode,
+      opcode_fetch      => instruction_fetch(6 downto 0),
+      MemRead_execute   => MemRead_execute_int,
+      opcode_decode     => instruction_decode(6 downto 0),
+      Rs1_decode        => Rs1_decode,
+      Rs2_decode        => Rs2_decode,
+      Rd_execute        => Rd_execute,
+      PipeWrite_fetch   => PipeWrite_fetch,
+      PipeWrite_decode  => PipeWrite_decode,
+      PipeWrite_execute => PipeWrite_execute,
+      PipeWrite_mem     => PipeWrite_mem,
+      PCSrc             => PCSrc_int,
+      Flush             => flush,
+      StallSrc          => StallSrc);
 
   MemRead_execute <= MemRead_execute_int;
 
