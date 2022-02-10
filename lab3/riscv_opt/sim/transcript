@@ -217,9 +217,12 @@
 # -- Loading entity fetch_stage
 # -- Loading entity decode_stage
 # -- Loading entity execute_stage
+# ** Error: /home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/RV32I_debug.vhd(177): (vcom-1136) Unknown identifier "pipewrite".
 # -- Loading entity mem_stage
 # -- Loading entity wb_stage
 # -- Loading entity rv32i_control
+# ** Error: /home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/RV32I_debug.vhd(264): VHDL Compiler exiting
+# /software/mentor/modelsim_6.2g/linux/vcom failed.
 # vcom -work work -2002 -explicit -vopt /home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/RV32I_control.vhd
 # Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
 # -- Loading package standard
@@ -260,58 +263,11 @@
 # -- Loading architecture arch of rv32i_tb
 # 33 compiles, 0 failed with no errors. 
 # vsim -t ns work.rv32i_tb 
-# //  ModelSim SE 6.2g Feb 21 2007 Linux 3.10.0-957.5.1.el7.x86_64
-# //
-# //  Copyright 1991-2007 Mentor Graphics Corporation
-# //              All Rights Reserved.
-# //
-# //  THIS WORK CONTAINS TRADE SECRET AND 
-# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
-# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
-# //  AND IS SUBJECT TO LICENSE TERMS.
-# //
-# Loading /software/mentor/modelsim_6.2g/linux/../std.standard
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.numeric_std(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../std.textio(body)
-# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_textio(body)
-# Loading work.rv32i_tb(arch)
-# Loading work.rv32i(str)
-# Loading work.fetch_stage(str)
-# Loading work.reg(arch)
-# Loading work.mux_2to1(arch)
-# Loading work.decode_stage(str)
-# Loading work.param_pkg
-# Loading work.reg_file(arch)
-# Loading work.dec_5to32(arch)
-# Loading work.mux_32to1(arch)
-# Loading work.immediate_generator(str)
-# Loading work.mux_4to1(str)
-# Loading work.equality_checker(str)
-# Loading work.unary_and(str)
-# Loading work.execute_stage(str)
-# Loading work.alu(str)
-# Loading work.add_sub(str)
-# Loading work.barrel_shifter(str)
-# Loading work.mux_2to1_bit(str)
-# Loading work.absolute_value(str)
-# Loading work.mem_stage(str)
-# Loading work.wb_stage(str)
-# Loading work.rv32i_control(str)
-# Loading work.decode_stage_control(str)
-# Loading work.control(str)
-# Loading work.hazard_unit(str)
-# Loading work.mux_2to1_stall(str)
-# Loading work.branch_forwarding_unit(str)
-# Loading work.execute_stage_control(str)
-# Loading work.alu_control(str)
-# Loading work.forwarding_unit(str)
-# Loading work.mem_stage_control(str)
-# Loading work.ram(rtl)
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /rv32i_tb
-# reading /software/mentor/modelsim_6.2g/linux/../modelsim.ini
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-13) Recompile ./work.rv32i(str) because ./work.fetch_stage has changed.
+# ** Error: /home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/RV32I_debug.vhd(134): (vopt-1136) Unknown identifier "fetchpipewrite".
+# ** Error: /home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/RV32I_debug.vhd(169): (vopt-1035) Formal port "pipewrite" has no actual associated with it.
+# ** Error: /home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/RV32I_debug.vhd(208): (vopt-1035) Formal port "pipewrite" has no actual associated with it.
+# ** Error: /home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/RV32I_debug.vhd(239): (vopt-1136) Unknown identifier "fetchpipewrite".
+# ** Error: /home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/fetch_stage.vhd(45): Vopt Compiler exiting
+# Error loading design

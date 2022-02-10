@@ -210,14 +210,14 @@ M1 ieee numeric_std
 o-work work -2002 -explicit
 tExplicit 1
 Edecode_stage
-w1644450405
+w1644497263
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 8/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/decode_stage.vhd
 F/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/decode_stage.vhd
 l0
 L24
-V^EK]?=nYoQnn_>gZ6B=1I0
+VJT;MbmIV5W2G=WkVkek?n1
 OE;C;6.2g;35
 32
 o-work work -2002 -explicit
@@ -227,10 +227,10 @@ DE work equality_checker lSUgKP_aE<e^?<6h>3emG1
 DE work mux_4to1 Kn3]iPDhjOd6LYTn^FN_50
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-DE work decode_stage ^EK]?=nYoQnn_>gZ6B=1I0
-l92
-L59
-VK:DL2lH2?e>>n5=KUch;L0
+DE work decode_stage JT;MbmIV5W2G=WkVkek?n1
+l93
+L60
+V0P[ReT<Ka:V?4NXXJAEa[0
 OE;C;6.2g;35
 32
 M2 ieee std_logic_1164
@@ -238,14 +238,14 @@ M1 ieee numeric_std
 o-work work -2002 -explicit
 tExplicit 1
 Edecode_stage_control
-w1644450405
+w1644497263
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 8/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/decode_stage_control.vhd
 F/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/decode_stage_control.vhd
 l0
 L24
-V_1]jRYgYE77c7K5?``a2U0
+V9Ci12=20X22=;ZDUYnO[>2
 OE;C;6.2g;35
 32
 o-work work -2002 -explicit
@@ -253,14 +253,14 @@ tExplicit 1
 Astr
 DE work branch_forwarding_unit e=dhEb0i5:kFQ1]D?bozO1
 DE work mux_2to1_stall i:Y13G[88@<I]DZ_YbAnS2
-DE work hazard_unit En=E=I6I=C1`UGTPBL>281
+DE work hazard_unit knAf_ZI3=W4?dc<Kl7R121
 DE work control gPWc2WnH]OeWDGd@11gHH2
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-DE work decode_stage_control _1]jRYgYE77c7K5?``a2U0
+DE work decode_stage_control 9Ci12=20X22=;ZDUYnO[>2
 l114
 L63
-VUKENFRaf?KmClJ4LmJZXX0
+V:2JJ61=7GE@:9M0Q>GKT50
 OE;C;6.2g;35
 32
 M2 ieee std_logic_1164
@@ -349,14 +349,14 @@ M1 ieee numeric_std
 o-work work -2002 -explicit
 tExplicit 1
 Efetch_stage
-w1644318626
+w1644497263
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 8/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/fetch_stage.vhd
 F/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/fetch_stage.vhd
 l0
 L25
-Vb]l=;V?A:0V6]_T6lAkOE1
+VTzHzAD>Xm5_F2JZFYL]ES0
 OE;C;6.2g;35
 32
 o-work work -2002 -explicit
@@ -364,10 +364,10 @@ tExplicit 1
 Astr
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-DE work fetch_stage b]l=;V?A:0V6]_T6lAkOE1
+DE work fetch_stage TzHzAD>Xm5_F2JZFYL]ES0
 l72
 L45
-Vce47K;m07AISWLQRV@aFi2
+V2jkQW^EMM1IEc2`hRi51[1
 OE;C;6.2g;35
 32
 M2 ieee std_logic_1164
@@ -401,14 +401,14 @@ M1 ieee numeric_std
 o-work work -2002 -explicit
 tExplicit 1
 Ehazard_unit
-w1644450405
+w1644497263
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 8/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/hazard_unit.vhd
 F/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/hazard_unit.vhd
 l0
 L24
-VEn=E=I6I=C1`UGTPBL>281
+VknAf_ZI3=W4?dc<Kl7R121
 OE;C;6.2g;35
 32
 o-work work -2002 -explicit
@@ -416,10 +416,10 @@ tExplicit 1
 Astr
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-DE work hazard_unit En=E=I6I=C1`UGTPBL>281
+DE work hazard_unit knAf_ZI3=W4?dc<Kl7R121
 l54
 L48
-VmRg5_2VX]??Lf^jY2Vo^80
+VMlCkQU^OR]G>W4lI;;0P@2
 OE;C;6.2g;35
 32
 M2 ieee std_logic_1164
@@ -453,23 +453,23 @@ M1 ieee numeric_std
 o-work work -2002 -explicit
 tExplicit 1
 Emem_stage
-w1644318626
+w1644497263
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 8/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/mem_stage.vhd
 F/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/mem_stage.vhd
 l0
 L23
-Vbj64Oa6X68Vgb=ajTdXza1
+V9HWZ]eZf3PA`D9JFUoOKM1
 OE;C;6.2g;35
 32
 o-work work -2002 -explicit
 tExplicit 1
 Astr
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-DE work mem_stage bj64Oa6X68Vgb=ajTdXza1
-l46
-L40
-VaOnf:AAIeeE83Y12EZ>TD1
+DE work mem_stage 9HWZ]eZf3PA`D9JFUoOKM1
+l47
+L41
+VP0FJ_lgb:IZn;2j7MU7Vg3
 OE;C;6.2g;35
 32
 M1 ieee std_logic_1164
@@ -729,7 +729,7 @@ M1 work param_pkg
 o-work work -2002 -explicit
 tExplicit 1
 Erv32i
-w1644403384
+w1644497263
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 8/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/RV32I_debug.vhd
@@ -761,14 +761,14 @@ M1 ieee numeric_std
 o-work work -2002 -explicit
 tExplicit 1
 Erv32i_control
-w1644318626
+w1644497263
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
 8/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/RV32I_control.vhd
 F/home/isa18_2021_2022/github/isa/lab3/riscv_opt/hdl/src/RV32I_control.vhd
 l0
 L24
-V0?@T9S8T`MDnDEaiSK;n10
+VGQgDYI0TRzcDgnKT1JCOD3
 OE;C;6.2g;35
 32
 o-work work -2002 -explicit
@@ -776,13 +776,13 @@ tExplicit 1
 Astr
 DE work mem_stage_control LPjOeF[H?fhSTfXG77o1Z1
 DE work execute_stage_control okPT6b@AdzcA4k<00>jNL3
-DE work decode_stage_control _1]jRYgYE77c7K5?``a2U0
+DE work decode_stage_control 9Ci12=20X22=;ZDUYnO[>2
 DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
 DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
-DE work rv32i_control 0?@T9S8T`MDnDEaiSK;n10
+DE work rv32i_control GQgDYI0TRzcDgnKT1JCOD3
 l92
 L72
-VZZ1<O?fzG6Uf2J^6;3D0z3
+VLSbT3R[93Bz`^g:0aMVXc0
 OE;C;6.2g;35
 32
 M2 ieee std_logic_1164

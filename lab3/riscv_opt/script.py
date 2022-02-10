@@ -1,7 +1,7 @@
 import os
 
 def synth(file_name):
-	clk_value = 0	
+	clk_value = 2.16
 	fine = 0
 	flag = 0
 	while fine == 0:
