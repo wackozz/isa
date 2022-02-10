@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-02-01
+-- Last update: 2022-02-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -39,7 +39,7 @@ architecture arch of RV32I_tb is
   signal rs1_execute, rs2_execute, rd_execute   : std_logic_vector(4 downto 0);
   signal rs1_mem, rs2_mem, rd_mem               : std_logic_vector(4 downto 0);
   signal rs1_wb, rs2_wb, rd_wb                  : std_logic_vector(4 downto 0);
-  signal immediate                              : std_logic_vector(31 downto 0);
+  --signal immediate                              : std_logic_vector(31 downto 0);
 
   signal clock               : std_logic        := '0';
   signal reset               : std_logic;
@@ -53,33 +53,33 @@ architecture arch of RV32I_tb is
   signal MemRead             : std_logic;
   constant NOP_instruction   : std_logic_vector := "00000000000000000000000000010011";
 
-  component ram is
-    port (
-      clock    : in  std_logic;
-      data     : in  std_logic_vector (31 downto 0);
-      address  : in  integer range 0 to 256;
-      w_en     : in  std_logic;
-      q        : out std_logic_vector (31 downto 0);
-      reset    : in  std_logic;
-      filename : in  string(1 to 8));
-  end component ram;
+  --component ram is
+  --  port (
+  --    clock    : in  std_logic;
+  --    data     : in  std_logic_vector (31 downto 0);
+  --    address  : in  integer range 0 to 256;
+  --    w_en     : in  std_logic;
+  --    q        : out std_logic_vector (31 downto 0);
+  --    reset    : in  std_logic;
+  --    filename : in  string(1 to 8));
+  --end component ram;
 
-  component RV32I is
-    port (
-      clock               : in  std_logic;
-      reset               : in  std_logic;
-      instruction_mem_adr : out std_logic_vector(31 downto 0);
-      instruction_fetch   : in  std_logic_vector(31 downto 0);
-      read_data_mem       : in  std_logic_vector(31 downto 0);
-      write_data_mem      : out std_logic_vector(31 downto 0);
-      data_mem_adr        : out std_logic_vector(31 downto 0);
-      MemWrite            : out std_logic;
-      MemRead             : out std_logic);
-  end component RV32I;
+  --component RV32I is
+  --  port (
+  --    clock               : in  std_logic;
+  --    reset               : in  std_logic;
+  --    instruction_mem_adr : out std_logic_vector(31 downto 0);
+  --    instruction_fetch   : in  std_logic_vector(31 downto 0);
+  --    read_data_mem       : in  std_logic_vector(31 downto 0);
+  --    write_data_mem      : out std_logic_vector(31 downto 0);
+  --    data_mem_adr        : out std_logic_vector(31 downto 0);
+  --    MemWrite            : out std_logic;
+  --    MemRead             : out std_logic);
+  --end component RV32I;
 
 begin  -- architecture arch
 
-  clock <= not clock after 10 ns;
+  clock <= not clock after 2.16 ns;
 
   fetch <= LUI when opcode = "0110111" else
            AUIPC when opcode = "0010111" else
@@ -153,7 +153,7 @@ begin  -- architecture arch
   end process WaveGen_Proc;
 
   -- component instantiation
-  processor : RV32I
+  processor : entity work.RV32I
     port map (
       clock               => clock,
       reset               => reset,
@@ -166,7 +166,7 @@ begin  -- architecture arch
       MemRead             => MemRead);
 
   -- instance "ram_1"
-  ram_instr : ram
+  ram_instr : entity work.ram
     port map (
       clock    => clock,
       data     => x"00000000",
@@ -177,7 +177,7 @@ begin  -- architecture arch
       filename => "inst.txt");
 
   -- instance "ram_2"
-  ram_data : ram
+  ram_data : entity work.ram
     port map (
       clock    => clock,
       data     => write_data_mem,
@@ -202,10 +202,10 @@ begin  -- architecture arch
   funct3 <= instruction_fetch(14 downto 12);
 
   -- instance "immediate_generator_1"
-  immediate_generator_1 : entity work.immediate_generator
-    port map (
-      instruction => instruction_fetch,
-      immediate   => immediate);
+  --immediate_generator_1 : entity work.immediate_generator
+  --  port map (
+  --    instruction => instruction_fetch,
+  --    immediate   => immediate);
 end architecture arch;
 
 -------------------------------------------------------------------------------

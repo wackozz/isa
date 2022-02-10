@@ -94,6 +94,8 @@ os.system("sim/simulate_riscv.sh")
 
 change_clock_gen(synth("synth_riscv"))
 
+os.system("modelsim/post_synth.sh")
+
 os.system("modelsim/vcd2saif.sh")
 
 os.system("syn/power.sh")

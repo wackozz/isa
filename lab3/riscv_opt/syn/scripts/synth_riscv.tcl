@@ -28,7 +28,7 @@ analyze -f vhdl -lib WORK ../hdl/src/mux_32to1.vhd
 analyze -f vhdl -lib WORK ../hdl/src/param_pkg.vhd
 analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
 analyze -f vhdl -lib WORK ../hdl/src/reg_file.vhd
-analyze -f vhdl -lib WORK ../hdl/src/RV32I.vhd
+analyze -f vhdl -lib WORK ../hdl/src/RV32I_debug.vhd
 analyze -f vhdl -lib WORK ../hdl/src/RV32I_control.vhd
 analyze -f vhdl -lib WORK ../hdl/src/unary_AND.vhd
 analyze -f vhdl -lib WORK ../hdl/src/wb_stage.vhd

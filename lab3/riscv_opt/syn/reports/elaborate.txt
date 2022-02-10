@@ -3,7 +3,7 @@ Loading db file '/software/synopsys/syn_current_64.18/libraries/syn/standard.sld
   Loading link library 'NangateOpenCellLibrary'
   Loading link library 'gtech'
 Running PRESTO HDLC
-Warning:  ../hdl/src/RV32I.vhd:138: Floating pin 'Flush of cell decode_stage_1' connected to ground. (ELAB-294)
+Warning:  ../hdl/src/RV32I_debug.vhd:141: Floating pin 'Flush of cell decode_stage_1' connected to ground. (ELAB-294)
 Presto compilation completed successfully.
 Elaborated 1 design.
 Current design is now 'RV32I'.
@@ -31,8 +31,6 @@ Inferred memory devices in process
 |     Rs2_execute_reg     | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
 |  immediate_execute_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
 | instruction_execute_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
-| read_data1_execute_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
-| read_data2_execute_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
 |     pc_execute_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
 |  alu_ctrl_execute_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
 |     rd_execute_reg      | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
@@ -40,6 +38,16 @@ Inferred memory devices in process
 |   next_pc_execute_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
 |     Rs1_execute_reg     | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===================================================================================
+
+Inferred memory devices in process
+	in routine decode_stage line 200 in file
+		'../hdl/src/decode_stage.vhd'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+| read_data2_execute_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| read_data1_execute_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+==================================================================================
 Presto compilation completed successfully.
 Information: Building the design 'execute_stage'. (HDL-193)
 
@@ -211,12 +219,12 @@ Statistics for case statements in always block at line 65 in file
 |            67            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 147 in file
+Statistics for case statements in always block at line 149 in file
 	'../hdl/src/hazard_unit.vhd'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           149            |    auto/auto     |
+|           151            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
@@ -238,15 +246,15 @@ Inferred memory devices in process
 ===========================================================================
 
 Inferred memory devices in process
-	in routine hazard_unit line 147 in file
+	in routine hazard_unit line 149 in file
 		'../hdl/src/hazard_unit.vhd'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
+|      Flush_reg      | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
 |     PcWrite_reg     | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
 | FetchPipeWrite_reg  | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
 |    StallSrc_reg     | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
-|      Flush_reg      | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
 ===========================================================================
 Presto compilation completed successfully.
 Information: Building the design 'mux_2to1_stall'. (HDL-193)

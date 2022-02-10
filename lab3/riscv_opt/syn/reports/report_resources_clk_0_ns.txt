@@ -3,41 +3,62 @@
 Report : resources
 Design : RV32I
 Version: O-2018.06-SP4
-Date   : Wed Feb  9 17:40:53 2022
+Date   : Thu Feb 10 04:14:42 2022
 ****************************************
 
-Resource Sharing Report for design RV32I in file ../hdl/src/fetch_stage.vhd
 
-===============================================================================
-|          |              |            | Contained     |                      |
-| Resource | Module       | Parameters | Resources     | Contained Operations |
-===============================================================================
-| r643     | DW01_add     | width=32   |               | fetch_stage_1/add_116 |
-| r645     | DW01_add     | width=32   |               | decode_stage_1/add_163 |
-| r651     | DW01_add     | width=32   |               | execute_stage_1/alu_inst/add_sub_1/add_56 |
-| r657     | DW_cmp       | width=5    |               | RV32I_control_1/decode_stage_control_1/hazard_unit_1/eq_69_3 |
-| r659     | DW_cmp       | width=5    |               | RV32I_control_1/decode_stage_control_1/hazard_unit_1/eq_69_4 |
-| r661     | DW_cmp       | width=5    |               | RV32I_control_1/decode_stage_control_1/hazard_unit_1/eq_74_2 |
-| r663     | DW_cmp       | width=5    |               | RV32I_control_1/decode_stage_control_1/hazard_unit_1/eq_74_3 |
-| r665     | DW_cmp       | width=5    |               | RV32I_control_1/decode_stage_control_1/hazard_unit_1/eq_78_2 |
-| r667     | DW_cmp       | width=5    |               | RV32I_control_1/decode_stage_control_1/hazard_unit_1/eq_78_3 |
-| r669     | DW_cmp       | width=5    |               | RV32I_control_1/decode_stage_control_1/branch_forwarding_unit_1/eq_54_3 |
-| r671     | DW_cmp       | width=5    |               | RV32I_control_1/decode_stage_control_1/branch_forwarding_unit_1/eq_54_4 |
-| r673     | DW_cmp       | width=5    |               | RV32I_control_1/decode_stage_control_1/branch_forwarding_unit_1/eq_56_2 |
-| r675     | DW_cmp       | width=5    |               | RV32I_control_1/decode_stage_control_1/branch_forwarding_unit_1/eq_62_3 |
-| r677     | DW_cmp       | width=5    |               | RV32I_control_1/decode_stage_control_1/branch_forwarding_unit_1/eq_62_4 |
-| r679     | DW_cmp       | width=5    |               | RV32I_control_1/decode_stage_control_1/branch_forwarding_unit_1/eq_64_2 |
-| r681     | DW_cmp       | width=5    |               | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_57_3 |
-| r683     | DW_cmp       | width=5    |               | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_57_4 |
-| r685     | DW_cmp       | width=5    |               | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_59_2 |
-| r687     | DW_cmp       | width=5    |               | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_65_3 |
-| r689     | DW_cmp       | width=5    |               | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_65_4 |
-| r691     | DW_cmp       | width=5    |               | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_67_2 |
-| r1275    | DW01_sub     | width=32   |               | sub_1_root_execute_stage_1/absolute_value_1/add_52_ni |
-| r1277    | DW01_inc     | width=32   |               | add_0_root_execute_stage_1/absolute_value_1/add_52_ni |
-| r1861    | DW01_sub     | width=32   |               | sub_1_root_execute_stage_1/alu_inst/add_sub_1/add_50_ni |
-| r1863    | DW01_inc     | width=32   |               | add_0_root_execute_stage_1/alu_inst/add_sub_1/add_50_ni |
-===============================================================================
+Resource Report for this hierarchy in file ../hdl/src/fetch_stage.vhd
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_add       | width=32   | fetch_stage_1/add_116 (fetch_stage.vhd:116) |
+| add_x_3        | DW01_add       | width=32   | decode_stage_1/add_160 (decode_stage.vhd:160) |
+| eq_x_174       | DW_cmp         | width=5    | RV32I_control_1/decode_stage_control_1/hazard_unit_1/eq_78_2 (hazard_unit.vhd:78) |
+| eq_x_175       | DW_cmp         | width=5    | RV32I_control_1/decode_stage_control_1/hazard_unit_1/eq_78_3 (hazard_unit.vhd:78) |
+| eq_x_188       | DW_cmp         | width=5    | RV32I_control_1/decode_stage_control_1/branch_forwarding_unit_1/eq_54_4 (branch_forwarding_unit.vhd:54) |
+| eq_x_189       | DW_cmp         | width=5    | RV32I_control_1/decode_stage_control_1/branch_forwarding_unit_1/eq_62_4 (branch_forwarding_unit.vhd:62) |
+| eq_x_198       | DW_cmp         | width=5    | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_57_4 (forwarding_unit.vhd:57) |
+| eq_x_199       | DW_cmp         | width=5    | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_65_4 (forwarding_unit.vhd:65) |
+| eq_x_241       | DW_cmp         | width=5    | RV32I_control_1/decode_stage_control_1/hazard_unit_1/eq_69_3 (hazard_unit.vhd:69) |
+|  | RV32I_control_1/decode_stage_control_1/hazard_unit_1/eq_74_2 (hazard_unit.vhd:74) |
+| eq_x_242       | DW_cmp         | width=5    | RV32I_control_1/decode_stage_control_1/hazard_unit_1/eq_69_4 (hazard_unit.vhd:69) |
+|  | RV32I_control_1/decode_stage_control_1/hazard_unit_1/eq_74_3 (hazard_unit.vhd:74) |
+| eq_x_243       | DW_cmp         | width=5    | RV32I_control_1/decode_stage_control_1/branch_forwarding_unit_1/eq_54_3 (branch_forwarding_unit.vhd:54) |
+|  | RV32I_control_1/decode_stage_control_1/branch_forwarding_unit_1/eq_56_2 (branch_forwarding_unit.vhd:56) |
+| eq_x_244       | DW_cmp         | width=5    | RV32I_control_1/decode_stage_control_1/branch_forwarding_unit_1/eq_62_3 (branch_forwarding_unit.vhd:62) |
+|  | RV32I_control_1/decode_stage_control_1/branch_forwarding_unit_1/eq_64_2 (branch_forwarding_unit.vhd:64) |
+| eq_x_245       | DW_cmp         | width=5    | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_57_3 (forwarding_unit.vhd:57) |
+|  | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_59_2 (forwarding_unit.vhd:59) |
+| eq_x_246       | DW_cmp         | width=5    | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_65_3 (forwarding_unit.vhd:65) |
+|  | RV32I_control_1/execute_stage_control_1/forwarding_unit_1/eq_67_2 (forwarding_unit.vhd:67) |
+| DP_OP_372J1_122_8077            |            |                            |
+|                | DP_OP_372J1_122_8077 |      |                            |
+| sub_x_247      | DW01_sub       | width=32   | execute_stage_1/absolute_value_1/add_52_ni (absolute_value.vhd:52) |
+|      | execute_stage_1/absolute_value_1/sub_add_52 (absolute_value.vhd:52) |
+=============================================================================
+
+Datapath Report for DP_OP_372J1_122_8077
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_372J1_122_8077 | execute_stage_1/alu_inst/add_sub_1/sub_add_50 (add_sub.vhd:50) |
+            | execute_stage_1/alu_inst/add_sub_1/add_50_ni (add_sub.vhd:50) |
+             | execute_stage_1/alu_inst/add_sub_1/C75 (add_sub.vhd:49) |
+                   | execute_stage_1/alu_inst/add_sub_1/add_56 (add_sub.vhd:56) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 32    |                                          |
+| I2    | PI   | Unsigned | 1     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Signed   | 32    |                                          |
+| T358  | IFO  | Signed   | 32    | -I1 + $unsigned(32'b00000000000000000000000000000000) (add_sub.vhd:50) |
+| T22   | IFO  | Unsigned | 32    | { I2, I3 } ? T358 : I1 (add_sub.vhd:49)  |
+| O1    | PO   | Unsigned | 32    | I4 + T22 (add_sub.vhd:56)                |
+==============================================================================
 
 
 Implementation Report
@@ -45,16 +66,23 @@ Implementation Report
 |                    |                  | Current            | Set            |
 | Cell               | Module           | Implementation     | Implementation |
 ===============================================================================
-| execute_stage_1/alu_inst/add_sub_1/add_56                  |                |
-|                    | DW01_add         | pparch (area,speed)                 |
-| add_0_root_execute_stage_1/alu_inst/add_sub_1/add_50_ni    |                |
-|                    | DW01_inc         | pparch (area,speed)                 |
-| add_0_root_execute_stage_1/absolute_value_1/add_52_ni      |                |
-|                    | DW01_inc         | pparch (area,speed)                 |
-| fetch_stage_1/add_116                 |                    |                |
-|                    | DW01_add         | pparch (area,speed)                 |
-| decode_stage_1/add_163                |                    |                |
-|                    | DW01_add         | pparch (area,speed)                 |
+| add_x_1            | DW01_add         | pparch (area,speed)                 |
+| add_x_3            | DW01_add         | pparch (area,speed)                 |
+| eq_x_174           | DW_cmp           | apparch (area)     |                |
+| eq_x_175           | DW_cmp           | apparch (area)     |                |
+| eq_x_188           | DW_cmp           | apparch (area)     |                |
+| eq_x_189           | DW_cmp           | apparch (area)     |                |
+| eq_x_198           | DW_cmp           | apparch (area)     |                |
+| eq_x_199           | DW_cmp           | apparch (area)     |                |
+| eq_x_241           | DW_cmp           | apparch (area)     |                |
+| eq_x_242           | DW_cmp           | apparch (area)     |                |
+| eq_x_243           | DW_cmp           | apparch (area)     |                |
+| eq_x_244           | DW_cmp           | apparch (area)     |                |
+| eq_x_245           | DW_cmp           | apparch (area)     |                |
+| eq_x_246           | DW_cmp           | apparch (area)     |                |
+| sub_x_247          | DW01_sub         | pparch (area,speed)                 |
+| DP_OP_372J1_122_8077                  |                    |                |
+|                    | DP_OP_372J1_122_8077 | str (area,speed)                |
 ===============================================================================
 
 1

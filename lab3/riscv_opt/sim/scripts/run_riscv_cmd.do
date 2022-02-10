@@ -27,11 +27,11 @@ project addfile ../hdl/src/param_pkg.vhd
 project addfile ../hdl/src/ram.vhd
 project addfile ../hdl/src/reg.vhd
 project addfile ../hdl/src/reg_file.vhd
-project addfile ../hdl/src/RV32I.vhd
+project addfile ../hdl/src/RV32I_debug.vhd
 project addfile ../hdl/src/RV32I_control.vhd
 project addfile ../hdl/src/unary_AND.vhd
 project addfile ../hdl/src/wb_stage.vhd
-project addfile ../hdl/tb/RV32I_dummy_tb.vhd
+project addfile ../hdl/tb/RV32I_tb.vhd
 project compileall
 vsim work.rv32i_tb -t ns
 run 1 us

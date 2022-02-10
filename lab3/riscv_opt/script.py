@@ -90,15 +90,17 @@ def change_clock_gen(clk_value):
 ##########################  MAIN  ###########################
 
 
-os.system("sim/simulate_riscv.sh")
+os.system("./sim/simulate_riscv.sh")
 
 change_clock_gen(synth("synth_riscv"))
 
-os.system("modelsim/vcd2saif.sh")
+os.system("./modelsim/post_synth.sh")
 
-os.system("syn/power.sh")
+os.system("./modelsim/vcd2saif.sh")
 
-os.system("innovus/place_route.sh")
+os.system("./syn/power.sh")
+
+os.system("./innovus/place_route.sh")
 
 os.system("modelsim/post_place.sh")
 

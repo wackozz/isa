@@ -1,0 +1,85 @@
+[02/10 04:41:14      0s] 
+[02/10 04:41:14      0s] Cadence Innovus(TM) Implementation System.
+[02/10 04:41:14      0s] Copyright 2017 Cadence Design Systems, Inc. All rights reserved worldwide.
+[02/10 04:41:14      0s] 
+[02/10 04:41:14      0s] Version:	v17.11-s080_1, built Fri Aug 4 11:13:11 PDT 2017
+[02/10 04:41:14      0s] Options:	
+[02/10 04:41:14      0s] Date:		Thu Feb 10 04:41:14 2022
+[02/10 04:41:14      0s] Host:		localhost.localdomain (x86_64 w/Linux 3.10.0-957.5.1.el7.x86_64) (1core*2cpus*Westmere E56xx/L56xx/X56xx (Nehalem-C) 4096KB)
+[02/10 04:41:14      0s] OS:		CentOS Linux release 7.6.1810 (Core) 
+[02/10 04:41:14      0s] 
+[02/10 04:41:14      0s] License:
+[02/10 04:41:15      0s] 		invs	Innovus Implementation System	17.1	checkout succeeded
+[02/10 04:41:15      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[02/10 04:41:15      0s] **WARN: (IMPSYT-1507):	The display is invalid and will start in no window mode
+[02/10 04:41:38     19s] @(#)CDS: Innovus v17.11-s080_1 (64bit) 08/04/2017 11:13 (Linux 2.6.18-194.el5)
+[02/10 04:41:38     19s] @(#)CDS: NanoRoute 17.11-s080_1 NR170721-2155/17_11-UB (database version 2.30, 390.7.1) {superthreading v1.44}
+[02/10 04:41:38     19s] @(#)CDS: AAE 17.11-s034 (64bit) 08/04/2017 (Linux 2.6.18-194.el5)
+[02/10 04:41:38     19s] @(#)CDS: CTE 17.11-s053_1 () Aug  1 2017 23:31:41 ( )
+[02/10 04:41:38     19s] @(#)CDS: SYNTECH 17.11-s012_1 () Jul 21 2017 02:29:12 ( )
+[02/10 04:41:38     19s] @(#)CDS: CPE v17.11-s095
+[02/10 04:41:38     19s] @(#)CDS: IQRC/TQRC 16.1.1-s215 (64bit) Thu Jul  6 20:18:10 PDT 2017 (Linux 2.6.18-194.el5)
+[02/10 04:41:38     19s] @(#)CDS: OA 22.50-p063 Fri Feb  3 19:45:13 2017
+[02/10 04:41:38     19s] @(#)CDS: SGN 10.10-p124 (19-Aug-2014) (64 bit executable)
+[02/10 04:41:38     19s] @(#)CDS: RCDB 11.10
+[02/10 04:41:38     19s] --- Running on localhost.localdomain (x86_64 w/Linux 3.10.0-957.5.1.el7.x86_64) (1core*2cpus*Westmere E56xx/L56xx/X56xx (Nehalem-C) 4096KB) ---
+[02/10 04:41:38     19s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_22416_localhost.localdomain_isa18_2021_2022_qoYKXM.
+
+[02/10 04:41:38     19s] Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[02/10 04:41:38     20s] 
+[02/10 04:41:38     20s] **INFO:  MMMC transition support version v31-84 
+[02/10 04:41:38     20s] 
+[02/10 04:41:38     20s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[02/10 04:41:38     20s] <CMD> suppressMessage ENCEXT-2799
+[02/10 04:42:47     20s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[02/10 04:42:47     20s] <CMD> suppressMessage ENCEXT-2799
+[02/10 04:42:47     20s] <CMD> getDrawView
+[02/10 04:42:47     20s] <CMD> loadWorkspace -name Physical
+[02/10 04:42:47     20s] **ERROR: (IMPSYT-40408):	Error in reading workspace file: wrong format.
+<CMD> win
+[02/10 04:42:47     20s] Cannot display window in tcl mode
+[02/10 04:42:47     20s] <CMD> set init_design_netlisttype verilog
+[02/10 04:42:47     20s] <CMD> set init_design_settop 1
+[02/10 04:42:47     20s] <CMD> set init_top_cell iir_filter
+[02/10 04:42:47     20s] <CMD> set init_verilog ../netlist/iir_filter.v
+[02/10 04:42:47     20s] <CMD> set init_lef_file /software/dk/nangate45/lef/NangateOpenCellLibrary.lef
+[02/10 04:42:47     20s] <CMD> set init_gnd_net VSS
+[02/10 04:42:47     20s] <CMD> set init_pwr_net VDD
+[02/10 04:42:47     20s] <CMD> set init_mmmc_file mmm_design.tcl
+[02/10 04:42:47     20s] <CMD> init_design
+[02/10 04:42:47     20s] #% Begin Load MMMC data ... (date=02/10 04:42:47, mem=360.8M)
+[02/10 04:42:47     20s] **ERROR: (TCLCMD-989):	cannot open SDC file '../netlist/iir_filter.sdc' for mode 'SDC_layout'
+
+[02/10 04:42:54     20s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[02/10 04:42:54     20s] <CMD> suppressMessage ENCEXT-2799
+[02/10 04:42:54     20s] <CMD> getDrawView
+[02/10 04:42:54     20s] <CMD> loadWorkspace -name Physical
+[02/10 04:42:54     20s] **ERROR: (IMPSYT-40408):	Error in reading workspace file: wrong format.
+<CMD> win
+[02/10 04:42:54     20s] Cannot display window in tcl mode
+[02/10 04:42:54     20s] <CMD> set init_design_netlisttype verilog
+[02/10 04:42:54     20s] <CMD> set init_design_settop 1
+[02/10 04:42:54     20s] <CMD> set init_top_cell iir_filter
+[02/10 04:42:54     20s] <CMD> set init_verilog ../netlist/iir_filter.v
+[02/10 04:42:54     20s] <CMD> set init_lef_file /software/dk/nangate45/lef/NangateOpenCellLibrary.lef
+[02/10 04:42:54     20s] <CMD> set init_gnd_net VSS
+[02/10 04:42:54     20s] <CMD> set init_pwr_net VDD
+[02/10 04:42:54     20s] <CMD> set init_mmmc_file mmm_design.tcl
+[02/10 04:42:54     20s] <CMD> init_design
+[02/10 04:42:54     20s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[02/10 04:42:54     20s] % Begin Load MMMC data ... (date=02/10 04:42:54, mem=361.0M)
+[02/10 04:42:54     20s] Extraction setup Delayed 
+[02/10 04:42:54     20s] Extraction setup Delayed 
+[02/10 04:42:54     20s] **ERROR: (TCLCMD-989):	cannot open SDC file '../netlist/iir_filter.sdc' for mode 'SDC_layout'
+
+[02/10 04:42:59     20s] invalid command name "quit"
+[02/10 04:43:01     20s] 
+[02/10 04:43:01     20s] *** Memory Usage v#1 (Current mem = 432.387M, initial mem = 187.684M) ***
+[02/10 04:43:01     20s] 
+[02/10 04:43:01     20s] *** Summary of all messages that are not suppressed in this session:
+[02/10 04:43:01     20s] Severity  ID               Count  Summary                                  
+[02/10 04:43:01     20s] ERROR     IMPSYT-40408         2  Error in reading workspace file: wrong f...
+[02/10 04:43:01     20s] ERROR     TCLCMD-989           2  cannot open SDC file '%s' for mode '%s'  
+[02/10 04:43:01     20s] *** Message Summary: 0 warning(s), 4 error(s)
+[02/10 04:43:01     20s] 
+[02/10 04:43:01     20s] --- Ending "Innovus" (totcpu=0:00:20.5, real=0:01:47, mem=432.4M) ---

@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-02-08
+-- Last update: 2022-02-10
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -41,7 +41,7 @@ architecture arch of RV32I_tb is
   signal rs1_fetch, rs2_fetch, rd_fetch       : std_logic_vector(4 downto 0);
   signal rs1_decode, rs2_decode, rd_decode    : std_logic_vector(4 downto 0);
   signal rs1_execute, rs2_execute, rd_execute : std_logic_vector(4 downto 0);
-  signal immediate                            : std_logic_vector(31 downto 0);
+  --signal immediate                            : std_logic_vector(31 downto 0);
 
   signal clock               : std_logic        := '0';
   signal reset               : std_logic;
@@ -197,10 +197,10 @@ begin  -- architecture arch
   funct3_execute <= instruction_execute(14 downto 12);
 
 -- instance "immediate_generator_1"
--- immediate_generator_1 : entity work.immediate_generator
---   port map (
---     instruction => instruction_fetch,
---     immediate   => immediate);
+ --immediate_generator_1 : entity work.immediate_generator
+ --  port map (
+ --    instruction => instruction_fetch,
+ --    immediate   => immediate);
 end architecture arch;
 
 -------------------------------------------------------------------------------
