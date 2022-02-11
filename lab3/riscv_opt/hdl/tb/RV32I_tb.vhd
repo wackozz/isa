@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-10
--- Last update: 2022-02-10
+-- Last update: 2022-02-11
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -196,18 +196,8 @@ begin  -- architecture arch
   funct3_decode  <= instruction_decode (14 downto 12);
   funct3_execute <= instruction_execute(14 downto 12);
 
--- instance "immediate_generator_1"
- --immediate_generator_1 : entity work.immediate_generator
- --  port map (
- --    instruction => instruction_fetch,
- --    immediate   => immediate);
+
 end architecture arch;
 
 -------------------------------------------------------------------------------
 
-configuration RV32I_tb_arch_cfg of RV32I_tb is
-  for arch
-  end for;
-end RV32I_tb_arch_cfg;
-
--------------------------------------------------------------------------------
