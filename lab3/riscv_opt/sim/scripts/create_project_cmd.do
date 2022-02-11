@@ -34,4 +34,4 @@ project addfile ../hdl/src/unary_AND.vhd
 project addfile ../hdl/src/wb_stage.vhd	          
 project compileall
 project close
-
+quit

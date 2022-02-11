@@ -59,7 +59,7 @@ architecture arch of RV32I_tb is
 
 begin  -- architecture arch
 
-  clock <= not clock after 10 ns;
+  clock <= not clock after 2.32 ns;
 -------------------------------------------------------------------------------
   fetch <= LUI when opcode_fetch = "0110111" else
            ABSOLUTE when opcode_fetch = "0001011" else

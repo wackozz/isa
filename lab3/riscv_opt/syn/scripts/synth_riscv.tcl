@@ -51,7 +51,7 @@ set_input_delay 0.5 -max -clock MY_CLK [remove_from_collection [all_inputs] cloc
 set_output_delay 0.5 -max -clock MY_CLK [all_outputs]
 set OLOAD [load_of NangateOpenCellLibrary/BUF_X4/A]
 set_load $OLOAD [all_outputs]
-compile_ultra
+compile
 report_timing > reports/report_timing_${clk_var}_ns.txt
 report_area > reports/report_area_clk_${clk_var}_ns.txt
 report_resources > reports/report_resources_clk_${clk_var}_ns.txt
@@ -67,4 +67,3 @@ quit
 
 
 elab
-synth 0
