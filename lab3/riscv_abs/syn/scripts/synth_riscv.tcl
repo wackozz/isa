@@ -6,10 +6,12 @@ analyze -f vhdl -lib WORK ../hdl/src/add_sub.vhd
 analyze -f vhdl -lib WORK ../hdl/src/alu.vhd
 analyze -f vhdl -lib WORK ../hdl/src/alu_control.vhd
 analyze -f vhdl -lib WORK ../hdl/src/barrel_shifter.vhd
+analyze -f vhdl -lib WORK ../hdl/src/branch_forwarding_unit.vhd
 analyze -f vhdl -lib WORK ../hdl/src/control.vhd
-analyze -f vhdl -lib WORK ../hdl/src/dec_5to32.vhd                   
+analyze -f vhdl -lib WORK ../hdl/src/dec_5to32.vhd
 analyze -f vhdl -lib WORK ../hdl/src/decode_stage.vhd
-analyze -f vhdl -lib WORK ../hdl/src/decode_stage_control.vhd  
+analyze -f vhdl -lib WORK ../hdl/src/decode_stage_control.vhd
+analyze -f vhdl -lib WORK ../hdl/src/equality_checker.vhd
 analyze -f vhdl -lib WORK ../hdl/src/execute_stage.vhd
 analyze -f vhdl -lib WORK ../hdl/src/execute_stage_control.vhd
 analyze -f vhdl -lib WORK ../hdl/src/fetch_stage.vhd
@@ -26,7 +28,7 @@ analyze -f vhdl -lib WORK ../hdl/src/mux_32to1.vhd
 analyze -f vhdl -lib WORK ../hdl/src/param_pkg.vhd
 analyze -f vhdl -lib WORK ../hdl/src/reg.vhd
 analyze -f vhdl -lib WORK ../hdl/src/reg_file.vhd
-analyze -f vhdl -lib WORK ../hdl/src/RV32I.vhd
+analyze -f vhdl -lib WORK ../hdl/src/RV32I_debug.vhd
 analyze -f vhdl -lib WORK ../hdl/src/RV32I_control.vhd
 analyze -f vhdl -lib WORK ../hdl/src/unary_AND.vhd
 analyze -f vhdl -lib WORK ../hdl/src/wb_stage.vhd
@@ -56,13 +58,12 @@ report_resources > reports/report_resources_clk_${clk_var}_ns.txt
 
 ungroup -all -flatten
 change_names -hierarchy -rules verilog
-write_sdf ../netlist/riscv.sdf
-write -f verilog -hierarchy -output ../netlist/riscv.v
-write_sdc ../netlist/riscv.sdc
+write_sdf ../netlist/RV32I.sdf
+write -f verilog -hierarchy -output ../netlist/RV32I.v
+write_sdc ../netlist/RV32I.sdc
 
 quit
 }
 
 
 elab
-synth 0
