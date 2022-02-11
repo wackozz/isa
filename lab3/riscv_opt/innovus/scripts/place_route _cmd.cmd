@@ -97,3 +97,4 @@ saveNetlist RV32I.v
 all_hold_analysis_views 
 all_setup_analysis_views 
 write_sdf  -ideal_clock_network $TopLevelDesign.sdf
+exit

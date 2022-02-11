@@ -32,7 +32,6 @@ project addfile ../hdl/src/RV32I_debug.vhd
 project addfile ../hdl/src/RV32I_tb.vhd	          
 project addfile ../hdl/src/unary_AND.vhd     
 project addfile ../hdl/src/wb_stage.vhd	          
-project compileall
+#project compileall
 project close
 quit
-
