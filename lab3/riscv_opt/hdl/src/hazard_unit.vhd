@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-31
--- Last update: 2022-02-10
+-- Last update: 2022-02-11
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -24,22 +24,22 @@ use ieee.numeric_std.all;
 entity hazard_unit is
 
   port (
-    clock             : in  std_logic;
-    reset             : in  std_logic;
-    MemRead_decode    : in  std_logic;
-    MemWrite_decode   : in  std_logic;
-    PCSrc             : in  std_logic;
-    opcode_fetch      : in  std_logic_vector(6 downto 0);
-    opcode_decode     : in  std_logic_vector(6 downto 0);
-    Rs1_decode        : in  std_logic_vector(4 downto 0);
-    Rs2_decode        : in  std_logic_vector(4 downto 0);
-    Rs1_fetch         : in  std_logic_vector(4 downto 0);
-    Rs2_fetch         : in  std_logic_vector(4 downto 0);
-    Rd_execute        : in  std_logic_vector(4 downto 0);
-    Rd_decode         : in  std_logic_vector(4 downto 0);
-    PcWrite           : out std_logic;
-    PipeWrite_fetch   : out std_logic;
-    StallSrc          : out std_logic);
+    clock           : in  std_logic;
+    reset           : in  std_logic;
+    MemRead_decode  : in  std_logic;
+    MemWrite_decode : in  std_logic;
+    PCSrc           : in  std_logic;
+    opcode_fetch    : in  std_logic_vector(6 downto 0);
+    opcode_decode   : in  std_logic_vector(6 downto 0);
+    Rs1_decode      : in  std_logic_vector(4 downto 0);
+    Rs2_decode      : in  std_logic_vector(4 downto 0);
+    Rs1_fetch       : in  std_logic_vector(4 downto 0);
+    Rs2_fetch       : in  std_logic_vector(4 downto 0);
+    Rd_execute      : in  std_logic_vector(4 downto 0);
+    Rd_decode       : in  std_logic_vector(4 downto 0);
+    PcWrite         : out std_logic;
+    PipeWrite_fetch : out std_logic;
+    StallSrc        : out std_logic);
 
 end entity hazard_unit;
 -------------------------------------------------------------------------------
@@ -109,31 +109,37 @@ begin  -- architecture str
     end case;
   end process state_ev;
 
-  state_as : process (current_state, opcode_fetch, opcode_decode, rs1_fetch, rs2_fetch, rd_decode) is
-  begin  -- process state_as
-    PcWrite           <= '1';
-    PipeWrite_fetch   <= '1';
-    StallSrc          <= '1';
-    case current_state is
-      when idle =>
-      when idle2 =>
-      when stall =>
-        StallSrc        <= '0';
-        PCWrite         <= '0';
-        PipeWrite_fetch <= '0';
-      when stall1 =>
-        StallSrc        <= '0';
-        PCWrite         <= '0';
-        PipeWrite_fetch <= '0';
-      when stall2 =>
-        StallSrc        <= '0';
-        PCWrite         <= '0';
-        PipeWrite_fetch <= '0';
-      when nop =>
-        StallSrc <= '0';
-      when others => null;
-    end case;
-  end process state_as;
+  state_out : process (clock, reset) is
+  begin  -- process state_out
+    if reset = '0' then                     -- asynchronous reset (active low
+      PcWrite         <= '1';
+      PipeWrite_fetch <= '1';
+      StallSrc        <= '1';
+    elsif clock'event and clock = '1' then  -- rising clock edge
+      PcWrite         <= '1';
+      PipeWrite_fetch <= '1';
+      StallSrc        <= '1';
+      case current_state is
+        when idle =>
+        when idle2 =>
+        when stall =>
+          StallSrc        <= '0';
+          PCWrite         <= '0';
+          PipeWrite_fetch <= '0';
+        when stall1 =>
+          StallSrc        <= '0';
+          PCWrite         <= '0';
+          PipeWrite_fetch <= '0';
+        when stall2 =>
+          StallSrc        <= '0';
+          PCWrite         <= '0';
+          PipeWrite_fetch <= '0';
+        when nop =>
+          StallSrc <= '0';
+        when others => null;
+      end case;
+    end if;
+  end process state_out;
 
 -----------------------------------------------------------------------------
 -- Component instantiations
