@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-31
--- Last update: 2022-02-11
+-- Last update: 2022-02-12
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -61,7 +61,8 @@ begin  -- architecture str
     end if;
   end process fsm;
 
-  state_ev : process(current_state, PCSrc, opcode_fetch, opcode_decode, rs1_fetch, rs2_fetch, rd_decode, clock) is
+  state_ev : process(MemRead_decode, PCSrc, current_state, opcode_decode,
+                     opcode_fetch, rd_decode, rs1_fetch, rs2_fetch) is
   begin  -- process state_ev
     case current_state is
       when idle =>
@@ -109,38 +110,31 @@ begin  -- architecture str
     end case;
   end process state_ev;
 
-  state_out : process (clock, reset) is
-  begin  -- process state_out
-    if reset = '0' then                     -- asynchronous reset (active low
-      PcWrite         <= '1';
-      PipeWrite_fetch <= '1';
-      StallSrc        <= '1';
-    elsif clock'event and clock = '1' then  -- rising clock edge
-      PcWrite         <= '1';
-      PipeWrite_fetch <= '1';
-      StallSrc        <= '1';
-      case current_state is
-        when idle =>
-        when idle2 =>
-        when stall =>
-          StallSrc        <= '0';
-          PCWrite         <= '0';
-          PipeWrite_fetch <= '0';
-        when stall1 =>
-          StallSrc        <= '0';
-          PCWrite         <= '0';
-          PipeWrite_fetch <= '0';
-        when stall2 =>
-          StallSrc        <= '0';
-          PCWrite         <= '0';
-          PipeWrite_fetch <= '0';
-        when nop =>
-          StallSrc <= '0';
-        when others => null;
-      end case;
-    end if;
-  end process state_out;
-
+    state_as : process (current_state) is
+  begin  -- process state_as
+    PcWrite           <= '1';
+    PipeWrite_fetch   <= '1';
+    StallSrc          <= '1';
+    case current_state is
+      when idle =>
+      when idle2 =>
+      when stall =>
+        StallSrc        <= '0';
+        PCWrite         <= '0';
+        PipeWrite_fetch <= '0';
+      when stall1 =>
+        StallSrc        <= '0';
+        PCWrite         <= '0';
+        PipeWrite_fetch <= '0';
+      when stall2 =>
+        StallSrc        <= '0';
+        PCWrite         <= '0';
+        PipeWrite_fetch <= '0';
+      when nop =>
+        StallSrc <= '0';
+      when others => null;
+    end case;
+  end process state_as;
 -----------------------------------------------------------------------------
 -- Component instantiations
 -----------------------------------------------------------------------------
