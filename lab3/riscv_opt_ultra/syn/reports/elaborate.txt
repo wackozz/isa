@@ -215,15 +215,15 @@ Statistics for case statements in always block at line 64 in file
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|            66            |    auto/auto     |
+|            67            |    auto/auto     |
 ===============================================
 
-Statistics for case statements in always block at line 112 in file
+Statistics for case statements in always block at line 114 in file
 	'../hdl/src/hazard_unit.vhd'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           117            |    auto/auto     |
+|           119            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
@@ -234,15 +234,6 @@ Inferred memory devices in process
 ===============================================================================
 |  current_state_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
-
-Inferred memory devices in process
-	in routine hazard_unit line 64 in file
-		'../hdl/src/hazard_unit.vhd'.
-===========================================================================
-|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
-===========================================================================
-|   next_state_reg    | Latch |   3   |  Y  | N  | N  | N  | -  | -  | -  |
-===========================================================================
 Presto compilation completed successfully.
 Information: Building the design 'mux_2to1_stall'. (HDL-193)
 Presto compilation completed successfully.

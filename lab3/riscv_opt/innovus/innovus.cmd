@@ -1,7 +1,7 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
-#  Created on Fri Feb 11 12:39:56 2022                
+#  Created on Sat Feb 12 17:16:18 2022                
 #                                                     
 #######################################################
 
@@ -15,9 +15,6 @@
 
 set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
 suppressMessage ENCEXT-2799
-getDrawView
-loadWorkspace -name Physical
-win
 set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
 suppressMessage ENCEXT-2799
 getDrawView

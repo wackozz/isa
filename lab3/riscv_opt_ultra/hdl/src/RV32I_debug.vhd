@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-05
--- Last update: 2022-02-10
+-- Last update: 2022-02-11
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -96,19 +96,19 @@ architecture str of RV32I is
   signal write_reg_decode  : std_logic_vector(4 downto 0);
 
   -- outputs of "RV32I_control_1"
-  signal AbsSel            : std_logic;
-  signal PcWrite           : std_logic;
-  signal PipeWrite_fetch     : std_logic;
-  signal PCSrc             : std_logic;
-  signal forward_mux_Rs1   : std_logic_vector(1 downto 0);
-  signal forward_mux_Rs2   : std_logic_vector(1 downto 0);
-  signal ALUSrc            : std_logic;
-  signal PCSel             : std_logic;
-  signal ALUCtrl           : std_logic_vector(3 downto 0);
-  signal forward_A         : std_logic_vector(1 downto 0);
-  signal forward_B         : std_logic_vector(1 downto 0);
-  signal RegWrite          : std_logic;
-  signal MemToReg          : std_logic_vector(1 downto 0);
+  signal AbsSel          : std_logic;
+  signal PcWrite         : std_logic;
+  signal PipeWrite_fetch : std_logic;
+  signal PCSrc           : std_logic;
+  signal forward_mux_Rs1 : std_logic_vector(1 downto 0);
+  signal forward_mux_Rs2 : std_logic_vector(1 downto 0);
+  signal ALUSrc          : std_logic;
+  signal PCSel           : std_logic;
+  signal ALUCtrl         : std_logic_vector(3 downto 0);
+  signal forward_A       : std_logic_vector(1 downto 0);
+  signal forward_B       : std_logic_vector(1 downto 0);
+  signal RegWrite        : std_logic;
+  signal MemToReg        : std_logic_vector(1 downto 0);
 
   signal instruction_decode_int : std_logic_vector(31 downto 0);
 
