@@ -106,7 +106,8 @@ begin  -- architecture str
       when nop =>
         next_state <= idle;
 
-      when others => null;
+      when others =>
+        next_state <= idle;
     end case;
   end process state_ev;
 
