@@ -7,7 +7,9 @@ int main() {
   int andi = 0;
 
   srai = a >> 4;
-  if (srai < b) a += 500;
+  if (srai<b){
+    a+=500;
+  }
   andi = a & 0x304;
   exor = a ^ b;
   add = andi + exor;

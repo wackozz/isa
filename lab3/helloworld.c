@@ -1,0 +1,1 @@
+int main() { char text[20] = "lleHoW o!dlr"; }
