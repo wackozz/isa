@@ -25,7 +25,7 @@ main:
 	sw	a2,-36(s0)
 	sw	a3,-32(s0)
 	sw	a4,-28(s0)
-	lbu	a5,12(a5)
+	lw	a5,12(a5)
 	sb	a5,-24(s0)
 	sb	zero,-23(s0)
 	sb	zero,-22(s0)
