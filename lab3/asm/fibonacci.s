@@ -37,7 +37,7 @@ main:
 .L2:
 	lw	a4,-28(s0)
 	li	a5,40
-	beq	a4,a5,.L3
+	bne	a4,a5,.L3
 	li	a5,0
 	mv	a0,a5
 	lw	s0,28(sp)
