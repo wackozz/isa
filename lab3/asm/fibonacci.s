@@ -36,8 +36,8 @@ main:
 	sw	a5,-28(s0)
 .L2:
 	lw	a4,-28(s0)
-	li	a5,40
-	bne	a4,a5,.L3
+	li	a5,39
+	ble	a4,a5,.L3
 	li	a5,0
 	mv	a0,a5
 	lw	s0,28(sp)
