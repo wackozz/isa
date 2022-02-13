@@ -1,1 +1,0 @@
-/home/isa18_2021_2022/github/isa/lab3/riscv_opt_ultra/netlist/RV32I.sdc

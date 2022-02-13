@@ -6,7 +6,7 @@
 -- Author     : GR17 (F.Bongo, S.Rizzello, F.Vacca)
 -- Company    : 
 -- Created    : 2022-01-31
--- Last update: 2022-02-12
+-- Last update: 2022-02-13
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -86,6 +86,13 @@ begin  -- architecture str
         --   next_state <= idle;
         if PCSrc = '1' then
           next_state <= nop;
+        elsif ((opcode_fetch = "1100011") and (opcode_decode = "0000011")
+               and((rs1_fetch = rd_decode) or (rs2_fetch = rd_decode))) then
+          next_state <= stall1;         -- BEQ stall twice if decode inst is LW
+        elsif ((opcode_fetch = "1100011") and (opcode_decode /= "1100011"
+                                               or opcode_decode /= "0100011")
+               and((rs1_fetch = rd_decode) or (rs2_fetch = rd_decode))) then
+          next_state <= stall;          -- BEQ stall once for other inst
         elsif (opcode_fetch = "1101111" or opcode_fetch = "1100011") then  --JAL/BEQ common case
           next_state <= idle2;
         elsif (MemRead_decode = '1' and ((Rd_decode = Rs1_fetch) or (Rd_decode = Rs2_fetch))) then
@@ -111,11 +118,11 @@ begin  -- architecture str
     end case;
   end process state_ev;
 
-    state_as : process (current_state) is
+  state_as : process (current_state) is
   begin  -- process state_as
-    PcWrite           <= '1';
-    PipeWrite_fetch   <= '1';
-    StallSrc          <= '1';
+    PcWrite         <= '1';
+    PipeWrite_fetch <= '1';
+    StallSrc        <= '1';
     case current_state is
       when idle =>
       when idle2 =>

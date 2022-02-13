@@ -24,7 +24,8 @@ main:
 	sw	a5,-28(s0)
 	lw	a4,-28(s0)
 	lw	a5,-24(s0)
-	bge	a4,a5,.L2
+	slt	a7,a4,a5
+	beq	a7,zero,.L2
 	lw	a5,-20(s0)
 	addi	a5,a5,500
 	sw	a5,-20(s0)
