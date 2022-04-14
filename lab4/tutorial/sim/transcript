@@ -1,6 +1,6 @@
 # do scripts/simulate.tcl
 # QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 17 2018
-# Start time: 21:29:41 on Apr 06,2022
+# Start time: 21:36:22 on Apr 14,2022
 # vlog -sv ../tb/top.sv 
 # ** Note: (vlog-2286) ../tb/top.sv(2): Using implicit +incdir+/software/mentor/questa10.7c/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
 # -- Compiling package top_sv_unit
@@ -14,11 +14,13 @@
 # 
 # Top level modules:
 # 	top
-# End time: 21:29:43 on Apr 06,2022, Elapsed time: 0:00:02
+# End time: 21:36:24 on Apr 14,2022, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 2
 # vsim top 
-# Start time: 21:29:43 on Apr 06,2022
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 21:36:24 on Apr 14,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../tb/monitor.sv(49): (vopt-2240) Treating stand-alone use of function 'begin_tr' as an implicit VOID cast.
+# ** Warning: ../tb/monitor_out.sv(48): (vopt-2240) Treating stand-alone use of function 'begin_tr' as an implicit VOID cast.
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
@@ -592,5 +594,5 @@
 # [env]     1
 # ** Note: $finish    : /software/mentor/questa10.7c/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 3045 ns  Iteration: 58  Instance: /top
-# End time: 21:29:45 on Apr 06,2022, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 2
+# End time: 21:36:32 on Apr 14,2022, Elapsed time: 0:00:08
+# Errors: 0, Warnings: 4
